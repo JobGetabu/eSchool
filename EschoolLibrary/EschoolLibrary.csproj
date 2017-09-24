@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,8 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +49,118 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EschoolModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EschoolModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EschoolModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EschoolModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EschoolModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Expense.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expense_Category.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fee.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeeRequiredPerYear.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeesRequiredPerTerm.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Income.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Income_Category.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="InitializeDatabase.cs" />
+    <Compile Include="Login_Users.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObservableListSource.cs" />
+    <Compile Include="OverHeadCategory.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OverHeadCategoryPerYear.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolPeriodTerm.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolPeriodYear.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Basic.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="EschoolModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EschoolModel.edmx</DependentUpon>
+      <LastGenOutput>EschoolModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EschoolModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EschoolModel.edmx</DependentUpon>
+      <LastGenOutput>EschoolModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="EschoolModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EschoolModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EschoolModel.edmx.diagram">
+      <DependentUpon>EschoolModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Microsoft.VC90.CRT\msvcr90.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Microsoft.VC90.CRT\README_ENU.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceca40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlcecompact40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceer40EN.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceme40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlceqp40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sqlcese40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,6 +17,8 @@ namespace EschoolLibrary
 
         //TODO
         //static string connectionString
+
+        static string connectionString = "metadata=res://*/EschoolModel.csdl|res://*/EschoolModel.ssdl|res://*/EschoolModel.msl;provider=System.Data.SqlServerCe.4.0;provider connection string='Data Source=" + dbConnectionString;
         //temporary method for conString access
         public static string MyConnection()
         {
