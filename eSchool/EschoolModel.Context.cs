@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EschoolLibrary
+namespace eSchool
 {
     using System;
     using System.Data.Entity;
@@ -15,12 +15,6 @@ namespace EschoolLibrary
     
     public partial class EschoolEntities : DbContext
     {
-
-        public EschoolEntities(string connectionString)
-            : base(connectionString)
-        {
-
-        }
         public EschoolEntities()
             : base("name=EschoolEntities")
         {

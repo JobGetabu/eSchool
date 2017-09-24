@@ -39,6 +39,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Database prototypes\CompactDemo\CompactDemo\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -85,7 +89,6 @@
     <Compile Include="Income_Category.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="InitializeDatabase.cs" />
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -108,6 +111,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="System.Data.SqlServerCe.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>

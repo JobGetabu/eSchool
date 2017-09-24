@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df3dd523428948b5a6b7fda6fd4a7979" Name="Diagram1">
+        <EntityTypeShape EntityType="EschoolModel.Expense" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Expense_Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.FeeRequiredPerYear" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Fee" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.FeesRequiredPerTerm" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Income" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Income_Category" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Login_Users" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.OverHeadCategory" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.OverHeadCategoryPerYear" Width="1.5" PointX="6" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.SchoolPeriodTerm" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.SchoolPeriodYear" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Student_Basic" Width="1.5" PointX="3.75" PointY="17.375" IsExpanded="true" />
+        <AssociationConnector Association="EschoolModel.FK_Term_Ex" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Year_Ex" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Year_Frq" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Admin_No_Fees" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Term_Fees" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Year_Fees" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Term_FrqT" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Year_FrqT" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Term_Income" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Year_Income" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Term_Ov" ManuallyRouted="false" />
+        <AssociationConnector Association="EschoolModel.FK_Year_Ov" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
