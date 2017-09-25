@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.home_ui_label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.sidebar = new System.Windows.Forms.Panel();
             this.btn_settings = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_imports = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -41,32 +47,32 @@
             this.btn_dashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageBtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroComboBoxSearch = new MetroFramework.Controls.MetroComboBox();
             this.metro_search_box = new MetroFramework.Controls.MetroTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.home_ui_label = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.ovalPictureBoxProfile = new eSchool.OvalPictureBox();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panel8.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBoxProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,10 +87,80 @@
             this.panel1.Size = new System.Drawing.Size(1231, 721);
             this.panel1.TabIndex = 0;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(240, 50);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(991, 96);
+            this.panel7.TabIndex = 2;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.bunifuImageButton1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(895, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(96, 96);
+            this.panel9.TabIndex = 1;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(30, 31);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(35, 35);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 0;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.bunifuCustomLabel1);
+            this.panel8.Controls.Add(this.home_ui_label);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(376, 96);
+            this.panel8.TabIndex = 0;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft NeoGothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(5)), true);
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(28, 57);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(109, 19);
+            this.bunifuCustomLabel1.TabIndex = 1;
+            this.bunifuCustomLabel1.Text = "September 2017";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // home_ui_label
+            // 
+            this.home_ui_label.AutoSize = true;
+            this.home_ui_label.Font = new System.Drawing.Font("Microsoft NeoGothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(5)), true);
+            this.home_ui_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.home_ui_label.Location = new System.Drawing.Point(26, 16);
+            this.home_ui_label.Name = "home_ui_label";
+            this.home_ui_label.Size = new System.Drawing.Size(131, 32);
+            this.home_ui_label.TabIndex = 0;
+            this.home_ui_label.Text = "Dashboard";
+            this.home_ui_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // sidebar
             // 
             this.sidebar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.btn_settings);
             this.sidebar.Controls.Add(this.btn_imports);
             this.sidebar.Controls.Add(this.btn_transations);
@@ -422,6 +498,36 @@
             this.panel2.Size = new System.Drawing.Size(1231, 50);
             this.panel2.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.bunifuDropdownDashMenu);
+            this.panel6.Controls.Add(this.ovalPictureBoxProfile);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(947, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(284, 50);
+            this.panel6.TabIndex = 5;
+            // 
+            // bunifuDropdownDashMenu
+            // 
+            this.bunifuDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bunifuDropdownDashMenu.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdownDashMenu.BorderRadius = 3;
+            this.bunifuDropdownDashMenu.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdownDashMenu.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdownDashMenu.Items = new string[] {
+        "Profile",
+        "Settings",
+        "Log out"};
+            this.bunifuDropdownDashMenu.Location = new System.Drawing.Point(96, 7);
+            this.bunifuDropdownDashMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bunifuDropdownDashMenu.Name = "bunifuDropdownDashMenu";
+            this.bunifuDropdownDashMenu.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.bunifuDropdownDashMenu.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.bunifuDropdownDashMenu.selectedIndex = 0;
+            this.bunifuDropdownDashMenu.Size = new System.Drawing.Size(175, 35);
+            this.bunifuDropdownDashMenu.TabIndex = 8;
+            // 
             // bunifuImageBtnSearch
             // 
             this.bunifuImageBtnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
@@ -507,104 +613,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
+            // panel3
             // 
-            this.panel6.Controls.Add(this.bunifuDropdownDashMenu);
-            this.panel6.Controls.Add(this.ovalPictureBoxProfile);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(947, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 50);
-            this.panel6.TabIndex = 5;
+            this.panel3.Controls.Add(this.bunifuImageButton3);
+            this.panel3.Controls.Add(this.bunifuImageButton2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 631);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(240, 40);
+            this.panel3.TabIndex = 9;
             // 
-            // bunifuDropdownDashMenu
+            // bunifuImageButton2
             // 
-            this.bunifuDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bunifuDropdownDashMenu.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdownDashMenu.BorderRadius = 3;
-            this.bunifuDropdownDashMenu.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdownDashMenu.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdownDashMenu.Items = new string[] {
-        "Profile",
-        "Settings",
-        "Log out"};
-            this.bunifuDropdownDashMenu.Location = new System.Drawing.Point(96, 7);
-            this.bunifuDropdownDashMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bunifuDropdownDashMenu.Name = "bunifuDropdownDashMenu";
-            this.bunifuDropdownDashMenu.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.bunifuDropdownDashMenu.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.bunifuDropdownDashMenu.selectedIndex = 0;
-            this.bunifuDropdownDashMenu.Size = new System.Drawing.Size(175, 35);
-            this.bunifuDropdownDashMenu.TabIndex = 8;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(240, 50);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(991, 96);
-            this.panel7.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.bunifuCustomLabel1);
-            this.panel8.Controls.Add(this.home_ui_label);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(376, 96);
-            this.panel8.TabIndex = 0;
-            // 
-            // home_ui_label
-            // 
-            this.home_ui_label.AutoSize = true;
-            this.home_ui_label.Font = new System.Drawing.Font("Microsoft NeoGothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(5)), true);
-            this.home_ui_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
-            this.home_ui_label.Location = new System.Drawing.Point(26, 16);
-            this.home_ui_label.Name = "home_ui_label";
-            this.home_ui_label.Size = new System.Drawing.Size(131, 32);
-            this.home_ui_label.TabIndex = 0;
-            this.home_ui_label.Text = "Dashboard";
-            this.home_ui_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft NeoGothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(5)), true);
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(28, 57);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(109, 19);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "September 2017";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.bunifuImageButton1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(895, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(96, 96);
-            this.panel9.TabIndex = 1;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(30, 31);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(35, 35);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.ImageActive")));
+            this.bunifuImageButton2.Location = new System.Drawing.Point(21, 3);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(36, 35);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 0;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 2;
             // 
             // ovalPictureBoxProfile
             // 
@@ -618,6 +648,19 @@
             this.ovalPictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ovalPictureBoxProfile.TabIndex = 7;
             this.ovalPictureBoxProfile.TabStop = false;
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.ImageActive")));
+            this.bunifuImageButton3.Location = new System.Drawing.Point(169, 3);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(36, 35);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.TabIndex = 1;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 2;
             // 
             // Frm_Home
             // 
@@ -634,18 +677,21 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Home_Load);
             this.panel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.sidebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBoxProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -678,5 +724,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel home_ui_label;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
     }
 }

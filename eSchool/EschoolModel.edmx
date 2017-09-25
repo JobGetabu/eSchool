@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EschoolModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EschoolModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Expense">
           <Key>
             <PropertyRef Name="ExId" />
@@ -125,6 +125,7 @@
           <Property Name="Last Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Form" Type="int" Nullable="false" />
           <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="1" />
         </EntityType>
         <Association Name="FK_Admin No_Fees">
           <End Role="Student_Basic" Type="Self.Student_Basic" Multiplicity="1" />
@@ -343,8 +344,7 @@
             <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYear" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EschoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -492,6 +492,7 @@
           <Property Name="Form" Type="Int32" Nullable="false" />
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Fees" Relationship="Self.FK_Admin_No_Fees" FromRole="Student_Basic" ToRole="Fees" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Term_Ex">
           <End Role="SchoolPeriodTerm" Type="Self.SchoolPeriodTerm" Multiplicity="1" />
@@ -841,6 +842,7 @@
           <EntitySetMapping Name="Student_Basic">
             <EntityTypeMapping TypeName="EschoolModel.Student_Basic">
               <MappingFragment StoreEntitySet="Student_Basic">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Admin_No" ColumnName="Admin No" />
                 <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Middle_Name" ColumnName="Middle Name" />

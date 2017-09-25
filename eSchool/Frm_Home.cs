@@ -16,6 +16,9 @@ namespace eSchool
         public Frm_Home()
         {
             InitializeComponent();
+
+            //int ea = Properties.Settings.Default.CurrentYear;
+            
         }
 
         Color _normal = Color.FromArgb(126, 135, 169);
@@ -97,6 +100,8 @@ namespace eSchool
             btn_settings.Textcolor = _white;
 
             //End UI Design code
+
+            
         }
 
         private void btn_imports_Click(object sender, EventArgs e)
@@ -168,5 +173,7 @@ namespace eSchool
                 sidebar.Width = 240;
             }
         }
+
+        
     }
 }
