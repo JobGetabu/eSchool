@@ -57,6 +57,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -100,12 +101,6 @@
     <Compile Include="FeesRequiredPerTerm.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +115,9 @@
     </Compile>
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OvalPictureBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="OverHeadCategory.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
@@ -154,8 +152,8 @@
     <Content Include="Microsoft.VC90.CRT\README_ENU.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Home.resx">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
