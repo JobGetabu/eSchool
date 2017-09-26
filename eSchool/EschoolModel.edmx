@@ -126,6 +126,7 @@
           <Property Name="Form" Type="int" Nullable="false" />
           <Property Name="Class" Type="nvarchar" MaxLength="50" />
           <Property Name="Gender" Type="nvarchar" MaxLength="1" />
+          <Property Name="ModeOfLearning" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Admin No_Fees">
           <End Role="Student_Basic" Type="Self.Student_Basic" Multiplicity="1" />
@@ -493,6 +494,7 @@
           <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Fees" Relationship="Self.FK_Admin_No_Fees" FromRole="Student_Basic" ToRole="Fees" />
           <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ModeOfLearning" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Term_Ex">
           <End Role="SchoolPeriodTerm" Type="Self.SchoolPeriodTerm" Multiplicity="1" />
@@ -842,6 +844,7 @@
           <EntitySetMapping Name="Student_Basic">
             <EntityTypeMapping TypeName="EschoolModel.Student_Basic">
               <MappingFragment StoreEntitySet="Student_Basic">
+                <ScalarProperty Name="ModeOfLearning" ColumnName="ModeOfLearning" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Admin_No" ColumnName="Admin No" />
                 <ScalarProperty Name="First_Name" ColumnName="First Name" />
