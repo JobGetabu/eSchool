@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
+   
     public partial class Frm_Home : Form
     {
+        
         public Frm_Home()
         {
             InitializeComponent();
-
-            //int ea = Properties.Settings.Default.CurrentYear;
-            
         }
 
         Color _normal = Color.FromArgb(126, 135, 169);
@@ -36,6 +35,9 @@ namespace eSchool
             btn_settings.Textcolor = _normal;
 
             //End UI Design code
+
+            btn_settings.selected = true;
+            this.dashboardUI1.BringToFront();
         }
 
         private void btn_invoices_Click(object sender, EventArgs e)
@@ -85,9 +87,9 @@ namespace eSchool
 
         private void Frm_Home_Load(object sender, EventArgs e)
         {
-            DashboardTime();
-
-            
+            btn_dashboard.selected = true;
+            DashboardUI.collapse += CollapseNavBar;
+           
         }
         private void btn_settings_Click(object sender, EventArgs e)
         {
@@ -103,6 +105,8 @@ namespace eSchool
 
             //End UI Design code
 
+            btn_settings.selected = true;
+            this.settingsUI1.BringToFront();
             
         }
 
@@ -150,21 +154,16 @@ namespace eSchool
             btn_settings.Textcolor = _normal;
 
             //End UI Design code
+            
         }
 
-        //private void IconColorHover(BunifuFlatButton sender)
-        //{
-        //    if (sender != null)
-        //    {
-        //        sender.Iconimage = sender.Iconimage_Selected;
-        //    }
-        //}
-        private void panel3_MouseHover(object sender, EventArgs e)
+        public void pictureBxMenuHome_Click(object sender, EventArgs e)
         {
-           
+            CollapseNavBar();                  
         }
-
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        
+        
+        public  void CollapseNavBar()
         {
             if (sidebar.Width == 240)
             {
@@ -174,58 +173,6 @@ namespace eSchool
             {
                 sidebar.Width = 240;
             }
-        }
-
-        void DashboardTime()
-        {
-            DateTime dt = DateTime.Now;
-
-            string month = "";
-            switch (dt.Month)
-            {
-                case 1: month = "January";
-                    break;
-                case 2:
-                    month = "February";
-                    break;
-                case 3:
-                    month = "March";
-                    break;
-                case 4:
-                    month = "April";
-                    break;
-                case 5:
-                    month = "May";
-                    break;
-                case 6:
-                    month = "June";
-                    break;
-                case 7:
-                    month = "July";
-                    break;
-                case 8:
-                    month = "August";
-                    break;
-                case 9:
-                    month = "September";
-                    break;
-                case 10:
-                    month = "October";
-                    break;
-                case 11:
-                    month = "November";
-                    break;
-                case 12:
-                    month = "December";
-                    break;
-                default:
-                    break;
-            }
-            bunifuCustomLabelDashboadTime.Text = $"{month} {dt.Year}";
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
         }
     }
 }
