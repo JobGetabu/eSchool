@@ -12,9 +12,10 @@ namespace eSchool
     using System;
     using System.Collections.Generic;
     
-    public partial class Expense_Category
+    public partial class Category
     {
         public int Id { get; set; }
-        public string Category { get; set; }
+        public string CategoryName { get; set; }
+        public string Type { get; set; }
     }
 }

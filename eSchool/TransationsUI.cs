@@ -12,6 +12,19 @@ namespace eSchool
 {
     public partial class TransationsUI : UserControl
     {
+        //Singleton pattern ***best practices***
+        private static TransationsUI _instance;
+        public static TransationsUI Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TransationsUI();
+                }
+                return _instance;
+            }
+        }
         public TransationsUI()
         {
             InitializeComponent();

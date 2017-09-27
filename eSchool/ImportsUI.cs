@@ -12,6 +12,19 @@ namespace eSchool
 {
     public partial class ImportsUI : UserControl
     {
+        //Singleton pattern ***best practices***
+        private static ImportsUI _instance;
+        public static ImportsUI Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ImportsUI();
+                }
+                return _instance;
+            }
+        }
         public ImportsUI()
         {
             InitializeComponent();

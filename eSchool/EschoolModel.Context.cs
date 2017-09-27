@@ -26,17 +26,16 @@ namespace eSchool
         }
     
         public DbSet<Expense> Expenses { get; set; }
-        public DbSet<Expense_Category> Expense_Category { get; set; }
         public DbSet<FeeRequiredPerYear> FeeRequiredPerYears { get; set; }
         public DbSet<Fee> Fees { get; set; }
         public DbSet<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }
         public DbSet<Income> Incomes { get; set; }
-        public DbSet<Income_Category> Income_Category { get; set; }
         public DbSet<Login_Users> Login_Users { get; set; }
         public DbSet<OverHeadCategory> OverHeadCategories { get; set; }
         public DbSet<OverHeadCategoryPerYear> OverHeadCategoryPerYears { get; set; }
         public DbSet<SchoolPeriodTerm> SchoolPeriodTerms { get; set; }
         public DbSet<SchoolPeriodYear> SchoolPeriodYears { get; set; }
         public DbSet<Student_Basic> Student_Basic { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

@@ -12,6 +12,19 @@ namespace eSchool
 {
     public partial class ExpenseUI : UserControl
     {
+        //Singleton pattern ***best practices***
+        private static ExpenseUI _instance;
+        public static ExpenseUI Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ExpenseUI();
+                }
+                return _instance;
+            }
+        }
         public ExpenseUI()
         {
             InitializeComponent();

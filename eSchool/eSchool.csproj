@@ -49,6 +49,10 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroModernUI\1.4.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -71,6 +75,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DashboardUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,9 +108,6 @@
     <Compile Include="ExpenseUI.Designer.cs">
       <DependentUpon>ExpenseUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Expense_Category.cs">
-      <DependentUpon>EschoolModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Fee.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -118,6 +122,12 @@
     </Compile>
     <Compile Include="FeesUI.Designer.cs">
       <DependentUpon>FeesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddCategories.Designer.cs">
+      <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
@@ -139,9 +149,6 @@
     </Compile>
     <Compile Include="IncomeUI.Designer.cs">
       <DependentUpon>IncomeUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Income_Category.cs">
-      <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="InvoicesReceipt.cs">
       <SubType>UserControl</SubType>
@@ -208,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeesUI.resx">
       <DependentUpon>FeesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddCategories.resx">
+      <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>

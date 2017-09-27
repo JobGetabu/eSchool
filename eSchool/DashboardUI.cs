@@ -10,14 +10,29 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-    public delegate void CollapseToolBarHandler();
 
+
+    public delegate void CollapseToolBarHandler();
     public partial class DashboardUI : UserControl
     {
+        //Singleton pattern ***best practices***
+        private static DashboardUI _instance;
+        public static DashboardUI Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new DashboardUI();
+                }
+                return _instance;
+            }
+        }
+
         public static event CollapseToolBarHandler collapse;
         public DashboardUI()
-        { 
-                InitializeComponent();        
+        {
+            InitializeComponent();
         }
         public DashboardUI(bool instance)
         {

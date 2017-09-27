@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="EschoolModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Expense">
           <Key>
             <PropertyRef Name="ExId" />
@@ -16,13 +24,6 @@
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Term" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Expense_Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Category" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="FeeRequiredPerYear">
           <Key>
@@ -69,13 +70,6 @@
           <Property Name="Term" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Category" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="Income_Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Category" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Login_Users">
           <Key>
@@ -283,13 +277,12 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EschoolModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" store:Type="Tables" />
-          <EntitySet Name="Expense_Category" EntityType="Self.Expense_Category" store:Type="Tables" />
           <EntitySet Name="FeeRequiredPerYear" EntityType="Self.FeeRequiredPerYear" store:Type="Tables" />
           <EntitySet Name="Fees" EntityType="Self.Fees" store:Type="Tables" />
           <EntitySet Name="FeesRequiredPerTerm" EntityType="Self.FeesRequiredPerTerm" store:Type="Tables" />
           <EntitySet Name="Income" EntityType="Self.Income" store:Type="Tables" />
-          <EntitySet Name="Income_Category" EntityType="Self.Income_Category" store:Type="Tables" />
           <EntitySet Name="Login_Users" EntityType="Self.Login_Users" store:Type="Tables" />
           <EntitySet Name="OverHeadCategory" EntityType="Self.OverHeadCategory" store:Type="Tables" />
           <EntitySet Name="OverHeadCategoryPerYear" EntityType="Self.OverHeadCategoryPerYear" store:Type="Tables" />
@@ -363,13 +356,6 @@
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Ex" FromRole="Expense" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Ex" FromRole="Expense" ToRole="SchoolPeriodYear" />
         </EntityType>
-        <EntityType Name="Expense_Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="FeeRequiredPerYear">
           <Key>
             <PropertyRef Name="Id" />
@@ -423,13 +409,6 @@
           <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Income" FromRole="Income" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Income" FromRole="Income" ToRole="SchoolPeriodYear" />
-        </EntityType>
-        <EntityType Name="Income_Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Login_Users">
           <Key>
@@ -652,12 +631,10 @@
         </Association>
         <EntityContainer Name="EschoolEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Expenses" EntityType="Self.Expense" />
-          <EntitySet Name="Expense_Category" EntityType="Self.Expense_Category" />
           <EntitySet Name="FeeRequiredPerYears" EntityType="Self.FeeRequiredPerYear" />
           <EntitySet Name="Fees" EntityType="Self.Fee" />
           <EntitySet Name="FeesRequiredPerTerms" EntityType="Self.FeesRequiredPerTerm" />
           <EntitySet Name="Incomes" EntityType="Self.Income" />
-          <EntitySet Name="Income_Category" EntityType="Self.Income_Category" />
           <EntitySet Name="Login_Users" EntityType="Self.Login_Users" />
           <EntitySet Name="OverHeadCategories" EntityType="Self.OverHeadCategory" />
           <EntitySet Name="OverHeadCategoryPerYears" EntityType="Self.OverHeadCategoryPerYear" />
@@ -712,7 +689,16 @@
             <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYears" />
             <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYears" />
           </AssociationSet>
+          <EntitySet Name="Categories" EntityType="EschoolModel.Category" />
         </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -729,14 +715,6 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Expense_Category">
-            <EntityTypeMapping TypeName="EschoolModel.Expense_Category">
-              <MappingFragment StoreEntitySet="Expense_Category">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Category" ColumnName="Category" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -786,14 +764,6 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Category" ColumnName="Category" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Income_Category">
-            <EntityTypeMapping TypeName="EschoolModel.Income_Category">
-              <MappingFragment StoreEntitySet="Income_Category">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -852,6 +822,15 @@
                 <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
                 <ScalarProperty Name="Form" ColumnName="Form" />
                 <ScalarProperty Name="Class" ColumnName="Class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="EschoolModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

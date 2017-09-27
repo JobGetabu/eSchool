@@ -14,7 +14,6 @@ namespace eSchool
     
     public partial class SchoolPeriodTerm
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SchoolPeriodTerm()
         {
             this.Expenses = new HashSet<Expense>();

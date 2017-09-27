@@ -12,6 +12,20 @@ namespace eSchool
 {
     public partial class IncomeUI : UserControl
     {
+
+        //Singleton pattern ***best practices***
+        private static IncomeUI _instance;
+        public static IncomeUI Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new IncomeUI();
+                }
+                return _instance;
+            }
+        }
         public IncomeUI()
         {
             InitializeComponent();

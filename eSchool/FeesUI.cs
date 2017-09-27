@@ -12,6 +12,19 @@ namespace eSchool
 {
     public partial class FeesUI : UserControl
     {
+        //Singleton pattern ***best practices***
+        private static FeesUI _instance;
+        public static FeesUI Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new FeesUI();
+                }
+                return _instance;
+            }
+        }
         public FeesUI()
         {
             InitializeComponent();
