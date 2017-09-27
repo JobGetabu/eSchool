@@ -95,6 +95,12 @@
     <Compile Include="Expense.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExpenseUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExpenseUI.Designer.cs">
+      <DependentUpon>ExpenseUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense_Category.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -107,17 +113,41 @@
     <Compile Include="FeesRequiredPerTerm.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FeesUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeesUI.Designer.cs">
+      <DependentUpon>FeesUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Home.Designer.cs">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportsUI.Designer.cs">
+      <DependentUpon>ImportsUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Income.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IncomeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IncomeUI.Designer.cs">
+      <DependentUpon>IncomeUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Income_Category.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicesReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoicesReceipt.Designer.cs">
+      <DependentUpon>InvoicesReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
@@ -148,6 +178,12 @@
     <Compile Include="Student_Basic.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransationsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransationsUI.Designer.cs">
+      <DependentUpon>TransationsUI.cs</DependentUpon>
+    </Compile>
     <Content Include="EschoolModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EschoolModel.Context.cs</LastGenOutput>
@@ -167,8 +203,23 @@
     <EmbeddedResource Include="DashboardUI.resx">
       <DependentUpon>DashboardUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExpenseUI.resx">
+      <DependentUpon>ExpenseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeesUI.resx">
+      <DependentUpon>FeesUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportsUI.resx">
+      <DependentUpon>ImportsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeUI.resx">
+      <DependentUpon>IncomeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoicesReceipt.resx">
+      <DependentUpon>InvoicesReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,6 +235,9 @@
     </Content>
     <EmbeddedResource Include="SettingsUI.resx">
       <DependentUpon>SettingsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransationsUI.resx">
+      <DependentUpon>TransationsUI.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="EschoolModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

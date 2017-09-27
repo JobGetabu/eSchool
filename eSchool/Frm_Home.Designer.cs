@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.containerUIs = new System.Windows.Forms.Panel();
-            this.dashboardUI1 = new eSchool.DashboardUI();
             this.sidebar = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -48,7 +47,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProf = new System.Windows.Forms.Panel();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageBtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroComboBoxSearch = new MetroFramework.Controls.MetroComboBox();
@@ -56,21 +54,20 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBxMenuHome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.settingsUI1 = new eSchool.SettingsUI();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.containerUIs.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelProf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,7 +79,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 525);
+            this.panel1.Size = new System.Drawing.Size(1038, 593);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -91,27 +88,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(240, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(751, 475);
+            this.panel2.Size = new System.Drawing.Size(798, 543);
             this.panel2.TabIndex = 2;
             // 
             // containerUIs
             // 
-            this.containerUIs.Controls.Add(this.settingsUI1);
-            this.containerUIs.Controls.Add(this.dashboardUI1);
             this.containerUIs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerUIs.Location = new System.Drawing.Point(0, 0);
             this.containerUIs.Name = "containerUIs";
-            this.containerUIs.Size = new System.Drawing.Size(751, 475);
+            this.containerUIs.Size = new System.Drawing.Size(798, 543);
             this.containerUIs.TabIndex = 5;
-            // 
-            // dashboardUI1
-            // 
-            this.dashboardUI1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboardUI1.Location = new System.Drawing.Point(0, 0);
-            this.dashboardUI1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dashboardUI1.Name = "dashboardUI1";
-            this.dashboardUI1.Size = new System.Drawing.Size(751, 475);
-            this.dashboardUI1.TabIndex = 0;
             // 
             // sidebar
             // 
@@ -131,7 +117,7 @@
             this.sidebar.Location = new System.Drawing.Point(0, 50);
             this.sidebar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(240, 475);
+            this.sidebar.Size = new System.Drawing.Size(240, 543);
             this.sidebar.TabIndex = 1;
             // 
             // panel3
@@ -139,7 +125,7 @@
             this.panel3.Controls.Add(this.bunifuImageButton3);
             this.panel3.Controls.Add(this.bunifuImageButton2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 435);
+            this.panel3.Location = new System.Drawing.Point(0, 503);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 40);
             this.panel3.TabIndex = 9;
@@ -487,7 +473,7 @@
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(991, 50);
+            this.panelTop.Size = new System.Drawing.Size(1038, 50);
             this.panelTop.TabIndex = 0;
             // 
             // panelProf
@@ -495,22 +481,10 @@
             this.panelProf.Controls.Add(this.ovalPictureBox1);
             this.panelProf.Controls.Add(this.bunifuDropdownDashMenu);
             this.panelProf.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelProf.Location = new System.Drawing.Point(707, 0);
+            this.panelProf.Location = new System.Drawing.Point(754, 0);
             this.panelProf.Name = "panelProf";
             this.panelProf.Size = new System.Drawing.Size(284, 50);
             this.panelProf.TabIndex = 5;
-            // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 9;
-            this.ovalPictureBox1.TabStop = false;
             // 
             // bunifuDropdownDashMenu
             // 
@@ -582,7 +556,9 @@
             this.metro_search_box.MaxLength = 32767;
             this.metro_search_box.Name = "metro_search_box";
             this.metro_search_box.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metro_search_box.PromptText = "Search";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metro_search_box.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metro_search_box.SelectedText = "";
             this.metro_search_box.SelectionLength = 0;
@@ -629,24 +605,27 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // settingsUI1
+            // ovalPictureBox1
             // 
-            this.settingsUI1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.settingsUI1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsUI1.Location = new System.Drawing.Point(0, 0);
-            this.settingsUI1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.settingsUI1.Name = "settingsUI1";
-            this.settingsUI1.Size = new System.Drawing.Size(751, 475);
-            this.settingsUI1.TabIndex = 1;
+            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 9;
+            this.ovalPictureBox1.TabStop = false;
             // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 525);
+            this.ClientSize = new System.Drawing.Size(1038, 593);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MinimumSize = new System.Drawing.Size(1054, 632);
             this.Name = "Frm_Home";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -655,18 +634,17 @@
             this.Load += new System.EventHandler(this.Frm_Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.containerUIs.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelProf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -700,7 +678,5 @@
         private OvalPictureBox ovalPictureBox1;
         private System.Windows.Forms.Panel containerUIs;
         private System.Windows.Forms.PictureBox pictureBxMenuHome;
-        private DashboardUI dashboardUI1;
-        private SettingsUI settingsUI1;
     }
 }

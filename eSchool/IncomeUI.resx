@@ -117,44 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFtSURBVDhPY/j05cd/auKRamDWhnv/X3/4hlUBKTh30z2I
-        gbKd5//fePYZqyJSMMgcuIHbrr3BUABy9YrzL/9bTb8CVmMJpBedfvn/6buvGGovPv6IamD1zocoCkAW
-        6Ey89F+j/xJYHobV+y/+15pw6f+8k89R1IMsQjHQYPJlsItAtieuvvNfC80gdKwJNNRnwY3/9159ARsY
-        vOQmWBxuoHrfxf9FW+7/N5t65b9i9wUUzfgwSH3X/sf/tYEWgPhwA0FYDWgoKYbBsHwXQg+KgU6zr/3X
-        A4YbjE8MBoVzyJJb/1V6IIbCDdQABjYoPA7feQ/2BkwBLqwElNebdPn/npvvwGEP0gMShxuYvPYOPMZA
-        Csq3PwSGy8X/sh2YhoFiPnDxTZTkAwpHkBzcwPWXXsMlYRhkO8gi1V6Ia0Gujl5xG5w20dWefPAB1UBQ
-        wkRXRAoG+QpuoNm0K1hTP6k4AZh+wQZSEw92A3/8BwAU1Vah7SrO7AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAJxJREFUaEPt
-        10EKwkAMheEcRN2IeHdRLyaK9QL6Ah0YQhcuX+D/4N+E2bS0AwkAfzmoq3qs3dRRtbJXT/Ut5Wyn2si3
-        Xx9idFHV1jmH4lMGc29VbZ1zKJYymGv1IPcymMsLoNo651Cc1WsajHJ2Uq2M6zf/l/zUWl6/AABgxWLl
-        hMXKLBYrt1isAACAKxYrJyxWZrFYucViBaCNiB9P5FrLHUhdUQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="bunifuFlatBtnAddCategory.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAGdJREFUSEvt
-        kzsKwDAMQ310n650KL1Sa4IGkw+0tsmkB1ocRZokZAuqepse6MK5HlfShHM9LArDoiX22e8kq/XOJuaU
-        EDsyM2eE2BF7PHtzQgdi/9OH4VwPi8KwKIyF+53Fd0K+I/IC+/dl2L9DunwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="table_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="category.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>43</value>
-  </metadata>
 </root>

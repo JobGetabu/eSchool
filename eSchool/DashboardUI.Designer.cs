@@ -49,14 +49,14 @@
             this.panelHCD.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHCD.Location = new System.Drawing.Point(0, 0);
             this.panelHCD.Name = "panelHCD";
-            this.panelHCD.Size = new System.Drawing.Size(751, 96);
+            this.panelHCD.Size = new System.Drawing.Size(798, 96);
             this.panelHCD.TabIndex = 5;
             // 
             // panelWColpseBtn
             // 
             this.panelWColpseBtn.Controls.Add(this.bunifuImageBtnColapse);
             this.panelWColpseBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelWColpseBtn.Location = new System.Drawing.Point(655, 0);
+            this.panelWColpseBtn.Location = new System.Drawing.Point(702, 0);
             this.panelWColpseBtn.Name = "panelWColpseBtn";
             this.panelWColpseBtn.Size = new System.Drawing.Size(96, 96);
             this.panelWColpseBtn.TabIndex = 1;
@@ -116,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelHCD);
             this.Name = "DashboardUI";
-            this.Size = new System.Drawing.Size(751, 475);
+            this.Size = new System.Drawing.Size(798, 543);
             this.Load += new System.EventHandler(this.DashboardUI_Load);
             this.panelHCD.ResumeLayout(false);
             this.panelWColpseBtn.ResumeLayout(false);

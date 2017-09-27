@@ -37,7 +37,7 @@ namespace eSchool
             //End UI Design code
 
             btn_settings.selected = true;
-            this.dashboardUI1.BringToFront();
+            
         }
 
         private void btn_invoices_Click(object sender, EventArgs e)
@@ -105,9 +105,7 @@ namespace eSchool
 
             //End UI Design code
 
-            btn_settings.selected = true;
-            this.settingsUI1.BringToFront();
-            
+            btn_settings.selected = true;          
         }
 
         private void btn_imports_Click(object sender, EventArgs e)
