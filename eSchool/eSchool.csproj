@@ -129,6 +129,12 @@
     <Compile Include="FrmAddCategories.Designer.cs">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddStudent.Designer.cs">
+      <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="FrmAddCategories.resx">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddStudent.resx">
+      <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,8 +266,10 @@
       <DependentUpon>EschoolModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Category.datasource" />
     <None Include="Properties\DataSources\Fee.datasource" />
     <None Include="Properties\DataSources\SchoolPeriodTerm.datasource" />
+    <None Include="Properties\DataSources\Student_Basic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

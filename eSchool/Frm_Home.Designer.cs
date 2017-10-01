@@ -581,7 +581,9 @@
             this.metro_search_box.MaxLength = 32767;
             this.metro_search_box.Name = "metro_search_box";
             this.metro_search_box.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metro_search_box.PromptText = "Search";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metro_search_box.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metro_search_box.SelectedText = "";
             this.metro_search_box.SelectionLength = 0;
@@ -633,7 +635,7 @@
             // 
             // bunifuTransitionUIs
             // 
-            this.bunifuTransitionUIs.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.bunifuTransitionUIs.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
             this.bunifuTransitionUIs.Cursor = null;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -643,7 +645,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));

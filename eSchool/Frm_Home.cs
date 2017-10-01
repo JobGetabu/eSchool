@@ -46,13 +46,15 @@ namespace eSchool
             {
                 this.containerUIs.Controls.Add(UIinstance);
                 UIinstance.Dock = DockStyle.Fill;
-                this.bunifuTransitionUIs.ShowSync(UIinstance);
+                UIinstance.Visible = false;
                 UIinstance.BringToFront();
+                this.bunifuTransitionUIs.ShowSync(UIinstance);
             }
             else
-            {
-                this.bunifuTransitionUIs.ShowSync(UIinstance);
+            {               
                 UIinstance.BringToFront();
+                //only occurs once
+                //this.bunifuTransitionUIs.ShowSync(UIinstance);
             }
         }
 
@@ -109,6 +111,7 @@ namespace eSchool
         {
             btn_dashboard.selected = true;
             DashboardUI.collapse += CollapseNavBar;
+            FrmAddCategories.reLoadSettings += btn_settings_Click;
             TabSwitcher(DashboardUI.Instance);
 
             this.metroComboBoxSearch.SelectedIndex = 0;

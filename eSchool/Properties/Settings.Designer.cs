@@ -23,21 +23,27 @@ namespace eSchool.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int CurrentTerm {
             get {
                 return ((int)(this["CurrentTerm"]));
             }
+            set {
+                this["CurrentTerm"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2017")]
         public int CurrentYear {
             get {
                 return ((int)(this["CurrentYear"]));
+            }
+            set {
+                this["CurrentYear"] = value;
             }
         }
     }

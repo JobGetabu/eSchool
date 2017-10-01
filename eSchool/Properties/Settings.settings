@@ -2,10 +2,10 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="eSchool.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="CurrentTerm" Type="System.Int32" Scope="Application">
+    <Setting Name="CurrentTerm" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="CurrentYear" Type="System.Int32" Scope="Application">
+    <Setting Name="CurrentYear" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2017</Value>
     </Setting>
   </Settings>

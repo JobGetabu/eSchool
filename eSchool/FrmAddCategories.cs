@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
+    public delegate void ReLoadSettingsHandler(object sender, EventArgs e);
     public partial class FrmAddCategories : Form
     {
+        public static event ReLoadSettingsHandler reLoadSettings;
         public FrmAddCategories()
         {
             InitializeComponent();
@@ -44,8 +46,9 @@ namespace eSchool
                 category.Categories.Add(cat);
                 //call notification
                 category.SaveChanges();
-                this.Close();
             }
+            reLoadSettings?.Invoke(sender, e);
+            this.Close();
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
