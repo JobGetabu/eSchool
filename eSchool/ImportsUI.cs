@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExcelDataReader;
+using System.IO;
 
 namespace eSchool
 {
@@ -37,7 +39,7 @@ namespace eSchool
             using (var context = new EschoolEntities())
             {
                 studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
-               
+
             }
         }
 
@@ -114,6 +116,75 @@ namespace eSchool
             //}
 
             //locate only delete cell
+        }
+
+        DataSet results;
+        private void bunifuFlBtnImport_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            { Filter = "Excel Workbook|*.xlsx|Excel Workbook 97-2003 |*.xls", ValidateNames = true })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+
+                    if (ofd.FilterIndex==1)
+                    {
+                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);               
+                       
+                    }
+                    else
+                    {
+                        reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                    }
+
+
+                    results = reader.AsDataSet(new ExcelDataSetConfiguration() {
+
+                        // Gets or sets a value indicating whether to set the DataColumn.DataType 
+                        // property in a second pass.
+                        UseColumnDataType = false,
+
+                        // Gets or sets a callback to obtain configuration options for a DataTable. 
+                        ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
+                        {
+
+                            // Gets or sets a value indicating the prefix of generated column names.
+                            EmptyColumnNamePrefix = "Column",
+
+                            // Gets or sets a value indicating whether to use a row from the 
+                            // data as column names.
+                            UseHeaderRow = true,
+
+                            // Gets or sets a callback to determine which row is the header row. 
+                            // Only called when UseHeaderRow = true.
+                            ReadHeaderRow = (rowReader) => {
+                                // F.ex skip the first row and use the 2nd row as column headers:
+                                rowReader.Read();
+                            },
+
+                            // Gets or sets a callback to determine whether to include the 
+                            // current row in the DataTable.
+                            FilterRow = (rowReader) => {
+                                return true;
+                            },
+                           
+                       }                    
+                   });
+                    reader.Close();
+                }
+            }
+
+            DataSet tablesDataset = results;
+            DataTable dataTable = results.Tables[0];
+
+            FrmImportedData frm = new FrmImportedData(dataTable, tablesDataset);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //logic
+            }
         }
     }
 }

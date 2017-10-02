@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportsUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHCD = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlBtnImport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelWithDashDate = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -61,7 +61,6 @@
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeOfLearningDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBasicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.openFileDialogImport = new System.Windows.Forms.OpenFileDialog();
             this.panelHCD.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelWithDashDate.SuspendLayout();
@@ -88,47 +87,47 @@
             // 
             this.panel2.AutoSize = true;
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.Controls.Add(this.bunifuFlatButton1);
+            this.panel2.Controls.Add(this.bunifuFlBtnImport);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(664, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(134, 66);
             this.panel2.TabIndex = 2;
             // 
-            // bunifuFlatButton1
+            // bunifuFlBtnImport
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 5;
-            this.bunifuFlatButton1.ButtonText = "   Import";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage_Selected")));
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 40D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(19, 12);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(142)))), ((int)(((byte)(107)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(112, 36);
-            this.bunifuFlatButton1.TabIndex = 1;
-            this.bunifuFlatButton1.Text = "   Import";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.bunifuFlBtnImport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlBtnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlBtnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlBtnImport.BorderRadius = 5;
+            this.bunifuFlBtnImport.ButtonText = "   Import";
+            this.bunifuFlBtnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlBtnImport.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlBtnImport.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlBtnImport.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlBtnImport.Iconimage")));
+            this.bunifuFlBtnImport.Iconimage_right = null;
+            this.bunifuFlBtnImport.Iconimage_right_Selected = null;
+            this.bunifuFlBtnImport.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFlBtnImport.Iconimage_Selected")));
+            this.bunifuFlBtnImport.IconMarginLeft = 0;
+            this.bunifuFlBtnImport.IconMarginRight = 0;
+            this.bunifuFlBtnImport.IconRightVisible = true;
+            this.bunifuFlBtnImport.IconRightZoom = 0D;
+            this.bunifuFlBtnImport.IconVisible = true;
+            this.bunifuFlBtnImport.IconZoom = 40D;
+            this.bunifuFlBtnImport.IsTab = false;
+            this.bunifuFlBtnImport.Location = new System.Drawing.Point(19, 12);
+            this.bunifuFlBtnImport.Name = "bunifuFlBtnImport";
+            this.bunifuFlBtnImport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlBtnImport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(142)))), ((int)(((byte)(107)))));
+            this.bunifuFlBtnImport.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlBtnImport.selected = false;
+            this.bunifuFlBtnImport.Size = new System.Drawing.Size(112, 36);
+            this.bunifuFlBtnImport.TabIndex = 1;
+            this.bunifuFlBtnImport.Text = "   Import";
+            this.bunifuFlBtnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlBtnImport.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlBtnImport.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlBtnImport.Click += new System.EventHandler(this.bunifuFlBtnImport_Click);
             // 
             // panelWithDashDate
             // 
@@ -284,20 +283,20 @@
             // bunifuCustomDataGridStudentRecords
             // 
             this.bunifuCustomDataGridStudentRecords.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGridStudentRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGridStudentRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.bunifuCustomDataGridStudentRecords.AutoGenerateColumns = false;
             this.bunifuCustomDataGridStudentRecords.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridStudentRecords.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridStudentRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridStudentRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridStudentRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.bunifuCustomDataGridStudentRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGridStudentRecords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.adminNoDataGridViewTextBoxColumn,
@@ -321,15 +320,15 @@
             this.bunifuCustomDataGridStudentRecords.ReadOnly = true;
             this.bunifuCustomDataGridStudentRecords.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomDataGridStudentRecords.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridStudentRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridStudentRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.bunifuCustomDataGridStudentRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGridStudentRecords.Size = new System.Drawing.Size(798, 417);
             this.bunifuCustomDataGridStudentRecords.TabIndex = 9;
@@ -338,9 +337,9 @@
             // 
             // DelImg
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.DelImg.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
+            this.DelImg.DefaultCellStyle = dataGridViewCellStyle8;
             this.DelImg.Frozen = true;
             this.DelImg.HeaderText = "";
             this.DelImg.Image = ((System.Drawing.Image)(resources.GetObject("DelImg.Image")));
@@ -351,11 +350,11 @@
             // 
             // Deletes
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Deletes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.Deletes.DefaultCellStyle = dataGridViewCellStyle9;
             this.Deletes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Deletes.HeaderText = "";
             this.Deletes.Name = "Deletes";
@@ -434,10 +433,6 @@
             // 
             this.studentBasicBindingSource.DataSource = typeof(eSchool.Student_Basic);
             // 
-            // openFileDialogImport
-            // 
-            this.openFileDialogImport.FileName = "openFileDialog1";
-            // 
             // ImportsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,7 +471,7 @@
         private System.Windows.Forms.Panel panelT2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlBtnImport;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuBtnEdit;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuBtnAddNew;
         private System.Windows.Forms.Panel panel3;
@@ -495,6 +490,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modeOfLearningDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn DelImg;
         private System.Windows.Forms.DataGridViewButtonColumn Deletes;
-        private System.Windows.Forms.OpenFileDialog openFileDialogImport;
     }
 }

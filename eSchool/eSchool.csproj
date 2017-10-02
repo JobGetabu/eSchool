@@ -44,6 +44,10 @@
       <HintPath>..\packages\ExcelDataReader.3.2.0\lib\net45\ExcelDataReader.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.2.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.2.0\lib\net45\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroModernUI\1.4.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>

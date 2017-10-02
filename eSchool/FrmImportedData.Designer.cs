@@ -38,6 +38,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelGrid = new System.Windows.Forms.Panel();
             this.bCGridImportData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.metroCBSheets = new MetroFramework.Controls.MetroComboBox();
+            this.bFClose = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelGrid.SuspendLayout();
@@ -54,6 +57,8 @@
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.bFClose);
+            this.bunifuGradientPanel1.Controls.Add(this.metroCBSheets);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,7 +69,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(753, 60);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(838, 60);
             this.bunifuGradientPanel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -95,7 +100,7 @@
             this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrid.Location = new System.Drawing.Point(0, 60);
             this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(753, 447);
+            this.panelGrid.Size = new System.Drawing.Size(838, 447);
             this.panelGrid.TabIndex = 2;
             // 
             // bCGridImportData
@@ -122,20 +127,81 @@
             this.bCGridImportData.Location = new System.Drawing.Point(0, 0);
             this.bCGridImportData.Name = "bCGridImportData";
             this.bCGridImportData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bCGridImportData.Size = new System.Drawing.Size(753, 447);
+            this.bCGridImportData.Size = new System.Drawing.Size(838, 447);
             this.bCGridImportData.TabIndex = 0;
+            // 
+            // metroCBSheets
+            // 
+            this.metroCBSheets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(214)))));
+            this.metroCBSheets.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.metroCBSheets.FormattingEnabled = true;
+            this.metroCBSheets.ItemHeight = 23;
+            this.metroCBSheets.Location = new System.Drawing.Point(455, 17);
+            this.metroCBSheets.Name = "metroCBSheets";
+            this.metroCBSheets.PromptText = "Sheets";
+            this.metroCBSheets.Size = new System.Drawing.Size(236, 29);
+            this.metroCBSheets.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroCBSheets.TabIndex = 4;
+            this.metroCBSheets.UseCustomBackColor = true;
+            this.metroCBSheets.UseCustomForeColor = true;
+            this.metroCBSheets.UseSelectable = true;
+            this.metroCBSheets.UseStyleColors = true;
+            this.metroCBSheets.SelectedIndexChanged += new System.EventHandler(this.metroCBSheets_SelectedIndexChanged);
+            // 
+            // bFClose
+            // 
+            this.bFClose.Activecolor = System.Drawing.Color.Transparent;
+            this.bFClose.BackColor = System.Drawing.Color.Transparent;
+            this.bFClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bFClose.BorderRadius = 0;
+            this.bFClose.ButtonText = "Close";
+            this.bFClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFClose.DisabledColor = System.Drawing.Color.Gray;
+            this.bFClose.Iconcolor = System.Drawing.Color.Transparent;
+            this.bFClose.Iconimage = ((System.Drawing.Image)(resources.GetObject("bFClose.Iconimage")));
+            this.bFClose.Iconimage_right = null;
+            this.bFClose.Iconimage_right_Selected = null;
+            this.bFClose.Iconimage_Selected = null;
+            this.bFClose.IconMarginLeft = 10;
+            this.bFClose.IconMarginRight = 0;
+            this.bFClose.IconRightVisible = true;
+            this.bFClose.IconRightZoom = 0D;
+            this.bFClose.IconVisible = true;
+            this.bFClose.IconZoom = 70D;
+            this.bFClose.IsTab = false;
+            this.bFClose.Location = new System.Drawing.Point(740, 17);
+            this.bFClose.Name = "bFClose";
+            this.bFClose.Normalcolor = System.Drawing.Color.Transparent;
+            this.bFClose.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(167)))), ((int)(((byte)(179)))));
+            this.bFClose.OnHoverTextColor = System.Drawing.Color.White;
+            this.bFClose.selected = false;
+            this.bFClose.Size = new System.Drawing.Size(94, 29);
+            this.bFClose.TabIndex = 5;
+            this.bFClose.Text = "Close";
+            this.bFClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bFClose.Textcolor = System.Drawing.Color.White;
+            this.bFClose.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bFClose.Click += new System.EventHandler(this.bFClose_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FrmImportedData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 507);
+            this.ClientSize = new System.Drawing.Size(838, 507);
             this.Controls.Add(this.panelGrid);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmImportedData";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ImportedData";
+            this.Load += new System.EventHandler(this.FrmImportedData_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -153,5 +219,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panelGrid;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bCGridImportData;
+        private MetroFramework.Controls.MetroComboBox metroCBSheets;
+        private Bunifu.Framework.UI.BunifuFlatButton bFClose;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
