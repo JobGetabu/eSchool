@@ -239,7 +239,9 @@
             this.metroTbAdminNo.MaxLength = 32767;
             this.metroTbAdminNo.Name = "metroTbAdminNo";
             this.metroTbAdminNo.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbAdminNo.PromptText = "Administration Number";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbAdminNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbAdminNo.SelectedText = "";
             this.metroTbAdminNo.SelectionLength = 0;
@@ -274,7 +276,9 @@
             this.metroTbFName.MaxLength = 32767;
             this.metroTbFName.Name = "metroTbFName";
             this.metroTbFName.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbFName.PromptText = "First Name";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbFName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbFName.SelectedText = "";
             this.metroTbFName.SelectionLength = 0;
@@ -309,7 +313,9 @@
             this.metroTbLName.MaxLength = 32767;
             this.metroTbLName.Name = "metroTbLName";
             this.metroTbLName.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbLName.PromptText = "Last Name";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbLName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbLName.SelectedText = "";
             this.metroTbLName.SelectionLength = 0;
@@ -344,7 +350,9 @@
             this.metroTbMName.MaxLength = 32767;
             this.metroTbMName.Name = "metroTbMName";
             this.metroTbMName.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbMName.PromptText = "Middle Name";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbMName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbMName.SelectedText = "";
             this.metroTbMName.SelectionLength = 0;
@@ -379,7 +387,9 @@
             this.metroTbClass.MaxLength = 32767;
             this.metroTbClass.Name = "metroTbClass";
             this.metroTbClass.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbClass.PromptText = "Class";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbClass.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbClass.SelectedText = "";
             this.metroTbClass.SelectionLength = 0;
@@ -414,7 +424,9 @@
             this.metroTbForm.MaxLength = 32767;
             this.metroTbForm.Name = "metroTbForm";
             this.metroTbForm.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbForm.PromptText = "Form";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbForm.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbForm.SelectedText = "";
             this.metroTbForm.SelectionLength = 0;
@@ -466,7 +478,9 @@
             this.metroTextBox8.MaxLength = 32767;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTextBox8.PromptText = "Form";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTextBox8.ReadOnly = true;
             this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox8.SelectedText = "";

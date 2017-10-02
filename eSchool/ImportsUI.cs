@@ -37,6 +37,7 @@ namespace eSchool
             using (var context = new EschoolEntities())
             {
                 studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
+               
             }
         }
 
@@ -60,6 +61,10 @@ namespace eSchool
 
         private void bunifuBtnEdit_Click(object sender, EventArgs e)
         {
+            if (studentBasicBindingSource.Current == null)
+            {
+                return;
+            }
             Student_Basic obj = studentBasicBindingSource.Current as Student_Basic;
             FrmAddStudent frm = new FrmAddStudent(obj);
             if (frm.ShowDialog() == DialogResult.OK)

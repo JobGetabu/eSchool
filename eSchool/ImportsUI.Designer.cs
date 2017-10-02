@@ -50,6 +50,8 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGridStudentRecords = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.DelImg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Deletes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.adminNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +60,8 @@
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeOfLearningDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DelImg = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Deletes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.studentBasicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.openFileDialogImport = new System.Windows.Forms.OpenFileDialog();
             this.panelHCD.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelWithDashDate.SuspendLayout();
@@ -335,6 +336,34 @@
             this.bunifuCustomDataGridStudentRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid2_CellContentClick);
             this.bunifuCustomDataGridStudentRecords.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.bunifuCustomDataGrid2_CellPainting);
             // 
+            // DelImg
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.DelImg.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DelImg.Frozen = true;
+            this.DelImg.HeaderText = "";
+            this.DelImg.Image = ((System.Drawing.Image)(resources.GetObject("DelImg.Image")));
+            this.DelImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.DelImg.Name = "DelImg";
+            this.DelImg.ReadOnly = true;
+            this.DelImg.Width = 50;
+            // 
+            // Deletes
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Deletes.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Deletes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Deletes.HeaderText = "";
+            this.Deletes.Name = "Deletes";
+            this.Deletes.ReadOnly = true;
+            this.Deletes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deletes.Text = "Delete";
+            this.Deletes.UseColumnTextForButtonValue = true;
+            // 
             // adminNoDataGridViewTextBoxColumn
             // 
             this.adminNoDataGridViewTextBoxColumn.DataPropertyName = "Admin_No";
@@ -401,37 +430,13 @@
             this.modeOfLearningDataGridViewTextBoxColumn.ReadOnly = true;
             this.modeOfLearningDataGridViewTextBoxColumn.Width = 150;
             // 
-            // DelImg
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.DelImg.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DelImg.Frozen = true;
-            this.DelImg.HeaderText = "";
-            this.DelImg.Image = ((System.Drawing.Image)(resources.GetObject("DelImg.Image")));
-            this.DelImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DelImg.Name = "DelImg";
-            this.DelImg.ReadOnly = true;
-            this.DelImg.Width = 50;
-            // 
-            // Deletes
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Deletes.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Deletes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Deletes.HeaderText = "";
-            this.Deletes.Name = "Deletes";
-            this.Deletes.ReadOnly = true;
-            this.Deletes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Deletes.Text = "Delete";
-            this.Deletes.UseColumnTextForButtonValue = true;
-            // 
             // studentBasicBindingSource
             // 
             this.studentBasicBindingSource.DataSource = typeof(eSchool.Student_Basic);
+            // 
+            // openFileDialogImport
+            // 
+            this.openFileDialogImport.FileName = "openFileDialog1";
             // 
             // ImportsUI
             // 
@@ -490,5 +495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modeOfLearningDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn DelImg;
         private System.Windows.Forms.DataGridViewButtonColumn Deletes;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImport;
     }
 }

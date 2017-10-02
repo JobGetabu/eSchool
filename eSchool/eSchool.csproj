@@ -40,6 +40,10 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ExcelDataReader, Version=3.2.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.2.0\lib\net45\ExcelDataReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroModernUI\1.4.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -62,6 +66,7 @@
       <HintPath>.\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -134,6 +139,12 @@
     </Compile>
     <Compile Include="FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImportedData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImportedData.Designer.cs">
+      <DependentUpon>FrmImportedData.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
@@ -227,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImportedData.resx">
+      <DependentUpon>FrmImportedData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
