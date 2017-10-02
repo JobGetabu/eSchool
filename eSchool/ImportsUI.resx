@@ -118,6 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuFBGetTempate.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADZSURBVFhH7ZNBDoIwFER7BFZigguPR6I3dasu3HiUOtPOb1BkoQUW+l/yQ38LM9MCwXFqiELt
+        +sjfA3gAD+AB/iAAPHrURm0huQO1BUy1qF5tHRA60gScUa2mE3n6OQBaml/SQowHTX8PRBrUKcnFeEN1
+        WhoFwLBD8R7CZxot1UEhCZISIrc5AC471PzmBgUlTGhEQ2OPuufhAuYGhPl++S2Qq67ExlwbfayzAoPh
+        SQxZbuev0EiGxnrmBgztd1v+2KeA8ZZB1P4g2N0sSO5z9Hw1knOcN4TwAAckD640LDAOAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="bunifuFBGetTempate.Iconimage_Selected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA3JJREFUaEPd
+        mk2ITWEYx2eMYWFIY+GjlA0b+cjHio3ylZKV0pAFpdhI2dnIRllho1ko2ZCsUBYWNGSnUDZC4/trg4iQ
+        8Xuf85/r3HPPuffM+7733Bm/+i/+z/O8z3OemXtnzv3oaicjIyOT0EK0HR1H19FbNKSS8QcXNwWtQHvQ
+        aXQbfUG56Fhn4TrmoK3oKLqK3qAxoVbVwDz30FiMdqNT6AYa80XnoRHxofdUtBbtQ+6i76DPqC1obDzo
+        eQA1fTy3A42PBz1/Ja2rRePd/BCeoi0xGnljw0E2hOFYjbyw4SAbRLRGPthwkA0iWiMfbDjIBhGtkQ82
+        HGSDiNbIBxsOskFEa+SDDU+hcEM8i8rqKExUgQ1PoXBbFvmILmV0DRXxBGXr36FcbDjIBtGq0W+03IpS
+        ELtr2Xr+oNUqMfBLUeFdg8oqWcThbhy7rVDgt1mmnstKG/hu5O7fClFpZYs4dlihwLuLfGiZhJ9okdIG
+        fpdlmqDSShd5iaZZscDvtEzCoMIGfiYqfG6MovJKF3Ecs2KB70GP0Vc0V2ED717mtkTlNRRuiGdRWR2F
+        iRy+ofl2QOAPoTOyBn4JKvWyQEdqKNz2RRwX7YDAz0arZJ13z50hVAodG8v8QnwabbJDOZDbm5SUQ8c6
+        tsh91GMHUxAr9QRPo6MdW+QB6rWDKYj1oeeuoCw62pFF3P+LZXYoB3KbraokOtaRRU7aAYHfgPplDbx7
+        s64UOlJD4YZ4FpXVUZjIYRj12QGBv4D2yxr4Bcj9qW6JjtRQuK2LuBvCdVYs8CsVf4+mK2zgD6OWqLzM
+        /JaUbXTOClMQu5mkjCMKG/jJyP11a4rKK1vE/cSzz4ONlvnHJzRLaQO/BrnfWCEqrWyRASsSePemdt5P
+        +4RKahA7m6TyUVkli1yxghTEBpJUA99R9l6sH31wyTxUVski7kVV9qXra1TEPZStf4ZyseEgG0S0Rj7Y
+        8BQKN8SzqKyOwkQV2PAUCk/cRWSDiNbIBxsOskFEa+SDDQfZIKI18sGGg2wQ0Rr5YMNBNohojXyw4SAb
+        wovRRhP5w9BXqPZh6P/x8XQa+s9D69FBdB49Qk3vYn3RyOpg5gzkvhHhlhtE7h7sBwpC7TsL19GL0t9R
+        ccu5t09Lo1bjE67PPTTT3xpq+UHPhIDrLfri2S2VRKKr6y/q9iP5piQT5gAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="bunifuFlBtnImport.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA5RJREFUaEPt
@@ -239,7 +269,7 @@
   <metadata name="DelImg.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dataGridViewCellStyle8.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="dataGridViewCellStyle3.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
