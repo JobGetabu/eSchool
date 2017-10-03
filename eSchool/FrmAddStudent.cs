@@ -51,21 +51,23 @@ namespace eSchool
                 if (obj.Gender == "M")
                 {
                     metroComboGender.SelectedIndex = 0;
+                    metroComboGender.SelectedItem = "Male";
                 }
-                else
+                else if (obj.Gender == "F")
                 {
                     metroComboGender.SelectedIndex = 1;
+                    metroComboGender.SelectedItem  = "Female";
                 }
-                if (obj.ModeOfLearning == "Bording")
+                if (obj.ModeOfLearning.Equals("Bording") || obj.ModeOfLearning.Equals("bording") || obj.ModeOfLearning.Equals("BOARDING"))
                 {
                     metroComboGender.SelectedIndex = 0;
+                    metroComboGender.SelectedItem = "Boarding";
                 }
-                else
+                else if (obj.ModeOfLearning.Equals("Day") || obj.ModeOfLearning.Equals("DAY") || obj.ModeOfLearning.Equals("day"))
                 {
                     metroComboGender.SelectedIndex = 1;
+                    metroComboGender.SelectedItem = "Day";
                 }
-
-                db.Student_Basic.Attach(obj);
             }
 
         }

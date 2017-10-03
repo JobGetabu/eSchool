@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExcelDataReader;
 using System.IO;
+using MetroFramework;
 
 namespace eSchool
 {
@@ -16,8 +17,6 @@ namespace eSchool
     {
         //Singleton pattern ***best practices***
         private static ImportsUI _instance;
-        private int rowIndex;
-
         public static ImportsUI Instance
         {
             get
@@ -34,12 +33,13 @@ namespace eSchool
             InitializeComponent();
         }
 
+        //conserve con resources 
+       // EschoolEntities context = new EschoolEntities();
         private void ImportsUI_Load(object sender, EventArgs e)
         {
             using (var context = new EschoolEntities())
             {
                 studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
-
             }
         }
 
@@ -106,16 +106,24 @@ namespace eSchool
 
         private void bunifuCustomDataGrid2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //this.bunifuCustomDataGridStudentRecords.Rows[e.RowIndex].Selected = true;
-            //this.rowIndex = e.RowIndex;
-            //this.bunifuCustomDataGridStudentRecords.CurrentCell = this.bunifuCustomDataGridStudentRecords.Rows[e.RowIndex].Cells[1];
+            var senderGrid = (DataGridView)sender;
 
-            //if (!bunifuCustomDataGridStudentRecords.Rows[rowIndex].IsNewRow)
-            //{
-            //    bunifuCustomDataGridStudentRecords.Rows.RemoveAt(rowIndex);
-            //}
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                //TODO - Button Clicked - Execute Code Here
+                using (var context = new EschoolEntities())
+                {
 
-            //locate only delete cell
+                    if ((MetroMessageBox.Show(this, "Are you sure you want to delete this record? ", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Information)) == DialogResult.Yes)
+                    {
+                        context.Entry<Student_Basic>(studentBasicBindingSource.Current as Student_Basic).State = EntityState.Deleted;
+                        context.SaveChanges();
+                        studentBasicBindingSource.RemoveCurrent();
+                        studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
+                    }
+                }
+            }
         }
 
         DataSet results;
@@ -126,13 +134,22 @@ namespace eSchool
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    FileStream fs = null;
+                    try
+                    {
+                        fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    }
+                    catch (IOException exp)
+                    {
+                        MetroMessageBox.Show(this, "File is open in another program", "Try Again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
                     IExcelDataReader reader;
 
-                    if (ofd.FilterIndex==1)
+                    if (ofd.FilterIndex == 1)
                     {
-                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);               
-                       
+                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+
                     }
                     else
                     {
@@ -140,7 +157,8 @@ namespace eSchool
                     }
 
 
-                    results = reader.AsDataSet(new ExcelDataSetConfiguration() {
+                    results = reader.AsDataSet(new ExcelDataSetConfiguration()
+                    {
 
                         // Gets or sets a value indicating whether to set the DataColumn.DataType 
                         // property in a second pass.
@@ -159,19 +177,21 @@ namespace eSchool
 
                             // Gets or sets a callback to determine which row is the header row. 
                             // Only called when UseHeaderRow = true.
-                            ReadHeaderRow = (rowReader) => {
+                            ReadHeaderRow = (rowReader) =>
+                            {
                                 // F.ex skip the first row and use the 2nd row as column headers:
                                 rowReader.Read();
                             },
 
                             // Gets or sets a callback to determine whether to include the 
                             // current row in the DataTable.
-                            FilterRow = (rowReader) => {
+                            FilterRow = (rowReader) =>
+                            {
                                 return true;
                             },
-                           
-                       }                    
-                   });
+
+                        }
+                    });
                     reader.Close();
                 }
             }
@@ -183,7 +203,11 @@ namespace eSchool
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                //logic
+                //logic              
+            }
+            using (var context = new EschoolEntities())
+            {
+                studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
             }
         }
     }
