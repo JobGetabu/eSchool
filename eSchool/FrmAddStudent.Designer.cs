@@ -253,6 +253,7 @@
             this.metroTbAdminNo.WaterMark = "Administration Number";
             this.metroTbAdminNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTbAdminNo.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTbAdminNo.Enter += new System.EventHandler(this.toolTip);
             // 
             // metroTbFName
             // 
@@ -288,6 +289,7 @@
             this.metroTbFName.WaterMark = "First Name";
             this.metroTbFName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTbFName.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTbFName.Enter += new System.EventHandler(this.toolTip);
             // 
             // metroTbLName
             // 
@@ -323,6 +325,7 @@
             this.metroTbLName.WaterMark = "Last Name";
             this.metroTbLName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTbLName.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTbLName.Enter += new System.EventHandler(this.toolTip);
             // 
             // metroTbMName
             // 
@@ -358,6 +361,7 @@
             this.metroTbMName.WaterMark = "Middle Name";
             this.metroTbMName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTbMName.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTbMName.Enter += new System.EventHandler(this.toolTip);
             // 
             // metroTbClass
             // 
@@ -393,6 +397,7 @@
             this.metroTbClass.WaterMark = "Class";
             this.metroTbClass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTbClass.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTbClass.Enter += new System.EventHandler(this.toolTip);
             // 
             // metroTbForm
             // 
@@ -428,6 +433,7 @@
             this.metroTbForm.WaterMark = "Form";
             this.metroTbForm.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTbForm.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTbForm.Enter += new System.EventHandler(this.toolTip);
             // 
             // metroComboGender
             // 

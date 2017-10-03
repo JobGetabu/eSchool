@@ -202,5 +202,16 @@ namespace eSchool
 
             }
         }
+
+      
+
+        void toolTip(Object sender,EventArgs e)
+        {
+            MetroFramework.Controls.MetroTextBox TB = (MetroFramework.Controls.MetroTextBox)sender;
+            int VisibleTime = 1000;  //in milliseconds
+
+            ToolTip tt = new ToolTip();
+            tt.Show(TB.WaterMark.ToString(), TB, 0, 0, VisibleTime);
+        }
     }
 }

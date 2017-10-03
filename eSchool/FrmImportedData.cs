@@ -60,6 +60,7 @@ namespace eSchool
                             MetroMessageBox.Show(this, "One or more records already exists", "update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             dr.Cells["ADMIN NO"].Selected = true;
+                           
                             dr.Cells["ADMIN NO"].ToolTipText = "This record exists in the database";
                             return;
                         }
