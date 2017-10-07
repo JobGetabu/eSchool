@@ -29,6 +29,9 @@
         <AssociationConnector Association="EschoolModel.FK_Term_Ov" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Year_Ov" ManuallyRouted="false" />
         <EntityTypeShape EntityType="EschoolModel.Category" Width="1.5" PointX="5" PointY="3.75" />
+        <EntityTypeShape EntityType="EschoolModel.FeeStructure" Width="1.5" PointX="6.875" PointY="3.75" />
+        <AssociationConnector Association="EschoolModel.Term_FK" />
+        <AssociationConnector Association="EschoolModel.Year_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

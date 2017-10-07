@@ -59,6 +59,16 @@
           <Property Name="FeeRequired" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="FeeStructures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Details" Type="nvarchar" MaxLength="100" />
+          <Property Name="Term" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Form" Type="int" />
+        </EntityType>
         <EntityType Name="Income">
           <Key>
             <PropertyRef Name="IncomeId" />
@@ -96,6 +106,7 @@
           <Property Name="Amount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Form" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="SchoolPeriodTerm">
           <Key>
@@ -276,12 +287,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Term_FK">
+          <End Role="SchoolPeriodTerm" Type="Self.SchoolPeriodTerm" Multiplicity="0..1" />
+          <End Role="FeeStructures" Type="Self.FeeStructures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchoolPeriodTerm">
+              <PropertyRef Name="Term" />
+            </Principal>
+            <Dependent Role="FeeStructures">
+              <PropertyRef Name="Term" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Year_FK">
+          <End Role="SchoolPeriodYear" Type="Self.SchoolPeriodYear" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FeeStructures" Type="Self.FeeStructures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchoolPeriodYear">
+              <PropertyRef Name="Year" />
+            </Principal>
+            <Dependent Role="FeeStructures">
+              <PropertyRef Name="Year" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EschoolModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" store:Type="Tables" />
           <EntitySet Name="FeeRequiredPerYear" EntityType="Self.FeeRequiredPerYear" store:Type="Tables" />
           <EntitySet Name="Fees" EntityType="Self.Fees" store:Type="Tables" />
           <EntitySet Name="FeesRequiredPerTerm" EntityType="Self.FeesRequiredPerTerm" store:Type="Tables" />
+          <EntitySet Name="FeeStructures" EntityType="Self.FeeStructures" store:Type="Tables" />
           <EntitySet Name="Income" EntityType="Self.Income" store:Type="Tables" />
           <EntitySet Name="Login_Users" EntityType="Self.Login_Users" store:Type="Tables" />
           <EntitySet Name="OverHeadCategory" EntityType="Self.OverHeadCategory" store:Type="Tables" />
@@ -336,6 +374,14 @@
           <AssociationSet Name="FK_Year_Ov" Association="Self.FK_Year_Ov">
             <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYear" />
             <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYear" />
+          </AssociationSet>
+          <AssociationSet Name="Term_FK" Association="Self.Term_FK">
+            <End Role="SchoolPeriodTerm" EntitySet="SchoolPeriodTerm" />
+            <End Role="FeeStructures" EntitySet="FeeStructures" />
+          </AssociationSet>
+          <AssociationSet Name="Year_FK" Association="Self.Year_FK">
+            <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYear" />
+            <End Role="FeeStructures" EntitySet="FeeStructures" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -437,6 +483,7 @@
           <Property Name="Year" Type="Int32" Nullable="false" />
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Ov" FromRole="OverHeadCategoryPerYear" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Ov" FromRole="OverHeadCategoryPerYear" ToRole="SchoolPeriodYear" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SchoolPeriodTerm">
           <Key>
@@ -448,6 +495,7 @@
           <NavigationProperty Name="FeesRequiredPerTerms" Relationship="Self.FK_Term_FrqT" FromRole="SchoolPeriodTerm" ToRole="FeesRequiredPerTerm" />
           <NavigationProperty Name="Incomes" Relationship="Self.FK_Term_Income" FromRole="SchoolPeriodTerm" ToRole="Income" />
           <NavigationProperty Name="OverHeadCategoryPerYears" Relationship="Self.FK_Term_Ov" FromRole="SchoolPeriodTerm" ToRole="OverHeadCategoryPerYear" />
+          <NavigationProperty Name="FeeStructures" Relationship="EschoolModel.Term_FK" FromRole="SchoolPeriodTerm" ToRole="FeeStructure" />
         </EntityType>
         <EntityType Name="SchoolPeriodYear">
           <Key>
@@ -460,6 +508,7 @@
           <NavigationProperty Name="FeesRequiredPerTerms" Relationship="Self.FK_Year_FrqT" FromRole="SchoolPeriodYear" ToRole="FeesRequiredPerTerm" />
           <NavigationProperty Name="Incomes" Relationship="Self.FK_Year_Income" FromRole="SchoolPeriodYear" ToRole="Income" />
           <NavigationProperty Name="OverHeadCategoryPerYears" Relationship="Self.FK_Year_Ov" FromRole="SchoolPeriodYear" ToRole="OverHeadCategoryPerYear" />
+          <NavigationProperty Name="FeeStructures" Relationship="EschoolModel.Year_FK" FromRole="SchoolPeriodYear" ToRole="FeeStructure" />
         </EntityType>
         <EntityType Name="Student_Basic">
           <Key>
@@ -690,6 +739,15 @@
             <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYears" />
           </AssociationSet>
           <EntitySet Name="Categories" EntityType="EschoolModel.Category" />
+          <EntitySet Name="FeeStructures" EntityType="EschoolModel.FeeStructure" />
+          <AssociationSet Name="Term_FK" Association="EschoolModel.Term_FK">
+            <End Role="SchoolPeriodTerm" EntitySet="SchoolPeriodTerms" />
+            <End Role="FeeStructure" EntitySet="FeeStructures" />
+          </AssociationSet>
+          <AssociationSet Name="Year_FK" Association="EschoolModel.Year_FK">
+            <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYears" />
+            <End Role="FeeStructure" EntitySet="FeeStructures" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -699,6 +757,44 @@
           <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="FeeStructure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Details" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Term" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <NavigationProperty Name="SchoolPeriodTerm" Relationship="EschoolModel.Term_FK" FromRole="FeeStructure" ToRole="SchoolPeriodTerm" />
+          <NavigationProperty Name="SchoolPeriodYear" Relationship="EschoolModel.Year_FK" FromRole="FeeStructure" ToRole="SchoolPeriodYear" />
+          <Property Name="Form" Type="Int32" />
+        </EntityType>
+        <Association Name="Term_FK">
+          <End Type="EschoolModel.SchoolPeriodTerm" Role="SchoolPeriodTerm" Multiplicity="0..1" />
+          <End Type="EschoolModel.FeeStructure" Role="FeeStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchoolPeriodTerm">
+              <PropertyRef Name="Term" />
+            </Principal>
+            <Dependent Role="FeeStructure">
+              <PropertyRef Name="Term" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Year_FK">
+          <End Type="EschoolModel.SchoolPeriodYear" Role="SchoolPeriodYear" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EschoolModel.FeeStructure" Role="FeeStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SchoolPeriodYear">
+              <PropertyRef Name="Year" />
+            </Principal>
+            <Dependent Role="FeeStructure">
+              <PropertyRef Name="Year" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -789,6 +885,7 @@
           <EntitySetMapping Name="OverHeadCategoryPerYears">
             <EntityTypeMapping TypeName="EschoolModel.OverHeadCategoryPerYear">
               <MappingFragment StoreEntitySet="OverHeadCategoryPerYear">
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -830,6 +927,17 @@
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeeStructures">
+            <EntityTypeMapping TypeName="EschoolModel.FeeStructure">
+              <MappingFragment StoreEntitySet="FeeStructures">
+                <ScalarProperty Name="Form" ColumnName="Form" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

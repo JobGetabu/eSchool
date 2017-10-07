@@ -117,36 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bTBtnChangeYear.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJIAAAAuCAYAAADDc0CAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKNSURBVHhe7Zy/axNxGIf9i9ycnJzculQQxEE7qKDiD7BQ
-        7NCpQxVapUaEiIISK60atLSDFmI1VKpgtVQlSAPSFNpSLTVD0OG1n7trasg15uK75XngA4HkbrmH3HvH
-        9/Pds1muGCH/G0QiLkEk4hJEIi5BJOISRCIuaSjS2sZPezyXs4vZQTuW6bODt07b3iuHSZtE11vX/eyj
-        ARt598KWv6/HeqLsKtLzT7PBiS49vWaTn/P29tuClTZWDdoHXW9d96nCrPVOprZ8OBMIFedLnUiyrmd8
-        2E6N9tta+Ud0SgCzzUrZeidSduJhvxVXV2q8qRFJEnXe7bbsfC46FKCe14vv7cj9y1ZYXooXSf9ESATN
-        oFue5qc6kTQT6XYG0CxD0xm7+WpsRyQ9nWmwZiaCJFR+/7JDW6PQ/FIxFEmTuKZygKTcfpO1gal7oUh6
-        T6BHPICkfFkpWued7lCkjvR5W1wvRV8BNI9ub/sGj4Yi7b/eFbwjAGgFvQUPRNIHgFZBJHABkcAFRAIX
-        EAlcQCRwAZHABUQCFxAJXEAkcAGRwAVEAhcQCVyoiqRlAFoOANAKVZG0zJbOGrRKVST1lFQxAUiKFkRq
-        YWQgUmp6LGgEACRF9bWeZ8OhSCq6daQvMCdBYs49uWrjH/OhSMpQbsRS+dHoa4B/oz0htMGI/KmKpG7b
-        8UyffSgVop8B7I46kJqNtncoqYqkqOimwhuNEmiEJOp60GcvC3NVd2pEUma+LgQbSaRnstFhADuo/6h/
-        or8lUupEUnSbU3tS1mkqp8rd3qiqpnlIe2WpTBu34VasSNuRdXq0O3DjZPDSibRn1HvUUK3d++I8URqK
-        REizQSTiEkQiLkEk4hJEIg6p2B/ssznJNRhx0QAAAABJRU5ErkJggg==
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="eschool_students" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>eschool_students.xltx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAIVJREFUWEft
-        jLENADEQwrL/0v8NdEiH4pRniQ77LEvJd7lnpHizK1LIa0muN5IkryW53kg61rJADSQL1ECyQA0kC9RA
-        skANJAvUQLJADSQL1ECyQA0kC9RAskANJAvUQLJADSQL1ECyQA0kC9TwMa0lud5IkryW5HpXpFCzZ6R4
-        s2UZOOcHi2LvEVQvaZwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="overHeadCategoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>51</value>
-  </metadata>
 </root>

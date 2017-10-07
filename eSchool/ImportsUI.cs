@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ExcelDataReader;
 using System.IO;
 using MetroFramework;
+using System.Reflection;
 
 namespace eSchool
 {
@@ -34,7 +35,7 @@ namespace eSchool
         }
 
         //conserve con resources 
-       // EschoolEntities context = new EschoolEntities();
+        // EschoolEntities context = new EschoolEntities();
         private void ImportsUI_Load(object sender, EventArgs e)
         {
             using (var context = new EschoolEntities())
@@ -139,7 +140,7 @@ namespace eSchool
                     {
                         fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
                     }
-                    catch (IOException exp)
+                    catch (IOException)
                     {
                         MetroMessageBox.Show(this, "File is open in another program", "Try Again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
@@ -196,18 +197,59 @@ namespace eSchool
                 }
             }
 
-            DataSet tablesDataset = results;
-            DataTable dataTable = results.Tables[0];
-
-            FrmImportedData frm = new FrmImportedData(dataTable, tablesDataset);
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (results != null)
             {
-                //logic              
+
+                DataSet tablesDataset = results;
+                DataTable dataTable = results.Tables[0];
+
+                FrmImportedData frm = new FrmImportedData(dataTable, tablesDataset);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    //logic              
+                }
+
+                using (var context = new EschoolEntities())
+                {
+                    studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
+                }
             }
-            using (var context = new EschoolEntities())
+        }
+
+        private void bunifuFBGetTempate_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog()
             {
-                studentBasicBindingSource.DataSource = context.Student_Basic.OrderBy(s => s.Admin_No).ToList();
+                Filter = "Excel Template|*.xltx",
+                ValidateNames = true,
+                FileName = "eSchoolTemplate",
+                OverwritePrompt = true,
+                Title = "Save eschool Template"
+            })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        File.WriteAllBytes(sfd.FileName, eSchoolResources.eschool_students);
+
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
+                }
+            }
+        }
+
+        public void WriteResourceToFile(string resourceName, string fileName)
+        {
+            using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+            {
+                using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+                {
+                    resource.CopyTo(file);
+                }
             }
         }
     }

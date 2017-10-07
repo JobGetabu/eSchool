@@ -21,6 +21,7 @@ namespace eSchool
             this.FeesRequiredPerTerms = new HashSet<FeesRequiredPerTerm>();
             this.Incomes = new HashSet<Income>();
             this.OverHeadCategoryPerYears = new HashSet<OverHeadCategoryPerYear>();
+            this.FeeStructures = new HashSet<FeeStructure>();
         }
     
         public int Term { get; set; }
@@ -30,5 +31,6 @@ namespace eSchool
         public virtual ICollection<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }
         public virtual ICollection<Income> Incomes { get; set; }
         public virtual ICollection<OverHeadCategoryPerYear> OverHeadCategoryPerYears { get; set; }
+        public virtual ICollection<FeeStructure> FeeStructures { get; set; }
     }
 }

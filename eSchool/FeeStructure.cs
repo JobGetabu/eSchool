@@ -12,14 +12,13 @@ namespace eSchool
     using System;
     using System.Collections.Generic;
     
-    public partial class OverHeadCategoryPerYear
+    public partial class FeeStructure
     {
         public int Id { get; set; }
-        public int Term { get; set; }
-        public decimal Amount { get; set; }
-        public int Form { get; set; }
-        public int Year { get; set; }
-        public string Category { get; set; }
+        public string Details { get; set; }
+        public Nullable<int> Term { get; set; }
+        public Nullable<int> Year { get; set; }
+        public Nullable<int> Form { get; set; }
     
         public virtual SchoolPeriodTerm SchoolPeriodTerm { get; set; }
         public virtual SchoolPeriodYear SchoolPeriodYear { get; set; }

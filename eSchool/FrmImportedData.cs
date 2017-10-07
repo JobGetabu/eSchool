@@ -103,10 +103,9 @@ namespace eSchool
                     MessageBox.Show(exp.Message);
                     throw;
                 }
-                finally
-                {
+                
                     this.Close();
-                }
+                
 
             }
         }

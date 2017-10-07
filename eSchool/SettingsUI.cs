@@ -30,8 +30,7 @@ namespace eSchool
             }
         }
         public SettingsUI()
-        {
-            
+        {          
                 InitializeComponent();
         }
 
@@ -62,11 +61,10 @@ namespace eSchool
         public static int CurrentYear { get; set; }
         public async void SettingsUI_Load(object sender, EventArgs e)
         {
+
             db = new EschoolEntities();
 
             categoryBindingSource.DataSource = await CategoryDataSourceAsync();
-           
-
 
             //Settings preferences
             lblCurrentTerm.Text = Properties.Settings.Default.CurrentTerm.ToString();
@@ -74,6 +72,24 @@ namespace eSchool
             //save static value
             CurrentYear = int.Parse(lblFinancialYear.Text);
             metroTextBxEditTerm.Text = lblCurrentTerm.Text;
+
+            //Checks if the year as changed and updates. 
+            //SchoolperiodYear with currect year.
+            //This ensures it stays low resource and updates wit settings update.
+
+
+            //if ((IsIdDuplicateuplicate(DateTime.Now.Year)) == false)
+            //{
+            //    using (var cnt = new EschoolEntities())
+            //    {
+            //        SchoolPeriodYear year = new SchoolPeriodYear()
+            //        {
+            //            Year = DateTime.Now.Year
+            //        };
+            //        cnt.SchoolPeriodYears.Add(year);
+            //        cnt.SaveChanges();
+            //    }
+            //}
         }
 
         //async datasource
@@ -88,6 +104,8 @@ namespace eSchool
         {
             FrmAddCategories frm = new FrmAddCategories();
             frm.StartPosition = FormStartPosition.CenterScreen;
+
+            //Frm_Home.Instance.Opacity = 0.6;
             frm.ShowDialog(this);
 
             //refresh list
@@ -166,16 +184,16 @@ namespace eSchool
         //returns a asynchrounous query of category Ids
         //not used
 
-        public async Task<bool> IsIdDuplicateuplicate(int searchItemID)
+        public async Task<bool> IsIdDuplicateuplicateAsync(int yearKey)
         {
             bool duplicate = false;
             await Task.Factory.StartNew(() =>
             {
-                var query = db.Categories.Select(c => c.Id).ToList();
+                var query = db.SchoolPeriodYears.Select(c => c.Year).ToList();
 
                 foreach (var catID in  query)
                 {
-                    if (searchItemID == catID)
+                    if (yearKey == catID)
                     {
                         duplicate = true;
                         return duplicate;
@@ -183,6 +201,23 @@ namespace eSchool
                 }
                 return duplicate;
             });
+            return duplicate;
+        }
+
+        public bool IsIdDuplicateuplicate(int yearKey)
+        {
+            bool duplicate = false;
+ 
+                var query = db.SchoolPeriodYears.Select(c => c.Year).ToList();
+
+                foreach (var catID in query)
+                {
+                    if (yearKey == catID)
+                    {
+                        duplicate = true;
+                        return duplicate;
+                    }
+                }
             return duplicate;
         }
 
@@ -213,6 +248,28 @@ namespace eSchool
             //reflects changes made at scope level
             lblCurrentTerm.Text = Properties.Settings.Default.CurrentTerm.ToString();
         }
+
+
+        public async Task<bool> IsYearDuplicateuplicate(int yearNow)
+        {
+            bool duplicate = false;
+            await Task.Factory.StartNew(() =>
+            {
+                var query = db.SchoolPeriodYears.Select(c => c.Year).ToList();
+
+                foreach (var catID in query)
+                {
+                    if (yearNow == catID)
+                    {
+                        duplicate = true;
+                        return duplicate;
+                    }
+                }
+                return duplicate;
+            });
+            return duplicate;
+        }
+
 
         //TODO 1 set up UI for fee structure reporting
         //TODO 2 set up UI for fee receipt reporting

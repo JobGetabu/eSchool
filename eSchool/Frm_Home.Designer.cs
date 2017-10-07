@@ -49,6 +49,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProf = new System.Windows.Forms.Panel();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageBtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroComboBoxSearch = new MetroFramework.Controls.MetroComboBox();
@@ -57,7 +58,6 @@
             this.pictureBxMenuHome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuTransitionUIs = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.sidebar.SuspendLayout();
@@ -66,11 +66,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -507,6 +507,19 @@
             this.panelProf.Size = new System.Drawing.Size(284, 50);
             this.panelProf.TabIndex = 5;
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 9;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // bunifuDropdownDashMenu
             // 
             this.bunifuDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -581,9 +594,7 @@
             this.metro_search_box.MaxLength = 32767;
             this.metro_search_box.Name = "metro_search_box";
             this.metro_search_box.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metro_search_box.PromptText = "Search";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metro_search_box.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metro_search_box.SelectedText = "";
             this.metro_search_box.SelectionLength = 0;
@@ -653,19 +664,7 @@
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
             this.bunifuTransitionUIs.DefaultAnimation = animation1;
-            // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 9;
-            this.ovalPictureBox1.TabStop = false;
+            this.bunifuTransitionUIs.MaxAnimationTime = 1000;
             // 
             // Frm_Home
             // 
@@ -691,11 +690,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelProf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

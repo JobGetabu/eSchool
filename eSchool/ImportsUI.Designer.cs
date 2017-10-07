@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportsUI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportsUI));
             this.panelHCD = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuFBGetTempate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlBtnImport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelWithDashDate = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,8 +51,6 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGridStudentRecords = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.DelImg = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Deletes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.adminNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,8 +59,9 @@
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeOfLearningDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelImg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Deletes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.studentBasicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bunifuFBGetTempate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelHCD.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelWithDashDate.SuspendLayout();
@@ -93,6 +93,43 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(328, 66);
             this.panel2.TabIndex = 2;
+            // 
+            // bunifuFBGetTempate
+            // 
+            this.bunifuFBGetTempate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFBGetTempate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFBGetTempate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFBGetTempate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFBGetTempate.BorderRadius = 5;
+            this.bunifuFBGetTempate.ButtonText = "   Get Template";
+            this.bunifuFBGetTempate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFBGetTempate.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFBGetTempate.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFBGetTempate.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFBGetTempate.Iconimage")));
+            this.bunifuFBGetTempate.Iconimage_right = null;
+            this.bunifuFBGetTempate.Iconimage_right_Selected = null;
+            this.bunifuFBGetTempate.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFBGetTempate.Iconimage_Selected")));
+            this.bunifuFBGetTempate.IconMarginLeft = 0;
+            this.bunifuFBGetTempate.IconMarginRight = 0;
+            this.bunifuFBGetTempate.IconRightVisible = true;
+            this.bunifuFBGetTempate.IconRightZoom = 0D;
+            this.bunifuFBGetTempate.IconVisible = true;
+            this.bunifuFBGetTempate.IconZoom = 50D;
+            this.bunifuFBGetTempate.IsTab = false;
+            this.bunifuFBGetTempate.Location = new System.Drawing.Point(16, 13);
+            this.bunifuFBGetTempate.Name = "bunifuFBGetTempate";
+            this.bunifuFBGetTempate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFBGetTempate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(142)))), ((int)(((byte)(107)))));
+            this.bunifuFBGetTempate.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFBGetTempate.selected = false;
+            this.bunifuFBGetTempate.Size = new System.Drawing.Size(160, 36);
+            this.bunifuFBGetTempate.TabIndex = 2;
+            this.bunifuFBGetTempate.Text = "   Get Template";
+            this.bunifuFBGetTempate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFBGetTempate.Textcolor = System.Drawing.Color.White;
+            this.bunifuFBGetTempate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFBGetTempate.Click += new System.EventHandler(this.bunifuFBGetTempate_Click);
             // 
             // bunifuFlBtnImport
             // 
@@ -274,6 +311,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 116);
@@ -335,34 +373,6 @@
             this.bunifuCustomDataGridStudentRecords.TabIndex = 9;
             this.bunifuCustomDataGridStudentRecords.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid2_CellContentClick);
             this.bunifuCustomDataGridStudentRecords.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.bunifuCustomDataGrid2_CellPainting);
-            // 
-            // DelImg
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.DelImg.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DelImg.Frozen = true;
-            this.DelImg.HeaderText = "";
-            this.DelImg.Image = ((System.Drawing.Image)(resources.GetObject("DelImg.Image")));
-            this.DelImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DelImg.Name = "DelImg";
-            this.DelImg.ReadOnly = true;
-            this.DelImg.Width = 50;
-            // 
-            // Deletes
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Deletes.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Deletes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Deletes.HeaderText = "";
-            this.Deletes.Name = "Deletes";
-            this.Deletes.ReadOnly = true;
-            this.Deletes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Deletes.Text = "Delete";
-            this.Deletes.UseColumnTextForButtonValue = true;
             // 
             // adminNoDataGridViewTextBoxColumn
             // 
@@ -430,45 +440,37 @@
             this.modeOfLearningDataGridViewTextBoxColumn.ReadOnly = true;
             this.modeOfLearningDataGridViewTextBoxColumn.Width = 150;
             // 
+            // DelImg
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.DelImg.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DelImg.Frozen = true;
+            this.DelImg.HeaderText = "";
+            this.DelImg.Image = ((System.Drawing.Image)(resources.GetObject("DelImg.Image")));
+            this.DelImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.DelImg.Name = "DelImg";
+            this.DelImg.ReadOnly = true;
+            this.DelImg.Width = 50;
+            // 
+            // Deletes
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Deletes.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Deletes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Deletes.HeaderText = "";
+            this.Deletes.Name = "Deletes";
+            this.Deletes.ReadOnly = true;
+            this.Deletes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deletes.Text = "Delete";
+            this.Deletes.UseColumnTextForButtonValue = true;
+            // 
             // studentBasicBindingSource
             // 
             this.studentBasicBindingSource.DataSource = typeof(eSchool.Student_Basic);
-            // 
-            // bunifuFBGetTempate
-            // 
-            this.bunifuFBGetTempate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFBGetTempate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFBGetTempate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFBGetTempate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFBGetTempate.BorderRadius = 5;
-            this.bunifuFBGetTempate.ButtonText = "   Get Template";
-            this.bunifuFBGetTempate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFBGetTempate.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFBGetTempate.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFBGetTempate.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFBGetTempate.Iconimage")));
-            this.bunifuFBGetTempate.Iconimage_right = null;
-            this.bunifuFBGetTempate.Iconimage_right_Selected = null;
-            this.bunifuFBGetTempate.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFBGetTempate.Iconimage_Selected")));
-            this.bunifuFBGetTempate.IconMarginLeft = 0;
-            this.bunifuFBGetTempate.IconMarginRight = 0;
-            this.bunifuFBGetTempate.IconRightVisible = true;
-            this.bunifuFBGetTempate.IconRightZoom = 0D;
-            this.bunifuFBGetTempate.IconVisible = true;
-            this.bunifuFBGetTempate.IconZoom = 50D;
-            this.bunifuFBGetTempate.IsTab = false;
-            this.bunifuFBGetTempate.Location = new System.Drawing.Point(16, 13);
-            this.bunifuFBGetTempate.Name = "bunifuFBGetTempate";
-            this.bunifuFBGetTempate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFBGetTempate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(142)))), ((int)(((byte)(107)))));
-            this.bunifuFBGetTempate.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFBGetTempate.selected = false;
-            this.bunifuFBGetTempate.Size = new System.Drawing.Size(160, 36);
-            this.bunifuFBGetTempate.TabIndex = 2;
-            this.bunifuFBGetTempate.Text = "   Get Template";
-            this.bunifuFBGetTempate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFBGetTempate.Textcolor = System.Drawing.Color.White;
-            this.bunifuFBGetTempate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // ImportsUI
             // 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,33 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-   
+  
     public partial class Frm_Home : Form
     {
-        
+
+        //Singleton pattern ***best practices***
+        private static Frm_Home _instance;
+        public static Frm_Home Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Frm_Home();
+                }
+                return _instance;
+            }
+        }
+
+
+        //Deployment code
+        // static string path = Path.GetFullPath(Environment.CurrentDirectory);
+        public static string databaseFile = "eschool.sdf";
+
+
+        /// <summary>
+        /// TODO 1 Check for null settings to handle all NullException gracefully
+        /// </summary>
         public Frm_Home()
         {
             InitializeComponent();
@@ -105,6 +129,8 @@ namespace eSchool
             btn_settings.Textcolor = _normal;
 
             //End UI Design code
+
+            TabSwitcher(ExpenseUI.Instance);
         }
 
         private void Frm_Home_Load(object sender, EventArgs e)
