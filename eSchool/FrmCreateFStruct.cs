@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
+    public delegate void PassStoredData(List<int> fmStore, int tmStore, int yrStore);
     public partial class FrmCreateFStruct : Form
     {
         private int cTerm;
@@ -18,12 +19,17 @@ namespace eSchool
         private int selectedYear;
         private int selectedTerm;
 
+        //provides references to the created forms
+        public static List<int> fmStore { get; set; }
+        public static int tmStore { get; set; }
+        public static int yrStore { get; set; }
         public FrmCreateFStruct(int term, int year)
         {
             InitializeComponent();
 
             cTerm = term;
             feeYear = year;
+            fmStore = new List<int>();
         }
 
         /// <summary>
@@ -64,11 +70,6 @@ namespace eSchool
             }
         }
 
-        private void bCbox1_OnChange(object sender, EventArgs e)
-        {
-
-        }
-
         private void mCBoxTerm_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (mCBoxTerm.SelectedItem != null)
@@ -78,7 +79,7 @@ namespace eSchool
         }
 
         private void SaveFeeStructure(Bunifu.Framework.UI.BunifuCheckbox ck)
-        {
+        {         
             using (var context = new EschoolEntities())
             {
                 FeeStructure fstruct = new FeeStructure()
@@ -89,6 +90,9 @@ namespace eSchool
                     Form = int.Parse(ck.Tag.ToString())
                 };
 
+                FrmCreateFStruct.fmStore.Add(int.Parse(ck.Tag.ToString()));
+                FrmCreateFStruct.tmStore = selectedTerm;
+                FrmCreateFStruct.yrStore = selectedYear;
                 context.FeeStructures.Add(fstruct);
                 try
                 {
@@ -124,6 +128,11 @@ namespace eSchool
                 SaveFeeStructure(bCbox4);
             }
 
+            //subscribe a method to our delegate
+            FeeUI_Show ins = FeeUI_Show.Instance;
+            PassStoredData psd = new PassStoredData((ins.delPassData));
+            psd(fmStore, tmStore, yrStore);
+
             //TODO custom notification
             MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -135,7 +144,6 @@ namespace eSchool
         {
             this.Close();
         }
-
         private void TabSwitcher(Control UIinstance)
         {
             if (!FeesUI.Instance.container.Controls.Contains(UIinstance))

@@ -39,11 +39,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.metroTileCreateFeeStruct = new MetroFramework.Controls.MetroTile();
             this.panelGrid = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bThinBtnViewAll = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bThinBtnAddFeeItem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bCDataGridCategory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.overHeadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overHeadCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.container.SuspendLayout();
@@ -109,6 +109,14 @@
             this.panelGrid.Name = "panelGrid";
             this.panelGrid.Size = new System.Drawing.Size(254, 477);
             this.panelGrid.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(3, 429);
+            this.panel2.TabIndex = 2;
             // 
             // panel1
             // 
@@ -230,14 +238,6 @@
             this.bCDataGridCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bCDataGridCategory.Size = new System.Drawing.Size(254, 477);
             this.bCDataGridCategory.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(3, 429);
-            this.panel2.TabIndex = 2;
             // 
             // overHeadDataGridViewTextBoxColumn
             // 

@@ -45,6 +45,12 @@ namespace eSchool
 
                 TabSwitcher(FeeUI_Default.Instance);
             }
+
+            //loading comboBox
+
+            this.bMenu.AddItem("Print");
+            this.bMenu.AddItem("New Fee Structure");
+                   
         }
         private void TabSwitcher(Control UIinstance)
         {
@@ -84,6 +90,27 @@ namespace eSchool
                 }
             }
             return available;
+        }
+
+        private void bMenu_onItemSelected(object sender, EventArgs e)
+        {
+            if (bMenu.selectedIndex == 1)
+            {
+                //TODO 1
+                //create a delegate pointing to the create fee structure tile click
+                //or just
+
+                int term = Properties.Settings.Default.CurrentTerm;
+                int year = Properties.Settings.Default.CurrentYear;
+
+                FrmCreateFStruct frm = new FrmCreateFStruct(term, year);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    //need to send FeeUI_Show to front
+                    //at exit save of FrmCreateFStruct
+
+                }
+            }
         }
     }
 }

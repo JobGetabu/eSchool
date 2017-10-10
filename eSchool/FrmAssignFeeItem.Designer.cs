@@ -40,6 +40,7 @@
             this.bFlatBtnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -120,9 +121,7 @@
             this.mTBoxCost.MaxLength = 32767;
             this.mTBoxCost.Name = "mTBoxCost";
             this.mTBoxCost.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.mTBoxCost.PromptText = "Cost";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.mTBoxCost.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mTBoxCost.SelectedText = "";
             this.mTBoxCost.SelectionLength = 0;
@@ -169,6 +168,7 @@
             this.bFlatButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bFlatButtonCancel.Textcolor = System.Drawing.Color.DarkGray;
             this.bFlatButtonCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bFlatButtonCancel.Click += new System.EventHandler(this.bFlatButtonCancel_Click);
             // 
             // bFlatBtnSave
             // 
@@ -203,6 +203,7 @@
             this.bFlatBtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bFlatBtnSave.Textcolor = System.Drawing.Color.White;
             this.bFlatBtnSave.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bFlatBtnSave.Click += new System.EventHandler(this.bFlatBtnSave_Click);
             // 
             // panel2
             // 
@@ -222,6 +223,13 @@
             this.panel1.Size = new System.Drawing.Size(10, 225);
             this.panel1.TabIndex = 7;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // FrmAssignFeeItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +247,7 @@
             this.Name = "FrmAssignFeeItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmAssignFeeItem";
+            this.Load += new System.EventHandler(this.FrmAssignFeeItem_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -259,5 +268,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bFlatBtnSave;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeesUI));
             this.panelHCD = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bTBtnChangeYear = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelWithDashDate = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblCFeeStructure = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.overHeadCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.container = new System.Windows.Forms.Panel();
             this.panelHCD.SuspendLayout();
@@ -59,32 +59,31 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.bunifuDropdown1);
+            this.panel2.Controls.Add(this.bMenu);
             this.panel2.Controls.Add(this.bTBtnChangeYear);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(487, 0);
+            this.panel2.Location = new System.Drawing.Point(466, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(311, 66);
+            this.panel2.Size = new System.Drawing.Size(332, 66);
             this.panel2.TabIndex = 1;
             // 
-            // bunifuDropdown1
+            // bMenu
             // 
-            this.bunifuDropdown1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 7;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[] {
-        "More",
-        "Print"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(159, 16);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(146, 35);
-            this.bunifuDropdown1.TabIndex = 4;
+            this.bMenu.BackColor = System.Drawing.Color.Transparent;
+            this.bMenu.BorderRadius = 7;
+            this.bMenu.DisabledColor = System.Drawing.Color.Gray;
+            this.bMenu.ForeColor = System.Drawing.Color.White;
+            this.bMenu.Items = new string[0];
+            this.bMenu.Location = new System.Drawing.Point(161, 16);
+            this.bMenu.Name = "bMenu";
+            this.bMenu.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bMenu.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bMenu.selectedIndex = -1;
+            this.bMenu.Size = new System.Drawing.Size(165, 35);
+            this.bMenu.TabIndex = 4;
+            this.bMenu.onItemSelected += new System.EventHandler(this.bMenu_onItemSelected);
             // 
             // bTBtnChangeYear
             // 
@@ -106,7 +105,7 @@
             this.bTBtnChangeYear.IdleFillColor = System.Drawing.Color.White;
             this.bTBtnChangeYear.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.bTBtnChangeYear.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bTBtnChangeYear.Location = new System.Drawing.Point(5, 10);
+            this.bTBtnChangeYear.Location = new System.Drawing.Point(7, 10);
             this.bTBtnChangeYear.Margin = new System.Windows.Forms.Padding(5);
             this.bTBtnChangeYear.Name = "bTBtnChangeYear";
             this.bTBtnChangeYear.Size = new System.Drawing.Size(146, 46);
@@ -118,7 +117,7 @@
             this.panelWithDashDate.AutoSize = true;
             this.panelWithDashDate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelWithDashDate.Controls.Add(this.pictureBox1);
-            this.panelWithDashDate.Controls.Add(this.label);
+            this.panelWithDashDate.Controls.Add(this.lblCFeeStructure);
             this.panelWithDashDate.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelWithDashDate.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelWithDashDate.Location = new System.Drawing.Point(0, 0);
@@ -136,17 +135,17 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label
+            // lblCFeeStructure
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
-            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
-            this.label.Location = new System.Drawing.Point(69, 23);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(176, 25);
-            this.label.TabIndex = 0;
-            this.label.Text = "2017 Fees Structures";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCFeeStructure.AutoSize = true;
+            this.lblCFeeStructure.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
+            this.lblCFeeStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.lblCFeeStructure.Location = new System.Drawing.Point(69, 23);
+            this.lblCFeeStructure.Name = "lblCFeeStructure";
+            this.lblCFeeStructure.Size = new System.Drawing.Size(176, 25);
+            this.lblCFeeStructure.TabIndex = 0;
+            this.lblCFeeStructure.Text = "2017 Fees Structures";
+            this.lblCFeeStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // overHeadCategoryBindingSource
             // 
@@ -185,11 +184,11 @@
         private System.Windows.Forms.Panel panelHCD;
         private System.Windows.Forms.Panel panelWithDashDate;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuCustomLabel label;
         private System.Windows.Forms.BindingSource overHeadCategoryBindingSource;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown bMenu;
         private Bunifu.Framework.UI.BunifuThinButton2 bTBtnChangeYear;
         public System.Windows.Forms.Panel container;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblCFeeStructure;
     }
 }
