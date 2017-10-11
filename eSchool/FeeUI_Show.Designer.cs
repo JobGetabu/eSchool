@@ -37,9 +37,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGrid = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bThinBtnViewAll = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -48,13 +48,13 @@
             this.AssBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.DelImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DelBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overHeadCategoryPerYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.overHeadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overHeadCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DelImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DelBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelGrid.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bCDataGridCategory)).BeginInit();
@@ -261,41 +261,6 @@
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
-            // overHeadCategoryPerYearBindingSource
-            // 
-            this.overHeadCategoryPerYearBindingSource.DataSource = typeof(eSchool.OverHeadCategoryPerYear);
-            // 
-            // overHeadDataGridViewTextBoxColumn
-            // 
-            this.overHeadDataGridViewTextBoxColumn.DataPropertyName = "OverHead";
-            this.overHeadDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.overHeadDataGridViewTextBoxColumn.Name = "overHeadDataGridViewTextBoxColumn";
-            this.overHeadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.overHeadDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // overHeadCategoryBindingSource
-            // 
-            this.overHeadCategoryBindingSource.DataSource = typeof(eSchool.OverHeadCategory);
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.categoryDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            dataGridViewCellStyle7.Format = "C1";
-            dataGridViewCellStyle7.NullValue = null;
-            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountDataGridViewTextBoxColumn.Width = 150;
-            // 
             // DelImage
             // 
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
@@ -320,6 +285,41 @@
             this.DelBtn.Name = "DelBtn";
             this.DelBtn.ReadOnly = true;
             this.DelBtn.Text = "Delete";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoryDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            dataGridViewCellStyle7.Format = "C1";
+            dataGridViewCellStyle7.NullValue = null;
+            this.amountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // overHeadCategoryPerYearBindingSource
+            // 
+            this.overHeadCategoryPerYearBindingSource.DataSource = typeof(eSchool.OverHeadCategoryPerYear);
+            // 
+            // overHeadDataGridViewTextBoxColumn
+            // 
+            this.overHeadDataGridViewTextBoxColumn.DataPropertyName = "OverHead";
+            this.overHeadDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.overHeadDataGridViewTextBoxColumn.Name = "overHeadDataGridViewTextBoxColumn";
+            this.overHeadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.overHeadDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // overHeadCategoryBindingSource
+            // 
+            this.overHeadCategoryBindingSource.DataSource = typeof(eSchool.OverHeadCategory);
             // 
             // FeeUI_Show
             // 
@@ -348,15 +348,15 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bThinBtnViewAll;
         private Bunifu.Framework.UI.BunifuThinButton2 bThinBtnAddFeeItem;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bCDataGridCategory;
-        private System.Windows.Forms.BindingSource overHeadCategoryBindingSource;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.BindingSource overHeadCategoryPerYearBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn overHeadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn AssBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn DelImage;
         private System.Windows.Forms.DataGridViewButtonColumn DelBtn;
+        public System.Windows.Forms.BindingSource overHeadCategoryBindingSource;
+        public System.Windows.Forms.BindingSource overHeadCategoryPerYearBindingSource;
     }
 }

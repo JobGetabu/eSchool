@@ -13,6 +13,8 @@ namespace eSchool
     public partial class FeesUI : UserControl
     {
         private static FeesUI _instance;
+        private List<int> filterList;
+
         public static FeesUI Instance
         {
             get
@@ -50,7 +52,20 @@ namespace eSchool
 
             this.bMenu.AddItem("Print");
             this.bMenu.AddItem("New Fee Structure");
-                   
+
+            #region GridData
+            ///this is data loaded at save with new fee structure
+            // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
+            //alternative
+
+
+            // initilize the data
+            FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassStoredFormDataDelegate(GridDataList);
+            //filter the data
+            GridDataFilter(filterList);
+
+            #endregion
+
         }
         private void TabSwitcher(Control UIinstance)
         {
@@ -91,7 +106,6 @@ namespace eSchool
             }
             return available;
         }
-
         private void bMenu_onItemSelected(object sender, EventArgs e)
         {
             if (bMenu.selectedIndex == 1)
@@ -111,6 +125,48 @@ namespace eSchool
 
                 }
             }
+        }
+
+        /// <summary>
+        /// This method is called each time a fee structure is created 
+        /// </summary>
+        /// <param name="fmstore"></param>
+        public void GridDataFilter(List<int> fmstore)
+        {
+            FeeUI_Show ins = FeeUI_Show.Instance;
+            if (fmstore != null)
+            {
+
+                if (fmstore.Count > 1)
+                {
+                    int r = int.Parse(fmstore[0].ToString());
+                    using (var context = new EschoolEntities())
+                    {
+                        ins.overHeadCategoryPerYearBindingSource.DataSource =
+                             context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
+                                                             .Where(c => c.Form == r)
+                                                             .ToList();
+                    }
+                }
+                else
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        ins.overHeadCategoryPerYearBindingSource.DataSource =
+                             context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
+                                                             .ToList();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// This method is called each time a fee structure is created returning a list of school forms
+        /// </summary>
+        /// <param name="pfmstore"></param>
+        public void GridDataList(object sender, PassDataEventArgs e)
+        {
+            filterList = e.pfmStore;
         }
     }
 }

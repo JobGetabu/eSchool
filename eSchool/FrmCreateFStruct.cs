@@ -12,8 +12,13 @@ using System.Windows.Forms;
 namespace eSchool
 {
     public delegate void PassStoredData(List<int> fmStore, int tmStore, int yrStore);
+    public delegate void PassStoredForm(List<int> fmStore);
     public partial class FrmCreateFStruct : Form
     {
+        public delegate void PassStoredFormDataDelegate(object sender, PassDataEventArgs e);
+
+        // add an event of the delegate type
+        public static event PassStoredFormDataDelegate ListUpdated;
         private int cTerm;
         private int feeYear;
         private int selectedYear;
@@ -30,6 +35,12 @@ namespace eSchool
             cTerm = term;
             feeYear = year;
             fmStore = new List<int>();
+        }
+        public FrmCreateFStruct()
+        {
+            InitializeComponent();
+            fmStore = new List<int>();
+
         }
 
         /// <summary>
@@ -79,7 +90,7 @@ namespace eSchool
         }
 
         private void SaveFeeStructure(Bunifu.Framework.UI.BunifuCheckbox ck)
-        {         
+        {
             using (var context = new EschoolEntities())
             {
                 FeeStructure fstruct = new FeeStructure()
@@ -93,9 +104,9 @@ namespace eSchool
                 FrmCreateFStruct.fmStore.Add(int.Parse(ck.Tag.ToString()));
                 FrmCreateFStruct.tmStore = selectedTerm;
                 FrmCreateFStruct.yrStore = selectedYear;
-                context.FeeStructures.Add(fstruct);
                 try
                 {
+                    context.FeeStructures.Add(fstruct);
                     context.SaveChanges();
                 }
                 catch (Exception exp)
@@ -108,24 +119,44 @@ namespace eSchool
         }
         private void bFlatBtnSave_Click(object sender, EventArgs e)
         {
+            if (selectedTerm == 0)
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Select the term", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (selectedYear == 0)
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Select the year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+            string frmslbl = "For Form ";
+
             if (bCbox1.Checked)
             {
                 SaveFeeStructure(bCbox1);
+                frmslbl += "1";
             }
 
             if (bCbox2.Checked)
             {
                 SaveFeeStructure(bCbox2);
+                frmslbl += " 2";
             }
 
             if (bCbox3.Checked)
             {
                 SaveFeeStructure(bCbox3);
+                frmslbl += " 3";
             }
 
             if (bCbox4.Checked)
             {
                 SaveFeeStructure(bCbox4);
+                frmslbl += " 4";
             }
 
             //subscribe a method to our delegate
@@ -133,16 +164,35 @@ namespace eSchool
             PassStoredData psd = new PassStoredData((ins.delPassData));
             psd(fmStore, tmStore, yrStore);
 
+            //subscribe a method to our delegate
+            PassStoredForm psf = new PassStoredForm(ins.GridDataFilter);
+            psf(fmStore);
+
+            if (fmStore != null)
+            {
+                //raise our event
+                List<int> data = fmStore;
+                PassDataEventArgs args = new PassDataEventArgs(data);
+                //give it updated args
+                ListUpdated(this, args);
+            }
+
+            //change label
+            FeesUI feeIns = FeesUI.Instance;
+            feeIns.lblCFeeStructure.Text = selectedYear + " Fee Structure " + frmslbl;
+
             //TODO custom notification
             MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             TabSwitcher(FeeUI_Show.Instance);
             this.Close();
+           
         }
 
         private void bFlatButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
         private void TabSwitcher(Control UIinstance)
         {

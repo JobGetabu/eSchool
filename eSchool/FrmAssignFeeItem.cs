@@ -82,9 +82,12 @@ namespace eSchool
 
                 //TODO custom notification
                 MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
 
                 //remove category from visible list 
+                FeeUI_Show feeIns = FeeUI_Show.Instance;
+                feeIns.overHeadCategoryBindingSource.RemoveCurrent();
+                //refresh the grid
+                this.Close();
             }
         }
     }
