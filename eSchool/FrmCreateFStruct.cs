@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-    public delegate void PassStoredData(List<int> fmStore, int tmStore, int yrStore);
-    public delegate void PassStoredForm(List<int> fmStore);
+    public delegate void PassStoredDataDelegate(List<int> fmStore, int tmStore, int yrStore);
+    public delegate void PassMoreDelegate(List<int> fmStore, int tmStore, int yrStore);
     public partial class FrmCreateFStruct : Form
     {
-        public delegate void PassStoredFormDataDelegate(object sender, PassDataEventArgs e);
+        public delegate void PassMoreDataDelegate(object sender, PassDataEventArgs e);
 
         // add an event of the delegate type
-        public static event PassStoredFormDataDelegate ListUpdated;
+        public static event PassMoreDataDelegate ListUpdated;
         private int cTerm;
         private int feeYear;
         private int selectedYear;
@@ -161,38 +161,37 @@ namespace eSchool
 
             //subscribe a method to our delegate
             FeeUI_Show ins = FeeUI_Show.Instance;
-            PassStoredData psd = new PassStoredData((ins.delPassData));
+            PassStoredDataDelegate psd = new PassStoredDataDelegate((ins.delPassData));
             psd(fmStore, tmStore, yrStore);
 
             //subscribe a method to our delegate
-            PassStoredForm psf = new PassStoredForm(ins.GridDataFilter);
-            psf(fmStore);
+            PassMoreDelegate psf = new PassMoreDelegate(ins.GridDataFilter);
+            psf(fmStore, tmStore, yrStore);
 
-            if (fmStore != null)
-            {
-                //raise our event
-                List<int> data = fmStore;
-                PassDataEventArgs args = new PassDataEventArgs(data);
-                //give it updated args
-                ListUpdated(this, args);
-            }
+            //raise our event
+            List<int> data = fmStore;
+            int tmData = tmStore;
+            int yrData = yrStore;
+            PassDataEventArgs args = new PassDataEventArgs(data, tmData, yrData);
+            //give it updated args
+            ListUpdated(this, args);
 
             //change label
             FeesUI feeIns = FeesUI.Instance;
-            feeIns.lblCFeeStructure.Text = selectedYear + " Fee Structure " + frmslbl;
+           // feeIns.lblCFeeStructure.Text = selectedYear + " Fee Structure " + frmslbl;
 
-            //TODO custom notification
+            //TODO 1 custom notification
             MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             TabSwitcher(FeeUI_Show.Instance);
             this.Close();
-           
+
         }
 
         private void bFlatButtonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
         private void TabSwitcher(Control UIinstance)
         {

@@ -31,17 +31,22 @@ namespace eSchool
                 return _instance;
             }
         }
-        List<int> filterList = null;
+        List<int> filterList;
+        private int selTerm;
+        private int selYear;
         public FeeUI_Show()
         {
             InitializeComponent();
-            filterList = new List<int>();
         }
 
 
 
         #region Interform passed variables
-        //passed variables
+
+        /// <summary>
+        /// passed variables
+        /// from PassStoredDataDelegate
+        /// </summary>
         private List<int> fmstore;
         private int tmStore;
         private int yrStore;
@@ -60,15 +65,7 @@ namespace eSchool
             {
                 overHeadCategoryBindingSource.DataSource = context.OverHeadCategories.OrderBy(c => c.Id).ToList();
 
-
-                #region GridData
-                ///this is data loaded at save with new fee structure
-                // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
-                //alternative
-
-                //show persisted data of open fee structure
-
-                #endregion
+                //Load the data in the UI
             }
 
         }
@@ -92,31 +89,32 @@ namespace eSchool
 
         /// <summary>
         /// This method is called each time a fee structure is created 
+        /// The grid reflects what is happening in the background when fee items are being 
+        /// populated to the fee structure.
         /// </summary>
         /// <param name="fmstore"></param>
-        public void GridDataFilter(List<int> fmstore)
+        /// <param name="tmData"></param>
+        /// <param name="yrData"></param>
+        public void GridDataFilter(List<int> fmstore, int tmData, int yrData)
         {
             if (fmstore != null)
             {
-
-                if (fmstore.Count > 1)
+                using (var context = new EschoolEntities())
                 {
-                    int r = int.Parse(fmstore[0].ToString());
-                    using (var context = new EschoolEntities())
+                    if (fmstore.Count > 1)
                     {
+                        int r = int.Parse(fmstore[0].ToString());
+
                         this.overHeadCategoryPerYearBindingSource.DataSource =
                              context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
-                                                             .Where(c => c.Form == r)
+                                                             .Where(c => c.Form == r && c.Term == tmData && c.Year == yrData)
                                                              .ToList();
                     }
-
-                }
-                else
-                {
-                    using (var context = new EschoolEntities())
+                    else
                     {
                         this.overHeadCategoryPerYearBindingSource.DataSource =
                              context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
+                                                             .Where(c => c.Term == tmData && c.Year == yrData)
                                                              .ToList();
                     }
                 }
@@ -126,10 +124,13 @@ namespace eSchool
         /// <summary>
         /// This method is called each time a fee structure is created returning a list of school forms
         /// </summary>
-        /// <param name="pfmstore"></param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void GridDataList(object sender, PassDataEventArgs e)
         {
             filterList = e.pfmStore;
+            selTerm = e.ptmStore;
+            selYear = e.pyrStore;
         }
         private void bCDataGridCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -152,12 +153,17 @@ namespace eSchool
                     //logic
 
                 }
-               //refresh the data grid
 
-                using (var context = new EschoolEntities())
-                {
-                    overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
-                }
+                //refresh the data grid
+                #region GridData
+                ///this is data loaded at save with new fee structure
+                // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
+                //alternative
+                // initialize the data by subscribing our method
+                FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassMoreDataDelegate(GridDataList);
+                //filter the data
+                GridDataFilter(filterList, selTerm, selYear);
+                #endregion
             }
         }
     }

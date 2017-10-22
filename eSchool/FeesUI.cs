@@ -14,6 +14,8 @@ namespace eSchool
     {
         private static FeesUI _instance;
         private List<int> filterList;
+        private int selTerm;
+        private int selYear;
 
         public static FeesUI Instance
         {
@@ -33,37 +35,18 @@ namespace eSchool
 
         private void FeesUI_Load(object sender, EventArgs e)
         {
+            //UI code
+            this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
 
-            //TODO 1 Check if there already existing fee structure for that 
-            //term and decide which UI to load
-            //create an option to create feeStructure in the dropdown option
-
-            if (CheckForCurrentFeeStruct(Properties.Settings.Default.CurrentTerm, Properties.Settings.Default.CurrentYear))
-            {
-                TabSwitcher(FeeUI_Show.Instance);
-            }
-            else
-            {
-
-                TabSwitcher(FeeUI_Default.Instance);
-            }
-
-            //loading comboBox
-
-            this.bMenu.AddItem("Print");
-            this.bMenu.AddItem("New Fee Structure");
 
             #region GridData
             ///this is data loaded at save with new fee structure
             // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
             //alternative
-
-
-            // initilize the data
-            FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassStoredFormDataDelegate(GridDataList);
+            // initialize the data by subscribing our method
+            FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassMoreDataDelegate(GridDataList);
             //filter the data
-            GridDataFilter(filterList);
-
+            GridDataFilter(filterList,selTerm,selYear);
             #endregion
 
         }
@@ -81,79 +64,31 @@ namespace eSchool
             }
         }
 
-        private bool CheckForCurrentFeeStruct(int cTerm, int cYear)
-        {
-            bool available = false;
-            using (var context = new EschoolEntities())
-            {
-                var query = context.FeeStructures.Select(c => new
-                {
-                    c.Term,
-                    c.Year
-                }).ToList();
-
-                foreach (var cur in query)
-                {
-                    if (cTerm == cur.Term)
-                    {
-                        if (cYear == cur.Year)
-                        {
-                            available = true;
-                            return available;
-                        }
-                    }
-                }
-            }
-            return available;
-        }
-        private void bMenu_onItemSelected(object sender, EventArgs e)
-        {
-            if (bMenu.selectedIndex == 1)
-            {
-                //TODO 1
-                //create a delegate pointing to the create fee structure tile click
-                //or just
-
-                int term = Properties.Settings.Default.CurrentTerm;
-                int year = Properties.Settings.Default.CurrentYear;
-
-                FrmCreateFStruct frm = new FrmCreateFStruct(term, year);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    //need to send FeeUI_Show to front
-                    //at exit save of FrmCreateFStruct
-
-                }
-            }
-        }
-
         /// <summary>
         /// This method is called each time a fee structure is created 
         /// </summary>
-        /// <param name="fmstore"></param>
-        public void GridDataFilter(List<int> fmstore)
+        /// <param name="fmstore","tmData","yrData"></param>
+        public void GridDataFilter(List<int> fmstore, int tmData, int yrData)
         {
             FeeUI_Show ins = FeeUI_Show.Instance;
             if (fmstore != null)
             {
-
-                if (fmstore.Count > 1)
+                using (var context = new EschoolEntities())
                 {
-                    int r = int.Parse(fmstore[0].ToString());
-                    using (var context = new EschoolEntities())
+                    if (fmstore.Count > 1)
                     {
+                        int r = int.Parse(fmstore[0].ToString());
+
                         ins.overHeadCategoryPerYearBindingSource.DataSource =
                              context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
-                                                             .Where(c => c.Form == r)
+                                                             .Where(c => c.Form == r && c.Term == tmData && c.Year == yrData)
                                                              .ToList();
                     }
-                }
-                else
-                {
-                    using (var context = new EschoolEntities())
+                    else
                     {
                         ins.overHeadCategoryPerYearBindingSource.DataSource =
                              context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
+                                                             .Where(c => c.Term == tmData && c.Year == yrData)
                                                              .ToList();
                     }
                 }
@@ -163,10 +98,33 @@ namespace eSchool
         /// <summary>
         /// This method is called each time a fee structure is created returning a list of school forms
         /// </summary>
-        /// <param name="pfmstore"></param>
+        /// <param name="sender", "e"></param>
         public void GridDataList(object sender, PassDataEventArgs e)
         {
             filterList = e.pfmStore;
+            selTerm = e.ptmStore;
+            selYear = e.pyrStore;
+        }
+
+        private void tab1_Click(object sender, EventArgs e)
+        {
+            //UI code
+            bunifuSeparator1.Width = tab1.Width;
+            bunifuSeparator1.Left = tab1.Left;
+        }
+
+        private void tab2_Click(object sender, EventArgs e)
+        {
+            //UI code
+            bunifuSeparator1.Width = tab2.Width;
+            bunifuSeparator1.Left = tab2.Left;
+        }
+
+        private void tab3_Click(object sender, EventArgs e)
+        {
+            //UI code
+            bunifuSeparator1.Width = tab3.Width;
+            bunifuSeparator1.Left = tab3.Left;
         }
     }
 }

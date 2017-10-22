@@ -69,9 +69,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -131,6 +134,12 @@
     <Compile Include="FeesRequiredPerTerm.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FeesStructure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeesStructure.Designer.cs">
+      <DependentUpon>FeesStructure.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeeStructure.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -139,6 +148,11 @@
     </Compile>
     <Compile Include="FeesUI.Designer.cs">
       <DependentUpon>FeesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeeUILogo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeeUILogo.resx</DependentUpon>
     </Compile>
     <Compile Include="FeeUI_Default.cs">
       <SubType>UserControl</SubType>
@@ -284,8 +298,15 @@
     <EmbeddedResource Include="ExpenseUI.resx">
       <DependentUpon>ExpenseUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeesStructure.resx">
+      <DependentUpon>FeesStructure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FeesUI.resx">
       <DependentUpon>FeesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeeUILogo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeeUILogo.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FeeUI_Default.resx">
       <DependentUpon>FeeUI_Default.cs</DependentUpon>
@@ -375,6 +396,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo_term3.png" />
+    <None Include="Resources\logo_term2.png" />
+    <None Include="Resources\logo_term1.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

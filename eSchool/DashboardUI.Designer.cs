@@ -35,10 +35,12 @@
             this.panelWithDashDate = new System.Windows.Forms.Panel();
             this.bunifuCustomLabelDashboadTime = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.home_ui_label = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panelHCDCard = new Bunifu.Framework.UI.BunifuCards();
             this.panelHCD.SuspendLayout();
             this.panelWColpseBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).BeginInit();
             this.panelWithDashDate.SuspendLayout();
+            this.panelHCDCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHCD
@@ -46,7 +48,7 @@
             this.panelHCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
             this.panelHCD.Controls.Add(this.panelWColpseBtn);
             this.panelHCD.Controls.Add(this.panelWithDashDate);
-            this.panelHCD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHCD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHCD.Location = new System.Drawing.Point(0, 0);
             this.panelHCD.Name = "panelHCD";
             this.panelHCD.Size = new System.Drawing.Size(798, 96);
@@ -110,11 +112,27 @@
             this.home_ui_label.Text = "Dashboard";
             this.home_ui_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelHCDCard
+            // 
+            this.panelHCDCard.BackColor = System.Drawing.Color.Transparent;
+            this.panelHCDCard.BorderRadius = 5;
+            this.panelHCDCard.BottomSahddow = true;
+            this.panelHCDCard.color = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.panelHCDCard.Controls.Add(this.panelHCD);
+            this.panelHCDCard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHCDCard.LeftSahddow = false;
+            this.panelHCDCard.Location = new System.Drawing.Point(0, 0);
+            this.panelHCDCard.Name = "panelHCDCard";
+            this.panelHCDCard.RightSahddow = false;
+            this.panelHCDCard.ShadowDepth = 20;
+            this.panelHCDCard.Size = new System.Drawing.Size(798, 96);
+            this.panelHCDCard.TabIndex = 6;
+            // 
             // DashboardUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelHCD);
+            this.Controls.Add(this.panelHCDCard);
             this.Name = "DashboardUI";
             this.Size = new System.Drawing.Size(798, 543);
             this.Load += new System.EventHandler(this.DashboardUI_Load);
@@ -123,6 +141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).EndInit();
             this.panelWithDashDate.ResumeLayout(false);
             this.panelWithDashDate.PerformLayout();
+            this.panelHCDCard.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -135,5 +154,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabelDashboadTime;
         private Bunifu.Framework.UI.BunifuCustomLabel home_ui_label;
         public Bunifu.Framework.UI.BunifuImageButton bunifuImageBtnColapse;
+        private Bunifu.Framework.UI.BunifuCards panelHCDCard;
     }
 }
