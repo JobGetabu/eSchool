@@ -220,16 +220,27 @@ namespace eSchool
             CollapseNavBar();                  
         }
         
-        
+      
+      
         public  void CollapseNavBar()
         {
             if (sidebar.Width == 240)
             {
-                sidebar.Width = 62;
+                //MINIMIZE
+                //1.HideLogo
+                //2.slide sidebar
+                logoAnim.Hide(pictureBox1);
+                
+                sidebar.Width = 62;              
+                
             }
             else
             {
+                //EXPAND
+                //1.exand the sidebar
+                //2.show the logo
                 sidebar.Width = 240;
+                logoAnim.ShowSync(pictureBox1);
             }
         }
     }

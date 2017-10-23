@@ -132,6 +132,12 @@
     <Compile Include="Fee.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FeePayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeePayment.Designer.cs">
+      <DependentUpon>FeePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeeRequiredPerYear.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -219,6 +225,11 @@
       <DependentUpon>Frm_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="GridIcon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GridIcon.resx</DependentUpon>
+    </Compile>
     <Compile Include="ImportsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -302,6 +313,9 @@
     <EmbeddedResource Include="ExpenseUI.resx">
       <DependentUpon>ExpenseUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeePayment.resx">
+      <DependentUpon>FeePayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FeesStructure.resx">
       <DependentUpon>FeesStructure.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +355,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridIcon.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GridIcon.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportsUI.resx">
       <DependentUpon>ImportsUI.cs</DependentUpon>
@@ -403,6 +421,12 @@
     <None Include="Resources\logo_term3.png" />
     <None Include="Resources\logo_term2.png" />
     <None Include="Resources\logo_term1.png" />
+    <None Include="Resources\Happy100.png" />
+    <None Include="Resources\ok20.png" />
+    <None Include="Resources\Ok50px.png" />
+    <None Include="Resources\ok60.png" />
+    <None Include="Resources\ok80.png" />
+    <None Include="Resources\sad0.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

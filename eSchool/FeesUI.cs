@@ -12,11 +12,11 @@ namespace eSchool
 {
     public partial class FeesUI : UserControl
     {
-        private static FeesUI _instance;
         private List<int> filterList;
         private int selTerm;
         private int selYear;
 
+        private static FeesUI _instance;
         public static FeesUI Instance
         {
             get
@@ -37,8 +37,11 @@ namespace eSchool
         {
             //UI code
             this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
-
-
+            lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
+            lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
+            //tab1 selected =true;
+            //Show FeePayment
+            TabSwitcher(FeePayment.Instance);
             #region GridData
             ///this is data loaded at save with new fee structure
             // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
@@ -111,6 +114,9 @@ namespace eSchool
             //UI code
             bunifuSeparator1.Width = tab1.Width;
             bunifuSeparator1.Left = tab1.Left;
+
+            //Show FeePayment
+            TabSwitcher(FeePayment.Instance);
         }
 
         private void tab2_Click(object sender, EventArgs e)
@@ -118,6 +124,11 @@ namespace eSchool
             //UI code
             bunifuSeparator1.Width = tab2.Width;
             bunifuSeparator1.Left = tab2.Left;
+
+            //Show FeeStructure
+            //TODO conditions check if current fee structures available
+            TabSwitcher(FeesStructure.Instance);
+
         }
 
         private void tab3_Click(object sender, EventArgs e)
@@ -125,6 +136,8 @@ namespace eSchool
             //UI code
             bunifuSeparator1.Width = tab3.Width;
             bunifuSeparator1.Left = tab3.Left;
+
+            
         }
     }
 }
