@@ -251,6 +251,12 @@
     <Compile Include="InvoicesReceipt.Designer.cs">
       <DependentUpon>InvoicesReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListControl.Designer.cs">
+      <DependentUpon>ListControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -262,6 +268,12 @@
     </Compile>
     <Compile Include="OverHeadCategoryPerYear.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OverHeadListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OverHeadListItem.Designer.cs">
+      <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="PassDataEventArgs.cs" />
     <Compile Include="Program.cs" />
@@ -369,6 +381,12 @@
     <EmbeddedResource Include="InvoicesReceipt.resx">
       <DependentUpon>InvoicesReceipt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListControl.resx">
+      <DependentUpon>ListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverHeadListItem.resx">
+      <DependentUpon>OverHeadListItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -427,6 +445,9 @@
     <None Include="Resources\ok60.png" />
     <None Include="Resources\ok80.png" />
     <None Include="Resources\sad0.png" />
+    <None Include="Resources\AChecked64px.png" />
+    <None Include="Resources\ASChecked_50px.png" />
+    <None Include="Resources\Plus Matpx.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

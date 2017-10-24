@@ -30,7 +30,54 @@ namespace eSchool
             InitializeComponent();
         }
 
-        private void metroTileCreateFeeStruct_Click(object sender, EventArgs e)
+
+        private void bThinBtnViewAll_Click(object sender, EventArgs e)
+        {
+            //TODO 1 display page on all categories
+        }
+
+        private void FeeUI_Default_Load(object sender, EventArgs e)
+        {
+            using (var context = new EschoolEntities())
+            {
+                GridInitilizer();
+            }
+        }
+
+        //More efficient grid initilizer
+        private async void GridInitilizer()
+        {
+            this.gridCategory.Rows.Clear();
+
+            var categoryListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.OverHeadCategories.OrderBy(c => c.Id).ToList();
+                }
+            });
+
+            foreach (var cat in categoryListAsync)
+            {
+                gridCategory.Rows.Add(new string[]
+                {
+                        null,
+                        cat.OverHead
+                });
+            }
+        }
+        private void bThinBtnAddFeeItem_Click(object sender, EventArgs e)
+        {
+            FrmAddFeeCategory frm = new FrmAddFeeCategory();
+            if (frm.ShowDialog(this) == DialogResult.OK)
+            {
+
+            }
+            //Referesh the grid
+            GridInitilizer();
+        }
+
+        private void CreateFeeStructClick()
         {
             int term = Properties.Settings.Default.CurrentTerm;
             int year = Properties.Settings.Default.CurrentYear;
@@ -43,31 +90,17 @@ namespace eSchool
 
             }
         }
-
-        private void bThinBtnViewAll_Click(object sender, EventArgs e)
+        private void metroTileCreateFeeStruct_Click_1(object sender, EventArgs e)
         {
-            //TODO 1 display page on all categories
+            CreateFeeStructClick();
         }
 
-        private void FeeUI_Default_Load(object sender, EventArgs e)
+        private void gridCategory_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            using (var context = new EschoolEntities())
-            {
-                this.overHeadCategoryBindingSource.DataSource = context.OverHeadCategories.OrderBy(c => c.Id).ToList();
-            }
+            this.gridCategory.Rows[e.RowIndex].Cells[0].Value = GridIcon.AChecked64px;
         }
 
-        private void bThinBtnAddFeeItem_Click(object sender, EventArgs e)
-        {
-            FrmAddFeeCategory frm = new FrmAddFeeCategory();
-            if (frm.ShowDialog(this) == DialogResult.OK)
-            {
-
-            }
-            using (var context = new EschoolEntities())
-            {
-                this.overHeadCategoryBindingSource.DataSource = context.OverHeadCategories.OrderBy(c => c.Id).ToList();
-            }
-        }
+        //TODO
+        //View all page for  managing categories...
     }
 }

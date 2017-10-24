@@ -165,8 +165,8 @@ namespace eSchool
             psd(fmStore, tmStore, yrStore);
 
             //subscribe a method to our delegate
-            PassMoreDelegate psf = new PassMoreDelegate(ins.GridDataFilter);
-            psf(fmStore, tmStore, yrStore);
+           // PassMoreDelegate psf = new PassMoreDelegate(ins.GridDataFilter);
+           // psf(fmStore, tmStore, yrStore);
 
             //raise our event
             List<int> data = fmStore;
@@ -195,9 +195,9 @@ namespace eSchool
         }
         private void TabSwitcher(Control UIinstance)
         {
-            if (!FeesUI.Instance.container.Controls.Contains(UIinstance))
+            if (!FeesStructure.Instance.container.Controls.Contains(UIinstance))
             {
-                FeesUI.Instance.container.Controls.Add(UIinstance);
+                FeesStructure.Instance.container.Controls.Add(UIinstance);
                 UIinstance.Dock = DockStyle.Fill;
                 UIinstance.BringToFront();
             }

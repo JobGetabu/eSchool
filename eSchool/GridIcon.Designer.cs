@@ -63,6 +63,26 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AChecked64px {
+            get {
+                object obj = ResourceManager.GetObject("AChecked64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ASChecked_50px {
+            get {
+                object obj = ResourceManager.GetObject("ASChecked_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Happy100 {
             get {
                 object obj = ResourceManager.GetObject("Happy100", resourceCulture);
@@ -106,6 +126,16 @@ namespace eSchool {
         internal static System.Drawing.Bitmap ok80 {
             get {
                 object obj = ResourceManager.GetObject("ok80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plus_Matpx {
+            get {
+                object obj = ResourceManager.GetObject("Plus_Matpx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
