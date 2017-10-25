@@ -12,11 +12,6 @@ namespace eSchool
 {
     public partial class FeeUI_Show : UserControl
     {
-        //public List<int> cfrmstore { get; set; }
-        //public FeeUI_Show(List<int> pcfrmstore)
-        //{
-        //    cfrmstore = pcfrmstore;
-        //}
 
         //Singleton pattern ***best practices***
         private static FeeUI_Show _instance;
@@ -31,63 +26,98 @@ namespace eSchool
                 return _instance;
             }
         }
-        List<int> filterList;
-        private int selTerm;
-        private int selYear;
         public FeeUI_Show()
         {
             InitializeComponent();
         }
 
-
-
-        #region Interform passed variables
-
-        /// <summary>
-        /// passed variables
-        /// from PassStoredDataDelegate
-        /// </summary>
-        private List<int> fmstore;
-        private int tmStore;
-        private int yrStore;
-        public void delPassData(List<int> pfmStore, int ptmStore, int pyrStore)
-        {
-            FeeUI_Show._instance.fmstore = pfmStore;
-            FeeUI_Show._instance.yrStore = pyrStore;
-            FeeUI_Show._instance.tmStore = ptmStore;
-        }
-
-        #endregion
-
         private void FeeUI_Show_Load(object sender, EventArgs e)
         {
-            using (var context = new EschoolEntities())
-            {
-                overHeadCategoryBindingSource.DataSource = context.OverHeadCategories.OrderBy(c => c.Id).ToList();
-
-                //Load the data in the UI
-            }
-
+            OlistControlInitAsync();
         }
 
         private void bThinBtnAddFeeItem_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        void AddFeeItemClick(object sender, EventArgs e)
-        {
             FrmAddFeeCategory frm = new FrmAddFeeCategory();
             if (frm.ShowDialog(this) == DialogResult.OK)
             {
-
+                //logic
             }
-            using (var context = new EschoolEntities())
+            //refresh listcontrol
+            OlistControlInitAsync();
+        }
+
+        private async void OlistControlInitAsync()
+        {
+            var overHeadListAsync = await Task.Factory.StartNew(() =>
             {
-                this.overHeadCategoryBindingSource.DataSource = context.OverHeadCategories.OrderBy(c => c.Id).ToList();
+                using (var context = new EschoolEntities())
+                {
+                    return context.OverHeadCategories.OrderBy(c => c.Id).ToList();
+                }
+            });
+
+            listControl1.Clear();
+            foreach (var ol in overHeadListAsync)
+            {
+                listControl1.Add(ol.OverHead);
             }
         }
 
+        private void bGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            this.bGrid.Rows[e.RowIndex].Cells[0].Value = GridIcon.Grid_View_50px;
+            this.bGrid.Rows[e.RowIndex].Cells[3].Value = GridIcon.Trash_Can_50px;
+        }
+
+        private void btnSaveStructure_Click(object sender, EventArgs e)
+        {
+            //this point to old data thats not updated by delete click
+            MessageBox.Show($"Total fee per term {OverHeadListItem.selTerm} in the year {OverHeadListItem.selYear} is KES{OverHeadListItem.totalCashPas} for form {OverHeadListItem.filterListOfForms.ToString()}");
+        }
+
+        private void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
+                e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 3)
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        if (GridDelImage(e.RowIndex) != null)
+                        {
+                            context.Entry<OverHeadCategoryPerYear>(GridDelImage(e.RowIndex)).State = EntityState.Deleted;
+                            context.SaveChanges();
+                            //ToDo custom notification 
+                            bGrid.Rows[e.RowIndex].Visible = false;
+                            //call the GridInit to update
+                            OverHeadListItem c = new OverHeadListItem();
+                            c.GridData(FeesUI.filterListOfForms, FeesUI.selTerm, FeesUI.selYear);
+                        }
+                    }
+                }
+            }
+        }
+
+        private OverHeadCategoryPerYear GridDelImage(int rowIndex)
+        {
+            string name; 
+            name = (string)this.bGrid.Rows[rowIndex].Cells[1].Value;
+            if (OverHeadListItem.overHeadPYList != null)
+            {
+                foreach (var fi in OverHeadListItem.overHeadPYList)
+                {
+                    if (fi.Category.Equals(name))
+                    {
+                        return fi;
+                    }
+                }
+            }
+            return null;
+        }
         /// <summary>
         /// This method is called each time a fee structure is created 
         /// The grid reflects what is happening in the background when fee items are being 
@@ -167,6 +197,6 @@ namespace eSchool
         //        GridDataFilter(filterList, selTerm, selYear);
         //        #endregion
         //    }
-       
+
     }
 }

@@ -17,7 +17,7 @@ namespace eSchool
             InitializeComponent();
         }
         
-        //TODO overload the add for various uses
+     
         public void Add(Control c)
         {
 
@@ -25,7 +25,25 @@ namespace eSchool
             SetupAnchors();
         }
 
-        //TODO overload the add for various uses
+        public void Add(string title, string session, string totalFeeTerm)
+        {
+            StructureListItem c = new StructureListItem();
+            c.Title = title;
+            c.Session = session;
+            c.TotalFeeTerm = totalFeeTerm;
+            flpListBox.Controls.Add(c);
+            SetupAnchors();
+        }
+
+        public void Add(string overHeadName)
+        {
+            OverHeadListItem c = new OverHeadListItem();
+            c.OverHeadName = overHeadName;
+
+            flpListBox.Controls.Add(c);
+            SetupAnchors();
+        }
+        //TODO overload the remove for various uses
         public void Remove(string name)
         {
             Control c = flpListBox.Controls[name];

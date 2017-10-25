@@ -133,9 +133,54 @@
         gpoWLwvgpYE4d8ifchm7Q7mKQ7mKQ7mKQ7lq8yGfYoCAzIx+MlQAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="overHeadCategoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="ColumnPic.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
+  <metadata name="overhead.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Del.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dataGridViewCellStyle3.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
+        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
+        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
+        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
+        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
+        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
+        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
+        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
+        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
+        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
+        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
+        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
+</value>
+  </data>
+  <data name="btnSaveStructure.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAAnCAYAAABjTfhOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMYSURBVHhe7dzNS1RRHMbx/okWLYKyxJc7TtKkGLhqEy1b
+        tY40S00my+ZFDWTKCBNDJCOhhRAY9oJImo6OYGXQi4RhUUKJRSIJFkm5++VzZKYZ7xlzbE7exbP47O69
+        s/lyzrn3zL1bfv1cEiInYIzkGIyRHIMxkmMwRnIMxkiOkXKMY3NT0viuTw49vioHRpske7hetg6dIVIt
+        oAlAI/1fJrQNJbOuGOd+LMjpV12yaygo2b0ByWqrkD2hMslvKJMCX6nsP3WMSLWAJgCNWPf8sm2oRo6+
+        uClTC7PatuL9NcaGyR7JDNeKq7VSCmsYHqWmyFsirqaTkjUQVAPat8VFbWeQNEaMhgcftUjeda8UVpdo
+        f4hovVSUywNaUeSizHyf1zanjRFDanGkUTyXKrQXJtqovbXHxR0+Ly+/frR1Z4sRIyJCxEm6ixH9Kyz3
+        rIE62zrSFiOmZo6IZJonUCoFwyE1+EXbS4jRN9Et7mte7clE6ZZ/pVKOPG23x4hF5e7BoFpo6k4kMiGr
+        zx9bP8ZixG037nZ0JxCZ4m48IYfH2v7EiGc/GeEAH+HQptgx6FMzs4oR2zZ4Wq47kMg0q7NaOj6MrsRY
+        /OSy5LSUaw8kMg1TtWf0wkqM2OTGXrPuQCLT8JgHDcZixOa27kAi0/AHi1iMGZGgWM2cpmlzYFbeudyg
+        irFzekysW2e1BxKZltteJaE3vSsxYktme/ic9kAi06IPvlWMgAePuKvRHUxkCv6Qs28klLgDgzJRqO4E
+        IlOsbp/0fB5PjBE4OtL/FD8q2mLElown3MD3Wsg4bD27++vl9fwnfYyA6dp6UMt/75BReXf9cmf6eUJ7
+        thihd2ZcBckXsCjdMCIixI6pEVt32hgBIyTeVeDODKWLev9leWpePSJGJY0RsIbEC9m5PX6+E0MbhnsQ
+        V1eNulmJXyOutmaMUZHZt+pCmQ8DknOjSo2WXFPSWtBIdmu5+ugDvjRxe+aZtq1464oxClU3vx9QoyW+
+        FIDNbSIdNFI3eV99DkfXkk5KMRKZxBjJMRgjOQZjJMdgjOQQS/IbQMOK0E+1bbMAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="overHeadCategoryPerYearBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>250, 17</value>
   </metadata>

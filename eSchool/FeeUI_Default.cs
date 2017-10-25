@@ -38,10 +38,7 @@ namespace eSchool
 
         private void FeeUI_Default_Load(object sender, EventArgs e)
         {
-            using (var context = new EschoolEntities())
-            {
                 GridInitilizer();
-            }
         }
 
         //More efficient grid initilizer

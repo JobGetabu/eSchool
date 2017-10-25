@@ -63,6 +63,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Accounting_50px {
+            get {
+                object obj = ResourceManager.GetObject("Accounting_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AChecked64px {
             get {
                 object obj = ResourceManager.GetObject("AChecked64px", resourceCulture);
@@ -76,6 +86,16 @@ namespace eSchool {
         internal static System.Drawing.Bitmap ASChecked_50px {
             get {
                 object obj = ResourceManager.GetObject("ASChecked_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Grid_View_50px {
+            get {
+                object obj = ResourceManager.GetObject("Grid_View_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,26 @@ namespace eSchool {
         internal static System.Drawing.Bitmap sad0 {
             get {
                 object obj = ResourceManager.GetObject("sad0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trash_26px {
+            get {
+                object obj = ResourceManager.GetObject("Trash_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trash_Can_50px {
+            get {
+                object obj = ResourceManager.GetObject("Trash_Can_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -12,9 +12,9 @@ namespace eSchool
 {
     public partial class FeesUI : UserControl
     {
-        private List<int> filterList;
-        private int selTerm;
-        private int selYear;
+        public static List<int> filterListOfForms;
+        public static int selTerm;
+        public static int selYear;
 
         private static FeesUI _instance;
         public static FeesUI Instance
@@ -42,16 +42,15 @@ namespace eSchool
             //tab1 selected =true;
             //Show FeePayment
             TabSwitcher(FeePayment.Instance);
+
+
             #region GridData
             ///this is data loaded at save with new fee structure
-            // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
-            //alternative
             // initialize the data by subscribing our method
             FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassMoreDataDelegate(GridDataList);
             //filter the data
-            GridDataFilter(filterList,selTerm,selYear);
+            GridDataFilter(filterListOfForms, selTerm, selYear);
             #endregion
-
         }
         private void TabSwitcher(Control UIinstance)
         {
@@ -104,7 +103,7 @@ namespace eSchool
         /// <param name="sender", "e"></param>
         public void GridDataList(object sender, PassDataEventArgs e)
         {
-            filterList = e.pfmStore;
+            filterListOfForms = e.pfmStore;
             selTerm = e.ptmStore;
             selYear = e.pyrStore;
         }
@@ -119,25 +118,53 @@ namespace eSchool
             TabSwitcher(FeePayment.Instance);
         }
 
-        private void tab2_Click(object sender, EventArgs e)
+        private async void tab2_Click(object sender, EventArgs e)
         {
             //UI code
             bunifuSeparator1.Width = tab2.Width;
             bunifuSeparator1.Left = tab2.Left;
 
-            //Show FeeStructure
-            //TODO conditions check if current fee structures available
+            //Show 
             TabSwitcher(FeesStructure.Instance);
-
         }
 
+        //check existence multiple fee strucure current year
+        //private async Task<bool> MultipleFeeStructureAsync()
+        //{
+        //    bool check = false;
+        //    var structureListAsync = await Task.Factory.StartNew(() =>
+        //    {
+        //        using (var context = new EschoolEntities())
+        //        {
+        //            return context.FeeStructures.OrderBy(c => c.Id).ToList();
+        //        }
+        //    });
+
+        //    int count = 0;
+        //    foreach (var fs in structureListAsync)
+        //    {
+        //        if (fs.Year == Properties.Settings.Default.CurrentYear)
+        //        {
+        //            if (fs.Term == Properties.Settings.Default.CurrentTerm)
+        //            {
+        //                count+=1;
+        //            }
+        //            if (count > 0)
+        //            {
+        //                check = true;
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    return check;
+        //}
         private void tab3_Click(object sender, EventArgs e)
         {
             //UI code
             bunifuSeparator1.Width = tab3.Width;
             bunifuSeparator1.Left = tab3.Left;
 
-            
+            //TODO charts baby
         }
     }
 }

@@ -13,11 +13,9 @@ namespace eSchool
     public partial class FeesStructure : UserControl
     {
         private static FeesStructure _instance;
-        private List<int> filterList;
+        private List<int> filterListOfForms;
         private int selTerm;
         private int selYear;
-
-
 
         public static FeesStructure Instance
         {
@@ -49,32 +47,61 @@ namespace eSchool
             }
         }
 
-        private bool CheckForCurrentFeeStruct(int cTerm, int cYear)
+        private async Task<bool> CheckForCurrentFeeStruct(int cTerm, int cYear)
         {
             bool available = false;
-            using (var context = new EschoolEntities())
+            var queryAsync = await Task.Factory.StartNew(() =>
             {
-                var query = context.FeeStructures.Select(c => new
+                using (var context = new EschoolEntities())
                 {
-                    c.Term,
-                    c.Year
-                }).ToList();
-
-                foreach (var cur in query)
-                {
-                    if (cTerm == cur.Term)
+                    return context.FeeStructures.Select(c => new
                     {
-                        if (cYear == cur.Year)
-                        {
-                            available = true;
-                            return available;
-                        }
+                        c.Term,
+                        c.Year
+                    }).ToList();
+                }
+            });
+
+            foreach (var cur in queryAsync)
+            {
+                if (cTerm == cur.Term)
+                {
+                    if (cYear == cur.Year)
+                    {
+                        available = true;
+                        return available;
                     }
                 }
             }
             return available;
         }
-        private void bMenu_onItemSelected(object sender, EventArgs e)
+        
+
+        private async void FeesStructure_Load(object sender, EventArgs e)
+        {
+
+            //TODO 1 Check if there already existing fee structure for that 
+            //term and decide which UI to load
+            //create an option to create feeStructure in the dropdown option
+            bool ch = await CheckForCurrentFeeStruct(Properties.Settings.Default.CurrentTerm, Properties.Settings.Default.CurrentYear);
+            if (ch)
+            {
+                //show FeeUI_List
+                TabSwitcher(FeeUI_Default.Instance);
+            }
+            else
+            {
+
+                TabSwitcher(FeeUI_Default.Instance);
+            }
+
+            //loading comboBox
+
+            this.bMenu.AddItem("Print");
+            this.bMenu.AddItem("New Fee Structure");
+        }
+
+        private void bMenu_onItemSelected_1(object sender, EventArgs e)
         {
             if (bMenu.selectedIndex == 1)
             {
@@ -93,81 +120,6 @@ namespace eSchool
 
                 }
             }
-        }
-
-        /// <summary>
-        /// This method is called each time a fee structure is created 
-        /// </summary>
-        /// <param name="fmstore","tmData","yrData"></param>
-        public void GridDataFilter(List<int> fmstore, int tmData, int yrData)
-        {
-            FeeUI_Show ins = FeeUI_Show.Instance;
-            if (fmstore != null)
-            {
-                using (var context = new EschoolEntities())
-                {
-                    if (fmstore.Count > 1)
-                    {
-                        int r = int.Parse(fmstore[0].ToString());
-
-                        ins.overHeadCategoryPerYearBindingSource.DataSource =
-                             context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
-                                                             .Where(c => c.Form == r && c.Term == tmData && c.Year == yrData)
-                                                             .ToList();
-                    }
-                    else
-                    {
-                        ins.overHeadCategoryPerYearBindingSource.DataSource =
-                             context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
-                                                             .Where(c => c.Term == tmData && c.Year == yrData)
-                                                             .ToList();
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// This method is called each time a fee structure is created returning a list of school forms
-        /// </summary>
-        /// <param name="sender", "e"></param>
-        public void GridDataList(object sender, PassDataEventArgs e)
-        {
-            filterList = e.pfmStore;
-            selTerm = e.ptmStore;
-            selYear = e.pyrStore;
-        }
-
-        private void FeesStructure_Load(object sender, EventArgs e)
-        {
-
-            //TODO 1 Check if there already existing fee structure for that 
-            //term and decide which UI to load
-            //create an option to create feeStructure in the dropdown option
-
-            if (CheckForCurrentFeeStruct(Properties.Settings.Default.CurrentTerm, Properties.Settings.Default.CurrentYear))
-            {
-                TabSwitcher(FeeUI_Show.Instance);
-            }
-            else
-            {
-
-                TabSwitcher(FeeUI_Default.Instance);
-            }
-
-            //loading comboBox
-
-            this.bMenu.AddItem("Print");
-            this.bMenu.AddItem("New Fee Structure");
-
-            #region GridData
-            ///this is data loaded at save with new fee structure
-            // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
-            //alternative
-            // initialize the data by subscribing our method
-            FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassMoreDataDelegate(GridDataList);
-            //filter the data
-            GridDataFilter(filterList, selTerm, selYear);
-            #endregion
         }
     }
 }

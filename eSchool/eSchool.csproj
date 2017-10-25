@@ -170,6 +170,12 @@
     <Compile Include="FeeUI_Default.Designer.cs">
       <DependentUpon>FeeUI_Default.cs</DependentUpon>
     </Compile>
+    <Compile Include="FeeUI_List.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeeUI_List.Designer.cs">
+      <DependentUpon>FeeUI_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeeUI_Show.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,6 +296,12 @@
     <Compile Include="SettingsUI.Designer.cs">
       <DependentUpon>SettingsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="StructureListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StructureListItem.Designer.cs">
+      <DependentUpon>StructureListItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student_Basic.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -340,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeeUI_Default.resx">
       <DependentUpon>FeeUI_Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeeUI_List.resx">
+      <DependentUpon>FeeUI_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeeUI_Show.resx">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
@@ -402,6 +417,9 @@
     <EmbeddedResource Include="SettingsUI.resx">
       <DependentUpon>SettingsUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StructureListItem.resx">
+      <DependentUpon>StructureListItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransationsUI.resx">
       <DependentUpon>TransationsUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +466,10 @@
     <None Include="Resources\AChecked64px.png" />
     <None Include="Resources\ASChecked_50px.png" />
     <None Include="Resources\Plus Matpx.png" />
+    <None Include="Resources\Accounting_50px.png" />
+    <None Include="Resources\Grid View_50px.png" />
+    <None Include="Resources\Trash_26px.png" />
+    <None Include="Resources\Trash Can_50px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

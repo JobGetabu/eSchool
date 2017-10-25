@@ -35,9 +35,10 @@
             this.bMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.panelWithDashDate = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblCFeeStructure = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblYFeeStructure = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.container = new System.Windows.Forms.Panel();
+            this.lblTFeeStructure = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHCD.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelWithDashDate.SuspendLayout();
@@ -107,13 +108,15 @@
             this.bMenu.selectedIndex = -1;
             this.bMenu.Size = new System.Drawing.Size(179, 33);
             this.bMenu.TabIndex = 4;
+            this.bMenu.onItemSelected += new System.EventHandler(this.bMenu_onItemSelected_1);
             // 
             // panelWithDashDate
             // 
             this.panelWithDashDate.AutoSize = true;
             this.panelWithDashDate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelWithDashDate.Controls.Add(this.lblTFeeStructure);
             this.panelWithDashDate.Controls.Add(this.pictureBox1);
-            this.panelWithDashDate.Controls.Add(this.lblCFeeStructure);
+            this.panelWithDashDate.Controls.Add(this.lblYFeeStructure);
             this.panelWithDashDate.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelWithDashDate.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelWithDashDate.Location = new System.Drawing.Point(0, 0);
@@ -131,17 +134,17 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // lblCFeeStructure
+            // lblYFeeStructure
             // 
-            this.lblCFeeStructure.AutoSize = true;
-            this.lblCFeeStructure.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
-            this.lblCFeeStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
-            this.lblCFeeStructure.Location = new System.Drawing.Point(69, 23);
-            this.lblCFeeStructure.Name = "lblCFeeStructure";
-            this.lblCFeeStructure.Size = new System.Drawing.Size(176, 25);
-            this.lblCFeeStructure.TabIndex = 0;
-            this.lblCFeeStructure.Text = "2017 Fees Structures";
-            this.lblCFeeStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblYFeeStructure.AutoSize = true;
+            this.lblYFeeStructure.Font = new System.Drawing.Font("Segoe UI Semilight", 14F);
+            this.lblYFeeStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.lblYFeeStructure.Location = new System.Drawing.Point(69, 23);
+            this.lblYFeeStructure.Name = "lblYFeeStructure";
+            this.lblYFeeStructure.Size = new System.Drawing.Size(176, 25);
+            this.lblYFeeStructure.TabIndex = 0;
+            this.lblYFeeStructure.Text = "2017 Fees Structures";
+            this.lblYFeeStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCards1
             // 
@@ -166,6 +169,18 @@
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(798, 336);
             this.container.TabIndex = 10;
+            // 
+            // lblTFeeStructure
+            // 
+            this.lblTFeeStructure.AutoSize = true;
+            this.lblTFeeStructure.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTFeeStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.lblTFeeStructure.Location = new System.Drawing.Point(76, 53);
+            this.lblTFeeStructure.Name = "lblTFeeStructure";
+            this.lblTFeeStructure.Size = new System.Drawing.Size(51, 13);
+            this.lblTFeeStructure.TabIndex = 2;
+            this.lblTFeeStructure.Text = "Form 1 2";
+            this.lblTFeeStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FeesStructure
             // 
@@ -195,9 +210,10 @@
         private Bunifu.Framework.UI.BunifuDropdown bMenu;
         private System.Windows.Forms.Panel panelWithDashDate;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblCFeeStructure;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblYFeeStructure;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private Bunifu.Framework.UI.BunifuThinButton2 bTBtnChangeYear;
         public System.Windows.Forms.Panel container;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblTFeeStructure;
     }
 }

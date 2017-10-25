@@ -11,8 +11,6 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-    public delegate void PassStoredDataDelegate(List<int> fmStore, int tmStore, int yrStore);
-    public delegate void PassMoreDelegate(List<int> fmStore, int tmStore, int yrStore);
     public partial class FrmCreateFStruct : Form
     {
         public delegate void PassMoreDataDelegate(object sender, PassDataEventArgs e);
@@ -158,11 +156,6 @@ namespace eSchool
                 SaveFeeStructure(bCbox4);
                 frmslbl += " 4";
             }
-
-            //subscribe a method to our delegate
-            FeeUI_Show ins = FeeUI_Show.Instance;
-            PassStoredDataDelegate psd = new PassStoredDataDelegate((ins.delPassData));
-            psd(fmStore, tmStore, yrStore);
 
             //subscribe a method to our delegate
            // PassMoreDelegate psf = new PassMoreDelegate(ins.GridDataFilter);
