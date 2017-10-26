@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeeUI_Default));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.container = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelGrid = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gridCategory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panelTile = new System.Windows.Forms.Panel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.metroTileCreateFeeStruct = new MetroFramework.Controls.MetroTile();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelGrid = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bThinBtnViewAll = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bThinBtnAddFeeItem = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.gridCategory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.container.SuspendLayout();
+            this.panelTile.SuspendLayout();
+            this.bunifuCards1.SuspendLayout();
             this.panelGrid.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategory)).BeginInit();
-            this.panelTile.SuspendLayout();
-            this.bunifuCards1.SuspendLayout();
             this.SuspendLayout();
             // 
             // container
@@ -66,98 +66,6 @@
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(798, 336);
             this.container.TabIndex = 8;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Location = new System.Drawing.Point(37, 212);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(0, 0);
-            this.panel3.TabIndex = 5;
-            // 
-            // panelGrid
-            // 
-            this.panelGrid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelGrid.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelGrid.Controls.Add(this.panel1);
-            this.panelGrid.Controls.Add(this.gridCategory);
-            this.panelGrid.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelGrid.Location = new System.Drawing.Point(544, 0);
-            this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(254, 336);
-            this.panelGrid.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.panel1.Controls.Add(this.bThinBtnViewAll);
-            this.panel1.Controls.Add(this.bThinBtnAddFeeItem);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 288);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 48);
-            this.panel1.TabIndex = 1;
-            // 
-            // gridCategory
-            // 
-            this.gridCategory.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.gridCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gridCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.gridCategory.ColumnHeadersHeight = 30;
-            this.gridCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnPic,
-            this.ColumnName});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCategory.DefaultCellStyle = dataGridViewCellStyle8;
-            this.gridCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCategory.DoubleBuffered = true;
-            this.gridCategory.EnableHeadersVisualStyles = false;
-            this.gridCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gridCategory.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gridCategory.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.gridCategory.Location = new System.Drawing.Point(0, 0);
-            this.gridCategory.Name = "gridCategory";
-            this.gridCategory.ReadOnly = true;
-            this.gridCategory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.gridCategory.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCategory.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.gridCategory.RowTemplate.Height = 40;
-            this.gridCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCategory.Size = new System.Drawing.Size(254, 336);
-            this.gridCategory.TabIndex = 0;
-            this.gridCategory.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridCategory_RowsAdded);
             // 
             // panelTile
             // 
@@ -203,6 +111,39 @@
             this.metroTileCreateFeeStruct.UseCustomForeColor = true;
             this.metroTileCreateFeeStruct.UseSelectable = true;
             this.metroTileCreateFeeStruct.Click += new System.EventHandler(this.metroTileCreateFeeStruct_Click_1);
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Location = new System.Drawing.Point(37, 212);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(0, 0);
+            this.panel3.TabIndex = 5;
+            // 
+            // panelGrid
+            // 
+            this.panelGrid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelGrid.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelGrid.Controls.Add(this.panel1);
+            this.panelGrid.Controls.Add(this.gridCategory);
+            this.panelGrid.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelGrid.Location = new System.Drawing.Point(544, 0);
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.Size = new System.Drawing.Size(254, 336);
+            this.panelGrid.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.panel1.Controls.Add(this.bThinBtnViewAll);
+            this.panel1.Controls.Add(this.bThinBtnAddFeeItem);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 288);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(254, 48);
+            this.panel1.TabIndex = 1;
             // 
             // bThinBtnViewAll
             // 
@@ -260,6 +201,65 @@
             this.bThinBtnAddFeeItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bThinBtnAddFeeItem.Click += new System.EventHandler(this.bThinBtnAddFeeItem_Click);
             // 
+            // gridCategory
+            // 
+            this.gridCategory.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridCategory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gridCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridCategory.ColumnHeadersHeight = 30;
+            this.gridCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnPic,
+            this.ColumnName});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCategory.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridCategory.DoubleBuffered = true;
+            this.gridCategory.EnableHeadersVisualStyles = false;
+            this.gridCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gridCategory.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gridCategory.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.gridCategory.Location = new System.Drawing.Point(0, 0);
+            this.gridCategory.Name = "gridCategory";
+            this.gridCategory.ReadOnly = true;
+            this.gridCategory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridCategory.RowHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCategory.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridCategory.RowTemplate.Height = 40;
+            this.gridCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridCategory.Size = new System.Drawing.Size(254, 336);
+            this.gridCategory.TabIndex = 0;
+            this.gridCategory.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridCategory_RowsAdded);
+            // 
             // ColumnPic
             // 
             this.ColumnPic.FillWeight = 50.76142F;
@@ -284,11 +284,11 @@
             this.Load += new System.EventHandler(this.FeeUI_Default_Load);
             this.container.ResumeLayout(false);
             this.container.PerformLayout();
+            this.panelTile.ResumeLayout(false);
+            this.bunifuCards1.ResumeLayout(false);
             this.panelGrid.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCategory)).EndInit();
-            this.panelTile.ResumeLayout(false);
-            this.bunifuCards1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

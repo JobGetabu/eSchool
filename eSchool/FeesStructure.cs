@@ -75,10 +75,12 @@ namespace eSchool
             }
             return available;
         }
-        
+
 
         private async void FeesStructure_Load(object sender, EventArgs e)
         {
+            //UI code
+            this.lblYFeeStructure.Text = $"{Properties.Settings.Default.CurrentYear.ToString()} Fees Structures"; //2017 Fees Structures
 
             //TODO 1 Check if there already existing fee structure for that 
             //term and decide which UI to load
@@ -103,22 +105,26 @@ namespace eSchool
 
         private void bMenu_onItemSelected_1(object sender, EventArgs e)
         {
+            if (bMenu.selectedIndex == 0)
+            {
+                MessageBox.Show("Select item to print ", "Error");
+            }
             if (bMenu.selectedIndex == 1)
             {
-                //TODO 1
-                //create a delegate pointing to the create fee structure tile click
-                //or just
+                CreateFeeStructClick();
+            }
+        }
+        private void CreateFeeStructClick()
+        {
+            int term = Properties.Settings.Default.CurrentTerm;
+            int year = Properties.Settings.Default.CurrentYear;
 
-                int term = Properties.Settings.Default.CurrentTerm;
-                int year = Properties.Settings.Default.CurrentYear;
+            FrmCreateFStruct frm = new FrmCreateFStruct(term, year);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //need to send FeeUI_Show to front
+                //at exit save of FrmCreateFStruct
 
-                FrmCreateFStruct frm = new FrmCreateFStruct(term, year);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    //need to send FeeUI_Show to front
-                    //at exit save of FrmCreateFStruct
-
-                }
             }
         }
     }

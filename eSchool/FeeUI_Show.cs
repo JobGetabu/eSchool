@@ -76,7 +76,7 @@ namespace eSchool
             MessageBox.Show($"Total fee per term {OverHeadListItem.selTerm} in the year {OverHeadListItem.selYear} is KES{OverHeadListItem.totalCashPas} for form {OverHeadListItem.filterListOfForms.ToString()}");
         }
 
-        private void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
@@ -87,28 +87,35 @@ namespace eSchool
                 {
                     using (var context = new EschoolEntities())
                     {
-                        if (GridDelImage(e.RowIndex) != null)
+                        for (int i = 0; i < FeesUI.filterListOfForms.Count; i++)
                         {
-                            context.Entry<OverHeadCategoryPerYear>(GridDelImage(e.RowIndex)).State = EntityState.Deleted;
-                            context.SaveChanges();
+                            if (GridDelImageAsync(e.RowIndex) != null)
+                            {
+                                context.Entry<OverHeadCategoryPerYear>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
+                                context.SaveChanges();                               
+                            }
+                        }
                             //ToDo custom notification 
                             bGrid.Rows[e.RowIndex].Visible = false;
                             //call the GridInit to update
-                            OverHeadListItem c = new OverHeadListItem();
-                            c.GridData(FeesUI.filterListOfForms, FeesUI.selTerm, FeesUI.selYear);
-                        }
+                            OverHeadListItem d = new OverHeadListItem();
+                            d.GridData(FeesUI.filterListOfForms, FeesUI.selTerm, FeesUI.selYear);
                     }
                 }
             }
         }
 
-        private OverHeadCategoryPerYear GridDelImage(int rowIndex)
+        private async Task<OverHeadCategoryPerYear> GridDelImageAsync(int rowIndex)
         {
-            string name; 
+            //call the GridDataPass to update list
+            OverHeadListItem c = new OverHeadListItem();
+           var overHeadPYList=await c.GridDataPass(FeesUI.filterListOfForms, FeesUI.selTerm, FeesUI.selYear);
+
+            string name;
             name = (string)this.bGrid.Rows[rowIndex].Cells[1].Value;
-            if (OverHeadListItem.overHeadPYList != null)
+            if (overHeadPYList != null)
             {
-                foreach (var fi in OverHeadListItem.overHeadPYList)
+                foreach (var fi in overHeadPYList)
                 {
                     if (fi.Category.Equals(name))
                     {
@@ -118,85 +125,6 @@ namespace eSchool
             }
             return null;
         }
-        /// <summary>
-        /// This method is called each time a fee structure is created 
-        /// The grid reflects what is happening in the background when fee items are being 
-        /// populated to the fee structure.
-        /// </summary>
-        /// <param name="fmstore"></param>
-        /// <param name="tmData"></param>
-        /// <param name="yrData"></param>
-        //public void GridDataFilter(List<int> fmstore, int tmData, int yrData)
-        //{
-        //    if (fmstore != null)
-        //    {
-        //        using (var context = new EschoolEntities())
-        //        {
-        //            if (fmstore.Count > 1)
-        //            {
-        //                int r = int.Parse(fmstore[0].ToString());
-
-        //                this.overHeadCategoryPerYearBindingSource.DataSource =
-        //                     context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
-        //                                                     .Where(c => c.Form == r && c.Term == tmData && c.Year == yrData)
-        //                                                     .ToList();
-        //            }
-        //            else
-        //            {
-        //                this.overHeadCategoryPerYearBindingSource.DataSource =
-        //                     context.OverHeadCategoryPerYears.OrderBy(c => c.Id)
-        //                                                     .Where(c => c.Term == tmData && c.Year == yrData)
-        //                                                     .ToList();
-        //            }
-        //        }
-        //    }
-        //}
-
-        /// <summary>
-        /// This method is called each time a fee structure is created returning a list of school forms
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //public void GridDataList(object sender, PassDataEventArgs e)
-        //{
-        //    filterList = e.pfmStore;
-        //    selTerm = e.ptmStore;
-        //    selYear = e.pyrStore;
-        //}
-
-        //    void gridCellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    var senderGrid = (DataGridView)sender;
-
-        //    if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-        //        e.RowIndex >= 0)
-        //    {
-        //        //TODO - Button Clicked - Execute Code Here
-
-        //        //Open assignfee UI dialogue 
-        //        if (overHeadCategoryBindingSource.Current == null)
-        //        {
-        //            return;
-        //        }
-        //        OverHeadCategory cat = overHeadCategoryBindingSource.Current as OverHeadCategory;
-        //        FrmAssignFeeItem frm = new FrmAssignFeeItem(cat.OverHead.ToString(), fmstore, tmStore, yrStore);
-        //        if (frm.ShowDialog() == DialogResult.OK)
-        //        {
-        //            //logic
-
-        //        }
-
-        //        //refresh the data grid
-        //        #region GridData
-        //        ///this is data loaded at save with new fee structure
-        //        // overHeadCategoryPerYearBindingSource.DataSource = context.OverHeadCategoryPerYears.OrderBy(c => c.Id).ToList();
-        //        //alternative
-        //        // initialize the data by subscribing our method
-        //        FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassMoreDataDelegate(GridDataList);
-        //        //filter the data
-        //        GridDataFilter(filterList, selTerm, selYear);
-        //        #endregion
-        //    }
-
+        
     }
 }

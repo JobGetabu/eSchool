@@ -131,7 +131,7 @@ namespace eSchool
             }
 
 
-            string frmslbl = "For Form ";
+            string frmslbl = "Form ";
 
             if (bCbox1.Checked)
             {
@@ -170,9 +170,10 @@ namespace eSchool
             ListUpdated(this, args);
 
             //change label
-            FeesUI feeIns = FeesUI.Instance;
-           // feeIns.lblCFeeStructure.Text = selectedYear + " Fee Structure " + frmslbl;
-
+            FeesStructure feeIns = FeesStructure.Instance;
+            feeIns.lblYFeeStructure.Text = selectedYear + " Fee Structure " ;
+            feeIns.lblFFeeStructure.Text = frmslbl;
+            feeIns.lblTFeeStructure.Text = "Term "+ tmStore.ToString();
             //TODO 1 custom notification
             MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -18,7 +18,6 @@ namespace eSchool
         public static int selYear = FeesUI.selYear;
 
 
-        public static List<OverHeadCategoryPerYear> overHeadPYList;
         public static decimal totalCashPas;
         public string OverHeadName { get; set; }
         public OverHeadListItem()
@@ -52,8 +51,21 @@ namespace eSchool
             }
         }
 
-
-
+        public async Task<List<OverHeadCategoryPerYear>> GridDataPass(List<int> fmstore, int tmData, int yrData)
+        {
+            // data about all forms instead of just one
+            //Used to give updated data for correct deletion in the grid
+            return await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.OverHeadCategoryPerYears.
+                                OrderBy(c => c.Id).
+                                Where(c => c.Year == yrData & c.Term == tmData).
+                                ToList();
+                }
+            });
+        }
         public async void GridData(List<int> fmstore, int tmData, int yrData)
         {
             if (fmstore == null)
@@ -71,7 +83,6 @@ namespace eSchool
                                 ToList();
                 }
             });
-            overHeadPYList = overHeadPYListAsync;
 
             decimal totalCash =0;
             FeeUI_Show feeuiShow = FeeUI_Show.Instance;

@@ -29,6 +29,7 @@ namespace eSchool
                 {
                     if (mTBoxFeeItem.Text == string.Empty)
                     {
+                        mTBoxFeeItem.Focus();
                         return;
                     }
                     OverHeadCategory cat = new OverHeadCategory();
