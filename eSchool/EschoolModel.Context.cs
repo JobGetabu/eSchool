@@ -38,5 +38,6 @@ namespace eSchool
         public DbSet<Student_Basic> Student_Basic { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<FeeStructure> FeeStructures { get; set; }
+        public DbSet<GroupedFeeStructure> GroupedFeeStructures { get; set; }
     }
 }

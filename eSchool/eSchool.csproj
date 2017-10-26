@@ -200,6 +200,12 @@
     <Compile Include="FrmAssignFeeItem.Designer.cs">
       <DependentUpon>FrmAssignFeeItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChangeYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeYear.Designer.cs">
+      <DependentUpon>FrmChangeYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCreateFStruct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GridIcon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupedFeeStructure.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ImportsUI.cs">
       <SubType>UserControl</SubType>
@@ -368,6 +377,9 @@
     <EmbeddedResource Include="FrmAssignFeeItem.resx">
       <DependentUpon>FrmAssignFeeItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeYear.resx">
+      <DependentUpon>FrmChangeYear.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateFStruct.resx">
       <DependentUpon>FrmCreateFStruct.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,6 +482,8 @@
     <None Include="Resources\Grid View_50px.png" />
     <None Include="Resources\Trash_26px.png" />
     <None Include="Resources\Trash Can_50px.png" />
+    <None Include="Resources\Accounting_coloredpx.png" />
+    <None Include="Resources\Ok_0px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

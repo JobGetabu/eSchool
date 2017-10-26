@@ -20,6 +20,8 @@ namespace eSchool
 
         public static decimal totalCashPas;
         public string OverHeadName { get; set; }
+
+        public int UTagIndex { get; set; }
         public OverHeadListItem()
         {
             InitializeComponent();
@@ -34,7 +36,6 @@ namespace eSchool
 
         private void btnAssignItem_Click(object sender, EventArgs e)
         {
-            //ToDO
             //startup the AssignFeeItem form
             //pass overhead string & fmStore & selYear
             if (filterListOfForms != null)
@@ -43,14 +44,28 @@ namespace eSchool
                 FrmAssignFeeItem frm = new FrmAssignFeeItem(OverHeadName, filterListOfForms, selTerm, selYear);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    //logic
 
+                }
+                //logic hide if save was clicked
+                if (frm.IsSaveClicked)
+                {
+                    //TODO hide dispose control;
+
+                    
                 }
                 //refresh the data grid
                 GridData(filterListOfForms, selTerm, selYear);
             }
         }
 
+        /// <summary>
+        /// // data about all forms instead of just one
+            //Used to give updated data for correct deletion in the grid
+        /// </summary>
+        /// <param name="fmstore"></param>
+        /// <param name="tmData"></param>
+        /// <param name="yrData"></param>
+        /// <returns></returns>
         public async Task<List<OverHeadCategoryPerYear>> GridDataPass(List<int> fmstore, int tmData, int yrData)
         {
             // data about all forms instead of just one
@@ -84,7 +99,7 @@ namespace eSchool
                 }
             });
 
-            decimal totalCash =0;
+            decimal totalCash = 0;
             FeeUI_Show feeuiShow = FeeUI_Show.Instance;
             feeuiShow.bGrid.Rows.Clear();
             //Populate grid
@@ -100,8 +115,6 @@ namespace eSchool
             }
             totalCashPas = totalCash;
         }
-
-
 
 
         private void OverHeadListItem_MouseHover(object sender, EventArgs e)

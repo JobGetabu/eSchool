@@ -31,26 +31,15 @@ namespace eSchool
 
 
 
-        private async void FeeUI_List_Load(object sender, EventArgs e)
+        private  void FeeUI_List_Load(object sender, EventArgs e)
         {
             //load up the grid
             GridInitilizer();
 
             //load up the list control
+            LoadListAsync(Properties.Settings.Default.CurrentYear);
 
-            try
-            {
-                bool ch= await ListControlInitAsync();
-            }
-            catch(NullReferenceException exp)
-            {
-                MessageBox.Show(exp.Message,"Nulllllllll");
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.Message);
-                //throw;
-            }
+
         }
 
         //More efficient grid initilizer
@@ -97,61 +86,42 @@ namespace eSchool
             //TODO 1 display page on all categories
         }
 
-        List<FeeStructure> structureList;
-       private async Task<List<FeeStructure>> StructureListAsync()
+       public async void LoadListAsync(int year)
         {
             var structureListAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
                 {
-                    return context.FeeStructures.OrderBy(c => c.Id).ToList();
+                    return context.GroupedFeeStructures.OrderBy(c => c.Id)
+                    .Where(c=>c.selYear==year)
+                    .ToList();
                 }
             });
-             
-            return structureListAsync;
-        }
-        private async Task<bool> ListControlInitAsync()
-        {
-            structureList=await StructureListAsync();
-            foreach (var fs in structureList)
-            {
-                if (fs.Year == Properties.Settings.Default.CurrentYear)
-                {
-                    int count = 0;
-                    if (fs.Term == Properties.Settings.Default.CurrentTerm)
-                    {
-                        count++;
-                    }
-                    if (count > 0)
-                    {
-                        string title, session, total;
-                        //TODO get the total
-                        //check created fee structures
-                        FeesUI feeUi = FeesUI.Instance;
-                        PassDataEventArgs psd ;
-                        
-                        //comes alive once a fs is created
-                        if (FeesUI.filterListOfForms.Count > 0)
-                        {
-                            string fms = "";
-                            foreach (var item in FeesUI.filterListOfForms)
-                            {
-                                fms += $" {FeesUI.filterListOfForms}";
-                            }
-                            title = $"{FeesUI.selYear} Form{fms}";
-                        }
-                        else
-                        {
-                            title = $"{FeesUI.selYear} Form{FeesUI.filterListOfForms}";
-                        }
-                        session = $"Term {FeesUI.selTerm}";
-                        total = "KES 20,000";
 
-                        this.listControl1.Add(title, session, total);
-                    }
-                }
+            listControl1.Clear();
+            foreach (var fs in structureListAsync)
+            {
+                //title //session //but total
+                listControl1.Add(fs.YearTitle, fs.TermTitle, fs.TotalTitle);
             }
-            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateFeeStructClick();
+        }
+        private void CreateFeeStructClick()
+        {
+            int term = Properties.Settings.Default.CurrentTerm;
+            int year = Properties.Settings.Default.CurrentYear;
+
+            FrmCreateFStruct frm = new FrmCreateFStruct(term, year);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //need to send FeeUI_Show to front
+                //at exit save of FrmCreateFStruct
+
+            }
         }
     }
 }

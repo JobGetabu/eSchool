@@ -35,11 +35,12 @@ namespace eSchool
             SetupAnchors();
         }
 
-        public void Add(string overHeadName)
+        public void Add(string overHeadName,int UTagCount)
         {
             OverHeadListItem c = new OverHeadListItem();
             c.OverHeadName = overHeadName;
-
+            //reference name for remove
+            c.UTagIndex = UTagCount;
             flpListBox.Controls.Add(c);
             SetupAnchors();
         }
@@ -51,6 +52,7 @@ namespace eSchool
             c.Dispose();
             SetupAnchors();
         }
+
         public void Clear()
         {
             do

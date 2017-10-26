@@ -37,6 +37,8 @@ namespace eSchool
             this.bCLabelOverHeadCategory.Text = categoryOverhead;
             mTBoxCost.Focus();
         }
+
+        public bool IsSaveClicked;
         private void bFlatBtnSave_Click(object sender, EventArgs e)
         {
             using (var context = new EschoolEntities())
@@ -82,9 +84,10 @@ namespace eSchool
 
                 //TODO custom notification
                 MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //TODO
+ 
                 //remove category from visible list 
-                //refresh the grid
+                IsSaveClicked = true;
+
                 this.Close();
             }
         }

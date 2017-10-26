@@ -26,6 +26,8 @@ namespace eSchool
         public static List<int> fmStore { get; set; }
         public static int tmStore { get; set; }
         public static int yrStore { get; set; }
+
+        public static string frmslbl = "Form ";
         public FrmCreateFStruct(int term, int year)
         {
             InitializeComponent();
@@ -91,28 +93,9 @@ namespace eSchool
         {
             using (var context = new EschoolEntities())
             {
-                FeeStructure fstruct = new FeeStructure()
-                {
-                    Details = $"FORM {ck.Tag} {selectedYear} FEES STRUCTURE",
-                    Term = selectedTerm,
-                    Year = selectedYear,
-                    Form = int.Parse(ck.Tag.ToString())
-                };
-
                 FrmCreateFStruct.fmStore.Add(int.Parse(ck.Tag.ToString()));
                 FrmCreateFStruct.tmStore = selectedTerm;
-                FrmCreateFStruct.yrStore = selectedYear;
-                try
-                {
-                    context.FeeStructures.Add(fstruct);
-                    context.SaveChanges();
-                }
-                catch (Exception exp)
-                {
-                    //TODO Logging errors
-                    MessageBox.Show(exp.Message);
-                    throw;
-                }
+                FrmCreateFStruct.yrStore = selectedYear;       
             }
         }
         private void bFlatBtnSave_Click(object sender, EventArgs e)
@@ -128,10 +111,7 @@ namespace eSchool
                 //TODO custom notification
                 MetroMessageBox.Show(this, "Select the year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
-
-
-            string frmslbl = "Form ";
+            }   
 
             if (bCbox1.Checked)
             {

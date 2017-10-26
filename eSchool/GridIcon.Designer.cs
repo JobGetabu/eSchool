@@ -73,6 +73,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Accounting_coloredpx {
+            get {
+                object obj = ResourceManager.GetObject("Accounting_coloredpx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AChecked64px {
             get {
                 object obj = ResourceManager.GetObject("AChecked64px", resourceCulture);

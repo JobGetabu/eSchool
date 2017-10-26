@@ -58,10 +58,8 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(544, 47);
+            this.bunifuCards1.Size = new System.Drawing.Size(544, 43);
             this.bunifuCards1.TabIndex = 0;
-            this.bunifuCards1.MouseLeave += new System.EventHandler(this.bunifuCards1_MouseLeave);
-            this.bunifuCards1.MouseHover += new System.EventHandler(this.bunifuCards1_MouseHover);
             // 
             // panel1
             // 
@@ -69,9 +67,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 5);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(542, 39);
+            this.panel1.Size = new System.Drawing.Size(544, 43);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -80,8 +78,11 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(377, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(165, 39);
+            this.panel3.Size = new System.Drawing.Size(167, 43);
             this.panel3.TabIndex = 6;
+            this.panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
+            this.panel3.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.panel3.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // lblTotal
             // 
@@ -99,8 +100,11 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(183, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(194, 39);
+            this.panel2.Size = new System.Drawing.Size(194, 43);
             this.panel2.TabIndex = 5;
+            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
+            this.panel2.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.panel2.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // lblSession
             // 
@@ -119,8 +123,11 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(183, 39);
+            this.panel4.Size = new System.Drawing.Size(183, 43);
             this.panel4.TabIndex = 4;
+            this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
+            this.panel4.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.panel4.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // lblTitle
             // 
@@ -148,8 +155,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.bunifuCards1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StructureListItem";
-            this.Size = new System.Drawing.Size(544, 47);
+            this.Size = new System.Drawing.Size(544, 43);
             this.Load += new System.EventHandler(this.StructureListItem_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

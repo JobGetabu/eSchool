@@ -69,6 +69,22 @@
           <Property Name="Year" Type="int" />
           <Property Name="Form" Type="int" />
         </EntityType>
+        <EntityType Name="GroupedFeeStructures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YearTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TermTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalFee" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="selFm1" Type="int" />
+          <Property Name="selFm2" Type="int" />
+          <Property Name="selFm3" Type="int" />
+          <Property Name="selFm4" Type="int" />
+          <Property Name="selYear" Type="int" />
+          <Property Name="selTerm" Type="int" />
+          <Property Name="TotalTitle" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Income">
           <Key>
             <PropertyRef Name="IncomeId" />
@@ -320,6 +336,7 @@
           <EntitySet Name="Fees" EntityType="Self.Fees" store:Type="Tables" />
           <EntitySet Name="FeesRequiredPerTerm" EntityType="Self.FeesRequiredPerTerm" store:Type="Tables" />
           <EntitySet Name="FeeStructures" EntityType="Self.FeeStructures" store:Type="Tables" />
+          <EntitySet Name="GroupedFeeStructures" EntityType="Self.GroupedFeeStructures" store:Type="Tables" />
           <EntitySet Name="Income" EntityType="Self.Income" store:Type="Tables" />
           <EntitySet Name="Login_Users" EntityType="Self.Login_Users" store:Type="Tables" />
           <EntitySet Name="OverHeadCategory" EntityType="Self.OverHeadCategory" store:Type="Tables" />
@@ -748,6 +765,7 @@
             <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYears" />
             <End Role="FeeStructure" EntitySet="FeeStructures" />
           </AssociationSet>
+          <EntitySet Name="GroupedFeeStructures" EntityType="EschoolModel.GroupedFeeStructure" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -795,6 +813,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="GroupedFeeStructure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YearTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TermTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalFee" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="selFm1" Type="Int32" />
+          <Property Name="selFm2" Type="Int32" />
+          <Property Name="selFm3" Type="Int32" />
+          <Property Name="selFm4" Type="Int32" />
+          <Property Name="selYear" Type="Int32" />
+          <Property Name="selTerm" Type="Int32" />
+          <Property Name="TotalTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -938,6 +972,23 @@
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupedFeeStructures">
+            <EntityTypeMapping TypeName="EschoolModel.GroupedFeeStructure">
+              <MappingFragment StoreEntitySet="GroupedFeeStructures">
+                <ScalarProperty Name="TotalTitle" ColumnName="TotalTitle" />
+                <ScalarProperty Name="selTerm" ColumnName="selTerm" />
+                <ScalarProperty Name="selYear" ColumnName="selYear" />
+                <ScalarProperty Name="selFm4" ColumnName="selFm4" />
+                <ScalarProperty Name="selFm3" ColumnName="selFm3" />
+                <ScalarProperty Name="selFm2" ColumnName="selFm2" />
+                <ScalarProperty Name="selFm1" ColumnName="selFm1" />
+                <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+                <ScalarProperty Name="TermTitle" ColumnName="TermTitle" />
+                <ScalarProperty Name="YearTitle" ColumnName="YearTitle" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

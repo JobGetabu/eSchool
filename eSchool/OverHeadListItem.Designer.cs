@@ -33,8 +33,8 @@
             this.panelTxt = new System.Windows.Forms.Panel();
             this.bTBOverHaed = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelIcon = new System.Windows.Forms.Panel();
             this.btnAssignItem = new System.Windows.Forms.Button();
+            this.panelIcon = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCards1.SuspendLayout();
             this.panelTxt.SuspendLayout();
@@ -98,15 +98,6 @@
             this.panel2.Size = new System.Drawing.Size(123, 45);
             this.panel2.TabIndex = 3;
             // 
-            // panelIcon
-            // 
-            this.panelIcon.Controls.Add(this.pictureBox1);
-            this.panelIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelIcon.Location = new System.Drawing.Point(0, 0);
-            this.panelIcon.Name = "panelIcon";
-            this.panelIcon.Size = new System.Drawing.Size(35, 45);
-            this.panelIcon.TabIndex = 1;
-            // 
             // btnAssignItem
             // 
             this.btnAssignItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -127,6 +118,15 @@
             this.btnAssignItem.Text = "Assign ";
             this.btnAssignItem.UseVisualStyleBackColor = true;
             this.btnAssignItem.Click += new System.EventHandler(this.btnAssignItem_Click);
+            // 
+            // panelIcon
+            // 
+            this.panelIcon.Controls.Add(this.pictureBox1);
+            this.panelIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelIcon.Location = new System.Drawing.Point(0, 0);
+            this.panelIcon.Name = "panelIcon";
+            this.panelIcon.Size = new System.Drawing.Size(35, 45);
+            this.panelIcon.TabIndex = 1;
             // 
             // pictureBox1
             // 

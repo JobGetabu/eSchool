@@ -47,30 +47,26 @@ namespace eSchool
             }
         }
 
-        private async Task<bool> CheckForCurrentFeeStruct(int cTerm, int cYear)
+        private async Task<bool> AnyCurrentFeeStruct(int cYear)
         {
             bool available = false;
             var queryAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
                 {
-                    return context.FeeStructures.Select(c => new
+                    return context.GroupedFeeStructures.Select(c => new
                     {
-                        c.Term,
-                        c.Year
+                        c.selYear
                     }).ToList();
                 }
             });
 
             foreach (var cur in queryAsync)
             {
-                if (cTerm == cur.Term)
+                if (cYear == cur.selYear)
                 {
-                    if (cYear == cur.Year)
-                    {
-                        available = true;
-                        return available;
-                    }
+                    available = true;
+                    return available;
                 }
             }
             return available;
@@ -83,17 +79,16 @@ namespace eSchool
             this.lblYFeeStructure.Text = $"{Properties.Settings.Default.CurrentYear.ToString()} Fees Structures"; //2017 Fees Structures
 
             //TODO 1 Check if there already existing fee structure for that 
-            //term and decide which UI to load
+            //year and decide which UI to load
             //create an option to create feeStructure in the dropdown option
-            bool ch = await CheckForCurrentFeeStruct(Properties.Settings.Default.CurrentTerm, Properties.Settings.Default.CurrentYear);
+            bool ch = await AnyCurrentFeeStruct(Properties.Settings.Default.CurrentYear);
             if (ch)
             {
                 //show FeeUI_List
-                TabSwitcher(FeeUI_Default.Instance);
+                TabSwitcher(FeeUI_List.Instance);
             }
             else
             {
-
                 TabSwitcher(FeeUI_Default.Instance);
             }
 
@@ -125,6 +120,19 @@ namespace eSchool
                 //need to send FeeUI_Show to front
                 //at exit save of FrmCreateFStruct
 
+            }
+        }
+
+        private void bTBtnChangeYear_Click(object sender, EventArgs e)
+        {
+            FrmChangeYear frm = new FrmChangeYear();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {              
+                FeeUI_List ful = FeeUI_List.Instance;
+                //show FeeUI_List
+                TabSwitcher(FeeUI_List.Instance);
+                //updates the list with current year fee structures
+                ful.LoadListAsync(FrmChangeYear.selChangeYear);
             }
         }
     }

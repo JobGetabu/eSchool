@@ -32,6 +32,7 @@
         <EntityTypeShape EntityType="EschoolModel.FeeStructure" Width="1.5" PointX="6.875" PointY="3.75" />
         <AssociationConnector Association="EschoolModel.Term_FK" />
         <AssociationConnector Association="EschoolModel.Year_FK" />
+        <EntityTypeShape EntityType="EschoolModel.GroupedFeeStructure" Width="1.5" PointX="0.75" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
