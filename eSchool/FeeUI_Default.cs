@@ -33,7 +33,8 @@ namespace eSchool
 
         private void bThinBtnViewAll_Click(object sender, EventArgs e)
         {
-            //TODO 1 display page on all categories
+            FrmViewAll fva = new FrmViewAll();
+            fva.ShowDialog();
         }
 
         private void FeeUI_Default_Load(object sender, EventArgs e)

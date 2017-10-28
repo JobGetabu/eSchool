@@ -256,7 +256,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bThinBtnAddFeeItem;
         private System.Windows.Forms.Panel panelGridOHs;
         public System.Windows.Forms.BindingSource overHeadCategoryPerYearBindingSource;
-        private ListControl listControl1;
         public Bunifu.Framework.UI.BunifuCustomDataGrid bGrid;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridViewImageColumn ColumnPic;
@@ -264,5 +263,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewImageColumn Del;
         public Bunifu.Framework.UI.BunifuThinButton2 btnSaveStructure;
+        public ListControl listControl1;
     }
 }

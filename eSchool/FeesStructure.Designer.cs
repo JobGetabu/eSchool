@@ -220,7 +220,6 @@
 
         private System.Windows.Forms.Panel panelHCD;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuDropdown bMenu;
         private System.Windows.Forms.Panel panelWithDashDate;
         private System.Windows.Forms.PictureBox pictureBox1;
         public Bunifu.Framework.UI.BunifuCustomLabel lblYFeeStructure;
@@ -229,5 +228,6 @@
         public System.Windows.Forms.Panel container;
         public Bunifu.Framework.UI.BunifuCustomLabel lblFFeeStructure;
         public Bunifu.Framework.UI.BunifuCustomLabel lblTFeeStructure;
+        public Bunifu.Framework.UI.BunifuDropdown bMenu;
     }
 }

@@ -70,6 +70,8 @@ namespace eSchool
                 //label change
                 FeesStructure feeIns = FeesStructure.Instance;
                 feeIns.lblYFeeStructure.Text = $"{selChangeYear} Fees Structures";//2017 Fees Structures
+                feeIns.lblFFeeStructure.Text = "";
+                feeIns.lblTFeeStructure.Text = "";
                 e.Cancel = false;
             }
         }

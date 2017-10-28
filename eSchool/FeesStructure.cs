@@ -90,18 +90,20 @@ namespace eSchool
             }
 
             //loading comboBox
-
-            this.bMenu.AddItem("Print");
+            string[] n = { };
+            this.bMenu.Items = n;
+            //this.bMenu.AddItem("Print"); //No print at this point
             this.bMenu.AddItem("New Fee Structure");
         }
 
         private void bMenu_onItemSelected_1(object sender, EventArgs e)
         {
-            if (bMenu.selectedIndex == 0)
+            //ToDo use this externally to print item
+            if (bMenu.selectedValue.Equals("Print"))
             {
-                MessageBox.Show("Select item to print ", "Error");
+                MessageBox.Show("Select item to print", "No Selection");
             }
-            if (bMenu.selectedIndex == 1)
+            if (bMenu.selectedValue.Equals("New Fee Structure"))
             {
                 CreateFeeStructClick();
             }
@@ -122,9 +124,7 @@ namespace eSchool
 
         private void bTBtnChangeYear_Click(object sender, EventArgs e)
         {
-            //UI code set the label to ""
-            this.lblFFeeStructure.Text = "";
-            this.lblTFeeStructure.Text = "";
+           
             FrmChangeYear frm = new FrmChangeYear();
             if (frm.ShowDialog() == DialogResult.OK)
             {              

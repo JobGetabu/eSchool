@@ -231,6 +231,12 @@
     <Compile Include="FrmImportedData.Designer.cs">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmViewAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewAll.Designer.cs">
+      <DependentUpon>FrmViewAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportedData.resx">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmViewAll.resx">
+      <DependentUpon>FrmViewAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
       <DependentUpon>Frm_Home.cs</DependentUpon>

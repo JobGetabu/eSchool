@@ -34,6 +34,13 @@ namespace eSchool
 
         private void FeeUI_Show_Load(object sender, EventArgs e)
         {
+            //loading comboBox
+            FeesStructure fs = FeesStructure.Instance;
+            string[] n = { };
+            fs.bMenu.Items = n;
+            fs.bMenu.AddItem("Print"); //No print at this point
+            fs.bMenu.AddItem("New Fee Structure");
+
             this.btnSaveStructure.Visible = true;
             OlistControlInitAsync();
         }
@@ -49,7 +56,7 @@ namespace eSchool
             OlistControlInitAsync();
         }
 
-        private async void OlistControlInitAsync()
+        public async void OlistControlInitAsync()
         {
             var overHeadListAsync = await Task.Factory.StartNew(() =>
             {
@@ -58,12 +65,10 @@ namespace eSchool
                     return context.OverHeadCategories.OrderBy(c => c.Id).ToList();
                 }
             });
-            int count = 1;
             listControl1.Clear();
             foreach (var ol in overHeadListAsync)
-            {
-                
-                listControl1.Add(ol.OverHead,count+=1);
+            {              
+                listControl1.Add(ol.OverHead);
             }
         }
 
@@ -75,8 +80,7 @@ namespace eSchool
 
         private void btnSaveStructure_Click(object sender, EventArgs e)
         {
-            //TODO 2 prompt to print fee structure
-            //ToDO delete privious same fee rpt & gpFs 
+            //TODO 2 prompt to print fee structure           
 
             if (FeesUI.autoGen)
             {

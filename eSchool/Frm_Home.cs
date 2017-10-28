@@ -72,7 +72,16 @@ namespace eSchool
                 UIinstance.Dock = DockStyle.Fill;
                 UIinstance.Visible = false;
                 UIinstance.BringToFront();
-                this.bunifuTransitionUIs.ShowSync(UIinstance);
+
+                try
+                {
+                    this.bunifuTransitionUIs.ShowSync(UIinstance);
+                }
+                catch (InvalidOperationException)
+                {
+
+                    //this exception occurs when the transition is not complete ;(
+                }
             }
             else
             {               

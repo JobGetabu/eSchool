@@ -76,16 +76,17 @@ namespace eSchool
 
         private async void FsClick(object sender, MouseEventArgs e)
         {
+            string frmslbl = "Form ";
             var selFs = await SelectedFeeStructureAsync();
             if (selFs != null)
             {
                 //raise our event
                 bool autoGen = true;
                 List<int> data = new List<int>();
-                if (selFs.selFm1 == 1) { data.Add(1); }
-                if (selFs.selFm2 == 2) { data.Add(2); }
-                if (selFs.selFm3 == 3) { data.Add(3); }
-                if (selFs.selFm4 == 4) { data.Add(4); }
+                if (selFs.selFm1 == 1) { data.Add(1); frmslbl += "1"; }
+                if (selFs.selFm2 == 2) { data.Add(2); frmslbl += " 2";}
+                if (selFs.selFm3 == 3) { data.Add(3); frmslbl += " 3";}
+                if (selFs.selFm4 == 4) { data.Add(4); frmslbl += " 4";}
 
                 decimal totalFee = selFs.TotalFee;
                 int tmData = selFs.selTerm.Value;
@@ -99,7 +100,7 @@ namespace eSchool
                 OverHeadListItem d = new OverHeadListItem();
                 d.GridData(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear);
 
-               
+
                 //switch to FeeUI_Show
                 FeesStructure fs = FeesStructure.Instance;
                 fs.SwitchTabExt2();
@@ -109,7 +110,11 @@ namespace eSchool
                 FeeUI_Show fui = FeeUI_Show.Instance;
                 fui.btnSaveStructure.Visible = false;
 
-                //TODO make it not able to assign new fee items to fee structure
+                //change label
+                FeesStructure feeIns = FeesStructure.Instance;
+                feeIns.lblYFeeStructure.Text = yrData + " Fee Structure ";
+                feeIns.lblFFeeStructure.Text = frmslbl;
+                feeIns.lblTFeeStructure.Text = "Term " + tmData;
             }
 
         }

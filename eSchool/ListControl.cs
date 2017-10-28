@@ -28,6 +28,7 @@ namespace eSchool
         public void Add(string title, string session, string totalFeeTerm)
         {
             StructureListItem c = new StructureListItem();
+
             c.Title = title;
             c.Session = session;
             c.TotalFeeTerm = totalFeeTerm;
@@ -35,16 +36,22 @@ namespace eSchool
             SetupAnchors();
         }
 
-        public void Add(string overHeadName,int UTagCount)
+        public void Add(string overHeadName)
         {
             OverHeadListItem c = new OverHeadListItem();
+            //for reference on delete
+            c.Name = overHeadName;
             c.OverHeadName = overHeadName;
-            //reference name for remove
-            c.UTagIndex = UTagCount;
             flpListBox.Controls.Add(c);
             SetupAnchors();
         }
         //TODO overload the remove for various uses
+
+        public void Remove(int index)
+        {
+            Control c = flpListBox.Controls[index];
+            Remove(c.Name);
+        }
         public void Remove(string name)
         {
             Control c = flpListBox.Controls[name];

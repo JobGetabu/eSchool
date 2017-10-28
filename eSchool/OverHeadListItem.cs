@@ -71,9 +71,10 @@ namespace eSchool
                 //logic hide if save was clicked
                 if (frm.IsSaveClicked)
                 {
-                    //TODO hide dispose control;
-
-
+                    // hide dispose control;
+                    FeeUI_Show fuui = FeeUI_Show.Instance;
+                    fuui.listControl1.Remove(this.bTBOverHaed.Text);
+                    
                 }
                 //refresh the data grid
                 if (FeesUI.autoGen)

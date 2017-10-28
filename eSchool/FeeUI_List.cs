@@ -37,13 +37,11 @@ namespace eSchool
             GridInitilizer();
 
             //load up the list control
-            LoadListAsync(Properties.Settings.Default.CurrentYear);
-
-
+            LoadListAsync(Properties.Settings.Default.CurrentYear);            
         }
 
         //More efficient grid initilizer
-        private async void GridInitilizer()
+        public async void GridInitilizer()
         {
             this.gridCategory.Rows.Clear();
 
@@ -83,7 +81,8 @@ namespace eSchool
 
         private void bThinBtnViewAll_Click(object sender, EventArgs e)
         {
-            //TODO 1 display page on all categories
+            FrmViewAll fva = new FrmViewAll();
+            fva.ShowDialog();
         }
 
        public async void LoadListAsync(int year)
