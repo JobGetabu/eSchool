@@ -74,7 +74,10 @@ namespace eSchool
                     // hide dispose control;
                     FeeUI_Show fuui = FeeUI_Show.Instance;
                     fuui.listControl1.Remove(this.bTBOverHaed.Text);
-                    
+
+                    //Revive save for changes to be updated
+                    FeeUI_Show fui = FeeUI_Show.Instance;
+                    fui.btnSaveStructure.Visible = true;
                 }
                 //refresh the data grid
                 if (FeesUI.autoGen)
@@ -87,9 +90,7 @@ namespace eSchool
                     GridData(filterListOfForms, selTerm, selYear);
                 }
 
-                //Revive save for changes to be updated
-                FeeUI_Show fui = FeeUI_Show.Instance;
-                fui.btnSaveStructure.Visible = true;
+                
             }
         }
 

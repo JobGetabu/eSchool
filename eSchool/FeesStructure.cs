@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace eSchool
 {
@@ -124,7 +125,17 @@ namespace eSchool
 
         private void bTBtnChangeYear_Click(object sender, EventArgs e)
         {
-           
+            //check if the fee structure is saved and autosave :)
+            FeeUI_Show fuui = FeeUI_Show.Instance;
+            if (fuui.btnSaveStructure.Visible)
+            {
+                //Custom notification
+                MetroMessageBox.Show(this, "Your Fee Structure was Auto Saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Autosave 
+                fuui.btnSaveStructure_Click(sender,e);
+            }
+
             FrmChangeYear frm = new FrmChangeYear();
             if (frm.ShowDialog() == DialogResult.OK)
             {              

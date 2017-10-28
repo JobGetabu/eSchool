@@ -16,7 +16,7 @@ namespace eSchool
         public static int selTerm;
         public static int selYear;
 
-        public static bool autoGen=false;
+        public static bool autoGen = false;
         public static decimal autoTotalFee;
         public static List<int> autoFilterListOfForms;
         public static int autoSelTerm;
@@ -45,6 +45,8 @@ namespace eSchool
             this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
             lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
             lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
+            FeeUI_Show fuui = FeeUI_Show.Instance;
+            fuui.btnSaveStructure.Visible = false;
             //tab1 selected =true;
             //Show FeePayment
             TabSwitcher(FeePayment.Instance);
@@ -54,14 +56,14 @@ namespace eSchool
             ///this is data loaded at save with new fee structure
             // initialize the data by subscribing our method
             FrmCreateFStruct.ListUpdated += new FrmCreateFStruct.PassMoreDataDelegate(GridDataList);
-            
+
             #endregion
 
             #region PassMoreDataDelegate Subscription under Auto
             ///this is data loaded at save with new fee structure
             // initialize the data by subscribing our method
             StructureListItem.AutoListUpdated += StructureListItem_AutoListUpdated;
-            
+
             #endregion
         }
 
@@ -89,7 +91,7 @@ namespace eSchool
         }
 
 
-      
+
 
         /// <summary>
         /// This method is called each time a fee structure is created returning a list of school forms

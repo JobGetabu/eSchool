@@ -33,6 +33,13 @@ namespace eSchool
 
         private  void FeeUI_List_Load(object sender, EventArgs e)
         {
+            //loading comboBox
+            FeesStructure fs = FeesStructure.Instance;
+            string[] n = { };
+            fs.bMenu.Items = n;
+            //fs.bMenu.AddItem("Print"); //No print at this point
+            fs.bMenu.AddItem("New Fee Structure");
+
             //load up the grid
             GridInitilizer();
 

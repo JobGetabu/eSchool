@@ -78,7 +78,7 @@ namespace eSchool
             this.bGrid.Rows[e.RowIndex].Cells[3].Value = GridIcon.Trash_Can_50px;
         }
 
-        private void btnSaveStructure_Click(object sender, EventArgs e)
+        public void btnSaveStructure_Click(object sender, EventArgs e)
         {
             //TODO 2 prompt to print fee structure           
 
@@ -271,6 +271,8 @@ namespace eSchool
                                     {
                                         context.Entry<OverHeadCategoryPerYear>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
                                         context.SaveChanges();
+                                        //enable save btn visible
+                                        btnSaveStructure.Visible = true;
                                     }
                                     catch (Exception exp)
                                     {
