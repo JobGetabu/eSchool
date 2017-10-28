@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -35,12 +36,14 @@ namespace eSchool
             cTerm = term;
             feeYear = year;
             fmStore = new List<int>();
+
+            bCLabelStructureYear.Text = feeYear.ToString();
         }
         public FrmCreateFStruct()
         {
             InitializeComponent();
             fmStore = new List<int>();
-
+            bCLabelStructureYear.Text = Properties.Settings.Default.CurrentYear.ToString();
         }
 
         /// <summary>
@@ -51,7 +54,7 @@ namespace eSchool
         private void FrmCreateFStruct_Load(object sender, EventArgs e)
         {
             PreparingComboBoxes();
-            bCLabelStructureYear.Text = feeYear.ToString();
+            
         }
 
         private void PreparingComboBoxes()
@@ -66,8 +69,30 @@ namespace eSchool
                 //check term 3 set next year available
                 if (cTerm == 3)
                 {
-                    int x = ++feeYear;
-                    mCBoxYear.Items.Add(x);
+                    int x = Properties.Settings.Default.CurrentYear +1;
+                    //Add the year in the SchoolPeriodYears
+                    SchoolPeriodYear spy = new SchoolPeriodYear();
+                    spy.Year = x;
+
+                    try
+                    {
+                        context.SchoolPeriodYears.Add(spy);
+                        context.SaveChanges();
+                        mCBoxYear.Items.Add(x);
+                    }
+                    catch (DbUpdateException)
+                    {
+                        //possibilities of addind same year each time at load
+                        //nice exception
+                        //MessageBox.Show("Unsuccessful " + exp.Message, "Error occured");
+                    }
+                    catch (Exception exp)
+                    {
+                        //fatal must close program //must be logged
+                        MessageBox.Show("Unsuccessful " + exp.Message, "Error occured");
+                        throw;
+                    }
+                   
                 }
 
             }
@@ -78,6 +103,7 @@ namespace eSchool
             if (mCBoxYear.SelectedItem != null)
             {
                 selectedYear = int.Parse(mCBoxYear.SelectedItem.ToString());
+                bCLabelStructureYear.Text= mCBoxYear.SelectedItem.ToString();
             }
         }
 
@@ -116,30 +142,39 @@ namespace eSchool
             if (bCbox1.Checked)
             {
                 SaveFeeStructure(bCbox1);
+                if (!frmslbl.Contains("1"))
+                {
+
                 frmslbl += "1";
+                }
             }
 
             if (bCbox2.Checked)
             {
                 SaveFeeStructure(bCbox2);
-                frmslbl += " 2";
+                if (!frmslbl.Contains("2"))
+                {
+                    frmslbl += " 2";
+                }
             }
 
             if (bCbox3.Checked)
             {
                 SaveFeeStructure(bCbox3);
-                frmslbl += " 3";
+                if (!frmslbl.Contains("3"))
+                {
+                    frmslbl += " 3";
+                }
             }
 
             if (bCbox4.Checked)
             {
                 SaveFeeStructure(bCbox4);
-                frmslbl += " 4";
+                if (!frmslbl.Contains("4"))
+                {
+                    frmslbl += " 4";
+                }
             }
-
-            //subscribe a method to our delegate
-           // PassMoreDelegate psf = new PassMoreDelegate(ins.GridDataFilter);
-           // psf(fmStore, tmStore, yrStore);
 
             //raise our event
             List<int> data = fmStore;
@@ -154,6 +189,10 @@ namespace eSchool
             feeIns.lblYFeeStructure.Text = selectedYear + " Fee Structure " ;
             feeIns.lblFFeeStructure.Text = frmslbl;
             feeIns.lblTFeeStructure.Text = "Term "+ tmStore.ToString();
+
+            //Make Save btn visible if invisible
+            FeeUI_Show fui = FeeUI_Show.Instance; 
+            fui.btnSaveStructure.Visible = true;
             //TODO 1 custom notification
             MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

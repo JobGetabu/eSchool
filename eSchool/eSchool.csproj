@@ -91,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoGenFsEventArgs.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>

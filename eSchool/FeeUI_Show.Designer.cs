@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeeUI_Show));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeeUI_Show));
             this.panelListControl1 = new System.Windows.Forms.Panel();
+            this.listControl1 = new eSchool.ListControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bThinBtnAddFeeItem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelGridOHs = new System.Windows.Forms.Panel();
             this.bGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
             this.overhead = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Del = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnSaveStructure = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.listControl1 = new eSchool.ListControl();
-            this.bThinBtnAddFeeItem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.overHeadCategoryPerYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelListControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,6 +66,15 @@
             this.panelListControl1.Size = new System.Drawing.Size(308, 336);
             this.panelListControl1.TabIndex = 1;
             // 
+            // listControl1
+            // 
+            this.listControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listControl1.Location = new System.Drawing.Point(0, 0);
+            this.listControl1.Name = "listControl1";
+            this.listControl1.Size = new System.Drawing.Size(308, 288);
+            this.listControl1.TabIndex = 2;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
@@ -75,6 +84,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 48);
             this.panel1.TabIndex = 1;
+            // 
+            // bThinBtnAddFeeItem
+            // 
+            this.bThinBtnAddFeeItem.ActiveBorderThickness = 1;
+            this.bThinBtnAddFeeItem.ActiveCornerRadius = 20;
+            this.bThinBtnAddFeeItem.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(244)))));
+            this.bThinBtnAddFeeItem.ActiveForecolor = System.Drawing.Color.DimGray;
+            this.bThinBtnAddFeeItem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(244)))));
+            this.bThinBtnAddFeeItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.bThinBtnAddFeeItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bThinBtnAddFeeItem.BackgroundImage")));
+            this.bThinBtnAddFeeItem.ButtonText = "Add Fee Item";
+            this.bThinBtnAddFeeItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bThinBtnAddFeeItem.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bThinBtnAddFeeItem.ForeColor = System.Drawing.Color.Gray;
+            this.bThinBtnAddFeeItem.IdleBorderThickness = 1;
+            this.bThinBtnAddFeeItem.IdleCornerRadius = 20;
+            this.bThinBtnAddFeeItem.IdleFillColor = System.Drawing.Color.White;
+            this.bThinBtnAddFeeItem.IdleForecolor = System.Drawing.Color.Gray;
+            this.bThinBtnAddFeeItem.IdleLineColor = System.Drawing.Color.Gray;
+            this.bThinBtnAddFeeItem.Location = new System.Drawing.Point(49, 6);
+            this.bThinBtnAddFeeItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bThinBtnAddFeeItem.Name = "bThinBtnAddFeeItem";
+            this.bThinBtnAddFeeItem.Size = new System.Drawing.Size(119, 37);
+            this.bThinBtnAddFeeItem.TabIndex = 4;
+            this.bThinBtnAddFeeItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bThinBtnAddFeeItem.Click += new System.EventHandler(this.bThinBtnAddFeeItem_Click);
             // 
             // panelGridOHs
             // 
@@ -126,15 +161,6 @@
             this.bGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bGrid_CellContentClick);
             this.bGrid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.bGrid_RowsAdded);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnSaveStructure);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 288);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(490, 48);
-            this.panel3.TabIndex = 2;
-            // 
             // ColumnPic
             // 
             this.ColumnPic.HeaderText = "";
@@ -162,6 +188,15 @@
             this.Del.Name = "Del";
             this.Del.ToolTipText = "Delete Record";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSaveStructure);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 288);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(490, 48);
+            this.panel3.TabIndex = 2;
+            // 
             // btnSaveStructure
             // 
             this.btnSaveStructure.ActiveBorderThickness = 1;
@@ -188,41 +223,6 @@
             this.btnSaveStructure.TabIndex = 7;
             this.btnSaveStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveStructure.Click += new System.EventHandler(this.btnSaveStructure_Click);
-            // 
-            // listControl1
-            // 
-            this.listControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listControl1.Location = new System.Drawing.Point(0, 0);
-            this.listControl1.Name = "listControl1";
-            this.listControl1.Size = new System.Drawing.Size(308, 288);
-            this.listControl1.TabIndex = 2;
-            // 
-            // bThinBtnAddFeeItem
-            // 
-            this.bThinBtnAddFeeItem.ActiveBorderThickness = 1;
-            this.bThinBtnAddFeeItem.ActiveCornerRadius = 20;
-            this.bThinBtnAddFeeItem.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(244)))));
-            this.bThinBtnAddFeeItem.ActiveForecolor = System.Drawing.Color.DimGray;
-            this.bThinBtnAddFeeItem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(244)))));
-            this.bThinBtnAddFeeItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.bThinBtnAddFeeItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bThinBtnAddFeeItem.BackgroundImage")));
-            this.bThinBtnAddFeeItem.ButtonText = "Add Fee Item";
-            this.bThinBtnAddFeeItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bThinBtnAddFeeItem.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bThinBtnAddFeeItem.ForeColor = System.Drawing.Color.Gray;
-            this.bThinBtnAddFeeItem.IdleBorderThickness = 1;
-            this.bThinBtnAddFeeItem.IdleCornerRadius = 20;
-            this.bThinBtnAddFeeItem.IdleFillColor = System.Drawing.Color.White;
-            this.bThinBtnAddFeeItem.IdleForecolor = System.Drawing.Color.Gray;
-            this.bThinBtnAddFeeItem.IdleLineColor = System.Drawing.Color.Gray;
-            this.bThinBtnAddFeeItem.Location = new System.Drawing.Point(49, 6);
-            this.bThinBtnAddFeeItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bThinBtnAddFeeItem.Name = "bThinBtnAddFeeItem";
-            this.bThinBtnAddFeeItem.Size = new System.Drawing.Size(119, 37);
-            this.bThinBtnAddFeeItem.TabIndex = 4;
-            this.bThinBtnAddFeeItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bThinBtnAddFeeItem.Click += new System.EventHandler(this.bThinBtnAddFeeItem_Click);
             // 
             // overHeadCategoryPerYearBindingSource
             // 
@@ -259,10 +259,10 @@
         private ListControl listControl1;
         public Bunifu.Framework.UI.BunifuCustomDataGrid bGrid;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnSaveStructure;
         private System.Windows.Forms.DataGridViewImageColumn ColumnPic;
         private System.Windows.Forms.DataGridViewTextBoxColumn overhead;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewImageColumn Del;
+        public Bunifu.Framework.UI.BunifuThinButton2 btnSaveStructure;
     }
 }

@@ -13,9 +13,6 @@ namespace eSchool
     public partial class FeesStructure : UserControl
     {
         private static FeesStructure _instance;
-        private List<int> filterListOfForms;
-        private int selTerm;
-        private int selYear;
 
         public static FeesStructure Instance
         {
@@ -125,6 +122,9 @@ namespace eSchool
 
         private void bTBtnChangeYear_Click(object sender, EventArgs e)
         {
+            //UI code set the label to ""
+            this.lblFFeeStructure.Text = "";
+            this.lblTFeeStructure.Text = "";
             FrmChangeYear frm = new FrmChangeYear();
             if (frm.ShowDialog() == DialogResult.OK)
             {              
@@ -134,6 +134,17 @@ namespace eSchool
                 //updates the list with current year fee structures
                 ful.LoadListAsync(FrmChangeYear.selChangeYear);
             }
+        }
+
+        public void SwitchTabExt()
+        {
+            //show FeeUI_List
+            TabSwitcher(FeeUI_List.Instance);
+        }
+        public void SwitchTabExt2()
+        {
+            //show FeeUI_List
+            TabSwitcher(FeeUI_Show.Instance);
         }
     }
 }

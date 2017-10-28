@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,6 +75,10 @@ namespace eSchool
                     {
                         context.OverHeadCategoryPerYears.Add(catPy);
                         context.SaveChanges();
+                    }
+                    catch(DbUpdateException exp)
+                    {
+                        MessageBox.Show(exp.Message);
                     }
                     catch (Exception exp)
                     {

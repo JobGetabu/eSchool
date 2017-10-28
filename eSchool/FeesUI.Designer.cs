@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeesUI));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTop = new System.Windows.Forms.Panel();
@@ -56,7 +55,6 @@
             this.tab1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.container = new System.Windows.Forms.Panel();
-            this.overHeadCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -65,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSwitch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overHeadCategoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -404,10 +401,6 @@
             this.container.Size = new System.Drawing.Size(798, 407);
             this.container.TabIndex = 2;
             // 
-            // overHeadCategoryBindingSource
-            // 
-            this.overHeadCategoryBindingSource.DataSource = typeof(eSchool.OverHeadCategory);
-            // 
             // FeesUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,13 +424,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSwitch.ResumeLayout(false);
             this.panelSwitch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overHeadCategoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource overHeadCategoryBindingSource;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private System.Windows.Forms.Panel panelSwitch;
         public System.Windows.Forms.Panel container;

@@ -12,6 +12,10 @@ namespace eSchool
 {
     public partial class StructureListItem : UserControl
     {
+        public delegate void PassMoreDataDelegate(object sender, AutoGenFsEventArgs e);
+
+        // add an event of the delegate type
+        public static event PassMoreDataDelegate AutoListUpdated;
         public string Title { get; set; }
         public string Session { get; set; }
         public string TotalFeeTerm { get; set; }
@@ -27,6 +31,7 @@ namespace eSchool
             this.lblTotal.Text = TotalFeeTerm; //i.e KES 20,000
         }
 
+        //UI code
         private void MouseEnterEffect(object sender, EventArgs e)
         {
             bunifuCards1.BackColor = Color.FromArgb(247, 246, 248);
@@ -64,7 +69,7 @@ namespace eSchool
                 var selFs = await SelectedFeeStructureAsync();
                 if (selFs != null)
                 {
-                   //ToDO 1 create fees structure
+                    //ToDO 1 create fees structure
                 }
             }
         }
@@ -74,7 +79,37 @@ namespace eSchool
             var selFs = await SelectedFeeStructureAsync();
             if (selFs != null)
             {
-                MessageBox.Show($"You clicked fee structure with id {selFs.Id} \n its title is {selFs.YearTitle} and term is {selFs.TermTitle} = KES {selFs.TotalFee}");
+                //raise our event
+                bool autoGen = true;
+                List<int> data = new List<int>();
+                if (selFs.selFm1 == 1) { data.Add(1); }
+                if (selFs.selFm2 == 2) { data.Add(2); }
+                if (selFs.selFm3 == 3) { data.Add(3); }
+                if (selFs.selFm4 == 4) { data.Add(4); }
+
+                decimal totalFee = selFs.TotalFee;
+                int tmData = selFs.selTerm.Value;
+                int yrData = selFs.selYear.Value; ;
+                AutoGenFsEventArgs args = new AutoGenFsEventArgs(autoGen, totalFee, data, tmData, yrData);
+                //give it updated args
+                AutoListUpdated(this, args);
+
+
+                //call the GridInit to update at switch
+                OverHeadListItem d = new OverHeadListItem();
+                d.GridData(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear);
+
+               
+                //switch to FeeUI_Show
+                FeesStructure fs = FeesStructure.Instance;
+                fs.SwitchTabExt2();
+
+                ////save btn not visible
+                //no func for editing saved fee structures is not available
+                FeeUI_Show fui = FeeUI_Show.Instance;
+                fui.btnSaveStructure.Visible = false;
+
+                //TODO make it not able to assign new fee items to fee structure
             }
 
         }

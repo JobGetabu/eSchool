@@ -13,9 +13,10 @@ namespace eSchool
     public partial class OverHeadListItem : UserControl
     {
 
-        public static List<int> filterListOfForms = FeesUI.filterListOfForms;
-        public static int selTerm = FeesUI.selTerm;
-        public static int selYear = FeesUI.selYear;
+        public static List<int> filterListOfForms;
+        public static int selTerm;
+        public static int selYear;
+
 
 
         public static decimal totalCashPas;
@@ -25,13 +26,34 @@ namespace eSchool
         public OverHeadListItem()
         {
             InitializeComponent();
+
+            //checks this otherwise takes the default values
+            if (FeesUI.autoGen)
+            {
+                filterListOfForms = FeesUI.autoFilterListOfForms;
+                selTerm = FeesUI.autoSelTerm;
+                selYear = FeesUI.autoSelYear;
+            }
+            else
+            {
+                filterListOfForms = FeesUI.filterListOfForms;
+                selTerm = FeesUI.selTerm;
+                selYear = FeesUI.selYear;
+            }
         }
 
         private void OverHeadListItem_Load(object sender, EventArgs e)
         {
             this.bTBOverHaed.Text = OverHeadName;
             //refresh the data grid
-            GridData(filterListOfForms, selTerm, selYear);
+            if (FeesUI.autoGen)
+            {
+                GridData(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear);
+            }
+            else
+            {
+                GridData(filterListOfForms, selTerm, selYear);
+            }
         }
 
         private void btnAssignItem_Click(object sender, EventArgs e)
@@ -51,16 +73,28 @@ namespace eSchool
                 {
                     //TODO hide dispose control;
 
-                    
+
                 }
                 //refresh the data grid
-                GridData(filterListOfForms, selTerm, selYear);
+                if (FeesUI.autoGen)
+                {
+                    GridData(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear);
+                    //await GridDataPass(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear);
+                }
+                else
+                {
+                    GridData(filterListOfForms, selTerm, selYear);
+                }
+
+                //Revive save for changes to be updated
+                FeeUI_Show fui = FeeUI_Show.Instance;
+                fui.btnSaveStructure.Visible = true;
             }
         }
 
         /// <summary>
         /// // data about all forms instead of just one
-            //Used to give updated data for correct deletion in the grid
+        //Used to give updated data for correct deletion in the grid
         /// </summary>
         /// <param name="fmstore"></param>
         /// <param name="tmData"></param>
@@ -85,7 +119,15 @@ namespace eSchool
         {
             if (fmstore == null)
             {
-                MessageBox.Show("The PassMoreDataDelegate is null", "No Fee Structure selected");
+                //check if auto generated fee structure
+                if (FeesUI.autoGen)
+                {
+                    MessageBox.Show("The PassMoreDataDelegate for AutoGen is null", "No Fee Structure selected");
+                }
+                else
+                {
+                    MessageBox.Show("The PassMoreDataDelegate is null", "No Fee Structure selected");
+                }
             }
             var overHeadPYListAsync = await Task.Factory.StartNew(() =>
             {
@@ -114,6 +156,7 @@ namespace eSchool
                 totalCash += fo.Amount;
             }
             totalCashPas = totalCash;
+
         }
 
 

@@ -22,14 +22,22 @@ namespace eSchool
 
         private void FrmChangeYear_Load(object sender, EventArgs e)
         {
-            int count = (Properties.Settings.Default.CurrentYear);
-            cBYear.Items.Add(Properties.Settings.Default.CurrentYear + 1);
-            cBYear.Items.Add(Properties.Settings.Default.CurrentYear);
-            //go down 5 yrs from current and up one
-            for (int i = 0; i < 5; i++)
+            using (var context = new EschoolEntities())
             {
-                cBYear.Items.Add(count -= 1);
+                var listYear = context.SchoolPeriodYears.OrderByDescending(y => y.Year).Select(y => y.Year).ToList();
+                foreach (var y in listYear)
+                {
+                    cBYear.Items.Add(y);
+                }
             }
+            //int count = (Properties.Settings.Default.CurrentYear);
+            //cBYear.Items.Add(Properties.Settings.Default.CurrentYear + 1);
+            //cBYear.Items.Add(Properties.Settings.Default.CurrentYear);
+            ////go down 5 yrs from current and up one
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    cBYear.Items.Add(count -= 1);
+            //}
         }
 
 
