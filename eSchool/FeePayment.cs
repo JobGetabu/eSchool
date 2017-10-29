@@ -48,7 +48,7 @@ namespace eSchool
         }
 
         List<Fee> myFee;
-        private async void GridInitilizer()
+        public async void GridInitilizer()
         {
             gData.Rows.Clear();
 

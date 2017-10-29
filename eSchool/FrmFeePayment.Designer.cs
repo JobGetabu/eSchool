@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFeePayment));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lblFLName = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbAdminNo = new MetroFramework.Controls.MetroTextBox();
@@ -60,14 +64,10 @@
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuFlatCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatBtnSave = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.lblFLName = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
-            this.bunifuGradientPanel2.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bunifuGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -90,6 +90,57 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(478, 62);
             this.bunifuCards1.TabIndex = 0;
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.lblFLName);
+            this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
+            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(478, 60);
+            this.bunifuGradientPanel1.TabIndex = 1;
+            // 
+            // lblFLName
+            // 
+            this.lblFLName.AutoSize = true;
+            this.lblFLName.BackColor = System.Drawing.Color.Transparent;
+            this.lblFLName.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFLName.Location = new System.Drawing.Point(259, 19);
+            this.lblFLName.Name = "lblFLName";
+            this.lblFLName.Size = new System.Drawing.Size(0, 25);
+            this.lblFLName.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(56, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(85, 18);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(168, 25);
+            this.bunifuCustomLabel1.TabIndex = 2;
+            this.bunifuCustomLabel1.Text = "Add Fee Payment";
             // 
             // bunifuDragControl1
             // 
@@ -169,7 +220,7 @@
             this.tbFName.SelectionStart = 0;
             this.tbFName.ShortcutsEnabled = true;
             this.tbFName.Size = new System.Drawing.Size(182, 22);
-            this.tbFName.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbFName.Style = MetroFramework.MetroColorStyle.Pink;
             this.tbFName.TabIndex = 16;
             this.tbFName.UseCustomBackColor = true;
             this.tbFName.UseCustomForeColor = true;
@@ -225,7 +276,7 @@
             this.tbSName.SelectionStart = 0;
             this.tbSName.ShortcutsEnabled = true;
             this.tbSName.Size = new System.Drawing.Size(189, 22);
-            this.tbSName.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbSName.Style = MetroFramework.MetroColorStyle.Pink;
             this.tbSName.TabIndex = 18;
             this.tbSName.UseCustomBackColor = true;
             this.tbSName.UseCustomForeColor = true;
@@ -271,7 +322,7 @@
             this.tbGender.SelectionStart = 0;
             this.tbGender.ShortcutsEnabled = true;
             this.tbGender.Size = new System.Drawing.Size(189, 22);
-            this.tbGender.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbGender.Style = MetroFramework.MetroColorStyle.Pink;
             this.tbGender.TabIndex = 22;
             this.tbGender.UseCustomBackColor = true;
             this.tbGender.UseCustomForeColor = true;
@@ -317,7 +368,7 @@
             this.tbLName.SelectionStart = 0;
             this.tbLName.ShortcutsEnabled = true;
             this.tbLName.Size = new System.Drawing.Size(182, 22);
-            this.tbLName.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbLName.Style = MetroFramework.MetroColorStyle.Pink;
             this.tbLName.TabIndex = 20;
             this.tbLName.UseCustomBackColor = true;
             this.tbLName.UseCustomForeColor = true;
@@ -369,6 +420,7 @@
             this.tbYear.WaterMark = "Year";
             this.tbYear.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbYear.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.YearKeyPressFocusChange);
             // 
             // bunifuCustomLabel8
             // 
@@ -413,6 +465,7 @@
             this.tbTerm.WaterMark = "Term";
             this.tbTerm.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbTerm.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbTerm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TermKeyPressFocusChange);
             // 
             // bunifuCustomLabel9
             // 
@@ -451,7 +504,7 @@
             this.tbClass.SelectionStart = 0;
             this.tbClass.ShortcutsEnabled = true;
             this.tbClass.Size = new System.Drawing.Size(85, 22);
-            this.tbClass.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbClass.Style = MetroFramework.MetroColorStyle.Pink;
             this.tbClass.TabIndex = 26;
             this.tbClass.UseCustomBackColor = true;
             this.tbClass.UseCustomForeColor = true;
@@ -497,7 +550,7 @@
             this.tbForm.SelectionStart = 0;
             this.tbForm.ShortcutsEnabled = true;
             this.tbForm.Size = new System.Drawing.Size(67, 22);
-            this.tbForm.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbForm.Style = MetroFramework.MetroColorStyle.Pink;
             this.tbForm.TabIndex = 24;
             this.tbForm.UseCustomBackColor = true;
             this.tbForm.UseCustomForeColor = true;
@@ -519,7 +572,7 @@
             // tbMOP
             // 
             this.tbMOP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbMOP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.tbMOP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
             // 
             // 
@@ -551,6 +604,7 @@
             this.tbMOP.WaterMark = "Mode of Payment";
             this.tbMOP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbMOP.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbMOP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MOPKeyPressFocusChange);
             // 
             // bunifuCustomLabel12
             // 
@@ -595,6 +649,7 @@
             this.tbAmount.WaterMark = "Amount";
             this.tbAmount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbAmount.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountKeyPressFocusChange);
             // 
             // bunifuGradientPanel4
             // 
@@ -716,57 +771,6 @@
             this.bunifuFlatBtnSave.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuFlatBtnSave.Click += new System.EventHandler(this.bunifuFlatBtnSave_Click);
             // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.lblFLName);
-            this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(478, 60);
-            this.bunifuGradientPanel1.TabIndex = 1;
-            // 
-            // lblFLName
-            // 
-            this.lblFLName.AutoSize = true;
-            this.lblFLName.BackColor = System.Drawing.Color.Transparent;
-            this.lblFLName.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFLName.Location = new System.Drawing.Point(259, 19);
-            this.lblFLName.Name = "lblFLName";
-            this.lblFLName.Size = new System.Drawing.Size(0, 25);
-            this.lblFLName.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(56, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(85, 18);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(168, 25);
-            this.bunifuCustomLabel1.TabIndex = 2;
-            this.bunifuCustomLabel1.Text = "Add Fee Payment";
-            // 
             // FrmFeePayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,10 +809,10 @@
             this.Text = "FrmFeePayment";
             this.Load += new System.EventHandler(this.FrmFeePayment_Load);
             this.bunifuCards1.ResumeLayout(false);
-            this.bunifuGradientPanel2.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.bunifuGradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

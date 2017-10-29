@@ -151,9 +151,6 @@
     <Compile Include="FeesStructure.Designer.cs">
       <DependentUpon>FeesStructure.cs</DependentUpon>
     </Compile>
-    <Compile Include="FeeStructure.cs">
-      <DependentUpon>EschoolModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="FeesUI.cs">
       <SubType>UserControl</SubType>
     </Compile>

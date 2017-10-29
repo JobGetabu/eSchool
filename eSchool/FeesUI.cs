@@ -114,7 +114,7 @@ namespace eSchool
             TabSwitcher(FeePayment.Instance);
         }
 
-        private void tab2_Click(object sender, EventArgs e)
+        public void tab2_Click(object sender, EventArgs e)
         {
             //UI code
             bunifuSeparator1.Width = tab2.Width;
