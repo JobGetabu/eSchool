@@ -133,6 +133,12 @@ namespace eSchool
             }
         }
 
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            FrmFeePayment frm = new FrmFeePayment();
+            frm.ShowDialog();
+        }
+
         //TODO 1 List
         //term & year label
         //the two buttons click events

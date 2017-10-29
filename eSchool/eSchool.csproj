@@ -225,6 +225,12 @@
     <Compile Include="FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFeePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFeePayment.Designer.cs">
+      <DependentUpon>FrmFeePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmImportedData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     <EmbeddedResource Include="FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFeePayment.resx">
+      <DependentUpon>FrmFeePayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmImportedData.resx">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </EmbeddedResource>
@@ -494,6 +503,8 @@
     <None Include="Resources\Trash Can_50px.png" />
     <None Include="Resources\Accounting_coloredpx.png" />
     <None Include="Resources\Ok_0px.png" />
+    <None Include="Resources\Not Applicable_50px.png" />
+    <None Include="Resources\Money_50px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
