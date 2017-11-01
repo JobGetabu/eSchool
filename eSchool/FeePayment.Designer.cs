@@ -37,10 +37,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbSearch = new MetroFramework.Controls.MetroTextBox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.paneldata = new System.Windows.Forms.Panel();
@@ -91,10 +91,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.tbSearch);
-            this.panel2.Controls.Add(this.bunifuCustomLabel3);
+            this.panel2.Controls.Add(this.lblYear);
             this.panel2.Controls.Add(this.lblRowCount);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.bunifuCustomLabel1);
+            this.panel2.Controls.Add(this.lblTerm);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(449, 0);
             this.panel2.Name = "panel2";
@@ -137,15 +137,15 @@
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
             // 
-            // bunifuCustomLabel3
+            // lblYear
             // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(168, 18);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(78, 17);
-            this.bunifuCustomLabel3.TabIndex = 14;
-            this.bunifuCustomLabel3.Text = "Year: 2017";
+            this.lblYear.AutoSize = true;
+            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblYear.Location = new System.Drawing.Point(168, 18);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(78, 17);
+            this.lblYear.TabIndex = 14;
+            this.lblYear.Text = "Year: 2017";
             // 
             // lblRowCount
             // 
@@ -168,15 +168,15 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // bunifuCustomLabel1
+            // lblTerm
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 17);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(51, 17);
-            this.bunifuCustomLabel1.TabIndex = 11;
-            this.bunifuCustomLabel1.Text = "Term II";
+            this.lblTerm.AutoSize = true;
+            this.lblTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblTerm.Location = new System.Drawing.Point(12, 17);
+            this.lblTerm.Name = "lblTerm";
+            this.lblTerm.Size = new System.Drawing.Size(51, 17);
+            this.lblTerm.TabIndex = 11;
+            this.lblTerm.Text = "Term II";
             // 
             // bunifuThinButton22
             // 
@@ -363,15 +363,16 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
         private Bunifu.Framework.UI.BunifuCustomLabel lblRowCount;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTerm;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.Panel paneldata;
         private Bunifu.Framework.UI.BunifuCustomDataGrid gData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private MetroFramework.Controls.MetroTextBox tbSearch;
         private System.Windows.Forms.DataGridViewImageColumn ColumnPic;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAdminNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
@@ -380,6 +381,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModeOfPayment;
-        private MetroFramework.Controls.MetroTextBox tbSearch;
     }
 }

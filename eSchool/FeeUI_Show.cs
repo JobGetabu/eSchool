@@ -41,6 +41,7 @@ namespace eSchool
             fs.bMenu.AddItem("Print"); //No print at this point
             fs.bMenu.AddItem("New Fee Structure");
 
+            bGrid.Rows.Clear();
             this.btnSaveStructure.Visible = true;
             OlistControlInitAsync();
         }
@@ -110,7 +111,7 @@ namespace eSchool
                         YearTitle = title,
                         TermTitle = tmTitle,
                         TotalTitle = totalCash,
-                        TotalFee = FeesUI.autoTotalFee,
+                        TotalFee = updateTotal,
                         selTerm = FeesUI.autoSelTerm,
                         selYear = FeesUI.autoSelYear
                     };
@@ -362,6 +363,7 @@ namespace eSchool
                 {
                     context.Entry<FeesRequiredPerTerm>(fitem).State = EntityState.Deleted;
                 }
+                context.SaveChanges();
                 var gpFs = context.GroupedFeeStructures
                .Where(c => c.selYear==year & c.selTerm ==term)
                .Where(c=> c.selFm1==form | c.selFm2 == form | c.selFm3 == form | c.selFm4 == form)
@@ -398,6 +400,23 @@ namespace eSchool
                 }
             }
             return total;
+        }
+
+        public void SetTotalsLabel()
+        {
+            //change label
+            FeesStructure feeIns = FeesStructure.Instance;
+            if (FeesUI.autoGen)
+            {
+                decimal updateTotal = EditedAutoGenFsCash(FeesUI.autoSelTerm, FeesUI.autoSelYear, FeesUI.autoFilterListOfForms[0]);
+                string totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
+                feeIns.lblTotalFeeStructure.Text = "Total "+totalCash;//Total KES 30,000
+            }
+            else
+            {
+                string totalCash = $"KES {String.Format("{0:0,0}", OverHeadListItem.totalCashPas)}";
+                feeIns.lblTotalFeeStructure.Text = "Total " + totalCash;//Total KES 30,000
+            }
         }
     }
 }

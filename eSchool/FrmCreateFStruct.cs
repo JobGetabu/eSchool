@@ -32,25 +32,38 @@ namespace eSchool
         public FrmCreateFStruct(int term, int year)
         {
             InitializeComponent();
-
+            frmslbl = "Form ";
             cTerm = term;
             feeYear = year;
             fmStore = new List<int>();
 
             bCLabelStructureYear.Text = feeYear.ToString();
+
+            NullifyAutos();
+
         }
         public FrmCreateFStruct()
         {
             InitializeComponent();
+            frmslbl = "Form ";
             fmStore = new List<int>();
             bCLabelStructureYear.Text = Properties.Settings.Default.CurrentYear.ToString();
+
+            NullifyAutos();
         }
 
+        void NullifyAutos()
+        {
+            FeesUI.autoGen = false;
+            FeesUI.autoFilterListOfForms = null;
+            FeesUI.autoSelTerm = 0;
+            FeesUI.autoSelYear = 0;
+            FeesUI.autoTotalFee = 0;
+        }
         /// <summary>
         /// Save data here in FeeStructure store
         /// and also 
         /// </summary>
-
         private void FrmCreateFStruct_Load(object sender, EventArgs e)
         {
             PreparingComboBoxes();
@@ -123,6 +136,8 @@ namespace eSchool
                 FrmCreateFStruct.tmStore = selectedTerm;
                 FrmCreateFStruct.yrStore = selectedYear;       
             }
+
+            //TODO check existence of a similer fees structure and warn 
         }
         private void bFlatBtnSave_Click(object sender, EventArgs e)
         {
@@ -144,7 +159,6 @@ namespace eSchool
                 SaveFeeStructure(bCbox1);
                 if (!frmslbl.Contains("1"))
                 {
-
                 frmslbl += "1";
                 }
             }
@@ -189,10 +203,13 @@ namespace eSchool
             feeIns.lblYFeeStructure.Text = selectedYear + " Fee Structure " ;
             feeIns.lblFFeeStructure.Text = frmslbl;
             feeIns.lblTFeeStructure.Text = "Term "+ tmStore.ToString();
+            feeIns.lblTotalFeeStructure.Text = "Total KES 0";//Total KES 30,000
 
             //Make Save btn visible if invisible
             FeeUI_Show fui = FeeUI_Show.Instance; 
             fui.btnSaveStructure.Visible = true;
+            //refresh the list of fee items
+            fui.OlistControlInitAsync();
             //TODO 1 custom notification
             MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

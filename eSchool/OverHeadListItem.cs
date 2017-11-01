@@ -68,15 +68,14 @@ namespace eSchool
                 {
 
                 }
+                FeeUI_Show fui = FeeUI_Show.Instance;
                 //logic hide if save was clicked
                 if (frm.IsSaveClicked)
                 {
                     // hide dispose control;
-                    FeeUI_Show fuui = FeeUI_Show.Instance;
-                    fuui.listControl1.Remove(this.bTBOverHaed.Text);
+                    fui.listControl1.Remove(this.bTBOverHaed.Text);
 
                     //Revive save for changes to be updated
-                    FeeUI_Show fui = FeeUI_Show.Instance;
                     fui.btnSaveStructure.Visible = true;
                 }
                 //refresh the data grid
@@ -89,8 +88,8 @@ namespace eSchool
                 {
                     GridData(filterListOfForms, selTerm, selYear);
                 }
-
-                
+                //total cash lbl
+                fui.SetTotalsLabel();
             }
         }
 
@@ -159,6 +158,9 @@ namespace eSchool
             }
             totalCashPas = totalCash;
 
+            FeeUI_Show fui = FeeUI_Show.Instance;
+            //total cash lbl
+            fui.SetTotalsLabel();
         }
 
 

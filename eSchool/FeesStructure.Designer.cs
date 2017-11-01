@@ -40,6 +40,7 @@
             this.lblYFeeStructure = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.container = new System.Windows.Forms.Panel();
+            this.lblTotalFeeStructure = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHCD.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelWithDashDate.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             this.panelWithDashDate.AutoSize = true;
             this.panelWithDashDate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelWithDashDate.Controls.Add(this.lblTotalFeeStructure);
             this.panelWithDashDate.Controls.Add(this.lblTFeeStructure);
             this.panelWithDashDate.Controls.Add(this.lblFFeeStructure);
             this.panelWithDashDate.Controls.Add(this.pictureBox1);
@@ -124,7 +126,7 @@
             this.panelWithDashDate.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelWithDashDate.Location = new System.Drawing.Point(0, 0);
             this.panelWithDashDate.Name = "panelWithDashDate";
-            this.panelWithDashDate.Size = new System.Drawing.Size(248, 71);
+            this.panelWithDashDate.Size = new System.Drawing.Size(276, 71);
             this.panelWithDashDate.TabIndex = 0;
             // 
             // lblTFeeStructure
@@ -132,7 +134,7 @@
             this.lblTFeeStructure.AutoSize = true;
             this.lblTFeeStructure.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTFeeStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
-            this.lblTFeeStructure.Location = new System.Drawing.Point(144, 53);
+            this.lblTFeeStructure.Location = new System.Drawing.Point(136, 53);
             this.lblTFeeStructure.Name = "lblTFeeStructure";
             this.lblTFeeStructure.Size = new System.Drawing.Size(0, 13);
             this.lblTFeeStructure.TabIndex = 3;
@@ -195,6 +197,17 @@
             this.container.Size = new System.Drawing.Size(798, 336);
             this.container.TabIndex = 10;
             // 
+            // lblTotalFeeStructure
+            // 
+            this.lblTotalFeeStructure.AutoSize = true;
+            this.lblTotalFeeStructure.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFeeStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(53)))), ((int)(((byte)(54)))));
+            this.lblTotalFeeStructure.Location = new System.Drawing.Point(273, 53);
+            this.lblTotalFeeStructure.Name = "lblTotalFeeStructure";
+            this.lblTotalFeeStructure.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalFeeStructure.TabIndex = 4;
+            this.lblTotalFeeStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FeesStructure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,5 +242,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblFFeeStructure;
         public Bunifu.Framework.UI.BunifuCustomLabel lblTFeeStructure;
         public Bunifu.Framework.UI.BunifuDropdown bMenu;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblTotalFeeStructure;
     }
 }

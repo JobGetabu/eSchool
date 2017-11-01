@@ -30,23 +30,87 @@ namespace eSchool
         {
             InitializeComponent();
         }
+        public static decimal frpt;
+        public static int GTerm;
+        public static int GYear;
 
+        private void lblSet()
+        {
+            GYear = Properties.Settings.Default.CurrentYear;
+            GTerm = Properties.Settings.Default.CurrentTerm;
+            lblYear.Text = $"Year: {GYear}";//Year: 2017
+            lblTerm.Text = ""; //Term II
+            switch (GTerm)
+            {
+                case 1:
+                    lblTerm.Text = "Term I";
+                    break;
+                case 2:
+                    lblTerm.Text = "Term II";
+                    break;
+                case 3:
+                    lblTerm.Text = "Term III";
+                    break;
+                default:
+                    break;
+            }
+        }
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             this.lblRowCount.Text = gData.Rows.Count.ToString();
-            //insert images smartly
-            //TODO 1 check percentage from fee required per term to determine image
-            gData.Rows[e.RowIndex].Cells[0].Value = GridIcon.ok80;
+            //insert images smartly      
+            GridIconPicker(gData.Rows[e.RowIndex].Cells[0], gData.Rows[e.RowIndex].Cells["Amount"], gData.Rows[e.RowIndex].Cells["Form"]);
         }
 
         private void FeePayment_Load(object sender, EventArgs e)
         {
             //Ui code
             this.lblRowCount.Text = gData.Rows.Count.ToString();
+            lblSet();
             //populate the grid
             GridInitilizer();
+
         }
 
+        private void GridIconPicker(DataGridViewCell rPic, DataGridViewCell amountpaid, DataGridViewCell frm)
+        {
+            string test = (string)amountpaid.Value;
+            string t1 = test.Remove(0, 4);
+            string t2 = t1.Replace(",", "");
+            int cAmount;
+            int.TryParse(t2, out cAmount);
+            decimal pct = 0;
+            int f = int.Parse((string)frm.Value);
+            frpt = FeeRequiredAsync(GTerm, GYear, f);
+            if (frpt != 0)
+            {
+                pct = cAmount / frpt * 100;
+            }
+            if (pct == 100)
+            {
+                rPic.Value = GridIcon.Happy100;
+            }
+            else if (pct > 80)
+            {
+                rPic.Value = GridIcon.ok80;
+            }
+            else if (pct > 60)
+            {
+                rPic.Value = GridIcon.ok60;
+            }
+            else if (pct > 50)
+            {
+                rPic.Value = GridIcon.Ok50px;
+            }
+            else if (pct > 20)
+            {
+                rPic.Value = GridIcon.ok20;
+            }
+            else
+            {
+                rPic.Value = GridIcon.sad0;
+            }
+        }
         List<Fee> myFee;
         public async void GridInitilizer()
         {
@@ -54,11 +118,19 @@ namespace eSchool
 
             var feeListAsync = await Task.Factory.StartNew(() =>
             {
+                int ct = Properties.Settings.Default.CurrentTerm;
+                int cy = Properties.Settings.Default.CurrentYear;
                 using (var context = new EschoolEntities())
                 {
-                    return context.Fees.ToList();
+                    return context.Fees
+                    .Where(t => t.Term == ct && t.Year == cy)
+                    .ToList();
                 }
             });
+            //runs first
+            fRPTermsList();
+
+            // string totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
 
             myFee = feeListAsync;
             foreach (var fee in feeListAsync)
@@ -70,27 +142,50 @@ namespace eSchool
                         fee.Name,
                         fee.Form.ToString(),
                         fee.Class,
-                        fee.Amount_Paid.ToString(),
+                        $"KES {String.Format("{0:0,0}", fee.Amount_Paid)}",
                         fee.Date.ToString("dd MMM yyy"),
                         fee.ModeOfPayment
                 });
             }
         }
 
-
+        List<FeesRequiredPerTerm> fRPTerms;
+        private void fRPTermsList()
+        {
+            using (var context = new EschoolEntities())
+            {
+                fRPTerms = context.FeesRequiredPerTerms.ToList();
+            }
+        }
+        private decimal FeeRequiredAsync(int term, int year, int form)
+        {
+            if (fRPTerms == null)
+            {
+                fRPTermsList();
+            }
+            foreach (var fr in fRPTerms)
+            {
+                return fRPTerms
+                     .Where(f => f.Term == term & f.Year == year & f.Form == form)
+                    .ToList()
+                    .First().FeeRequired;
+            }
+            return 0;
+        }
         ///Search Perfecto
         private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
                 gData.Rows.Clear();
-
                 var filList = myFee.Where(s =>
                      Regex.IsMatch(s.Admin_No.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
                       Regex.IsMatch(s.Name.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
                       Regex.IsMatch(s.Class.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
                       Regex.IsMatch(s.ModeOfPayment.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
-                     Regex.IsMatch(s.Form.ToString(), tbSearch.Text, RegexOptions.IgnoreCase)).ToList();
+                     Regex.IsMatch(s.Form.ToString(), tbSearch.Text, RegexOptions.IgnoreCase))
+                     .OrderBy(t=>t.Date)
+                     .ToList();
                 foreach (var fee in filList)
                 {
                     gData.Rows.Add(new string[]
@@ -100,11 +195,12 @@ namespace eSchool
                         fee.Name,
                         fee.Form.ToString(),
                         fee.Class,
-                        fee.Amount_Paid.ToString(),
+                        $"KES {String.Format("{0:0,0}", fee.Amount_Paid)}",
                         fee.Date.ToString("dd MMM yyy"),
                         fee.ModeOfPayment
                     });
                 }
+
             }
         }
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -116,7 +212,9 @@ namespace eSchool
                   Regex.IsMatch(s.Name.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
                   Regex.IsMatch(s.Class.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
                   Regex.IsMatch(s.ModeOfPayment.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
-                 Regex.IsMatch(s.Form.ToString(), tbSearch.Text, RegexOptions.IgnoreCase)).ToList();
+                 Regex.IsMatch(s.Form.ToString(), tbSearch.Text, RegexOptions.IgnoreCase))
+                 .OrderBy(t => t.Date)
+                 .ToList();
             foreach (var fee in filList)
             {
                 gData.Rows.Add(new string[]
@@ -126,7 +224,7 @@ namespace eSchool
                         fee.Name,
                         fee.Form.ToString(),
                         fee.Class,
-                        fee.Amount_Paid.ToString(),
+                        $"KES {String.Format("{0:0,0}", fee.Amount_Paid)}",
                         fee.Date.ToString("dd MMM yyy"),
                         fee.ModeOfPayment
                 });
@@ -138,9 +236,8 @@ namespace eSchool
             FrmFeePayment frm = new FrmFeePayment();
             frm.ShowDialog();
         }
-
-        //TODO 1 List
-        //term & year label
-        //the two buttons click events
+        //TODO
+        //the button click events
+        //filter dialogue to filter out class, form, term, year
     }
 }

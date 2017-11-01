@@ -85,7 +85,6 @@ namespace eSchool
             {
                 //need to send FeeUI_Show to front
                 //at exit save of FrmCreateFStruct
-
             }
         }
         private void metroTileCreateFeeStruct_Click_1(object sender, EventArgs e)

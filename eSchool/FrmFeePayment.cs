@@ -349,5 +349,16 @@ namespace eSchool
             MetroMessageBox.Show(this, "Payment Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+
+        private void FrmFeePayment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //refresh the fee list grid
+            FeePayment fp = FeePayment.Instance;
+            fp.GridInitilizer();
+        }
+
+        //ToDo pass some info over to invoices and receipts to enable easier
+        //printing of receipts after fee payment.
     }
 }
+

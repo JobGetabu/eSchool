@@ -82,6 +82,10 @@ namespace eSchool
 
                     //this exception occurs when the transition is not complete ;(
                 }
+                catch (System.Reflection.TargetInvocationException exp)
+                {
+                    MessageBox.Show(exp.Message+" \n" + exp.InnerException.Message);
+                }
             }
             else
             {               

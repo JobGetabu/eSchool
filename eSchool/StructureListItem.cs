@@ -107,14 +107,20 @@ namespace eSchool
 
                 ////save btn not visible
                 //no func for editing saved fee structures is not available
+                //refresh the list of fee items
                 FeeUI_Show fui = FeeUI_Show.Instance;
                 fui.btnSaveStructure.Visible = false;
-
+                fui.OlistControlInitAsync();
                 //change label
                 FeesStructure feeIns = FeesStructure.Instance;
                 feeIns.lblYFeeStructure.Text = yrData + " Fee Structure ";
                 feeIns.lblFFeeStructure.Text = frmslbl;
                 feeIns.lblTFeeStructure.Text = "Term " + tmData;
+                feeIns.lblTotalFeeStructure.Text = $"Total {selFs.TotalTitle}"; //Total KES 30,000
+                //loading comboBox
+                string[] n = { };
+                feeIns.bMenu.Items = n;
+                feeIns.bMenu.AddItem("Print"); //No print at this point
             }
 
         }

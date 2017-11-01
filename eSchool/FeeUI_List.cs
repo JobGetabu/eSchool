@@ -126,7 +126,6 @@ namespace eSchool
             {
                 //need to send FeeUI_Show to front
                 //at exit save of FrmCreateFStruct
-
             }
         }
     }

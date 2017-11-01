@@ -807,6 +807,7 @@
             this.Name = "FrmFeePayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmFeePayment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFeePayment_FormClosing);
             this.Load += new System.EventHandler(this.FrmFeePayment_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
