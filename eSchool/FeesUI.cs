@@ -39,10 +39,29 @@ namespace eSchool
             InitializeComponent();
         }
 
+        private void TermImageSet()
+        {
+            if (Properties.Settings.Default.CurrentTerm ==1)
+            {
+                this.pBoxLogoTerm.Image = FeeUILogo.logo_term1;
+                lblTerm.Text = "Term: 1";
+            }
+            if (Properties.Settings.Default.CurrentTerm ==2)
+            {
+                this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
+                lblTerm.Text = "Term: 2";
+            }
+            if (Properties.Settings.Default.CurrentTerm == 3)
+            {
+                this.pBoxLogoTerm.Image = FeeUILogo.logo_term3;
+                lblTerm.Text = "Term: 3";
+            }
+        }
         private void FeesUI_Load(object sender, EventArgs e)
         {
             //UI code
-            this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
+            TermImageSet();
+
             lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
             lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
             FeeUI_Show fuui = FeeUI_Show.Instance;
@@ -89,9 +108,6 @@ namespace eSchool
                 UIinstance.BringToFront();
             }
         }
-
-
-
 
         /// <summary>
         /// This method is called each time a fee structure is created returning a list of school forms

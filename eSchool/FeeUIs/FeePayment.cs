@@ -30,9 +30,9 @@ namespace eSchool
         {
             InitializeComponent();
         }
-        public static decimal frpt;
-        public static int GTerm;
-        public static int GYear;
+        private decimal frpt;
+        private int GTerm;
+        private int GYear;
 
         private void lblSet()
         {

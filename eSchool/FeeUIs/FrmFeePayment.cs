@@ -280,9 +280,8 @@ namespace eSchool
         }
         private async void bunifuFlatBtnSave_Click(object sender, EventArgs e)
         {
-            //TODO validate int in tb Term and Year and amount
-            //TODO validate existence of a fee structure of the term and year
-            //solve the overflow situaton that can happen
+            // validate int in tb Term and Year and amount
+            // validate existence of a fee structure of the term and year
 
             if (string.IsNullOrEmpty(tbAmount.Text) | string.IsNullOrEmpty(tbTerm.Text) | string.IsNullOrEmpty(tbYear.Text))
             {
@@ -301,7 +300,8 @@ namespace eSchool
                 MetroMessageBox.Show(this, "Only numeric values  allowed on year input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!int.TryParse(tbTerm.Text, out test))
+            int test2;
+            if (!int.TryParse(tbTerm.Text, out test2))
             {
                 MetroMessageBox.Show(this, "Only numeric values  allowed on term input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -24,7 +24,7 @@ namespace eSchool
         public static List<int> selFilForms; 
         private void FrmFilter_Load(object sender, EventArgs e)
         {
-            PreparingComboBoxes();
+            PreparingComboBoxesAsync();
             ListInit();
         }
 
@@ -100,15 +100,19 @@ namespace eSchool
         }
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selFilYear = (int)cbYear.SelectedItem;
+            selFilYear = int.Parse(cbYear.SelectedItem.ToString());
         }
 
-        private void PreparingComboBoxes()
+        private async void PreparingComboBoxesAsync()
         {
             using (var context = new EschoolEntities())
             {
-                var listYear = context.SchoolPeriodYears.OrderByDescending(y => y.Year).Select(y => y.Year).ToList();
-                foreach (var y in listYear)
+                var listYear = Task.Factory.StartNew(() =>
+                {
+                    return context.SchoolPeriodYears.OrderByDescending(y => y.Year).Select(y => y.Year).ToList();
+                });
+               
+                foreach (var y in await listYear)
                 {
                     cbYear.Items.Add(y);
                 }
@@ -121,7 +125,7 @@ namespace eSchool
 
         private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selFilTerm = (int)cbTerm.SelectedItem;
+            selFilTerm = int.Parse(cbTerm.SelectedItem.ToString());
         }
     }
 }

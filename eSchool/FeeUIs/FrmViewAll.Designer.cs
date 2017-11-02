@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewAll));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panelBtm = new System.Windows.Forms.Panel();
             this.bThinBtnAddFeeItem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -47,30 +46,23 @@
             this.overhead = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panelBtm.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuCards1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelgrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bGrid)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // panelBtm
-            // 
-            this.panelBtm.AutoSize = true;
-            this.panelBtm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelBtm.Controls.Add(this.bThinBtnAddFeeItem);
-            this.panelBtm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBtm.Location = new System.Drawing.Point(0, 298);
-            this.panelBtm.Name = "panelBtm";
-            this.panelBtm.Size = new System.Drawing.Size(798, 38);
-            this.panelBtm.TabIndex = 1;
             // 
             // bThinBtnAddFeeItem
             // 
@@ -81,7 +73,7 @@
             this.bThinBtnAddFeeItem.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(244)))));
             this.bThinBtnAddFeeItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bThinBtnAddFeeItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.bThinBtnAddFeeItem.BackColor = System.Drawing.Color.White;
             this.bThinBtnAddFeeItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bThinBtnAddFeeItem.BackgroundImage")));
             this.bThinBtnAddFeeItem.ButtonText = "Add Fee Item";
             this.bThinBtnAddFeeItem.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -92,7 +84,7 @@
             this.bThinBtnAddFeeItem.IdleFillColor = System.Drawing.Color.White;
             this.bThinBtnAddFeeItem.IdleForecolor = System.Drawing.Color.Gray;
             this.bThinBtnAddFeeItem.IdleLineColor = System.Drawing.Color.Gray;
-            this.bThinBtnAddFeeItem.Location = new System.Drawing.Point(12, 0);
+            this.bThinBtnAddFeeItem.Location = new System.Drawing.Point(44, 0);
             this.bThinBtnAddFeeItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bThinBtnAddFeeItem.Name = "bThinBtnAddFeeItem";
             this.bThinBtnAddFeeItem.Size = new System.Drawing.Size(117, 37);
@@ -177,14 +169,14 @@
             this.panelgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelgrid.Location = new System.Drawing.Point(0, 57);
             this.panelgrid.Name = "panelgrid";
-            this.panelgrid.Size = new System.Drawing.Size(798, 241);
+            this.panelgrid.Size = new System.Drawing.Size(798, 279);
             this.panelgrid.TabIndex = 4;
             // 
             // bGrid
             // 
             this.bGrid.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.bGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,14 +185,14 @@
             this.bGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.bGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.bGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnPic,
@@ -208,14 +200,15 @@
             this.Del});
             this.bGrid.DoubleBuffered = true;
             this.bGrid.EnableHeadersVisualStyles = false;
+            this.bGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.bGrid.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.bGrid.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.bGrid.Location = new System.Drawing.Point(12, 6);
+            this.bGrid.Location = new System.Drawing.Point(16, 3);
             this.bGrid.Name = "bGrid";
             this.bGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bGrid.RowHeadersVisible = false;
             this.bGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bGrid.Size = new System.Drawing.Size(783, 229);
+            this.bGrid.Size = new System.Drawing.Size(766, 232);
             this.bGrid.TabIndex = 1;
             this.bGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bGrid_CellContentClick);
             this.bGrid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.bGrid_RowsAdded);
@@ -234,9 +227,9 @@
             // 
             // Del
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
-            this.Del.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
+            this.Del.DefaultCellStyle = dataGridViewCellStyle9;
             this.Del.HeaderText = "";
             this.Del.Name = "Del";
             this.Del.ToolTipText = "Delete Record";
@@ -245,8 +238,44 @@
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.TargetControl = this.bunifuCustomLabel1;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 57);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 279);
+            this.panel1.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(788, 57);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 279);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel3.Controls.Add(this.bThinBtnAddFeeItem);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(10, 298);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(778, 38);
+            this.panel3.TabIndex = 14;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl2.Vertical = true;
             // 
             // FrmViewAll
             // 
@@ -254,9 +283,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 336);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelgrid);
             this.Controls.Add(this.bunifuCards1);
-            this.Controls.Add(this.panelBtm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmViewAll";
             this.ShowIcon = false;
@@ -264,7 +295,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "View All";
             this.Load += new System.EventHandler(this.FrmViewAll_Load);
-            this.panelBtm.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
@@ -272,6 +302,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelgrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bGrid)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,7 +311,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.Panel panelBtm;
         private Bunifu.Framework.UI.BunifuThinButton2 bThinBtnAddFeeItem;
         private System.Windows.Forms.Panel panelgrid;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
@@ -293,5 +323,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
     }
 }

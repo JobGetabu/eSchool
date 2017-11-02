@@ -103,6 +103,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Filter_px {
+            get {
+                object obj = ResourceManager.GetObject("Filter_px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grid_View_50px {
             get {
                 object obj = ResourceManager.GetObject("Grid_View_50px", resourceCulture);

@@ -91,7 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoGenFsEventArgs.cs" />
+    <Compile Include="FeeUIs\AutoGenFsEventArgs.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -133,10 +133,10 @@
     <Compile Include="Fee.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FeePayment.cs">
+    <Compile Include="FeeUIs\FeePayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FeePayment.Designer.cs">
+    <Compile Include="FeeUIs\FeePayment.Designer.cs">
       <DependentUpon>FeePayment.cs</DependentUpon>
     </Compile>
     <Compile Include="FeeRequiredPerYear.cs">
@@ -145,10 +145,10 @@
     <Compile Include="FeesRequiredPerTerm.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FeesStructure.cs">
+    <Compile Include="FeeUIs\FeesStructure.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FeesStructure.Designer.cs">
+    <Compile Include="FeeUIs\FeesStructure.Designer.cs">
       <DependentUpon>FeesStructure.cs</DependentUpon>
     </Compile>
     <Compile Include="FeesUI.cs">
@@ -161,23 +161,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FeeUILogo.resx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="FeeUI_Default.cs">
+    <Compile Include="FeeUIs\FeeUI_Default.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FeeUI_Default.Designer.cs">
+    <Compile Include="FeeUIs\FeeUI_Default.Designer.cs">
       <DependentUpon>FeeUI_Default.cs</DependentUpon>
     </Compile>
-    <Compile Include="FeeUI_List.cs">
+    <Compile Include="FeeUIs\FeeUI_List.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FeeUI_List.Designer.cs">
+    <Compile Include="FeeUIs\FeeUI_List.Designer.cs">
       <DependentUpon>FeeUI_List.cs</DependentUpon>
     </Compile>
-    <Compile Include="FeeUI_Show.cs">
+    <Compile Include="FeeUIs\FeeUI_Show.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FeeUI_Show.Designer.cs">
+    <Compile Include="FeeUIs\FeeUI_Show.Designer.cs">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAddCategories.cs">
@@ -186,28 +187,28 @@
     <Compile Include="FrmAddCategories.Designer.cs">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddFeeCategory.cs">
+    <Compile Include="FeeUIs\FrmAddFeeCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddFeeCategory.Designer.cs">
+    <Compile Include="FeeUIs\FrmAddFeeCategory.Designer.cs">
       <DependentUpon>FrmAddFeeCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAssignFeeItem.cs">
+    <Compile Include="FeeUIs\FrmAssignFeeItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAssignFeeItem.Designer.cs">
+    <Compile Include="FeeUIs\FrmAssignFeeItem.Designer.cs">
       <DependentUpon>FrmAssignFeeItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmChangeYear.cs">
+    <Compile Include="FeeUIs\FrmChangeYear.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmChangeYear.Designer.cs">
+    <Compile Include="FeeUIs\FrmChangeYear.Designer.cs">
       <DependentUpon>FrmChangeYear.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCreateFStruct.cs">
+    <Compile Include="FeeUIs\FrmCreateFStruct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCreateFStruct.Designer.cs">
+    <Compile Include="FeeUIs\FrmCreateFStruct.Designer.cs">
       <DependentUpon>FrmCreateFStruct.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEditStudent.cs">
@@ -222,16 +223,16 @@
     <Compile Include="FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFeePayment.cs">
+    <Compile Include="FeeUIs\FrmFeePayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFeePayment.Designer.cs">
+    <Compile Include="FeeUIs\FrmFeePayment.Designer.cs">
       <DependentUpon>FrmFeePayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFilter.cs">
+    <Compile Include="FeeUIs\FrmFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFilter.Designer.cs">
+    <Compile Include="FeeUIs\FrmFilter.Designer.cs">
       <DependentUpon>FrmFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmImportedData.cs">
@@ -240,10 +241,10 @@
     <Compile Include="FrmImportedData.Designer.cs">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmViewAll.cs">
+    <Compile Include="FeeUIs\FrmViewAll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmViewAll.Designer.cs">
+    <Compile Include="FeeUIs\FrmViewAll.Designer.cs">
       <DependentUpon>FrmViewAll.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Home.cs">
@@ -257,6 +258,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GridIcon.resx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="GroupedFeeStructure.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
@@ -270,11 +272,28 @@
     <Compile Include="Income.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Incomelogo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Incomelogo.resx</DependentUpon>
+    </Compile>
     <Compile Include="IncomeUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="IncomeUI.Designer.cs">
       <DependentUpon>IncomeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeUIs\FrmAddIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeUIs\FrmAddIncome.Designer.cs">
+      <DependentUpon>FrmAddIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeUIs\FrmFilterIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeUIs\FrmFilterIncome.Designer.cs">
+      <DependentUpon>FrmFilterIncome.cs</DependentUpon>
     </Compile>
     <Compile Include="InvoicesReceipt.cs">
       <SubType>UserControl</SubType>
@@ -321,10 +340,10 @@
     <Compile Include="SettingsUI.Designer.cs">
       <DependentUpon>SettingsUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="StructureListItem.cs">
+    <Compile Include="FeeUIs\StructureListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StructureListItem.Designer.cs">
+    <Compile Include="FeeUIs\StructureListItem.Designer.cs">
       <DependentUpon>StructureListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Student_Basic.cs">
@@ -362,10 +381,10 @@
     <EmbeddedResource Include="ExpenseUI.resx">
       <DependentUpon>ExpenseUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FeePayment.resx">
+    <EmbeddedResource Include="FeeUIs\FeePayment.resx">
       <DependentUpon>FeePayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FeesStructure.resx">
+    <EmbeddedResource Include="FeeUIs\FeesStructure.resx">
       <DependentUpon>FeesStructure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeesUI.resx">
@@ -374,29 +393,30 @@
     <EmbeddedResource Include="FeeUILogo.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FeeUILogo.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="FeeUI_Default.resx">
+    <EmbeddedResource Include="FeeUIs\FeeUI_Default.resx">
       <DependentUpon>FeeUI_Default.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FeeUI_List.resx">
+    <EmbeddedResource Include="FeeUIs\FeeUI_List.resx">
       <DependentUpon>FeeUI_List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FeeUI_Show.resx">
+    <EmbeddedResource Include="FeeUIs\FeeUI_Show.resx">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddCategories.resx">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddFeeCategory.resx">
+    <EmbeddedResource Include="FeeUIs\FrmAddFeeCategory.resx">
       <DependentUpon>FrmAddFeeCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAssignFeeItem.resx">
+    <EmbeddedResource Include="FeeUIs\FrmAssignFeeItem.resx">
       <DependentUpon>FrmAssignFeeItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChangeYear.resx">
+    <EmbeddedResource Include="FeeUIs\FrmChangeYear.resx">
       <DependentUpon>FrmChangeYear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCreateFStruct.resx">
+    <EmbeddedResource Include="FeeUIs\FrmCreateFStruct.resx">
       <DependentUpon>FrmCreateFStruct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditStudent.resx">
@@ -405,16 +425,16 @@
     <EmbeddedResource Include="FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFeePayment.resx">
+    <EmbeddedResource Include="FeeUIs\FrmFeePayment.resx">
       <DependentUpon>FrmFeePayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFilter.resx">
+    <EmbeddedResource Include="FeeUIs\FrmFilter.resx">
       <DependentUpon>FrmFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportedData.resx">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmViewAll.resx">
+    <EmbeddedResource Include="FeeUIs\FrmViewAll.resx">
       <DependentUpon>FrmViewAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Home.resx">
@@ -423,12 +443,23 @@
     <EmbeddedResource Include="GridIcon.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GridIcon.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportsUI.resx">
       <DependentUpon>ImportsUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Incomelogo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Incomelogo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="IncomeUI.resx">
       <DependentUpon>IncomeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeUIs\FrmAddIncome.resx">
+      <DependentUpon>FrmAddIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeUIs\FrmFilterIncome.resx">
+      <DependentUpon>FrmFilterIncome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvoicesReceipt.resx">
       <DependentUpon>InvoicesReceipt.cs</DependentUpon>
@@ -454,7 +485,7 @@
     <EmbeddedResource Include="SettingsUI.resx">
       <DependentUpon>SettingsUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StructureListItem.resx">
+    <EmbeddedResource Include="FeeUIs\StructureListItem.resx">
       <DependentUpon>StructureListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransationsUI.resx">
@@ -491,7 +522,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo_term3.png" />
     <None Include="Resources\logo_term2.png" />
     <None Include="Resources\logo_term1.png" />
     <None Include="Resources\Happy100.png" />
@@ -511,6 +541,11 @@
     <None Include="Resources\Ok_0px.png" />
     <None Include="Resources\Not Applicable_50px.png" />
     <None Include="Resources\Money_50px.png" />
+    <None Include="Resources\logo_term3.png" />
+    <None Include="Resources\income_term1.png" />
+    <None Include="Resources\income_term2.png" />
+    <None Include="Resources\income_term3.png" />
+    <None Include="Resources\Filter_px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

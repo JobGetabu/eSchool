@@ -99,6 +99,7 @@ namespace eSchool
 
                 feeIns.lblFFeeStructure.Text = frmslbl;
                 feeIns.lblTFeeStructure.Text = "Term " + FeesUI.autoSelTerm;
+                feeIns.lblTotalFeeStructure.Text = "";
 
                 string title = $"{FeesUI.autoSelYear} {frmslbl}";
                 string tmTitle = $"Term {FeesUI.autoSelTerm}";

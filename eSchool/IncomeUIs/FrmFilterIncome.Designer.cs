@@ -1,6 +1,6 @@
-﻿namespace eSchool
+﻿namespace eSchool.IncomeUIs
 {
-    partial class FrmFilter
+    partial class FrmFilterIncome
     {
         /// <summary>
         /// Required designer variable.
@@ -29,27 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFilter));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFilterIncome));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbYear = new MetroFramework.Controls.MetroComboBox();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.cbTerm = new MetroFramework.Controls.MetroComboBox();
-            this.cbYear = new MetroFramework.Controls.MetroComboBox();
-            this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.switch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.switch2 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.switch4 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.switch3 = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new System.Windows.Forms.Button();
+            this.switch3 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switch2 = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.switch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,8 +62,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(274, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 271);
-            this.panel2.TabIndex = 15;
+            this.panel2.Size = new System.Drawing.Size(10, 238);
+            this.panel2.TabIndex = 34;
             // 
             // panel1
             // 
@@ -74,8 +71,67 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 271);
-            this.panel1.TabIndex = 14;
+            this.panel1.Size = new System.Drawing.Size(10, 238);
+            this.panel1.TabIndex = 33;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(174, 183);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(16, 17);
+            this.bunifuCustomLabel5.TabIndex = 38;
+            this.bunifuCustomLabel5.Text = "3";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(123, 183);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(16, 17);
+            this.bunifuCustomLabel3.TabIndex = 37;
+            this.bunifuCustomLabel3.Text = "2";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(72, 183);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(16, 17);
+            this.bunifuCustomLabel2.TabIndex = 36;
+            this.bunifuCustomLabel2.Text = "1";
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lblYear.Location = new System.Drawing.Point(28, 134);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(41, 17);
+            this.lblYear.TabIndex = 35;
+            this.lblYear.Text = "Term";
+            // 
+            // cbYear
+            // 
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.ItemHeight = 23;
+            this.cbYear.Location = new System.Drawing.Point(31, 81);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.PromptText = "Year";
+            this.cbYear.Size = new System.Drawing.Size(218, 29);
+            this.cbYear.TabIndex = 25;
+            this.cbYear.UseSelectable = true;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
             // bunifuGradientPanel1
             // 
@@ -93,7 +149,7 @@
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 20;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(284, 63);
-            this.bunifuGradientPanel1.TabIndex = 13;
+            this.bunifuGradientPanel1.TabIndex = 32;
             // 
             // pictureBox1
             // 
@@ -117,151 +173,6 @@
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Filter";
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // cbTerm
-            // 
-            this.cbTerm.FormattingEnabled = true;
-            this.cbTerm.ItemHeight = 23;
-            this.cbTerm.Location = new System.Drawing.Point(31, 132);
-            this.cbTerm.Name = "cbTerm";
-            this.cbTerm.PromptText = "Term";
-            this.cbTerm.Size = new System.Drawing.Size(218, 29);
-            this.cbTerm.TabIndex = 1;
-            this.cbTerm.UseSelectable = true;
-            this.cbTerm.SelectedIndexChanged += new System.EventHandler(this.cbTerm_SelectedIndexChanged);
-            // 
-            // cbYear
-            // 
-            this.cbYear.FormattingEnabled = true;
-            this.cbYear.ItemHeight = 23;
-            this.cbYear.Location = new System.Drawing.Point(31, 81);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.PromptText = "Year";
-            this.cbYear.Size = new System.Drawing.Size(218, 29);
-            this.cbYear.TabIndex = 0;
-            this.cbYear.UseSelectable = true;
-            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
-            // 
-            // lblYear
-            // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblYear.Location = new System.Drawing.Point(28, 181);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(40, 17);
-            this.lblYear.TabIndex = 18;
-            this.lblYear.Text = "Form";
-            // 
-            // switch1
-            // 
-            this.switch1.BackColor = System.Drawing.Color.Transparent;
-            this.switch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch1.BackgroundImage")));
-            this.switch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch1.Location = new System.Drawing.Point(45, 207);
-            this.switch1.Name = "switch1";
-            this.switch1.OffColor = System.Drawing.Color.Gray;
-            this.switch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.switch1.Size = new System.Drawing.Size(35, 20);
-            this.switch1.TabIndex = 2;
-            this.switch1.Tag = "1";
-            this.switch1.Value = true;
-            this.switch1.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(52, 230);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(16, 17);
-            this.bunifuCustomLabel2.TabIndex = 20;
-            this.bunifuCustomLabel2.Text = "1";
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(103, 230);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(16, 17);
-            this.bunifuCustomLabel3.TabIndex = 22;
-            this.bunifuCustomLabel3.Text = "2";
-            // 
-            // switch2
-            // 
-            this.switch2.BackColor = System.Drawing.Color.Transparent;
-            this.switch2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch2.BackgroundImage")));
-            this.switch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switch2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch2.Location = new System.Drawing.Point(96, 207);
-            this.switch2.Name = "switch2";
-            this.switch2.OffColor = System.Drawing.Color.Gray;
-            this.switch2.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.switch2.Size = new System.Drawing.Size(35, 20);
-            this.switch2.TabIndex = 3;
-            this.switch2.Tag = "2";
-            this.switch2.Value = true;
-            this.switch2.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(205, 230);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(16, 17);
-            this.bunifuCustomLabel4.TabIndex = 26;
-            this.bunifuCustomLabel4.Text = "4";
-            // 
-            // switch4
-            // 
-            this.switch4.BackColor = System.Drawing.Color.Transparent;
-            this.switch4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch4.BackgroundImage")));
-            this.switch4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switch4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch4.Location = new System.Drawing.Point(198, 207);
-            this.switch4.Name = "switch4";
-            this.switch4.OffColor = System.Drawing.Color.Gray;
-            this.switch4.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.switch4.Size = new System.Drawing.Size(35, 20);
-            this.switch4.TabIndex = 5;
-            this.switch4.Tag = "4";
-            this.switch4.Value = true;
-            this.switch4.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(154, 230);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(16, 17);
-            this.bunifuCustomLabel5.TabIndex = 24;
-            this.bunifuCustomLabel5.Text = "3";
-            // 
-            // switch3
-            // 
-            this.switch3.BackColor = System.Drawing.Color.Transparent;
-            this.switch3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch3.BackgroundImage")));
-            this.switch3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.switch3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.switch3.Location = new System.Drawing.Point(147, 207);
-            this.switch3.Name = "switch3";
-            this.switch3.OffColor = System.Drawing.Color.Gray;
-            this.switch3.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
-            this.switch3.Size = new System.Drawing.Size(35, 20);
-            this.switch3.TabIndex = 4;
-            this.switch3.Tag = "3";
-            this.switch3.Value = true;
-            this.switch3.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
-            // 
             // btnCancel
             // 
             this.btnCancel.Activecolor = System.Drawing.Color.WhiteSmoke;
@@ -283,14 +194,14 @@
             this.btnCancel.IconVisible = true;
             this.btnCancel.IconZoom = 50D;
             this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(27, 290);
+            this.btnCancel.Location = new System.Drawing.Point(27, 243);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.OnHovercolor = System.Drawing.Color.Silver;
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = false;
             this.btnCancel.Size = new System.Drawing.Size(222, 33);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 31;
             this.btnCancel.Text = " Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.DarkGray;
@@ -307,28 +218,77 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::eSchool.FeeUILogo.Ok_0px;
+            this.btnSave.Image = global::eSchool.GridIcon.Filter_px;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(27, 250);
+            this.btnSave.Location = new System.Drawing.Point(27, 203);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(222, 31);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = " Save";
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Text = " Filter";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // FrmFilter
+            // switch3
+            // 
+            this.switch3.BackColor = System.Drawing.Color.Transparent;
+            this.switch3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch3.BackgroundImage")));
+            this.switch3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switch3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switch3.Location = new System.Drawing.Point(167, 160);
+            this.switch3.Name = "switch3";
+            this.switch3.OffColor = System.Drawing.Color.Gray;
+            this.switch3.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
+            this.switch3.Size = new System.Drawing.Size(35, 20);
+            this.switch3.TabIndex = 29;
+            this.switch3.Tag = "3";
+            this.switch3.Value = true;
+            this.switch3.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
+            // 
+            // switch2
+            // 
+            this.switch2.BackColor = System.Drawing.Color.Transparent;
+            this.switch2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch2.BackgroundImage")));
+            this.switch2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switch2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switch2.Location = new System.Drawing.Point(116, 160);
+            this.switch2.Name = "switch2";
+            this.switch2.OffColor = System.Drawing.Color.Gray;
+            this.switch2.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
+            this.switch2.Size = new System.Drawing.Size(35, 20);
+            this.switch2.TabIndex = 28;
+            this.switch2.Tag = "2";
+            this.switch2.Value = true;
+            this.switch2.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
+            // 
+            // switch1
+            // 
+            this.switch1.BackColor = System.Drawing.Color.Transparent;
+            this.switch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("switch1.BackgroundImage")));
+            this.switch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.switch1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switch1.Location = new System.Drawing.Point(65, 160);
+            this.switch1.Name = "switch1";
+            this.switch1.OffColor = System.Drawing.Color.Gray;
+            this.switch1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(202)))), ((int)(((byte)(94)))));
+            this.switch1.Size = new System.Drawing.Size(35, 20);
+            this.switch1.TabIndex = 27;
+            this.switch1.Tag = "1";
+            this.switch1.Value = true;
+            this.switch1.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
+            // 
+            // FrmFilterIncome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(284, 334);
+            this.ClientSize = new System.Drawing.Size(284, 301);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.bunifuCustomLabel4);
-            this.Controls.Add(this.switch4);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.switch3);
             this.Controls.Add(this.bunifuCustomLabel3);
@@ -337,18 +297,14 @@
             this.Controls.Add(this.switch1);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.cbYear);
-            this.Controls.Add(this.cbTerm);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmFilter";
+            this.Name = "FrmFilterIncome";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmFilter";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFilter_FormClosing);
-            this.Load += new System.EventHandler(this.FrmFilter_Load);
+            this.Text = "Filter Income";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmFilterIncome_FormClosing);
+            this.Load += new System.EventHandler(this.FrmFilterIncome_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -365,11 +321,8 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private MetroFramework.Controls.MetroComboBox cbYear;
-        private MetroFramework.Controls.MetroComboBox cbTerm;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switch4;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
+        private System.Windows.Forms.Button btnSave;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuiOSSwitch switch3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
@@ -377,7 +330,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuiOSSwitch switch1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private MetroFramework.Controls.MetroComboBox cbYear;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
