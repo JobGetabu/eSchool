@@ -231,10 +231,7 @@ namespace eSchool
         public void pictureBxMenuHome_Click(object sender, EventArgs e)
         {
             CollapseNavBar();                  
-        }
-        
-      
-      
+        } 
         public  void CollapseNavBar()
         {
             if (sidebar.Width == 240)
@@ -257,4 +254,7 @@ namespace eSchool
             }
         }
     }
+
+    //TODO InvalidOperationException
+    //Use lock objects when accessing same resources in the program to prevent this random crashes
 }

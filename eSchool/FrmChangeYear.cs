@@ -39,8 +39,6 @@ namespace eSchool
             //    cBYear.Items.Add(count -= 1);
             //}
         }
-
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             close = 1;

@@ -202,9 +202,9 @@
             this.lblRequred.ForeColor = System.Drawing.Color.White;
             this.lblRequred.Location = new System.Drawing.Point(369, 66);
             this.lblRequred.Name = "lblRequred";
-            this.lblRequred.Size = new System.Drawing.Size(46, 17);
+            this.lblRequred.Size = new System.Drawing.Size(15, 17);
             this.lblRequred.TabIndex = 76;
-            this.lblRequred.Text = "75,000";
+            this.lblRequred.Text = "0";
             // 
             // lblPaid
             // 
@@ -213,9 +213,9 @@
             this.lblPaid.ForeColor = System.Drawing.Color.White;
             this.lblPaid.Location = new System.Drawing.Point(250, 66);
             this.lblPaid.Name = "lblPaid";
-            this.lblPaid.Size = new System.Drawing.Size(46, 17);
+            this.lblPaid.Size = new System.Drawing.Size(15, 17);
             this.lblPaid.TabIndex = 75;
-            this.lblPaid.Text = "50,000";
+            this.lblPaid.Text = "0";
             // 
             // bunifuCustomLabel5
             // 
@@ -236,9 +236,9 @@
             this.perfPercentage.ForeColor = System.Drawing.Color.White;
             this.perfPercentage.Location = new System.Drawing.Point(314, 19);
             this.perfPercentage.Name = "perfPercentage";
-            this.perfPercentage.Size = new System.Drawing.Size(40, 21);
+            this.perfPercentage.Size = new System.Drawing.Size(31, 21);
             this.perfPercentage.TabIndex = 73;
-            this.perfPercentage.Text = "93%";
+            this.perfPercentage.Text = "0%";
             // 
             // pictureBox2
             // 
@@ -292,7 +292,7 @@
             this.bunifuCircleProgressbarCleared.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(223)))), ((int)(((byte)(29)))));
             this.bunifuCircleProgressbarCleared.Size = new System.Drawing.Size(72, 72);
             this.bunifuCircleProgressbarCleared.TabIndex = 69;
-            this.bunifuCircleProgressbarCleared.Value = 60;
+            this.bunifuCircleProgressbarCleared.Value = 0;
             // 
             // bunifuCustomLabel3
             // 
@@ -326,7 +326,7 @@
             this.bunifuCircleProgressbarRegistered.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(169)))), ((int)(((byte)(234)))));
             this.bunifuCircleProgressbarRegistered.Size = new System.Drawing.Size(72, 72);
             this.bunifuCircleProgressbarRegistered.TabIndex = 67;
-            this.bunifuCircleProgressbarRegistered.Value = 40;
+            this.bunifuCircleProgressbarRegistered.Value = 0;
             // 
             // panelSwitch
             // 
@@ -440,20 +440,20 @@
         private System.Windows.Forms.Panel panelTopRght;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblRequred;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblPaid;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel perfPercentage;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbarCleared;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbarRegistered;
         private System.Windows.Forms.Panel panelTopLeft;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDateNow;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTerm;
         private System.Windows.Forms.PictureBox pBoxLogoTerm;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDateDay;
+        public Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbarCleared;
+        public Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbarRegistered;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblRequred;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblPaid;
+        public Bunifu.Framework.UI.BunifuCustomLabel perfPercentage;
     }
 }
