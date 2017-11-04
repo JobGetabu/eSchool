@@ -45,21 +45,21 @@ namespace eSchool
 
             if (Properties.Settings.Default.CurrentTerm == 1)
             {
-                this.pBoxLogoTerm.Image = Incomelogo.income_term1;
+                //this.pBoxLogoTerm.Image = Incomelogo.income_term1;
                 lblT1.Text = "1";
                 lblT2.Text = "";
                 lblT3.Text = "";
             }
             if (Properties.Settings.Default.CurrentTerm == 2)
             {
-                this.pBoxLogoTerm.Image = Incomelogo.income_term2;
+                //this.pBoxLogoTerm.Image = Incomelogo.income_term2;
                 lblT2.Text = "2";
                 lblT1.Text = "";
                 lblT3.Text = "";
             }
             if (Properties.Settings.Default.CurrentTerm == 3)
             {
-                this.pBoxLogoTerm.Image = Incomelogo.income_term3;
+                //this.pBoxLogoTerm.Image = Incomelogo.income_term3;
                 lblT3.Text = "3";
                 lblT1.Text = "";
                 lblT2.Text = "";

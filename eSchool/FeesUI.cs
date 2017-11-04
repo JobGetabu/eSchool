@@ -43,17 +43,17 @@ namespace eSchool
         {
             if (Properties.Settings.Default.CurrentTerm ==1)
             {
-                this.pBoxLogoTerm.Image = FeeUILogo.logo_term1;
+                //this.pBoxLogoTerm.Image = FeeUILogo.logo_term1;
                 lblTerm.Text = "Term: 1";
             }
             if (Properties.Settings.Default.CurrentTerm ==2)
             {
-                this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
+                //this.pBoxLogoTerm.Image = FeeUILogo.logo_term2;
                 lblTerm.Text = "Term: 2";
             }
             if (Properties.Settings.Default.CurrentTerm == 3)
             {
-                this.pBoxLogoTerm.Image = FeeUILogo.logo_term3;
+                //this.pBoxLogoTerm.Image = FeeUILogo.logo_term3;
                 lblTerm.Text = "Term: 3";
             }
         }

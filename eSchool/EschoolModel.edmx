@@ -25,15 +25,6 @@
           <Property Name="Term" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="FeeRequiredPerYear">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Form" Type="int" Nullable="false" />
-          <Property Name="Year" Type="int" Nullable="false" />
-          <Property Name="FeesRequired" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-        </EntityType>
         <EntityType Name="Fees">
           <Key>
             <PropertyRef Name="FeesId" />
@@ -87,6 +78,20 @@
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Category" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="Invoices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Client" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Balance" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Term" Type="int" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
         <EntityType Name="Login_Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -139,6 +144,19 @@
           <Property Name="Gender" Type="nvarchar" MaxLength="1" />
           <Property Name="ModeOfLearning" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Transations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Details" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Term" Type="int" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
         <Association Name="FK_Admin No_Fees">
           <End Role="Student_Basic" Type="Self.Student_Basic" Multiplicity="1" />
           <End Role="Fees" Type="Self.Fees" Multiplicity="*" />
@@ -151,6 +169,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Term' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Term" />-->
         <Association Name="FK_Term_Ex">
           <End Role="SchoolPeriodTerm" Type="Self.SchoolPeriodTerm" Multiplicity="1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
@@ -215,6 +236,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_Year' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_Year" />-->
         <Association Name="FK_Year_Ex">
           <End Role="SchoolPeriodYear" Type="Self.SchoolPeriodYear" Multiplicity="1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
@@ -235,20 +259,6 @@
               <PropertyRef Name="Year" />
             </Principal>
             <Dependent Role="Fees">
-              <PropertyRef Name="Year" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Year_Frq">
-          <End Role="SchoolPeriodYear" Type="Self.SchoolPeriodYear" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="FeeRequiredPerYear" Type="Self.FeeRequiredPerYear" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SchoolPeriodYear">
-              <PropertyRef Name="Year" />
-            </Principal>
-            <Dependent Role="FeeRequiredPerYear">
               <PropertyRef Name="Year" />
             </Dependent>
           </ReferentialConstraint>
@@ -296,17 +306,18 @@
         <EntityContainer Name="EschoolModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" store:Type="Tables" />
-          <EntitySet Name="FeeRequiredPerYear" EntityType="Self.FeeRequiredPerYear" store:Type="Tables" />
           <EntitySet Name="Fees" EntityType="Self.Fees" store:Type="Tables" />
           <EntitySet Name="FeesRequiredPerTerm" EntityType="Self.FeesRequiredPerTerm" store:Type="Tables" />
           <EntitySet Name="GroupedFeeStructures" EntityType="Self.GroupedFeeStructures" store:Type="Tables" />
           <EntitySet Name="Income" EntityType="Self.Income" store:Type="Tables" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" store:Type="Tables" />
           <EntitySet Name="Login_Users" EntityType="Self.Login_Users" store:Type="Tables" />
           <EntitySet Name="OverHeadCategory" EntityType="Self.OverHeadCategory" store:Type="Tables" />
           <EntitySet Name="OverHeadCategoryPerYear" EntityType="Self.OverHeadCategoryPerYear" store:Type="Tables" />
           <EntitySet Name="SchoolPeriodTerm" EntityType="Self.SchoolPeriodTerm" store:Type="Tables" />
           <EntitySet Name="SchoolPeriodYear" EntityType="Self.SchoolPeriodYear" store:Type="Tables" />
           <EntitySet Name="Student_Basic" EntityType="Self.Student_Basic" store:Type="Tables" />
+          <EntitySet Name="Transations" EntityType="Self.Transations" store:Type="Tables" />
           <AssociationSet Name="FK_Admin No_Fees" Association="Self.FK_Admin No_Fees">
             <End Role="Student_Basic" EntitySet="Student_Basic" />
             <End Role="Fees" EntitySet="Fees" />
@@ -339,10 +350,6 @@
             <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYear" />
             <End Role="Fees" EntitySet="Fees" />
           </AssociationSet>
-          <AssociationSet Name="FK_Year_Frq" Association="Self.FK_Year_Frq">
-            <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYear" />
-            <End Role="FeeRequiredPerYear" EntitySet="FeeRequiredPerYear" />
-          </AssociationSet>
           <AssociationSet Name="FK_Year_FrqT" Association="Self.FK_Year_FrqT">
             <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYear" />
             <End Role="FeesRequiredPerTerm" EntitySet="FeesRequiredPerTerm" />
@@ -373,16 +380,6 @@
           <Property Name="Year" Type="Int32" Nullable="false" />
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Ex" FromRole="Expense" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Ex" FromRole="Expense" ToRole="SchoolPeriodYear" />
-        </EntityType>
-        <EntityType Name="FeeRequiredPerYear">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Form" Type="Int32" Nullable="false" />
-          <Property Name="Year" Type="Int32" Nullable="false" />
-          <Property Name="FeesRequired" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Frq" FromRole="FeeRequiredPerYear" ToRole="SchoolPeriodYear" />
         </EntityType>
         <EntityType Name="Fee">
           <Key>
@@ -474,7 +471,6 @@
           </Key>
           <Property Name="Year" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Expenses" Relationship="Self.FK_Year_Ex" FromRole="SchoolPeriodYear" ToRole="Expense" />
-          <NavigationProperty Name="FeeRequiredPerYears" Relationship="Self.FK_Year_Frq" FromRole="SchoolPeriodYear" ToRole="FeeRequiredPerYear" />
           <NavigationProperty Name="Fees" Relationship="Self.FK_Year_Fees" FromRole="SchoolPeriodYear" ToRole="Fees" />
           <NavigationProperty Name="FeesRequiredPerTerms" Relationship="Self.FK_Year_FrqT" FromRole="SchoolPeriodYear" ToRole="FeesRequiredPerTerm" />
           <NavigationProperty Name="Incomes" Relationship="Self.FK_Year_Income" FromRole="SchoolPeriodYear" ToRole="Income" />
@@ -514,20 +510,6 @@
               <PropertyRef Name="Year" />
             </Principal>
             <Dependent Role="Expense">
-              <PropertyRef Name="Year" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Year_Frq">
-          <End Role="SchoolPeriodYear" Type="Self.SchoolPeriodYear" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="FeeRequiredPerYear" Type="Self.FeeRequiredPerYear" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SchoolPeriodYear">
-              <PropertyRef Name="Year" />
-            </Principal>
-            <Dependent Role="FeeRequiredPerYear">
               <PropertyRef Name="Year" />
             </Dependent>
           </ReferentialConstraint>
@@ -650,7 +632,6 @@
         </Association>
         <EntityContainer Name="EschoolEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Expenses" EntityType="Self.Expense" />
-          <EntitySet Name="FeeRequiredPerYears" EntityType="Self.FeeRequiredPerYear" />
           <EntitySet Name="Fees" EntityType="Self.Fee" />
           <EntitySet Name="FeesRequiredPerTerms" EntityType="Self.FeesRequiredPerTerm" />
           <EntitySet Name="Incomes" EntityType="Self.Income" />
@@ -667,10 +648,6 @@
           <AssociationSet Name="FK_Year_Ex" Association="Self.FK_Year_Ex">
             <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYears" />
             <End Role="Expense" EntitySet="Expenses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Year_Frq" Association="Self.FK_Year_Frq">
-            <End Role="SchoolPeriodYear" EntitySet="SchoolPeriodYears" />
-            <End Role="FeeRequiredPerYear" EntitySet="FeeRequiredPerYears" />
           </AssociationSet>
           <AssociationSet Name="FK_Admin_No_Fees" Association="Self.FK_Admin_No_Fees">
             <End Role="Student_Basic" EntitySet="Student_Basic" />
@@ -710,6 +687,8 @@
           </AssociationSet>
           <EntitySet Name="Categories" EntityType="EschoolModel.Category" />
           <EntitySet Name="GroupedFeeStructures" EntityType="EschoolModel.GroupedFeeStructure" />
+          <EntitySet Name="Invoices" EntityType="EschoolModel.Invoice" />
+          <EntitySet Name="Transations" EntityType="EschoolModel.Transation" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -735,6 +714,33 @@
           <Property Name="selTerm" Type="Int32" />
           <Property Name="TotalTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceNo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Client" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Term" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Transation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionNo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Term" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -751,16 +757,6 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FeeRequiredPerYears">
-            <EntityTypeMapping TypeName="EschoolModel.FeeRequiredPerYear">
-              <MappingFragment StoreEntitySet="FeeRequiredPerYear">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Form" ColumnName="Form" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="FeesRequired" ColumnName="FeesRequired" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -884,6 +880,35 @@
                 <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
                 <ScalarProperty Name="TermTitle" ColumnName="TermTitle" />
                 <ScalarProperty Name="YearTitle" ColumnName="YearTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="EschoolModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transations">
+            <EntityTypeMapping TypeName="EschoolModel.Transation">
+              <MappingFragment StoreEntitySet="Transations">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

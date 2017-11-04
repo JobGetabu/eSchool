@@ -396,10 +396,11 @@
             // 
             // pBoxLogoTerm
             // 
-            this.pBoxLogoTerm.Location = new System.Drawing.Point(30, 2);
+            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
+            this.pBoxLogoTerm.Location = new System.Drawing.Point(20, 12);
             this.pBoxLogoTerm.Name = "pBoxLogoTerm";
-            this.pBoxLogoTerm.Size = new System.Drawing.Size(160, 96);
-            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pBoxLogoTerm.Size = new System.Drawing.Size(165, 77);
+            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBoxLogoTerm.TabIndex = 55;
             this.pBoxLogoTerm.TabStop = false;
             // 

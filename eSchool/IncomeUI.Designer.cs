@@ -28,24 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncomeUI));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelTopLeft = new System.Windows.Forms.Panel();
+            this.lblT3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblT2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblT1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateDay = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateNow = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblPaid = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddIncome = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.lblPaid = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelGrid = new System.Windows.Forms.Panel();
             this.gData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.ColumnAdminNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,22 +61,14 @@
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddIncome = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.lblT1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblT2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblT3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
             this.panelTopRght.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -113,6 +113,42 @@
             this.panelTopLeft.Size = new System.Drawing.Size(297, 100);
             this.panelTopLeft.TabIndex = 55;
             // 
+            // lblT3
+            // 
+            this.lblT3.AutoSize = true;
+            this.lblT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.lblT3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.lblT3.Location = new System.Drawing.Point(263, 24);
+            this.lblT3.Name = "lblT3";
+            this.lblT3.Size = new System.Drawing.Size(15, 17);
+            this.lblT3.TabIndex = 61;
+            this.lblT3.Text = "3";
+            // 
+            // lblT2
+            // 
+            this.lblT2.AutoSize = true;
+            this.lblT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.lblT2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.lblT2.Location = new System.Drawing.Point(253, 24);
+            this.lblT2.Name = "lblT2";
+            this.lblT2.Size = new System.Drawing.Size(15, 17);
+            this.lblT2.TabIndex = 60;
+            this.lblT2.Text = "2";
+            // 
+            // lblT1
+            // 
+            this.lblT1.AutoSize = true;
+            this.lblT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.lblT1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.lblT1.Location = new System.Drawing.Point(242, 24);
+            this.lblT1.Name = "lblT1";
+            this.lblT1.Size = new System.Drawing.Size(15, 17);
+            this.lblT1.TabIndex = 59;
+            this.lblT1.Text = "1";
+            // 
             // lblDateDay
             // 
             this.lblDateDay.AutoSize = true;
@@ -149,6 +185,16 @@
             this.lblTerm.TabIndex = 56;
             this.lblTerm.Text = "Term: ";
             // 
+            // pBoxLogoTerm
+            // 
+            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
+            this.pBoxLogoTerm.Location = new System.Drawing.Point(28, 9);
+            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
+            this.pBoxLogoTerm.Size = new System.Drawing.Size(166, 77);
+            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBoxLogoTerm.TabIndex = 55;
+            this.pBoxLogoTerm.TabStop = false;
+            // 
             // panelTopRght
             // 
             this.panelTopRght.Controls.Add(this.lblYear);
@@ -164,30 +210,17 @@
             this.panelTopRght.Size = new System.Drawing.Size(466, 100);
             this.panelTopRght.TabIndex = 0;
             // 
-            // bunifuCustomLabel1
+            // lblYear
             // 
-            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(16, 74);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(44, 16);
-            this.bunifuCustomLabel1.TabIndex = 58;
-            this.bunifuCustomLabel1.Text = "Totals :";
-            // 
-            // lblPaid
-            // 
-            this.lblPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPaid.AutoSize = true;
-            this.lblPaid.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblPaid.ForeColor = System.Drawing.Color.White;
-            this.lblPaid.Location = new System.Drawing.Point(63, 73);
-            this.lblPaid.Name = "lblPaid";
-            this.lblPaid.Size = new System.Drawing.Size(47, 17);
-            this.lblPaid.TabIndex = 76;
-            this.lblPaid.Text = "KES 00";
+            this.lblYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblYear.AutoSize = true;
+            this.lblYear.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblYear.ForeColor = System.Drawing.Color.White;
+            this.lblYear.Location = new System.Drawing.Point(160, 71);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(72, 17);
+            this.lblYear.TabIndex = 79;
+            this.lblYear.Text = "Year: 2017";
             // 
             // lblRowCount
             // 
@@ -200,123 +233,6 @@
             this.lblRowCount.TabIndex = 15;
             this.lblRowCount.Text = "0";
             this.lblRowCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panelGrid
-            // 
-            this.panelGrid.Controls.Add(this.gData);
-            this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGrid.Location = new System.Drawing.Point(0, 100);
-            this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.panelGrid.Size = new System.Drawing.Size(798, 443);
-            this.panelGrid.TabIndex = 2;
-            // 
-            // gData
-            // 
-            this.gData.AllowUserToAddRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.gData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnAdminNo,
-            this.ColumnName,
-            this.Form,
-            this.Class,
-            this.ColumnDel});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gData.DefaultCellStyle = dataGridViewCellStyle13;
-            this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gData.DoubleBuffered = true;
-            this.gData.EnableHeadersVisualStyles = false;
-            this.gData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gData.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gData.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.gData.Location = new System.Drawing.Point(20, 10);
-            this.gData.MultiSelect = false;
-            this.gData.Name = "gData";
-            this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.gData.RowHeadersVisible = false;
-            this.gData.RowHeadersWidth = 42;
-            this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gData.RowTemplate.Height = 40;
-            this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gData.Size = new System.Drawing.Size(768, 423);
-            this.gData.TabIndex = 1;
-            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
-            this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
-            // 
-            // ColumnAdminNo
-            // 
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ColumnAdminNo.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ColumnAdminNo.HeaderText = "Category";
-            this.ColumnAdminNo.Name = "ColumnAdminNo";
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Details";
-            this.ColumnName.Name = "ColumnName";
-            // 
-            // Form
-            // 
-            this.Form.HeaderText = "Amount";
-            this.Form.Name = "Form";
-            this.Form.ReadOnly = true;
-            // 
-            // Class
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Class.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Class.HeaderText = "Date";
-            this.Class.Name = "Class";
-            this.Class.ReadOnly = true;
-            // 
-            // ColumnDel
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle12.NullValue")));
-            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle12;
-            this.ColumnDel.HeaderText = "";
-            this.ColumnDel.Name = "ColumnDel";
-            this.ColumnDel.ReadOnly = true;
-            this.ColumnDel.ToolTipText = "Delete Record";
-            // 
-            // pBoxLogoTerm
-            // 
-            //this.pBoxLogoTerm.Image = global::eSchool.Incomelogo.;
-            this.pBoxLogoTerm.Location = new System.Drawing.Point(30, 2);
-            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
-            this.pBoxLogoTerm.Size = new System.Drawing.Size(160, 96);
-            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pBoxLogoTerm.TabIndex = 55;
-            this.pBoxLogoTerm.TabStop = false;
             // 
             // bunifuThinButton22
             // 
@@ -382,53 +298,137 @@
             this.btnAddIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddIncome.Click += new System.EventHandler(this.btnAddIncome_Click);
             // 
-            // lblT1
+            // lblPaid
             // 
-            this.lblT1.AutoSize = true;
-            this.lblT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.lblT1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblT1.Location = new System.Drawing.Point(242, 24);
-            this.lblT1.Name = "lblT1";
-            this.lblT1.Size = new System.Drawing.Size(15, 17);
-            this.lblT1.TabIndex = 59;
-            this.lblT1.Text = "1";
+            this.lblPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPaid.AutoSize = true;
+            this.lblPaid.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblPaid.ForeColor = System.Drawing.Color.White;
+            this.lblPaid.Location = new System.Drawing.Point(63, 73);
+            this.lblPaid.Name = "lblPaid";
+            this.lblPaid.Size = new System.Drawing.Size(47, 17);
+            this.lblPaid.TabIndex = 76;
+            this.lblPaid.Text = "KES 00";
             // 
-            // lblT2
+            // bunifuCustomLabel1
             // 
-            this.lblT2.AutoSize = true;
-            this.lblT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.lblT2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblT2.Location = new System.Drawing.Point(253, 24);
-            this.lblT2.Name = "lblT2";
-            this.lblT2.Size = new System.Drawing.Size(15, 17);
-            this.lblT2.TabIndex = 60;
-            this.lblT2.Text = "2";
+            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(16, 74);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(44, 16);
+            this.bunifuCustomLabel1.TabIndex = 58;
+            this.bunifuCustomLabel1.Text = "Totals :";
             // 
-            // lblT3
+            // panelGrid
             // 
-            this.lblT3.AutoSize = true;
-            this.lblT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.lblT3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblT3.Location = new System.Drawing.Point(263, 24);
-            this.lblT3.Name = "lblT3";
-            this.lblT3.Size = new System.Drawing.Size(15, 17);
-            this.lblT3.TabIndex = 61;
-            this.lblT3.Text = "3";
+            this.panelGrid.Controls.Add(this.gData);
+            this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGrid.Location = new System.Drawing.Point(0, 100);
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
+            this.panelGrid.Size = new System.Drawing.Size(798, 443);
+            this.panelGrid.TabIndex = 2;
             // 
-            // lblYear
+            // gData
             // 
-            this.lblYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblYear.AutoSize = true;
-            this.lblYear.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblYear.ForeColor = System.Drawing.Color.White;
-            this.lblYear.Location = new System.Drawing.Point(160, 71);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(72, 17);
-            this.lblYear.TabIndex = 79;
-            this.lblYear.Text = "Year: 2017";
+            this.gData.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnAdminNo,
+            this.ColumnName,
+            this.Form,
+            this.Class,
+            this.ColumnDel});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gData.DefaultCellStyle = dataGridViewCellStyle6;
+            this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gData.DoubleBuffered = true;
+            this.gData.EnableHeadersVisualStyles = false;
+            this.gData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gData.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gData.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.gData.Location = new System.Drawing.Point(20, 10);
+            this.gData.MultiSelect = false;
+            this.gData.Name = "gData";
+            this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.gData.RowHeadersVisible = false;
+            this.gData.RowHeadersWidth = 42;
+            this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gData.RowTemplate.Height = 40;
+            this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gData.Size = new System.Drawing.Size(768, 423);
+            this.gData.TabIndex = 1;
+            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
+            this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
+            // 
+            // ColumnAdminNo
+            // 
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ColumnAdminNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnAdminNo.HeaderText = "Category";
+            this.ColumnAdminNo.Name = "ColumnAdminNo";
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Details";
+            this.ColumnName.Name = "ColumnName";
+            // 
+            // Form
+            // 
+            this.Form.HeaderText = "Amount";
+            this.Form.Name = "Form";
+            this.Form.ReadOnly = true;
+            // 
+            // Class
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Class.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Class.HeaderText = "Date";
+            this.Class.Name = "Class";
+            this.Class.ReadOnly = true;
+            // 
+            // ColumnDel
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
+            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnDel.HeaderText = "";
+            this.ColumnDel.Name = "ColumnDel";
+            this.ColumnDel.ReadOnly = true;
+            this.ColumnDel.ToolTipText = "Delete Record";
             // 
             // IncomeUI
             // 
@@ -445,12 +445,12 @@
             this.panelTop.PerformLayout();
             this.panelTopLeft.ResumeLayout(false);
             this.panelTopLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
             this.panelTopRght.ResumeLayout(false);
             this.panelTopRght.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

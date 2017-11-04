@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="df3dd523428948b5a6b7fda6fd4a7979" Name="Diagram1">
         <EntityTypeShape EntityType="EschoolModel.Expense" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EschoolModel.FeeRequiredPerYear" Width="1.75" PointX="2.875" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.Fee" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.FeesRequiredPerTerm" Width="2" PointX="3" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.Income" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
@@ -18,7 +17,6 @@
         <EntityTypeShape EntityType="EschoolModel.Student_Basic" Width="1.5" PointX="3.75" PointY="17.375" IsExpanded="true" />
         <AssociationConnector Association="EschoolModel.FK_Term_Ex" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Year_Ex" ManuallyRouted="false" />
-        <AssociationConnector Association="EschoolModel.FK_Year_Frq" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Admin_No_Fees" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Term_Fees" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Year_Fees" ManuallyRouted="false" />
@@ -30,6 +28,8 @@
         <AssociationConnector Association="EschoolModel.FK_Year_Ov" ManuallyRouted="false" />
         <EntityTypeShape EntityType="EschoolModel.Category" Width="1.5" PointX="5" PointY="3.75" />
         <EntityTypeShape EntityType="EschoolModel.GroupedFeeStructure" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="EschoolModel.Invoice" Width="1.5" PointX="2.875" PointY="0.5" />
+        <EntityTypeShape EntityType="EschoolModel.Transation" Width="1.5" PointX="4.875" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

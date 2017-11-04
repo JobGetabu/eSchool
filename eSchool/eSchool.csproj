@@ -157,9 +157,6 @@
     <Compile Include="FeeUIs\FeePayment.Designer.cs">
       <DependentUpon>FeePayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FeeRequiredPerYear.cs">
-      <DependentUpon>EschoolModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="FeesRequiredPerTerm.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -313,6 +310,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Incomelogo.resx</DependentUpon>
     </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="InvoicesReceipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -364,7 +364,15 @@
     <Compile Include="FeeUIs\StructureListItem.Designer.cs">
       <DependentUpon>StructureListItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusGrid.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusGrid.resx</DependentUpon>
+    </Compile>
     <Compile Include="Student_Basic.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transation.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TransationsUI.cs">
@@ -517,6 +525,10 @@
     <EmbeddedResource Include="FeeUIs\StructureListItem.resx">
       <DependentUpon>StructureListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StatusGrid.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusGrid.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransationsUI.resx">
       <DependentUpon>TransationsUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,6 +590,10 @@
     <None Include="Resources\expense_term1.png" />
     <None Include="Resources\expense_term2.png" />
     <None Include="Resources\expense_term3.png" />
+    <None Include="Resources\1cancelled.png" />
+    <None Include="Resources\1incomplete.png" />
+    <None Include="Resources\1paid.png" />
+    <None Include="Resources\1unpaid.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -603,7 +619,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="InvoicesReceipt\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

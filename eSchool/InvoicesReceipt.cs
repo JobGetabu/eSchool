@@ -29,5 +29,54 @@ namespace eSchool
         {
             InitializeComponent();
         }
+
+        private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            this.gData.Rows[e.RowIndex].Cells[6].Value = StatusGrid._1unpaid;
+        }
+
+        private void InvoicesReceipt_Load(object sender, EventArgs e)
+        {
+            gData.Rows.Add(new string[]
+                {
+                       "101",
+                       "Fees",
+                       "Job Getabu",
+                       "KES 15,000",
+                       "KES 00",
+                       "14 Jan 2017",
+                       null
+                });
+            gData.Rows.Add(new string[]
+                {
+                       "101",
+                       "Fees",
+                       "Job Getabu",
+                       "KES 15,000",
+                       "KES 00",
+                       "14 Jan 2017",
+                       null
+                });
+            gData.Rows.Add(new string[]
+                {
+                       "101",
+                       "Fees",
+                       "Job Getabu",
+                       "KES 15,000",
+                       "KES 00",
+                       "14 Jan 2017",
+                       null
+                });
+            gData.Rows.Add(new string[]
+               {
+                       "101",
+                       "Fees",
+                       "Job Getabu",
+                       "KES 15,000",
+                       "KES 00",
+                       "14 Jan 2017",
+                       null
+               });
+        }
     }
 }

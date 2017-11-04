@@ -17,7 +17,6 @@ namespace eSchool
         public SchoolPeriodYear()
         {
             this.Expenses = new HashSet<Expense>();
-            this.FeeRequiredPerYears = new HashSet<FeeRequiredPerYear>();
             this.Fees = new HashSet<Fee>();
             this.FeesRequiredPerTerms = new HashSet<FeesRequiredPerTerm>();
             this.Incomes = new HashSet<Income>();
@@ -27,7 +26,6 @@ namespace eSchool
         public int Year { get; set; }
     
         public virtual ICollection<Expense> Expenses { get; set; }
-        public virtual ICollection<FeeRequiredPerYear> FeeRequiredPerYears { get; set; }
         public virtual ICollection<Fee> Fees { get; set; }
         public virtual ICollection<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }
         public virtual ICollection<Income> Incomes { get; set; }
