@@ -117,82 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ColumnDel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridViewCellStyle8.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
-        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
-        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
-        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
-        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
-        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
-        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
-        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
-        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
-        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
-        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
-        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="expense_term1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expense_term1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <metadata name="Form.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnAdminNo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Class.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnFilter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAK0AAAAmCAYAAAC22BtYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMHSURBVHhe7dzdS1NxHMfx/pKabs3lpnNpOus2IoxAoieK
-        Hqx0ZU1bS93Eh9CLLroQuugiqKsVERJEF0FhUNFFCIVgESQlFUUPFEQX3cS38/nJ1ub5riZqOwc+F6+7
-        c45evPfjex5XNG9sESI3YbTkOoyWXIfRkuswWnIdRkuus+Bo67clJHgkI/7kU/H3TEvF4EdZOfqLqGRo
-        Bu0AWorsHFBbK6akaJs275DqYzfFM/RVfOlZCSUeyNqj16QhlpHooQuyYf9ZopKhGbQDaKmq74WsGvkp
-        gfiENG5pUxvM989og+1XrF/GJ6mN35Fo23n1nyBarPUHzkndiVtSOfDeLJDRTa1qj1A0WqyuGAFCJ+9L
-        88Ex9Q8RLTXEiwXS1/dSmlr2qm2q0WKJ9vc8t0aAq+qBiZZbY/sl8abfSEPrcVuftmjNCmsFi520gxH9
-        LxhHvf1vbXOuLVqMBFxhySmaDl+0RoUZs5hmGy2INhgbl5quCXVnonKJdN6QQPdDe7QYeisGP5tBWNuR
-        qJy8/e9y820uWlxmwFmbtgNRuUU6x6Uq8fhPtLgm5hn+xktb5GhoFBOBidafmDR3JbQNiZyiOjkpq5NT
-        c9HifnBt1111QyKnwIiAVnPR4lkCbUMip8Dlr4Jow/Hb6oZEToGFNRetZ/i7rDn9RN2QyCnwHIxn8Mtc
-        tLjb4DnzQ92QyCmy12pNtIBrYBh0tY2Jys08QJOaLby5gIJRsrYDUbkFep9J3e6RwmiBqy05Uf4qa4sW
-        dxt8qRm+QkOOgbu0vtQrWbe1Q48WMCb40q/54Aw5QqB32hoLRgsatUULkV1DJly+E0blghUWwYb3jdn6
-        VKMFc2KG1x1iGfWgRMsFMyxGgvkrbFbRaAEzrnk/3Zpz+foNLTecSwV6psxJV/4MO99fo82q395rDlQ5
-        8EFCpx6Z1ZczLy0FtFTTfc98TwMf8QjvsUYDpcF8JUWbhfpDbZfN6ouPK+A+MNFimK/MdFw3Xy7SmtMs
-        KFoiJ2C05DqMllyH0ZLrMFpymRb5DXi0RO8BbnjmAAAAAElFTkSuQmCC
-</value>
+  <data name="expense_term2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expense_term2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAFVJREFUaEPt
-        1skNgAAIBEBKt3PUxCdvBZxJtoB9cAQAn8jMY0PuIiso0s2qIuXwTMuzuwDg56orOTGexm4U6WbPsAMA
-        l+pKToynsRtFutkz7AC8L+IEKzFt4BgwW8gAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnAddExpense.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAMgAAAAmCAYAAACBFtRsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALySURBVHhe7dxNaxNRFAZg/4SSYpOUiEmKoaktDe3ehZSg
-        xWqVglZrm6T5NkVEdGFRiihSPxGVqlXUUkGLiiD4347z3jBpkjkZ212T+y6e3cxkc96ce2buzIGJE5NC
-        RDoGhMgHA0LkgwEh8sGAEPlgQIh87Dkgxy9NS+zOnITX8xLayEvf94oc/LtMtC+hPlGngLpNZs6pdd3J
-        rgKSSqfl6IN5CfyoSnCzLLHnBUnezcrwSlbGbizKROkq0b6E+kSdAuo2/LEkh/7UJPJkUcamT6v13uy/
-        AYmtzEnfdlUG15YkdZ1hoO43Xl2QxMMlOfytYv74x0+m1dqHjgFB18AyKvasIKnagvpDRN0MQcEff/BT
-        UVJTp9QcqAFB6wl9wDIqo16YqJeM3MpI/1ZJRmbPeLLgCQg6B8KBk7SLEfUijA/9W2XPXOIJCJZV7Bxk
-        o9Gbi/XlltMk3Dy0BCS6ekXij/PqyUQ2SNzPSeSF0yDaA4IhBXerMLhoJxLZov9ruTGPNAKC212Y6LUT
-        iGwytJqTgVe5nYDgPjAeAvJ2LlFd4KeTB2dVZQISfp0zTxi1A4lsdORNUUJvl+oBwZ6VwTUO50QuLLOQ
-        i0ZAsLdKO5DIRrjl2xKQY4/YQYhcaBiNgAR+XZPIelE9kMhG2Pkb2K7UA4Inh4HfNfVAIhu5z0JMQAD3
-        fTGYaAcT2cRsXtx0VlROLhoBQVqQGu0EIpsMbBRlKH++NSDALkK2a+4enoDgyWHwc4mv0ZKVsJMk+KUs
-        ozNTekAASy28d85Ni2Sbgfc7SyuXJyCQzM6YkPAddLIBOgfCkVie9WRBDQiYoX2rZL4GoV2UqBdg5sCy
-        qr1zuDoGBDCTmG8KOXMJX8GlXoI5O/KuaAby5pmjnW9AXMPzZ82F8JmU6MuC6SqcUajboG7jT/NmfMAH
-        5RLlC2q9N9tVQFxIWvz2RdNV8PEt7FUh6hao2+i9y+broFp9a/YUECLbMCBEPhgQIh8MCJEPBoSoo0n5
-        BztmPC3/YaaXAAAAAElFTkSuQmCC
-</value>
+  <data name="expense_term3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expense_term3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

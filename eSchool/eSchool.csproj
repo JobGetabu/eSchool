@@ -91,6 +91,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpenceUIs\ExpenceLogo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenceLogo.resx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ExpenceUIs\FrmAddExpence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpenceUIs\FrmAddExpence.Designer.cs">
+      <DependentUpon>FrmAddExpence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenceUIs\FrmFilterExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpenceUIs\FrmFilterExpense.Designer.cs">
+      <DependentUpon>FrmFilterExpense.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeeUIs\AutoGenFsEventArgs.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
@@ -272,11 +290,6 @@
     <Compile Include="Income.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Incomelogo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Incomelogo.resx</DependentUpon>
-    </Compile>
     <Compile Include="IncomeUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +307,11 @@
     </Compile>
     <Compile Include="IncomeUIs\FrmFilterIncome.Designer.cs">
       <DependentUpon>FrmFilterIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeUIs\Incomelogo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Incomelogo.resx</DependentUpon>
     </Compile>
     <Compile Include="InvoicesReceipt.cs">
       <SubType>UserControl</SubType>
@@ -378,6 +396,17 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>eSchoolResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExpenceUIs\ExpenceLogo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExpenceLogo.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpenceUIs\FrmAddExpence.resx">
+      <DependentUpon>FrmAddExpence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpenceUIs\FrmFilterExpense.resx">
+      <DependentUpon>FrmFilterExpense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExpenseUI.resx">
       <DependentUpon>ExpenseUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,7 +477,7 @@
     <EmbeddedResource Include="ImportsUI.resx">
       <DependentUpon>ImportsUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Incomelogo.resx">
+    <EmbeddedResource Include="IncomeUIs\Incomelogo.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Incomelogo.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -542,10 +571,13 @@
     <None Include="Resources\Not Applicable_50px.png" />
     <None Include="Resources\Money_50px.png" />
     <None Include="Resources\logo_term3.png" />
+    <None Include="Resources\Filter_px.png" />
     <None Include="Resources\income_term1.png" />
     <None Include="Resources\income_term2.png" />
     <None Include="Resources\income_term3.png" />
-    <None Include="Resources\Filter_px.png" />
+    <None Include="Resources\expense_term1.png" />
+    <None Include="Resources\expense_term2.png" />
+    <None Include="Resources\expense_term3.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -571,6 +603,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

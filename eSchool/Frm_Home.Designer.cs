@@ -536,7 +536,7 @@
             this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
             this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
             this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.ovalPictureBox1.Size = new System.Drawing.Size(45, 45);
             this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ovalPictureBox1.TabIndex = 9;
             this.ovalPictureBox1.TabStop = false;

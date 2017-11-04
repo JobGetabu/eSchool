@@ -310,7 +310,7 @@
             // 
             // pBoxLogoTerm
             // 
-            this.pBoxLogoTerm.Image = global::eSchool.Incomelogo.income_term1;
+            //this.pBoxLogoTerm.Image = global::eSchool.Incomelogo.;
             this.pBoxLogoTerm.Location = new System.Drawing.Point(30, 2);
             this.pBoxLogoTerm.Name = "pBoxLogoTerm";
             this.pBoxLogoTerm.Size = new System.Drawing.Size(160, 96);

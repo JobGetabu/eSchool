@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eSchool {
+namespace eSchool.IncomeUIs {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace eSchool {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("eSchool.Incomelogo", typeof(Incomelogo).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("eSchool.IncomeUIs.Incomelogo", typeof(Incomelogo).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
