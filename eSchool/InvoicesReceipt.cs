@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eSchool.Invoices;
 
 namespace eSchool
 {
@@ -37,46 +38,33 @@ namespace eSchool
 
         private void InvoicesReceipt_Load(object sender, EventArgs e)
         {
-            gData.Rows.Add(new string[]
-                {
-                       "101",
-                       "Fees",
-                       "Job Getabu",
-                       "KES 15,000",
-                       "KES 00",
-                       "14 Jan 2017",
-                       null
-                });
-            gData.Rows.Add(new string[]
-                {
-                       "101",
-                       "Fees",
-                       "Job Getabu",
-                       "KES 15,000",
-                       "KES 00",
-                       "14 Jan 2017",
-                       null
-                });
-            gData.Rows.Add(new string[]
-                {
-                       "101",
-                       "Fees",
-                       "Job Getabu",
-                       "KES 15,000",
-                       "KES 00",
-                       "14 Jan 2017",
-                       null
-                });
-            gData.Rows.Add(new string[]
-               {
-                       "101",
-                       "Fees",
-                       "Job Getabu",
-                       "KES 15,000",
-                       "KES 00",
-                       "14 Jan 2017",
-                       null
-               });
+            //gData.Rows.Add(new string[]
+            //    {
+            //           "101",
+            //           "Fees",
+            //           "Job Getabu",
+            //           "KES 15,000",
+            //           "KES 00",
+            //           "14 Jan 2017",
+            //           null
+            //    });
+          
+        }
+
+        //takes a student. Gets all the data on fees he/she has paid.
+        //Propagates the amount paid and fee balance if any.
+        private void btnCreateInvoice_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnCreateInvoice_Click_1(object sender, EventArgs e)
+        {
+            FrmCreateInvoice frm = new FrmCreateInvoice();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

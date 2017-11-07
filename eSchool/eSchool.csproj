@@ -319,6 +319,12 @@
     <Compile Include="InvoicesReceipt.Designer.cs">
       <DependentUpon>InvoicesReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\FrmCreateInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\FrmCreateInvoice.Designer.cs">
+      <DependentUpon>FrmCreateInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -501,6 +507,9 @@
     <EmbeddedResource Include="InvoicesReceipt.resx">
       <DependentUpon>InvoicesReceipt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\FrmCreateInvoice.resx">
+      <DependentUpon>FrmCreateInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListControl.resx">
       <DependentUpon>ListControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -619,9 +628,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InvoicesReceipt\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
