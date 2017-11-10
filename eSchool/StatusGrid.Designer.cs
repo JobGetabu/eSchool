@@ -73,6 +73,26 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1complete {
+            get {
+                object obj = ResourceManager.GetObject("_1complete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1errors___Copy {
+            get {
+                object obj = ResourceManager.GetObject("_1errors___Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1incomplete {
             get {
                 object obj = ResourceManager.GetObject("_1incomplete", resourceCulture);
@@ -96,6 +116,26 @@ namespace eSchool {
         internal static System.Drawing.Bitmap _1unpaid {
             get {
                 object obj = ResourceManager.GetObject("_1unpaid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Waste_64px {
+            get {
+                object obj = ResourceManager.GetObject("Waste_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Waste_Red {
+            get {
+                object obj = ResourceManager.GetObject("Waste_Red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

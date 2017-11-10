@@ -70,7 +70,6 @@ namespace eSchool
             return available;
         }
 
-
         private async void FeesStructure_Load(object sender, EventArgs e)
         {
             //UI code

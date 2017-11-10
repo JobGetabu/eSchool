@@ -222,7 +222,6 @@
             // 
             // listControl1
             // 
-            this.listControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listControl1.Location = new System.Drawing.Point(0, 39);
             this.listControl1.Name = "listControl1";

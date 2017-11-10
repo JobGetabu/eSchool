@@ -151,6 +151,12 @@
     <Compile Include="Fee.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FeeUIs\FeeCharts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FeeUIs\FeeCharts.Designer.cs">
+      <DependentUpon>FeeCharts.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeeUIs\FeePayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,16 +232,16 @@
     <Compile Include="FeeUIs\FrmCreateFStruct.Designer.cs">
       <DependentUpon>FrmCreateFStruct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditStudent.cs">
+    <Compile Include="Importss\FrmEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditStudent.Designer.cs">
+    <Compile Include="Importss\FrmEditStudent.Designer.cs">
       <DependentUpon>FrmEditStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddStudent.cs">
+    <Compile Include="Importss\FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddStudent.Designer.cs">
+    <Compile Include="Importss\FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="FeeUIs\FrmFeePayment.cs">
@@ -250,10 +256,10 @@
     <Compile Include="FeeUIs\FrmFilter.Designer.cs">
       <DependentUpon>FrmFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmImportedData.cs">
+    <Compile Include="Importss\FrmImportedData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmImportedData.Designer.cs">
+    <Compile Include="Importss\FrmImportedData.Designer.cs">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </Compile>
     <Compile Include="FeeUIs\FrmViewAll.cs">
@@ -277,6 +283,30 @@
     </Compile>
     <Compile Include="GroupedFeeStructure.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Importss\Charts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Importss\Charts.Designer.cs">
+      <DependentUpon>Charts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importss\ImportListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Importss\ImportListItem.Designer.cs">
+      <DependentUpon>ImportListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importss\ImportsData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Importss\ImportsData.Designer.cs">
+      <DependentUpon>ImportsData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Importss\StudentsData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Importss\StudentsData.Designer.cs">
+      <DependentUpon>StudentsData.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportsUI.cs">
       <SubType>UserControl</SubType>
@@ -333,6 +363,12 @@
     </Compile>
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewImportsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImportsUI.Designer.cs">
+      <DependentUpon>NewImportsUI.cs</DependentUpon>
     </Compile>
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
@@ -424,6 +460,9 @@
     <EmbeddedResource Include="ExpenseUI.resx">
       <DependentUpon>ExpenseUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeeUIs\FeeCharts.resx">
+      <DependentUpon>FeeCharts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FeeUIs\FeePayment.resx">
       <DependentUpon>FeePayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -462,10 +501,10 @@
     <EmbeddedResource Include="FeeUIs\FrmCreateFStruct.resx">
       <DependentUpon>FrmCreateFStruct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditStudent.resx">
+    <EmbeddedResource Include="Importss\FrmEditStudent.resx">
       <DependentUpon>FrmEditStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddStudent.resx">
+    <EmbeddedResource Include="Importss\FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeeUIs\FrmFeePayment.resx">
@@ -474,7 +513,7 @@
     <EmbeddedResource Include="FeeUIs\FrmFilter.resx">
       <DependentUpon>FrmFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmImportedData.resx">
+    <EmbeddedResource Include="Importss\FrmImportedData.resx">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeeUIs\FrmViewAll.resx">
@@ -487,6 +526,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GridIcon.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importss\Charts.resx">
+      <DependentUpon>Charts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importss\ImportListItem.resx">
+      <DependentUpon>ImportListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importss\ImportsData.resx">
+      <DependentUpon>ImportsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importss\StudentsData.resx">
+      <DependentUpon>StudentsData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportsUI.resx">
       <DependentUpon>ImportsUI.cs</DependentUpon>
@@ -512,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListControl.resx">
       <DependentUpon>ListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImportsUI.resx">
+      <DependentUpon>NewImportsUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverHeadListItem.resx">
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
@@ -603,6 +657,11 @@
     <None Include="Resources\1incomplete.png" />
     <None Include="Resources\1paid.png" />
     <None Include="Resources\1unpaid.png" />
+    <None Include="Resources\Sheet of Paper_52px.png" />
+    <None Include="Resources\1complete.png" />
+    <None Include="Resources\1errors - Copy.png" />
+    <None Include="Resources\Waste_64px.png" />
+    <None Include="Resources\Waste_Red.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

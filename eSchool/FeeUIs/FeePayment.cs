@@ -361,11 +361,19 @@ namespace eSchool
 
                 int registeredStudents = fees.Distinct().Count();
 
-                decimal pcg = decimal.Divide(registeredStudents, studentsCount) * 100;
-                
+                try
+                {
+                    decimal pcg = decimal.Divide(registeredStudents, studentsCount) * 100;
 
-                decimal pcgRegistered = decimal.Round(pcg);
-                feeui.bunifuCircleProgressbarRegistered.Value = int.Parse(pcgRegistered.ToString());
+
+                    decimal pcgRegistered = decimal.Round(pcg);
+                    feeui.bunifuCircleProgressbarRegistered.Value = int.Parse(pcgRegistered.ToString());
+                }
+                catch (DivideByZeroException)
+                {
+
+                    
+                }
 
 
                 var result = from item in feeListAsync
@@ -394,11 +402,18 @@ namespace eSchool
                     paidTotal += i;
                 }
 
-                decimal pcgClr = decimal.Divide(countCleared, registeredStudents) * 100;
-                decimal pcgCleared = decimal.Round(pcgClr);
+                try
+                {
+                    decimal pcgClr = decimal.Divide(countCleared, registeredStudents) * 100;
+                    decimal pcgCleared = decimal.Round(pcgClr);
 
 
-                feeui.bunifuCircleProgressbarCleared.Value = int.Parse(pcgCleared.ToString());
+                    feeui.bunifuCircleProgressbarCleared.Value = int.Parse(pcgCleared.ToString());
+                }
+                catch (DivideByZeroException)
+                {
+                    
+                }
 
                 feeui.lblPaid.Text = $"{String.Format("{0:0,0}", paidTotal)}";
 

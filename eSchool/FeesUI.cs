@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eSchool.FeeUIs;
 
 namespace eSchool
 {
@@ -139,37 +140,7 @@ namespace eSchool
             //Show 
             TabSwitcher(FeesStructure.Instance);
         }
-
-        //check existence multiple fee strucure current year
-        //private async Task<bool> MultipleFeeStructureAsync()
-        //{
-        //    bool check = false;
-        //    var structureListAsync = await Task.Factory.StartNew(() =>
-        //    {
-        //        using (var context = new EschoolEntities())
-        //        {
-        //            return context.FeeStructures.OrderBy(c => c.Id).ToList();
-        //        }
-        //    });
-
-        //    int count = 0;
-        //    foreach (var fs in structureListAsync)
-        //    {
-        //        if (fs.Year == Properties.Settings.Default.CurrentYear)
-        //        {
-        //            if (fs.Term == Properties.Settings.Default.CurrentTerm)
-        //            {
-        //                count+=1;
-        //            }
-        //            if (count > 0)
-        //            {
-        //                check = true;
-        //                break;
-        //            }
-        //        }
-        //    }
-        //    return check;
-        //}
+      
         private void tab3_Click(object sender, EventArgs e)
         {
             //UI code
@@ -177,6 +148,7 @@ namespace eSchool
             bunifuSeparator1.Left = tab3.Left;
 
             //TODO charts baby
+            TabSwitcher(FeeCharts.Instance);
         }
     }
 }

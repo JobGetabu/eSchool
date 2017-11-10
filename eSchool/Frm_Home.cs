@@ -189,7 +189,8 @@ namespace eSchool
 
             //End UI Design code
 
-            TabSwitcher(ImportsUI.Instance);
+           // TabSwitcher(ImportsUI.Instance);
+            TabSwitcher(NewImportsUI.Instance);
         }
     
 

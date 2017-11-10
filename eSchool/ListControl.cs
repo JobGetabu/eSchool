@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eSchool.Importss;
 
 namespace eSchool
 {
@@ -42,6 +43,14 @@ namespace eSchool
             //for reference on delete
             c.Name = overHeadName;
             c.OverHeadName = overHeadName;
+            flpListBox.Controls.Add(c);
+            SetupAnchors();
+        }
+
+        public void Add(string exampleImportListItem, bool add)
+        {
+            ImportListItem c = new ImportListItem();
+            //TODO add properties.
             flpListBox.Controls.Add(c);
             SetupAnchors();
         }

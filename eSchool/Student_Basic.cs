@@ -27,6 +27,8 @@ namespace eSchool
         public string Class { get; set; }
         public string Gender { get; set; }
         public string ModeOfLearning { get; set; }
+        public Nullable<int> RegYear { get; set; }
+        public Nullable<int> RegTerm { get; set; }
     
         public virtual ICollection<Fee> Fees { get; set; }
     }

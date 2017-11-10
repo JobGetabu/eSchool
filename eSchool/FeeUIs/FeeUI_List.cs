@@ -29,8 +29,6 @@ namespace eSchool
             InitializeComponent();
         }
 
-
-
         private  void FeeUI_List_Load(object sender, EventArgs e)
         {
             //loading comboBox
