@@ -130,7 +130,9 @@
             this.tbAmount.MaxLength = 32767;
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.tbAmount.PromptText = "Amount";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.tbAmount.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbAmount.SelectedText = "";
             this.tbAmount.SelectionLength = 0;
@@ -236,7 +238,9 @@
             this.tbDetails.Multiline = true;
             this.tbDetails.Name = "tbDetails";
             this.tbDetails.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.tbDetails.PromptText = "Details";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.tbDetails.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbDetails.SelectedText = "";
             this.tbDetails.SelectionLength = 0;

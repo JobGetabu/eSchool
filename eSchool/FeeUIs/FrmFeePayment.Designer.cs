@@ -212,7 +212,9 @@
             this.tbFName.MaxLength = 32767;
             this.tbFName.Name = "tbFName";
             this.tbFName.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.tbFName.PromptText = "First Name";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.tbFName.ReadOnly = true;
             this.tbFName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbFName.SelectedText = "";

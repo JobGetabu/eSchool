@@ -110,7 +110,9 @@
             this.mTBoxFeeItem.Multiline = true;
             this.mTBoxFeeItem.Name = "mTBoxFeeItem";
             this.mTBoxFeeItem.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.mTBoxFeeItem.PromptText = "Fee Item";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.mTBoxFeeItem.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mTBoxFeeItem.SelectedText = "";
             this.mTBoxFeeItem.SelectionLength = 0;

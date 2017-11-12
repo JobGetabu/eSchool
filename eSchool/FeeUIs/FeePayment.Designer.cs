@@ -120,7 +120,9 @@
             this.tbSearch.MaxLength = 32767;
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.tbSearch.PromptText = "Search Me";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.tbSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSearch.SelectedText = "";
             this.tbSearch.SelectionLength = 0;
