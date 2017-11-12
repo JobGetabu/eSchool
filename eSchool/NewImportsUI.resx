@@ -360,7 +360,7 @@
         Vm9SPDZlxRUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuFlatButton1.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnImport.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABB9JREFUeF7t
         mk2oVWUUhq9KWJohDQyaOBEqESmMRooSQuq8JjVQERs0ECRM0kGDnAiCgiAoTpKCmiiK9EOToGGRZD8j
@@ -383,7 +383,7 @@
         fLYvsb+SdyR7duB3qQatPT09PT09PT1jZmrqDthJhE8F48FWAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuFlatButton1.Iconimage_Selected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnImport.Iconimage_Selected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA3JJREFUaEPd
         mk2ITWEYx2eMYWFIY+GjlA0b+cjHio3ylZKV0pAFpdhI2dnIRllho1ko2ZCsUBYWNGSnUDZC4/trg4iQ
@@ -403,7 +403,7 @@
         ccu5t09Lo1bjE67PPTTT3xpq+UHPhIDrLfri2S2VRKKr6y/q9iP5piQT5gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuFBGetTempate.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGetTempate.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAANlJREFUWEft
         k0EOgjAURHsEVmKCC49Hojd1qy7ceJQ6085vUGShBRb6X/JDfwsz0wLBcWqIQu36yN8DeAAP4AH+IAA8
@@ -412,7 +412,7 @@
         DO13W/7Yp4DxlkHU/iDY3SxI7nP0fDWSc5w3hPAAByQPrjQsMA4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuFBGetTempate.Iconimage_Selected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGetTempate.Iconimage_Selected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA3JJREFUaEPd
         mk2ITWEYx2eMYWFIY+GjlA0b+cjHio3ylZKV0pAFpdhI2dnIRllho1ko2ZCsUBYWNGSnUDZC4/trg4iQ

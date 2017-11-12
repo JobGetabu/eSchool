@@ -49,6 +49,8 @@
             this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
             this.metroComboMofLearn = new MetroFramework.Controls.MetroComboBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.metroTbTerm = new MetroFramework.Controls.MetroTextBox();
+            this.metroTbYear = new MetroFramework.Controls.MetroTextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
@@ -235,7 +237,7 @@
             this.metroTbAdminNo.CustomButton.Visible = false;
             this.metroTbAdminNo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTbAdminNo.Lines = new string[0];
-            this.metroTbAdminNo.Location = new System.Drawing.Point(56, 92);
+            this.metroTbAdminNo.Location = new System.Drawing.Point(56, 85);
             this.metroTbAdminNo.MaxLength = 32767;
             this.metroTbAdminNo.Name = "metroTbAdminNo";
             this.metroTbAdminNo.PasswordChar = '\0';
@@ -271,7 +273,7 @@
             this.metroTbFName.CustomButton.Visible = false;
             this.metroTbFName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTbFName.Lines = new string[0];
-            this.metroTbFName.Location = new System.Drawing.Point(288, 92);
+            this.metroTbFName.Location = new System.Drawing.Point(288, 85);
             this.metroTbFName.MaxLength = 32767;
             this.metroTbFName.Name = "metroTbFName";
             this.metroTbFName.PasswordChar = '\0';
@@ -307,7 +309,7 @@
             this.metroTbLName.CustomButton.Visible = false;
             this.metroTbLName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTbLName.Lines = new string[0];
-            this.metroTbLName.Location = new System.Drawing.Point(288, 139);
+            this.metroTbLName.Location = new System.Drawing.Point(288, 132);
             this.metroTbLName.MaxLength = 32767;
             this.metroTbLName.Name = "metroTbLName";
             this.metroTbLName.PasswordChar = '\0';
@@ -343,7 +345,7 @@
             this.metroTbMName.CustomButton.Visible = false;
             this.metroTbMName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTbMName.Lines = new string[0];
-            this.metroTbMName.Location = new System.Drawing.Point(56, 139);
+            this.metroTbMName.Location = new System.Drawing.Point(56, 132);
             this.metroTbMName.MaxLength = 32767;
             this.metroTbMName.Name = "metroTbMName";
             this.metroTbMName.PasswordChar = '\0';
@@ -379,7 +381,7 @@
             this.metroTbClass.CustomButton.Visible = false;
             this.metroTbClass.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTbClass.Lines = new string[0];
-            this.metroTbClass.Location = new System.Drawing.Point(288, 184);
+            this.metroTbClass.Location = new System.Drawing.Point(288, 177);
             this.metroTbClass.MaxLength = 32767;
             this.metroTbClass.Name = "metroTbClass";
             this.metroTbClass.PasswordChar = '\0';
@@ -415,7 +417,7 @@
             this.metroTbForm.CustomButton.Visible = false;
             this.metroTbForm.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTbForm.Lines = new string[0];
-            this.metroTbForm.Location = new System.Drawing.Point(56, 184);
+            this.metroTbForm.Location = new System.Drawing.Point(56, 177);
             this.metroTbForm.MaxLength = 32767;
             this.metroTbForm.Name = "metroTbForm";
             this.metroTbForm.PasswordChar = '\0';
@@ -442,7 +444,7 @@
             this.metroComboGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.metroComboGender.Location = new System.Drawing.Point(122, 222);
+            this.metroComboGender.Location = new System.Drawing.Point(122, 215);
             this.metroComboGender.Name = "metroComboGender";
             this.metroComboGender.Size = new System.Drawing.Size(145, 29);
             this.metroComboGender.Style = MetroFramework.MetroColorStyle.Blue;
@@ -468,7 +470,7 @@
             this.metroTextBox8.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBox8.Lines = new string[] {
         "Gender"};
-            this.metroTextBox8.Location = new System.Drawing.Point(56, 222);
+            this.metroTextBox8.Location = new System.Drawing.Point(56, 215);
             this.metroTextBox8.MaxLength = 32767;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
@@ -497,7 +499,7 @@
             this.metroComboMofLearn.Items.AddRange(new object[] {
             "Boarding",
             "Day"});
-            this.metroComboMofLearn.Location = new System.Drawing.Point(288, 222);
+            this.metroComboMofLearn.Location = new System.Drawing.Point(288, 215);
             this.metroComboMofLearn.Name = "metroComboMofLearn";
             this.metroComboMofLearn.PromptText = "Mode of Learning";
             this.metroComboMofLearn.Size = new System.Drawing.Size(211, 29);
@@ -512,12 +514,84 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // metroTbTerm
+            // 
+            // 
+            // 
+            // 
+            this.metroTbTerm.CustomButton.Image = null;
+            this.metroTbTerm.CustomButton.Location = new System.Drawing.Point(187, 1);
+            this.metroTbTerm.CustomButton.Name = "";
+            this.metroTbTerm.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.metroTbTerm.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbTerm.CustomButton.TabIndex = 1;
+            this.metroTbTerm.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbTerm.CustomButton.UseSelectable = true;
+            this.metroTbTerm.CustomButton.Visible = false;
+            this.metroTbTerm.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTbTerm.Lines = new string[0];
+            this.metroTbTerm.Location = new System.Drawing.Point(288, 257);
+            this.metroTbTerm.MaxLength = 32767;
+            this.metroTbTerm.Name = "metroTbTerm";
+            this.metroTbTerm.PasswordChar = '\0';
+            this.metroTbTerm.PromptText = "Admission Term";
+            this.metroTbTerm.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTbTerm.SelectedText = "";
+            this.metroTbTerm.SelectionLength = 0;
+            this.metroTbTerm.SelectionStart = 0;
+            this.metroTbTerm.ShortcutsEnabled = true;
+            this.metroTbTerm.Size = new System.Drawing.Size(211, 25);
+            this.metroTbTerm.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbTerm.TabIndex = 17;
+            this.metroTbTerm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbTerm.UseSelectable = true;
+            this.metroTbTerm.WaterMark = "Admission Term";
+            this.metroTbTerm.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTbTerm.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // metroTbYear
+            // 
+            // 
+            // 
+            // 
+            this.metroTbYear.CustomButton.Image = null;
+            this.metroTbYear.CustomButton.Location = new System.Drawing.Point(187, 1);
+            this.metroTbYear.CustomButton.Name = "";
+            this.metroTbYear.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.metroTbYear.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbYear.CustomButton.TabIndex = 1;
+            this.metroTbYear.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbYear.CustomButton.UseSelectable = true;
+            this.metroTbYear.CustomButton.Visible = false;
+            this.metroTbYear.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTbYear.Lines = new string[0];
+            this.metroTbYear.Location = new System.Drawing.Point(56, 257);
+            this.metroTbYear.MaxLength = 32767;
+            this.metroTbYear.Name = "metroTbYear";
+            this.metroTbYear.PasswordChar = '\0';
+            this.metroTbYear.PromptText = "Registration Year";
+            this.metroTbYear.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTbYear.SelectedText = "";
+            this.metroTbYear.SelectionLength = 0;
+            this.metroTbYear.SelectionStart = 0;
+            this.metroTbYear.ShortcutsEnabled = true;
+            this.metroTbYear.Size = new System.Drawing.Size(211, 25);
+            this.metroTbYear.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbYear.TabIndex = 16;
+            this.metroTbYear.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbYear.UseSelectable = true;
+            this.metroTbYear.WaterMark = "Registration Year";
+            this.metroTbYear.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTbYear.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // FrmAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(566, 372);
+            this.Controls.Add(this.metroTbTerm);
+            this.Controls.Add(this.metroTbYear);
             this.Controls.Add(this.metroComboMofLearn);
             this.Controls.Add(this.metroTextBox8);
             this.Controls.Add(this.metroComboGender);
@@ -568,5 +642,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatCancel;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatBtnSave;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private MetroFramework.Controls.MetroTextBox metroTbTerm;
+        private MetroFramework.Controls.MetroTextBox metroTbYear;
     }
 }

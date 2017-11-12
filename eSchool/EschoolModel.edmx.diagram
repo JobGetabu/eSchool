@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="EschoolModel.OverHeadCategoryPerYear" Width="2.25" PointX="5.625" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.SchoolPeriodTerm" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.SchoolPeriodYear" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EschoolModel.Student_Basic" Width="1.5" PointX="3.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Student_Basic" Width="1.5" PointX="0.625" PointY="13.375" IsExpanded="true" />
         <AssociationConnector Association="EschoolModel.FK_Term_Ex" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Year_Ex" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Admin_No_Fees" ManuallyRouted="false" />
@@ -30,6 +30,7 @@
         <EntityTypeShape EntityType="EschoolModel.GroupedFeeStructure" Width="1.5" PointX="0.75" PointY="0.5" />
         <EntityTypeShape EntityType="EschoolModel.Invoice" Width="1.5" PointX="2.875" PointY="0.5" />
         <EntityTypeShape EntityType="EschoolModel.Transation" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="EschoolModel.StudentImport" Width="1.5" PointX="6.75" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

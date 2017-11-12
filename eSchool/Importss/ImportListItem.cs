@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace eSchool.Importss
 {
@@ -22,19 +23,23 @@ namespace eSchool.Importss
         public string Timestamp { get; set; }
         public bool Status { get; set; }
 
-        public ImportListItem(string title, string timestamp,string sizeoffile,bool status)
+        public string FileLocation { get; set; }
+
+        public ImportListItem(string title, string timestamp, string sizeoffile, bool status,string fileLocation)
         {
             this.Title = title;              //Student-Import_20171110_0900
             this.SizeOfFile = sizeoffile;    //20KB
             this.Timestamp = timestamp;      //2017-11-10 09:00
             this.Status = status;
+            this.FileLocation = fileLocation;
         }
         private void ImportListItem_Load(object sender, EventArgs e)
         {
             //assign prop to labels
             lblTitle.Text = Title;
             lblSize.Text = SizeOfFile;
-            if (Status)
+            lbltimestamp.Text = Timestamp;           
+            if (File.Exists(FileLocation))
             {
                 pictureStatus.Image = StatusGrid._1complete;
             }
@@ -42,11 +47,6 @@ namespace eSchool.Importss
             {
                 pictureStatus.Image = StatusGrid._1errors___Copy;
             }
-        }
-
-        private void pictureBoxDelete_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void my_MouseEnter(object sender, EventArgs e)
@@ -62,9 +62,66 @@ namespace eSchool.Importss
             imageDel.Image = StatusGrid.Waste_64px;
         }
 
-        private void imageDel_Click(object sender, EventArgs e)
+        private async void imageDel_Click(object sender, EventArgs e)
         {
+            // Delete the item refresh list
+            if ((await StudentImportDel(Title)))
+            {
+                ImportsData Idata = ImportsData.Instance;
+                Idata.listControl1.Remove(Title, Status); 
+            }
+        }
 
+        //Perfecto
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            //Is  functional if status is true
+            //Otherwise pop a toolbar message showing error || custom message
+            if(File.Exists(FileLocation))
+            {
+                System.Diagnostics.Process.Start(FileLocation);
+            }
+            else
+            {
+                ToolTip toolTip1 = new ToolTip();
+                toolTip1.UseFading = true;
+                toolTip1.UseAnimation = true;
+                toolTip1.IsBalloon = true;
+                toolTip1.ShowAlways = true;
+                toolTip1.SetToolTip(btnView, " Data can not be found \n File may be missing \n File may be deleted");
+            }
+        }
+
+        private async Task<bool> StudentImportDel(string title)
+        {
+            var studentImportListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.StudentImports.ToList();
+                }
+            });
+
+            foreach (StudentImport item in studentImportListAsync)
+            {
+                if (item.Title.Equals(title))
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        context.Entry<StudentImport>(item).State = EntityState.Deleted;
+                        try
+                        {
+                            context.SaveChanges();
+                            return true;
+                        }
+                        catch (Exception exp)
+                        {
+                            MessageBox.Show(exp.Message);
+                        }
+                    }
+                }
+            }
+            return false;
         }
     }
 }

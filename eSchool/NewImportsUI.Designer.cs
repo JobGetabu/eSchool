@@ -36,9 +36,9 @@
             this.lblDateNow = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFBGetTempate = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnImport = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnGetTempate = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblStudentCount = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSwitch = new System.Windows.Forms.Panel();
             this.tab3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -129,9 +129,9 @@
             // 
             // panelTopRght
             // 
-            this.panelTopRght.Controls.Add(this.bunifuFlatButton1);
-            this.panelTopRght.Controls.Add(this.bunifuFBGetTempate);
-            this.panelTopRght.Controls.Add(this.lblRowCount);
+            this.panelTopRght.Controls.Add(this.btnImport);
+            this.panelTopRght.Controls.Add(this.btnGetTempate);
+            this.panelTopRght.Controls.Add(this.lblStudentCount);
             this.panelTopRght.Controls.Add(this.pictureBox1);
             this.panelTopRght.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelTopRght.Location = new System.Drawing.Point(332, 0);
@@ -139,89 +139,91 @@
             this.panelTopRght.Size = new System.Drawing.Size(466, 100);
             this.panelTopRght.TabIndex = 0;
             // 
-            // bunifuFlatButton1
+            // btnImport
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
-            this.bunifuFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnImport.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
+            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(135)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 5;
-            this.bunifuFlatButton1.ButtonText = "       Import";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage_Selected")));
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 65D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(251, 27);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(135)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(200, 38);
-            this.bunifuFlatButton1.TabIndex = 80;
-            this.bunifuFlatButton1.Text = "       Import";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(135)))));
+            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImport.BorderRadius = 5;
+            this.btnImport.ButtonText = "       Import";
+            this.btnImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImport.DisabledColor = System.Drawing.Color.Gray;
+            this.btnImport.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnImport.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImport.Iconimage")));
+            this.btnImport.Iconimage_right = null;
+            this.btnImport.Iconimage_right_Selected = null;
+            this.btnImport.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnImport.Iconimage_Selected")));
+            this.btnImport.IconMarginLeft = 0;
+            this.btnImport.IconMarginRight = 0;
+            this.btnImport.IconRightVisible = true;
+            this.btnImport.IconRightZoom = 0D;
+            this.btnImport.IconVisible = true;
+            this.btnImport.IconZoom = 65D;
+            this.btnImport.IsTab = false;
+            this.btnImport.Location = new System.Drawing.Point(251, 27);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(135)))));
+            this.btnImport.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
+            this.btnImport.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnImport.selected = false;
+            this.btnImport.Size = new System.Drawing.Size(200, 38);
+            this.btnImport.TabIndex = 80;
+            this.btnImport.Text = "       Import";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.Textcolor = System.Drawing.Color.White;
+            this.btnImport.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
-            // bunifuFBGetTempate
+            // btnGetTempate
             // 
-            this.bunifuFBGetTempate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.bunifuFBGetTempate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnGetTempate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnGetTempate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFBGetTempate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.bunifuFBGetTempate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFBGetTempate.BorderRadius = 5;
-            this.bunifuFBGetTempate.ButtonText = "   Get Template";
-            this.bunifuFBGetTempate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFBGetTempate.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFBGetTempate.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFBGetTempate.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFBGetTempate.Iconimage")));
-            this.bunifuFBGetTempate.Iconimage_right = null;
-            this.bunifuFBGetTempate.Iconimage_right_Selected = null;
-            this.bunifuFBGetTempate.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFBGetTempate.Iconimage_Selected")));
-            this.bunifuFBGetTempate.IconMarginLeft = 0;
-            this.bunifuFBGetTempate.IconMarginRight = 0;
-            this.bunifuFBGetTempate.IconRightVisible = true;
-            this.bunifuFBGetTempate.IconRightZoom = 0D;
-            this.bunifuFBGetTempate.IconVisible = true;
-            this.bunifuFBGetTempate.IconZoom = 50D;
-            this.bunifuFBGetTempate.IsTab = false;
-            this.bunifuFBGetTempate.Location = new System.Drawing.Point(39, 27);
-            this.bunifuFBGetTempate.Name = "bunifuFBGetTempate";
-            this.bunifuFBGetTempate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.bunifuFBGetTempate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.bunifuFBGetTempate.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFBGetTempate.selected = false;
-            this.bunifuFBGetTempate.Size = new System.Drawing.Size(200, 38);
-            this.bunifuFBGetTempate.TabIndex = 79;
-            this.bunifuFBGetTempate.Text = "   Get Template";
-            this.bunifuFBGetTempate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFBGetTempate.Textcolor = System.Drawing.Color.White;
-            this.bunifuFBGetTempate.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetTempate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnGetTempate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGetTempate.BorderRadius = 5;
+            this.btnGetTempate.ButtonText = "   Get Template";
+            this.btnGetTempate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGetTempate.DisabledColor = System.Drawing.Color.Gray;
+            this.btnGetTempate.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnGetTempate.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGetTempate.Iconimage")));
+            this.btnGetTempate.Iconimage_right = null;
+            this.btnGetTempate.Iconimage_right_Selected = null;
+            this.btnGetTempate.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnGetTempate.Iconimage_Selected")));
+            this.btnGetTempate.IconMarginLeft = 0;
+            this.btnGetTempate.IconMarginRight = 0;
+            this.btnGetTempate.IconRightVisible = true;
+            this.btnGetTempate.IconRightZoom = 0D;
+            this.btnGetTempate.IconVisible = true;
+            this.btnGetTempate.IconZoom = 50D;
+            this.btnGetTempate.IsTab = false;
+            this.btnGetTempate.Location = new System.Drawing.Point(39, 27);
+            this.btnGetTempate.Name = "btnGetTempate";
+            this.btnGetTempate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnGetTempate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnGetTempate.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnGetTempate.selected = false;
+            this.btnGetTempate.Size = new System.Drawing.Size(200, 38);
+            this.btnGetTempate.TabIndex = 79;
+            this.btnGetTempate.Text = "   Get Template";
+            this.btnGetTempate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGetTempate.Textcolor = System.Drawing.Color.White;
+            this.btnGetTempate.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetTempate.Click += new System.EventHandler(this.btnGetTempate_Click);
             // 
-            // lblRowCount
+            // lblStudentCount
             // 
-            this.lblRowCount.AutoSize = true;
-            this.lblRowCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRowCount.ForeColor = System.Drawing.Color.White;
-            this.lblRowCount.Location = new System.Drawing.Point(405, 72);
-            this.lblRowCount.Name = "lblRowCount";
-            this.lblRowCount.Size = new System.Drawing.Size(16, 18);
-            this.lblRowCount.TabIndex = 15;
-            this.lblRowCount.Text = "0";
-            this.lblRowCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStudentCount.AutoSize = true;
+            this.lblStudentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentCount.ForeColor = System.Drawing.Color.White;
+            this.lblStudentCount.Location = new System.Drawing.Point(405, 72);
+            this.lblStudentCount.Name = "lblStudentCount";
+            this.lblStudentCount.Size = new System.Drawing.Size(16, 18);
+            this.lblStudentCount.TabIndex = 15;
+            this.lblStudentCount.Text = "0";
+            this.lblStudentCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -341,15 +343,15 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblDateNow;
         private System.Windows.Forms.PictureBox pBoxLogoTerm;
         private System.Windows.Forms.Panel panelTopRght;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblRowCount;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFBGetTempate;
+        private Bunifu.Framework.UI.BunifuFlatButton btnImport;
+        private Bunifu.Framework.UI.BunifuFlatButton btnGetTempate;
         private System.Windows.Forms.Panel panelSwitch;
         private Bunifu.Framework.UI.BunifuCustomLabel tab3;
         private Bunifu.Framework.UI.BunifuCustomLabel tab2;
         private Bunifu.Framework.UI.BunifuCustomLabel tab1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         public System.Windows.Forms.Panel container;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblStudentCount;
     }
 }

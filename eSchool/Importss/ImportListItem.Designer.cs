@@ -193,6 +193,7 @@
             this.btnView.TabIndex = 1;
             this.btnView.Text = "     View";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             this.btnView.MouseEnter += new System.EventHandler(this.my_MouseEnter);
             this.btnView.MouseLeave += new System.EventHandler(this.my_MouseLeave);
             // 

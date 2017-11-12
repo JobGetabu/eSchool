@@ -125,7 +125,7 @@
         R6Qyc2tHpDJTkqSuPQ9Smbm1I1KZubUjUpm5tSNSmSlJkgDe+wFIbq5dFZrzpQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuThinButton22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFilter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKQAAAAnCAYAAACBkeM3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMZSURBVHhe7dzNS1RRHMbx/pIWQVCmozM6aRa0cNUmWrbp
@@ -144,7 +144,7 @@
         1wiwGU5UCjq5MJJSn9/R9aRTUZBEZmOQZCsMkmyFQZKtMEiykaT8BTqUz/g+gGYdAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddStudent.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAL8AAAAnCAYAAABe35koAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMiSURBVHhe7dzNS1RRHMbx/okWLYKyZNSrkzQpBq7aRMtW

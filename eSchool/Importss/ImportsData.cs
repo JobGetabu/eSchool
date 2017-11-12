@@ -32,11 +32,39 @@ namespace eSchool.Importss
 
         private void ImportsData_Load(object sender, EventArgs e)
         {
+            //Load the custom list
+            LoadListAsync();
+        }
+
+        public async void LoadListAsync()
+        {
+            var studentImportListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.StudentImports.OrderBy(c => c.Id)
+                    .ToList();
+                }
+            });
+
             listControl1.Clear();
-            //title //session //but total
-            listControl1.Add("1stimport",true);
-            listControl1.Add("1stimport", true);
-            listControl1.Add("1stimport", true);
+            foreach (var fs in studentImportListAsync)
+            {
+                listControl1.Add(fs.Title, fs.Size, fs.TimeStamp.ToString(), true, fs.FileLocation);
+            }
+
+            NewImportsUI nUI = NewImportsUI.Instance;
+            nUI.lblStudentCount.Text = (await StudentListAsync()).Count.ToString();
+        }
+        private async Task<List<Student_Basic>> StudentListAsync()
+        {
+            return await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Student_Basic.OrderBy(c => c.Admin_No).ToList();
+                }
+            });
         }
     }
 }

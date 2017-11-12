@@ -146,6 +146,17 @@
           <Property Name="RegYear" Type="int" />
           <Property Name="RegTerm" Type="int" />
         </EntityType>
+        <EntityType Name="StudentImports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="FileLocation" Type="nvarchar" MaxLength="300" />
+        </EntityType>
         <EntityType Name="Transations">
           <Key>
             <PropertyRef Name="Id" />
@@ -319,6 +330,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySet Name="SchoolPeriodTerm" EntityType="Self.SchoolPeriodTerm" store:Type="Tables" />
           <EntitySet Name="SchoolPeriodYear" EntityType="Self.SchoolPeriodYear" store:Type="Tables" />
           <EntitySet Name="Student_Basic" EntityType="Self.Student_Basic" store:Type="Tables" />
+          <EntitySet Name="StudentImports" EntityType="Self.StudentImports" store:Type="Tables" />
           <EntitySet Name="Transations" EntityType="Self.Transations" store:Type="Tables" />
           <AssociationSet Name="FK_Admin No_Fees" Association="Self.FK_Admin No_Fees">
             <End Role="Student_Basic" EntitySet="Student_Basic" />
@@ -693,6 +705,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySet Name="GroupedFeeStructures" EntityType="EschoolModel.GroupedFeeStructure" />
           <EntitySet Name="Invoices" EntityType="EschoolModel.Invoice" />
           <EntitySet Name="Transations" EntityType="EschoolModel.Transation" />
+          <EntitySet Name="StudentImports" EntityType="EschoolModel.StudentImport" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -744,6 +757,17 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Term" Type="Int32" />
           <Property Name="Year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StudentImport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="FileLocation" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -915,6 +939,18 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
                 <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="TransactionNo" ColumnName="TransactionNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentImports">
+            <EntityTypeMapping TypeName="EschoolModel.StudentImport">
+              <MappingFragment StoreEntitySet="StudentImports">
+                <ScalarProperty Name="FileLocation" ColumnName="FileLocation" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

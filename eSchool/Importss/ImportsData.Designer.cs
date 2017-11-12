@@ -154,6 +154,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
-        private ListControl listControl1;
+        public ListControl listControl1;
     }
 }

@@ -39,5 +39,6 @@ namespace eSchool
         public DbSet<GroupedFeeStructure> GroupedFeeStructures { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Transation> Transations { get; set; }
+        public DbSet<StudentImport> StudentImports { get; set; }
     }
 }

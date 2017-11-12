@@ -16,6 +16,9 @@ namespace eSchool
 {
     public partial class ImportsUI : UserControl
     {
+        //Legacy code
+
+
         //Singleton pattern ***best practices***
         private static ImportsUI _instance;
         public static ImportsUI Instance
@@ -76,34 +79,7 @@ namespace eSchool
             }
         }
 
-        private void bunifuCustomDataGrid2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            #region stackoverflow
-            //if (e.RowIndex < 0) return;                  // no image in the header
-            //if (e.ColumnIndex == bunifuCustomDataGrid1.Columns[8].Index)
-            //{
-            //    e.PaintBackground(e.ClipBounds, false);  // no highlighting
-            //    e.PaintContent(e.ClipBounds);
-            //    Font n = new Font(FontFamily.GenericSerif, 10f);
-            //    Brush b = Brushes.Red;
-            //    // calculate the location of your text..:
-            //    int y = e.CellBounds.Bottom - 35;         // your  font height
-            //    e.Graphics.DrawString("Delete", n, b, e.CellBounds.Left, y);
-            //    // maybe draw more text with other fonts etc..
-
-            //    e.Handled = true;
-
-            //    // add space for two lines:
-            //    bunifuCustomDataGrid1.Rows[0].Height = ((Image)bunifuCustomDataGrid1[0, 0].Value).Height + 35;
-            //    // if the previous line throws an error..
-            //    // .. because you didn't put a 'real image' into the cell try this:
-            //    // dataGridView1.Rows[0].Height = 
-            //    // ((Image)bunifuCustomDataGrid1[0, 0].FormattedValue).Height + 35;
-
-            //    // align the image top left:
-            //    bunifuCustomDataGrid1[0, 0].Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            #endregion
-        }
+       
 
         private void bunifuCustomDataGrid2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

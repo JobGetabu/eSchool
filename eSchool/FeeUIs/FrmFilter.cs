@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-    public partial class FrmFilter : Form
+    public partial class FrmFilterStudents : Form
     {
-        public FrmFilter()
+        public FrmFilterStudents()
         {
             InitializeComponent();
             Nullify();

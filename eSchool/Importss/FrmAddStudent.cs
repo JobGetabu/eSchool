@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using eSchool.Importss;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,8 @@ namespace eSchool
 
         private void FrmAddStudent_Load(object sender, EventArgs e)
         {
+            metroTbYear.Text = Properties.Settings.Default.CurrentYear.ToString();
+            metroTbTerm.Text = Properties.Settings.Default.CurrentTerm.ToString();
             //initialize objects
             objNew = new Student_Basic();
             db = new EschoolEntities();
@@ -47,6 +50,8 @@ namespace eSchool
                 metroTbLName.Text = obj.Last_Name;
                 metroTbForm.Text = obj.Form.ToString();
                 metroTbClass.Text = obj.Class;
+                metroTbYear.Text = obj.RegYear.ToString();
+                metroTbTerm.Text = obj.RegTerm.ToString();
 
                 if (obj.Gender == "M")
                 {
@@ -80,9 +85,21 @@ namespace eSchool
 
         private void bunifuFlatBtnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(metroTbAdminNo.Text) && string.IsNullOrEmpty(metroTbFName.Text) && string.IsNullOrEmpty(metroTbForm.Text))
+            if (string.IsNullOrEmpty(metroTbAdminNo.Text) | string.IsNullOrEmpty(metroTbFName.Text) | string.IsNullOrEmpty(metroTbForm.Text))
             {
                 MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            decimal test1;
+            if (!decimal.TryParse(metroTbTerm.Text, out test1))
+            {
+                MetroMessageBox.Show(this, "Only numeric values  allowed on Admission Term input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int test;
+            if (!int.TryParse(metroTbYear.Text, out test))
+            {
+                MetroMessageBox.Show(this, "Only numeric values  allowed on Registration Year input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             //TODO add custom notification
@@ -96,6 +113,11 @@ namespace eSchool
                     db.Entry<Student_Basic>(obj).State = EntityState.Modified;
                     db.SaveChanges();
                     MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //refresh our list
+                    StudentsData sData = StudentsData.Instance;
+                    sData.GridInitilizer();
+                    this.Close();
                 }
                 else
                 {
@@ -108,6 +130,8 @@ namespace eSchool
                     objNew.Form = int.Parse(metroTbForm.Text);
                     objNew.Class = metroTbClass.Text;
                     objNew.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
+                    objNew.RegTerm = int.Parse(metroTbTerm.Text);
+                    objNew.RegYear = int.Parse(metroTbYear.Text);
 
                     if (metroComboGender.SelectedIndex == 0)
                     {
@@ -120,8 +144,6 @@ namespace eSchool
 
                     }
 
-
-
                     if ((IsIdDuplicateuplicate(objNew.Admin_No) == false))
                     {
                         
@@ -130,24 +152,28 @@ namespace eSchool
 
                         //TODO custom notification
                         MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //refresh our list
+                        StudentsData sData = StudentsData.Instance;
+                        sData.GridInitilizer();
+                        this.Close();
                     }
                     else
                     {
-                        MetroMessageBox.Show(this, $"Fail \n The admnistration number {objNew.Admin_No} is already taken", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MetroMessageBox.Show(this, $"Fail \n The admnistration number {objNew.Admin_No}   exists !", "Duplicate Found", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
                     }
                 }            
             }
             catch (Exception exp)
             {
                 MessageBox.Show(exp.Message);
-                throw;
             }
             finally
             {
                 //close all connection
                 //log all errors
-            }
-            this.Close();
+            }                         
         }
 
         private void metroComboMofLearn_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,8 +228,6 @@ namespace eSchool
 
             }
         }
-
-      
 
         void toolTip(Object sender,EventArgs e)
         {

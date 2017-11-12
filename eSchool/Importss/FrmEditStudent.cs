@@ -72,18 +72,16 @@ namespace eSchool
 
         private void bunifuFlatCancel_Click(object sender, EventArgs e)
         {
-            db.Dispose();
             this.Close();
         }
 
         private void bunifuFlatBtnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(metroTbAdminNo.Text) && string.IsNullOrEmpty(metroTbFName.Text) && string.IsNullOrEmpty(metroTbForm.Text))
+            if (string.IsNullOrEmpty(metroTbAdminNo.Text) | string.IsNullOrEmpty(metroTbFName.Text) | string.IsNullOrEmpty(metroTbForm.Text))
             {
                 MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //TODO add custom notification
 
             try
             {
@@ -93,6 +91,7 @@ namespace eSchool
                     objNew = null;
                     db.Entry<Student_Basic>(obj).State = EntityState.Modified;
                     db.SaveChanges();
+                    //TODO add custom notification
                     MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -122,7 +121,7 @@ namespace eSchool
 
                     if ((IsIdDuplicateuplicate(objNew.Admin_No) == false))
                     {
-                        
+
                         db.Student_Basic.Add(objNew);
                         db.SaveChanges();
 
@@ -133,7 +132,7 @@ namespace eSchool
                     {
                         MetroMessageBox.Show(this, $"Fail \n The admnistration number {objNew.Admin_No} is already taken", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
-                }            
+                }
             }
             catch (Exception exp)
             {
@@ -161,18 +160,18 @@ namespace eSchool
         public bool IsIdDuplicateuplicate(int adminNo)
         {
             bool duplicate = false;
- 
-                var query = db.Student_Basic.Select(c => c.Admin_No).ToList();
 
-                foreach (var catID in query)
+            var query = db.Student_Basic.Select(c => c.Admin_No).ToList();
+
+            foreach (var catID in query)
+            {
+                if (adminNo == catID)
                 {
-                    if (adminNo == catID)
-                    {
-                        duplicate = true;
-                        return duplicate;
-                    }
+                    duplicate = true;
+                    return duplicate;
                 }
-                return duplicate;
+            }
+            return duplicate;
         }
         private void FrmAddStudent_FormClosing(object sender, FormClosingEventArgs e)
         {

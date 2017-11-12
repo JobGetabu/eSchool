@@ -47,10 +47,17 @@ namespace eSchool
             SetupAnchors();
         }
 
-        public void Add(string exampleImportListItem, bool add)
+        public void Add(string title,string sizeofFile,string timestamp, bool status,string fileLocation)
         {
             ImportListItem c = new ImportListItem();
-            //TODO add properties.
+            //for reference on delete
+            c.Name = title;
+            //add properties.
+            c.Title = title;
+            c.SizeOfFile = sizeofFile;
+            c.Timestamp = timestamp;
+            c.Status = status;
+            c.FileLocation = fileLocation;
             flpListBox.Controls.Add(c);
             SetupAnchors();
         }
@@ -64,6 +71,13 @@ namespace eSchool
         public void Remove(string name)
         {
             Control c = flpListBox.Controls[name];
+            flpListBox.Controls.Remove(c);
+            c.Dispose();
+            SetupAnchors();
+        }
+        public void Remove(string title,bool status)
+        {
+            Control c = flpListBox.Controls[title];
             flpListBox.Controls.Remove(c);
             c.Dispose();
             SetupAnchors();

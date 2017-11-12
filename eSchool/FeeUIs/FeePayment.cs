@@ -264,13 +264,13 @@ namespace eSchool
         int filYear;
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            FrmFilter frm = new FrmFilter();
+            FrmFilterStudents frm = new FrmFilterStudents();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 selForms = new List<int>();
-                selForms = FrmFilter.selFilForms;
-                filTerm = FrmFilter.selFilTerm;
-                filYear = FrmFilter.selFilYear;
+                selForms = FrmFilterStudents.selFilForms;
+                filTerm = FrmFilterStudents.selFilTerm;
+                filYear = FrmFilterStudents.selFilYear;
 
                 //refresh grid with filters
                 GridInitilizer(selForms);

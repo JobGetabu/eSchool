@@ -256,6 +256,12 @@
     <Compile Include="FeeUIs\FrmFilter.Designer.cs">
       <DependentUpon>FrmFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Importss\FrmFilterStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importss\FrmFilterStudents.Designer.cs">
+      <DependentUpon>FrmFilterStudents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Importss\FrmImportedData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,10 +385,10 @@
     <Compile Include="OverHeadCategoryPerYear.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OverHeadListItem.cs">
+    <Compile Include="FeeUIs\OverHeadListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OverHeadListItem.Designer.cs">
+    <Compile Include="FeeUIs\OverHeadListItem.Designer.cs">
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="PassDataEventArgs.cs" />
@@ -410,6 +416,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusGrid.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentImport.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Student_Basic.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
@@ -513,6 +522,9 @@
     <EmbeddedResource Include="FeeUIs\FrmFilter.resx">
       <DependentUpon>FrmFilter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Importss\FrmFilterStudents.resx">
+      <DependentUpon>FrmFilterStudents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Importss\FrmImportedData.resx">
       <DependentUpon>FrmImportedData.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,7 +579,7 @@
     <EmbeddedResource Include="NewImportsUI.resx">
       <DependentUpon>NewImportsUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OverHeadListItem.resx">
+    <EmbeddedResource Include="FeeUIs\OverHeadListItem.resx">
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -662,6 +674,8 @@
     <None Include="Resources\1errors - Copy.png" />
     <None Include="Resources\Waste_64px.png" />
     <None Include="Resources\Waste_Red.png" />
+    <None Include="Resources\Female Profile_50px.png" />
+    <None Include="Resources\Male User_50px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

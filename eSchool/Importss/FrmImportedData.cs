@@ -16,7 +16,8 @@ namespace eSchool
         DataTable tbl;
         DataSet tblSet;
 
-        BindingSource importBS = new BindingSource();
+        public bool MyDialogueResult { get; set; }
+
         public FrmImportedData(DataTable tbl, DataSet tblSet)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace eSchool
 
         private void FrmImportedData_Load(object sender, EventArgs e)
         {
+            bunifuFBSave.Focus();
             foreach (DataTable tbl in tblSet.Tables)
             {
                 metroCBSheets.Items.Add(tbl.TableName);
@@ -38,12 +40,12 @@ namespace eSchool
 
             this.bCGridImportData.DataSource = tbl;
 
-
         }
 
         private void bFClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            Dispose();
         }
 
         private void bunifuFBSave_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace eSchool
                     {
                         if (IsIdDuplicateuplicate((Convert.ToInt32(dr.Cells["ADMIN NO"].Value)), context) == true)
                         {
-                            MetroMessageBox.Show(this, "One or more records already exists", "update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MetroMessageBox.Show(this, $"One or more records already exists \n Administration No: {dr.Cells["ADMIN NO"].Value} Name: {dr.Cells["FIRST NAME"].Value} {dr.Cells["MIDDLE NAME"].Value}", "update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             dr.Cells["ADMIN NO"].Selected = true;
                            
@@ -75,6 +77,8 @@ namespace eSchool
                             Class = dr.Cells["CLASS"].Value.ToString(),
                             Gender = dr.Cells["GENDER"].Value.ToString(),
                             ModeOfLearning = dr.Cells["MODE OF LEARNING"].Value.ToString(),
+                            RegYear = Convert.ToInt32(dr.Cells["REGISTRATION YEAR"].Value),
+                            RegTerm = Convert.ToInt32(dr.Cells["REGISTRATION TERM"].Value),
                         });
                     }
                     else
@@ -87,6 +91,11 @@ namespace eSchool
                     //save the data 
                     context.SaveChanges();
                     MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //used for save data students imports
+                    MyDialogueResult = true;
+                //refresh both grids
+                //redirect to students tab
 
                     if (metroCBSheets.Items.Count > 0)
                     {
@@ -101,12 +110,9 @@ namespace eSchool
                 catch (Exception exp)
                 {
                     MessageBox.Show(exp.Message);
-                    throw;
-                }
-                
-                    this.Close();
-                
 
+                }
+                    this.Close();              
             }
         }
 
