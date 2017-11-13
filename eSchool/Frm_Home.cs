@@ -258,4 +258,16 @@ namespace eSchool
 
     //TODO InvalidOperationException
     //Use lock objects when accessing same resources in the program to prevent this random crashes
+
+    //TODO Incase of code regeneration in EschoolContextModel
+    //public override int SaveChanges()
+    //{
+    //    FeesRequiredPerTerms
+    //        .Local
+    //        .Where(r => r.GroupedFeeStructure == null)
+    //        .ToList()
+    //        .ForEach(r => FeesRequiredPerTerms.Remove(r));
+
+    //    return base.SaveChanges();
+    //}
 }

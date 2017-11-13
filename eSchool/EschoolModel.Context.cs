@@ -12,19 +12,31 @@ namespace eSchool
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Linq;
+
     public partial class EschoolEntities : DbContext
     {
         public EschoolEntities()
             : base("name=EschoolEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        public override int SaveChanges()
+        {
+            FeesRequiredPerTerms
+                .Local
+                .Where(r => r.GroupedFeeStructure == null)
+                .ToList()
+                .ForEach(r => FeesRequiredPerTerms.Remove(r));
+
+            return base.SaveChanges();
+        }
+
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Fee> Fees { get; set; }
         public DbSet<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }

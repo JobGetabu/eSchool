@@ -40,6 +40,18 @@ namespace eSchool
             InitializeComponent();
         }
 
+        private void SetToolTip(Control ctl, string message)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.UseFading = true;
+            toolTip1.UseAnimation = true;
+            //toolTip1.IsBalloon = true;
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(ctl, message);
+        }
         private void TermImageSet()
         {
             if (Properties.Settings.Default.CurrentTerm ==1)
@@ -62,6 +74,10 @@ namespace eSchool
         {
             //UI code
             TermImageSet();
+            SetToolTip(bunifuCircleProgressbarRegistered,"% Students With Fee Records");
+            SetToolTip(bunifuCircleProgressbarCleared,"% Students With Completed Payment");
+            SetToolTip(lblPaid,"Total Paid this Term"); SetToolTip(bunifuCustomLabel8, "Total Paid this Term");
+            SetToolTip(lblRequred,"Total Required this Term"); SetToolTip(bunifuCustomLabel9, "Total Required this Term");
 
             lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
             lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
@@ -85,6 +101,11 @@ namespace eSchool
             StructureListItem.AutoListUpdated += StructureListItem_AutoListUpdated;
 
             #endregion
+
+            //referesh the progress bars
+            //TODO lazy loading
+            FeePayment fp = FeePayment.Instance;
+            //fp.Copy_FeePayment_Load();
         }
 
         private void StructureListItem_AutoListUpdated(object sender, AutoGenFsEventArgs e)

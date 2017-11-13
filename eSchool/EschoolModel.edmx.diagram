@@ -7,10 +7,10 @@
       <Diagram DiagramId="df3dd523428948b5a6b7fda6fd4a7979" Name="Diagram1">
         <EntityTypeShape EntityType="EschoolModel.Expense" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.Fee" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EschoolModel.FeesRequiredPerTerm" Width="2" PointX="3" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="EschoolModel.Income" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EschoolModel.Login_Users" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EschoolModel.OverHeadCategory" Width="1.875" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.FeesRequiredPerTerm" Width="2" PointX="3.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Income" Width="1.5" PointX="0.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.Login_Users" Width="1.5" PointX="2.875" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EschoolModel.OverHeadCategory" Width="1.875" PointX="4.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.OverHeadCategoryPerYear" Width="2.25" PointX="5.625" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.SchoolPeriodTerm" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EschoolModel.SchoolPeriodYear" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
@@ -26,11 +26,12 @@
         <AssociationConnector Association="EschoolModel.FK_Year_Income" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Term_Ov" ManuallyRouted="false" />
         <AssociationConnector Association="EschoolModel.FK_Year_Ov" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="EschoolModel.Category" Width="1.5" PointX="5" PointY="3.75" />
-        <EntityTypeShape EntityType="EschoolModel.GroupedFeeStructure" Width="1.5" PointX="0.75" PointY="0.5" />
-        <EntityTypeShape EntityType="EschoolModel.Invoice" Width="1.5" PointX="2.875" PointY="0.5" />
-        <EntityTypeShape EntityType="EschoolModel.Transation" Width="1.5" PointX="4.875" PointY="0.5" />
-        <EntityTypeShape EntityType="EschoolModel.StudentImport" Width="1.5" PointX="6.75" PointY="0.625" />
+        <EntityTypeShape EntityType="EschoolModel.Category" Width="1.5" PointX="6.875" PointY="3.75" />
+        <EntityTypeShape EntityType="EschoolModel.GroupedFeeStructure" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="EschoolModel.Invoice" Width="1.5" PointX="0.75" PointY="0.625" />
+        <EntityTypeShape EntityType="EschoolModel.Transation" Width="1.5" PointX="2.625" PointY="0.625" />
+        <EntityTypeShape EntityType="EschoolModel.StudentImport" Width="1.5" PointX="4.625" PointY="0.625" />
+        <AssociationConnector Association="EschoolModel.FK_GrpFeeSturucture" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

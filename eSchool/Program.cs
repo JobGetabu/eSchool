@@ -20,7 +20,18 @@ namespace eSchool
             //CreateIfNotExists(Frm_Home.databaseFile);
             //When need arises
             //Application.Run(Frm_Home.Instance);
-            Application.Run(new Frm_Home());
+
+
+            try
+            {
+                Application.Run(new Frm_Home());
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         public static void CreateIfNotExists(string fileName)

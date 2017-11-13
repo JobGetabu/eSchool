@@ -105,7 +105,7 @@ namespace eSchool
                 FeesStructure fs = FeesStructure.Instance;
                 fs.SwitchTabExt2();
 
-                ////save btn not visible
+                //save btn not visible
                 //no func for editing saved fee structures is not available
                 //refresh the list of fee items
                 FeeUI_Show fui = FeeUI_Show.Instance;

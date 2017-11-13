@@ -100,6 +100,7 @@
             this.bCLabelOverHeadCategory.Size = new System.Drawing.Size(145, 17);
             this.bCLabelOverHeadCategory.TabIndex = 2;
             this.bCLabelOverHeadCategory.Text = "Repair && Maintanance";
+            this.bCLabelOverHeadCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mTBoxCost
             // 
@@ -121,9 +122,7 @@
             this.mTBoxCost.MaxLength = 32767;
             this.mTBoxCost.Name = "mTBoxCost";
             this.mTBoxCost.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.mTBoxCost.PromptText = "Cost";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.mTBoxCost.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mTBoxCost.SelectedText = "";
             this.mTBoxCost.SelectionLength = 0;

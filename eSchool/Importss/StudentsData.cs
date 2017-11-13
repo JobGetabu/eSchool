@@ -39,8 +39,8 @@ namespace eSchool.Importss
         {
             GridIconPicker(this.gData.Rows[e.RowIndex].Cells[0], this.gData.Rows[e.RowIndex].Cells[1]);
             this.gData.Rows[e.RowIndex].Cells[6].Value = GridIcon.Trash_Can_50px;
-            lblRowCount.Text = gData.RowCount.ToString();
-            //this.lblRowCount.Text = gData.Rows.Count.ToString();
+            //lblRowCount.Text = gData.RowCount.ToString();
+            this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
         private void StudentsData_Load(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace eSchool.Importss
 
                                 //TODO short Custom Notification
                                 gData.Rows[e.RowIndex].Visible = false;
-                                lblRowCount.Text = gData.RowCount.ToString();
+                                this.lblRowCount.Text = gData.Rows.Count.ToString();
                                 NewImportsUI niUI = NewImportsUI.Instance;
                                 niUI.lblStudentCount.Text = studentListAsync.Count.ToString();
                             }

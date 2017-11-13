@@ -279,7 +279,7 @@
             this.bunifuCircleProgressbarCleared.animationSpeed = 300;
             this.bunifuCircleProgressbarCleared.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.bunifuCircleProgressbarCleared.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbarCleared.BackgroundImage")));
-            this.bunifuCircleProgressbarCleared.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCircleProgressbarCleared.Font = new System.Drawing.Font("Century Gothic", 13.25F);
             this.bunifuCircleProgressbarCleared.ForeColor = System.Drawing.Color.Silver;
             this.bunifuCircleProgressbarCleared.LabelVisible = true;
             this.bunifuCircleProgressbarCleared.LineProgressThickness = 2;
@@ -313,7 +313,7 @@
             this.bunifuCircleProgressbarRegistered.animationSpeed = 300;
             this.bunifuCircleProgressbarRegistered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.bunifuCircleProgressbarRegistered.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbarRegistered.BackgroundImage")));
-            this.bunifuCircleProgressbarRegistered.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCircleProgressbarRegistered.Font = new System.Drawing.Font("Century Gothic", 13.25F);
             this.bunifuCircleProgressbarRegistered.ForeColor = System.Drawing.Color.Silver;
             this.bunifuCircleProgressbarRegistered.LabelVisible = true;
             this.bunifuCircleProgressbarRegistered.LineProgressThickness = 2;

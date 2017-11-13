@@ -156,6 +156,10 @@ namespace eSchool
                         //refresh our list
                         StudentsData sData = StudentsData.Instance;
                         sData.GridInitilizer();
+
+                        //referesh the progress bars
+                        FeePayment fp = FeePayment.Instance;
+                        fp.Copy_FeePayment_Load();
                         this.Close();
                     }
                     else

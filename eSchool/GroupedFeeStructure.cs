@@ -14,6 +14,11 @@ namespace eSchool
     
     public partial class GroupedFeeStructure
     {
+        public GroupedFeeStructure()
+        {
+            this.FeesRequiredPerTerms = new HashSet<FeesRequiredPerTerm>();
+        }
+    
         public int Id { get; set; }
         public string YearTitle { get; set; }
         public string TermTitle { get; set; }
@@ -25,5 +30,7 @@ namespace eSchool
         public Nullable<int> selYear { get; set; }
         public Nullable<int> selTerm { get; set; }
         public string TotalTitle { get; set; }
+    
+        public virtual ICollection<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }
     }
 }

@@ -73,8 +73,6 @@ namespace eSchool
                                 bGrid.Rows[e.RowIndex].Visible = false;
 
                                 //update the all lists
-                                FeeUI_Show fui = FeeUI_Show.Instance;
-                                fui.OlistControlInitAsync();
                                 FeeUI_List ful = FeeUI_List.Instance;
                                 ful.GridInitilizer();
                             }
@@ -129,6 +127,12 @@ namespace eSchool
             }
             //refresh listcontrol
             GridInitilizer();
+            FeeUI_List ful = FeeUI_List.Instance;
+            ful.GridInitilizer();
+        }
+
+        private void FrmViewAll_FormClosing(object sender, FormClosingEventArgs e)
+        {
             // refresh all lists
             FeeUI_Show fuui = FeeUI_Show.Instance;
             fuui.OlistControlInitAsync();

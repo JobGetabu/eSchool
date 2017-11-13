@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeeUI_Show));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,13 +44,11 @@
             this.Del = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSaveStructure = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.overHeadCategoryPerYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelListControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelGridOHs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bGrid)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overHeadCategoryPerYearBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelListControl1
@@ -224,10 +221,6 @@
             this.btnSaveStructure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveStructure.Click += new System.EventHandler(this.btnSaveStructure_Click);
             // 
-            // overHeadCategoryPerYearBindingSource
-            // 
-            this.overHeadCategoryPerYearBindingSource.DataSource = typeof(eSchool.OverHeadCategoryPerYear);
-            // 
             // FeeUI_Show
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,7 +237,6 @@
             this.panelGridOHs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bGrid)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.overHeadCategoryPerYearBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,7 +247,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuThinButton2 bThinBtnAddFeeItem;
         private System.Windows.Forms.Panel panelGridOHs;
-        public System.Windows.Forms.BindingSource overHeadCategoryPerYearBindingSource;
         public Bunifu.Framework.UI.BunifuCustomDataGrid bGrid;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridViewImageColumn ColumnPic;

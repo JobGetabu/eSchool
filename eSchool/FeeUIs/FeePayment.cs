@@ -62,6 +62,17 @@ namespace eSchool
             GridIconPicker(gData.Rows[e.RowIndex].Cells[0], gData.Rows[e.RowIndex].Cells["Amount"], gData.Rows[e.RowIndex].Cells["Form"]);
         }
 
+        public void Copy_FeePayment_Load()
+        {
+            fRPTermsList();
+            //Ui code
+            FeeUISet();
+            this.lblRowCount.Text = gData.Rows.Count.ToString();
+            lblSet();
+            //populate the grid
+            GridInitilizer();
+
+        }
         private void FeePayment_Load(object sender, EventArgs e)
         {
             //Ui code
@@ -84,10 +95,10 @@ namespace eSchool
             int f = int.Parse((string)frm.Value);
             frpt = FeeRequiredAsync(GTerm, GYear, f);
             if (frpt != 0)
-            {
-                pct = cAmount / frpt * 100;
+            {                
+                pct = Decimal.Divide(cAmount, frpt) * 100;
             }
-            if (pct == 100)
+            if (pct == 100 || pct > 100)
             {
                 rPic.Value = GridIcon.Happy100;
             }
@@ -167,10 +178,21 @@ namespace eSchool
             }
             foreach (var fr in fRPTerms)
             {
-                return fRPTerms
-                     .Where(f => f.Term == term & f.Year == year & f.Form == form)
-                    .ToList()
-                    .First().FeeRequired;
+                try
+                {
+
+                    decimal z = fRPTerms
+                        .ToList()
+                        .FirstOrDefault(f => f.Term == term & f.Year == year & f.Form == form).FeeRequired;
+                    if (z != 0)
+                    {
+                        return z;
+                    }
+                }
+                catch (Exception exp)
+                {
+                    //MessageBox.Show(exp.Message);
+                }
             }
             return 0;
         }
@@ -186,11 +208,66 @@ namespace eSchool
                 return fRPTerms
                      .Where(f => f.Term == term & f.Year == year)
                     .ToList()
-                    .Sum(x=>x.FeeRequired);
+                    .Sum(x => x.FeeRequired);
             }
             return 0;
         }
 
+        private decimal FeeRequiredAsync(int term, int year,int fm1,int fm2,int fm3,int fm4)
+        {
+            if (fRPTerms == null)
+            {
+                fRPTermsList();
+            }
+            decimal fm1Total = 0;
+            decimal fm2Total = 0;
+            decimal fm3Total = 0;
+            decimal fm4Total = 0;
+
+            foreach (var fr in fRPTerms)
+            {
+                fm1Total = fRPTerms
+                     .Where(f => f.Term == term & f.Year == year & f.Form == 1)
+                    .ToList()
+                    .Sum(x => x.FeeRequired);
+            }
+
+            fm1Total = fm1Total * fm1;
+
+            foreach (var fr in fRPTerms)
+            {
+                fm2Total = fRPTerms
+                     .Where(f => f.Term == term & f.Year == year & f.Form == 2)
+                    .ToList()
+                    .Sum(x => x.FeeRequired);
+            }
+
+            fm2Total = fm2Total * fm2;
+
+            foreach (var fr in fRPTerms)
+            {
+                fm3Total = fRPTerms
+                     .Where(f => f.Term == term & f.Year == year & f.Form == 3)
+                    .ToList()
+                    .Sum(x => x.FeeRequired);
+            }
+
+            fm3Total = fm3Total * fm3;
+
+            foreach (var fr in fRPTerms)
+            {
+                fm4Total = fRPTerms
+                     .Where(f => f.Term == term & f.Year == year & f.Form == 4)
+                    .ToList()
+                    .Sum(x => x.FeeRequired);
+            }
+
+            fm4Total = fm4Total * fm4;
+
+            decimal grandTotal = fm1Total + fm2Total + fm3Total + fm4Total;
+
+            return grandTotal;
+        }
         ///Search Perfecto
         private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -351,6 +428,12 @@ namespace eSchool
                 });
 
                 int studentsCount = studentList.Count;
+
+                int fm1Count = studentList.Count(x => x.Form == 1);
+                int fm2Count = studentList.Count(x => x.Form == 2);
+                int fm3Count = studentList.Count(x => x.Form == 3);
+                int fm4Count = studentList.Count(x => x.Form == 4);
+
                 var fees = feeListAsync.Select(a => a.Admin_No);
 
                 var studentFees = studentList.SelectMany(
@@ -361,7 +444,7 @@ namespace eSchool
 
                 int registeredStudents = fees.Distinct().Count();
 
-                try
+                if (studentsCount != 0)
                 {
                     decimal pcg = decimal.Divide(registeredStudents, studentsCount) * 100;
 
@@ -369,40 +452,34 @@ namespace eSchool
                     decimal pcgRegistered = decimal.Round(pcg);
                     feeui.bunifuCircleProgressbarRegistered.Value = int.Parse(pcgRegistered.ToString());
                 }
-                catch (DivideByZeroException)
-                {
-
-                    
-                }
-
 
                 var result = from item in feeListAsync
                              orderby item.Admin_No
                              group feeListAsync by item.Admin_No into grp
                              let sum = feeListAsync.Where(x => x.Admin_No == grp.Key & x.Term == GTerm & x.Year == GYear).Sum(x => x.Amount_Paid)
-                             let sform = feeListAsync.Where(x => x.Admin_No == grp.Key & x.Term == GTerm & x.Year == GYear).Select(x => x.Form).First()
+                             let sform = feeListAsync.Where(x => x.Admin_No == grp.Key & x.Term == GTerm & x.Year == GYear).Select(x => x.Form).FirstOrDefault()
                              select new
                              {
                                  StudAdmin = grp.Key,
                                  Sum = sum,
                                  sForm = sform,
                              };
-                decimal feeForTermTotal= FeeRequiredAsync(GTerm,GYear);
-
-                feeui.lblRequred.Text = $"{String.Format("{0:0,0}", feeForTermTotal)}";
+                //decimal feeForTermTotal = FeeRequiredAsync(GTerm, GYear);
+                decimal grandTotalFee = FeeRequiredAsync(GTerm, GYear,fm1Count,fm2Count,fm3Count,fm4Count);
+                feeui.lblRequred.Text = $"{String.Format("{0:0,0}", grandTotalFee)}";
                 decimal paidTotal = 0;
                 int countCleared = 0;
                 foreach (var item in result)
                 {
                     var i = item.Sum;
-                    if (i >= FeeRequiredAsync(GTerm, GYear,item.sForm))
+                    if (i >= FeeRequiredAsync(GTerm, GYear, item.sForm))
                     {
                         countCleared += 1;
                     }
                     paidTotal += i;
                 }
 
-                try
+                if (registeredStudents != 0)
                 {
                     decimal pcgClr = decimal.Divide(countCleared, registeredStudents) * 100;
                     decimal pcgCleared = decimal.Round(pcgClr);
@@ -410,17 +487,19 @@ namespace eSchool
 
                     feeui.bunifuCircleProgressbarCleared.Value = int.Parse(pcgCleared.ToString());
                 }
-                catch (DivideByZeroException)
-                {
-                    
-                }
+
 
                 feeui.lblPaid.Text = $"{String.Format("{0:0,0}", paidTotal)}";
 
-                decimal pcgPerf = decimal.Divide(paidTotal, feeForTermTotal) * 100;
+                decimal pcgPerf = 0;
+                if (grandTotalFee != 0)
+                {
+                     pcgPerf = decimal.Divide(paidTotal, grandTotalFee) * 100; 
+                }
                 decimal pcgpcgPerf = decimal.Round(pcgPerf);
                 feeui.perfPercentage.Text = $"{pcgpcgPerf.ToString()}%";// i.e 93%
 
+               
 
                 //var Fees = feeListAsync.SelectMany(
                 //                    (fee) =>

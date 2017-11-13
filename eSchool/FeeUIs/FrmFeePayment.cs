@@ -203,56 +203,55 @@ namespace eSchool
             }
         }
 
-        private async Task<decimal> CheckPrevBalance(int adminNo, int form, int term, int year)
-        {
-            decimal balance = 0;
-            using (var context = new EschoolEntities())
-            {
-                List<Fee> feesList = await Task.Factory.StartNew(() =>
-                {
-                    return context.Fees.Where(f => f.Admin_No == adminNo & f.Term == term & f.Year == year).ToList();
-                });
+        //private async Task<decimal> CheckPrevBalance(int adminNo, int form, int term, int year)
+        //{
+        //    decimal balance = 0;
+        //    using (var context = new EschoolEntities())
+        //    {
+        //        List<Fee> feesList = await Task.Factory.StartNew(() =>
+        //        {
+        //            return context.Fees.Where(f => f.Admin_No == adminNo & f.Term == term & f.Year == year).ToList();
+        //        });
 
-                FeesRequiredPerTerm frpt = await Task.Factory.StartNew(() =>
-            {
-                return context.FeesRequiredPerTerms
-                .FirstOrDefault(f => f.Form == form & f.Term == term & f.Year == year);
+        //        FeesRequiredPerTerm frpt = await Task.Factory.StartNew(() =>
+        //    {
+        //        return context.FeesRequiredPerTerms
+        //        .FirstOrDefault(f => f.Form == form & f.Term == term & f.Year == year);
 
-            });
-                if (feesList != null & frpt!=null)
-                {
-                    //balance = frpt - amount paid
-                    decimal paidAmount = feesList.Sum(s => s.Amount_Paid);
-                    balance = frpt.FeeRequired - paidAmount;
-                }
-            }
-            return balance;
-        }
-        private async void SavePayment()
+        //    });
+        //        if (feesList != null & frpt!=null)
+        //        {
+        //            //TODO this is creepy math remove
+        //            //balance = frpt - amount paid
+        //            decimal paidAmount = feesList.Sum(s => s.Amount_Paid);
+        //            balance = frpt.FeeRequired - paidAmount;
+        //        }
+        //    }
+        //    return balance;
+        //}
+        private void SavePayment()
         {
             int adminNo = int.Parse(tbAdminNo.Text);
             int term = int.Parse(tbTerm.Text);
             int form = int.Parse(tbForm.Text);
             int year = int.Parse(tbYear.Text);
-            decimal balance =0;
-            switch (term)
-            {
-                case 1:
-                    balance = await CheckPrevBalance(adminNo, form, 3, year-1);
-                    break;
-                case 2:
-                    balance = await CheckPrevBalance(adminNo, form, 1, year);
-                    break;
-                case 3:
-                    balance = await CheckPrevBalance(adminNo, form, 2, year);
-                    break;
-                default:
-                    break;
-            }
+            //decimal balance =0;
+            //switch (term)
+            //{
+            //    case 1:
+            //        balance = await CheckPrevBalance(adminNo, form, 3, year-1);
+            //        break;
+            //    case 2:
+            //        balance = await CheckPrevBalance(adminNo, form, 1, year);
+            //        break;
+            //    case 3:
+            //        balance = await CheckPrevBalance(adminNo, form, 2, year);
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             decimal amount = decimal.Parse(tbAmount.Text);
-            amount += balance;
-
             using (var context = new EschoolEntities())
             {
                 Fee myFee = new Fee

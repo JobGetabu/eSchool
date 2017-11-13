@@ -19,8 +19,10 @@ namespace eSchool
         public int Term { get; set; }
         public decimal FeeRequired { get; set; }
         public int Year { get; set; }
+        public Nullable<int> GrpFeestructure_Id { get; set; }
     
         public virtual SchoolPeriodTerm SchoolPeriodTerm { get; set; }
         public virtual SchoolPeriodYear SchoolPeriodYear { get; set; }
+        public virtual GroupedFeeStructure GroupedFeeStructure { get; set; }
     }
 }

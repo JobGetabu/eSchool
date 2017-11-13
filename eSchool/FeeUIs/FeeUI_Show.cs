@@ -83,6 +83,7 @@ namespace eSchool
         {
             //TODO 2 prompt to print fee structure           
 
+            #region autoGen is true
             if (FeesUI.autoGen)
             {
                 string frmslbl = "Form ";
@@ -146,8 +147,9 @@ namespace eSchool
                         {
                             Form = fm,
                             Term = FeesUI.autoSelTerm,
-                            FeeRequired = FeesUI.autoTotalFee,
-                            Year = FeesUI.autoSelYear
+                            FeeRequired = updateTotal,
+                            Year = FeesUI.autoSelYear,
+                            GrpFeestructure_Id = gp.Id
                         };
                         context.FeesRequiredPerTerms.Add(frpt);
                     }
@@ -160,7 +162,7 @@ namespace eSchool
                 {
                     //TODO print fee structure
                     //this point to old data thats not updated by delete click
-                    MessageBox.Show($"Printing info /n Total fee per term {FeesUI.autoSelTerm} in the year {FeesUI.autoSelYear} is KES {updateTotal} for {FrmCreateFStruct.frmslbl}");
+                    MessageBox.Show($"Printing info \n Total fee per term {FeesUI.autoSelTerm} in the year {FeesUI.autoSelYear} is KES {updateTotal} for {FrmCreateFStruct.frmslbl}");
                 }
                 this.btnSaveStructure.Visible = false;
                 //switch tabs to feeS list
@@ -171,6 +173,8 @@ namespace eSchool
                 ful.LoadListAsync(FeesUI.autoSelYear);
 
             }
+            #endregion
+            #region autogen is false
             else
             {
 
@@ -227,7 +231,8 @@ namespace eSchool
                             Form = fm,
                             Term = OverHeadListItem.selTerm,
                             FeeRequired = OverHeadListItem.totalCashPas,
-                            Year = OverHeadListItem.selYear
+                            Year = OverHeadListItem.selYear,
+                            GrpFeestructure_Id = gp.Id
                         };
                         context.FeesRequiredPerTerms.Add(frpt);
                     }
@@ -243,13 +248,19 @@ namespace eSchool
                     MessageBox.Show($"Printing info /n Total fee per term {OverHeadListItem.selTerm} in the year {OverHeadListItem.selYear} is KES {OverHeadListItem.totalCashPas} for {FrmCreateFStruct.frmslbl}");
                 }
                 this.btnSaveStructure.Visible = false;
+
                 //switch tabs to feeS list
                 //refresh the list
                 FeesStructure fss = FeesStructure.Instance;
                 fss.SwitchTabExt();
                 FeeUI_List ful = FeeUI_List.Instance;
                 ful.LoadListAsync(OverHeadListItem.selYear);
-            }
+            } 
+            #endregion
+
+            //referesh the progress bars
+            FeePayment fp = FeePayment.Instance;
+            fp.Copy_FeePayment_Load();
         }
 
         private async void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -356,25 +367,34 @@ namespace eSchool
         {
             using (var context = new EschoolEntities())
             {
-                var fRPTerms= context.FeesRequiredPerTerms
-                .Where(c => c.Form == form & c.Year == year & c.Term == term)
-                .ToList();
+                //var fRPTerms= context.FeesRequiredPerTerms
+                //.Where(c => c.Form == form & c.Year == year & c.Term == term)
+                //.ToList();
  
-                foreach (FeesRequiredPerTerm fitem in fRPTerms)
-                {
-                    context.Entry<FeesRequiredPerTerm>(fitem).State = EntityState.Deleted;
-                }
-                context.SaveChanges();
-                var gpFs = context.GroupedFeeStructures
-               .Where(c => c.selYear==year & c.selTerm ==term)
+                //foreach (FeesRequiredPerTerm fitem in fRPTerms)
+                //{
+                //    context.Entry<FeesRequiredPerTerm>(fitem).State = EntityState.Deleted;
+                //    context.SaveChanges();
+                //}
+               
+                var gpFs = context.GroupedFeeStructures               
                .Where(c=> c.selFm1==form | c.selFm2 == form | c.selFm3 == form | c.selFm4 == form)
                .ToList();
 
-                foreach (GroupedFeeStructure gpfitem in gpFs)
+                foreach (GroupedFeeStructure gpfitem in gpFs.Where(c => c.selYear == year & c.selTerm == term))
                 {
                     context.Entry<GroupedFeeStructure>(gpfitem).State = EntityState.Deleted;
+
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message,"Deleting Multiple GpF & Frpts");
+                        throw;
+                    }
                 }
-                context.SaveChanges();
             }
         }
 

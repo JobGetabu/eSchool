@@ -87,6 +87,9 @@ namespace eSchool.Importss
                 toolTip1.UseFading = true;
                 toolTip1.UseAnimation = true;
                 toolTip1.IsBalloon = true;
+                toolTip1.AutoPopDelay = 5000;
+                toolTip1.InitialDelay = 1000;
+                toolTip1.ReshowDelay = 500;
                 toolTip1.ShowAlways = true;
                 toolTip1.SetToolTip(btnView, " Data can not be found \n File may be missing \n File may be deleted");
             }
