@@ -141,9 +141,7 @@
             this.tbSDetails.MaxLength = 32767;
             this.tbSDetails.Name = "tbSDetails";
             this.tbSDetails.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.tbSDetails.PromptText = "Student Details";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.tbSDetails.ReadOnly = true;
             this.tbSDetails.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSDetails.SelectedText = "";
@@ -179,9 +177,7 @@
             this.tbAdminNo.MaxLength = 32767;
             this.tbAdminNo.Name = "tbAdminNo";
             this.tbAdminNo.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
-            this.tbAdminNo.PromptText = "Admin No   press \"Enter\"";
-#pragma warning restore CS0618 // Type or member is obsolete
+            this.tbAdminNo.PromptText = "Enter Admin No   press \"Enter\"";
             this.tbAdminNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbAdminNo.SelectedText = "";
             this.tbAdminNo.SelectionLength = 0;
@@ -191,7 +187,7 @@
             this.tbAdminNo.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbAdminNo.TabIndex = 32;
             this.tbAdminNo.UseSelectable = true;
-            this.tbAdminNo.WaterMark = "Admin No   press \"Enter\"";
+            this.tbAdminNo.WaterMark = "Enter Admin No   press \"Enter\"";
             this.tbAdminNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbAdminNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tbAdminNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAdminNo_KeyPress);
@@ -235,9 +231,7 @@
             this.tbCat.MaxLength = 32767;
             this.tbCat.Name = "tbCat";
             this.tbCat.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.tbCat.PromptText = "Category";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.tbCat.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbCat.SelectedText = "";
             this.tbCat.SelectionLength = 0;

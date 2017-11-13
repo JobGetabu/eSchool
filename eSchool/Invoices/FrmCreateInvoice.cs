@@ -22,9 +22,11 @@ namespace eSchool.Invoices
         private int close;
         private int GTerm;
         private int GYear;
+
         private string client;
         private decimal amount;
         private decimal balance;
+        private decimal previousBalance;
         private void FrmCreateInvoice_Load(object sender, EventArgs e)
         {
             GYear = Properties.Settings.Default.CurrentYear;
@@ -202,7 +204,11 @@ namespace eSchool.Invoices
 
             decimal fpThisTerm =await AmountPaid(stud);
 
-            return Decimal.Subtract(frThisTerm , fpThisTerm);           
+            decimal bal= Decimal.Subtract(frThisTerm , fpThisTerm);
+
+            bal += await CheckPrevBalance(stud,stud.Form, GTerm, GYear);
+
+            return bal;
         }
 
         List<FeesRequiredPerTerm> fRPTerms;
@@ -221,14 +227,71 @@ namespace eSchool.Invoices
             }
             foreach (var fr in fRPTerms)
             {
-                return fRPTerms
-                     .Where(f => f.Term == term & f.Year == year & f.Form == form)
-                    .ToList()
-                    .First().FeeRequired;
+                try
+                {
+                    decimal z = fRPTerms
+                        .ToList()
+                        .FirstOrDefault(f => f.Term == term & f.Year == year & f.Form == form).FeeRequired;
+                    if (z != 0)
+                    {
+                        return z;
+                    }
+                }
+                catch (Exception)
+                {
+                   //A null handled in case of return zero
+                }
             }
             return 0;
         }
 
-      
+        private async Task<decimal> CheckPrevBalance(Student_Basic stud, int form, int term, int year)
+        {
+            int checkTerm, checkYear;
+
+            if (term == 1)
+            {
+                checkYear = year - 1;
+                checkTerm = 3;
+            }
+            else
+            {
+                checkYear = year;
+                checkTerm = term -1;
+            }
+
+            if (stud.RegYear== checkYear | stud.RegYear < checkYear)
+            {
+
+                if (stud.RegTerm == checkTerm| stud.RegTerm < checkTerm)
+                {
+                    decimal balance = 0;
+                    using (var context = new EschoolEntities())
+                    {
+                        int adminNo = stud.Admin_No;
+                        List<Fee> feesList = await Task.Factory.StartNew(() =>
+                        {
+                            return context.Fees.Where(f => f.Admin_No == adminNo & f.Term == checkTerm & f.Year == checkYear).ToList();
+                        });
+
+                        FeesRequiredPerTerm frpt = await Task.Factory.StartNew(() =>
+                    {
+                        return context.FeesRequiredPerTerms
+                        .FirstOrDefault(f => f.Form == form & f.Term == checkTerm & f.Year == checkYear);
+
+                    });
+                        if (feesList != null & frpt != null)
+                        {
+                            //TODO this is creepy math remove
+                            //balance = frpt - amount paid
+                            decimal paidAmount = feesList.Sum(s => s.Amount_Paid);
+                            balance = frpt.FeeRequired - paidAmount;
+                        }
+                    }  
+                }
+            }
+            return balance;
+        }
+
     }
 }

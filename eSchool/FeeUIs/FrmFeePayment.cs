@@ -203,32 +203,6 @@ namespace eSchool
             }
         }
 
-        //private async Task<decimal> CheckPrevBalance(int adminNo, int form, int term, int year)
-        //{
-        //    decimal balance = 0;
-        //    using (var context = new EschoolEntities())
-        //    {
-        //        List<Fee> feesList = await Task.Factory.StartNew(() =>
-        //        {
-        //            return context.Fees.Where(f => f.Admin_No == adminNo & f.Term == term & f.Year == year).ToList();
-        //        });
-
-        //        FeesRequiredPerTerm frpt = await Task.Factory.StartNew(() =>
-        //    {
-        //        return context.FeesRequiredPerTerms
-        //        .FirstOrDefault(f => f.Form == form & f.Term == term & f.Year == year);
-
-        //    });
-        //        if (feesList != null & frpt!=null)
-        //        {
-        //            //TODO this is creepy math remove
-        //            //balance = frpt - amount paid
-        //            decimal paidAmount = feesList.Sum(s => s.Amount_Paid);
-        //            balance = frpt.FeeRequired - paidAmount;
-        //        }
-        //    }
-        //    return balance;
-        //}
         private void SavePayment()
         {
             int adminNo = int.Parse(tbAdminNo.Text);

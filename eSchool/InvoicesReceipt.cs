@@ -36,7 +36,6 @@ namespace eSchool
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             GridIconPicker(gData.Rows[e.RowIndex].Cells[6], gData.Rows[e.RowIndex].Cells[3], gData.Rows[e.RowIndex].Cells[4]);
-            //this.gData.Rows[e.RowIndex].Cells[6].Value = StatusGrid._1incomplete;
         }
 
         private void GridIconPicker(DataGridViewCell rPic, DataGridViewCell amountpaid, DataGridViewCell balance)
@@ -62,13 +61,12 @@ namespace eSchool
             {
                 rPic.Value = StatusGrid._1incomplete;
             }
-            else if (cAmount > 0 & cBalance == 0)
+            else if (cAmount > 0 & (cBalance == 0 | cBalance < 0))
             {
                 rPic.Value = StatusGrid._1paid;
             }
             //TODO find a cancelled state
-            
-            
+                        
         }
         private void InvoicesReceipt_Load(object sender, EventArgs e)
         {
