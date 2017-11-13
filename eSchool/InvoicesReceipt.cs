@@ -36,6 +36,7 @@ namespace eSchool
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             GridIconPicker(gData.Rows[e.RowIndex].Cells[6], gData.Rows[e.RowIndex].Cells[3], gData.Rows[e.RowIndex].Cells[4]);
+            lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
         private void GridIconPicker(DataGridViewCell rPic, DataGridViewCell amountpaid, DataGridViewCell balance)
@@ -66,7 +67,7 @@ namespace eSchool
                 rPic.Value = StatusGrid._1paid;
             }
             //TODO find a cancelled state
-                        
+
         }
         private void InvoicesReceipt_Load(object sender, EventArgs e)
         {
@@ -75,7 +76,8 @@ namespace eSchool
 
             //load the grid
             GridInitializer();
-
+            //lbls
+            InvoiceCashlbl(GTerm, GYear);
         }
 
         private async void GridInitializer()
@@ -114,6 +116,77 @@ namespace eSchool
             {
                 //load the grid
                 GridInitializer();
+
+                //lbls
+                InvoiceCashlbl(GTerm, GYear);
+            }
+        }
+
+        private async void InvoiceCashlbl(int term, int year)
+        {
+            var invoiceList = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Invoices.ToList();
+                }
+            });
+
+            var myList = invoiceList.Where(x => x.Term == term | x.Year == year).ToList();
+
+            decimal totals = myList.Sum(x => x.Amount);
+            decimal bal = myList.Sum(x => x.Balance);
+
+            this.lblPaid.Text = $"KES {String.Format("{0:0,0}", totals)}";
+            this.lblBalance.Text = $"KES {String.Format("{0:0,0}", bal)}";
+        }
+
+        List<int> selForms;
+        int filTerm;
+        int filYear;
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            FrmFilterStudents frm = new FrmFilterStudents();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                selForms = new List<int>();
+                selForms = FrmFilterStudents.selFilForms;
+                filTerm = FrmFilterStudents.selFilTerm;
+                filYear = FrmFilterStudents.selFilYear;
+
+                //refresh grid with filters
+                GridInitilizer(selForms);
+
+                //lbls
+                InvoiceCashlbl(filTerm, filYear);
+            }
+        }
+
+        public async void GridInitilizer(List<int> selForms)
+        {
+            var invoiceListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Invoices
+                    .Where(t => t.Term == filTerm & t.Year == filYear)
+                    .ToList();
+                }
+            });
+
+            gData.Rows.Clear();
+            foreach (var item in invoiceListAsync)
+            {
+                gData.Rows.Add(new string[]
+                    {
+                           item.InvoiceNo,
+                           item.Category,
+                           item.Client,
+                           $"KES {String.Format("{0:0,0}", item.Amount)}",
+                           $"KES {String.Format("{0:0,0}", item.Balance)}",
+                           item.Date.ToString("dd MMM yyy"),
+                           null
+                    });
             }
         }
     }

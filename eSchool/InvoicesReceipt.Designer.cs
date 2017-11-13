@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoicesReceipt));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -35,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoicesReceipt));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelTopLeft = new System.Windows.Forms.Panel();
@@ -45,11 +45,15 @@
             this.lblDateDay = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateNow = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
             this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnFilter = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCreateInvoice = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lblPaid = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelGrid = new System.Windows.Forms.Panel();
@@ -61,18 +65,14 @@
             this.ColumnBal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
-            this.btnFilter = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCreateInvoice = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
             this.panelTopRght.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -189,6 +189,16 @@
             this.lblTerm.TabIndex = 56;
             this.lblTerm.Text = "Term: ";
             // 
+            // pBoxLogoTerm
+            // 
+            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
+            this.pBoxLogoTerm.Location = new System.Drawing.Point(21, 2);
+            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
+            this.pBoxLogoTerm.Size = new System.Drawing.Size(160, 96);
+            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBoxLogoTerm.TabIndex = 55;
+            this.pBoxLogoTerm.TabStop = false;
+            // 
             // panelTopRght
             // 
             this.panelTopRght.AutoSize = true;
@@ -255,6 +265,70 @@
             this.lblRowCount.TabIndex = 15;
             this.lblRowCount.Text = "0";
             this.lblRowCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.ActiveBorderThickness = 1;
+            this.btnFilter.ActiveCornerRadius = 40;
+            this.btnFilter.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
+            this.btnFilter.ActiveForecolor = System.Drawing.Color.White;
+            this.btnFilter.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
+            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.btnFilter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFilter.BackgroundImage")));
+            this.btnFilter.ButtonText = "Filter";
+            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnFilter.IdleBorderThickness = 1;
+            this.btnFilter.IdleCornerRadius = 30;
+            this.btnFilter.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(135)))));
+            this.btnFilter.IdleForecolor = System.Drawing.Color.SeaShell;
+            this.btnFilter.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
+            this.btnFilter.Location = new System.Drawing.Point(285, 27);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(5);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(173, 38);
+            this.btnFilter.TabIndex = 78;
+            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(379, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnCreateInvoice
+            // 
+            this.btnCreateInvoice.ActiveBorderThickness = 1;
+            this.btnCreateInvoice.ActiveCornerRadius = 40;
+            this.btnCreateInvoice.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnCreateInvoice.ActiveForecolor = System.Drawing.Color.White;
+            this.btnCreateInvoice.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnCreateInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.btnCreateInvoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreateInvoice.BackgroundImage")));
+            this.btnCreateInvoice.ButtonText = "Create Invoice";
+            this.btnCreateInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateInvoice.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnCreateInvoice.IdleBorderThickness = 1;
+            this.btnCreateInvoice.IdleCornerRadius = 30;
+            this.btnCreateInvoice.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnCreateInvoice.IdleForecolor = System.Drawing.Color.SeaShell;
+            this.btnCreateInvoice.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnCreateInvoice.Location = new System.Drawing.Point(68, 27);
+            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCreateInvoice.Name = "btnCreateInvoice";
+            this.btnCreateInvoice.Size = new System.Drawing.Size(200, 38);
+            this.btnCreateInvoice.TabIndex = 77;
+            this.btnCreateInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCreateInvoice.Click += new System.EventHandler(this.btnCreateInvoice_Click_1);
             // 
             // lblPaid
             // 
@@ -401,79 +475,6 @@
             this.ColumnDel.ReadOnly = true;
             this.ColumnDel.ToolTipText = "Delete Record";
             // 
-            // pBoxLogoTerm
-            // 
-            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
-            this.pBoxLogoTerm.Location = new System.Drawing.Point(21, 2);
-            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
-            this.pBoxLogoTerm.Size = new System.Drawing.Size(160, 96);
-            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBoxLogoTerm.TabIndex = 55;
-            this.pBoxLogoTerm.TabStop = false;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.ActiveBorderThickness = 1;
-            this.btnFilter.ActiveCornerRadius = 40;
-            this.btnFilter.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
-            this.btnFilter.ActiveForecolor = System.Drawing.Color.White;
-            this.btnFilter.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
-            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.btnFilter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFilter.BackgroundImage")));
-            this.btnFilter.ButtonText = "Filter";
-            this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnFilter.IdleBorderThickness = 1;
-            this.btnFilter.IdleCornerRadius = 30;
-            this.btnFilter.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(135)))));
-            this.btnFilter.IdleForecolor = System.Drawing.Color.SeaShell;
-            this.btnFilter.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(131)))), ((int)(((byte)(253)))));
-            this.btnFilter.Location = new System.Drawing.Point(285, 27);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(5);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(173, 38);
-            this.btnFilter.TabIndex = 78;
-            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(379, 66);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnCreateInvoice
-            // 
-            this.btnCreateInvoice.ActiveBorderThickness = 1;
-            this.btnCreateInvoice.ActiveCornerRadius = 40;
-            this.btnCreateInvoice.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnCreateInvoice.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCreateInvoice.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnCreateInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.btnCreateInvoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreateInvoice.BackgroundImage")));
-            this.btnCreateInvoice.ButtonText = "Create Invoice";
-            this.btnCreateInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateInvoice.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCreateInvoice.IdleBorderThickness = 1;
-            this.btnCreateInvoice.IdleCornerRadius = 30;
-            this.btnCreateInvoice.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.btnCreateInvoice.IdleForecolor = System.Drawing.Color.SeaShell;
-            this.btnCreateInvoice.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnCreateInvoice.Location = new System.Drawing.Point(68, 27);
-            this.btnCreateInvoice.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCreateInvoice.Name = "btnCreateInvoice";
-            this.btnCreateInvoice.Size = new System.Drawing.Size(200, 38);
-            this.btnCreateInvoice.TabIndex = 77;
-            this.btnCreateInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCreateInvoice.Click += new System.EventHandler(this.btnCreateInvoice_Click_1);
-            // 
             // InvoicesReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,12 +490,12 @@
             this.panelTop.PerformLayout();
             this.panelTopLeft.ResumeLayout(false);
             this.panelTopLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
             this.panelTopRght.ResumeLayout(false);
             this.panelTopRght.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
