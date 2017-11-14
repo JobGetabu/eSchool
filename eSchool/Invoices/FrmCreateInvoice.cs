@@ -26,7 +26,7 @@ namespace eSchool.Invoices
         private string client;
         private decimal amount;
         private decimal balance;
-        private decimal previousBalance;
+
         private void FrmCreateInvoice_Load(object sender, EventArgs e)
         {
             GYear = Properties.Settings.Default.CurrentYear;
@@ -86,8 +86,8 @@ namespace eSchool.Invoices
                         client = tbSDetails.Text;
                         amount = await AmountPaid(stud);
                         balance = await Balance(stud);
-        
-    }
+
+                    }
                     else
                     {
                         if (MetroMessageBox.Show(this, $"No student with the admission number {adminNo} found \n Would you like to save him or her into the database ?", "Search Again", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error) == DialogResult.Yes)
@@ -166,7 +166,7 @@ namespace eSchool.Invoices
 
         private async Task<Decimal> AmountPaid(Student_Basic stud)
         {
-            List<Fee> feeListAsync= new List<Fee>();
+            List<Fee> feeListAsync = new List<Fee>();
             using (var context = new EschoolEntities())
             {
                 feeListAsync = await Task.Factory.StartNew(() =>
@@ -181,7 +181,7 @@ namespace eSchool.Invoices
                          orderby item.Admin_No
                          group feeListAsync by item.Admin_No into grp
                          let sum = feeListAsync.Where(x => x.Admin_No == grp.Key & x.Term == GTerm & x.Year == GYear).Sum(x => x.Amount_Paid)
-                         let sform = feeListAsync.Where(x => x.Admin_No == grp.Key & x.Term == GTerm & x.Year == GYear).Select(x => x.Form).First()
+                         let sform = feeListAsync.Where(x => x.Admin_No == grp.Key & x.Term == GTerm & x.Year == GYear).Select(x => x.Form).FirstOrDefault()
                          select new
                          {
                              StudAdmin = grp.Key,
@@ -192,7 +192,16 @@ namespace eSchool.Invoices
             {
                 if (stud.Admin_No == student.StudAdmin)
                 {
-                    return student.Sum;
+                    try
+                    {
+                        decimal z = student.Sum;
+                        return z;
+                    }
+                    catch (Exception)
+                    {
+                        //catch a null
+                    }
+
                 }
             }
             return 0;
@@ -202,11 +211,11 @@ namespace eSchool.Invoices
         {
             decimal frThisTerm = FeeRequired(GTerm, GYear, stud.Form);
 
-            decimal fpThisTerm =await AmountPaid(stud);
+            decimal fpThisTerm = await AmountPaid(stud);
 
-            decimal bal= Decimal.Subtract(frThisTerm , fpThisTerm);
+            decimal bal = Decimal.Subtract(frThisTerm, fpThisTerm);
 
-            bal += await CheckPrevBalance(stud,stud.Form, GTerm, GYear);
+            bal += await CheckPrevBalance(stud, stud.Form, GTerm, GYear);
 
             return bal;
         }
@@ -239,7 +248,7 @@ namespace eSchool.Invoices
                 }
                 catch (Exception)
                 {
-                   //A null handled in case of return zero
+                    //A null handled in case of return zero
                 }
             }
             return 0;
@@ -257,15 +266,14 @@ namespace eSchool.Invoices
             else
             {
                 checkYear = year;
-                checkTerm = term -1;
+                checkTerm = term - 1;
             }
 
-            if (stud.RegYear== checkYear | stud.RegYear < checkYear)
+            decimal lbalance = 0;
+            if (stud.RegYear == checkYear | stud.RegYear < checkYear)
             {
-
-                if (stud.RegTerm == checkTerm| stud.RegTerm < checkTerm)
+                if (stud.RegTerm == checkTerm | stud.RegTerm < checkTerm)
                 {
-                    decimal balance = 0;
                     using (var context = new EschoolEntities())
                     {
                         int adminNo = stud.Admin_No;
@@ -285,12 +293,12 @@ namespace eSchool.Invoices
                             //TODO this is creepy math remove
                             //balance = frpt - amount paid
                             decimal paidAmount = feesList.Sum(s => s.Amount_Paid);
-                            balance = frpt.FeeRequired - paidAmount;
+                            lbalance = frpt.FeeRequired - paidAmount;
                         }
-                    }  
+                    }
                 }
             }
-            return balance;
+            return lbalance;
         }
 
     }

@@ -13,6 +13,16 @@
           <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="ClosingBalances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Term" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Expense">
           <Key>
             <PropertyRef Name="ExId" />
@@ -333,6 +343,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
         </Association>
         <EntityContainer Name="EschoolModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
+          <EntitySet Name="ClosingBalances" EntityType="Self.ClosingBalances" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" store:Type="Tables" />
           <EntitySet Name="Fees" EntityType="Self.Fees" store:Type="Tables" />
           <EntitySet Name="FeesRequiredPerTerm" EntityType="Self.FeesRequiredPerTerm" store:Type="Tables" />
@@ -731,6 +742,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             <End Role="GroupedFeeStructure" EntitySet="GroupedFeeStructures" />
             <End Role="FeesRequiredPerTerm" EntitySet="FeesRequiredPerTerms" />
           </AssociationSet>
+          <EntitySet Name="ClosingBalances" EntityType="EschoolModel.ClosingBalance" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -809,6 +821,16 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ClosingBalance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Term" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -992,6 +1014,17 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
                 <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClosingBalances">
+            <EntityTypeMapping TypeName="EschoolModel.ClosingBalance">
+              <MappingFragment StoreEntitySet="ClosingBalances">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

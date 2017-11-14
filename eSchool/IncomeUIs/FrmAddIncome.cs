@@ -124,7 +124,7 @@ namespace eSchool.IncomeUIs
                     Term = selTerm,
                     Year = selYear,
                     Category = incomeCategory
-                };
+                };              
 
                 context.Incomes.Add(income);
                 try
@@ -138,9 +138,43 @@ namespace eSchool.IncomeUIs
 
                 //TODO custom notification
                 MetroMessageBox.Show(this, "Income Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                #region RegisterTransation
+
+                //Register this Transaction
+
+                Transation trans = new Transation()
+                {
+                    Type = "Income",
+                    Details = tbDetails.Text + "\n" + $"({incomeCategory})",
+                    Amount = amount,
+                    Date = DateTime.Now,
+                    Term = selTerm,
+                    Year = selYear,
+                };
+
+                context.Transations.Add(trans);
+                try
+                {
+                    trans.TransactionNo = "300" + trans.Id;
+                    context.SaveChanges();
+                    trans.TransactionNo = "300" + +trans.Id;
+                    context.Entry<Transation>(trans).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+                TransationsUI traUI = TransationsUI.Instance;
+                traUI.Global_TransationsUI_Load();
+                #endregion
+
+
                 e.Cancel = false;              
             }
         }
+
 
         private void FrmAddIncome_Load(object sender, EventArgs e)
         {

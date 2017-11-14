@@ -3,10 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="CurrentTerm" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="CurrentYear" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2017</Value>
+    </Setting>
+    <Setting Name="FirstInstallUse" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="OpeningBalance" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

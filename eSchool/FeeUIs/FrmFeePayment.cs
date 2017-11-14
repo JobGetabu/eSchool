@@ -249,6 +249,39 @@ namespace eSchool
                 {
                     MessageBox.Show(exp.Message);
                 }
+
+                #region RegisterTransation
+
+                //Register this Transaction
+
+                Transation trans = new Transation()
+                {
+                    Type = "Payment",
+                    Details = $"Order #200{myFee.FeesId}" + "\n" + $"(Client {tbFName.Text} {tbSName.Text})",
+                    Amount = amount,
+                    Date = DateTime.Now,
+                    Term = term,
+                    Year = year,
+                };
+
+                context.Transations.Add(trans);
+                try
+                {
+                    trans.TransactionNo = "300" + trans.Id;
+                    context.SaveChanges();
+                    trans.TransactionNo = "300" + +trans.Id;
+                    context.Entry<Transation>(trans).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+
+                TransationsUI traUI = TransationsUI.Instance;
+                traUI.Global_TransationsUI_Load();
+                #endregion
+
             }
         }
         private async void bunifuFlatBtnSave_Click(object sender, EventArgs e)

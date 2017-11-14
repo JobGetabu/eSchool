@@ -157,6 +157,38 @@ namespace eSchool.ExpenceUIs
 
                 //TODO custom notification
                 MetroMessageBox.Show(this, "Expense Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                #region RegisterTransation
+
+                //Register this Transaction
+
+                Transation trans = new Transation()
+                {
+                    Type = "Expense",
+                    Details = tbDetails.Text + "\n" + $"({expenseCategory})",
+                    Amount = amount,
+                    Date = DateTime.Now,
+                    Term = selTerm,
+                    Year = selYear,
+                };
+
+                context.Transations.Add(trans);
+                try
+                {
+                    trans.TransactionNo = "300" + trans.Id;
+                    context.SaveChanges();
+                    trans.TransactionNo = "300" + +trans.Id;
+                    context.Entry<Transation>(trans).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+                TransationsUI traUI = TransationsUI.Instance;
+                traUI.Global_TransationsUI_Load();
+                #endregion
+
                 e.Cancel = false;
             }
         }

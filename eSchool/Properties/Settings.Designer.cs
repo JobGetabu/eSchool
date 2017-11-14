@@ -25,7 +25,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int CurrentTerm {
             get {
                 return ((int)(this["CurrentTerm"]));
@@ -44,6 +44,30 @@ namespace eSchool.Properties {
             }
             set {
                 this["CurrentYear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstInstallUse {
+            get {
+                return ((bool)(this["FirstInstallUse"]));
+            }
+            set {
+                this["FirstInstallUse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OpeningBalance {
+            get {
+                return ((decimal)(this["OpeningBalance"]));
+            }
+            set {
+                this["OpeningBalance"] = value;
             }
         }
     }
