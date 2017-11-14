@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eSchool.TransionX;
 
 namespace eSchool
 {
@@ -118,7 +119,11 @@ namespace eSchool
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-
+            FrmFilterTransaction frm = FrmFilterTransaction.Instance;
+            if (frm.ShowDialog()== DialogResult.OK)
+            {
+                //logic
+            }
         }
 
         private void btnTrialBal_Click(object sender, EventArgs e)

@@ -436,6 +436,24 @@
     <Compile Include="TransationsUI.Designer.cs">
       <DependentUpon>TransationsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransionX\FilterContentDates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransionX\FilterContentDates.Designer.cs">
+      <DependentUpon>FilterContentDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransionX\FilterContentTerms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransionX\FilterContentTerms.Designer.cs">
+      <DependentUpon>FilterContentTerms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransionX\FrmFilterTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransionX\FrmFilterTransaction.Designer.cs">
+      <DependentUpon>FrmFilterTransaction.cs</DependentUpon>
+    </Compile>
     <Content Include="EschoolModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EschoolModel.Context.cs</LastGenOutput>
@@ -611,6 +629,15 @@
     <EmbeddedResource Include="TransationsUI.resx">
       <DependentUpon>TransationsUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransionX\FilterContentDates.resx">
+      <DependentUpon>FilterContentDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransionX\FilterContentTerms.resx">
+      <DependentUpon>FilterContentTerms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransionX\FrmFilterTransaction.resx">
+      <DependentUpon>FrmFilterTransaction.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="EschoolModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EschoolModel.Designer.cs</LastGenOutput>
@@ -705,9 +732,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TransionX\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
