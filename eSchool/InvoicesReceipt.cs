@@ -36,11 +36,11 @@ namespace eSchool
         private int GYear;
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            GridIconPicker(gData.Rows[e.RowIndex].Cells[6], gData.Rows[e.RowIndex].Cells[3], gData.Rows[e.RowIndex].Cells[4]);
+            GridIconPicker(gData.Rows[e.RowIndex].Cells[6], gData.Rows[e.RowIndex].Cells[3], gData.Rows[e.RowIndex].Cells[4],e);
             lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
-        private void GridIconPicker(DataGridViewCell rPic, DataGridViewCell amountpaid, DataGridViewCell balance)
+        private void GridIconPicker(DataGridViewCell rPic, DataGridViewCell amountpaid, DataGridViewCell balance, DataGridViewRowsAddedEventArgs e)
         {
             string test = (string)amountpaid.Value;
             string t1 = test.Remove(0, 4);
@@ -58,6 +58,12 @@ namespace eSchool
             if (cAmount == 0 & cBalance > 0)
             {
                 rPic.Value = StatusGrid._1unpaid;
+
+                this.gData.Rows[e.RowIndex].Cells[1].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[2].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[3].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[4].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[5].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
             }
             else if (cAmount > 0 & cBalance > 0)
             {
@@ -87,6 +93,9 @@ namespace eSchool
 
         private async void GridInitializer()
         {
+            //change color of INX to green
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
+
             var invoiceListAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
@@ -184,6 +193,8 @@ namespace eSchool
 
         public async void GridInitilizer(List<int> selTerms, int filYear)
         {
+            //change color of INX to green
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
             var invoiceListAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())

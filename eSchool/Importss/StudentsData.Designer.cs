@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentsData));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentsData));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbSearch = new MetroFramework.Controls.MetroTextBox();
             this.lblForm = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnFilter = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnAddStudent = new Bunifu.Framework.UI.BunifuThinButton2();
             this.paneldata = new System.Windows.Forms.Panel();
             this.gData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
@@ -47,15 +50,12 @@
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModeOfLearning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnFilter = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnAddStudent = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCards1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.paneldata.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -154,105 +154,6 @@
             this.lblRowCount.Text = "0";
             this.lblRowCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // paneldata
-            // 
-            this.paneldata.Controls.Add(this.gData);
-            this.paneldata.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.paneldata.Location = new System.Drawing.Point(0, 70);
-            this.paneldata.Name = "paneldata";
-            this.paneldata.Size = new System.Drawing.Size(798, 337);
-            this.paneldata.TabIndex = 2;
-            // 
-            // gData
-            // 
-            this.gData.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.gData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnPic,
-            this.ColumnAdminNo,
-            this.ColumnName,
-            this.Form,
-            this.Class,
-            this.ModeOfLearning,
-            this.ColumnDel});
-            this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gData.DoubleBuffered = true;
-            this.gData.EnableHeadersVisualStyles = false;
-            this.gData.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.gData.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.gData.Location = new System.Drawing.Point(0, 0);
-            this.gData.MultiSelect = false;
-            this.gData.Name = "gData";
-            this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gData.RowHeadersVisible = false;
-            this.gData.RowTemplate.Height = 30;
-            this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gData.Size = new System.Drawing.Size(798, 337);
-            this.gData.TabIndex = 0;
-            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
-            this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
-            // 
-            // ColumnPic
-            // 
-            this.ColumnPic.HeaderText = "";
-            this.ColumnPic.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnPic.Name = "ColumnPic";
-            this.ColumnPic.ReadOnly = true;
-            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ColumnAdminNo
-            // 
-            this.ColumnAdminNo.HeaderText = "Admin No";
-            this.ColumnAdminNo.Name = "ColumnAdminNo";
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.Name = "ColumnName";
-            // 
-            // Form
-            // 
-            this.Form.HeaderText = "Form";
-            this.Form.Name = "Form";
-            this.Form.ReadOnly = true;
-            // 
-            // Class
-            // 
-            this.Class.HeaderText = "Class";
-            this.Class.Name = "Class";
-            this.Class.ReadOnly = true;
-            // 
-            // ModeOfLearning
-            // 
-            this.ModeOfLearning.HeaderText = "Mode Of Learning";
-            this.ModeOfLearning.Name = "ModeOfLearning";
-            this.ModeOfLearning.ReadOnly = true;
-            // 
-            // ColumnDel
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnDel.HeaderText = "";
-            this.ColumnDel.Name = "ColumnDel";
-            this.ColumnDel.ReadOnly = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -315,6 +216,107 @@
             this.btnAddStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
+            // paneldata
+            // 
+            this.paneldata.Controls.Add(this.gData);
+            this.paneldata.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paneldata.Location = new System.Drawing.Point(0, 70);
+            this.paneldata.Name = "paneldata";
+            this.paneldata.Size = new System.Drawing.Size(798, 337);
+            this.paneldata.TabIndex = 2;
+            // 
+            // gData
+            // 
+            this.gData.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.gData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnPic,
+            this.ColumnAdminNo,
+            this.ColumnName,
+            this.Form,
+            this.Class,
+            this.ModeOfLearning,
+            this.ColumnDel});
+            this.gData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gData.DoubleBuffered = true;
+            this.gData.EnableHeadersVisualStyles = false;
+            this.gData.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.gData.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.gData.Location = new System.Drawing.Point(0, 0);
+            this.gData.MultiSelect = false;
+            this.gData.Name = "gData";
+            this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gData.RowHeadersVisible = false;
+            this.gData.RowTemplate.Height = 30;
+            this.gData.RowTemplate.ReadOnly = true;
+            this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gData.Size = new System.Drawing.Size(798, 337);
+            this.gData.TabIndex = 0;
+            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
+            this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
+            // 
+            // ColumnPic
+            // 
+            this.ColumnPic.HeaderText = "";
+            this.ColumnPic.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnPic.Name = "ColumnPic";
+            this.ColumnPic.ReadOnly = true;
+            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ColumnAdminNo
+            // 
+            this.ColumnAdminNo.HeaderText = "Admin No";
+            this.ColumnAdminNo.Name = "ColumnAdminNo";
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.Name = "ColumnName";
+            // 
+            // Form
+            // 
+            this.Form.HeaderText = "Form";
+            this.Form.Name = "Form";
+            this.Form.ReadOnly = true;
+            // 
+            // Class
+            // 
+            this.Class.HeaderText = "Class";
+            this.Class.Name = "Class";
+            this.Class.ReadOnly = true;
+            // 
+            // ModeOfLearning
+            // 
+            this.ModeOfLearning.HeaderText = "Mode Of Learning";
+            this.ModeOfLearning.Name = "ModeOfLearning";
+            this.ModeOfLearning.ReadOnly = true;
+            // 
+            // ColumnDel
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnDel.HeaderText = "";
+            this.ColumnDel.Name = "ColumnDel";
+            this.ColumnDel.ReadOnly = true;
+            // 
             // StudentsData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,9 +331,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.paneldata.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -37,7 +37,7 @@ namespace eSchool.Importss
         private List<Student_Basic> studentListAsync;
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            GridIconPicker(this.gData.Rows[e.RowIndex].Cells[0], this.gData.Rows[e.RowIndex].Cells[1]);
+            GridIconPicker(this.gData.Rows[e.RowIndex].Cells[0], this.gData.Rows[e.RowIndex].Cells[1],e);
             this.gData.Rows[e.RowIndex].Cells[6].Value = GridIcon.Trash_Can_50px;
             //lblRowCount.Text = gData.RowCount.ToString();
             this.lblRowCount.Text = gData.Rows.Count.ToString();
@@ -45,6 +45,10 @@ namespace eSchool.Importss
 
         private void StudentsData_Load(object sender, EventArgs e)
         {
+            //UI code
+            //change color of Nos to green
+            gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
+
             GridInitilizer();
         }
 
@@ -61,6 +65,7 @@ namespace eSchool.Importss
 
         public async void GridInitilizer()
         {
+
             this.gData.Rows.Clear();
 
             if (studentListAsync == null)
@@ -102,7 +107,7 @@ namespace eSchool.Importss
             return null;
         }
 
-        private async void GridIconPicker(DataGridViewCell rPic, DataGridViewCell adminNo)
+        private async void GridIconPicker(DataGridViewCell rPic, DataGridViewCell adminNo, DataGridViewRowsAddedEventArgs e)
         {
             Student_Basic stud = await StudFoundAsync(int.Parse(adminNo.Value.ToString()));
             if (stud != null)
@@ -114,6 +119,10 @@ namespace eSchool.Importss
                 else
                 {
                     rPic.Value = StatusGrid.Female_Profile_50px;
+
+                    //this.gData.Rows[e.RowIndex].Cells[2].Style = new DataGridViewCellStyle { ForeColor = Color.Blue };
+                    //this.gData.Rows[e.RowIndex].Cells[4].Style = new DataGridViewCellStyle { ForeColor = Color.Blue };
+                    //this.gData.Rows[e.RowIndex].Cells[5].Style = new DataGridViewCellStyle { ForeColor = Color.Blue };
                 }
             }
         }
@@ -196,6 +205,7 @@ namespace eSchool.Importss
                      Regex.IsMatch(s.Form.ToString(), tbSearch.Text, RegexOptions.IgnoreCase))
                      .OrderBy(t => t.Admin_No)
                      .ToList();
+
                 foreach (var cat in filList)
                 {
                     gData.Rows.Add(new string[]
@@ -231,6 +241,7 @@ namespace eSchool.Importss
                  Regex.IsMatch(s.Form.ToString(), tbSearch.Text, RegexOptions.IgnoreCase))
                  .OrderBy(t => t.Admin_No)
                  .ToList();
+
             foreach (var cat in filList)
             {
                 gData.Rows.Add(new string[]

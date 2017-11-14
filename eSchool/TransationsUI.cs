@@ -89,6 +89,9 @@ namespace eSchool
 
         private async void GridInitializer()
         {
+            //change color of TXN to green
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
+
             var transListAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
@@ -249,7 +252,7 @@ namespace eSchool
                         MessageBox.Show(exp.Message, "ClosingBalance error");
                     }
                 }
-            } 
+            }
             #endregion
         }
 
@@ -363,6 +366,15 @@ namespace eSchool
 
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
+            //change color of expense to red
+            if ((string)this.gData.Rows[e.RowIndex].Cells[1].Value == "Expense")
+            {
+                this.gData.Rows[e.RowIndex].Cells[1].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[2].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[3].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                this.gData.Rows[e.RowIndex].Cells[4].Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+            }          
+                //Color.FromArgb(31, 214, 233);
             this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
