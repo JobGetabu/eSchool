@@ -25,15 +25,38 @@ namespace eSchool.TransionX
                 }
                 return _instance;
             }
+            set
+            {
+                value = _instance;
+            }
         }
         public FilterContentDates()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
+        public DateTime startDate;
+        public DateTime endDate;
+
+        private void Nullify()
+        {
+            startDate = DateTime.Now;
+            endDate = DateTime.Now;
+
+        }
         private void FilterContentDates_Load(object sender, EventArgs e)
         {
+            Nullify();
+        }
 
+        private void DatepickerStart_onValueChanged(object sender, EventArgs e)
+        {
+            startDate = DatepickerStart.Value;
+        }
+
+        private void DatepickerEnd_onValueChanged(object sender, EventArgs e)
+        {
+            endDate = DatepickerEnd.Value;
         }
     }
 }

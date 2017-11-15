@@ -209,6 +209,10 @@ namespace eSchool
             //End UI Design code
 
             TabSwitcher(TransationsUI.Instance);
+
+            //refresh the transaction code pretty sensitive
+            TransationsUI tIns = TransationsUI.Instance;
+            tIns.Global_TransationsUI_Load();
         }
 
         private void btn_fees_Click(object sender, EventArgs e)

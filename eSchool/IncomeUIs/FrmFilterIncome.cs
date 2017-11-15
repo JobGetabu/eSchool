@@ -119,7 +119,7 @@ namespace eSchool.IncomeUIs
                 ListInit();
             }
 
-            if (selFilTerms.Count == -1)
+            if (selFilTerms.Count == 0)
             {
                 //TODO custom notification
                 MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -240,6 +240,7 @@ namespace eSchool
 
         private void lblTermSet(List<int> terms)
         {
+            lblT1.Text = ""; lblT2.Text = ""; lblT3.Text = "";
             foreach (var tm in terms)
             {
                 if (tm == 1)

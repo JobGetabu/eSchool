@@ -24,15 +24,65 @@ namespace eSchool.TransionX
                 }
                 return _instance;
             }
+            set
+            {
+                value = _instance;
+            }
         }
         public FilterContentTerms()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
+        
+        public List<int> selFilTerms;
 
+        public string trmslbl;
+
+        private void ListInit()
+        {
+            selFilTerms.Clear();
+            selFilTerms.Add(1); selFilTerms.Add(2); selFilTerms.Add(3);
+        }
+        private void Nullify()
+        {
+            trmslbl = "";
+            selFilTerms = new List<int>();
+
+        }
         private void FilterContentTerms_Load(object sender, EventArgs e)
         {
+            Nullify();
+            ListInit();
+        }
+        private void lblSetter(string tag, bool value)
+        {
+            if (value)
+            {
+                if (trmslbl.Contains(tag))
+                {
+                    trmslbl.Replace(tag, "");
+                }
+            }
+            else
+            {
+                if (!trmslbl.Contains(tag))
+                {
+                    trmslbl.Replace(tag, "");
+                }
+            }
+        }
 
+        private void Switch_OnValueChange(object sender, EventArgs e)
+        {
+            Bunifu.Framework.UI.BunifuiOSSwitch sw = sender as Bunifu.Framework.UI.BunifuiOSSwitch;
+            if (sw.Value)
+            {
+                selFilTerms.Add(int.Parse(sw.Tag.ToString()));
+            }
+            else
+            {
+                selFilTerms.Remove(int.Parse(sw.Tag.ToString()));
+            }
         }
     }
 }

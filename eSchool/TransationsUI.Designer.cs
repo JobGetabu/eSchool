@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransationsUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelTopLeft = new System.Windows.Forms.Panel();
@@ -47,6 +47,12 @@
             this.lblTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
+            this.lblDates = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnTrialBal = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblClosing = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblOpening = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblExpense = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -55,11 +61,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblncomes = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblClosing = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblOpening = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnTrialBal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelGrid = new System.Windows.Forms.Panel();
             this.gData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.ColumnTransNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +68,6 @@
             this.ColumnDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -204,7 +204,7 @@
             // panelTopRght
             // 
             this.panelTopRght.AutoSize = true;
-            this.panelTopRght.Controls.Add(this.bunifuCustomLabel2);
+            this.panelTopRght.Controls.Add(this.lblDates);
             this.panelTopRght.Controls.Add(this.btnTrialBal);
             this.panelTopRght.Controls.Add(this.lblClosing);
             this.panelTopRght.Controls.Add(this.bunifuCustomLabel4);
@@ -223,6 +223,106 @@
             this.panelTopRght.Name = "panelTopRght";
             this.panelTopRght.Size = new System.Drawing.Size(495, 100);
             this.panelTopRght.TabIndex = 0;
+            // 
+            // lblDates
+            // 
+            this.lblDates.AutoSize = true;
+            this.lblDates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.lblDates.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.lblDates.Location = new System.Drawing.Point(308, 51);
+            this.lblDates.Name = "lblDates";
+            this.lblDates.Size = new System.Drawing.Size(141, 16);
+            this.lblDates.TabIndex = 62;
+            this.lblDates.Text = "6 Oct 2017 to 6 Nov 2017";
+            this.lblDates.Visible = false;
+            // 
+            // btnTrialBal
+            // 
+            this.btnTrialBal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnTrialBal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrialBal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnTrialBal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTrialBal.BorderRadius = 5;
+            this.btnTrialBal.ButtonText = "   Trial Balance";
+            this.btnTrialBal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrialBal.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTrialBal.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnTrialBal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTrialBal.Iconimage")));
+            this.btnTrialBal.Iconimage_right = null;
+            this.btnTrialBal.Iconimage_right_Selected = null;
+            this.btnTrialBal.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnTrialBal.Iconimage_Selected")));
+            this.btnTrialBal.IconMarginLeft = 0;
+            this.btnTrialBal.IconMarginRight = 0;
+            this.btnTrialBal.IconRightVisible = true;
+            this.btnTrialBal.IconRightZoom = 0D;
+            this.btnTrialBal.IconVisible = true;
+            this.btnTrialBal.IconZoom = 50D;
+            this.btnTrialBal.IsTab = false;
+            this.btnTrialBal.Location = new System.Drawing.Point(282, 9);
+            this.btnTrialBal.Name = "btnTrialBal";
+            this.btnTrialBal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnTrialBal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnTrialBal.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnTrialBal.selected = false;
+            this.btnTrialBal.Size = new System.Drawing.Size(200, 38);
+            this.btnTrialBal.TabIndex = 80;
+            this.btnTrialBal.Text = "   Trial Balance";
+            this.btnTrialBal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTrialBal.Textcolor = System.Drawing.Color.White;
+            this.btnTrialBal.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrialBal.Click += new System.EventHandler(this.btnTrialBal_Click);
+            // 
+            // lblClosing
+            // 
+            this.lblClosing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblClosing.AutoSize = true;
+            this.lblClosing.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblClosing.ForeColor = System.Drawing.Color.White;
+            this.lblClosing.Location = new System.Drawing.Point(197, 49);
+            this.lblClosing.Name = "lblClosing";
+            this.lblClosing.Size = new System.Drawing.Size(47, 17);
+            this.lblClosing.TabIndex = 85;
+            this.lblClosing.Text = "KES 00";
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(149, 50);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(52, 16);
+            this.bunifuCustomLabel4.TabIndex = 84;
+            this.bunifuCustomLabel4.Text = "Closing :";
+            // 
+            // lblOpening
+            // 
+            this.lblOpening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOpening.AutoSize = true;
+            this.lblOpening.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblOpening.ForeColor = System.Drawing.Color.White;
+            this.lblOpening.Location = new System.Drawing.Point(67, 49);
+            this.lblOpening.Name = "lblOpening";
+            this.lblOpening.Size = new System.Drawing.Size(47, 17);
+            this.lblOpening.TabIndex = 83;
+            this.lblOpening.Text = "KES 00";
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(9, 50);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(62, 16);
+            this.bunifuCustomLabel6.TabIndex = 82;
+            this.bunifuCustomLabel6.Text = "Opening :";
             // 
             // lblExpense
             // 
@@ -335,93 +435,6 @@
             this.bunifuCustomLabel1.TabIndex = 58;
             this.bunifuCustomLabel1.Text = "Incomes :";
             // 
-            // lblClosing
-            // 
-            this.lblClosing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblClosing.AutoSize = true;
-            this.lblClosing.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblClosing.ForeColor = System.Drawing.Color.White;
-            this.lblClosing.Location = new System.Drawing.Point(197, 49);
-            this.lblClosing.Name = "lblClosing";
-            this.lblClosing.Size = new System.Drawing.Size(47, 17);
-            this.lblClosing.TabIndex = 85;
-            this.lblClosing.Text = "KES 00";
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(149, 50);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(52, 16);
-            this.bunifuCustomLabel4.TabIndex = 84;
-            this.bunifuCustomLabel4.Text = "Closing :";
-            // 
-            // lblOpening
-            // 
-            this.lblOpening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblOpening.AutoSize = true;
-            this.lblOpening.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblOpening.ForeColor = System.Drawing.Color.White;
-            this.lblOpening.Location = new System.Drawing.Point(67, 49);
-            this.lblOpening.Name = "lblOpening";
-            this.lblOpening.Size = new System.Drawing.Size(47, 17);
-            this.lblOpening.TabIndex = 83;
-            this.lblOpening.Text = "KES 00";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(9, 50);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(62, 16);
-            this.bunifuCustomLabel6.TabIndex = 82;
-            this.bunifuCustomLabel6.Text = "Opening :";
-            // 
-            // btnTrialBal
-            // 
-            this.btnTrialBal.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnTrialBal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTrialBal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.btnTrialBal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTrialBal.BorderRadius = 5;
-            this.btnTrialBal.ButtonText = "   Trial Balance";
-            this.btnTrialBal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTrialBal.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTrialBal.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTrialBal.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTrialBal.Iconimage")));
-            this.btnTrialBal.Iconimage_right = null;
-            this.btnTrialBal.Iconimage_right_Selected = null;
-            this.btnTrialBal.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnTrialBal.Iconimage_Selected")));
-            this.btnTrialBal.IconMarginLeft = 0;
-            this.btnTrialBal.IconMarginRight = 0;
-            this.btnTrialBal.IconRightVisible = true;
-            this.btnTrialBal.IconRightZoom = 0D;
-            this.btnTrialBal.IconVisible = true;
-            this.btnTrialBal.IconZoom = 50D;
-            this.btnTrialBal.IsTab = false;
-            this.btnTrialBal.Location = new System.Drawing.Point(282, 9);
-            this.btnTrialBal.Name = "btnTrialBal";
-            this.btnTrialBal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.btnTrialBal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnTrialBal.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnTrialBal.selected = false;
-            this.btnTrialBal.Size = new System.Drawing.Size(200, 38);
-            this.btnTrialBal.TabIndex = 80;
-            this.btnTrialBal.Text = "   Trial Balance";
-            this.btnTrialBal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrialBal.Textcolor = System.Drawing.Color.White;
-            this.btnTrialBal.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrialBal.Click += new System.EventHandler(this.btnTrialBal_Click);
-            // 
             // panelGrid
             // 
             this.panelGrid.Controls.Add(this.gData);
@@ -435,20 +448,20 @@
             // gData
             // 
             this.gData.AllowUserToAddRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.gData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTransNo,
@@ -457,14 +470,14 @@
             this.Form,
             this.Class});
             this.gData.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gData.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gData.DefaultCellStyle = dataGridViewCellStyle6;
             this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gData.DoubleBuffered = true;
             this.gData.EnableHeadersVisualStyles = false;
@@ -475,14 +488,14 @@
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gData.RowHeadersVisible = false;
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -495,8 +508,8 @@
             // 
             // ColumnTransNo
             // 
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ColumnTransNo.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ColumnTransNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnTransNo.FillWeight = 86.92893F;
             this.ColumnTransNo.HeaderText = "TXN #";
             this.ColumnTransNo.Name = "ColumnTransNo";
@@ -509,8 +522,8 @@
             // 
             // ColumnDetails
             // 
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnDetails.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDetails.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnDetails.FillWeight = 152.2843F;
             this.ColumnDetails.HeaderText = "Details";
             this.ColumnDetails.Name = "ColumnDetails";
@@ -525,24 +538,12 @@
             // 
             // Class
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Class.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Class.DefaultCellStyle = dataGridViewCellStyle5;
             this.Class.FillWeight = 86.92893F;
             this.Class.HeaderText = "Date";
             this.Class.Name = "Class";
             this.Class.ReadOnly = true;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(308, 51);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(141, 16);
-            this.bunifuCustomLabel2.TabIndex = 62;
-            this.bunifuCustomLabel2.Text = "6 Oct 2017 to 6 Nov 2017";
             // 
             // TransationsUI
             // 
@@ -602,6 +603,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn Form;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblDates;
     }
 }

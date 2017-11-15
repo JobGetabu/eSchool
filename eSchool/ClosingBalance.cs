@@ -16,8 +16,8 @@ namespace eSchool
     {
         public int Id { get; set; }
         public decimal Amount { get; set; }
-        public int Term { get; set; }
-        public int Year { get; set; }
-        public System.DateTime Date { get; set; }
+        public Nullable<int> Term { get; set; }
+        public Nullable<int> Year { get; set; }
+        public Nullable<int> Month { get; set; }
     }
 }

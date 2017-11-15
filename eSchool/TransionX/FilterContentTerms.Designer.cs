@@ -92,6 +92,7 @@
             this.switch3.TabIndex = 49;
             this.switch3.Tag = "3";
             this.switch3.Value = true;
+            this.switch3.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // switch2
             // 
@@ -107,6 +108,7 @@
             this.switch2.TabIndex = 48;
             this.switch2.Tag = "2";
             this.switch2.Value = true;
+            this.switch2.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // switch1
             // 
@@ -122,6 +124,7 @@
             this.switch1.TabIndex = 47;
             this.switch1.Tag = "1";
             this.switch1.Value = true;
+            this.switch1.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // FilterContentTerms
             // 
@@ -147,10 +150,10 @@
 
         private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switch3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switch2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuiOSSwitch switch1;
+        public Bunifu.Framework.UI.BunifuiOSSwitch switch3;
+        public Bunifu.Framework.UI.BunifuiOSSwitch switch2;
+        public Bunifu.Framework.UI.BunifuiOSSwitch switch1;
     }
 }

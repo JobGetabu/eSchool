@@ -32,7 +32,7 @@
         <EntityTypeShape EntityType="EschoolModel.Transation" Width="1.5" PointX="2.625" PointY="0.625" />
         <EntityTypeShape EntityType="EschoolModel.StudentImport" Width="1.5" PointX="4.625" PointY="0.625" />
         <AssociationConnector Association="EschoolModel.FK_GrpFeeSturucture" />
-        <EntityTypeShape EntityType="EschoolModel.ClosingBalance" Width="1.5" PointX="6.875" PointY="0.75" />
+        <EntityTypeShape EntityType="EschoolModel.ClosingBalance" Width="1.5" PointX="6.75" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

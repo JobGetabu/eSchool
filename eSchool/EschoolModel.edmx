@@ -19,9 +19,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Amount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="Term" Type="int" Nullable="false" />
-          <Property Name="Year" Type="int" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Term" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="int" />
         </EntityType>
         <EntityType Name="Expense">
           <Key>
@@ -827,9 +827,9 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Term" Type="Int32" Nullable="false" />
-          <Property Name="Year" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Term" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Month" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1021,7 +1021,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="ClosingBalances">
             <EntityTypeMapping TypeName="EschoolModel.ClosingBalance">
               <MappingFragment StoreEntitySet="ClosingBalances">
-                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
