@@ -76,6 +76,10 @@ namespace eSchool
 
             //TODO charts baby
             TabSwitcher(Charts.Instance);
+
+            //refresh chart
+            Charts c = Charts.Instance;
+            c.Global_Charts_Load();
         }
 
         private void SetToolTip(Control ctl)

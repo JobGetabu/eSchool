@@ -45,7 +45,6 @@ namespace eSchool
         private void bFClose_Click(object sender, EventArgs e)
         {
             this.Close();
-            Dispose();
         }
 
         private void bunifuFBSave_Click(object sender, EventArgs e)
