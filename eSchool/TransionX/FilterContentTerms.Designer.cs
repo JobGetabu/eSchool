@@ -139,7 +139,7 @@
             this.Controls.Add(this.switch1);
             this.Controls.Add(this.lblYear);
             this.Name = "FilterContentTerms";
-            this.Size = new System.Drawing.Size(264, 127);
+            this.Size = new System.Drawing.Size(264, 89);
             this.Load += new System.EventHandler(this.FilterContentTerms_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

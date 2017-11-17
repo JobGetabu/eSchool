@@ -125,8 +125,8 @@ namespace eSchool
 
         List<int> selTerms;
         int filYear;
-        DateTime startDate;
-        DateTime endDate;
+        DateTime selDate;
+
         private void btnFilter_Click(object sender, EventArgs e)
         {
             FrmFilterTransaction frm = FrmFilterTransaction.Instance;
@@ -150,18 +150,23 @@ namespace eSchool
                 else
                 {
                     //dates was selected
-                    startDate = frm.startDate;
-                    endDate = frm.endDate;
+                    selDate = frm.selDate;
+ 
 
                     lblDates.Visible = true;
-                    lblDates.Text = $"{startDate.ToString("dd MMM yyy")} to {endDate.ToString("dd MMM yyy")}";
+                    var firstDayOfMonth = new DateTime(selDate.Year, selDate.Month, 1);
+                    lblDates.Text = $"{firstDayOfMonth.ToString("dd MMM yyy")} to {selDate.ToString("dd MMM yyy")}";
 
                     //change label
+                    selTerms = new List<int>();
                     lblTermSet(selTerms);
+                    filYear = frm.selFilYear;
                     this.lblYear.Text = $"Year: {filYear.ToString()}";//Year: 2017
                     lblT1.Text = ""; lblT2.Text = ""; lblT3.Text = "";
 
                     //TODO overloaded
+                    TransCashlbl(selDate, filYear, true);
+                    GridInitializer(selDate, filYear);
                 }
             }
 
@@ -290,7 +295,7 @@ namespace eSchool
                     curClosingBalance.Term = GTerm;
                     curClosingBalance.Year = GYear;
                     curClosingBalance.Month = null;
-                    
+
 
                     context.Entry<ClosingBalance>(curClosingBalance).State = EntityState.Modified;
                     try
@@ -310,8 +315,8 @@ namespace eSchool
                         Term = GTerm,
                         Year = GYear,
                         Month = null
-                        
-                };
+
+                    };
                     context.ClosingBalances.Add(newCloseBal);
                     try
                     {
@@ -579,7 +584,7 @@ namespace eSchool
                         curClosingBalance.Term = GTerm;
                         curClosingBalance.Year = GYear;
                         curClosingBalance.Month = null;
-                        
+
 
                         context.Entry<ClosingBalance>(curClosingBalance).State = EntityState.Modified;
                         try
@@ -598,8 +603,8 @@ namespace eSchool
                             Amount = closingBal,
                             Term = GTerm,
                             Year = GYear,
-                            Month=null
-                    };
+                            Month = null
+                        };
                         context.ClosingBalances.Add(newCloseBal);
                         try
                         {
@@ -646,31 +651,31 @@ namespace eSchool
         }
 
 
-        private async void TransCashlbl(DateTime datePicked,int year, bool filtered)
+        private async void TransCashlbl(DateTime datePicked, int year, bool filtered)
         {
 
-                #region lbl_income&lbl_expense
-                var myIncomes = await Task.Factory.StartNew(() =>
+            #region lbl_income&lbl_expense
+            var myIncomes = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
                 {
-                    using (var context = new EschoolEntities())
-                    {
-                        return context.Incomes
-                        .Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked))
-                        .ToList();
-                    }
-                });
-                decimal totalIncome = myIncomes.Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked)).Sum(x => x.Amount);
+                    return context.Incomes
+                    .Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked))
+                    .ToList();
+                }
+            });
+            decimal totalIncome = myIncomes.Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked)).Sum(x => x.Amount);
 
-                var myFees = await Task.Factory.StartNew(() =>
+            var myFees = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
                 {
-                    using (var context = new EschoolEntities())
-                    {
-                        return context.Fees
-                               .Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked))
-                               .ToList();
-                    }
-                });
-                decimal totalFee = myFees.Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked)).Sum(x => x.Amount_Paid);
+                    return context.Fees
+                           .Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked))
+                           .ToList();
+                }
+            });
+            decimal totalFee = myFees.Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked)).Sum(x => x.Amount_Paid);
 
             this.lblncomes.Text = $"KES {String.Format("{0:0,0}", totalIncome + totalFee)}";
 
@@ -683,7 +688,7 @@ namespace eSchool
                         .ToList();
                     }
                 });
-                decimal totalExpenses = myExpenses.Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked)).Sum(x => x.Amount);
+            decimal totalExpenses = myExpenses.Where(t => (t.Date.Month == datePicked.Month) & (t.Date == datePicked | t.Date < datePicked)).Sum(x => x.Amount);
 
             this.lblExpense.Text = $"KES {String.Format("{0:0,0}", totalExpenses)}";
             #endregion
@@ -691,76 +696,76 @@ namespace eSchool
             #region lbl_opening&lbl_closing_Balance
 
 
-            ClosingBalance prevClosingBalance = await PrevPeriodClosingBal(datePicked.Month, year,filtered);
-                decimal openingBal = 0;
-                if (prevClosingBalance != null)
+            ClosingBalance prevClosingBalance = await checkPeriodClosingBal(datePicked.Month, year, filtered);
+            decimal openingBal = 0;
+            if (prevClosingBalance != null)
+            {
+                openingBal = prevClosingBalance.Amount;
+            }
+            else
+            {
+                if (Properties.Settings.Default.FirstInstallUse)
                 {
-                    openingBal = prevClosingBalance.Amount;
+                    openingBal = Properties.Settings.Default.OpeningBalance;
+                    //this condition code is not to run again
+                    Properties.Settings.Default.FirstInstallUse = false;
+                    Properties.Settings.Default.Save();
+                }
+            }
+
+
+            this.lblOpening.Text = $"KES {String.Format("{0:0,0}", openingBal)}";
+
+            decimal closingBal = openingBal + ((totalIncome + totalFee) - totalExpenses);
+
+            this.lblClosing.Text = $"KES {String.Format("{0:0,0}", closingBal)}";
+
+            ClosingBalance curClosingBalance = await ThisPeriodClosingBal(datePicked.Month, year,filtered);
+            using (var context = new EschoolEntities())
+            {
+
+                if (curClosingBalance != null)
+                {
+                    curClosingBalance.Amount = closingBal;
+                    curClosingBalance.Term = 0;
+                    curClosingBalance.Year = year;
+                    curClosingBalance.Month = datePicked.Month;
+
+                    context.Entry<ClosingBalance>(curClosingBalance).State = EntityState.Modified;
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message, "ClosingBalance error");
+                    }
                 }
                 else
                 {
-                    if (Properties.Settings.Default.FirstInstallUse)
+                    ClosingBalance newCloseBal = new ClosingBalance()
                     {
-                        openingBal = Properties.Settings.Default.OpeningBalance;
-                        //this condition code is not to run again
-                        Properties.Settings.Default.FirstInstallUse = false;
-                        Properties.Settings.Default.Save();
+                        Amount = closingBal,
+                        Term = 0,
+                        Year = year,
+                        Month = datePicked.Month
+                    };
+                    context.ClosingBalances.Add(newCloseBal);
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message, "ClosingBalance error");
                     }
                 }
-
-
-                this.lblOpening.Text = $"KES {String.Format("{0:0,0}", openingBal)}";
-
-                decimal closingBal = openingBal + ((totalIncome + totalFee) - totalExpenses);
-
-                this.lblClosing.Text = $"KES {String.Format("{0:0,0}", closingBal)}";
-
-                ClosingBalance curClosingBalance = await checkPeriodClosingBal(datePicked.Month, year);
-                using (var context = new EschoolEntities())
-                {
-
-                    if (curClosingBalance != null)
-                    {
-                        curClosingBalance.Amount = closingBal;
-                        curClosingBalance.Term = 0;
-                        curClosingBalance.Year = 0;
-                        curClosingBalance.Month = DateTime.Now.Month;
-
-                        context.Entry<ClosingBalance>(curClosingBalance).State = EntityState.Modified;
-                        try
-                        {
-                            context.SaveChanges();
-                        }
-                        catch (Exception exp)
-                        {
-                            MessageBox.Show(exp.Message, "ClosingBalance error");
-                        }
-                    }
-                    else
-                    {
-                        ClosingBalance newCloseBal = new ClosingBalance()
-                        {
-                            Amount = closingBal,
-                            Term = GTerm,
-                            Year = GYear,
-                            Month = DateTime.Now.Month
-                        };
-                        context.ClosingBalances.Add(newCloseBal);
-                        try
-                        {
-                            context.SaveChanges();
-                        }
-                        catch (Exception exp)
-                        {
-                            MessageBox.Show(exp.Message, "ClosingBalance error");
-                        }
-                    }
-                }
-                #endregion 
+            }
+            #endregion
         }
 
 
-        private async Task<ClosingBalance> PrevPeriodClosingBal(int month, int year,bool fil)
+        private async Task<ClosingBalance> ThisPeriodClosingBal(int month, int year, bool fil)
         {
             var myCloseBalListAsync = await Task.Factory.StartNew(() =>
             {
@@ -781,7 +786,7 @@ namespace eSchool
 
             return null;
         }
-        private async Task<ClosingBalance> checkPeriodClosingBal(int month,int year)
+        private async Task<ClosingBalance> checkPeriodClosingBal(int month, int year, bool fil)
         {
             var myCloseBalListAsync = await Task.Factory.StartNew(() =>
             {
@@ -802,15 +807,41 @@ namespace eSchool
             else
             {
                 checkYear = year;
-                checkMonth = month-1;
+                checkMonth = month - 1;
             }
 
             if (myCloseBalListAsync != null)
             {
-                var l = myCloseBalListAsync.OrderBy(t => t.Month).Where(t => t.Month == checkMonth  & t.Year == checkYear).ToList();
-                return l.First();
+                var l = myCloseBalListAsync.OrderBy(t => t.Month).Where(t => t.Month == checkMonth & t.Year == checkYear).ToList();
+                return l.FirstOrDefault();
             }
             return null;
+        }
+
+        private async void GridInitializer(DateTime selDate,int year)
+        {
+            var transListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Transations
+                    .Where(x => x.Date.Month == selDate.Month & x.Year == year)
+                    .ToList();
+                }
+            });
+
+            gData.Rows.Clear();
+            foreach (var item in transListAsync)
+            {
+                gData.Rows.Add(new string[]
+                    {
+                           item.TransactionNo,
+                           item.Type,
+                           item.Details,
+                           $"KES {String.Format("{0:0,0}", item.Amount)}",
+                           item.Date.ToString("dd MMM yyy")
+                    });
+            }
         }
     }
 }

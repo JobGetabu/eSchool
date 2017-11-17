@@ -35,13 +35,11 @@ namespace eSchool.TransionX
             InitializeComponent();          
         }
 
-        public DateTime startDate;
-        public DateTime endDate;
+        public DateTime selDate;
 
         private void Nullify()
         {
-            startDate = DateTime.Now;
-            endDate = DateTime.Now;
+            selDate = DateTime.Now;
 
         }
         private void FilterContentDates_Load(object sender, EventArgs e)
@@ -51,12 +49,7 @@ namespace eSchool.TransionX
 
         private void DatepickerStart_onValueChanged(object sender, EventArgs e)
         {
-            startDate = DatepickerStart.Value;
-        }
-
-        private void DatepickerEnd_onValueChanged(object sender, EventArgs e)
-        {
-            endDate = DatepickerEnd.Value;
+            selDate = DatepickerStart.Value;
         }
     }
 }

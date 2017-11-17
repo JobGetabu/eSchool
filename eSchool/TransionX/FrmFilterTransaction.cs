@@ -69,8 +69,7 @@ namespace eSchool.TransionX
         private int close;
         public  int selFilYear;
         public  List<int> selFilTerms;
-        public  DateTime startDate;
-        public  DateTime endDate;
+        public  DateTime selDate;
         public  string trmslbl;
         public  bool IsTerms; 
         private void Nullify()
@@ -79,8 +78,7 @@ namespace eSchool.TransionX
             selFilYear = 0;
             selFilTerms = new List<int>();
 
-            startDate = DateTime.Now;
-            endDate = DateTime.Now;
+            selDate = DateTime.Now;
             IsTerms = false;
         }
 
@@ -132,8 +130,7 @@ namespace eSchool.TransionX
             selFilTerms = frmTerm.selFilTerms;
 
             FilterContentDates frmDates = FilterContentDates.Instance;
-            startDate = frmDates.startDate;
-            endDate = frmDates.endDate;
+            selDate = frmDates.selDate;
            
             if (frmTerm.switch1.Value & frmTerm.switch2.Value & frmTerm.switch3.Value)
             {

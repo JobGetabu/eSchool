@@ -1,4 +1,6 @@
-﻿namespace eSchool.TransionX
+﻿using System;
+
+namespace eSchool.TransionX
 {
     partial class FilterContentDates
     {
@@ -29,7 +31,6 @@
         private void InitializeComponent()
         {
             this.DatepickerStart = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.DatepickerEnd = new Bunifu.Framework.UI.BunifuDatepicker();
             this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.SuspendLayout();
             // 
@@ -40,26 +41,12 @@
             this.DatepickerStart.ForeColor = System.Drawing.Color.White;
             this.DatepickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DatepickerStart.FormatCustom = "dd MMM yyy";
-            this.DatepickerStart.Location = new System.Drawing.Point(3, 30);
+            this.DatepickerStart.Location = new System.Drawing.Point(3, 34);
             this.DatepickerStart.Name = "DatepickerStart";
             this.DatepickerStart.Size = new System.Drawing.Size(258, 36);
             this.DatepickerStart.TabIndex = 0;
-            this.DatepickerStart.Value = new System.DateTime(2017, 11, 15, 0, 45, 11, 513);
+            this.DatepickerStart.Value = DateTime.Now;
             this.DatepickerStart.onValueChanged += new System.EventHandler(this.DatepickerStart_onValueChanged);
-            // 
-            // DatepickerEnd
-            // 
-            this.DatepickerEnd.BackColor = System.Drawing.Color.SeaGreen;
-            this.DatepickerEnd.BorderRadius = 0;
-            this.DatepickerEnd.ForeColor = System.Drawing.Color.White;
-            this.DatepickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatepickerEnd.FormatCustom = "dd MMM yyy";
-            this.DatepickerEnd.Location = new System.Drawing.Point(3, 78);
-            this.DatepickerEnd.Name = "DatepickerEnd";
-            this.DatepickerEnd.Size = new System.Drawing.Size(258, 36);
-            this.DatepickerEnd.TabIndex = 1;
-            this.DatepickerEnd.Value = new System.DateTime(2017, 11, 15, 0, 45, 11, 513);
-            this.DatepickerEnd.onValueChanged += new System.EventHandler(this.DatepickerEnd_onValueChanged);
             // 
             // lblYear
             // 
@@ -67,9 +54,9 @@
             this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblYear.Location = new System.Drawing.Point(14, 6);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(75, 17);
+            this.lblYear.Size = new System.Drawing.Size(111, 17);
             this.lblYear.TabIndex = 43;
-            this.lblYear.Text = "Pick Dates";
+            this.lblYear.Text = "Pick Month Date";
             // 
             // FilterContentDates
             // 
@@ -77,10 +64,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.lblYear);
-            this.Controls.Add(this.DatepickerEnd);
             this.Controls.Add(this.DatepickerStart);
             this.Name = "FilterContentDates";
-            this.Size = new System.Drawing.Size(264, 127);
+            this.Size = new System.Drawing.Size(264, 89);
             this.Load += new System.EventHandler(this.FilterContentDates_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,7 +76,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuDatepicker DatepickerStart;
-        private Bunifu.Framework.UI.BunifuDatepicker DatepickerEnd;
         private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
     }
 }
