@@ -30,5 +30,27 @@ namespace eSchool.Dash
         {
             InitializeComponent();
         }
+
+        int GTerm = Properties.Settings.Default.CurrentTerm;
+        int GYear = Properties.Settings.Default.CurrentYear;
+        private void TransOverview_Load(object sender, EventArgs e)
+        {
+            TransListAsync();
+        }
+
+        private async void TransListAsync()
+        {
+            var transListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Transations
+                    .Where(t => t.Term == GTerm & t.Year == GYear)
+                    .ToList();
+                }
+            });
+
+            lblTrans.Text = (transListAsync.Count() + 1).ToString();
+        }
     }
 }

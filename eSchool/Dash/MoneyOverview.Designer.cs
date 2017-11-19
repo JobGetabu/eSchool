@@ -122,9 +122,9 @@
             this.lblstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(202)))), ((int)(((byte)(204)))));
             this.lblstatus.Location = new System.Drawing.Point(63, 11);
             this.lblstatus.Name = "lblstatus";
-            this.lblstatus.Size = new System.Drawing.Size(67, 28);
+            this.lblstatus.Size = new System.Drawing.Size(23, 28);
             this.lblstatus.TabIndex = 7;
-            this.lblstatus.Text = "85236";
+            this.lblstatus.Text = "0";
             // 
             // bunifuImageButton4
             // 
@@ -167,9 +167,9 @@
             this.lblExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(187)))));
             this.lblExpense.Location = new System.Drawing.Point(62, 13);
             this.lblExpense.Name = "lblExpense";
-            this.lblExpense.Size = new System.Drawing.Size(68, 28);
+            this.lblExpense.Size = new System.Drawing.Size(23, 28);
             this.lblExpense.TabIndex = 7;
-            this.lblExpense.Text = "35624";
+            this.lblExpense.Text = "0";
             // 
             // bunifuImageButton3
             // 
@@ -212,9 +212,9 @@
             this.lblIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
             this.lblIncome.Location = new System.Drawing.Point(63, 9);
             this.lblIncome.Name = "lblIncome";
-            this.lblIncome.Size = new System.Drawing.Size(67, 28);
+            this.lblIncome.Size = new System.Drawing.Size(23, 28);
             this.lblIncome.TabIndex = 4;
-            this.lblIncome.Text = "85236";
+            this.lblIncome.Text = "0";
             // 
             // bunifuImageButton2
             // 
@@ -257,9 +257,9 @@
             this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
             this.lblBalance.Location = new System.Drawing.Point(62, 11);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(68, 28);
+            this.lblBalance.Size = new System.Drawing.Size(23, 28);
             this.lblBalance.TabIndex = 1;
-            this.lblBalance.Text = "65452";
+            this.lblBalance.Text = "0";
             // 
             // bunifuImageButton1
             // 

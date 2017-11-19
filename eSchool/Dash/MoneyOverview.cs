@@ -34,7 +34,7 @@ namespace eSchool.Dash
         int GYear = Properties.Settings.Default.CurrentYear;
         private void MoneyOverview_Load(object sender, EventArgs e)
         {
-
+            DashUISet();
         }
 
         List<FeesRequiredPerTerm> fRPTerms;

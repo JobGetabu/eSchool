@@ -191,6 +191,7 @@
             this.Controls.Add(this.bunifuCards1);
             this.Name = "ReceiptOverview";
             this.Size = new System.Drawing.Size(230, 135);
+            this.Load += new System.EventHandler(this.ReceiptOverview_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.tableLPanelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
