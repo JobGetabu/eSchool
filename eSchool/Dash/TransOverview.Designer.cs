@@ -53,7 +53,7 @@
             this.bunifuCards1.Location = new System.Drawing.Point(0, 0);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.ShadowDepth = 30;
             this.bunifuCards1.Size = new System.Drawing.Size(230, 135);
             this.bunifuCards1.TabIndex = 1;
             // 

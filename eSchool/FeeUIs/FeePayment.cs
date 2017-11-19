@@ -189,7 +189,7 @@ namespace eSchool
                         return z;
                     }
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
                     //MessageBox.Show(exp.Message);
                 }

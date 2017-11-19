@@ -32,30 +32,30 @@
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelStatus = new System.Windows.Forms.Panel();
-            this.panelExpense = new System.Windows.Forms.Panel();
-            this.panelIncome = new System.Windows.Forms.Panel();
-            this.panelBal = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblstatus = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelExpense = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblExpense = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelIncome = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblIncome = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelBal = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelStatus.SuspendLayout();
-            this.panelExpense.SuspendLayout();
-            this.panelIncome.SuspendLayout();
-            this.panelBal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            this.panelExpense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            this.panelIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            this.panelBal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.bunifuCards1.Location = new System.Drawing.Point(0, 0);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.ShadowDepth = 30;
             this.bunifuCards1.Size = new System.Drawing.Size(419, 135);
             this.bunifuCards1.TabIndex = 0;
             // 
@@ -97,108 +97,12 @@
             // panelStatus
             // 
             this.panelStatus.Controls.Add(this.bunifuCustomLabel7);
-            this.panelStatus.Controls.Add(this.bunifuCustomLabel8);
+            this.panelStatus.Controls.Add(this.lblstatus);
             this.panelStatus.Controls.Add(this.bunifuImageButton4);
             this.panelStatus.Location = new System.Drawing.Point(213, 71);
             this.panelStatus.Name = "panelStatus";
             this.panelStatus.Size = new System.Drawing.Size(200, 60);
             this.panelStatus.TabIndex = 3;
-            // 
-            // panelExpense
-            // 
-            this.panelExpense.Controls.Add(this.bunifuCustomLabel5);
-            this.panelExpense.Controls.Add(this.bunifuCustomLabel6);
-            this.panelExpense.Controls.Add(this.bunifuImageButton3);
-            this.panelExpense.Location = new System.Drawing.Point(4, 71);
-            this.panelExpense.Name = "panelExpense";
-            this.panelExpense.Size = new System.Drawing.Size(200, 60);
-            this.panelExpense.TabIndex = 2;
-            // 
-            // panelIncome
-            // 
-            this.panelIncome.Controls.Add(this.bunifuCustomLabel3);
-            this.panelIncome.Controls.Add(this.bunifuCustomLabel4);
-            this.panelIncome.Controls.Add(this.bunifuImageButton2);
-            this.panelIncome.Location = new System.Drawing.Point(213, 4);
-            this.panelIncome.Name = "panelIncome";
-            this.panelIncome.Size = new System.Drawing.Size(200, 60);
-            this.panelIncome.TabIndex = 1;
-            // 
-            // panelBal
-            // 
-            this.panelBal.Controls.Add(this.bunifuCustomLabel2);
-            this.panelBal.Controls.Add(this.bunifuCustomLabel1);
-            this.panelBal.Controls.Add(this.bunifuImageButton1);
-            this.panelBal.Location = new System.Drawing.Point(4, 4);
-            this.panelBal.Name = "panelBal";
-            this.panelBal.Size = new System.Drawing.Size(200, 60);
-            this.panelBal.TabIndex = 0;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(62, 11);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(68, 28);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "65452";
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 7.75F);
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(62, 41);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(56, 16);
-            this.bunifuCustomLabel2.TabIndex = 2;
-            this.bunifuCustomLabel2.Text = "BALANCE";
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 7.75F);
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(63, 42);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(55, 16);
-            this.bunifuCustomLabel3.TabIndex = 5;
-            this.bunifuCustomLabel3.Text = "INCOME";
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(63, 9);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(67, 28);
-            this.bunifuCustomLabel4.TabIndex = 4;
-            this.bunifuCustomLabel4.Text = "85236";
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 7.75F);
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(62, 43);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(54, 16);
-            this.bunifuCustomLabel5.TabIndex = 8;
-            this.bunifuCustomLabel5.Text = "EXPENSE";
-            // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(187)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(62, 13);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(68, 28);
-            this.bunifuCustomLabel6.TabIndex = 7;
-            this.bunifuCustomLabel6.Text = "35624";
             // 
             // bunifuCustomLabel7
             // 
@@ -211,16 +115,16 @@
             this.bunifuCustomLabel7.TabIndex = 8;
             this.bunifuCustomLabel7.Text = "ACCOUNT STATUS";
             // 
-            // bunifuCustomLabel8
+            // lblstatus
             // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(202)))), ((int)(((byte)(204)))));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(63, 11);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(67, 28);
-            this.bunifuCustomLabel8.TabIndex = 7;
-            this.bunifuCustomLabel8.Text = "85236";
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
+            this.lblstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(202)))), ((int)(((byte)(204)))));
+            this.lblstatus.Location = new System.Drawing.Point(63, 11);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(67, 28);
+            this.lblstatus.TabIndex = 7;
+            this.lblstatus.Text = "85236";
             // 
             // bunifuImageButton4
             // 
@@ -235,6 +139,38 @@
             this.bunifuImageButton4.TabStop = false;
             this.bunifuImageButton4.Zoom = 5;
             // 
+            // panelExpense
+            // 
+            this.panelExpense.Controls.Add(this.bunifuCustomLabel5);
+            this.panelExpense.Controls.Add(this.lblExpense);
+            this.panelExpense.Controls.Add(this.bunifuImageButton3);
+            this.panelExpense.Location = new System.Drawing.Point(4, 71);
+            this.panelExpense.Name = "panelExpense";
+            this.panelExpense.Size = new System.Drawing.Size(200, 60);
+            this.panelExpense.TabIndex = 2;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 7.75F);
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(62, 43);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(54, 16);
+            this.bunifuCustomLabel5.TabIndex = 8;
+            this.bunifuCustomLabel5.Text = "EXPENSE";
+            // 
+            // lblExpense
+            // 
+            this.lblExpense.AutoSize = true;
+            this.lblExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
+            this.lblExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(187)))));
+            this.lblExpense.Location = new System.Drawing.Point(62, 13);
+            this.lblExpense.Name = "lblExpense";
+            this.lblExpense.Size = new System.Drawing.Size(68, 28);
+            this.lblExpense.TabIndex = 7;
+            this.lblExpense.Text = "35624";
+            // 
             // bunifuImageButton3
             // 
             this.bunifuImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(187)))));
@@ -248,6 +184,38 @@
             this.bunifuImageButton3.TabStop = false;
             this.bunifuImageButton3.Zoom = 5;
             // 
+            // panelIncome
+            // 
+            this.panelIncome.Controls.Add(this.bunifuCustomLabel3);
+            this.panelIncome.Controls.Add(this.lblIncome);
+            this.panelIncome.Controls.Add(this.bunifuImageButton2);
+            this.panelIncome.Location = new System.Drawing.Point(213, 4);
+            this.panelIncome.Name = "panelIncome";
+            this.panelIncome.Size = new System.Drawing.Size(200, 60);
+            this.panelIncome.TabIndex = 1;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 7.75F);
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(63, 42);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(55, 16);
+            this.bunifuCustomLabel3.TabIndex = 5;
+            this.bunifuCustomLabel3.Text = "INCOME";
+            // 
+            // lblIncome
+            // 
+            this.lblIncome.AutoSize = true;
+            this.lblIncome.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
+            this.lblIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
+            this.lblIncome.Location = new System.Drawing.Point(63, 9);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(67, 28);
+            this.lblIncome.TabIndex = 4;
+            this.lblIncome.Text = "85236";
+            // 
             // bunifuImageButton2
             // 
             this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(196)))), ((int)(((byte)(153)))));
@@ -260,6 +228,38 @@
             this.bunifuImageButton2.TabIndex = 3;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 5;
+            // 
+            // panelBal
+            // 
+            this.panelBal.Controls.Add(this.bunifuCustomLabel2);
+            this.panelBal.Controls.Add(this.lblBalance);
+            this.panelBal.Controls.Add(this.bunifuImageButton1);
+            this.panelBal.Location = new System.Drawing.Point(4, 4);
+            this.panelBal.Name = "panelBal";
+            this.panelBal.Size = new System.Drawing.Size(200, 60);
+            this.panelBal.TabIndex = 0;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 7.75F);
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(62, 41);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(56, 16);
+            this.bunifuCustomLabel2.TabIndex = 2;
+            this.bunifuCustomLabel2.Text = "BALANCE";
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
+            this.lblBalance.Location = new System.Drawing.Point(62, 11);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(68, 28);
+            this.lblBalance.TabIndex = 1;
+            this.lblBalance.Text = "65452";
             // 
             // bunifuImageButton1
             // 
@@ -282,19 +282,20 @@
             this.Controls.Add(this.bunifuCards1);
             this.Name = "MoneyOverview";
             this.Size = new System.Drawing.Size(419, 135);
+            this.Load += new System.EventHandler(this.MoneyOverview_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelStatus.ResumeLayout(false);
             this.panelStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             this.panelExpense.ResumeLayout(false);
             this.panelExpense.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.panelIncome.ResumeLayout(false);
             this.panelIncome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panelBal.ResumeLayout(false);
             this.panelBal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
@@ -309,16 +310,16 @@
         private System.Windows.Forms.Panel panelIncome;
         private System.Windows.Forms.Panel panelBal;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblstatus;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblExpense;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblIncome;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblBalance;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }

@@ -118,11 +118,23 @@
     <Compile Include="Dash\MoneyOverview.Designer.cs">
       <DependentUpon>MoneyOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dash\MonthlyOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dash\MonthlyOverview.Designer.cs">
+      <DependentUpon>MonthlyOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dash\ReceiptOverview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Dash\ReceiptOverview.Designer.cs">
       <DependentUpon>ReceiptOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dash\TermlyOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dash\TermlyOverview.Designer.cs">
+      <DependentUpon>TermlyOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Dash\TransOverview.cs">
       <SubType>UserControl</SubType>
@@ -511,8 +523,14 @@
     <EmbeddedResource Include="Dash\MoneyOverview.resx">
       <DependentUpon>MoneyOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dash\MonthlyOverview.resx">
+      <DependentUpon>MonthlyOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dash\ReceiptOverview.resx">
       <DependentUpon>ReceiptOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dash\TermlyOverview.resx">
+      <DependentUpon>TermlyOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dash\TransOverview.resx">
       <DependentUpon>TransOverview.cs</DependentUpon>

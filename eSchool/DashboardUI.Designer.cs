@@ -40,6 +40,8 @@
             this.moneyOverview1 = new eSchool.Dash.MoneyOverview();
             this.receiptOverview1 = new eSchool.Dash.ReceiptOverview();
             this.transOverview1 = new eSchool.Dash.TransOverview();
+            this.monthlyOverview1 = new eSchool.Dash.MonthlyOverview();
+            this.termlyOverview1 = new eSchool.Dash.TermlyOverview();
             this.panelHCD.SuspendLayout();
             this.panelWColpseBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).BeginInit();
@@ -135,10 +137,13 @@
             // 
             // flowPanelBody
             // 
+            this.flowPanelBody.AutoScroll = true;
             this.flowPanelBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
             this.flowPanelBody.Controls.Add(this.moneyOverview1);
             this.flowPanelBody.Controls.Add(this.receiptOverview1);
             this.flowPanelBody.Controls.Add(this.transOverview1);
+            this.flowPanelBody.Controls.Add(this.monthlyOverview1);
+            this.flowPanelBody.Controls.Add(this.termlyOverview1);
             this.flowPanelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPanelBody.Location = new System.Drawing.Point(0, 93);
             this.flowPanelBody.Name = "flowPanelBody";
@@ -151,7 +156,7 @@
             this.moneyOverview1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.moneyOverview1.Location = new System.Drawing.Point(8, 8);
             this.moneyOverview1.Name = "moneyOverview1";
-            this.moneyOverview1.Size = new System.Drawing.Size(356, 133);
+            this.moneyOverview1.Size = new System.Drawing.Size(356, 144);
             this.moneyOverview1.TabIndex = 0;
             // 
             // receiptOverview1
@@ -159,7 +164,7 @@
             this.receiptOverview1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.receiptOverview1.Location = new System.Drawing.Point(370, 8);
             this.receiptOverview1.Name = "receiptOverview1";
-            this.receiptOverview1.Size = new System.Drawing.Size(209, 133);
+            this.receiptOverview1.Size = new System.Drawing.Size(209, 144);
             this.receiptOverview1.TabIndex = 1;
             // 
             // transOverview1
@@ -167,8 +172,24 @@
             this.transOverview1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.transOverview1.Location = new System.Drawing.Point(585, 8);
             this.transOverview1.Name = "transOverview1";
-            this.transOverview1.Size = new System.Drawing.Size(203, 133);
+            this.transOverview1.Size = new System.Drawing.Size(203, 144);
             this.transOverview1.TabIndex = 2;
+            // 
+            // monthlyOverview1
+            // 
+            this.monthlyOverview1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.monthlyOverview1.Location = new System.Drawing.Point(8, 158);
+            this.monthlyOverview1.Name = "monthlyOverview1";
+            this.monthlyOverview1.Size = new System.Drawing.Size(356, 289);
+            this.monthlyOverview1.TabIndex = 3;
+            // 
+            // termlyOverview1
+            // 
+            this.termlyOverview1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.termlyOverview1.Location = new System.Drawing.Point(370, 158);
+            this.termlyOverview1.Name = "termlyOverview1";
+            this.termlyOverview1.Size = new System.Drawing.Size(418, 289);
+            this.termlyOverview1.TabIndex = 4;
             // 
             // DashboardUI
             // 
@@ -203,5 +224,7 @@
         private Dash.MoneyOverview moneyOverview1;
         private Dash.ReceiptOverview receiptOverview1;
         private Dash.TransOverview transOverview1;
+        private Dash.MonthlyOverview monthlyOverview1;
+        private Dash.TermlyOverview termlyOverview1;
     }
 }

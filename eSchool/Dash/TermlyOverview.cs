@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace eSchool.Dash
 {
-    public partial class ReceiptOverview : UserControl
+    public partial class TermlyOverview : UserControl
     {
         //Singleton pattern ***best practices***
-        private static ReceiptOverview _instance;
-        public static ReceiptOverview Instance
+        private static TermlyOverview _instance;
+        public static TermlyOverview Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ReceiptOverview();
+                    _instance = new TermlyOverview();
                 }
                 return _instance;
             }
         }
-        public ReceiptOverview()
+        public TermlyOverview()
         {
             InitializeComponent();
         }
