@@ -187,7 +187,7 @@ namespace eSchool.Dash
 
                 //lblBalance
                 decimal balance = grandTotalFee - paidTotal;
-                lblBalance.Text = $"{String.Format("{0:0,0}", Decimal.Negate(balance))}";
+                lblBalance.Text = $"{String.Format("{0:0,0}", balance)}";
 
                 var myIncomes = await Task.Factory.StartNew(() =>
                 {
@@ -222,7 +222,7 @@ namespace eSchool.Dash
                 this.lblExpense.Text = $"{String.Format("{0:0,0}", totalExpenses)}";
 
                 //lblIncome
-                this.lblExpense.Text = $"{String.Format("{0:0,0}", (totalIncome + totalFee) -totalExpenses)}";
+                this.lblstatus.Text = $"{String.Format("{0:0,0}", (totalIncome + totalFee) -totalExpenses)}";
 
             }
         }

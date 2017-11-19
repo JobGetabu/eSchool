@@ -70,9 +70,9 @@
             // 
             this.panelgraph.Controls.Add(this.pieChart1);
             this.panelgraph.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelgraph.Location = new System.Drawing.Point(0, 28);
+            this.panelgraph.Location = new System.Drawing.Point(0, 21);
             this.panelgraph.Name = "panelgraph";
-            this.panelgraph.Size = new System.Drawing.Size(356, 222);
+            this.panelgraph.Size = new System.Drawing.Size(356, 229);
             this.panelgraph.TabIndex = 1;
             // 
             // pieChart1
@@ -80,7 +80,7 @@
             this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pieChart1.Location = new System.Drawing.Point(0, 0);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(356, 222);
+            this.pieChart1.Size = new System.Drawing.Size(356, 229);
             this.pieChart1.TabIndex = 0;
             this.pieChart1.Text = "pieChart1";
             // 
@@ -91,19 +91,19 @@
             this.paneltop.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltop.Location = new System.Drawing.Point(0, 0);
             this.paneltop.Name = "paneltop";
-            this.paneltop.Size = new System.Drawing.Size(356, 28);
+            this.paneltop.Size = new System.Drawing.Size(356, 21);
             this.paneltop.TabIndex = 0;
             // 
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Font = new System.Drawing.Font("Microsoft NeoGothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(5)), true);
+            this.lblMonth.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonth.ForeColor = System.Drawing.Color.Black;
-            this.lblMonth.Location = new System.Drawing.Point(7, 9);
+            this.lblMonth.Location = new System.Drawing.Point(4, 4);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(115, 19);
+            this.lblMonth.Size = new System.Drawing.Size(115, 17);
             this.lblMonth.TabIndex = 3;
-            this.lblMonth.Text = "Term 1 OverView";
+            this.lblMonth.Text = "Current Overview";
             this.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TermlyOverview
