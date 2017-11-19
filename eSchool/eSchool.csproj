@@ -112,6 +112,12 @@
     <Compile Include="ClosingBalance.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dash\MoneyOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dash\MoneyOverview.Designer.cs">
+      <DependentUpon>MoneyOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExpenceUIs\ExpenceLogo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -489,6 +495,9 @@
     </Content>
     <EmbeddedResource Include="DashboardUI.resx">
       <DependentUpon>DashboardUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dash\MoneyOverview.resx">
+      <DependentUpon>MoneyOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eSchoolResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

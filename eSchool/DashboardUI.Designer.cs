@@ -36,6 +36,7 @@
             this.bunifuCustomLabelDashboadTime = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.home_ui_label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHCDCard = new Bunifu.Framework.UI.BunifuCards();
+            this.flowPanelBody = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHCD.SuspendLayout();
             this.panelWColpseBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).BeginInit();
@@ -128,10 +129,20 @@
             this.panelHCDCard.Size = new System.Drawing.Size(798, 96);
             this.panelHCDCard.TabIndex = 6;
             // 
+            // flowPanelBody
+            // 
+            this.flowPanelBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.flowPanelBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanelBody.Location = new System.Drawing.Point(0, 96);
+            this.flowPanelBody.Name = "flowPanelBody";
+            this.flowPanelBody.Size = new System.Drawing.Size(798, 447);
+            this.flowPanelBody.TabIndex = 7;
+            // 
             // DashboardUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowPanelBody);
             this.Controls.Add(this.panelHCDCard);
             this.Name = "DashboardUI";
             this.Size = new System.Drawing.Size(798, 543);
@@ -155,5 +166,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel home_ui_label;
         public Bunifu.Framework.UI.BunifuImageButton bunifuImageBtnColapse;
         private Bunifu.Framework.UI.BunifuCards panelHCDCard;
+        private System.Windows.Forms.FlowLayoutPanel flowPanelBody;
     }
 }

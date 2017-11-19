@@ -170,6 +170,9 @@ namespace eSchool
 
             //TODO charts baby
             TabSwitcher(FeeCharts.Instance);
+
+            FeeCharts fch = FeeCharts.Instance;
+            fch.Global_FeeCharts_Load();
         }
     }
 }

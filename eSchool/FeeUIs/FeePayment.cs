@@ -419,6 +419,7 @@ namespace eSchool
                 var feeListAsync = await Task.Factory.StartNew(() =>
                     {
                         return context.Fees
+                        .Where(s => s.Term == GTerm & s.Year==GYear)
                         .ToList();
 
                     });
