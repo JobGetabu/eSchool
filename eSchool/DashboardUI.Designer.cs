@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardUI));
             this.panelHCD = new System.Windows.Forms.Panel();
             this.panelWColpseBtn = new System.Windows.Forms.Panel();
-            this.bunifuImageBtnColapse = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelWithDashDate = new System.Windows.Forms.Panel();
             this.bunifuCustomLabelDashboadTime = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.home_ui_label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHCDCard = new Bunifu.Framework.UI.BunifuCards();
             this.flowPanelBody = new System.Windows.Forms.FlowLayoutPanel();
+            this.bunifuImageBtnColapse = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelHCD.SuspendLayout();
             this.panelWColpseBtn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).BeginInit();
             this.panelWithDashDate.SuspendLayout();
             this.panelHCDCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHCD
@@ -52,7 +52,7 @@
             this.panelHCD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHCD.Location = new System.Drawing.Point(0, 0);
             this.panelHCD.Name = "panelHCD";
-            this.panelHCD.Size = new System.Drawing.Size(798, 96);
+            this.panelHCD.Size = new System.Drawing.Size(798, 93);
             this.panelHCD.TabIndex = 5;
             // 
             // panelWColpseBtn
@@ -61,22 +61,8 @@
             this.panelWColpseBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelWColpseBtn.Location = new System.Drawing.Point(702, 0);
             this.panelWColpseBtn.Name = "panelWColpseBtn";
-            this.panelWColpseBtn.Size = new System.Drawing.Size(96, 96);
+            this.panelWColpseBtn.Size = new System.Drawing.Size(96, 93);
             this.panelWColpseBtn.TabIndex = 1;
-            // 
-            // bunifuImageBtnColapse
-            // 
-            this.bunifuImageBtnColapse.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageBtnColapse.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageBtnColapse.Image")));
-            this.bunifuImageBtnColapse.ImageActive = null;
-            this.bunifuImageBtnColapse.Location = new System.Drawing.Point(30, 31);
-            this.bunifuImageBtnColapse.Name = "bunifuImageBtnColapse";
-            this.bunifuImageBtnColapse.Size = new System.Drawing.Size(35, 35);
-            this.bunifuImageBtnColapse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageBtnColapse.TabIndex = 0;
-            this.bunifuImageBtnColapse.TabStop = false;
-            this.bunifuImageBtnColapse.Zoom = 10;
-            this.bunifuImageBtnColapse.Click += new System.EventHandler(this.bunifuImageBtnColapse_Click_1);
             // 
             // panelWithDashDate
             // 
@@ -86,7 +72,7 @@
             this.panelWithDashDate.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.panelWithDashDate.Location = new System.Drawing.Point(0, 0);
             this.panelWithDashDate.Name = "panelWithDashDate";
-            this.panelWithDashDate.Size = new System.Drawing.Size(376, 96);
+            this.panelWithDashDate.Size = new System.Drawing.Size(376, 93);
             this.panelWithDashDate.TabIndex = 0;
             // 
             // bunifuCustomLabelDashboadTime
@@ -126,17 +112,32 @@
             this.panelHCDCard.Name = "panelHCDCard";
             this.panelHCDCard.RightSahddow = false;
             this.panelHCDCard.ShadowDepth = 20;
-            this.panelHCDCard.Size = new System.Drawing.Size(798, 96);
+            this.panelHCDCard.Size = new System.Drawing.Size(798, 93);
             this.panelHCDCard.TabIndex = 6;
             // 
             // flowPanelBody
             // 
             this.flowPanelBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
             this.flowPanelBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowPanelBody.Location = new System.Drawing.Point(0, 96);
+            this.flowPanelBody.Location = new System.Drawing.Point(0, 93);
             this.flowPanelBody.Name = "flowPanelBody";
-            this.flowPanelBody.Size = new System.Drawing.Size(798, 447);
+            this.flowPanelBody.Padding = new System.Windows.Forms.Padding(5);
+            this.flowPanelBody.Size = new System.Drawing.Size(798, 450);
             this.flowPanelBody.TabIndex = 7;
+            // 
+            // bunifuImageBtnColapse
+            // 
+            this.bunifuImageBtnColapse.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageBtnColapse.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageBtnColapse.Image")));
+            this.bunifuImageBtnColapse.ImageActive = null;
+            this.bunifuImageBtnColapse.Location = new System.Drawing.Point(30, 31);
+            this.bunifuImageBtnColapse.Name = "bunifuImageBtnColapse";
+            this.bunifuImageBtnColapse.Size = new System.Drawing.Size(35, 35);
+            this.bunifuImageBtnColapse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageBtnColapse.TabIndex = 0;
+            this.bunifuImageBtnColapse.TabStop = false;
+            this.bunifuImageBtnColapse.Zoom = 10;
+            this.bunifuImageBtnColapse.Click += new System.EventHandler(this.bunifuImageBtnColapse_Click_1);
             // 
             // DashboardUI
             // 
@@ -149,10 +150,10 @@
             this.Load += new System.EventHandler(this.DashboardUI_Load);
             this.panelHCD.ResumeLayout(false);
             this.panelWColpseBtn.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).EndInit();
             this.panelWithDashDate.ResumeLayout(false);
             this.panelWithDashDate.PerformLayout();
             this.panelHCDCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).EndInit();
             this.ResumeLayout(false);
 
         }

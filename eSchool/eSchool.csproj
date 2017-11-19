@@ -118,6 +118,18 @@
     <Compile Include="Dash\MoneyOverview.Designer.cs">
       <DependentUpon>MoneyOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dash\ReceiptOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dash\ReceiptOverview.Designer.cs">
+      <DependentUpon>ReceiptOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dash\TransOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dash\TransOverview.Designer.cs">
+      <DependentUpon>TransOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExpenceUIs\ExpenceLogo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -498,6 +510,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dash\MoneyOverview.resx">
       <DependentUpon>MoneyOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dash\ReceiptOverview.resx">
+      <DependentUpon>ReceiptOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dash\TransOverview.resx">
+      <DependentUpon>TransOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eSchoolResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
