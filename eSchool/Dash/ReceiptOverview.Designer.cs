@@ -60,7 +60,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(250, 135);
+            this.bunifuCards1.Size = new System.Drawing.Size(230, 135);
             this.bunifuCards1.TabIndex = 0;
             // 
             // tableLPanelBody
@@ -75,7 +75,7 @@
             this.tableLPanelBody.RowCount = 2;
             this.tableLPanelBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLPanelBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLPanelBody.Size = new System.Drawing.Size(248, 127);
+            this.tableLPanelBody.Size = new System.Drawing.Size(228, 127);
             this.tableLPanelBody.TabIndex = 1;
             // 
             // bunifuImageButton1
@@ -86,7 +86,7 @@
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(3, 3);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(242, 50);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(222, 50);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.bunifuImageButton1.TabIndex = 0;
             this.bunifuImageButton1.TabStop = false;
@@ -104,7 +104,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(242, 65);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(222, 65);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
@@ -114,7 +114,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(115, 59);
+            this.panel1.Size = new System.Drawing.Size(105, 59);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -122,9 +122,9 @@
             this.panel2.Controls.Add(this.bunifuCustomLabel2);
             this.panel2.Controls.Add(this.bunifuCustomLabel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(124, 3);
+            this.panel2.Location = new System.Drawing.Point(114, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(115, 59);
+            this.panel2.Size = new System.Drawing.Size(105, 59);
             this.panel2.TabIndex = 1;
             // 
             // bunifuCustomLabel5
@@ -190,7 +190,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.bunifuCards1);
             this.Name = "ReceiptOverview";
-            this.Size = new System.Drawing.Size(250, 135);
+            this.Size = new System.Drawing.Size(230, 135);
             this.bunifuCards1.ResumeLayout(false);
             this.tableLPanelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
