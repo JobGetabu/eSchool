@@ -132,7 +132,7 @@ namespace eSchool.Dash
 
 
                 //Pie Chart area
-                pieChart1.InnerRadius = 100;
+                pieChart1.InnerRadius = 80;
                 pieChart1.LegendLocation = LegendLocation.Right;
 
                 pieChart1.Series = new SeriesCollection

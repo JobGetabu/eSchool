@@ -33,9 +33,9 @@
             this.panelgraph = new System.Windows.Forms.Panel();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panelBtm = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblUsers = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblStudents = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblMonth = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -94,9 +94,9 @@
             // panelBtm
             // 
             this.panelBtm.AutoSize = true;
-            this.panelBtm.Controls.Add(this.bunifuCustomLabel2);
+            this.panelBtm.Controls.Add(this.lblUsers);
             this.panelBtm.Controls.Add(this.bunifuCustomLabel3);
-            this.panelBtm.Controls.Add(this.bunifuCustomLabel1);
+            this.panelBtm.Controls.Add(this.lblStudents);
             this.panelBtm.Controls.Add(this.bunifuCustomLabel5);
             this.panelBtm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBtm.Location = new System.Drawing.Point(0, 212);
@@ -104,19 +104,19 @@
             this.panelBtm.Size = new System.Drawing.Size(356, 38);
             this.panelBtm.TabIndex = 4;
             // 
-            // bunifuCustomLabel2
+            // lblUsers
             // 
-            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(303, 6);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(13, 15);
-            this.bunifuCustomLabel2.TabIndex = 13;
-            this.bunifuCustomLabel2.Text = "2";
+            this.lblUsers.AutoSize = true;
+            this.lblUsers.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUsers.Location = new System.Drawing.Point(303, 6);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(13, 15);
+            this.lblUsers.TabIndex = 13;
+            this.lblUsers.Text = "0";
             // 
             // bunifuCustomLabel3
             // 
@@ -132,19 +132,19 @@
             this.bunifuCustomLabel3.TabIndex = 12;
             this.bunifuCustomLabel3.Text = "Users";
             // 
-            // bunifuCustomLabel1
+            // lblStudents
             // 
-            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(39, 6);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(19, 15);
-            this.bunifuCustomLabel1.TabIndex = 11;
-            this.bunifuCustomLabel1.Text = "50";
+            this.lblStudents.AutoSize = true;
+            this.lblStudents.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudents.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblStudents.Location = new System.Drawing.Point(39, 6);
+            this.lblStudents.Name = "lblStudents";
+            this.lblStudents.Size = new System.Drawing.Size(13, 15);
+            this.lblStudents.TabIndex = 11;
+            this.lblStudents.Text = "0";
             // 
             // bunifuCustomLabel5
             // 
@@ -177,9 +177,9 @@
             this.lblMonth.ForeColor = System.Drawing.Color.Black;
             this.lblMonth.Location = new System.Drawing.Point(16, 8);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(137, 19);
+            this.lblMonth.Size = new System.Drawing.Size(133, 19);
             this.lblMonth.TabIndex = 2;
-            this.lblMonth.Text = "October Transaction";
+            this.lblMonth.Text = "January Transaction";
             this.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MonthlyOverview
@@ -190,6 +190,7 @@
             this.Controls.Add(this.bunifuCards1);
             this.Name = "MonthlyOverview";
             this.Size = new System.Drawing.Size(356, 250);
+            this.Load += new System.EventHandler(this.MonthlyOverview_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -209,9 +210,9 @@
         private System.Windows.Forms.Panel panelgraph;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Panel panelBtm;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblUsers;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblStudents;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.Panel panelTop;
         private Bunifu.Framework.UI.BunifuCustomLabel lblMonth;
