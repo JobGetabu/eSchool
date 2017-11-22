@@ -60,6 +60,8 @@ namespace eSchool
                     return;
                 }
 
+                
+
                 //Possible disposal of objects i'll do a check later
                 foreach (var fmFee in fmStore)
                 {

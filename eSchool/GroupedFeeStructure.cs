@@ -17,6 +17,7 @@ namespace eSchool
         public GroupedFeeStructure()
         {
             this.FeesRequiredPerTerms = new HashSet<FeesRequiredPerTerm>();
+            this.OverHeadCategoryPerYears = new HashSet<OverHeadCategoryPerYear>();
         }
     
         public int Id { get; set; }
@@ -32,5 +33,6 @@ namespace eSchool
         public string TotalTitle { get; set; }
     
         public virtual ICollection<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }
+        public virtual ICollection<OverHeadCategoryPerYear> OverHeadCategoryPerYears { get; set; }
     }
 }

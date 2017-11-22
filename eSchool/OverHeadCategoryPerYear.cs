@@ -20,8 +20,10 @@ namespace eSchool
         public int Form { get; set; }
         public int Year { get; set; }
         public string Category { get; set; }
+        public Nullable<int> GrpFeeStructureId_Fk { get; set; }
     
         public virtual SchoolPeriodTerm SchoolPeriodTerm { get; set; }
         public virtual SchoolPeriodYear SchoolPeriodYear { get; set; }
+        public virtual GroupedFeeStructure GroupedFeeStructure { get; set; }
     }
 }

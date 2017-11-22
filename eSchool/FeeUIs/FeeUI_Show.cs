@@ -154,6 +154,8 @@ namespace eSchool
                         context.FeesRequiredPerTerms.Add(frpt);
                     }
                     context.SaveChanges();
+
+                    //take all overheadcatperyear with same xtics add fk attibute
                 }
 
 
@@ -396,6 +398,13 @@ namespace eSchool
                     }
                 }
             }
+        }
+
+        private void ModiFyOverHeads(int form,int term,int year,EschoolEntities context)
+        {
+            var ovHCpyList = context.OverHeadCategoryPerYears
+              .Where(c => c.Form == form)
+              .ToList();
         }
 
         /// <summary>

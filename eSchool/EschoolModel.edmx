@@ -129,6 +129,7 @@
           <Property Name="Form" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Category" Type="nvarchar" MaxLength="100" />
+          <Property Name="GrpFeeStructureId_Fk" Type="int" />
         </EntityType>
         <EntityType Name="SchoolPeriodTerm">
           <Key>
@@ -190,6 +191,20 @@
             </Principal>
             <Dependent Role="Fees">
               <PropertyRef Name="Admin No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GrpFeeStruct">
+          <End Role="GroupedFeeStructures" Type="Self.GroupedFeeStructures" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OverHeadCategoryPerYear" Type="Self.OverHeadCategoryPerYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupedFeeStructures">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OverHeadCategoryPerYear">
+              <PropertyRef Name="GrpFeeStructureId_Fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -362,6 +377,10 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             <End Role="Student_Basic" EntitySet="Student_Basic" />
             <End Role="Fees" EntitySet="Fees" />
           </AssociationSet>
+          <AssociationSet Name="FK_GrpFeeStruct" Association="Self.FK_GrpFeeStruct">
+            <End Role="GroupedFeeStructures" EntitySet="GroupedFeeStructures" />
+            <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYear" />
+          </AssociationSet>
           <AssociationSet Name="FK_GrpFeeSturucture" Association="Self.FK_GrpFeeSturucture">
             <End Role="GroupedFeeStructures" EntitySet="GroupedFeeStructures" />
             <End Role="FeesRequiredPerTerm" EntitySet="FeesRequiredPerTerm" />
@@ -499,6 +518,8 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Ov" FromRole="OverHeadCategoryPerYear" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Ov" FromRole="OverHeadCategoryPerYear" ToRole="SchoolPeriodYear" />
           <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GrpFeeStructureId_Fk" Type="Int32" />
+          <NavigationProperty Name="GroupedFeeStructure" Relationship="EschoolModel.FK_GrpFeeStruct" FromRole="OverHeadCategoryPerYear" ToRole="GroupedFeeStructure" />
         </EntityType>
         <EntityType Name="SchoolPeriodTerm">
           <Key>
@@ -743,6 +764,10 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             <End Role="FeesRequiredPerTerm" EntitySet="FeesRequiredPerTerms" />
           </AssociationSet>
           <EntitySet Name="ClosingBalances" EntityType="EschoolModel.ClosingBalance" />
+          <AssociationSet Name="FK_GrpFeeStruct" Association="EschoolModel.FK_GrpFeeStruct">
+            <End Role="GroupedFeeStructure" EntitySet="GroupedFeeStructures" />
+            <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYears" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -768,6 +793,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="selTerm" Type="Int32" />
           <Property Name="TotalTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="FeesRequiredPerTerms" Relationship="EschoolModel.FK_GrpFeeSturucture" FromRole="GroupedFeeStructure" ToRole="FeesRequiredPerTerm" />
+          <NavigationProperty Name="OverHeadCategoryPerYears" Relationship="EschoolModel.FK_GrpFeeStruct" FromRole="GroupedFeeStructure" ToRole="OverHeadCategoryPerYear" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -831,6 +857,20 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="Year" Type="Int32" />
           <Property Name="Month" Type="Int32" />
         </EntityType>
+        <Association Name="FK_GrpFeeStruct">
+          <End Type="EschoolModel.GroupedFeeStructure" Role="GroupedFeeStructure" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EschoolModel.OverHeadCategoryPerYear" Role="OverHeadCategoryPerYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupedFeeStructure">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OverHeadCategoryPerYear">
+              <PropertyRef Name="GrpFeeStructureId_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -912,6 +952,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="OverHeadCategoryPerYears">
             <EntityTypeMapping TypeName="EschoolModel.OverHeadCategoryPerYear">
               <MappingFragment StoreEntitySet="OverHeadCategoryPerYear">
+                <ScalarProperty Name="GrpFeeStructureId_Fk" ColumnName="GrpFeeStructureId_Fk" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
