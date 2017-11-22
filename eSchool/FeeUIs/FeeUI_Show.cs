@@ -152,8 +152,19 @@ namespace eSchool
                             GrpFeestructure_Id = gp.Id
                         };
                         context.FeesRequiredPerTerms.Add(frpt);
+
+                        ModiFyOverHeads(gp.Id, fm, FeesUI.autoSelTerm, FeesUI.autoSelYear, context);
                     }
-                    context.SaveChanges();
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message, "Modifying Multiple overheads & saving frpt");
+                        throw;
+                    }
+
 
                     //take all overheadcatperyear with same xtics add fk attibute
                 }
@@ -237,6 +248,8 @@ namespace eSchool
                             GrpFeestructure_Id = gp.Id
                         };
                         context.FeesRequiredPerTerms.Add(frpt);
+
+                        ModiFyOverHeads(gp.Id, fm, OverHeadListItem.selTerm, OverHeadListItem.selYear, context);
                     }
                     context.SaveChanges();
                 }
@@ -400,11 +413,17 @@ namespace eSchool
             }
         }
 
-        private void ModiFyOverHeads(int form,int term,int year,EschoolEntities context)
+        private void ModiFyOverHeads(int gprId,int form,int term,int year,EschoolEntities context)
         {
             var ovHCpyList = context.OverHeadCategoryPerYears
-              .Where(c => c.Form == form)
+              .Where(c => c.Form == form & c.Term == term & c.Year == year)
               .ToList();
+
+            foreach (var ov in ovHCpyList)
+            {
+                ov.GrpFeeStructureId_Fk = gprId;
+                context.Entry<OverHeadCategoryPerYear>(ov).State = EntityState.Modified;
+            }           
         }
 
         /// <summary>
