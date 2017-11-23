@@ -50,7 +50,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProf = new System.Windows.Forms.Panel();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageBtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroComboBoxSearch = new MetroFramework.Controls.MetroComboBox();
@@ -60,6 +59,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuTransitionUIs = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.logoAnim = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.btn_Accounts = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.sidebar.SuspendLayout();
@@ -68,11 +69,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelProf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +87,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1038, 593);
+            this.panel1.Size = new System.Drawing.Size(1038, 687);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -97,7 +98,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(240, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(798, 543);
+            this.panel2.Size = new System.Drawing.Size(798, 637);
             this.panel2.TabIndex = 2;
             // 
             // containerUIs
@@ -107,15 +108,16 @@
             this.containerUIs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.containerUIs.Location = new System.Drawing.Point(0, 0);
             this.containerUIs.Name = "containerUIs";
-            this.containerUIs.Size = new System.Drawing.Size(798, 543);
+            this.containerUIs.Size = new System.Drawing.Size(798, 637);
             this.containerUIs.TabIndex = 5;
             // 
             // sidebar
             // 
             this.sidebar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
-            this.sidebar.Controls.Add(this.panel3);
+            this.sidebar.Controls.Add(this.btn_Accounts);
             this.sidebar.Controls.Add(this.btn_settings);
+            this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.btn_imports);
             this.sidebar.Controls.Add(this.btn_transations);
             this.sidebar.Controls.Add(this.btn_fees);
@@ -130,7 +132,7 @@
             this.sidebar.Location = new System.Drawing.Point(0, 50);
             this.sidebar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(240, 543);
+            this.sidebar.Size = new System.Drawing.Size(240, 637);
             this.sidebar.TabIndex = 1;
             // 
             // panel3
@@ -140,7 +142,7 @@
             this.logoAnim.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransitionUIs.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 503);
+            this.panel3.Location = new System.Drawing.Point(0, 597);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 40);
             this.panel3.TabIndex = 9;
@@ -527,20 +529,6 @@
             this.panelProf.Size = new System.Drawing.Size(284, 50);
             this.panelProf.TabIndex = 5;
             // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.logoAnim.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 9;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // bunifuDropdownDashMenu
             // 
             this.bunifuDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -715,11 +703,64 @@
             animation1.TransparencyCoeff = 0F;
             this.logoAnim.DefaultAnimation = animation1;
             // 
+            // btn_Accounts
+            // 
+            this.btn_Accounts.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.btn_Accounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.btn_Accounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Accounts.BorderRadius = 0;
+            this.btn_Accounts.ButtonText = "   Accounts";
+            this.btn_Accounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoAnim.SetDecoration(this.btn_Accounts, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransitionUIs.SetDecoration(this.btn_Accounts, BunifuAnimatorNS.DecorationType.None);
+            this.btn_Accounts.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Accounts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Accounts.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Accounts.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Accounts.Iconimage")));
+            this.btn_Accounts.Iconimage_right = null;
+            this.btn_Accounts.Iconimage_right_Selected = null;
+            this.btn_Accounts.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btn_Accounts.Iconimage_Selected")));
+            this.btn_Accounts.IconMarginLeft = 25;
+            this.btn_Accounts.IconMarginRight = 0;
+            this.btn_Accounts.IconRightVisible = true;
+            this.btn_Accounts.IconRightZoom = 0D;
+            this.btn_Accounts.IconVisible = true;
+            this.btn_Accounts.IconZoom = 40D;
+            this.btn_Accounts.IsTab = true;
+            this.btn_Accounts.Location = new System.Drawing.Point(0, 558);
+            this.btn_Accounts.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.btn_Accounts.Name = "btn_Accounts";
+            this.btn_Accounts.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.btn_Accounts.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.btn_Accounts.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Accounts.selected = false;
+            this.btn_Accounts.Size = new System.Drawing.Size(240, 81);
+            this.btn_Accounts.TabIndex = 10;
+            this.btn_Accounts.Text = "   Accounts";
+            this.btn_Accounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Accounts.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.btn_Accounts.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Accounts.Click += new System.EventHandler(this.btn_Accounts_Click);
+            // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.logoAnim.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 9;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 593);
+            this.ClientSize = new System.Drawing.Size(1038, 687);
             this.Controls.Add(this.panel1);
             this.bunifuTransitionUIs.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.logoAnim.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -741,11 +782,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelProf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -780,5 +821,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_dashboard;
         private System.Windows.Forms.Panel panel4;
         private BunifuAnimatorNS.BunifuTransition logoAnim;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Accounts;
     }
 }

@@ -109,6 +109,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountsUI.Designer.cs">
+      <DependentUpon>AccountsUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClosingBalance.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -517,6 +523,9 @@
     <Content Include="Microsoft.VC90.CRT\README_ENU.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="AccountsUI.resx">
+      <DependentUpon>AccountsUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardUI.resx">
       <DependentUpon>DashboardUI.cs</DependentUpon>
     </EmbeddedResource>

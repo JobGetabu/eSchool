@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-  
+
     public partial class Frm_Home : Form
     {
 
@@ -84,11 +84,11 @@ namespace eSchool
                 }
                 catch (System.Reflection.TargetInvocationException exp)
                 {
-                    MessageBox.Show(exp.Message+" \n" + exp.InnerException.Message);
+                    MessageBox.Show(exp.Message + " \n" + exp.InnerException.Message);
                 }
             }
             else
-            {               
+            {
                 UIinstance.BringToFront();
                 //only occurs once
                 //this.bunifuTransitionUIs.ShowSync(UIinstance);
@@ -189,10 +189,10 @@ namespace eSchool
 
             //End UI Design code
 
-           // TabSwitcher(ImportsUI.Instance);
+            // TabSwitcher(ImportsUI.Instance);
             TabSwitcher(NewImportsUI.Instance);
         }
-    
+
 
         private void btn_transations_Click(object sender, EventArgs e)
         {
@@ -233,11 +233,29 @@ namespace eSchool
 
         }
 
+        private void btn_Accounts_Click(object sender, EventArgs e)
+        {
+            //UI design Code
+            btn_dashboard.Textcolor = _normal;
+            btn_invoices.Textcolor = _normal;
+            btn_income.Textcolor = _normal;
+            btn_expenses.Textcolor = _normal;
+            btn_fees.Textcolor = _normal;
+            btn_transations.Textcolor = _normal;
+            btn_imports.Textcolor = _normal;
+            btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor =_white;
+
+            //End UI Design code
+
+            TabSwitcher(AccountsUI.Instance);
+        }
+
         public void pictureBxMenuHome_Click(object sender, EventArgs e)
         {
-            CollapseNavBar();                  
-        } 
-        public  void CollapseNavBar()
+            CollapseNavBar();
+        }
+        public void CollapseNavBar()
         {
             if (sidebar.Width == 240)
             {
@@ -245,9 +263,9 @@ namespace eSchool
                 //1.HideLogo
                 //2.slide sidebar
                 logoAnim.Hide(pictureBox1);
-                
-                sidebar.Width = 62;              
-                
+
+                sidebar.Width = 62;
+
             }
             else
             {
@@ -258,6 +276,8 @@ namespace eSchool
                 logoAnim.ShowSync(pictureBox1);
             }
         }
+
+
     }
 
     //TODO InvalidOperationException
