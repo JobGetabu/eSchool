@@ -41,5 +41,6 @@ namespace eSchool
         public DbSet<Transation> Transations { get; set; }
         public DbSet<StudentImport> StudentImports { get; set; }
         public DbSet<ClosingBalance> ClosingBalances { get; set; }
+        public DbSet<Account> Accounts { get; set; }
     }
 }

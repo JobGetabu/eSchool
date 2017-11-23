@@ -34,6 +34,10 @@
         <AssociationConnector Association="EschoolModel.FK_GrpFeeSturucture" />
         <EntityTypeShape EntityType="EschoolModel.ClosingBalance" Width="1.5" PointX="6.75" PointY="0.625" />
         <AssociationConnector Association="EschoolModel.FK_GrpFeeStruct" />
+        <EntityTypeShape EntityType="EschoolModel.Account" Width="1.5" PointX="8.75" PointY="7" />
+        <AssociationConnector Association="EschoolModel.Account_Fk" />
+        <AssociationConnector Association="EschoolModel.Accounts_Fee_Fk" />
+        <AssociationConnector Association="EschoolModel.Accounts_IncFk" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

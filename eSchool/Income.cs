@@ -21,8 +21,10 @@ namespace eSchool
         public int Term { get; set; }
         public int Year { get; set; }
         public string Category { get; set; }
+        public Nullable<int> Acc_Fk { get; set; }
     
         public virtual SchoolPeriodTerm SchoolPeriodTerm { get; set; }
         public virtual SchoolPeriodYear SchoolPeriodYear { get; set; }
+        public virtual Account Account { get; set; }
     }
 }

@@ -109,6 +109,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AccountsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>

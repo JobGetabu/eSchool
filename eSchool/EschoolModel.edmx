@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="EschoolModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AccNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
@@ -34,6 +45,7 @@
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Term" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Acc_Fk" Type="int" />
         </EntityType>
         <EntityType Name="Fees">
           <Key>
@@ -49,6 +61,7 @@
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Amount Paid" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="ModeOfPayment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Acc_Fk" Type="int" />
         </EntityType>
         <EntityType Name="FeesRequiredPerTerm">
           <Key>
@@ -88,6 +101,7 @@
           <Property Name="Term" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Category" Type="nvarchar" MaxLength="100" />
+          <Property Name="Acc_Fk" Type="int" />
         </EntityType>
         <EntityType Name="Invoices">
           <Key>
@@ -182,6 +196,48 @@
           <Property Name="Term" Type="int" />
           <Property Name="Year" Type="int" />
         </EntityType>
+        <Association Name="Account_Fk">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expense">
+              <PropertyRef Name="Acc_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Accounts_Fee_Fk">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Fees" Type="Self.Fees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Fees">
+              <PropertyRef Name="Acc_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Accounts_IncFk">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Income" Type="Self.Income" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Income">
+              <PropertyRef Name="Acc_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Admin No_Fees">
           <End Role="Student_Basic" Type="Self.Student_Basic" Multiplicity="1" />
           <End Role="Fees" Type="Self.Fees" Multiplicity="*" />
@@ -357,6 +413,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EschoolModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
           <EntitySet Name="ClosingBalances" EntityType="Self.ClosingBalances" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" store:Type="Tables" />
@@ -373,6 +430,18 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySet Name="Student_Basic" EntityType="Self.Student_Basic" store:Type="Tables" />
           <EntitySet Name="StudentImports" EntityType="Self.StudentImports" store:Type="Tables" />
           <EntitySet Name="Transations" EntityType="Self.Transations" store:Type="Tables" />
+          <AssociationSet Name="Account_Fk" Association="Self.Account_Fk">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Expense" EntitySet="Expense" />
+          </AssociationSet>
+          <AssociationSet Name="Accounts_Fee_Fk" Association="Self.Accounts_Fee_Fk">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Fees" EntitySet="Fees" />
+          </AssociationSet>
+          <AssociationSet Name="Accounts_IncFk" Association="Self.Accounts_IncFk">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Income" EntitySet="Income" />
+          </AssociationSet>
           <AssociationSet Name="FK_Admin No_Fees" Association="Self.FK_Admin No_Fees">
             <End Role="Student_Basic" EntitySet="Student_Basic" />
             <End Role="Fees" EntitySet="Fees" />
@@ -443,6 +512,8 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="Year" Type="Int32" Nullable="false" />
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Ex" FromRole="Expense" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Ex" FromRole="Expense" ToRole="SchoolPeriodYear" />
+          <Property Name="Acc_Fk" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="EschoolModel.Account_Fk" FromRole="Expense" ToRole="Account" />
         </EntityType>
         <EntityType Name="Fee">
           <Key>
@@ -461,6 +532,8 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <NavigationProperty Name="Student_Basic" Relationship="Self.FK_Admin_No_Fees" FromRole="Fees" ToRole="Student_Basic" />
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Fees" FromRole="Fees" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Fees" FromRole="Fees" ToRole="SchoolPeriodYear" />
+          <Property Name="Acc_Fk" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="EschoolModel.Accounts_Fee_Fk" FromRole="Fee" ToRole="Account" />
         </EntityType>
         <EntityType Name="FeesRequiredPerTerm">
           <Key>
@@ -489,6 +562,8 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SchoolPeriodTerm" Relationship="Self.FK_Term_Income" FromRole="Income" ToRole="SchoolPeriodTerm" />
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Income" FromRole="Income" ToRole="SchoolPeriodYear" />
+          <Property Name="Acc_Fk" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="EschoolModel.Accounts_IncFk" FromRole="Income" ToRole="Account" />
         </EntityType>
         <EntityType Name="Login_Users">
           <Key>
@@ -768,6 +843,19 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             <End Role="GroupedFeeStructure" EntitySet="GroupedFeeStructures" />
             <End Role="OverHeadCategoryPerYear" EntitySet="OverHeadCategoryPerYears" />
           </AssociationSet>
+          <EntitySet Name="Accounts" EntityType="EschoolModel.Account" />
+          <AssociationSet Name="Account_Fk" Association="EschoolModel.Account_Fk">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Expense" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="Accounts_Fee_Fk" Association="EschoolModel.Accounts_Fee_Fk">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Fee" EntitySet="Fees" />
+          </AssociationSet>
+          <AssociationSet Name="Accounts_IncFk" Association="EschoolModel.Accounts_IncFk">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Income" EntitySet="Incomes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -871,6 +959,62 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AccNo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="Expenses" Relationship="EschoolModel.Account_Fk" FromRole="Account" ToRole="Expense" />
+          <NavigationProperty Name="Fees" Relationship="EschoolModel.Accounts_Fee_Fk" FromRole="Account" ToRole="Fee" />
+          <NavigationProperty Name="Incomes" Relationship="EschoolModel.Accounts_IncFk" FromRole="Account" ToRole="Income" />
+        </EntityType>
+        <Association Name="Account_Fk">
+          <End Type="EschoolModel.Account" Role="Account" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EschoolModel.Expense" Role="Expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expense">
+              <PropertyRef Name="Acc_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Accounts_Fee_Fk">
+          <End Type="EschoolModel.Account" Role="Account" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EschoolModel.Fee" Role="Fee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Fee">
+              <PropertyRef Name="Acc_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Accounts_IncFk">
+          <End Type="EschoolModel.Account" Role="Account" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="EschoolModel.Income" Role="Income" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Income">
+              <PropertyRef Name="Acc_Fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -880,6 +1024,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="Expenses">
             <EntityTypeMapping TypeName="EschoolModel.Expense">
               <MappingFragment StoreEntitySet="Expense">
+                <ScalarProperty Name="Acc_Fk" ColumnName="Acc_Fk" />
                 <ScalarProperty Name="ExId" ColumnName="ExId" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
@@ -893,6 +1038,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="Fees">
             <EntityTypeMapping TypeName="EschoolModel.Fee">
               <MappingFragment StoreEntitySet="Fees">
+                <ScalarProperty Name="Acc_Fk" ColumnName="Acc_Fk" />
                 <ScalarProperty Name="FeesId" ColumnName="FeesId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Admin_No" ColumnName="Admin No" />
@@ -921,6 +1067,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="Incomes">
             <EntityTypeMapping TypeName="EschoolModel.Income">
               <MappingFragment StoreEntitySet="Income">
+                <ScalarProperty Name="Acc_Fk" ColumnName="Acc_Fk" />
                 <ScalarProperty Name="IncomeId" ColumnName="IncomeId" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -1066,6 +1213,18 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="EschoolModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="AccNo" ColumnName="AccNo" />
+                <ScalarProperty Name="AccName" ColumnName="AccName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
