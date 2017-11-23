@@ -483,6 +483,24 @@
     <Compile Include="Student_Basic.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TheAccs\AccountsChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TheAccs\AccountsChart.Designer.cs">
+      <DependentUpon>AccountsChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TheAccs\AccountsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TheAccs\AccountsList.Designer.cs">
+      <DependentUpon>AccountsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TheAccs\FrmAddAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheAccs\FrmAddAcc.Designer.cs">
+      <DependentUpon>FrmAddAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transation.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -699,6 +717,15 @@
     <EmbeddedResource Include="StatusGrid.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusGrid.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheAccs\AccountsChart.resx">
+      <DependentUpon>AccountsChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheAccs\AccountsList.resx">
+      <DependentUpon>AccountsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheAccs\FrmAddAcc.resx">
+      <DependentUpon>FrmAddAcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransationsUI.resx">
       <DependentUpon>TransationsUI.cs</DependentUpon>

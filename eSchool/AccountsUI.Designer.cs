@@ -34,22 +34,23 @@
             this.panelTopLeft = new System.Windows.Forms.Panel();
             this.lblDateDay = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateNow = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddIncome = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelSwitch = new System.Windows.Forms.Panel();
             this.tab2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tab1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddIncome = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.container = new System.Windows.Forms.Panel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
             this.panelTopRght.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSwitch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -114,16 +115,6 @@
             this.lblDateNow.TabIndex = 57;
             this.lblDateNow.Text = "6 October 2017";
             // 
-            // pBoxLogoTerm
-            // 
-            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
-            this.pBoxLogoTerm.Location = new System.Drawing.Point(28, 9);
-            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
-            this.pBoxLogoTerm.Size = new System.Drawing.Size(166, 77);
-            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBoxLogoTerm.TabIndex = 55;
-            this.pBoxLogoTerm.TabStop = false;
-            // 
             // panelTopRght
             // 
             this.panelTopRght.Controls.Add(this.lblRowCount);
@@ -146,6 +137,66 @@
             this.lblRowCount.TabIndex = 15;
             this.lblRowCount.Text = "0";
             this.lblRowCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelSwitch
+            // 
+            this.panelSwitch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(98)))), ((int)(((byte)(115)))));
+            this.panelSwitch.Controls.Add(this.tab2);
+            this.panelSwitch.Controls.Add(this.tab1);
+            this.panelSwitch.Controls.Add(this.bunifuSeparator1);
+            this.panelSwitch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSwitch.Location = new System.Drawing.Point(0, 100);
+            this.panelSwitch.Name = "panelSwitch";
+            this.panelSwitch.Size = new System.Drawing.Size(798, 36);
+            this.panelSwitch.TabIndex = 4;
+            // 
+            // tab2
+            // 
+            this.tab2.AutoSize = true;
+            this.tab2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tab2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tab2.ForeColor = System.Drawing.Color.White;
+            this.tab2.Location = new System.Drawing.Point(130, 10);
+            this.tab2.Name = "tab2";
+            this.tab2.Size = new System.Drawing.Size(64, 17);
+            this.tab2.TabIndex = 5;
+            this.tab2.Text = "Analytics";
+            this.tab2.Click += new System.EventHandler(this.tab2_Click);
+            // 
+            // tab1
+            // 
+            this.tab1.AutoSize = true;
+            this.tab1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tab1.ForeColor = System.Drawing.Color.White;
+            this.tab1.Location = new System.Drawing.Point(36, 10);
+            this.tab1.Name = "tab1";
+            this.tab1.Size = new System.Drawing.Size(64, 17);
+            this.tab1.TabIndex = 1;
+            this.tab1.Text = "Accounts";
+            this.tab1.Click += new System.EventHandler(this.tab1_Click);
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(223)))), ((int)(((byte)(29)))));
+            this.bunifuSeparator1.LineThickness = 10;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(36, 30);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(64, 13);
+            this.bunifuSeparator1.TabIndex = 0;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // pBoxLogoTerm
+            // 
+            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
+            this.pBoxLogoTerm.Location = new System.Drawing.Point(28, 9);
+            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
+            this.pBoxLogoTerm.Size = new System.Drawing.Size(166, 77);
+            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBoxLogoTerm.TabIndex = 55;
+            this.pBoxLogoTerm.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -183,59 +234,20 @@
             this.btnAddIncome.TabIndex = 77;
             this.btnAddIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panelSwitch
+            // container
             // 
-            this.panelSwitch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(98)))), ((int)(((byte)(115)))));
-            this.panelSwitch.Controls.Add(this.tab2);
-            this.panelSwitch.Controls.Add(this.tab1);
-            this.panelSwitch.Controls.Add(this.bunifuSeparator1);
-            this.panelSwitch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSwitch.Location = new System.Drawing.Point(0, 100);
-            this.panelSwitch.Name = "panelSwitch";
-            this.panelSwitch.Size = new System.Drawing.Size(798, 36);
-            this.panelSwitch.TabIndex = 4;
-            // 
-            // tab2
-            // 
-            this.tab2.AutoSize = true;
-            this.tab2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tab2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tab2.ForeColor = System.Drawing.Color.White;
-            this.tab2.Location = new System.Drawing.Point(130, 10);
-            this.tab2.Name = "tab2";
-            this.tab2.Size = new System.Drawing.Size(64, 17);
-            this.tab2.TabIndex = 5;
-            this.tab2.Text = "Analytics";
-            // 
-            // tab1
-            // 
-            this.tab1.AutoSize = true;
-            this.tab1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tab1.ForeColor = System.Drawing.Color.White;
-            this.tab1.Location = new System.Drawing.Point(36, 10);
-            this.tab1.Name = "tab1";
-            this.tab1.Size = new System.Drawing.Size(64, 17);
-            this.tab1.TabIndex = 1;
-            this.tab1.Text = "Accounts";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(223)))), ((int)(((byte)(29)))));
-            this.bunifuSeparator1.LineThickness = 10;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(36, 30);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(56, 13);
-            this.bunifuSeparator1.TabIndex = 0;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(0, 136);
+            this.container.Name = "container";
+            this.container.Size = new System.Drawing.Size(798, 407);
+            this.container.TabIndex = 5;
             // 
             // AccountsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.Controls.Add(this.container);
             this.Controls.Add(this.panelSwitch);
             this.Controls.Add(this.bunifuCards1);
             this.Name = "AccountsUI";
@@ -246,12 +258,12 @@
             this.panelTop.PerformLayout();
             this.panelTopLeft.ResumeLayout(false);
             this.panelTopLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
             this.panelTopRght.ResumeLayout(false);
             this.panelTopRght.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSwitch.ResumeLayout(false);
             this.panelSwitch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +284,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel tab2;
         private Bunifu.Framework.UI.BunifuCustomLabel tab1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.Panel container;
     }
 }
