@@ -40,10 +40,10 @@
             this.tab2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tab1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.container = new System.Windows.Forms.Panel();
             this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddIncome = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.container = new System.Windows.Forms.Panel();
+            this.btnAddAccounts = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -119,7 +119,7 @@
             // 
             this.panelTopRght.Controls.Add(this.lblRowCount);
             this.panelTopRght.Controls.Add(this.pictureBox1);
-            this.panelTopRght.Controls.Add(this.btnAddIncome);
+            this.panelTopRght.Controls.Add(this.btnAddAccounts);
             this.panelTopRght.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelTopRght.Location = new System.Drawing.Point(332, 0);
             this.panelTopRght.Name = "panelTopRght";
@@ -188,6 +188,14 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
+            // container
+            // 
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(0, 136);
+            this.container.Name = "container";
+            this.container.Size = new System.Drawing.Size(798, 407);
+            this.container.TabIndex = 5;
+            // 
             // pBoxLogoTerm
             // 
             this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
@@ -208,39 +216,32 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // btnAddIncome
+            // btnAddAccounts
             // 
-            this.btnAddIncome.ActiveBorderThickness = 1;
-            this.btnAddIncome.ActiveCornerRadius = 40;
-            this.btnAddIncome.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnAddIncome.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAddIncome.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnAddIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.btnAddIncome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddIncome.BackgroundImage")));
-            this.btnAddIncome.ButtonText = "Add Account";
-            this.btnAddIncome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddIncome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddIncome.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnAddIncome.IdleBorderThickness = 1;
-            this.btnAddIncome.IdleCornerRadius = 30;
-            this.btnAddIncome.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.btnAddIncome.IdleForecolor = System.Drawing.Color.SeaShell;
-            this.btnAddIncome.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnAddIncome.Location = new System.Drawing.Point(163, 24);
-            this.btnAddIncome.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAddIncome.Name = "btnAddIncome";
-            this.btnAddIncome.Size = new System.Drawing.Size(241, 38);
-            this.btnAddIncome.TabIndex = 77;
-            this.btnAddIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // container
-            // 
-            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(0, 136);
-            this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(798, 407);
-            this.container.TabIndex = 5;
+            this.btnAddAccounts.ActiveBorderThickness = 1;
+            this.btnAddAccounts.ActiveCornerRadius = 40;
+            this.btnAddAccounts.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnAddAccounts.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAddAccounts.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnAddAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.btnAddAccounts.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddAccounts.BackgroundImage")));
+            this.btnAddAccounts.ButtonText = "Add Account";
+            this.btnAddAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAccounts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAccounts.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnAddAccounts.IdleBorderThickness = 1;
+            this.btnAddAccounts.IdleCornerRadius = 30;
+            this.btnAddAccounts.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnAddAccounts.IdleForecolor = System.Drawing.Color.SeaShell;
+            this.btnAddAccounts.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnAddAccounts.Location = new System.Drawing.Point(163, 24);
+            this.btnAddAccounts.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddAccounts.Name = "btnAddAccounts";
+            this.btnAddAccounts.Size = new System.Drawing.Size(241, 38);
+            this.btnAddAccounts.TabIndex = 77;
+            this.btnAddAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddAccounts.Click += new System.EventHandler(this.btnAddAccounts_Click);
             // 
             // AccountsUI
             // 
@@ -277,13 +278,13 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblDateNow;
         private System.Windows.Forms.PictureBox pBoxLogoTerm;
         private System.Windows.Forms.Panel panelTopRght;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblRowCount;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnAddIncome;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAddAccounts;
         private System.Windows.Forms.Panel panelSwitch;
         private Bunifu.Framework.UI.BunifuCustomLabel tab2;
         private Bunifu.Framework.UI.BunifuCustomLabel tab1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel container;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblRowCount;
     }
 }

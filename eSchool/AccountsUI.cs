@@ -45,7 +45,12 @@ namespace eSchool
         }
         private void AccountsUI_Load(object sender, EventArgs e)
         {
+            //UI code
+            lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
+            lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
 
+            //explicit tab1 click at load
+            tab1_Click(sender, e);
         }
 
         private void tab1_Click(object sender, EventArgs e)
@@ -66,6 +71,11 @@ namespace eSchool
 
             //show acc charts data UI
             TabSwitcher(AccountsChart.Instance);
+        }
+
+        private void btnAddAccounts_Click(object sender, EventArgs e)
+        {
+            //ToDo launch FrmAddAccounts
         }
     }
 }
