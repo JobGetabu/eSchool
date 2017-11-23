@@ -76,6 +76,13 @@ namespace eSchool
         private void btnAddAccounts_Click(object sender, EventArgs e)
         {
             //ToDo launch FrmAddAccounts
+            FrmAddAcc ac = new FrmAddAcc();
+            if (ac.ShowDialog() == DialogResult.OK)
+            {
+                //refresh the list in the accounts list
+                AccountsList acl = AccountsList.Instance;
+                acl.GridInitilizer();
+            }
         }
     }
 }

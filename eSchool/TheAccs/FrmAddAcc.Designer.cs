@@ -36,13 +36,13 @@
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbAmount = new MetroFramework.Controls.MetroTextBox();
+            this.tbAccNo = new MetroFramework.Controls.MetroTextBox();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbYear = new MetroFramework.Controls.MetroComboBox();
+            this.cbSelAccType = new MetroFramework.Controls.MetroComboBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.tbBankName = new MetroFramework.Controls.MetroTextBox();
+            this.tbBankBranch = new MetroFramework.Controls.MetroTextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,40 +110,40 @@
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Account Details";
             // 
-            // tbAmount
+            // tbAccNo
             // 
             // 
             // 
             // 
-            this.tbAmount.CustomButton.Image = null;
-            this.tbAmount.CustomButton.Location = new System.Drawing.Point(205, 2);
-            this.tbAmount.CustomButton.Name = "";
-            this.tbAmount.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.tbAmount.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tbAmount.CustomButton.TabIndex = 1;
-            this.tbAmount.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbAmount.CustomButton.UseSelectable = true;
-            this.tbAmount.CustomButton.Visible = false;
-            this.tbAmount.Lines = new string[0];
-            this.tbAmount.Location = new System.Drawing.Point(31, 200);
-            this.tbAmount.MaxLength = 32767;
-            this.tbAmount.Name = "tbAmount";
-            this.tbAmount.PasswordChar = '\0';
-            this.tbAmount.PromptText = "Account Number";
-            this.tbAmount.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbAmount.SelectedText = "";
-            this.tbAmount.SelectionLength = 0;
-            this.tbAmount.SelectionStart = 0;
-            this.tbAmount.ShortcutsEnabled = true;
-            this.tbAmount.Size = new System.Drawing.Size(227, 24);
-            this.tbAmount.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tbAmount.TabIndex = 23;
-            this.tbAmount.UseCustomBackColor = true;
-            this.tbAmount.UseCustomForeColor = true;
-            this.tbAmount.UseSelectable = true;
-            this.tbAmount.WaterMark = "Account Number";
-            this.tbAmount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbAmount.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAccNo.CustomButton.Image = null;
+            this.tbAccNo.CustomButton.Location = new System.Drawing.Point(205, 2);
+            this.tbAccNo.CustomButton.Name = "";
+            this.tbAccNo.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.tbAccNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbAccNo.CustomButton.TabIndex = 1;
+            this.tbAccNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbAccNo.CustomButton.UseSelectable = true;
+            this.tbAccNo.CustomButton.Visible = false;
+            this.tbAccNo.Lines = new string[0];
+            this.tbAccNo.Location = new System.Drawing.Point(31, 200);
+            this.tbAccNo.MaxLength = 32767;
+            this.tbAccNo.Name = "tbAccNo";
+            this.tbAccNo.PasswordChar = '\0';
+            this.tbAccNo.PromptText = "Account Number";
+            this.tbAccNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbAccNo.SelectedText = "";
+            this.tbAccNo.SelectionLength = 0;
+            this.tbAccNo.SelectionStart = 0;
+            this.tbAccNo.ShortcutsEnabled = true;
+            this.tbAccNo.Size = new System.Drawing.Size(227, 24);
+            this.tbAccNo.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbAccNo.TabIndex = 23;
+            this.tbAccNo.UseCustomBackColor = true;
+            this.tbAccNo.UseCustomForeColor = true;
+            this.tbAccNo.UseSelectable = true;
+            this.tbAccNo.WaterMark = "Account Number";
+            this.tbAccNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbAccNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnCancel
             // 
@@ -202,17 +202,23 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // cbYear
+            // cbSelAccType
             // 
-            this.cbYear.FormattingEnabled = true;
-            this.cbYear.ItemHeight = 23;
-            this.cbYear.Location = new System.Drawing.Point(31, 82);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.PromptText = "Select Account Type";
-            this.cbYear.Size = new System.Drawing.Size(227, 29);
-            this.cbYear.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbYear.TabIndex = 19;
-            this.cbYear.UseSelectable = true;
+            this.cbSelAccType.FormattingEnabled = true;
+            this.cbSelAccType.ItemHeight = 23;
+            this.cbSelAccType.Items.AddRange(new object[] {
+            "Cash",
+            "Bank",
+            "M-Pesa",
+            "Mobile Money"});
+            this.cbSelAccType.Location = new System.Drawing.Point(31, 82);
+            this.cbSelAccType.Name = "cbSelAccType";
+            this.cbSelAccType.PromptText = "Select Account Type";
+            this.cbSelAccType.Size = new System.Drawing.Size(227, 29);
+            this.cbSelAccType.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbSelAccType.TabIndex = 19;
+            this.cbSelAccType.UseSelectable = true;
+            this.cbSelAccType.SelectedIndexChanged += new System.EventHandler(this.cbSelAccType_SelectedIndexChanged);
             // 
             // bunifuDragControl1
             // 
@@ -221,75 +227,75 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // metroTextBox1
+            // tbBankName
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(205, 2);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(31, 126);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Bank Name";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(227, 24);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.TabIndex = 29;
-            this.metroTextBox1.UseCustomBackColor = true;
-            this.metroTextBox1.UseCustomForeColor = true;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "Bank Name";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbBankName.CustomButton.Image = null;
+            this.tbBankName.CustomButton.Location = new System.Drawing.Point(205, 2);
+            this.tbBankName.CustomButton.Name = "";
+            this.tbBankName.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.tbBankName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbBankName.CustomButton.TabIndex = 1;
+            this.tbBankName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbBankName.CustomButton.UseSelectable = true;
+            this.tbBankName.CustomButton.Visible = false;
+            this.tbBankName.Lines = new string[0];
+            this.tbBankName.Location = new System.Drawing.Point(31, 126);
+            this.tbBankName.MaxLength = 32767;
+            this.tbBankName.Name = "tbBankName";
+            this.tbBankName.PasswordChar = '\0';
+            this.tbBankName.PromptText = "Bank Name";
+            this.tbBankName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbBankName.SelectedText = "";
+            this.tbBankName.SelectionLength = 0;
+            this.tbBankName.SelectionStart = 0;
+            this.tbBankName.ShortcutsEnabled = true;
+            this.tbBankName.Size = new System.Drawing.Size(227, 24);
+            this.tbBankName.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbBankName.TabIndex = 29;
+            this.tbBankName.UseCustomBackColor = true;
+            this.tbBankName.UseCustomForeColor = true;
+            this.tbBankName.UseSelectable = true;
+            this.tbBankName.WaterMark = "Bank Name";
+            this.tbBankName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbBankName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox2
-            // 
-            // 
+            // tbBankBranch
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(205, 2);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(31, 161);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "Bank Branch";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(227, 24);
-            this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.TabIndex = 30;
-            this.metroTextBox2.UseCustomBackColor = true;
-            this.metroTextBox2.UseCustomForeColor = true;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMark = "Bank Branch";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // 
+            this.tbBankBranch.CustomButton.Image = null;
+            this.tbBankBranch.CustomButton.Location = new System.Drawing.Point(205, 2);
+            this.tbBankBranch.CustomButton.Name = "";
+            this.tbBankBranch.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.tbBankBranch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbBankBranch.CustomButton.TabIndex = 1;
+            this.tbBankBranch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbBankBranch.CustomButton.UseSelectable = true;
+            this.tbBankBranch.CustomButton.Visible = false;
+            this.tbBankBranch.Lines = new string[0];
+            this.tbBankBranch.Location = new System.Drawing.Point(31, 161);
+            this.tbBankBranch.MaxLength = 32767;
+            this.tbBankBranch.Name = "tbBankBranch";
+            this.tbBankBranch.PasswordChar = '\0';
+            this.tbBankBranch.PromptText = "Account Name";
+            this.tbBankBranch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbBankBranch.SelectedText = "";
+            this.tbBankBranch.SelectionLength = 0;
+            this.tbBankBranch.SelectionStart = 0;
+            this.tbBankBranch.ShortcutsEnabled = true;
+            this.tbBankBranch.Size = new System.Drawing.Size(227, 24);
+            this.tbBankBranch.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbBankBranch.TabIndex = 30;
+            this.tbBankBranch.UseCustomBackColor = true;
+            this.tbBankBranch.UseCustomForeColor = true;
+            this.tbBankBranch.UseSelectable = true;
+            this.tbBankBranch.WaterMark = "Account Name";
+            this.tbBankBranch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbBankBranch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // FrmAddAcc
             // 
@@ -297,18 +303,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(284, 332);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.tbBankBranch);
+            this.Controls.Add(this.tbBankName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.tbAmount);
+            this.Controls.Add(this.tbAccNo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cbYear);
+            this.Controls.Add(this.cbSelAccType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddAcc";
-            this.Text = "FrmAddAcc";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Add Account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAddAcc_FormClosing);
             this.Load += new System.EventHandler(this.FrmAddAcc_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
@@ -321,17 +330,17 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox tbBankBranch;
+        private MetroFramework.Controls.MetroTextBox tbBankName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private MetroFramework.Controls.MetroTextBox tbAmount;
+        private MetroFramework.Controls.MetroTextBox tbAccNo;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private MetroFramework.Controls.MetroComboBox cbYear;
+        private MetroFramework.Controls.MetroComboBox cbSelAccType;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

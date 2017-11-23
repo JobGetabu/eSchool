@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,10 @@ namespace eSchool.TheAccs
         }
 
         private int close;
+        private string selAcctype;
+        private string bankName;
+        private string acName;
+        private string acNo;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -37,8 +42,67 @@ namespace eSchool.TheAccs
                 e.Cancel = false;
                 return;
             }
+
+            if (string.IsNullOrEmpty(selAcctype))
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Select the Account Type !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(tbAccNo.Text))
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Give some details on Account No !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(tbBankBranch.Text))
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Give some details on Account Name !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(tbBankName.Text))
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Give some details on Bank Name !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;
+                return;
+            }
+
+            using (var context = new EschoolEntities())
+            {
+                Account ac = new Account()
+                {
+                    Type = selAcctype,
+                    AccName = tbBankBranch.Text,
+                    AccNo = tbAccNo.Text,
+                    Amount = 0,
+                    Bank = tbBankName.Text
+                };
+
+                context.Accounts.Add(ac);
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Account Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-       
+        private void cbSelAccType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selAcctype = cbSelAccType.SelectedItem.ToString();
+        }
     }
 }
