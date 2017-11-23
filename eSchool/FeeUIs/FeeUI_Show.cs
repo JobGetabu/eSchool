@@ -68,7 +68,7 @@ namespace eSchool
             });
             listControl1.Clear();
             foreach (var ol in overHeadListAsync)
-            {              
+            {
                 listControl1.Add(ol.OverHead);
             }
         }
@@ -84,9 +84,16 @@ namespace eSchool
             //TODO 2 prompt to print fee structure           
 
             #region autoGen is true
+            List<OverHeadCategoryPerYear> myOvList1 = new List<OverHeadCategoryPerYear>();
             if (FeesUI.autoGen)
             {
                 string frmslbl = "Form ";
+
+                //Add new ov before delete
+                myOvList1 = AddExistToNewFrptsAndGfs(FeesUI.autoSelTerm, FeesUI.autoSelYear, FeesUI.autoFilterListOfForms);
+                //Making sure method runs here;
+                int s = myOvList1.Count();
+
                 ///Delete preexisting data of the same kind we are saving
                 foreach (var fm in FeesUI.autoFilterListOfForms)
                 {
@@ -140,6 +147,19 @@ namespace eSchool
                     context.GroupedFeeStructures.Add(gp);
                     context.SaveChanges();
 
+                    foreach (var fm in FeesUI.autoFilterListOfForms)
+                    {
+                        ModiFyOverHeads(gp.Id, fm, FeesUI.autoSelTerm, FeesUI.autoSelYear, context, myOvList1);
+                    }
+                    context.SaveChanges();
+
+                    //update changes
+                     updateTotal = EditedAutoGenFsCash(FeesUI.autoSelTerm, FeesUI.autoSelYear, FeesUI.autoFilterListOfForms[0]);
+                     totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
+
+                    gp.TotalFee = updateTotal;
+                    gp.TotalTitle = totalCash;
+
 
                     foreach (var fm in FeesUI.autoFilterListOfForms)
                     {
@@ -151,10 +171,10 @@ namespace eSchool
                             Year = FeesUI.autoSelYear,
                             GrpFeestructure_Id = gp.Id
                         };
-                        context.FeesRequiredPerTerms.Add(frpt);
-
-                        ModiFyOverHeads(gp.Id, fm, FeesUI.autoSelTerm, FeesUI.autoSelYear, context);
+                        context.FeesRequiredPerTerms.Add(frpt);                     
                     }
+
+
                     try
                     {
                         context.SaveChanges();
@@ -166,7 +186,7 @@ namespace eSchool
                     }
 
 
-                    //take all overheadcatperyear with same xtics add fk attibute
+                    
                 }
 
 
@@ -190,7 +210,12 @@ namespace eSchool
             #region autogen is false
             else
             {
+                List<OverHeadCategoryPerYear> myOvList2 = new List<OverHeadCategoryPerYear>();
 
+                //Add new ov before delete
+                myOvList2 = AddExistToNewFrptsAndGfs(OverHeadListItem.selTerm, OverHeadListItem.selYear, OverHeadListItem.filterListOfForms);
+                //Making sure method runs here;
+                int s = myOvList2.Count();
 
                 ///Delete preexisting data of the same kind we are saving
                 foreach (var fm in OverHeadListItem.filterListOfForms)
@@ -236,6 +261,12 @@ namespace eSchool
                     context.GroupedFeeStructures.Add(gp);
                     context.SaveChanges();
 
+                    foreach (var fm in FeesUI.filterListOfForms)
+                    {
+                        ModiFyOverHeads(gp.Id, fm, FeesUI.autoSelTerm, FeesUI.autoSelYear, context, myOvList1);
+                    }
+                    context.SaveChanges();
+                    
 
                     foreach (var fm in FeesUI.filterListOfForms)
                     {
@@ -249,8 +280,9 @@ namespace eSchool
                         };
                         context.FeesRequiredPerTerms.Add(frpt);
 
-                        ModiFyOverHeads(gp.Id, fm, OverHeadListItem.selTerm, OverHeadListItem.selYear, context);
+                        ModiFyOverHeads(gp.Id, fm, OverHeadListItem.selTerm, OverHeadListItem.selYear, context, myOvList2);
                     }
+
                     context.SaveChanges();
                 }
 
@@ -270,7 +302,7 @@ namespace eSchool
                 fss.SwitchTabExt();
                 FeeUI_List ful = FeeUI_List.Instance;
                 ful.LoadListAsync(OverHeadListItem.selYear);
-            } 
+            }
             #endregion
 
             //referesh the progress bars
@@ -335,7 +367,7 @@ namespace eSchool
                         {
                             //call the GridInit to update
                             OverHeadListItem d = new OverHeadListItem();
-                            d.GridData(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear); 
+                            d.GridData(FeesUI.autoFilterListOfForms, FeesUI.autoSelTerm, FeesUI.autoSelYear);
                         }
                         else
                         {
@@ -360,7 +392,7 @@ namespace eSchool
             else
             {
 
-             overHeadPYList = await c.GridDataPass(FeesUI.filterListOfForms, FeesUI.selTerm, FeesUI.selYear);
+                overHeadPYList = await c.GridDataPass(FeesUI.filterListOfForms, FeesUI.selTerm, FeesUI.selYear);
             }
 
             string name;
@@ -378,6 +410,48 @@ namespace eSchool
             return null;
         }
 
+        private List<OverHeadCategoryPerYear> AddExistToNewFrptsAndGfs(int term, int year, List<int> forms)
+        {
+            List<OverHeadCategoryPerYear> theList = new List<OverHeadCategoryPerYear>();
+
+            using (var context = new EschoolEntities())
+            {
+                var form = forms[0];
+                var gpFs = context.GroupedFeeStructures
+                .Where(c => c.selFm1 == form | c.selFm2 == form | c.selFm3 == form | c.selFm4 == form)
+                .ToList();
+                if (gpFs != null)
+                {
+
+                    GroupedFeeStructure gpfitem = gpFs.Where(c => c.selYear == year & c.selTerm == term)
+                        .FirstOrDefault();
+                    if (gpfitem != null)
+                    {
+                        var xyzList = ReturnOvPerYear(forms, term, year, gpfitem.Id, context);
+                        foreach (var xyz in xyzList)
+                        {
+                            OverHeadCategoryPerYear ov = new OverHeadCategoryPerYear()
+                            {
+                                Amount = xyz.Amount,
+                                Form = xyz.Form,
+                                Category = xyz.Category,
+                                Term = xyz.Term,
+                                Year = xyz.Year,
+                            };
+                            theList.Add(ov);
+                        }
+                    }
+                }
+            }
+            return theList;
+        }
+
+        private List<OverHeadCategoryPerYear> ReturnOvPerYear(List<int> forms, int term, int year, int fkGrpFeeStruct, EschoolEntities context)
+        {
+            return context.OverHeadCategoryPerYears
+                    .Where(x => x.Term == term & x.Year == year & x.GrpFeeStructureId_Fk == fkGrpFeeStruct)
+                    .ToList();
+        }
         private void DeleteExistFrptsAndGfs(int term, int year, int form)
         {
             using (var context = new EschoolEntities())
@@ -385,15 +459,15 @@ namespace eSchool
                 //var fRPTerms= context.FeesRequiredPerTerms
                 //.Where(c => c.Form == form & c.Year == year & c.Term == term)
                 //.ToList();
- 
+
                 //foreach (FeesRequiredPerTerm fitem in fRPTerms)
                 //{
                 //    context.Entry<FeesRequiredPerTerm>(fitem).State = EntityState.Deleted;
                 //    context.SaveChanges();
                 //}
-               
-                var gpFs = context.GroupedFeeStructures               
-               .Where(c=> c.selFm1==form | c.selFm2 == form | c.selFm3 == form | c.selFm4 == form)
+
+                var gpFs = context.GroupedFeeStructures
+               .Where(c => c.selFm1 == form | c.selFm2 == form | c.selFm3 == form | c.selFm4 == form)
                .ToList();
 
                 foreach (GroupedFeeStructure gpfitem in gpFs.Where(c => c.selYear == year & c.selTerm == term))
@@ -406,14 +480,14 @@ namespace eSchool
                     }
                     catch (Exception exp)
                     {
-                        MessageBox.Show(exp.Message,"Deleting Multiple GpF & Frpts");
-                        throw;
+                        MessageBox.Show(exp.Message, "Deleting Multiple GpF & Frpts");
+                        //throw;
                     }
                 }
             }
         }
 
-        private void ModiFyOverHeads(int gprId,int form,int term,int year,EschoolEntities context)
+        private void ModiFyOverHeads(int gprId, int form, int term, int year, EschoolEntities context, List<OverHeadCategoryPerYear> myOverhList)
         {
             var ovHCpyList = context.OverHeadCategoryPerYears
               .Where(c => c.Form == form & c.Term == term & c.Year == year)
@@ -423,7 +497,12 @@ namespace eSchool
             {
                 ov.GrpFeeStructureId_Fk = gprId;
                 context.Entry<OverHeadCategoryPerYear>(ov).State = EntityState.Modified;
-            }           
+            }
+            foreach (OverHeadCategoryPerYear ov in myOverhList)
+            {
+                ov.GrpFeeStructureId_Fk = gprId;
+                context.OverHeadCategoryPerYears.Add(ov);
+            }
         }
 
         /// <summary>
@@ -442,7 +521,6 @@ namespace eSchool
                 .Where(c => c.Form == form & c.Year == year & c.Term == term)
                 .ToList();
 
-                
                 foreach (OverHeadCategoryPerYear fitem in oHCPY)
                 {
                     total += fitem.Amount;
@@ -459,7 +537,7 @@ namespace eSchool
             {
                 decimal updateTotal = EditedAutoGenFsCash(FeesUI.autoSelTerm, FeesUI.autoSelYear, FeesUI.autoFilterListOfForms[0]);
                 string totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
-                feeIns.lblTotalFeeStructure.Text = "Total "+totalCash;//Total KES 30,000
+                feeIns.lblTotalFeeStructure.Text = "Total " + totalCash;//Total KES 30,000
             }
             else
             {
