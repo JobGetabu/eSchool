@@ -71,6 +71,9 @@ namespace eSchool
 
             //show acc charts data UI
             TabSwitcher(AccountsChart.Instance);
+
+            AccountsChart ac = AccountsChart.Instance;
+            ac.Global_AccountsChart_Load();
         }
 
         private void btnAddAccounts_Click(object sender, EventArgs e)

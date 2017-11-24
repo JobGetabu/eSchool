@@ -34,23 +34,23 @@
             this.panelTopLeft = new System.Windows.Forms.Panel();
             this.lblDateDay = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateNow = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddAccounts = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelSwitch = new System.Windows.Forms.Panel();
             this.tab2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tab1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.container = new System.Windows.Forms.Panel();
-            this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddAccounts = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
-            this.panelTopRght.SuspendLayout();
-            this.panelSwitch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).BeginInit();
+            this.panelTopRght.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelSwitch.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -115,6 +115,16 @@
             this.lblDateNow.TabIndex = 57;
             this.lblDateNow.Text = "6 October 2017";
             // 
+            // pBoxLogoTerm
+            // 
+            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
+            this.pBoxLogoTerm.Location = new System.Drawing.Point(28, 9);
+            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
+            this.pBoxLogoTerm.Size = new System.Drawing.Size(166, 77);
+            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBoxLogoTerm.TabIndex = 55;
+            this.pBoxLogoTerm.TabStop = false;
+            // 
             // panelTopRght
             // 
             this.panelTopRght.Controls.Add(this.lblRowCount);
@@ -137,6 +147,43 @@
             this.lblRowCount.TabIndex = 15;
             this.lblRowCount.Text = "0";
             this.lblRowCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(359, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnAddAccounts
+            // 
+            this.btnAddAccounts.ActiveBorderThickness = 1;
+            this.btnAddAccounts.ActiveCornerRadius = 40;
+            this.btnAddAccounts.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnAddAccounts.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAddAccounts.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnAddAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            this.btnAddAccounts.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddAccounts.BackgroundImage")));
+            this.btnAddAccounts.ButtonText = "Add Account";
+            this.btnAddAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAccounts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAccounts.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnAddAccounts.IdleBorderThickness = 1;
+            this.btnAddAccounts.IdleCornerRadius = 30;
+            this.btnAddAccounts.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
+            this.btnAddAccounts.IdleForecolor = System.Drawing.Color.SeaShell;
+            this.btnAddAccounts.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
+            this.btnAddAccounts.Location = new System.Drawing.Point(163, 24);
+            this.btnAddAccounts.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddAccounts.Name = "btnAddAccounts";
+            this.btnAddAccounts.Size = new System.Drawing.Size(241, 38);
+            this.btnAddAccounts.TabIndex = 77;
+            this.btnAddAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddAccounts.Click += new System.EventHandler(this.btnAddAccounts_Click);
             // 
             // panelSwitch
             // 
@@ -196,53 +243,6 @@
             this.container.Size = new System.Drawing.Size(798, 407);
             this.container.TabIndex = 5;
             // 
-            // pBoxLogoTerm
-            // 
-            this.pBoxLogoTerm.Image = ((System.Drawing.Image)(resources.GetObject("pBoxLogoTerm.Image")));
-            this.pBoxLogoTerm.Location = new System.Drawing.Point(28, 9);
-            this.pBoxLogoTerm.Name = "pBoxLogoTerm";
-            this.pBoxLogoTerm.Size = new System.Drawing.Size(166, 77);
-            this.pBoxLogoTerm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBoxLogoTerm.TabIndex = 55;
-            this.pBoxLogoTerm.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(359, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnAddAccounts
-            // 
-            this.btnAddAccounts.ActiveBorderThickness = 1;
-            this.btnAddAccounts.ActiveCornerRadius = 40;
-            this.btnAddAccounts.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnAddAccounts.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAddAccounts.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnAddAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            this.btnAddAccounts.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddAccounts.BackgroundImage")));
-            this.btnAddAccounts.ButtonText = "Add Account";
-            this.btnAddAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAccounts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAccounts.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnAddAccounts.IdleBorderThickness = 1;
-            this.btnAddAccounts.IdleCornerRadius = 30;
-            this.btnAddAccounts.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(109)))), ((int)(((byte)(99)))));
-            this.btnAddAccounts.IdleForecolor = System.Drawing.Color.SeaShell;
-            this.btnAddAccounts.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(188)))), ((int)(((byte)(115)))));
-            this.btnAddAccounts.Location = new System.Drawing.Point(163, 24);
-            this.btnAddAccounts.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAddAccounts.Name = "btnAddAccounts";
-            this.btnAddAccounts.Size = new System.Drawing.Size(241, 38);
-            this.btnAddAccounts.TabIndex = 77;
-            this.btnAddAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddAccounts.Click += new System.EventHandler(this.btnAddAccounts_Click);
-            // 
             // AccountsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,12 +259,12 @@
             this.panelTop.PerformLayout();
             this.panelTopLeft.ResumeLayout(false);
             this.panelTopLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
             this.panelTopRght.ResumeLayout(false);
             this.panelTopRght.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSwitch.ResumeLayout(false);
             this.panelSwitch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBoxLogoTerm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
