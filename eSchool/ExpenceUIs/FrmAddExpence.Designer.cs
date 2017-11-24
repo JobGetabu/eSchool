@@ -44,6 +44,7 @@
             this.cbYear = new MetroFramework.Controls.MetroComboBox();
             this.cbTerm = new MetroFramework.Controls.MetroComboBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.cbAccount = new MetroFramework.Controls.MetroComboBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(274, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 318);
+            this.panel2.Size = new System.Drawing.Size(10, 369);
             this.panel2.TabIndex = 28;
             // 
             // panel1
@@ -68,7 +69,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 318);
+            this.panel1.Size = new System.Drawing.Size(10, 369);
             this.panel1.TabIndex = 27;
             // 
             // bunifuGradientPanel1
@@ -126,13 +127,11 @@
             this.tbAmount.CustomButton.UseSelectable = true;
             this.tbAmount.CustomButton.Visible = false;
             this.tbAmount.Lines = new string[0];
-            this.tbAmount.Location = new System.Drawing.Point(31, 263);
+            this.tbAmount.Location = new System.Drawing.Point(31, 303);
             this.tbAmount.MaxLength = 32767;
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.tbAmount.PromptText = "Amount";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.tbAmount.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbAmount.SelectedText = "";
             this.tbAmount.SelectionLength = 0;
@@ -169,7 +168,7 @@
             this.btnCancel.IconVisible = true;
             this.btnCancel.IconZoom = 50D;
             this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(31, 339);
+            this.btnCancel.Location = new System.Drawing.Point(31, 379);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.OnHovercolor = System.Drawing.Color.Silver;
@@ -195,7 +194,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::eSchool.FeeUILogo.Ok_0px;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(31, 299);
+            this.btnSave.Location = new System.Drawing.Point(31, 339);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(222, 31);
@@ -209,7 +208,7 @@
             // 
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.ItemHeight = 23;
-            this.cbCategory.Location = new System.Drawing.Point(31, 165);
+            this.cbCategory.Location = new System.Drawing.Point(31, 205);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.PromptText = "Select Expense Category";
             this.cbCategory.Size = new System.Drawing.Size(227, 29);
@@ -233,14 +232,12 @@
             this.tbDetails.CustomButton.UseSelectable = true;
             this.tbDetails.CustomButton.Visible = false;
             this.tbDetails.Lines = new string[0];
-            this.tbDetails.Location = new System.Drawing.Point(31, 205);
+            this.tbDetails.Location = new System.Drawing.Point(31, 245);
             this.tbDetails.MaxLength = 32767;
             this.tbDetails.Multiline = true;
             this.tbDetails.Name = "tbDetails";
             this.tbDetails.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.tbDetails.PromptText = "Details";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.tbDetails.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbDetails.SelectedText = "";
             this.tbDetails.SelectionLength = 0;
@@ -260,7 +257,7 @@
             // 
             this.cbYear.FormattingEnabled = true;
             this.cbYear.ItemHeight = 23;
-            this.cbYear.Location = new System.Drawing.Point(31, 82);
+            this.cbYear.Location = new System.Drawing.Point(31, 122);
             this.cbYear.Name = "cbYear";
             this.cbYear.PromptText = "Year";
             this.cbYear.Size = new System.Drawing.Size(227, 29);
@@ -273,7 +270,7 @@
             // 
             this.cbTerm.FormattingEnabled = true;
             this.cbTerm.ItemHeight = 23;
-            this.cbTerm.Location = new System.Drawing.Point(31, 125);
+            this.cbTerm.Location = new System.Drawing.Point(31, 165);
             this.cbTerm.Name = "cbTerm";
             this.cbTerm.PromptText = "Term";
             this.cbTerm.Size = new System.Drawing.Size(227, 29);
@@ -289,12 +286,26 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // cbAccount
+            // 
+            this.cbAccount.FormattingEnabled = true;
+            this.cbAccount.ItemHeight = 23;
+            this.cbAccount.Location = new System.Drawing.Point(31, 79);
+            this.cbAccount.Name = "cbAccount";
+            this.cbAccount.PromptText = "Select Account";
+            this.cbAccount.Size = new System.Drawing.Size(227, 29);
+            this.cbAccount.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbAccount.TabIndex = 29;
+            this.cbAccount.UseSelectable = true;
+            this.cbAccount.SelectedIndexChanged += new System.EventHandler(this.cbAccount_SelectedIndexChanged);
+            // 
             // FrmAddExpence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(284, 381);
+            this.ClientSize = new System.Drawing.Size(284, 432);
+            this.Controls.Add(this.cbAccount);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -334,5 +345,6 @@
         private MetroFramework.Controls.MetroComboBox cbYear;
         private MetroFramework.Controls.MetroComboBox cbTerm;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private MetroFramework.Controls.MetroComboBox cbAccount;
     }
 }

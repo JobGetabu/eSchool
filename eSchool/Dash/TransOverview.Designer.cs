@@ -106,9 +106,9 @@
             this.lblTrans.ForeColor = System.Drawing.Color.Black;
             this.lblTrans.Location = new System.Drawing.Point(92, 13);
             this.lblTrans.Name = "lblTrans";
-            this.lblTrans.Size = new System.Drawing.Size(31, 28);
+            this.lblTrans.Size = new System.Drawing.Size(23, 28);
             this.lblTrans.TabIndex = 12;
-            this.lblTrans.Text = "10";
+            this.lblTrans.Text = "0";
             // 
             // bunifuCustomLabel5
             // 

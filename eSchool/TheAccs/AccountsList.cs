@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace eSchool.TheAccs
 {
@@ -29,6 +30,15 @@ namespace eSchool.TheAccs
             InitializeComponent();
         }
 
+        public void Global_AccountsList_Load()
+        {
+            //UI code
+            //change color of TXN to green
+            gData.Columns[2].DefaultCellStyle.ForeColor = Color.Blue;
+
+            //Load the grid
+            GridInitilizer();
+        }
         private void AccountsList_Load(object sender, EventArgs e)
         {
             //UI code
@@ -113,13 +123,16 @@ namespace eSchool.TheAccs
                         {
                             try
                             {
-                                context.Entry<Account>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
-                                context.SaveChanges();
+                                if (MetroMessageBox.Show(this, $"Are You Sure You Want To Delete This Account ! \nThis action might result in loss of data of related transactions", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                                {
+                                    context.Entry<Account>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
+                                    context.SaveChanges();
 
-                                //TODO short Custom Notification
-                                gData.Rows[e.RowIndex].Visible = false;
-                                //Load the grid again
-                                GridInitilizer();                               
+                                    //TODO short Custom Notification
+                                    gData.Rows[e.RowIndex].Visible = false;
+                                    //Load the grid again
+                                    GridInitilizer();       
+                                }                         
                             }
                             catch (Exception exp)
                             {

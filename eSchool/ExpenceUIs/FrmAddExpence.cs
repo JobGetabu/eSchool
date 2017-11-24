@@ -23,7 +23,8 @@ namespace eSchool.ExpenceUIs
         private int selYear;
         private int selTerm;
         private decimal amount;
-        public string expenseCategory;
+        private string expenseCategory;
+        private string selAccount;
 
         private void FrmAddExpence_Load(object sender, EventArgs e)
         {
@@ -62,7 +63,36 @@ namespace eSchool.ExpenceUIs
                 {
                     cbCategory.Items.Add(c);
                 }
+
+                var accListAsync = Task.Factory.StartNew(() =>
+                {
+                    return context.Accounts.ToList();
+                });
+
+                foreach (var c in await accListAsync)
+                {
+                    cbAccount.Items.Add($"{c.AccName}({c.AccNo})");
+                }
             }
+        }
+
+        private Account FindSelAccount(String account)
+        {
+            // account = Equity(075465156)
+            using (var context = new EschoolEntities())
+            {
+                var accListAsync = context.Accounts.ToList();
+
+                foreach (var c in accListAsync)
+                {
+                    string f = ($"{c.AccName}({c.AccNo})");
+                    if (account.Equals(f))
+                    {
+                        return c;
+                    }
+                }
+            }
+            return null;
         }
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +115,14 @@ namespace eSchool.ExpenceUIs
             if (close == 1)
             {
                 e.Cancel = false;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(selAccount))
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;
                 return;
             }
 
@@ -135,17 +173,26 @@ namespace eSchool.ExpenceUIs
 
             using (var context = new EschoolEntities())
             {
-                Expense expense = new Expense()
+                Account me = FindSelAccount(selAccount);
+                if (me != null)
                 {
-                    Details = tbDetails.Text,
-                    Amount = amount,
-                    Date = DateTime.Now,
-                    Term = selTerm,
-                    Year = selYear,
-                    Category = expenseCategory
-                };
+                    Expense expense = new Expense()
+                    {
+                        Details = tbDetails.Text,
+                        Amount = amount,
+                        Date = DateTime.Now,
+                        Term = selTerm,
+                        Year = selYear,
+                        Category = expenseCategory,
+                        Acc_Fk=me.Id
+                    };
 
-                context.Expenses.Add(expense);
+
+                    me.Amount -= amount;
+
+                    context.Entry<Account>(me).State = EntityState.Modified;
+                    context.Expenses.Add(expense);
+                }
                 try
                 {
                     context.SaveChanges();
@@ -191,6 +238,11 @@ namespace eSchool.ExpenceUIs
 
                 e.Cancel = false;
             }
+        }
+
+        private void cbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selAccount = cbAccount.SelectedItem.ToString();
         }
     }
 }

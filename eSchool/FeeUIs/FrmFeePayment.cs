@@ -23,6 +23,42 @@ namespace eSchool
             this.Close();
         }
 
+        private string selAccount;
+
+        private async void PreparingComboBoxesAsync()
+        {
+            using (var context = new EschoolEntities())
+            {
+                var accListAsync = Task.Factory.StartNew(() =>
+                {
+                    return context.Accounts.ToList();
+                });
+
+                foreach (var c in await accListAsync)
+                {
+                    cbAccount.Items.Add($"{c.AccName}({c.AccNo})");
+                }
+            }
+        }
+
+        private Account FindSelAccount(String account)
+        {
+            // account = Equity(075465156)
+            using (var context = new EschoolEntities())
+            {
+                var accListAsync = context.Accounts.ToList();
+
+                foreach (var c in accListAsync)
+                {
+                    string f = ($"{c.AccName}({c.AccNo})");
+                    if (account.Equals(f))
+                    {
+                        return c;
+                    }
+                }
+            }
+            return null;
+        }
         private void FrmFeePayment_Load(object sender, EventArgs e)
         {
             //UI code
@@ -31,6 +67,8 @@ namespace eSchool
             AutoComplete(tbTerm);
             AutoComplete(tbYear);
             tbAdminNo.Focus();
+
+            PreparingComboBoxesAsync();
         }
         private void AutoComplete(MetroFramework.Controls.MetroTextBox tb)
         {
@@ -105,13 +143,13 @@ namespace eSchool
             return null;
         }
 
-        private async Task<FeesRequiredPerTerm> FeeStructureFoundAsync(int form,int term,int year)
+        private async Task<FeesRequiredPerTerm> FeeStructureFoundAsync(int form, int term, int year)
         {
             List<FeesRequiredPerTerm> structList = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
                 {
-                    return context.FeesRequiredPerTerms.Where(f=>f.Form == form & f.Term == term).ToList();
+                    return context.FeesRequiredPerTerms.Where(f => f.Form == form & f.Term == term).ToList();
                 }
             });
 
@@ -135,7 +173,7 @@ namespace eSchool
         {
             if (e.KeyChar == (char)13)
             {
-                tbTerm.Focus();
+                cbAccount.Focus();
 
             }
         }
@@ -228,56 +266,66 @@ namespace eSchool
             decimal amount = decimal.Parse(tbAmount.Text);
             using (var context = new EschoolEntities())
             {
-                Fee myFee = new Fee
+                Account me = FindSelAccount(selAccount);
+                if (me != null)
                 {
-                    Name = $"{tbFName.Text} {tbSName.Text}",
-                    Admin_No = adminNo,
-                    Form = form,
-                    Class = $"{tbClass.Text}",
-                    Date = DateTime.Now,
-                    Term = term,
-                    Year = year,
-                    ModeOfPayment = $"{tbMOP.Text}",
-                    Amount_Paid = amount
-                };
-                context.Fees.Add(myFee);
-                try
-                {
-                    context.SaveChanges();
+                    Fee myFee = new Fee
+                    {
+                        Name = $"{tbFName.Text} {tbSName.Text}",
+                        Admin_No = adminNo,
+                        Form = form,
+                        Class = $"{tbClass.Text}",
+                        Date = DateTime.Now,
+                        Term = term,
+                        Year = year,
+                        ModeOfPayment = $"{tbMOP.Text}",
+                        Amount_Paid = amount,
+                        Acc_Fk = me.Id
+                    };
+
+
+                    me.Amount += amount;
+
+                    context.Entry<Account>(me).State = EntityState.Modified;
+                    context.Fees.Add(myFee);
+
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
+
+                    #region RegisterTransation
+
+                    //Register this Transaction
+
+                    Transation trans = new Transation()
+                    {
+                        Type = "Payment",
+                        Details = $"Order #200{myFee.FeesId}" + "\n" + $"(Client {tbFName.Text} {tbSName.Text})",
+                        Amount = amount,
+                        Date = DateTime.Now,
+                        Term = term,
+                        Year = year,
+                    };
+
+                    context.Transations.Add(trans);
+                    try
+                    {
+                        trans.TransactionNo = "300" + trans.Id;
+                        context.SaveChanges();
+                        trans.TransactionNo = "300" + +trans.Id;
+                        context.Entry<Transation>(trans).State = EntityState.Modified;
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
                 }
-                catch (Exception exp)
-                {
-                    MessageBox.Show(exp.Message);
-                }
-
-                #region RegisterTransation
-
-                //Register this Transaction
-
-                Transation trans = new Transation()
-                {
-                    Type = "Payment",
-                    Details = $"Order #200{myFee.FeesId}" + "\n" + $"(Client {tbFName.Text} {tbSName.Text})",
-                    Amount = amount,
-                    Date = DateTime.Now,
-                    Term = term,
-                    Year = year,
-                };
-
-                context.Transations.Add(trans);
-                try
-                {
-                    trans.TransactionNo = "300" + trans.Id;
-                    context.SaveChanges();
-                    trans.TransactionNo = "300" + +trans.Id;
-                    context.Entry<Transation>(trans).State = EntityState.Modified;
-                    context.SaveChanges();
-                }
-                catch (Exception exp)
-                {
-                    MessageBox.Show(exp.Message);
-                }
-
                 TransationsUI traUI = TransationsUI.Instance;
                 traUI.Global_TransationsUI_Load();
                 #endregion
@@ -294,6 +342,14 @@ namespace eSchool
                 MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (string.IsNullOrEmpty(selAccount))
+            {
+                //TODO custom notification
+                MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             decimal test1;
             if (!decimal.TryParse(tbAmount.Text, out test1))
             {
@@ -341,7 +397,7 @@ namespace eSchool
                 {
                     this.Close();
                     FeesUI fui = FeesUI.Instance;
-                    fui.tab2_Click(sender,e);
+                    fui.tab2_Click(sender, e);
                 }
                 return;
             }
@@ -361,6 +417,11 @@ namespace eSchool
             //refresh the fee list grid
             FeePayment fp = FeePayment.Instance;
             fp.GridInitilizer();
+        }
+
+        private void cbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selAccount = cbAccount.SelectedItem.ToString();
         }
 
         //ToDo pass some info over to invoices and receipts to enable easier

@@ -50,7 +50,7 @@ namespace eSchool.Dash
                 }
             });
 
-            lblTrans.Text = (transListAsync.Count() + 1).ToString();
+            lblTrans.Text = (transListAsync.Count()).ToString();
         }
     }
 }

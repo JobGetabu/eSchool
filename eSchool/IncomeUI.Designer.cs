@@ -61,6 +61,7 @@
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -197,6 +198,7 @@
             // 
             // panelTopRght
             // 
+            this.panelTopRght.Controls.Add(this.lblAccounts);
             this.panelTopRght.Controls.Add(this.lblYear);
             this.panelTopRght.Controls.Add(this.lblRowCount);
             this.panelTopRght.Controls.Add(this.bunifuThinButton22);
@@ -430,6 +432,18 @@
             this.ColumnDel.ReadOnly = true;
             this.ColumnDel.ToolTipText = "Delete Record";
             // 
+            // lblAccounts
+            // 
+            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccounts.AutoSize = true;
+            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblAccounts.ForeColor = System.Drawing.Color.White;
+            this.lblAccounts.Location = new System.Drawing.Point(16, 7);
+            this.lblAccounts.Name = "lblAccounts";
+            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
+            this.lblAccounts.TabIndex = 80;
+            this.lblAccounts.Text = "Accounts: All";
+            // 
             // IncomeUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,5 +496,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblT2;
         public Bunifu.Framework.UI.BunifuCustomLabel lblT1;
         public Bunifu.Framework.UI.BunifuCustomLabel lblYear;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblAccounts;
     }
 }

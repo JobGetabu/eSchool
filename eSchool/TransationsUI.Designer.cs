@@ -68,6 +68,7 @@
             this.ColumnDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -107,6 +108,7 @@
             // panelTopLeft
             // 
             this.panelTopLeft.AutoSize = true;
+            this.panelTopLeft.Controls.Add(this.lblAccounts);
             this.panelTopLeft.Controls.Add(this.lblT3);
             this.panelTopLeft.Controls.Add(this.lblT2);
             this.panelTopLeft.Controls.Add(this.lblT1);
@@ -126,7 +128,7 @@
             this.lblT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblT3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblT3.Location = new System.Drawing.Point(270, 24);
+            this.lblT3.Location = new System.Drawing.Point(270, 27);
             this.lblT3.Name = "lblT3";
             this.lblT3.Size = new System.Drawing.Size(15, 17);
             this.lblT3.TabIndex = 61;
@@ -138,7 +140,7 @@
             this.lblT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblT2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblT2.Location = new System.Drawing.Point(260, 24);
+            this.lblT2.Location = new System.Drawing.Point(260, 27);
             this.lblT2.Name = "lblT2";
             this.lblT2.Size = new System.Drawing.Size(15, 17);
             this.lblT2.TabIndex = 60;
@@ -150,7 +152,7 @@
             this.lblT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblT1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblT1.Location = new System.Drawing.Point(249, 24);
+            this.lblT1.Location = new System.Drawing.Point(249, 27);
             this.lblT1.Name = "lblT1";
             this.lblT1.Size = new System.Drawing.Size(15, 17);
             this.lblT1.TabIndex = 59;
@@ -162,7 +164,7 @@
             this.lblDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblDateDay.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblDateDay.Location = new System.Drawing.Point(212, 49);
+            this.lblDateDay.Location = new System.Drawing.Point(212, 52);
             this.lblDateDay.Name = "lblDateDay";
             this.lblDateDay.Size = new System.Drawing.Size(55, 17);
             this.lblDateDay.TabIndex = 58;
@@ -174,7 +176,7 @@
             this.lblDateNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblDateNow.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblDateNow.Location = new System.Drawing.Point(211, 74);
+            this.lblDateNow.Location = new System.Drawing.Point(211, 77);
             this.lblDateNow.Name = "lblDateNow";
             this.lblDateNow.Size = new System.Drawing.Size(65, 16);
             this.lblDateNow.TabIndex = 57;
@@ -186,7 +188,7 @@
             this.lblTerm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblTerm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblTerm.Location = new System.Drawing.Point(212, 24);
+            this.lblTerm.Location = new System.Drawing.Point(212, 27);
             this.lblTerm.Name = "lblTerm";
             this.lblTerm.Size = new System.Drawing.Size(42, 17);
             this.lblTerm.TabIndex = 56;
@@ -545,6 +547,18 @@
             this.Class.Name = "Class";
             this.Class.ReadOnly = true;
             // 
+            // lblAccounts
+            // 
+            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccounts.AutoSize = true;
+            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblAccounts.ForeColor = System.Drawing.Color.White;
+            this.lblAccounts.Location = new System.Drawing.Point(211, 7);
+            this.lblAccounts.Name = "lblAccounts";
+            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
+            this.lblAccounts.TabIndex = 81;
+            this.lblAccounts.Text = "Accounts: All";
+            // 
             // TransationsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,5 +618,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Form;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDates;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblAccounts;
     }
 }

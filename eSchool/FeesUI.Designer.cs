@@ -55,6 +55,7 @@
             this.tab1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.container = new System.Windows.Forms.Panel();
+            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -94,6 +95,7 @@
             // panelTopLeft
             // 
             this.panelTopLeft.AutoSize = true;
+            this.panelTopLeft.Controls.Add(this.lblAccounts);
             this.panelTopLeft.Controls.Add(this.lblDateDay);
             this.panelTopLeft.Controls.Add(this.lblDateNow);
             this.panelTopLeft.Controls.Add(this.lblTerm);
@@ -110,7 +112,7 @@
             this.lblDateDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblDateDay.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblDateDay.Location = new System.Drawing.Point(208, 49);
+            this.lblDateDay.Location = new System.Drawing.Point(208, 51);
             this.lblDateDay.Name = "lblDateDay";
             this.lblDateDay.Size = new System.Drawing.Size(55, 17);
             this.lblDateDay.TabIndex = 58;
@@ -122,7 +124,7 @@
             this.lblDateNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblDateNow.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateNow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblDateNow.Location = new System.Drawing.Point(207, 74);
+            this.lblDateNow.Location = new System.Drawing.Point(207, 76);
             this.lblDateNow.Name = "lblDateNow";
             this.lblDateNow.Size = new System.Drawing.Size(90, 16);
             this.lblDateNow.TabIndex = 57;
@@ -134,7 +136,7 @@
             this.lblTerm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
             this.lblTerm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTerm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.lblTerm.Location = new System.Drawing.Point(208, 24);
+            this.lblTerm.Location = new System.Drawing.Point(208, 26);
             this.lblTerm.Name = "lblTerm";
             this.lblTerm.Size = new System.Drawing.Size(49, 17);
             this.lblTerm.TabIndex = 56;
@@ -401,6 +403,18 @@
             this.container.Size = new System.Drawing.Size(798, 407);
             this.container.TabIndex = 2;
             // 
+            // lblAccounts
+            // 
+            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccounts.AutoSize = true;
+            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblAccounts.ForeColor = System.Drawing.Color.White;
+            this.lblAccounts.Location = new System.Drawing.Point(207, 5);
+            this.lblAccounts.Name = "lblAccounts";
+            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
+            this.lblAccounts.TabIndex = 81;
+            this.lblAccounts.Text = "Accounts: All";
+            // 
             // FeesUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,5 +469,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblRequred;
         public Bunifu.Framework.UI.BunifuCustomLabel lblPaid;
         public Bunifu.Framework.UI.BunifuCustomLabel perfPercentage;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblAccounts;
     }
 }

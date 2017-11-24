@@ -112,7 +112,7 @@
             this.lblUsers.AutoSize = true;
             this.lblUsers.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUsers.Location = new System.Drawing.Point(303, 6);
+            this.lblUsers.Location = new System.Drawing.Point(299, 6);
             this.lblUsers.Name = "lblUsers";
             this.lblUsers.Size = new System.Drawing.Size(13, 15);
             this.lblUsers.TabIndex = 13;
@@ -140,7 +140,7 @@
             this.lblStudents.AutoSize = true;
             this.lblStudents.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudents.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStudents.Location = new System.Drawing.Point(39, 6);
+            this.lblStudents.Location = new System.Drawing.Point(38, 6);
             this.lblStudents.Name = "lblStudents";
             this.lblStudents.Size = new System.Drawing.Size(13, 15);
             this.lblStudents.TabIndex = 11;
