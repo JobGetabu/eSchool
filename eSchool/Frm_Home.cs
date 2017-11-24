@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using eSchool.Dash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,10 +58,13 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
             TabSwitcher(DashboardUI.Instance);
+            DashboardUI das = DashboardUI.Instance;
+            das.Global_DashboardUI_Load();
         }
 
         //TabSwitcher switches the tabs gracefully
@@ -106,6 +110,7 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
@@ -123,10 +128,14 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
             TabSwitcher(IncomeUI.Instance);
+
+            IncomeUI inc = IncomeUI.Instance;
+            inc.Global_IncomeUI_Load();
         }
 
         private void btn_expenses_Click(object sender, EventArgs e)
@@ -140,10 +149,14 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
             TabSwitcher(ExpenseUI.Instance);
+
+            ExpenseUI exp = ExpenseUI.Instance;
+            exp.Global_ExpenseUI_Load();
         }
 
         private void Frm_Home_Load(object sender, EventArgs e)
@@ -167,6 +180,7 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _white;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
@@ -186,6 +200,7 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _white;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
@@ -205,6 +220,7 @@ namespace eSchool
             btn_transations.Textcolor = _white;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
@@ -226,11 +242,11 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
+            btn_Accounts.Textcolor = _normal;
 
             //End UI Design code
 
             TabSwitcher(FeesUI.Instance);
-
         }
 
         private void btn_Accounts_Click(object sender, EventArgs e)
@@ -249,6 +265,8 @@ namespace eSchool
             //End UI Design code
 
             TabSwitcher(AccountsUI.Instance);
+            AccountsUI a = AccountsUI.Instance;
+            a.Global_AccountsUI_Load(sender, e);
         }
 
         public void pictureBxMenuHome_Click(object sender, EventArgs e)

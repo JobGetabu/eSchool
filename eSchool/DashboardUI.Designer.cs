@@ -37,11 +37,19 @@
             this.home_ui_label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHCDCard = new Bunifu.Framework.UI.BunifuCards();
             this.flowPanelBody = new System.Windows.Forms.FlowLayoutPanel();
-            this.moneyOverview1 = new eSchool.Dash.MoneyOverview();
-            this.receiptOverview1 = new eSchool.Dash.ReceiptOverview();
-            this.transOverview1 = new eSchool.Dash.TransOverview();
-            this.monthlyOverview1 = new eSchool.Dash.MonthlyOverview();
-            this.termlyOverview1 = new eSchool.Dash.TermlyOverview();
+
+            //this.moneyOverview1 = new eSchool.Dash.MoneyOverview();
+            //this.receiptOverview1 = new eSchool.Dash.ReceiptOverview();
+            //this.transOverview1 = new eSchool.Dash.TransOverview();
+            //this.monthlyOverview1 = new eSchool.Dash.MonthlyOverview();
+            //this.termlyOverview1 = new eSchool.Dash.TermlyOverview();
+
+            this.moneyOverview1 = eSchool.Dash.MoneyOverview.Instance;
+            this.receiptOverview1 =  eSchool.Dash.ReceiptOverview.Instance; ;
+            this.transOverview1 =  eSchool.Dash.TransOverview.Instance; ;
+            this.monthlyOverview1 = eSchool.Dash.MonthlyOverview.Instance; ;
+            this.termlyOverview1 = eSchool.Dash.TermlyOverview.Instance; ;
+
             this.panelHCD.SuspendLayout();
             this.panelWColpseBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnColapse)).BeginInit();
@@ -221,10 +229,10 @@
         public Bunifu.Framework.UI.BunifuImageButton bunifuImageBtnColapse;
         private Bunifu.Framework.UI.BunifuCards panelHCDCard;
         private System.Windows.Forms.FlowLayoutPanel flowPanelBody;
-        private Dash.MoneyOverview moneyOverview1;
-        private Dash.ReceiptOverview receiptOverview1;
-        private Dash.TransOverview transOverview1;
-        private Dash.MonthlyOverview monthlyOverview1;
-        private Dash.TermlyOverview termlyOverview1;
+        public Dash.MoneyOverview moneyOverview1;
+        public Dash.ReceiptOverview receiptOverview1;
+        public Dash.TransOverview transOverview1;
+        public Dash.MonthlyOverview monthlyOverview1;
+        public Dash.TermlyOverview termlyOverview1;
     }
 }

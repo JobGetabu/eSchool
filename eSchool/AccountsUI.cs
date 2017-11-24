@@ -43,6 +43,16 @@ namespace eSchool
                 UIinstance.BringToFront();
             }
         }
+
+        public void Global_AccountsUI_Load(object sender, EventArgs e)
+        {
+            //UI code
+            lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
+            lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
+
+            //explicit tab1 click at load
+            tab1_Click(sender, e);
+        }
         private void AccountsUI_Load(object sender, EventArgs e)
         {
             //UI code
@@ -61,6 +71,8 @@ namespace eSchool
 
             //show Accs list UI with custom list
             TabSwitcher(AccountsList.Instance);
+            AccountsList acl = AccountsList.Instance;
+            acl.Global_AccountsList_Load();
         }
 
         private void tab2_Click(object sender, EventArgs e)

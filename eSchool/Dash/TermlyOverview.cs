@@ -38,6 +38,11 @@ namespace eSchool.Dash
 
         }
 
+        public void Global_TermlyOverview()
+        {
+            SetUpPieChart();
+        }
+
         private async void SetUpPieChart()
         {
             using (var context = new EschoolEntities())

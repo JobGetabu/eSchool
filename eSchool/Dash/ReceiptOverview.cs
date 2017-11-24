@@ -30,6 +30,10 @@ namespace eSchool.Dash
             InitializeComponent();
         }
 
+        public void Global_ReceiptOverview_Load()
+        {
+            //TODO get number of printed receipts here and pending
+        }
         private void ReceiptOverview_Load(object sender, EventArgs e)
         {
             //TODO get number of printed receipts here and pending

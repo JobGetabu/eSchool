@@ -82,6 +82,17 @@ namespace eSchool
             this.lblPaid.Text = $"KES {String.Format("{0:0,0}", total)}";
         }
 
+        public void Global_ExpenseUI_Load()
+        {
+            //UI code
+            TermImageSet();
+
+            lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
+            lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
+            //Load the grid
+            GridInitilizer();
+            ExpenseTotalAsync(GTerm, GYear);
+        }
         private void ExpenseUI_Load(object sender, EventArgs e)
         {
             //UI code

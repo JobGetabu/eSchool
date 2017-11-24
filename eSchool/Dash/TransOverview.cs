@@ -33,6 +33,11 @@ namespace eSchool.Dash
 
         int GTerm = Properties.Settings.Default.CurrentTerm;
         int GYear = Properties.Settings.Default.CurrentYear;
+
+        public void Global_TransOverview_Load()
+        {
+            TransListAsync();
+        }
         private void TransOverview_Load(object sender, EventArgs e)
         {
             TransListAsync();

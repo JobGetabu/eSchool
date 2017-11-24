@@ -82,6 +82,18 @@ namespace eSchool
             decimal total = myIncomes.Where(x => x.Term == term & x.Year == year).Sum(x => x.Amount);
             this.lblPaid.Text=   $"KES {String.Format("{0:0,0}",total)}";
         }
+
+        public void Global_IncomeUI_Load()
+        {
+            //UI code
+            TermImageSet();
+
+            lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
+            lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
+            //Load the grid
+            GridInitilizer();
+            IncomeTotalAsync(GTerm, GYear);
+        }
         private void IncomeUI_Load(object sender, EventArgs e)
         {
             //UI code

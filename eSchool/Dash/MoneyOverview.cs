@@ -32,6 +32,11 @@ namespace eSchool.Dash
 
         int GTerm = Properties.Settings.Default.CurrentTerm;
         int GYear = Properties.Settings.Default.CurrentYear;
+
+        public void Global_MoneyOverview_Load()
+        {
+            DashUISet();
+        }
         private void MoneyOverview_Load(object sender, EventArgs e)
         {
             DashUISet();
