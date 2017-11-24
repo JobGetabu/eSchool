@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace eSchool.Dash
 {
-    public partial class MonthlyOverview : UserControl
+    public partial class MonthlyOverview : UserControl, INotifyPropertyChanged
     {
         //Singleton pattern ***best practices***
         private static MonthlyOverview _instance;
@@ -78,7 +78,7 @@ namespace eSchool.Dash
                 OnPropertyChanged("IncDay10");
             }
         }
-        private decimal IncDay15
+        public decimal IncDay15
         {
             get { return incDay15; }
             set
@@ -87,7 +87,7 @@ namespace eSchool.Dash
                 OnPropertyChanged("IncDay15");
             }
         }
-        private decimal IncDay20
+        public decimal IncDay20
         {
             get { return incDay20; }
             set
@@ -96,7 +96,7 @@ namespace eSchool.Dash
                 OnPropertyChanged("IncDay20");
             }
         }
-        private decimal IncDay25
+        public decimal IncDay25
         {
             get { return incDay25; }
             set
@@ -105,7 +105,7 @@ namespace eSchool.Dash
                 OnPropertyChanged("IncDay25");
             }
         }
-        private decimal IncDayLast
+        public decimal IncDayLast
         {
             get { return incDayLast; }
             set
@@ -115,7 +115,7 @@ namespace eSchool.Dash
             }
         }
 
-        private decimal ExpDay0
+        public decimal ExpDay0
         {
             get { return expDay0; }
             set
@@ -124,7 +124,7 @@ namespace eSchool.Dash
                 OnPropertyChanged("ExpDay0");
             }
         }
-        private decimal ExpDay5
+        public decimal ExpDay5
         {
             get { return expDay5; }
             set
@@ -133,7 +133,7 @@ namespace eSchool.Dash
                 OnPropertyChanged("ExpDay5");
             }
         }
-        private decimal ExpDay10
+        public decimal ExpDay10
         {
             get { return expDay0; }
             set
@@ -143,7 +143,7 @@ namespace eSchool.Dash
             }
         }
 
-        private decimal ExpDay15
+        public decimal ExpDay15
         {
             get { return expDay15; }
             set
@@ -153,7 +153,7 @@ namespace eSchool.Dash
             }
         }
 
-        private decimal ExpDay20
+        public decimal ExpDay20
         {
             get { return expDay20; }
             set
@@ -163,7 +163,7 @@ namespace eSchool.Dash
             }
         }
 
-        private decimal ExpDay25
+        public decimal ExpDay25
         {
             get { return expDay25; }
             set
@@ -173,7 +173,7 @@ namespace eSchool.Dash
             }
         }
 
-        private decimal ExpDayLast
+        public decimal ExpDayLast
         {
             get { return expDayLast; }
             set
@@ -184,7 +184,7 @@ namespace eSchool.Dash
         }
         #endregion
 
-        public void Global_ctor_MonthlyOverview()
+        public void Global_MonthlyOverview()
         {
             UpdateMyChart();
         }
@@ -275,12 +275,12 @@ namespace eSchool.Dash
                     new LineSeries
                     {
                         Title = "Incomes",
-                        Values = new ChartValues<decimal> { IncDay0,IncDay5,IncDay10,IncDay15,IncDay20,IncDay25,IncDayLast}
+                        Values = new ChartValues<decimal> { incDay0,incDay5,incDay10,incDay15,incDay20,incDay25,incDayLast}
                     },
                      new LineSeries
                     {
                         Title = "Expenses",
-                        Values = new ChartValues<decimal> { ExpDay0,ExpDay5,ExpDay10,ExpDay15,ExpDay20,ExpDay25,ExpDayLast },
+                        Values = new ChartValues<decimal> { expDay0,expDay5,expDay10,expDay15,expDay20,expDay25,expDayLast },
                         PointGeometry = null
                     }
                 };
@@ -343,7 +343,7 @@ namespace eSchool.Dash
                     return context.Expenses.Where(x => x.Year == GYear & x.Term == GTerm & x.Date.Month == GMonth)
                     .ToList();
                 });
-              
+
 
                 //Days for income
                 IncDay0 = incomeListAsync.Where(x => x.Date == firstDayOfMonth).Sum(a => a.Amount);
@@ -362,13 +362,21 @@ namespace eSchool.Dash
                 ExpDay20 = expListAsync.Where(x => x.Date.Day > 15 & x.Date.Day < 26).ToList().Sum(a => a.Amount);
                 ExpDay25 = expListAsync.Where(x => x.Date.Day > 25 & x.Date.Day < 31).ToList().Sum(a => a.Amount);
                 ExpDayLast = expListAsync.Where(x => x.Date.Day == lastDayOfMonth.Day).ToList().Sum(a => a.Amount);
+
+                cartesianChart1.Update();
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event Action PointChanged;
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        //DashboardUI das = DashboardUI.Instance;
         protected virtual void OnPropertyChanged(string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            var eventToRaise = PropertyChanged;
+            if (eventToRaise != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }          
         }
     }
 }

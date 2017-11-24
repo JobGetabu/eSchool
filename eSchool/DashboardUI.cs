@@ -34,19 +34,19 @@ namespace eSchool
         {
             InitializeComponent();
         }
-
         public void Global_DashboardUI_Load()
         {
             
             this.moneyOverview1.Global_MoneyOverview_Load();
            
-            this.monthlyOverview1.Global_ctor_MonthlyOverview();
+            this.monthlyOverview1.Global_MonthlyOverview();
            
             this.receiptOverview1.Global_ReceiptOverview_Load();
             
             this.termlyOverview1.Global_TermlyOverview();
            
             this.transOverview1.Global_TransOverview_Load();
+          
         }
         private void DashboardUI_Load(object sender, EventArgs e)
         {

@@ -47,6 +47,11 @@ namespace eSchool
 
         Color _normal = Color.FromArgb(126, 135, 169);
         Color _white = Color.White;
+
+
+        DashboardUI das = DashboardUI.Instance;
+        MonthlyOverview mo;
+
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
             //UI design Code
@@ -63,8 +68,15 @@ namespace eSchool
             //End UI Design code
 
             TabSwitcher(DashboardUI.Instance);
-            DashboardUI das = DashboardUI.Instance;
             das.Global_DashboardUI_Load();
+
+           // mo = das.monthlyOverview1;
+           // mo.PropertyChanged += Mo_PropertyChanged;
+        }
+
+        private void Mo_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         //TabSwitcher switches the tabs gracefully
@@ -260,7 +272,7 @@ namespace eSchool
             btn_transations.Textcolor = _normal;
             btn_imports.Textcolor = _normal;
             btn_settings.Textcolor = _normal;
-            btn_Accounts.Textcolor =_white;
+            btn_Accounts.Textcolor = _white;
 
             //End UI Design code
 
