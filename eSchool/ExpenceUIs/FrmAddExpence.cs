@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -120,51 +121,59 @@ namespace eSchool.ExpenceUIs
 
             if (string.IsNullOrEmpty(selAccount))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+               // MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select an Account !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
 
             if (selYear == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select a year !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Select a year !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alert.Show("Required info \n Select a year !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (selTerm == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select a term !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Select a term !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alert.Show("Required info \n Select a term !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (string.IsNullOrEmpty(tbDetails.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Give some details on expense !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Give some details on expense !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alert.Show("Required info \n Give some details on expense !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (string.IsNullOrEmpty(expenseCategory))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Give some details on expense !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Give some details on expense !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alert.Show("Required info \n Select expense category!", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (string.IsNullOrEmpty(tbAmount.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Enter amount !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Enter amount !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alert.Show("Required info \n Enter amount !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             decimal test1;
             if (!decimal.TryParse(tbAmount.Text, out test1))
             {
-                MetroMessageBox.Show(this, "Only numeric values  allowed on amount input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only numeric values  allowed on amount input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Only numeric values \n allowed on amount input !", alert.AlertType.error);
                 e.Cancel = true;
                 return;
             }
@@ -202,8 +211,9 @@ namespace eSchool.ExpenceUIs
                     MessageBox.Show(exp.Message);
                 }
 
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Expense Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //custom notification
+                //MetroMessageBox.Show(this, "Expense Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alert.Show("Expense Added !", alert.AlertType.success);
 
                 #region RegisterTransation
 

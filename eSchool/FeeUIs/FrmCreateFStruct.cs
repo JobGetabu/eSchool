@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -143,14 +144,16 @@ namespace eSchool
         {
             if (selectedTerm == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select the term", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // custom notification
+                //MetroMessageBox.Show(this, "Select the term", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alert.Show("Required info \n Select the term", alert.AlertType.info);
                 return;
             }
             if (selectedYear == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select the year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // custom notification
+                // MetroMessageBox.Show(this, "Select the year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alert.Show("Required info \n Select the year", alert.AlertType.info);
                 return;
             }   
 
@@ -210,8 +213,10 @@ namespace eSchool
             fui.btnSaveStructure.Visible = true;
             //refresh the list of fee items
             fui.OlistControlInitAsync();
-            //TODO 1 custom notification
-            MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //custom notification
+            //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            alert.Show("Saved", alert.AlertType.success);
 
             TabSwitcher(FeeUI_Show.Instance);
             this.Close();

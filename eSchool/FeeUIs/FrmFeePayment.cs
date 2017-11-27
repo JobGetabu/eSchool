@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -339,38 +340,46 @@ namespace eSchool
 
             if (string.IsNullOrEmpty(tbAmount.Text) | string.IsNullOrEmpty(tbTerm.Text) | string.IsNullOrEmpty(tbYear.Text))
             {
-                MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                alert.Show("Required info \n Please fill all required fields !", alert.AlertType.warnig);
                 return;
             }
 
             if (string.IsNullOrEmpty(selAccount))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select an Account !", alert.AlertType.warnig);
                 return;
             }
 
             decimal test1;
             if (!decimal.TryParse(tbAmount.Text, out test1))
             {
-                MetroMessageBox.Show(this, "Only numeric values  allowed on amount input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only numeric values  allowed on amount input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Only numeric values \n allowed on amount input !", alert.AlertType.error);
                 return;
             }
             int test;
             if (!int.TryParse(tbYear.Text, out test))
             {
-                MetroMessageBox.Show(this, "Only numeric values  allowed on year input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only numeric values  allowed on year input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Only numeric values  \n  allowed on year input !", alert.AlertType.error);
                 return;
             }
             int test2;
             if (!int.TryParse(tbTerm.Text, out test2))
             {
-                MetroMessageBox.Show(this, "Only numeric values  allowed on term input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only numeric values  allowed on term input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Only numeric values  \n  allowed on term input !", alert.AlertType.error);
                 return;
             }
             if (int.Parse(tbTerm.Text) != 1 & int.Parse(tbTerm.Text) != 2 & int.Parse(tbTerm.Text) != 3)
             {
-                MetroMessageBox.Show(this, "Only term 1, 2 or 3 exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only term 1, 2 or 3 exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Only term 1, 2 or 3 exist !", alert.AlertType.error);
                 return;
             }
 
@@ -404,11 +413,13 @@ namespace eSchool
 
             SavePayment();
 
+            // custom notification
+            //MetroMessageBox.Show(this, "Payment Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            alert.Show("Payment Added !", alert.AlertType.success);
+
             //refresh the fee list grid
             FeePayment fp = FeePayment.Instance;
             fp.GridInitilizer();
-            //TODO custom notification
-            MetroMessageBox.Show(this, "Payment Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

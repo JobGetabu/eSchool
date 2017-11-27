@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eSchool.IncomeUIs;
+using custom_alert_notifications;
 
 namespace eSchool
 {
@@ -142,6 +143,7 @@ namespace eSchool
             // string totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
             myIncomes = new List<Income>();
             myIncomes = incomeListAsync;
+            gData.Rows.Clear();
             foreach (var inc in incomeListAsync)
             {
                 gData.Rows.Add(new string[]
@@ -178,7 +180,8 @@ namespace eSchool
                                 context.Entry<Income>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
                                 context.SaveChanges();
 
-                                //TODO short Custom Notification
+                                // Custom Notification
+                                alert.Show("Deleted", alert.AlertType.warnig);
                                 gData.Rows[e.RowIndex].Visible = false;
                                 //Load the grid again
                                 GridInitilizer();

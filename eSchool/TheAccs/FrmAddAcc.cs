@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,9 +21,9 @@ namespace eSchool.TheAccs
 
         private int close;
         private string selAcctype;
-        private string bankName;
-        private string acName;
-        private string acNo;
+        //private string bankName;
+        //private string acName;
+        //private string acNo;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -45,31 +46,38 @@ namespace eSchool.TheAccs
 
             if (string.IsNullOrEmpty(selAcctype))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select the Account Type !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+               // MetroMessageBox.Show(this, "Select the Account Type !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select the Account Type !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (string.IsNullOrEmpty(tbAccNo.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Give some details on Account No !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Give some details on Account No !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Give some details on Account No !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
 
             if (string.IsNullOrEmpty(tbBankBranch.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Give some details on Account Name !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Give some details on Account Name !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Give some details on Account Name !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
 
             if (string.IsNullOrEmpty(tbBankName.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Give some details on Bank Name !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Give some details on Bank Name !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                alert.Show("Required info \n Give some details on Bank Name !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
@@ -95,8 +103,10 @@ namespace eSchool.TheAccs
                     MessageBox.Show(exp.Message);
                 }
 
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Account Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // custom notification
+                //MetroMessageBox.Show(this, "Account Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                alert.Show("Account Added !", alert.AlertType.success);
             }
         }
 

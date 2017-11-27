@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,7 +110,9 @@ namespace eSchool.IncomeUIs
 
             if (selFilYear == 0)
             {
-                MetroMessageBox.Show(this, "Select a year !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MetroMessageBox.Show(this, "Select a year !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select a year !", alert.AlertType.error);
                 e.Cancel = true;
                 return;
             }
@@ -121,8 +124,10 @@ namespace eSchool.IncomeUIs
 
             if (selFilTerms.Count == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+               // MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select at least a form !", alert.AlertType.error);
                 e.Cancel = true;
                 return;
             }

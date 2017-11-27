@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,8 +60,9 @@ namespace eSchool
             }
             if (selChangeYear == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select a year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //custom notification
+                //MetroMessageBox.Show(this, "Select a year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alert.Show("Required info \n Select a year", alert.AlertType.info);
                 e.Cancel = true;
             }
             else

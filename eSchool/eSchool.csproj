@@ -833,7 +833,12 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\UIs\Beautiful-Winform-Notifications---winforms - Copy\custom_alert_notifications\custom_alert_notifications.csproj">
+      <Project>{c6009a3f-00ee-45d4-9944-d80400ecd12c}</Project>
+      <Name>custom_alert_notifications</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

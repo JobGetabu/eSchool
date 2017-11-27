@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,15 +120,19 @@ namespace eSchool.Invoices
             }
             if (string.IsNullOrEmpty(tbAdminNo.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Enter Administration Number !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Enter Administration Number !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Enter Administration Number !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (string.IsNullOrEmpty(tbSDetails.Text))
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Enter Some Student Details  !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+                //MetroMessageBox.Show(this, "Enter Some Student Details  !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Enter Some Student Details !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
@@ -159,8 +164,10 @@ namespace eSchool.Invoices
                     MessageBox.Show(exp.Message);
                 }
             }
-            //TODO custom notification
-            MetroMessageBox.Show(this, "Invoice Saved !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // custom notification
+           // MetroMessageBox.Show(this, "Invoice Saved !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            alert.Show("Invoice Saved", alert.AlertType.success);
             e.Cancel = false;
         }
 

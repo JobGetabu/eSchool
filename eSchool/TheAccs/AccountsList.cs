@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using custom_alert_notifications;
 
 namespace eSchool.TheAccs
 {
@@ -62,6 +63,7 @@ namespace eSchool.TheAccs
                 }
             });
 
+            gData.Rows.Clear();
             foreach (var acc in accListAsync)
             {
                 gData.Rows.Add(new string[]
@@ -128,7 +130,8 @@ namespace eSchool.TheAccs
                                     context.Entry<Account>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
                                     context.SaveChanges();
 
-                                    //TODO short Custom Notification
+                                    // short Custom Notification
+                                    alert.Show("Deleted", alert.AlertType.info);
                                     gData.Rows[e.RowIndex].Visible = false;
                                     //Load the grid again
                                     GridInitilizer();       

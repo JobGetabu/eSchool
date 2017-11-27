@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,15 +57,19 @@ namespace eSchool
 
             if (selFilYear == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select a year !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Select a year !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select a year !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
             if (selFilTerm == 0)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select a term !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Select a term !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select a term !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }
@@ -76,8 +81,10 @@ namespace eSchool
            
             if (selFilForms.Count == -1)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //custom notification
+                //MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select at least a form !", alert.AlertType.warnig);
                 e.Cancel = true;
                 return;
             }

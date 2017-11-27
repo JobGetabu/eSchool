@@ -11,6 +11,7 @@ using MetroFramework;
 using System.Data.Entity.Validation;
 using System.Data.Entity.Infrastructure;
 using System.Text.RegularExpressions;
+using custom_alert_notifications;
 
 namespace eSchool.Importss
 {   
@@ -145,7 +146,9 @@ namespace eSchool.Importss
                                 context.Entry<Student_Basic>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
                                 context.SaveChanges();
 
-                                //TODO short Custom Notification
+                                // short Custom Notification
+                                alert.Show("Deleted", alert.AlertType.warnig);
+
                                 gData.Rows[e.RowIndex].Visible = false;
                                 this.lblRowCount.Text = gData.Rows.Count.ToString();
                                 NewImportsUI niUI = NewImportsUI.Instance;

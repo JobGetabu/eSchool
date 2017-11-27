@@ -146,6 +146,7 @@ namespace eSchool
             // string totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
             myFee = new List<Fee>();
             myFee = feeListAsync;
+            gData.Rows.Clear();
             foreach (var fee in feeListAsync)
             {
                 gData.Rows.Add(new string[]

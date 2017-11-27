@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,9 @@ namespace eSchool
 
                 if (string.IsNullOrEmpty(this.mTBoxCost.Text))
                 {
-                    MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    alert.Show("Please fill all required fields", alert.AlertType.warnig);
                     mTBoxCost.Focus();
                     return;
                 }
@@ -55,7 +58,9 @@ namespace eSchool
                 decimal amount;
                 if (!decimal.TryParse(mTBoxCost.Text, out amount))
                 {
-                    MetroMessageBox.Show(this, "Only numbers allowed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MetroMessageBox.Show(this, "Only numbers allowed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    alert.Show("Only numbers allowed", alert.AlertType.error);
+
                     mTBoxCost.Focus();
                     return;
                 }
@@ -89,9 +94,10 @@ namespace eSchool
                     }
                 }
 
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
- 
+                // custom notification
+                //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alert.Show("Added", alert.AlertType.success);
+
                 //remove category from visible list 
                 IsSaveClicked = true;
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using custom_alert_notifications;
 
 namespace eSchool
 {
@@ -190,7 +191,7 @@ namespace eSchool
                 }
 
 
-                //ToDo custom notification
+                // custom notification
                 if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} /n Total fee for {tmTitle} is {totalCash} /n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
                 {
                     //TODO print fee structure
@@ -313,7 +314,7 @@ namespace eSchool
         private async void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-
+            bool deleted = false;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
             {
@@ -333,6 +334,7 @@ namespace eSchool
                                         context.SaveChanges();
                                         //enable save btn visible
                                         btnSaveStructure.Visible = true;
+                                        deleted = true;
                                     }
                                     catch (Exception exp)
                                     {
@@ -340,6 +342,10 @@ namespace eSchool
 
                                     }
                                 }
+                            }
+                            if (deleted)
+                            {
+                                alert.Show("Deleted", alert.AlertType.warnig);
                             }
                         }
                         else
@@ -361,7 +367,8 @@ namespace eSchool
                                 }
                             }
                         }
-                        //ToDo custom notification 
+                        // custom notification 
+                        alert.Show("Deleted", alert.AlertType.warnig);
                         bGrid.Rows[e.RowIndex].Visible = false;
                         if (FeesUI.autoGen)
                         {

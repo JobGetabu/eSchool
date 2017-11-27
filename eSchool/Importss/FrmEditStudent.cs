@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,7 +80,9 @@ namespace eSchool
         {
             if (string.IsNullOrEmpty(metroTbAdminNo.Text) | string.IsNullOrEmpty(metroTbFName.Text) | string.IsNullOrEmpty(metroTbForm.Text))
             {
-                MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                alert.Show("Please fill all required fields", alert.AlertType.error);
                 return;
             }
 
@@ -91,8 +94,9 @@ namespace eSchool
                     objNew = null;
                     db.Entry<Student_Basic>(obj).State = EntityState.Modified;
                     db.SaveChanges();
-                    //TODO add custom notification
-                    MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // add custom notification
+                    //MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    alert.Show("Updated", alert.AlertType.success);
                 }
                 else
                 {
@@ -125,8 +129,9 @@ namespace eSchool
                         db.Student_Basic.Add(objNew);
                         db.SaveChanges();
 
-                        //TODO custom notification
-                        MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // custom notification
+                        //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        alert.Show("Saved", alert.AlertType.success);
                     }
                     else
                     {

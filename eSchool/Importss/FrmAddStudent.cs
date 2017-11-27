@@ -1,4 +1,5 @@
-﻿using eSchool.Importss;
+﻿using custom_alert_notifications;
+using eSchool.Importss;
 using MetroFramework;
 using System;
 using System.Collections.Generic;
@@ -87,22 +88,27 @@ namespace eSchool
         {
             if (string.IsNullOrEmpty(metroTbAdminNo.Text) | string.IsNullOrEmpty(metroTbFName.Text) | string.IsNullOrEmpty(metroTbForm.Text))
             {
-                MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Please fill all required fields", alert.AlertType.error);
+
                 return;
             }
             decimal test1;
             if (!decimal.TryParse(metroTbTerm.Text, out test1))
             {
-                MetroMessageBox.Show(this, "Only numeric values  allowed on Admission Term input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only numeric values  allowed on Admission Term input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                alert.Show("Only numeric values \n allowed on Admission Term input", alert.AlertType.error);
                 return;
             }
             int test;
             if (!int.TryParse(metroTbYear.Text, out test))
             {
-                MetroMessageBox.Show(this, "Only numeric values  allowed on Registration Year input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MetroMessageBox.Show(this, "Only numeric values  allowed on Registration Year input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                alert.Show("Only numeric values \n allowed on Registration Year input", alert.AlertType.error);
                 return;
             }
-            //TODO add custom notification
+            // add custom notification
 
             try
             {
@@ -112,7 +118,10 @@ namespace eSchool
                     objNew = null;
                     db.Entry<Student_Basic>(obj).State = EntityState.Modified;
                     db.SaveChanges();
-                    MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    alert.Show("Updated", alert.AlertType.success);
 
                     //refresh our list
                     StudentsData sData = StudentsData.Instance;
@@ -122,7 +131,7 @@ namespace eSchool
                 else
                 {
                     objNew = new Student_Basic();
-                    //TODO 1 check invalid primary key at save
+                    // check invalid primary key at save
                     objNew.Admin_No = int.Parse(metroTbAdminNo.Text);
                     objNew.First_Name = metroTbFName.Text;
                     objNew.Middle_Name = metroTbMName.Text;
@@ -150,8 +159,10 @@ namespace eSchool
                         db.Student_Basic.Add(objNew);
                         db.SaveChanges();
 
-                        //TODO custom notification
-                        MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // custom notification
+                        //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        alert.Show("Saved", alert.AlertType.success);
 
                         //refresh our list
                         StudentsData sData = StudentsData.Instance;

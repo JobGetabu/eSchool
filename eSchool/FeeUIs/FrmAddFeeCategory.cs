@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,8 +39,10 @@ namespace eSchool
                     context.OverHeadCategories.Add(cat);
                     context.SaveChanges();
 
-                    //TODO 2 custom notification
-                    MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //custom notification
+                    //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    alert.Show("Saved !", alert.AlertType.success);
                     this.Close();
                 }
                 catch (Exception exp)

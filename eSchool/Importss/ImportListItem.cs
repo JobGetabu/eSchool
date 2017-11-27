@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using custom_alert_notifications;
 
 namespace eSchool.Importss
 {
@@ -68,7 +69,8 @@ namespace eSchool.Importss
             if ((await StudentImportDel(Title)))
             {
                 ImportsData Idata = ImportsData.Instance;
-                Idata.listControl1.Remove(Title, Status); 
+                Idata.listControl1.Remove(Title, Status);
+                alert.Show("Deleted", alert.AlertType.info);
             }
         }
 

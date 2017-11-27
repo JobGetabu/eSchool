@@ -127,6 +127,8 @@ namespace eSchool
             //End UI Design code
 
             TabSwitcher(InvoicesReceipt.Instance);
+            InvoicesReceipt inv = InvoicesReceipt.Instance;
+            inv.Global_InvoicesReceipt_Load();
         }
 
         private void btn_income_Click(object sender, EventArgs e)

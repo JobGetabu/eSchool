@@ -80,6 +80,17 @@ namespace eSchool
             //TODO find a cancelled state
 
         }
+
+        public void Global_InvoicesReceipt_Load()
+        {
+            //UI code
+            TermImageSet();
+
+            //load the grid
+            GridInitializer();
+            //lbls
+            InvoiceCashlbl(GTerm, GYear);
+        }
         private void InvoicesReceipt_Load(object sender, EventArgs e)
         {
             //UI code

@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using custom_alert_notifications;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,8 +60,10 @@ namespace eSchool.Importss
             }
             if (selFilForms.Count == -1)
             {
-                //TODO custom notification
-                MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // custom notification
+               // MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                alert.Show("Required info \n Select at least a form !", alert.AlertType.error);
                 e.Cancel = true;
                 return;
             }
