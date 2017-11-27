@@ -32,6 +32,7 @@
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelTopLeft = new System.Windows.Forms.Panel();
+            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateDay = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDateNow = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -55,7 +56,6 @@
             this.tab1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.container = new System.Windows.Forms.Panel();
-            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -105,6 +105,18 @@
             this.panelTopLeft.Name = "panelTopLeft";
             this.panelTopLeft.Size = new System.Drawing.Size(300, 100);
             this.panelTopLeft.TabIndex = 55;
+            // 
+            // lblAccounts
+            // 
+            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccounts.AutoSize = true;
+            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblAccounts.ForeColor = System.Drawing.Color.White;
+            this.lblAccounts.Location = new System.Drawing.Point(207, 5);
+            this.lblAccounts.Name = "lblAccounts";
+            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
+            this.lblAccounts.TabIndex = 81;
+            this.lblAccounts.Text = "Accounts: All";
             // 
             // lblDateDay
             // 
@@ -402,18 +414,6 @@
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(798, 407);
             this.container.TabIndex = 2;
-            // 
-            // lblAccounts
-            // 
-            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAccounts.AutoSize = true;
-            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblAccounts.ForeColor = System.Drawing.Color.White;
-            this.lblAccounts.Location = new System.Drawing.Point(207, 5);
-            this.lblAccounts.Name = "lblAccounts";
-            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
-            this.lblAccounts.TabIndex = 81;
-            this.lblAccounts.Text = "Accounts: All";
             // 
             // FeesUI
             // 

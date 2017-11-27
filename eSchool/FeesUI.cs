@@ -84,8 +84,9 @@ namespace eSchool
             FeeUI_Show fuui = FeeUI_Show.Instance;
             fuui.btnSaveStructure.Visible = false;
             //tab1 selected =true;
+
             //Show FeePayment
-            TabSwitcher(FeePayment.Instance);
+            tab1_Click(sender, e);
 
 
             #region PassMoreDataDelegate Subscription

@@ -31,14 +31,7 @@ namespace eSchool
                     cBYear.Items.Add(y);
                 }
             }
-            //int count = (Properties.Settings.Default.CurrentYear);
-            //cBYear.Items.Add(Properties.Settings.Default.CurrentYear + 1);
-            //cBYear.Items.Add(Properties.Settings.Default.CurrentYear);
-            ////go down 5 yrs from current and up one
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    cBYear.Items.Add(count -= 1);
-            //}
+           
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -73,6 +66,7 @@ namespace eSchool
                 feeIns.lblFFeeStructure.Text = "";
                 feeIns.lblTFeeStructure.Text = "";
                 feeIns.lblTotalFeeStructure.Text = "";
+                feeIns.CheckAnnualPrintAvail(selChangeYear);
                 e.Cancel = false;
             }
         }

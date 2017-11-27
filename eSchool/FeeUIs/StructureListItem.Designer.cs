@@ -37,12 +37,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageDel = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageDel)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -74,6 +76,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.imageDel);
             this.panel3.Controls.Add(this.lblTotal);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(377, 0);
@@ -93,6 +96,8 @@
             this.lblTotal.Size = new System.Drawing.Size(81, 20);
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "KES 20,000";
+            this.lblTotal.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.lblTotal.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // panel2
             // 
@@ -115,6 +120,8 @@
             this.lblSession.Size = new System.Drawing.Size(54, 20);
             this.lblSession.TabIndex = 2;
             this.lblSession.Text = "Term 3";
+            this.lblSession.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.lblSession.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // panel4
             // 
@@ -138,6 +145,8 @@
             this.lblTitle.Size = new System.Drawing.Size(108, 20);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "2017 Form 1, 2";
+            this.lblTitle.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.lblTitle.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // pictureBox1
             // 
@@ -148,6 +157,24 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
+            // 
+            // imageDel
+            // 
+            this.imageDel.BackColor = System.Drawing.Color.Transparent;
+            this.imageDel.Image = global::eSchool.StatusGrid.Waste_64px;
+            this.imageDel.ImageActive = null;
+            this.imageDel.Location = new System.Drawing.Point(132, 11);
+            this.imageDel.Name = "imageDel";
+            this.imageDel.Size = new System.Drawing.Size(22, 20);
+            this.imageDel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageDel.TabIndex = 5;
+            this.imageDel.TabStop = false;
+            this.imageDel.Zoom = 10;
+            this.imageDel.Click += new System.EventHandler(this.imageDel_Click);
+            this.imageDel.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.imageDel.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // StructureListItem
             // 
@@ -169,6 +196,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageDel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +212,6 @@
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuImageButton imageDel;
     }
 }

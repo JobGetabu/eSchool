@@ -90,15 +90,14 @@ namespace eSchool
             }
 
             //loading comboBox
-            string[] n = { };
-            this.bMenu.Items = n;
-            //this.bMenu.AddItem("Print"); //No print at this point
-            this.bMenu.AddItem("New Fee Structure");
+            CheckAnnualPrintAvail(Properties.Settings.Default.CurrentYear);
+            //TODO print avail if all 3 terms avail
         }
 
         private void bMenu_onItemSelected_1(object sender, EventArgs e)
         {
             //ToDo use this externally to print item
+            //ToDo complex print func comes here
             if (bMenu.selectedValue.Equals("Print"))
             {
                 MessageBox.Show("Select item to print", "No Selection");
@@ -107,6 +106,53 @@ namespace eSchool
             {
                 CreateFeeStructClick();
             }
+        }
+
+        //loading comboBox
+        public async void CheckAnnualPrintAvail(int cYear)
+        {
+            //loading comboBox
+            string[] n = { };
+            bMenu.Items = n;
+            bMenu.AddItem("New Fee Structure");
+
+
+            bool bool1 = false;
+            bool bool2 = false;
+            bool bool3 = false;
+
+            var grpFsListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.GroupedFeeStructures
+                        .OrderBy(c => c.Id)
+                        .Where(c => c.selYear == cYear)
+                        .ToList();
+                }
+            });
+
+            foreach (var item in grpFsListAsync)
+            {
+                if (item.selTerm == 1)
+                {
+                    bool1 = true;
+                }
+                if (item.selTerm == 2)
+                {
+                    bool2 = true;
+                }
+                if (item.selTerm == 3)
+                {
+                    bool3 = true;
+                }
+            }
+
+            if ((bool1 ? 1 : 0) + (bool2 ? 1 : 0) + (bool3 ? 1 : 0) == 3)
+            {
+                bMenu.AddItem("Print");
+            }
+
         }
         private void CreateFeeStructClick()
         {

@@ -29,20 +29,13 @@ namespace eSchool
             InitializeComponent();
         }
 
-        private  void FeeUI_List_Load(object sender, EventArgs e)
+        private void FeeUI_List_Load(object sender, EventArgs e)
         {
-            //loading comboBox
-            FeesStructure fs = FeesStructure.Instance;
-            string[] n = { };
-            fs.bMenu.Items = n;
-            //fs.bMenu.AddItem("Print"); //No print at this point
-            fs.bMenu.AddItem("New Fee Structure");
-
-            //load up the grid
+           //load up the grid
             GridInitilizer();
 
             //load up the list control
-            LoadListAsync(Properties.Settings.Default.CurrentYear);            
+            LoadListAsync(Properties.Settings.Default.CurrentYear);
         }
 
         //More efficient grid initilizer
@@ -68,6 +61,53 @@ namespace eSchool
             }
         }
 
+        //loading comboBox
+        /*public async void CheckAnnualPrintAvail(int cYear)
+        {
+            //loading comboBox
+            FeesStructure fs = FeesStructure.Instance;
+            string[] n = { };
+            fs.bMenu.Items = n;
+            fs.bMenu.AddItem("New Fee Structure");
+
+
+            bool bool1 = false;
+            bool bool2 = false;
+            bool bool3 = false;
+
+            var grpFsListAsync = await Task.Factory.StartNew(() =>
+        {
+            using (var context = new EschoolEntities())
+            {
+                return context.GroupedFeeStructures
+                    .OrderBy(c => c.Id)
+                    .Where(c => c.selYear == cYear)
+                    .ToList();
+            }
+        });
+
+            foreach (var item in grpFsListAsync)
+            {
+                if (item.selTerm ==1)
+                {
+                    bool1 = true;
+                }
+                if (item.selTerm == 2)
+                {
+                    bool2 = true;
+                }
+                if (item.selTerm == 3)
+                {
+                    bool3 = true;
+                }
+            }
+
+            if ((bool1 ? 1 : 0) + (bool2 ? 1 : 0) + (bool3 ? 1 : 0) == 3)
+            {
+                fs.bMenu.AddItem("Print");
+            }
+           
+        } */
         private void bThinBtnAddFeeItem_Click(object sender, EventArgs e)
         {
             FrmAddFeeCategory frm = new FrmAddFeeCategory();
@@ -90,14 +130,14 @@ namespace eSchool
             fva.ShowDialog();
         }
 
-       public async void LoadListAsync(int year)
+        public async void LoadListAsync(int year)
         {
             var structureListAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
                 {
                     return context.GroupedFeeStructures.OrderBy(c => c.Id)
-                    .Where(c=>c.selYear==year)
+                    .Where(c => c.selYear == year)
                     .ToList();
                 }
             });

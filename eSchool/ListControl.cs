@@ -29,7 +29,7 @@ namespace eSchool
         public void Add(string title, string session, string totalFeeTerm)
         {
             StructureListItem c = new StructureListItem();
-
+            c.Name = title;
             c.Title = title;
             c.Session = session;
             c.TotalFeeTerm = totalFeeTerm;
@@ -76,6 +76,14 @@ namespace eSchool
             SetupAnchors();
         }
         public void Remove(string title,bool status)
+        {
+            Control c = flpListBox.Controls[title];
+            flpListBox.Controls.Remove(c);
+            c.Dispose();
+            SetupAnchors();
+        }
+
+        public void Remove(string title, string session)
         {
             Control c = flpListBox.Controls[title];
             flpListBox.Controls.Remove(c);

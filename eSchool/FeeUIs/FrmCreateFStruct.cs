@@ -193,6 +193,14 @@ namespace eSchool
                 }
             }
 
+            //non is checked
+            if (!bCbox1.Checked & !bCbox2.Checked & !bCbox3.Checked & !bCbox4.Checked)
+            {
+                alert.Show("Required info \n Pick a form", alert.AlertType.info);
+                return;
+            }
+
+
             //raise our event
             List<int> data = fmStore;
             int tmData = tmStore;
@@ -207,6 +215,7 @@ namespace eSchool
             feeIns.lblFFeeStructure.Text = frmslbl;
             feeIns.lblTFeeStructure.Text = "Term "+ tmStore.ToString();
             feeIns.lblTotalFeeStructure.Text = "Total KES 0";//Total KES 30,000
+            feeIns.CheckAnnualPrintAvail(selectedYear);
 
             //Make Save btn visible if invisible
             FeeUI_Show fui = FeeUI_Show.Instance; 

@@ -309,6 +309,10 @@ namespace eSchool
             //referesh the progress bars
             FeePayment fp = FeePayment.Instance;
             fp.Copy_FeePayment_Load();
+
+           
+
+
         }
 
         private async void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

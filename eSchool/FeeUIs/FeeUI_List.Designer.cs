@@ -222,6 +222,7 @@
             // 
             // listControl1
             // 
+            this.listControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listControl1.Location = new System.Drawing.Point(0, 39);
             this.listControl1.Name = "listControl1";
@@ -338,9 +339,9 @@
         private System.Windows.Forms.Panel panelCreateFeeS;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuCards bunifuCardsHeader;
-        private ListControl listControl1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        public ListControl listControl1;
     }
 }
