@@ -430,6 +430,7 @@
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyPrints\AnnualFeeStructure.cs" />
     <Compile Include="NewImportsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
