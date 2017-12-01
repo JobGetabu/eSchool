@@ -70,5 +70,53 @@ namespace eSchool.Properties {
                 this["OpeningBalance"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string schoolName {
+            get {
+                return ((string)(this["schoolName"]));
+            }
+            set {
+                this["schoolName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string schoolMotto {
+            get {
+                return ((string)(this["schoolMotto"]));
+            }
+            set {
+                this["schoolMotto"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string schoolEmail {
+            get {
+                return ((string)(this["schoolEmail"]));
+            }
+            set {
+                this["schoolEmail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string schoolAddress {
+            get {
+                return ((string)(this["schoolAddress"]));
+            }
+            set {
+                this["schoolAddress"] = value;
+            }
+        }
     }
 }
