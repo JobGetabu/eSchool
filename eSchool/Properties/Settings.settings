@@ -15,16 +15,19 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="schoolName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">eSchoolKe Secondary School</Value>
     </Setting>
     <Setting Name="schoolMotto" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Motto: Revolutionize education</Value>
     </Setting>
     <Setting Name="schoolEmail" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">info@kedevelopers.com</Value>
     </Setting>
     <Setting Name="schoolAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">P.O BOX 1234-234 NAIROBI</Value>
+    </Setting>
+    <Setting Name="schoolCell" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CELL NO: +21 545 6543</Value>
     </Setting>
   </Settings>
 </SettingsFile>

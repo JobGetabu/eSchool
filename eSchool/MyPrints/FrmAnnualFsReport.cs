@@ -12,29 +12,36 @@ namespace eSchool.MyPrints
 {
     public partial class FrmAnnualFsReport : Form
     {
-        AnnualFeeStructure FeeStruc;
+        string lblFeeStruc;
         List<AnnualFeeStructure> lFeeStruc;
-        public FrmAnnualFsReport(AnnualFeeStructure FeeStruc, List<AnnualFeeStructure> listFeeStruc)
+        public FrmAnnualFsReport(string lblFeeStruc, List<AnnualFeeStructure> listFeeStruc)
         {
             InitializeComponent();
-            this.FeeStruc = FeeStruc;
+            this.lblFeeStruc = lblFeeStruc;
             lFeeStruc = new List<AnnualFeeStructure>();
             this.lFeeStruc = listFeeStruc;
         }
 
+        //string lbl = lblFeeStruc; //"2017 Form Four Fees Structure"
+
+        string schoolName = Properties.Settings.Default.schoolName;
+        string schoolMotto = Properties.Settings.Default.schoolMotto;
+        string schoolAddress = Properties.Settings.Default.schoolAddress;
+        string schoolEmail = Properties.Settings.Default.schoolEmail;
+        string schoolCell = Properties.Settings.Default.schoolCell;
         private void FrmAnnualFsReport_Load(object sender, EventArgs e)
         {
             AnnualFeeStructureBindingSource.DataSource = lFeeStruc;
      
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolName","Test Secondary School"),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress","P.O BOX 1234-234 NYERI"),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo","CELL NO: +1212121211"),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolMotto","Born to serve"),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail","Test@eschoolKe.com"),
-                new Microsoft.Reporting.WinForms.ReportParameter("formfeeslbl","Test Form Four Fees Structure"),
-                 new Microsoft.Reporting.WinForms.ReportParameter("schoolLogo","//image url")
+                new Microsoft.Reporting.WinForms.ReportParameter("schoolName",schoolName),
+                new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress",schoolAddress),
+                new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo",schoolCell),
+                new Microsoft.Reporting.WinForms.ReportParameter("schoolMotto",schoolMotto),
+                new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail",schoolEmail),
+                new Microsoft.Reporting.WinForms.ReportParameter("formfeeslbl",lblFeeStruc),
+                 new Microsoft.Reporting.WinForms.ReportParameter("schoolLogo","school2")
                 //table data from list
             };
 

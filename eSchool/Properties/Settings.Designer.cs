@@ -73,7 +73,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("eSchoolKe Secondary School")]
         public string schoolName {
             get {
                 return ((string)(this["schoolName"]));
@@ -85,7 +85,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Motto: Revolutionize education")]
         public string schoolMotto {
             get {
                 return ((string)(this["schoolMotto"]));
@@ -97,7 +97,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("info@kedevelopers.com")]
         public string schoolEmail {
             get {
                 return ((string)(this["schoolEmail"]));
@@ -109,13 +109,25 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("P.O BOX 1234-234 NAIROBI")]
         public string schoolAddress {
             get {
                 return ((string)(this["schoolAddress"]));
             }
             set {
                 this["schoolAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CELL NO: +21 545 6543")]
+        public string schoolCell {
+            get {
+                return ((string)(this["schoolCell"]));
+            }
+            set {
+                this["schoolCell"] = value;
             }
         }
     }
