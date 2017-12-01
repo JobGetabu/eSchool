@@ -49,18 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAnnualFsReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAnnualFsReport.Designer.cs">
-      <DependentUpon>FrmAnnualFsReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAnnualFsReport.resx">
-      <DependentUpon>FrmAnnualFsReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyFeeStructure.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,12 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\eSchool\eSchool.csproj">
-      <Project>{0f79f8fb-b412-4f80-84bc-5db86b76b3db}</Project>
-      <Name>eSchool</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

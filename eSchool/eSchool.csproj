@@ -70,6 +70,8 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroModernUI\1.4.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
       <Private>True</Private>
@@ -95,6 +97,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -431,6 +434,12 @@
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyPrints\AnnualFeeStructure.cs" />
+    <Compile Include="MyPrints\FrmAnnualFsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPrints\FrmAnnualFsReport.Designer.cs">
+      <DependentUpon>FrmAnnualFsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewImportsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -691,6 +700,10 @@
     <EmbeddedResource Include="ListControl.resx">
       <DependentUpon>ListControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyPrints\FrmAnnualFsReport.resx">
+      <DependentUpon>FrmAnnualFsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPrints\MyFeeStructure.rdlc" />
     <EmbeddedResource Include="NewImportsUI.resx">
       <DependentUpon>NewImportsUI.cs</DependentUpon>
     </EmbeddedResource>

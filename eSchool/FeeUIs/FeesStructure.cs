@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using eSchool.MyPrints;
 
 namespace eSchool
 {
@@ -31,6 +32,8 @@ namespace eSchool
             InitializeComponent();
         }
 
+        int GYear = Properties.Settings.Default.CurrentYear;
+        int GTerm = Properties.Settings.Default.CurrentTerm;
         private void TabSwitcher(Control UIinstance)
         {
             if (!FeesStructure.Instance.container.Controls.Contains(UIinstance))
@@ -73,12 +76,12 @@ namespace eSchool
         private async void FeesStructure_Load(object sender, EventArgs e)
         {
             //UI code
-            this.lblYFeeStructure.Text = $"{Properties.Settings.Default.CurrentYear.ToString()} Fees Structures"; //2017 Fees Structures
+            this.lblYFeeStructure.Text = $"{GYear.ToString()} Fees Structures"; //2017 Fees Structures
 
             //TODO 1 Check if there already existing fee structure for that 
             //year and decide which UI to load
             //create an option to create feeStructure in the dropdown option
-            bool ch = await AnyCurrentFeeStruct(Properties.Settings.Default.CurrentYear);
+            bool ch = await AnyCurrentFeeStruct(GYear);
             if (ch)
             {
                 //show FeeUI_List
@@ -90,21 +93,68 @@ namespace eSchool
             }
 
             //loading comboBox
-            CheckAnnualPrintAvail(Properties.Settings.Default.CurrentYear);
+            CheckAnnualPrintAvail(GYear);
             //TODO print avail if all 3 terms avail
         }
 
-        private void bMenu_onItemSelected_1(object sender, EventArgs e)
+        private List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform)
+        {
+            List<AnnualFeeStructure> feestructureList = new List<AnnualFeeStructure>();
+            var ovfees = ovfeestructureListAsync.OrderBy(a => a.Category).Select(a => a.Category);
+            var ovfeescat = ovfees.Distinct();
+            foreach (var ov in ovfeescat)
+            {
+                AnnualFeeStructure afs = new AnnualFeeStructure();
+                afs.overHeadName = ov;
+                foreach (var item in ovfeestructureListAsync)
+                {
+                    if (item.Category.Equals(ov))
+                    {
+                        if (item.Term == 1)
+                        {
+                            afs.costTerm1 = item.Amount;
+                        }
+                        if (item.Term == 2)
+                        {
+                            afs.costTerm2 = item.Amount;
+                        }
+                        if (item.Term == 3)
+                        {
+                            afs.costTerm3 = item.Amount;
+                        }
+                    }
+                }
+                feestructureList.Add(afs);
+            }
+            return feestructureList;
+        }
+        private async void bMenu_onItemSelected_1(object sender, EventArgs e)
         {
             //ToDo use this externally to print item
             //ToDo complex print func comes here
             if (bMenu.selectedValue.Equals("Print"))
             {
-                MessageBox.Show("Select item to print", "No Selection");
-            }
-            if (bMenu.selectedValue.Equals("New Fee Structure"))
-            {
-                CreateFeeStructClick();
+
+                var feestructureListAsync = await Task.Factory.StartNew(() =>
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        return context.OverHeadCategoryPerYears
+                                           .OrderBy(c => c.Id)
+                                           .Where(c => c.Year == 2017 & c.Form == 4)
+                                           .ToList();
+                    }
+                });
+
+                //TODO open up a dialogue print fee
+                List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, GYear,4);
+                FrmAnnualFsReport frm = new FrmAnnualFsReport(null, feestructureList);
+                frm.ShowDialog();
+
+                if (bMenu.selectedValue.Equals("New Fee Structure"))
+                {
+                    CreateFeeStructClick();
+                }
             }
         }
 
@@ -178,12 +228,12 @@ namespace eSchool
                 MetroMessageBox.Show(this, "Your Fee Structure was Auto Saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Autosave 
-                fuui.btnSaveStructure_Click(sender,e);
+                fuui.btnSaveStructure_Click(sender, e);
             }
 
             FrmChangeYear frm = new FrmChangeYear();
             if (frm.ShowDialog() == DialogResult.OK)
-            {              
+            {
                 FeeUI_List ful = FeeUI_List.Instance;
                 //show FeeUI_List
                 TabSwitcher(FeeUI_List.Instance);

@@ -1,4 +1,4 @@
-﻿namespace print_outs
+﻿namespace eSchool.MyPrints
 {
     partial class FrmAnnualFsReport
     {
@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.AnnualFeeStructureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelRpt = new System.Windows.Forms.Panel();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.AnnualFeeStructureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelRpt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AnnualFeeStructureBindingSource)).BeginInit();
+            this.panelRpt.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // AnnualFeeStructureBindingSource
+            // 
+            this.AnnualFeeStructureBindingSource.DataSource = typeof(eSchool.MyPrints.AnnualFeeStructure);
             // 
             // panelRpt
             // 
@@ -43,7 +47,7 @@
             this.panelRpt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRpt.Location = new System.Drawing.Point(0, 0);
             this.panelRpt.Name = "panelRpt";
-            this.panelRpt.Size = new System.Drawing.Size(813, 527);
+            this.panelRpt.Size = new System.Drawing.Size(812, 509);
             this.panelRpt.TabIndex = 0;
             // 
             // reportViewer
@@ -52,30 +56,32 @@
             reportDataSource1.Name = "FeeStructureDataSet";
             reportDataSource1.Value = this.AnnualFeeStructureBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "print_outs.MyFeeStructure.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "eSchool.MyPrints.MyFeeStructure.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
-            this.reportViewer.Size = new System.Drawing.Size(813, 527);
-            this.reportViewer.TabIndex = 1;
-            // 
-            // AnnualFeeStructureBindingSource
-            // 
-            this.AnnualFeeStructureBindingSource.DataSource = typeof(eSchool.MyPrints.AnnualFeeStructure);
+            this.reportViewer.Padding = new System.Windows.Forms.Padding(10);
+            this.reportViewer.PageCountMode = Microsoft.Reporting.WinForms.PageCountMode.Actual;
+            this.reportViewer.ShowBackButton = false;
+            this.reportViewer.ShowContextMenu = false;
+            this.reportViewer.ShowCredentialPrompts = false;
+            this.reportViewer.ShowDocumentMapButton = false;
+            this.reportViewer.ShowFindControls = false;
+            this.reportViewer.Size = new System.Drawing.Size(812, 509);
+            this.reportViewer.TabIndex = 0;
             // 
             // FrmAnnualFsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 527);
+            this.ClientSize = new System.Drawing.Size(812, 509);
             this.Controls.Add(this.panelRpt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FrmAnnualFsReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fees Structure";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAnnualFsReport_Load);
-            this.panelRpt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AnnualFeeStructureBindingSource)).EndInit();
+            this.panelRpt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
