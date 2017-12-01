@@ -41,6 +41,7 @@ namespace eSchool.MyPrints
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();
             
+            
         }
     }
 }

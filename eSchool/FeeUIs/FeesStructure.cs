@@ -147,6 +147,7 @@ namespace eSchool
                 });
 
                 //TODO open up a dialogue print fee
+
                 List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, GYear,4);
                 FrmAnnualFsReport frm = new FrmAnnualFsReport(null, feestructureList);
                 frm.ShowDialog();
