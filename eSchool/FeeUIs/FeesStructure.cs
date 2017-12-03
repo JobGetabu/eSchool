@@ -98,16 +98,20 @@ namespace eSchool
             //TODO print avail if all 3 terms avail
         }
 
-        private List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform, int selTerm)
+        public List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform, int selTerm)
         {
             List<AnnualFeeStructure> feestructureList = new List<AnnualFeeStructure>();
-            //var ovfees = ovfeestructureListAsync.OrderBy(a => a.Category).Select(a => a.Category);
-            //var ovfeescat = ovfees.Distinct();
+
             foreach (var ov in ovfeestructureListAsync)
             {
                 AnnualFeeStructure afs = new AnnualFeeStructure();
                 afs.overHeadName = ov.Category;
                 afs.costCurrent = ov.Amount;
+
+                afs.costTerm1 = 0;
+                afs.costTerm2 = 0;
+                afs.costTerm3 = 0;
+
                 feestructureList.Add(afs);
             }
             return feestructureList;
@@ -149,7 +153,7 @@ namespace eSchool
             //ToDo complex print func comes here
             if (bMenu.selectedValue.Equals("Print"))
             {
-                alert.Show("Generating Document !", alert.AlertType.success);
+                //alert.Show("Generating Document !", alert.AlertType.success);
                 //TODO open up a dialogue print fee
                 FrmPrompt fp = new FrmPrompt();
                 if (fp.ShowDialog() == DialogResult.OK)

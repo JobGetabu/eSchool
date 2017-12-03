@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using custom_alert_notifications;
+using eSchool.MyPrints;
+using eSchool.MyPrints2;
 
 namespace eSchool
 {
@@ -80,7 +82,25 @@ namespace eSchool
             this.bGrid.Rows[e.RowIndex].Cells[3].Value = GridIcon.Trash_Can_50px;
         }
 
-        public void btnSaveStructure_Click(object sender, EventArgs e)
+        public List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform, int selTerm)
+        {
+            List<AnnualFeeStructure> feestructureList = new List<AnnualFeeStructure>();
+
+            foreach (var ov in ovfeestructureListAsync)
+            {
+                AnnualFeeStructure afs = new AnnualFeeStructure();
+                afs.overHeadName = ov.Category;
+                afs.costCurrent = ov.Amount;
+
+                afs.costTerm1 = 0;
+                afs.costTerm2 = 0;
+                afs.costTerm3 = 0;               
+
+                feestructureList.Add(afs);
+            }
+            return feestructureList;
+        }
+        public async void btnSaveStructure_Click(object sender, EventArgs e)
         {
             //TODO 2 prompt to print fee structure           
 
@@ -155,8 +175,8 @@ namespace eSchool
                     context.SaveChanges();
 
                     //update changes
-                     updateTotal = EditedAutoGenFsCash(FeesUI.autoSelTerm, FeesUI.autoSelYear, FeesUI.autoFilterListOfForms[0]);
-                     totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
+                    updateTotal = EditedAutoGenFsCash(FeesUI.autoSelTerm, FeesUI.autoSelYear, FeesUI.autoFilterListOfForms[0]);
+                    totalCash = $"KES {String.Format("{0:0,0}", updateTotal)}";
 
                     gp.TotalFee = updateTotal;
                     gp.TotalTitle = totalCash;
@@ -172,7 +192,7 @@ namespace eSchool
                             Year = FeesUI.autoSelYear,
                             GrpFeestructure_Id = gp.Id
                         };
-                        context.FeesRequiredPerTerms.Add(frpt);                     
+                        context.FeesRequiredPerTerms.Add(frpt);
                     }
 
 
@@ -187,21 +207,40 @@ namespace eSchool
                     }
 
 
-                    
+
                 }
 
+                FeesStructure fss = FeesStructure.Instance;
 
-                // custom notification
-                if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} /n Total fee for {tmTitle} is {totalCash} /n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+                if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} \n Total fee for {tmTitle} is {totalCash} \n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
                 {
-                    //TODO print fee structure
-                    //this point to old data thats not updated by delete click
-                    MessageBox.Show($"Printing info \n Total fee per term {FeesUI.autoSelTerm} in the year {FeesUI.autoSelYear} is KES {updateTotal} for {FrmCreateFStruct.frmslbl}");
+                    //alert.Show("Generating Document !", alert.AlertType.success);
+                    int fm = FeesUI.autoFilterListOfForms[0];
+                    var feestructureListAsync = await Task.Factory.StartNew(() =>
+                    {
+                        using (var context = new EschoolEntities())
+                        {
+                            return context.OverHeadCategoryPerYears
+                                               .OrderBy(c => c.Id)
+                                               .Where(c => c.Year == FeesUI.autoSelYear & c.Form == fm
+                                                & c.Term == FeesUI.autoSelTerm)
+                                               .ToList();
+                        }
+                    });
+
+                   
+                    List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, FeesUI.autoSelYear, fm, FeesUI.autoSelTerm);
+
+                    string lbl = $"{title} Term {FeesUI.autoSelTerm} Fees Structure"; //2017 Form Four Fees Structure
+
+                    FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
+                    frm.ShowDialog();
+
                 }
                 this.btnSaveStructure.Visible = false;
                 //switch tabs to feeS list
                 //refresh the list
-                FeesStructure fss = FeesStructure.Instance;
+
                 fss.SwitchTabExt();
                 FeeUI_List ful = FeeUI_List.Instance;
                 ful.LoadListAsync(FeesUI.autoSelYear);
@@ -267,7 +306,7 @@ namespace eSchool
                         ModiFyOverHeads(gp.Id, fm, FeesUI.autoSelTerm, FeesUI.autoSelYear, context, myOvList1);
                     }
                     context.SaveChanges();
-                    
+
 
                     foreach (var fm in FeesUI.filterListOfForms)
                     {
@@ -287,31 +326,54 @@ namespace eSchool
                     context.SaveChanges();
                 }
 
-
-                //ToDo custom notification
-                if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} /n Total fee for {tmTitle} is {totalCash} /n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
-                {
-                    //TODO print fee structure
-                    //this point to old data thats not updated by delete click
-                    MessageBox.Show($"Printing info /n Total fee per term {OverHeadListItem.selTerm} in the year {OverHeadListItem.selYear} is KES {OverHeadListItem.totalCashPas} for {FrmCreateFStruct.frmslbl}");
-                }
-                this.btnSaveStructure.Visible = false;
-
-                //switch tabs to feeS list
-                //refresh the list
                 FeesStructure fss = FeesStructure.Instance;
-                fss.SwitchTabExt();
-                FeeUI_List ful = FeeUI_List.Instance;
-                ful.LoadListAsync(OverHeadListItem.selYear);
+
+                if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} \n Total fee for {tmTitle} is {totalCash} \n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+                {
+                    //print fee structure
+
+                    if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} \n Total fee for {tmTitle} is {totalCash} \n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+                    {
+                        // print fee structure
+                        //alert.Show("Generating Document !", alert.AlertType.success);
+                        int fm = OverHeadListItem.filterListOfForms[0];
+                        var feestructureListAsync = await Task.Factory.StartNew(() =>
+                        {
+                            using (var context = new EschoolEntities())
+                            {
+                                return context.OverHeadCategoryPerYears
+                                                   .OrderBy(c => c.Id)
+                                                   .Where(c => c.Year == OverHeadListItem.selYear
+                                                   & c.Form == fm
+                                                    & c.Term == OverHeadListItem.selTerm)
+                                                   .ToList();
+                            }
+                        });
+
+                        List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, OverHeadListItem.selYear, fm, OverHeadListItem.selTerm);
+
+                        string lbl = $"{title} Term {OverHeadListItem.selTerm} Fees Structure"; //2017 Form Four Fees Structure
+
+                        FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
+                        frm.ShowDialog();
+                    }
+                    this.btnSaveStructure.Visible = false;
+
+                    //switch tabs to feeS list
+                    //refresh the list
+
+                    fss.SwitchTabExt();
+                    FeeUI_List ful = FeeUI_List.Instance;
+                    ful.LoadListAsync(OverHeadListItem.selYear);
+                }
+                #endregion
+
+                //referesh the progress bars
+                FeePayment fp = FeePayment.Instance;
+                fp.Copy_FeePayment_Load();
+
+
             }
-            #endregion
-
-            //referesh the progress bars
-            FeePayment fp = FeePayment.Instance;
-            fp.Copy_FeePayment_Load();
-
-           
-
 
         }
 

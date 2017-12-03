@@ -14,12 +14,11 @@ namespace eSchool.MyPrints2
     public partial class FrmTermFsReport : Form
     {
         private String lblFeeStruc;
-        List<AnnualFeeStructure> lFeeStruc;
+        List<AnnualFeeStructure> lFeeStruc= new List<AnnualFeeStructure>();
         public FrmTermFsReport(string lblFeeStruc, List<AnnualFeeStructure> listFeeStruc)
         {
             InitializeComponent();
             this.lblFeeStruc = lblFeeStruc;
-            lFeeStruc = new List<AnnualFeeStructure>();
             this.lFeeStruc = listFeeStruc;
         }
 
@@ -51,7 +50,6 @@ namespace eSchool.MyPrints2
 
         private void FrmTermFsReport_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.reportViewer.RefreshReport();
             this.reportViewer = null;
         }
     }
