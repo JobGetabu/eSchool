@@ -20,6 +20,7 @@ namespace eSchool.MyPrints
             }
         }
 
+        public decimal costCurrent { get; set; }
         public AnnualFeeStructure()
         {
 
@@ -30,6 +31,12 @@ namespace eSchool.MyPrints
             this.costTerm1 = costTerm1;
             this.costTerm2 = costTerm2;
             this.costTerm3 = costTerm3;
+        }
+
+        public AnnualFeeStructure(string ovHeadName, decimal costCurrent)
+        {
+            this.overHeadName = ovHeadName;
+            this.costCurrent = costCurrent;
         }
     }
 }

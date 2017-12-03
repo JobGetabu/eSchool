@@ -433,12 +433,24 @@
     <Compile Include="Login_Users.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyPrints2\FrmTermFsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPrints2\FrmTermFsReport.Designer.cs">
+      <DependentUpon>FrmTermFsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyPrints\AnnualFeeStructure.cs" />
     <Compile Include="MyPrints\FrmAnnualFsReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyPrints\FrmAnnualFsReport.Designer.cs">
       <DependentUpon>FrmAnnualFsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyPrints\FrmPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPrints\FrmPrompt.Designer.cs">
+      <DependentUpon>FrmPrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="NewImportsUI.cs">
       <SubType>UserControl</SubType>
@@ -700,8 +712,15 @@
     <EmbeddedResource Include="ListControl.resx">
       <DependentUpon>ListControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyPrints2\FrmTermFsReport.resx">
+      <DependentUpon>FrmTermFsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPrints2\TermFeeStructure.rdlc" />
     <EmbeddedResource Include="MyPrints\FrmAnnualFsReport.resx">
       <DependentUpon>FrmAnnualFsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPrints\FrmPrompt.resx">
+      <DependentUpon>FrmPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyPrints\MyFeeStructure.rdlc" />
     <EmbeddedResource Include="NewImportsUI.resx">

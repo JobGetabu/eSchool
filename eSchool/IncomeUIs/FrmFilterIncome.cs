@@ -127,7 +127,7 @@ namespace eSchool.IncomeUIs
                 // custom notification
                // MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                alert.Show("Required info \n Select at least a form !", alert.AlertType.error);
+                alert.Show("Required info \n Select at least a term !", alert.AlertType.error);
                 e.Cancel = true;
                 return;
             }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using eSchool.MyPrints;
+using custom_alert_notifications;
 
 namespace eSchool
 {
@@ -134,23 +135,29 @@ namespace eSchool
             //ToDo complex print func comes here
             if (bMenu.selectedValue.Equals("Print"))
             {
-
-                var feestructureListAsync = await Task.Factory.StartNew(() =>
-                {
-                    using (var context = new EschoolEntities())
-                    {
-                        return context.OverHeadCategoryPerYears
-                                           .OrderBy(c => c.Id)
-                                           .Where(c => c.Year == 2017 & c.Form == 4)
-                                           .ToList();
-                    }
-                });
-
+                alert.Show("Generating Document !", alert.AlertType.success);
                 //TODO open up a dialogue print fee
+                FrmPrompt fp = new FrmPrompt();
+                if (fp.ShowDialog() == DialogResult.OK)
+                {
+                    var feestructureListAsync = await Task.Factory.StartNew(() =>
+                    {
+                        using (var context = new EschoolEntities())
+                        {
+                            return context.OverHeadCategoryPerYears
+                                               .OrderBy(c => c.Id)
+                                               .Where(c => c.Year == fp.selFilYear & c.Form == fp.selFilForm)
+                                               .ToList();
+                        }
+                    });
 
-                List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, GYear,4);
-                FrmAnnualFsReport frm = new FrmAnnualFsReport(null, feestructureList);
-                frm.ShowDialog();
+                    List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, fp.selFilYear, fp.selFilForm);
+                    string lbl = $"{fp.selFilYear} Form {fp.frmlbl} Fees Structure"; //2017 Form Four Fees Structure
+
+                    FrmAnnualFsReport frm = new FrmAnnualFsReport(lbl, feestructureList);
+                    frm.ShowDialog();
+                }
+
 
                 if (bMenu.selectedValue.Equals("New Fee Structure"))
                 {
@@ -226,8 +233,8 @@ namespace eSchool
             if (fuui.btnSaveStructure.Visible)
             {
                 //Custom notification
-                MetroMessageBox.Show(this, "Your Fee Structure was Auto Saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                //MetroMessageBox.Show(this, "Your Fee Structure was Auto Saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                alert.Show("Your Fee Structure was Auto Saved !", alert.AlertType.success);
                 // Autosave 
                 fuui.btnSaveStructure_Click(sender, e);
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eSchool.MyPrints;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,28 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace eSchool.MyPrints
+namespace eSchool.MyPrints2
 {
-    public partial class FrmAnnualFsReport : Form
+    public partial class FrmTermFsReport : Form
     {
         private String lblFeeStruc;
         List<AnnualFeeStructure> lFeeStruc;
-        public FrmAnnualFsReport(string lblFeeStruc, List<AnnualFeeStructure> listFeeStruc)
+        public FrmTermFsReport(string lblFeeStruc, List<AnnualFeeStructure> listFeeStruc)
         {
             InitializeComponent();
-            this.lblFeeStruc =lblFeeStruc;
+            this.lblFeeStruc = lblFeeStruc;
             lFeeStruc = new List<AnnualFeeStructure>();
             this.lFeeStruc = listFeeStruc;
         }
+
         string schoolName = Properties.Settings.Default.schoolName;
         string schoolMotto = Properties.Settings.Default.schoolMotto;
         string schoolAddress = Properties.Settings.Default.schoolAddress;
         string schoolEmail = Properties.Settings.Default.schoolEmail;
         string schoolCell = Properties.Settings.Default.schoolCell;
-        private void FrmAnnualFsReport_Load(object sender, EventArgs e)
+
+        private void FrmTermFsReport_Load(object sender, EventArgs e)
         {
             AnnualFeeStructureBindingSource.DataSource = lFeeStruc;
-     
+
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("schoolName",schoolName),
@@ -44,11 +47,9 @@ namespace eSchool.MyPrints
 
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();
-            
-            
         }
 
-        private void FrmAnnualFsReport_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmTermFsReport_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.reportViewer.RefreshReport();
             this.reportViewer = null;
