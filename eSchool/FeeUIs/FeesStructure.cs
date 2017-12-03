@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using eSchool.MyPrints;
 using custom_alert_notifications;
+using eSchool.MyPrints2;
 
 namespace eSchool
 {
@@ -175,13 +176,44 @@ namespace eSchool
                     FrmAnnualFsReport frm = new FrmAnnualFsReport(lbl, feestructureList);
                     frm.ShowDialog();
                 }
-
-
-                if (bMenu.selectedValue.Equals("New Fee Structure"))
-                {
-                    CreateFeeStructClick();
-                }
             }
+
+
+            if (bMenu.selectedValue.Equals("New Fee Structure"))
+            {
+                CreateFeeStructClick();
+            }
+
+            if (bMenu.selectedValue.Equals("Do Print"))
+            {
+                FeeUI_Show fus = FeeUI_Show.Instance;
+                fus.RpInit();
+                DoPrint(fus.rpYear, fus.rpTerm, fus.rpForms[0], fus.rpTitle);
+            }
+        }
+
+        private async void DoPrint(int year,int term,int form,string title)
+        {
+            int fm = FeesUI.autoFilterListOfForms[0];
+            var feestructureListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.OverHeadCategoryPerYears
+                                       .OrderBy(c => c.Id)
+                                       .Where(c => c.Year == FeesUI.autoSelYear & c.Form == fm
+                                        & c.Term == FeesUI.autoSelTerm)
+                                       .ToList();
+                }
+            });
+
+
+            List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, FeesUI.autoSelYear, fm, FeesUI.autoSelTerm);
+
+            string lbl = $"{title} Term {FeesUI.autoSelTerm} Fees Structure"; //2017 Form Four Fees Structure
+
+            FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
+            frm.ShowDialog();
         }
 
         //loading comboBox

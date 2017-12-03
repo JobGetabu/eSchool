@@ -37,12 +37,12 @@ namespace eSchool
 
         private void FeeUI_Show_Load(object sender, EventArgs e)
         {
-            //loading comboBox
-            FeesStructure fs = FeesStructure.Instance;
-            string[] n = { };
-            fs.bMenu.Items = n;
-            fs.bMenu.AddItem("Print"); //No print at this point
-            fs.bMenu.AddItem("New Fee Structure");
+            ////loading comboBox
+            //FeesStructure fs = FeesStructure.Instance;
+            //string[] n = { };
+            //fs.bMenu.Items = n;
+            //fs.bMenu.AddItem("Print"); //No print at this point
+            //fs.bMenu.AddItem("New Fee Structure");
 
             bGrid.Rows.Clear();
             this.btnSaveStructure.Visible = true;
@@ -94,12 +94,45 @@ namespace eSchool
 
                 afs.costTerm1 = 0;
                 afs.costTerm2 = 0;
-                afs.costTerm3 = 0;               
+                afs.costTerm3 = 0;
 
                 feestructureList.Add(afs);
             }
             return feestructureList;
         }
+
+        #region ReportVars
+        public int rpYear = 0;
+        public int rpTerm = 0;
+        public string rpTitle;
+        public List<int> rpForms = new List<int>();
+
+        public void RpInit()
+        {
+            if (FeesUI.autoGen)
+            {
+                rpYear = FeesUI.autoSelYear;
+                rpTerm = FeesUI.autoSelTerm;
+                rpTitle = "Form ";
+                rpForms = FeesUI.autoFilterListOfForms;
+                foreach (var fm in rpForms)
+                {
+                    rpTitle += " " + fm.ToString();
+                }
+            }
+            else
+            {
+                rpYear = OverHeadListItem.selYear;
+                rpTerm = OverHeadListItem.selTerm;
+                rpTitle = "Form ";
+                rpForms = OverHeadListItem.filterListOfForms;
+                foreach (var fm in rpForms)
+                {
+                    rpTitle += " " + fm.ToString();
+                }
+            }
+        }
+        #endregion
         public async void btnSaveStructure_Click(object sender, EventArgs e)
         {
             //TODO 2 prompt to print fee structure           
@@ -228,7 +261,7 @@ namespace eSchool
                         }
                     });
 
-                   
+
                     List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, FeesUI.autoSelYear, fm, FeesUI.autoSelTerm);
 
                     string lbl = $"{title} Term {FeesUI.autoSelTerm} Fees Structure"; //2017 Form Four Fees Structure

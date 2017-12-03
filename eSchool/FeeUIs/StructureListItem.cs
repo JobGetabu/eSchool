@@ -121,10 +121,11 @@ namespace eSchool
                 feeIns.lblFFeeStructure.Text = frmslbl;
                 feeIns.lblTFeeStructure.Text = "Term " + tmData;
                 feeIns.lblTotalFeeStructure.Text = $"Total {selFs.TotalTitle}"; //Total KES 30,000
+
                 //loading comboBox
                 string[] n = { };
                 feeIns.bMenu.Items = n;
-                feeIns.bMenu.AddItem("Print"); //No print at this point
+                feeIns.bMenu.AddItem("Do Print"); //No print at this point
             }
 
         }
