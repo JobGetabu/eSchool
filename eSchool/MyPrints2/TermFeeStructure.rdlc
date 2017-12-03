@@ -169,19 +169,19 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="costTerm1">
+                    <Textbox Name="costCurrent">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!costTerm1.Value</Value>
+                              <Value>=Fields!costCurrent.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI Emoji</FontFamily>
                                 <FontWeight>Light</FontWeight>
-                                <Format>#,0;(#,0)</Format>
+                                <Format>'Ksh' #,0;('Ksh' #,0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -190,7 +190,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>costTerm1</rd:DefaultName>
+                      <rd:DefaultName>costCurrent</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -201,6 +201,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-KE</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -284,7 +285,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!costTerm2.Value, "FeeStructureDataSet")</Value>
+                <Value>=Sum(Fields!costCurrent.Value, "FeeStructureDataSet")</Value>
                 <Style>
                   <FontFamily>Segoe UI Emoji</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -556,6 +557,10 @@
       <Fields>
         <Field Name="costAllTerms">
           <DataField>costAllTerms</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="costCurrent">
+          <DataField>costCurrent</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="costTerm1">

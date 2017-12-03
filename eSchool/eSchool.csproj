@@ -784,6 +784,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Category.datasource" />
+    <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure.datasource" />
     <None Include="Properties\DataSources\Fee.datasource" />
     <None Include="Properties\DataSources\OverHeadCategory.datasource" />
     <None Include="Properties\DataSources\OverHeadCategoryPerYear.datasource" />

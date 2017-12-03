@@ -98,6 +98,20 @@ namespace eSchool
             //TODO print avail if all 3 terms avail
         }
 
+        private List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform, int selTerm)
+        {
+            List<AnnualFeeStructure> feestructureList = new List<AnnualFeeStructure>();
+            //var ovfees = ovfeestructureListAsync.OrderBy(a => a.Category).Select(a => a.Category);
+            //var ovfeescat = ovfees.Distinct();
+            foreach (var ov in ovfeestructureListAsync)
+            {
+                AnnualFeeStructure afs = new AnnualFeeStructure();
+                afs.overHeadName = ov.Category;
+                afs.costCurrent = ov.Amount;
+                feestructureList.Add(afs);
+            }
+            return feestructureList;
+        }
         private List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform)
         {
             List<AnnualFeeStructure> feestructureList = new List<AnnualFeeStructure>();
