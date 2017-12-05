@@ -143,6 +143,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MyEdit_Propertypx {
+            get {
+                object obj = ResourceManager.GetObject("MyEdit_Propertypx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Not_Applicable_50px {
             get {
                 object obj = ResourceManager.GetObject("Not_Applicable_50px", resourceCulture);
@@ -193,6 +203,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Photo_Editor_50px {
+            get {
+                object obj = ResourceManager.GetObject("Photo_Editor_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Plus_Matpx {
             get {
                 object obj = ResourceManager.GetObject("Plus_Matpx", resourceCulture);
@@ -216,6 +236,16 @@ namespace eSchool {
         internal static System.Drawing.Bitmap Sheet_of_Paper_52px {
             get {
                 object obj = ResourceManager.GetObject("Sheet_of_Paper_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap STrash_px {
+            get {
+                object obj = ResourceManager.GetObject("STrash_px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

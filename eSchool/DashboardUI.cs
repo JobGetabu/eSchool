@@ -33,6 +33,7 @@ namespace eSchool
         public DashboardUI()
         {
             InitializeComponent();
+            this.flowPanelBody.Padding = new Padding(2, 1, 2, 10);
         }
         public void Global_DashboardUI_Load()
         {

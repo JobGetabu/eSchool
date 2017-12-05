@@ -474,6 +474,12 @@
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="PassDataEventArgs.cs" />
+    <Compile Include="Profiles\StudentProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profiles\StudentProfile.Designer.cs">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolPeriodTerm.cs">
@@ -729,6 +735,9 @@
     <EmbeddedResource Include="FeeUIs\OverHeadListItem.resx">
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Profiles\StudentProfile.resx">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -842,6 +851,9 @@
     <None Include="Resources\Waste_Red.png" />
     <None Include="Resources\Female Profile_50px.png" />
     <None Include="Resources\Male User_50px.png" />
+    <None Include="Resources\MyEdit Propertypx.png" />
+    <None Include="Resources\STrash_px.png" />
+    <None Include="Resources\Photo Editor_50px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
