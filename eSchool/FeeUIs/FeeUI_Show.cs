@@ -135,7 +135,7 @@ namespace eSchool
         #endregion
         public async void btnSaveStructure_Click(object sender, EventArgs e)
         {
-            //TODO 2 prompt to print fee structure           
+            //prompt to print fee structure           
 
             #region autoGen is true
             List<OverHeadCategoryPerYear> myOvList1 = new List<OverHeadCategoryPerYear>();
@@ -405,6 +405,12 @@ namespace eSchool
                 FeePayment fp = FeePayment.Instance;
                 fp.Copy_FeePayment_Load();
 
+                //change label
+                FeesStructure feeIns = FeesStructure.Instance;
+                feeIns.lblYFeeStructure.Text = "";
+                feeIns.lblFFeeStructure.Text = "";
+                feeIns.lblTFeeStructure.Text = "";
+                feeIns.lblTotalFeeStructure.Text = $""; //Total KES 30,000
 
             }
 

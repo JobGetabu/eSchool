@@ -115,6 +115,7 @@ namespace eSchool
                 FeeUI_Show fui = FeeUI_Show.Instance;
                 fui.btnSaveStructure.Visible = false;
                 fui.OlistControlInitAsync();
+
                 //change label
                 FeesStructure feeIns = FeesStructure.Instance;
                 feeIns.lblYFeeStructure.Text = yrData + " Fee Structure ";
