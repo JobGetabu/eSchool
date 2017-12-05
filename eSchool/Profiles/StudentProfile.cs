@@ -9,11 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
+using eSchool.Importss;
 
 namespace eSchool.Profiles
 {
     public partial class StudentProfile : UserControl
     {
+
+        private static StudentProfile _instance;
+        public static StudentProfile Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new StudentProfile();
+                }
+                return _instance;
+            }
+        }
         public StudentProfile()
         {
             InitializeComponent();
@@ -56,7 +70,29 @@ namespace eSchool.Profiles
 
         private void StudentProfile_Load(object sender, EventArgs e)
         {
+            //this.AutoScrollPosition = new Point()
+        }
 
+        //nav
+        private void TabSwitcher(Control UIinstance)
+        {
+            if (!NewImportsUI.Instance.container.Controls.Contains(UIinstance))
+            {
+                NewImportsUI.Instance.container.Controls.Add(UIinstance);
+                UIinstance.Dock = DockStyle.Fill;
+                UIinstance.BringToFront();
+            }
+            else
+            {
+                UIinstance.BringToFront();
+            }
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            //back to import UI
+            //show students data UI
+            TabSwitcher(StudentsData.Instance);
         }
     }
 }

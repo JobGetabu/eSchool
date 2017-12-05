@@ -12,6 +12,7 @@ using System.Data.Entity.Validation;
 using System.Data.Entity.Infrastructure;
 using System.Text.RegularExpressions;
 using custom_alert_notifications;
+using eSchool.Profiles;
 
 namespace eSchool.Importss
 {   
@@ -132,9 +133,15 @@ namespace eSchool.Importss
         {
             var senderGrid = (DataGridView)sender;
 
+            if (e.ColumnIndex == 0 | e.ColumnIndex == 1 | e.ColumnIndex == 2)
+            {
+                TabSwitcher(StudentProfile.Instance);
+                //Todo pass the student
+            }
+
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
-            {
+            {               
                 if (e.ColumnIndex == 6)
                 {
                     if ((await GridDelImageAsync(e.RowIndex)) != null)
@@ -335,6 +342,22 @@ namespace eSchool.Importss
                         null
                     });
                 } 
+            }
+        }
+
+        //nav
+
+        private void TabSwitcher(Control UIinstance)
+        {
+            if (!NewImportsUI.Instance.container.Controls.Contains(UIinstance))
+            {
+                NewImportsUI.Instance.container.Controls.Add(UIinstance);
+                UIinstance.Dock = DockStyle.Fill;
+                UIinstance.BringToFront();
+            }
+            else
+            {
+                UIinstance.BringToFront();
             }
         }
     }
