@@ -854,6 +854,7 @@
     <None Include="Resources\MyEdit Propertypx.png" />
     <None Include="Resources\STrash_px.png" />
     <None Include="Resources\Photo Editor_50px.png" />
+    <None Include="Resources\student.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

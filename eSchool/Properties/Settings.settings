@@ -29,5 +29,8 @@
     <Setting Name="schoolCell" Type="System.String" Scope="User">
       <Value Profile="(Default)">CELL NO: +21 545 6543</Value>
     </Setting>
+    <Setting Name="schoolreg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">40201648</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

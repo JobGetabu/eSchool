@@ -135,8 +135,13 @@ namespace eSchool.Importss
 
             if (e.ColumnIndex == 0 | e.ColumnIndex == 1 | e.ColumnIndex == 2)
             {
-                TabSwitcher(StudentProfile.Instance);
                 //Todo pass the student
+                int adminNo = int.Parse(this.gData.Rows[e.RowIndex].Cells[1].Value.ToString());
+                Student_Basic stud = await StudFoundAsync(adminNo);
+                //set the new instance
+                StudentProfile prof = new StudentProfile(stud);
+                TabSwitcher(prof);
+
             }
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&

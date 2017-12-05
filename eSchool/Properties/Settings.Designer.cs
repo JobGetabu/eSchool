@@ -130,5 +130,17 @@ namespace eSchool.Properties {
                 this["schoolCell"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("40201648")]
+        public string schoolreg {
+            get {
+                return ((string)(this["schoolreg"]));
+            }
+            set {
+                this["schoolreg"] = value;
+            }
+        }
     }
 }

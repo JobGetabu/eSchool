@@ -171,6 +171,7 @@
           <Property Name="ModeOfLearning" Type="nvarchar" MaxLength="50" />
           <Property Name="RegYear" Type="int" />
           <Property Name="RegTerm" Type="int" />
+          <Property Name="PictureLocation" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="StudentImports">
           <Key>
@@ -633,6 +634,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="ModeOfLearning" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RegYear" Type="Int32" />
           <Property Name="RegTerm" Type="Int32" />
+          <Property Name="PictureLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Term_Ex">
           <End Role="SchoolPeriodTerm" Type="Self.SchoolPeriodTerm" Multiplicity="1" />
@@ -1126,6 +1128,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="Student_Basic">
             <EntityTypeMapping TypeName="EschoolModel.Student_Basic">
               <MappingFragment StoreEntitySet="Student_Basic">
+                <ScalarProperty Name="PictureLocation" ColumnName="PictureLocation" />
                 <ScalarProperty Name="RegTerm" ColumnName="RegTerm" />
                 <ScalarProperty Name="RegYear" ColumnName="RegYear" />
                 <ScalarProperty Name="ModeOfLearning" ColumnName="ModeOfLearning" />
