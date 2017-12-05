@@ -54,7 +54,7 @@
             this.bunifuCards1.color = System.Drawing.Color.White;
             this.bunifuCards1.Controls.Add(this.panel1);
             this.bunifuCards1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCards1.LeftSahddow = true;
+            this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(0, 0);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
