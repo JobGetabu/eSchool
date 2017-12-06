@@ -474,6 +474,7 @@
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="PassDataEventArgs.cs" />
+    <Compile Include="Profiles\PayMent.cs" />
     <Compile Include="Profiles\StudentProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>

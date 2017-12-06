@@ -14,6 +14,7 @@ using System.IO;
 using MetroFramework;
 using custom_alert_notifications;
 using System.Data.Entity.Infrastructure;
+using System.Globalization;
 
 namespace eSchool.Profiles
 {
@@ -37,9 +38,18 @@ namespace eSchool.Profiles
             }
         }
 
+        int GYear = Properties.Settings.Default.CurrentYear;
+        int GTerm = Properties.Settings.Default.CurrentTerm;
 
         #region chartprops
         //set up graph properties 
+        public decimal Term1Fee { get; set; }
+        public decimal Term2Fee { get; set; }
+        public decimal Term3Fee { get; set; }
+
+        public decimal Term1Paid { get; set; }
+        public decimal Term2Paid { get; set; }
+        public decimal Term3Paid { get; set; }
 
 
         #endregion
@@ -62,42 +72,81 @@ namespace eSchool.Profiles
             mol = $"Mode of Learning - {stud.ModeOfLearning}";
 
             date = $"Admitted - Term {stud.RegTerm} {stud.RegYear}";
-           
-            
 
-            #region chart
 
-            cartesianChart1.Series = new SeriesCollection
+
+            using (var context = new EschoolEntities())
+            {
+                decimal frpt1 = context.FeesRequiredPerTerms
+                            .Where(x => x.Year == GYear & x.Term == 1 & x.Form == stud.Form)
+                            .Select(x => x.FeeRequired)
+                            .FirstOrDefault();
+                decimal frpt2 = context.FeesRequiredPerTerms
+                            .Where(x => x.Year == GYear & x.Term == 2 & x.Form == stud.Form)
+                            .Select(x => x.FeeRequired)
+                            .FirstOrDefault();
+                decimal frpt3 = context.FeesRequiredPerTerms
+                            .Where(x => x.Year == GYear & x.Term == 3 & x.Form == stud.Form)
+                            .Select(x => x.FeeRequired)
+                            .FirstOrDefault();
+
+
+
+
+
+                var fpt1 = context.Fees
+                            .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 1)
+                            .Select(x => x.Amount_Paid)
+                            .ToList()
+                            .Sum();
+
+                var fpt2 = context.Fees
+                            .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 2)
+                            .Select(x => x.Amount_Paid)
+                            .ToList()
+                            .Sum();
+                var fpt3 = context.Fees
+                            .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 3)
+                            .Select(x => x.Amount_Paid)
+                            .ToList()
+                            .Sum();
+
+
+                #region chart
+
+                cartesianChart1.Series = new SeriesCollection
             {
                 new ColumnSeries
                 {
-                    Title = "2015",
-                    Values = new ChartValues<double> { 10, 50, 39, 50 }
+                    Title = "Fee Required",
+                    Values = new ChartValues<decimal> { frpt1, frpt2, frpt3 }
                 }
             };
 
-            //adding series will update and animate the chart automatically
-            cartesianChart1.Series.Add(new ColumnSeries
-            {
-                Title = "2016",
-                Values = new ChartValues<double> { 11, 56, 42 }
-            });
+                //adding series will update and animate the chart automatically
+                cartesianChart1.Series.Add(new ColumnSeries
+                {
+                    Title = "Paid",
+                    Values = new ChartValues<decimal> { fpt1, fpt2, fpt3 }
+                });
 
-            //also adding values updates and animates the chart automatically
-            cartesianChart1.Series[1].Values.Add(48d);
+                //also adding values updates and animates the chart automatically
+                //cartesianChart1.Series[1].Values.Add(48d);
 
-            cartesianChart1.AxisX.Add(new Axis
-            {
-                Title = "Sales Man",
-                Labels = new[] { "Maria", "Susan", "Charles", "Frida" }
-            });
+                cartesianChart1.AxisX.Add(new Axis
+                {
+                    Title = "Periods",
+                    Labels = new[] { "Term 1", "Term 2", "Term 3" }
+                });
 
-            cartesianChart1.AxisY.Add(new Axis
-            {
-                Title = "Sold Apps",
-                LabelFormatter = value => value.ToString("N")
-            });
-            #endregion
+                cartesianChart1.AxisY.Add(new Axis
+                {
+                    Title = "Amount",
+                    LabelFormatter = value => $"KES {String.Format("{0:0,0}", value)}"
+
+                });
+                #endregion 
+            }
         }
 
 
@@ -105,6 +154,31 @@ namespace eSchool.Profiles
 
         private void StudentProfile_Load(object sender, EventArgs e)
         {
+            using (var context = new EschoolEntities())
+            {
+                var fees = context.Fees
+                      .Where(x => x.Year == GYear)
+                      .ToList();
+
+
+
+                ////PayMent fpt1 = new PayMent();
+
+                //from s in context.Fees
+                //select 
+                //{
+                //    sAdmin = s.Admin_No,
+                //    //Amount = (from v in context.Fees
+                //    //where student.Admin_No == v.Admin_No
+                //    //select (decimal?)v.Amount_Paid).Sum() ?? 0,
+                //    Term = s.Term
+
+                //}
+
+
+
+            }
+
             lblName.Text = name;
             lblSchoolAndNo.Text = school;
             lblRegno.Text = reg;
@@ -180,7 +254,7 @@ namespace eSchool.Profiles
             db.Dispose();
         }
 
-        
+
         private void btnChangePic_Click(object sender, EventArgs e)
         {
             try
