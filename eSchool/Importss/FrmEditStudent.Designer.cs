@@ -55,6 +55,10 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroTbTerm = new MetroFramework.Controls.MetroTextBox();
+            this.metroTbYear = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
@@ -257,9 +261,7 @@
             this.metroTbAdminNo.MaxLength = 32767;
             this.metroTbAdminNo.Name = "metroTbAdminNo";
             this.metroTbAdminNo.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbAdminNo.PromptText = "Administration Number";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbAdminNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbAdminNo.SelectedText = "";
             this.metroTbAdminNo.SelectionLength = 0;
@@ -294,9 +296,7 @@
             this.metroTbFName.MaxLength = 32767;
             this.metroTbFName.Name = "metroTbFName";
             this.metroTbFName.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbFName.PromptText = "First Name";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbFName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbFName.SelectedText = "";
             this.metroTbFName.SelectionLength = 0;
@@ -331,9 +331,7 @@
             this.metroTbLName.MaxLength = 32767;
             this.metroTbLName.Name = "metroTbLName";
             this.metroTbLName.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbLName.PromptText = "Last Name";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbLName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbLName.SelectedText = "";
             this.metroTbLName.SelectionLength = 0;
@@ -368,9 +366,7 @@
             this.metroTbMName.MaxLength = 32767;
             this.metroTbMName.Name = "metroTbMName";
             this.metroTbMName.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbMName.PromptText = "Middle Name";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbMName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbMName.SelectedText = "";
             this.metroTbMName.SelectionLength = 0;
@@ -405,9 +401,7 @@
             this.metroTbClass.MaxLength = 32767;
             this.metroTbClass.Name = "metroTbClass";
             this.metroTbClass.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbClass.PromptText = "Class";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbClass.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbClass.SelectedText = "";
             this.metroTbClass.SelectionLength = 0;
@@ -442,9 +436,7 @@
             this.metroTbForm.MaxLength = 32767;
             this.metroTbForm.Name = "metroTbForm";
             this.metroTbForm.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.metroTbForm.PromptText = "Form";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.metroTbForm.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTbForm.SelectedText = "";
             this.metroTbForm.SelectionLength = 0;
@@ -551,12 +543,104 @@
             this.metroLabel6.TabIndex = 26;
             this.metroLabel6.Text = "Class :";
             // 
+            // metroTbTerm
+            // 
+            // 
+            // 
+            // 
+            this.metroTbTerm.CustomButton.Image = null;
+            this.metroTbTerm.CustomButton.Location = new System.Drawing.Point(131, 1);
+            this.metroTbTerm.CustomButton.Name = "";
+            this.metroTbTerm.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.metroTbTerm.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbTerm.CustomButton.TabIndex = 1;
+            this.metroTbTerm.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbTerm.CustomButton.UseSelectable = true;
+            this.metroTbTerm.CustomButton.Visible = false;
+            this.metroTbTerm.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTbTerm.Lines = new string[0];
+            this.metroTbTerm.Location = new System.Drawing.Point(403, 265);
+            this.metroTbTerm.MaxLength = 32767;
+            this.metroTbTerm.Name = "metroTbTerm";
+            this.metroTbTerm.PasswordChar = '\0';
+            this.metroTbTerm.PromptText = "Admission Term";
+            this.metroTbTerm.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTbTerm.SelectedText = "";
+            this.metroTbTerm.SelectionLength = 0;
+            this.metroTbTerm.SelectionStart = 0;
+            this.metroTbTerm.ShortcutsEnabled = true;
+            this.metroTbTerm.Size = new System.Drawing.Size(155, 25);
+            this.metroTbTerm.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbTerm.TabIndex = 30;
+            this.metroTbTerm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbTerm.UseSelectable = true;
+            this.metroTbTerm.WaterMark = "Admission Term";
+            this.metroTbTerm.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTbTerm.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // metroTbYear
+            // 
+            // 
+            // 
+            // 
+            this.metroTbYear.CustomButton.Image = null;
+            this.metroTbYear.CustomButton.Location = new System.Drawing.Point(160, 1);
+            this.metroTbYear.CustomButton.Name = "";
+            this.metroTbYear.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.metroTbYear.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbYear.CustomButton.TabIndex = 1;
+            this.metroTbYear.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbYear.CustomButton.UseSelectable = true;
+            this.metroTbYear.CustomButton.Visible = false;
+            this.metroTbYear.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTbYear.Lines = new string[0];
+            this.metroTbYear.Location = new System.Drawing.Point(121, 265);
+            this.metroTbYear.MaxLength = 32767;
+            this.metroTbYear.Name = "metroTbYear";
+            this.metroTbYear.PasswordChar = '\0';
+            this.metroTbYear.PromptText = "Registration Year";
+            this.metroTbYear.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTbYear.SelectedText = "";
+            this.metroTbYear.SelectionLength = 0;
+            this.metroTbYear.SelectionStart = 0;
+            this.metroTbYear.ShortcutsEnabled = true;
+            this.metroTbYear.Size = new System.Drawing.Size(184, 25);
+            this.metroTbYear.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTbYear.TabIndex = 29;
+            this.metroTbYear.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTbYear.UseSelectable = true;
+            this.metroTbYear.WaterMark = "Registration Year";
+            this.metroTbYear.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTbYear.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(47, 271);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(68, 19);
+            this.metroLabel7.TabIndex = 31;
+            this.metroLabel7.Text = "Reg Year :";
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(328, 271);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel8.TabIndex = 32;
+            this.metroLabel8.Text = "Reg Term :";
+            // 
             // FrmEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(594, 372);
+            this.Controls.Add(this.metroLabel8);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.metroTbTerm);
+            this.Controls.Add(this.metroTbYear);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel6);
@@ -617,5 +701,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroTextBox metroTbTerm;
+        private MetroFramework.Controls.MetroTextBox metroTbYear;
     }
 }

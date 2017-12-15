@@ -1,4 +1,5 @@
 ﻿using custom_alert_notifications;
+using eSchool.Importss;
 using MetroFramework;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,7 @@ namespace eSchool
         {
             InitializeComponent();
         }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+     
 
         private void FrmAddStudent_Load(object sender, EventArgs e)
         {
@@ -48,6 +45,8 @@ namespace eSchool
                 metroTbLName.Text = obj.Last_Name;
                 metroTbForm.Text = obj.Form.ToString();
                 metroTbClass.Text = obj.Class;
+                metroTbTerm.Text = obj.RegTerm.ToString();
+                metroTbYear.Text = obj.RegYear.ToString();
 
                 if (obj.Gender == "M")
                 {
@@ -92,8 +91,25 @@ namespace eSchool
                 {
                     //add 
                     objNew = null;
+
+                    obj.Admin_No = int.Parse(metroTbAdminNo.Text);
+                    obj.First_Name = metroTbFName.Text;
+                    obj.Middle_Name = metroTbMName.Text;
+                    obj.Last_Name = metroTbLName.Text;
+                    obj.Form = int.Parse(metroTbForm.Text);
+                    obj.Class = metroTbClass.Text;
+                    obj.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
+                    obj.RegTerm = int.Parse(metroTbTerm.Text);
+                    obj.RegYear = int.Parse(metroTbYear.Text);
                     db.Entry<Student_Basic>(obj).State = EntityState.Modified;
-                    db.SaveChanges();
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.Message);
+                    }
                     // add custom notification
                     //MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     alert.Show("Updated", alert.AlertType.success);
@@ -109,6 +125,8 @@ namespace eSchool
                     objNew.Form = int.Parse(metroTbForm.Text);
                     objNew.Class = metroTbClass.Text;
                     objNew.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
+                    objNew.RegTerm = int.Parse(metroTbTerm.Text);
+                    objNew.RegYear = int.Parse(metroTbYear.Text);
 
                     if (metroComboGender.SelectedIndex == 0)
                     {
@@ -127,7 +145,14 @@ namespace eSchool
                     {
 
                         db.Student_Basic.Add(objNew);
-                        db.SaveChanges();
+                        try
+                        {
+                            db.SaveChanges();
+                        }
+                        catch (Exception x)
+                        {
+                            MessageBox.Show(x.Message);
+                        }
 
                         // custom notification
                         //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -142,12 +167,14 @@ namespace eSchool
             catch (Exception exp)
             {
                 MessageBox.Show(exp.Message);
-                throw;
             }
             finally
             {
-                //close all connection
-                //log all errors
+                //refresh
+                StudentsData s = StudentsData.Instance;
+                NewImportsUI n = NewImportsUI.Instance;
+                s.GridInitilizer();
+                n.Global_tab2_Click();
             }
             this.Close();
         }

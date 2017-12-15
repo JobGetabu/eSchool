@@ -59,6 +59,15 @@ namespace eSchool
         }
 
         
+        public void Global_tab2_Click()
+        {
+            //UI code
+            bunifuSeparator1.Width = tab2.Width;
+            bunifuSeparator1.Left = tab2.Left;
+
+            //show students data UI
+            TabSwitcher(StudentsData.Instance);
+        }
         private void tab2_Click(object sender, EventArgs e)
         {
             //UI code

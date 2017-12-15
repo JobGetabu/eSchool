@@ -151,7 +151,10 @@ namespace eSchool.Profiles
 
 
 
+        public void Global_StudentProfile_Load()
+        {
 
+        }
         private void StudentProfile_Load(object sender, EventArgs e)
         {
             using (var context = new EschoolEntities())
@@ -311,6 +314,14 @@ namespace eSchool.Profiles
                     throw;
                 }
             }
+        }
+
+        private void btnEditDetails_Click(object sender, EventArgs e)
+        {
+            FrmEditStudent fes = new FrmEditStudent(student);
+            fes.ShowDialog();
+
+            //refresh the profile
         }
     }
 }
