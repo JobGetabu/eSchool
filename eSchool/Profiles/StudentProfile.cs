@@ -15,6 +15,7 @@ using MetroFramework;
 using custom_alert_notifications;
 using System.Data.Entity.Infrastructure;
 using System.Globalization;
+using LiveCharts.Defaults;
 
 namespace eSchool.Profiles
 {
@@ -41,36 +42,44 @@ namespace eSchool.Profiles
         int GYear = Properties.Settings.Default.CurrentYear;
         int GTerm = Properties.Settings.Default.CurrentTerm;
 
+        private ChartValues<decimal> MyValues;
+        //private ObservableValue MyValue2;
+        //private ObservableValue MyValue3;
+
         #region chartprops
         //set up graph properties 
         public decimal Term1Fee { get; set; }
         public decimal Term2Fee { get; set; }
         public decimal Term3Fee { get; set; }
 
+        private decimal term1Paid =0;
+        private decimal term2Paid = 0;
+        private decimal term3Paid = 0;
         public decimal Term1Paid
         {
-            get{ return Term1Paid;   }
+            get { return term1Paid; }
+
             set
             {
-                Term1Paid = value;
+                term1Paid = value;
                 OnPropertyChanged("Term1Paid");
             }
         }
         public decimal Term2Paid
         {
-            get { return Term2Paid; }
+            get { return term2Paid; }
             set
             {
-                Term2Paid = value;
+                term2Paid = value;
                 OnPropertyChanged("Term2Paid");
             }
         }
         public decimal Term3Paid
         {
-            get { return Term3Paid; }
+            get { return term3Paid; }
             set
             {
-                Term3Paid = value;
+                term3Paid = value;
                 OnPropertyChanged("Term3Paid");
             }
         }
@@ -134,7 +143,7 @@ namespace eSchool.Profiles
                             .Select(x => x.Amount_Paid)
                             .ToList()
                             .Sum();
-
+                MyValues = new ChartValues<decimal> { Term1Paid, Term2Paid, Term3Paid };
 
                 #region chart
 
@@ -151,7 +160,7 @@ namespace eSchool.Profiles
                 cartesianChart1.Series.Add(new ColumnSeries
                 {
                     Title = "Paid",
-                    Values = new ChartValues<decimal> { Term1Paid, Term2Paid, Term3Paid }
+                    Values = MyValues
                 });
 
                 //also adding values updates and animates the chart automatically
@@ -169,7 +178,8 @@ namespace eSchool.Profiles
                     LabelFormatter = value => $"KES {String.Format("{0:0,0}", value)}"
 
                 });
-                #endregion 
+                
+                #endregion
             }
         }
 
@@ -193,6 +203,9 @@ namespace eSchool.Profiles
                         .ToList()
                         .Sum();
 
+            var vv = new ChartValues<decimal> { Term1Paid, Term2Paid, Term3Paid };
+            MyValues.Clear();
+            MyValues.AddRange(vv);
         }
 
         public void Global_StudentProfile_Load()
@@ -259,6 +272,8 @@ namespace eSchool.Profiles
         }
 
         EschoolEntities db = new EschoolEntities();
+        
+
         private void btnBack_Click_1(object sender, EventArgs e)
         {
             //under auto modification 

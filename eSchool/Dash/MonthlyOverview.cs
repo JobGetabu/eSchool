@@ -38,6 +38,9 @@ namespace eSchool.Dash
         int GTerm = Properties.Settings.Default.CurrentTerm;
         int GYear = Properties.Settings.Default.CurrentYear;
 
+        private ChartValues<decimal> cIncome;
+        private ChartValues<decimal> cExpenses;
+
         #region var declaration
         decimal incDay0 = 0; decimal incDay5 = 0; decimal incDay10 = 0;
         decimal incDay15 = 0; decimal incDay20 = 0; decimal incDay25 = 0;
@@ -235,7 +238,7 @@ namespace eSchool.Dash
 
 
                 #region var init
-              
+
 
 
                 var incomeListAsync =
@@ -270,19 +273,21 @@ namespace eSchool.Dash
 
                 #endregion
 
+                cIncome = new ChartValues<decimal> { incDay0, incDay5, incDay10, incDay15, incDay20, incDay25, incDayLast };
+                cExpenses = new ChartValues<decimal> { expDay0, expDay5, expDay10, expDay15, expDay20, expDay25, expDayLast };
                 cartesianChart1.Series = new SeriesCollection
-             {
+                {
                     new LineSeries
                     {
                         Title = "Incomes",
-                        Values = new ChartValues<decimal> { incDay0,incDay5,incDay10,incDay15,incDay20,incDay25,incDayLast}
-                    },
+                        Values = cIncome
+            },
                      new LineSeries
-                    {
-                        Title = "Expenses",
-                        Values = new ChartValues<decimal> { expDay0,expDay5,expDay10,expDay15,expDay20,expDay25,expDayLast },
-                        PointGeometry = null
-                    }
+                     {
+                         Title = "Expenses",
+                         Values = cExpenses,
+                         PointGeometry = null
+                     }
                 };
 
                 cartesianChart1.AxisX.Add(new Axis
@@ -338,7 +343,7 @@ namespace eSchool.Dash
                     return context.Incomes.Where(x => x.Year == GYear & x.Term == GTerm & x.Date.Month == GMonth)
                    .ToList();
                 });
-                   
+
                 var expListAsync = await Task.Factory.StartNew(() =>
                 {
                     return context.Expenses.Where(x => x.Year == GYear & x.Term == GTerm & x.Date.Month == GMonth)
@@ -364,7 +369,14 @@ namespace eSchool.Dash
                 ExpDay25 = expListAsync.Where(x => x.Date.Day > 25 & x.Date.Day < 31).ToList().Sum(a => a.Amount);
                 ExpDayLast = expListAsync.Where(x => x.Date.Day == lastDayOfMonth.Day).ToList().Sum(a => a.Amount);
 
-                cartesianChart1.Update();
+
+                var cin = new ChartValues<decimal> { incDay0, incDay5, incDay10, incDay15, incDay20, incDay25, incDayLast };
+                var exp = new ChartValues<decimal> { expDay0, expDay5, expDay10, expDay15, expDay20, expDay25, expDayLast };
+
+                cIncome.Clear();
+                cExpenses.Clear();
+                cExpenses.AddRange(exp);
+                cIncome.AddRange(cin);
             }
         }
 
@@ -377,7 +389,7 @@ namespace eSchool.Dash
             if (eventToRaise != null)
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }          
+            }
         }
     }
 }

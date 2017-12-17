@@ -70,7 +70,6 @@
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEditDetails = new System.Windows.Forms.Button();
             this.lblCredit = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +77,7 @@
             this.ColumnRef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnViewRpt = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panelBody.SuspendLayout();
             this.panelBotom.SuspendLayout();
             this.panelPayment.SuspendLayout();
@@ -116,6 +116,7 @@
             // panelBotom
             // 
             this.panelBotom.AutoScroll = true;
+            this.panelBotom.AutoSize = true;
             this.panelBotom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelBotom.Controls.Add(this.panelPayment);
             this.panelBotom.Controls.Add(this.panelGraph);
@@ -123,7 +124,7 @@
             this.panelBotom.Location = new System.Drawing.Point(0, 281);
             this.panelBotom.Name = "panelBotom";
             this.panelBotom.Padding = new System.Windows.Forms.Padding(28, 0, 28, 0);
-            this.panelBotom.Size = new System.Drawing.Size(781, 520);
+            this.panelBotom.Size = new System.Drawing.Size(781, 500);
             this.panelBotom.TabIndex = 2;
             // 
             // panelPayment
@@ -574,16 +575,6 @@
             this.lblCredit.Text = "Credit: KES 0";
             this.lblCredit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 1;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // ColumnDate
             // 
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -638,6 +629,16 @@
             this.ColumnDel.ReadOnly = true;
             this.ColumnDel.ToolTipText = "Delete Record";
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 1;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // StudentProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -647,6 +648,7 @@
             this.Size = new System.Drawing.Size(798, 610);
             this.Load += new System.EventHandler(this.StudentProfile_Load);
             this.panelBody.ResumeLayout(false);
+            this.panelBody.PerformLayout();
             this.panelBotom.ResumeLayout(false);
             this.panelPayment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gData)).EndInit();
