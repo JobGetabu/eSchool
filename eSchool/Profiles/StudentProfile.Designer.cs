@@ -75,6 +75,7 @@
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Acc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnViewRpt = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBody.SuspendLayout();
@@ -159,6 +160,7 @@
             this.ColumnName,
             this.Form,
             this.Acc,
+            this.ColumnRef,
             this.ColumnViewRpt,
             this.ColumnDel});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -195,6 +197,7 @@
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(718, 164);
             this.gData.TabIndex = 2;
+            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
             this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
             // 
             // panel5
@@ -610,6 +613,11 @@
             this.Acc.Name = "Acc";
             this.Acc.ReadOnly = true;
             // 
+            // ColumnRef
+            // 
+            this.ColumnRef.HeaderText = "Ref. #";
+            this.ColumnRef.Name = "ColumnRef";
+            // 
             // ColumnViewRpt
             // 
             this.ColumnViewRpt.ActiveLinkColor = System.Drawing.Color.MediumBlue;
@@ -706,6 +714,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Form;
         private System.Windows.Forms.DataGridViewTextBoxColumn Acc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRef;
         private System.Windows.Forms.DataGridViewLinkColumn ColumnViewRpt;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDel;
     }

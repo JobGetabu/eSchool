@@ -47,9 +47,33 @@ namespace eSchool.Profiles
         public decimal Term2Fee { get; set; }
         public decimal Term3Fee { get; set; }
 
-        public decimal Term1Paid { get; set; }
-        public decimal Term2Paid { get; set; }
-        public decimal Term3Paid { get; set; }
+        public decimal Term1Paid
+        {
+            get{ return Term1Paid;   }
+            set
+            {
+                Term1Paid = value;
+                OnPropertyChanged("Term1Paid");
+            }
+        }
+        public decimal Term2Paid
+        {
+            get { return Term2Paid; }
+            set
+            {
+                Term2Paid = value;
+                OnPropertyChanged("Term2Paid");
+            }
+        }
+        public decimal Term3Paid
+        {
+            get { return Term3Paid; }
+            set
+            {
+                Term3Paid = value;
+                OnPropertyChanged("Term3Paid");
+            }
+        }
 
 
         #endregion
@@ -94,18 +118,18 @@ namespace eSchool.Profiles
 
 
 
-                var fpt1 = context.Fees
+                 Term1Paid = context.Fees
                             .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 1)
                             .Select(x => x.Amount_Paid)
                             .ToList()
                             .Sum();
 
-                var fpt2 = context.Fees
+                 Term2Paid = context.Fees
                             .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 2)
                             .Select(x => x.Amount_Paid)
                             .ToList()
                             .Sum();
-                var fpt3 = context.Fees
+                 Term3Paid = context.Fees
                             .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 3)
                             .Select(x => x.Amount_Paid)
                             .ToList()
@@ -127,7 +151,7 @@ namespace eSchool.Profiles
                 cartesianChart1.Series.Add(new ColumnSeries
                 {
                     Title = "Paid",
-                    Values = new ChartValues<decimal> { fpt1, fpt2, fpt3 }
+                    Values = new ChartValues<decimal> { Term1Paid, Term2Paid, Term3Paid }
                 });
 
                 //also adding values updates and animates the chart automatically
@@ -149,7 +173,27 @@ namespace eSchool.Profiles
             }
         }
 
+        private void ChartUpdate(EschoolEntities context, Student_Basic stud)
+        {
 
+            Term1Paid = context.Fees
+                        .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 1)
+                        .Select(x => x.Amount_Paid)
+                        .ToList()
+                        .Sum();
+
+            Term2Paid = context.Fees
+                        .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 2)
+                        .Select(x => x.Amount_Paid)
+                        .ToList()
+                        .Sum();
+            Term3Paid = context.Fees
+                        .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 3)
+                        .Select(x => x.Amount_Paid)
+                        .ToList()
+                        .Sum();
+
+        }
 
         public void Global_StudentProfile_Load()
         {
@@ -159,7 +203,7 @@ namespace eSchool.Profiles
         {
             //change color of INX to green
             gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
-            gData.Columns[4].DefaultCellStyle.ForeColor = Color.Blue;
+            gData.Columns[5].DefaultCellStyle.ForeColor = Color.Blue;
 
             lblName.Text = name;
             lblSchoolAndNo.Text = school;
@@ -317,7 +361,7 @@ namespace eSchool.Profiles
         }
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            this.gData.Rows[e.RowIndex].Cells[5].Value = GridIcon.Trash_Can_50px;
+            this.gData.Rows[e.RowIndex].Cells[6].Value = GridIcon.Trash_Can_50px;
         }
 
         public async void GridInitilizer()
@@ -352,10 +396,91 @@ namespace eSchool.Profiles
                         $"Payment for {f.Year} Form {f.Form} Term {f.Term} fees",
                         $"KES {String.Format("{0:0,0}", f.Amount_Paid)}",
                         AccType(accs,f.Acc_Fk.Value),
+                        $"FPY0{f.FeesId}",
                         "View Receipt",
                         null
                 });
             }
         }
+
+        private async Task<Fee> GridDelImageAsync(int rowIndex)
+        {
+            List<Fee> fees = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Fees
+                    .Where(x => x.Admin_No == student.Admin_No)
+                    .ToList();
+                }
+            });
+
+            string details;
+            details = (string)this.gData.Rows[rowIndex].Cells[4].Value;
+            string test = details;
+            string t1 = test.Remove(0, 4);
+            t1.TrimEnd();
+
+            foreach (var fi in fees)
+            {
+                if (fi.FeesId == int.Parse(t1))
+                {
+                    return fi;
+                }
+            }
+            return null;
+        }
+
+        private async void gData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
+                e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 6)
+                {
+                    if ((await GridDelImageAsync(e.RowIndex)) != null)
+                    {
+                        using (var context = new EschoolEntities())
+                        {
+                            try
+                            {
+                                if ((MetroMessageBox.Show(this, $"Are You Sure You Want To Delete This Fee Payment Record ! \nThis action is irreversible", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes))
+                                {
+                                    context.Entry<Fee>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
+                                    context.SaveChanges();
+
+                                    // Custom Notification
+                                    alert.Show("Deleted", alert.AlertType.warnig);
+                                    gData.Rows[e.RowIndex].Visible = false;
+                                    //Load the grid again
+                                    GridInitilizer();
+                                    //Trying to update chart
+                                    ChartUpdate(context, student);
+                                }
+                                
+                            }
+                            catch (Exception exp)
+                            {
+                                MessageBox.Show("Something went wrong" + exp.Message, "Unsuccessful");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //public event Action PointChanged;
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        protected virtual void OnPropertyChanged(string propertyName = null)
+        {
+            var eventToRaise = PropertyChanged;
+            if (eventToRaise != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
     }
 }
