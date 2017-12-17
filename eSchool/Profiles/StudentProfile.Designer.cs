@@ -30,22 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentProfile));
             this.panelBody = new System.Windows.Forms.Panel();
             this.panelBotom = new System.Windows.Forms.Panel();
             this.panelPayment = new System.Windows.Forms.Panel();
             this.gData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnViewRpt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,7 +61,6 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnChangePic = new System.Windows.Forms.Button();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelside2 = new System.Windows.Forms.Panel();
@@ -75,6 +69,14 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEditDetails = new System.Windows.Forms.Button();
+            this.lblCredit = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnViewRpt = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBody.SuspendLayout();
             this.panelBotom.SuspendLayout();
             this.panelPayment.SuspendLayout();
@@ -90,10 +92,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBody
@@ -159,14 +161,14 @@
             this.Acc,
             this.ColumnViewRpt,
             this.ColumnDel});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gData.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gData.DefaultCellStyle = dataGridViewCellStyle7;
             this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gData.DoubleBuffered = true;
             this.gData.EnableHeadersVisualStyles = false;
@@ -177,14 +179,14 @@
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gData.RowHeadersVisible = false;
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,49 +195,7 @@
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(718, 164);
             this.gData.TabIndex = 2;
-            // 
-            // ColumnDate
-            // 
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnDate.HeaderText = "Date";
-            this.ColumnDate.Name = "ColumnDate";
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Details";
-            this.ColumnName.Name = "ColumnName";
-            // 
-            // Form
-            // 
-            this.Form.HeaderText = "Amount";
-            this.Form.Name = "Form";
-            this.Form.ReadOnly = true;
-            // 
-            // Acc
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Acc.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Acc.HeaderText = "Account";
-            this.Acc.Name = "Acc";
-            this.Acc.ReadOnly = true;
-            // 
-            // ColumnViewRpt
-            // 
-            this.ColumnViewRpt.HeaderText = "";
-            this.ColumnViewRpt.Name = "ColumnViewRpt";
-            this.ColumnViewRpt.ReadOnly = true;
-            this.ColumnViewRpt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnDel
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
-            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnDel.HeaderText = "";
-            this.ColumnDel.Name = "ColumnDel";
-            this.ColumnDel.ReadOnly = true;
-            this.ColumnDel.ToolTipText = "Delete Record";
+            this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
             // 
             // panel5
             // 
@@ -483,19 +443,10 @@
             this.btnChangePic.UseVisualStyleBackColor = false;
             this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 1;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.panel2.Controls.Add(this.lblCredit);
             this.panel2.Controls.Add(this.lblBalance);
             this.panel2.Controls.Add(this.panelside2);
             this.panel2.Controls.Add(this.panelside1);
@@ -511,7 +462,7 @@
             this.lblBalance.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalance.ForeColor = System.Drawing.Color.Red;
             this.lblBalance.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblBalance.Location = new System.Drawing.Point(107, 12);
+            this.lblBalance.Location = new System.Drawing.Point(254, 10);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(131, 21);
             this.lblBalance.TabIndex = 50;
@@ -607,6 +558,78 @@
             this.btnEditDetails.UseVisualStyleBackColor = false;
             this.btnEditDetails.Click += new System.EventHandler(this.btnEditDetails_Click);
             // 
+            // lblCredit
+            // 
+            this.lblCredit.AutoSize = true;
+            this.lblCredit.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCredit.ForeColor = System.Drawing.Color.Green;
+            this.lblCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCredit.Location = new System.Drawing.Point(80, 10);
+            this.lblCredit.Name = "lblCredit";
+            this.lblCredit.Size = new System.Drawing.Size(111, 21);
+            this.lblCredit.TabIndex = 51;
+            this.lblCredit.Text = "Credit: KES 0";
+            this.lblCredit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 1;
+            this.ovalPictureBox1.TabStop = false;
+            // 
+            // ColumnDate
+            // 
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnDate.HeaderText = "Date";
+            this.ColumnDate.Name = "ColumnDate";
+            // 
+            // ColumnName
+            // 
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColumnName.HeaderText = "Details";
+            this.ColumnName.Name = "ColumnName";
+            // 
+            // Form
+            // 
+            this.Form.HeaderText = "Amount";
+            this.Form.Name = "Form";
+            this.Form.ReadOnly = true;
+            // 
+            // Acc
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Acc.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Acc.HeaderText = "Account";
+            this.Acc.Name = "Acc";
+            this.Acc.ReadOnly = true;
+            // 
+            // ColumnViewRpt
+            // 
+            this.ColumnViewRpt.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+            this.ColumnViewRpt.HeaderText = "";
+            this.ColumnViewRpt.Name = "ColumnViewRpt";
+            this.ColumnViewRpt.ReadOnly = true;
+            this.ColumnViewRpt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnViewRpt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnViewRpt.VisitedLinkColor = System.Drawing.Color.Navy;
+            // 
+            // ColumnDel
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
+            this.ColumnDel.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnDel.HeaderText = "";
+            this.ColumnDel.Name = "ColumnDel";
+            this.ColumnDel.ReadOnly = true;
+            this.ColumnDel.ToolTipText = "Delete Record";
+            // 
             // StudentProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -633,11 +656,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,11 +701,12 @@
         private System.Windows.Forms.Button btnDelete;
         private Bunifu.Framework.UI.BunifuImageButton btnBack;
         private System.Windows.Forms.Button btnEditDetails;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCredit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Form;
         private System.Windows.Forms.DataGridViewTextBoxColumn Acc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnViewRpt;
+        private System.Windows.Forms.DataGridViewLinkColumn ColumnViewRpt;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDel;
     }
 }

@@ -294,7 +294,8 @@ namespace eSchool.Dash
                 cartesianChart1.AxisY.Add(new Axis
                 {
                     Title = "Amount",
-                    LabelFormatter = value => value.ToString("C3", CultureInfo.CreateSpecificCulture("sw-KE"))
+                    LabelFormatter = value => $"KES {String.Format("{0:0,0}", value)}"
+                    //value.ToString("C3", CultureInfo.CreateSpecificCulture("sw-KE"))
                 });
 
                 cartesianChart1.LegendLocation = LegendLocation.Right;

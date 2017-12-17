@@ -157,30 +157,9 @@ namespace eSchool.Profiles
         }
         private void StudentProfile_Load(object sender, EventArgs e)
         {
-            using (var context = new EschoolEntities())
-            {
-                var fees = context.Fees
-                      .Where(x => x.Year == GYear)
-                      .ToList();
-
-
-
-                ////PayMent fpt1 = new PayMent();
-
-                //from s in context.Fees
-                //select 
-                //{
-                //    sAdmin = s.Admin_No,
-                //    //Amount = (from v in context.Fees
-                //    //where student.Admin_No == v.Admin_No
-                //    //select (decimal?)v.Amount_Paid).Sum() ?? 0,
-                //    Term = s.Term
-
-                //}
-
-
-
-            }
+            //change color of INX to green
+            gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
+            gData.Columns[4].DefaultCellStyle.ForeColor = Color.Blue;
 
             lblName.Text = name;
             lblSchoolAndNo.Text = school;
@@ -216,6 +195,8 @@ namespace eSchool.Profiles
                     ovalPictureBox1.Image = GridIcon.student;
                 }
             }
+
+            GridInitilizer();
         }
 
         //nav
@@ -321,7 +302,60 @@ namespace eSchool.Profiles
             FrmEditStudent fes = new FrmEditStudent(student);
             fes.ShowDialog();
 
-            //refresh the profile
+           
+        }
+
+        private string AccType(List<Account> accs, int accId)
+        {
+            String m = "";
+            Account d = accs.Where(x => x.Id == accId).FirstOrDefault();
+            if (d != null)
+            {
+                 m = $"{d.AccName} \n ({d.AccNo})";
+            }
+            return m;
+        }
+        private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            this.gData.Rows[e.RowIndex].Cells[5].Value = GridIcon.Trash_Can_50px;
+        }
+
+        public async void GridInitilizer()
+        {
+            this.gData.Rows.Clear();
+
+            List<Fee> fees= await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Fees.OrderBy(c => c.FeesId)
+                    .Where(x=>x.Admin_No==student.Admin_No)
+                    .ToList();
+                }
+            });
+
+           List<Account> accs = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Accounts
+                    .ToList();
+                }
+            });
+
+            this.gData.Rows.Clear();
+            foreach (var f in fees)
+            {
+                gData.Rows.Add(new string[]
+                {
+                        f.Date.ToString("dd MMM yyy"),
+                        $"Payment for {f.Year} Form {f.Form} Term {f.Term} fees",
+                        $"KES {String.Format("{0:0,0}", f.Amount_Paid)}",
+                        AccType(accs,f.Acc_Fk.Value),
+                        "View Receipt",
+                        null
+                });
+            }
         }
     }
 }
