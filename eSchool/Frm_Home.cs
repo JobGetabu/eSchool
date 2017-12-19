@@ -50,7 +50,6 @@ namespace eSchool
 
 
         DashboardUI das = DashboardUI.Instance;
-        MonthlyOverview mo;
 
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
@@ -69,15 +68,8 @@ namespace eSchool
 
             TabSwitcher(DashboardUI.Instance);
             das.Global_DashboardUI_Load();
-
-           // mo = das.monthlyOverview1;
-           // mo.PropertyChanged += Mo_PropertyChanged;
         }
 
-        private void Mo_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
 
         //TabSwitcher switches the tabs gracefully
         private void TabSwitcher(Control UIinstance)

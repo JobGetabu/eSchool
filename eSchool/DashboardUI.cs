@@ -38,9 +38,9 @@ namespace eSchool
         public void Global_DashboardUI_Load()
         {
             
-            this.moneyOverview1.Global_MoneyOverview_Load();
-           
             this.monthlyOverview1.Global_MonthlyOverview();
+           
+            this.moneyOverview1.Global_MoneyOverview_Load();
            
             this.receiptOverview1.Global_ReceiptOverview_Load();
             

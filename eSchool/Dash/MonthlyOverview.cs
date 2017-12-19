@@ -225,8 +225,6 @@ namespace eSchool.Dash
 
                 lblUsers.Text = (usersCount).ToString();
 
-                //chart area below
-                //set of monthly variables days = 30 or 31 || 28 interval = 5
 
                 var GMonth = DateTime.Now.Month;
 
@@ -375,6 +373,7 @@ namespace eSchool.Dash
 
                 cIncome.Clear();
                 cExpenses.Clear();
+
                 cExpenses.AddRange(exp);
                 cIncome.AddRange(cin);
             }
