@@ -253,6 +253,10 @@ namespace eSchool
             //End UI Design code
 
             TabSwitcher(FeesUI.Instance);
+
+            //referesh the progress bars
+            FeePayment fp = FeePayment.Instance;
+            fp.Copy_FeePayment_Load();
         }
 
         private void btn_Accounts_Click(object sender, EventArgs e)
