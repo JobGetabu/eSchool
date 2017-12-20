@@ -112,6 +112,7 @@ namespace eSchool
                 using (var context = new EschoolEntities())
                 {
                     return context.Invoices
+                    .OrderBy(x=>x.Id)
                     .Where(t => t.Term == GTerm & t.Year == GYear)
                     .ToList();
                 }

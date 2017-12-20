@@ -597,6 +597,7 @@ namespace eSchool.Profiles
                                     }
 
                                     context.Entry<Fee>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
+
                                     context.SaveChanges();
 
                                     // Custom Notification
@@ -639,7 +640,7 @@ namespace eSchool.Profiles
 
                 foreach (var c in accListAsync)
                 {
-                    string f = ($"{c.AccName}({c.AccNo})");
+                    string f = ($"{c.AccName} \n ({c.AccNo})");
                     if (account.Equals(f))
                     {
                         return c;
