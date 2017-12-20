@@ -261,6 +261,7 @@
             this.gData.Location = new System.Drawing.Point(0, 0);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gData.RowHeadersVisible = false;
             this.gData.RowTemplate.Height = 30;
@@ -284,11 +285,13 @@
             // 
             this.ColumnAdminNo.HeaderText = "Admin No";
             this.ColumnAdminNo.Name = "ColumnAdminNo";
+            this.ColumnAdminNo.ReadOnly = true;
             // 
             // ColumnName
             // 
             this.ColumnName.HeaderText = "Name";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // Form
             // 

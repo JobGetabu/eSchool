@@ -91,6 +91,7 @@
             this.gData.Location = new System.Drawing.Point(8, 8);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -128,11 +129,13 @@
             this.ColumnType.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnType.HeaderText = "Type";
             this.ColumnType.Name = "ColumnType";
+            this.ColumnType.ReadOnly = true;
             // 
             // ColumnName
             // 
             this.ColumnName.HeaderText = "Name";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // ColumnDetails
             // 
@@ -155,6 +158,7 @@
             this.ColumnDelImage.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnDelImage.HeaderText = "";
             this.ColumnDelImage.Name = "ColumnDelImage";
+            this.ColumnDelImage.ReadOnly = true;
             this.ColumnDelImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnDelImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnDelImage.ToolTipText = "Delete Record";

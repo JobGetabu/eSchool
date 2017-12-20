@@ -47,6 +47,7 @@
             this.lblTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pBoxLogoTerm = new System.Windows.Forms.PictureBox();
             this.panelTopRght = new System.Windows.Forms.Panel();
+            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRowCount = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -61,7 +62,6 @@
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -211,6 +211,18 @@
             this.panelTopRght.Name = "panelTopRght";
             this.panelTopRght.Size = new System.Drawing.Size(466, 100);
             this.panelTopRght.TabIndex = 0;
+            // 
+            // lblAccounts
+            // 
+            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccounts.AutoSize = true;
+            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblAccounts.ForeColor = System.Drawing.Color.White;
+            this.lblAccounts.Location = new System.Drawing.Point(16, 7);
+            this.lblAccounts.Name = "lblAccounts";
+            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
+            this.lblAccounts.TabIndex = 80;
+            this.lblAccounts.Text = "Accounts: All";
             // 
             // lblYear
             // 
@@ -376,6 +388,7 @@
             this.gData.Location = new System.Drawing.Point(20, 10);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -389,6 +402,7 @@
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gData.RowTemplate.Height = 40;
+            this.gData.RowTemplate.ReadOnly = true;
             this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(768, 423);
@@ -402,11 +416,13 @@
             this.ColumnAdminNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnAdminNo.HeaderText = "Category";
             this.ColumnAdminNo.Name = "ColumnAdminNo";
+            this.ColumnAdminNo.ReadOnly = true;
             // 
             // ColumnName
             // 
             this.ColumnName.HeaderText = "Details";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // Form
             // 
@@ -431,18 +447,6 @@
             this.ColumnDel.Name = "ColumnDel";
             this.ColumnDel.ReadOnly = true;
             this.ColumnDel.ToolTipText = "Delete Record";
-            // 
-            // lblAccounts
-            // 
-            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAccounts.AutoSize = true;
-            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblAccounts.ForeColor = System.Drawing.Color.White;
-            this.lblAccounts.Location = new System.Drawing.Point(16, 7);
-            this.lblAccounts.Name = "lblAccounts";
-            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
-            this.lblAccounts.TabIndex = 80;
-            this.lblAccounts.Text = "Accounts: All";
             // 
             // IncomeUI
             // 

@@ -39,6 +39,7 @@
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelTopLeft = new System.Windows.Forms.Panel();
+            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblT3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblT2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblT1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -68,7 +69,6 @@
             this.ColumnDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Form = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblAccounts = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelTopLeft.SuspendLayout();
@@ -121,6 +121,18 @@
             this.panelTopLeft.Name = "panelTopLeft";
             this.panelTopLeft.Size = new System.Drawing.Size(288, 100);
             this.panelTopLeft.TabIndex = 55;
+            // 
+            // lblAccounts
+            // 
+            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccounts.AutoSize = true;
+            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.lblAccounts.ForeColor = System.Drawing.Color.White;
+            this.lblAccounts.Location = new System.Drawing.Point(211, 7);
+            this.lblAccounts.Name = "lblAccounts";
+            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
+            this.lblAccounts.TabIndex = 81;
+            this.lblAccounts.Text = "Accounts: All";
             // 
             // lblT3
             // 
@@ -489,6 +501,7 @@
             this.gData.Location = new System.Drawing.Point(20, 10);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -502,6 +515,7 @@
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gData.RowTemplate.Height = 40;
+            this.gData.RowTemplate.ReadOnly = true;
             this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(768, 423);
@@ -515,12 +529,14 @@
             this.ColumnTransNo.FillWeight = 86.92893F;
             this.ColumnTransNo.HeaderText = "TXN #";
             this.ColumnTransNo.Name = "ColumnTransNo";
+            this.ColumnTransNo.ReadOnly = true;
             // 
             // Columntype
             // 
             this.Columntype.FillWeight = 86.92893F;
             this.Columntype.HeaderText = "Type";
             this.Columntype.Name = "Columntype";
+            this.Columntype.ReadOnly = true;
             // 
             // ColumnDetails
             // 
@@ -546,18 +562,6 @@
             this.Class.HeaderText = "Date";
             this.Class.Name = "Class";
             this.Class.ReadOnly = true;
-            // 
-            // lblAccounts
-            // 
-            this.lblAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAccounts.AutoSize = true;
-            this.lblAccounts.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.lblAccounts.ForeColor = System.Drawing.Color.White;
-            this.lblAccounts.Location = new System.Drawing.Point(211, 7);
-            this.lblAccounts.Name = "lblAccounts";
-            this.lblAccounts.Size = new System.Drawing.Size(91, 17);
-            this.lblAccounts.TabIndex = 81;
-            this.lblAccounts.Text = "Accounts: All";
             // 
             // TransationsUI
             // 

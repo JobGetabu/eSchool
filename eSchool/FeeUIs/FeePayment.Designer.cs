@@ -120,9 +120,7 @@
             this.tbSearch.MaxLength = 32767;
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.tbSearch.PromptText = "Search Me";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.tbSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSearch.SelectedText = "";
             this.tbSearch.SelectionLength = 0;
@@ -277,9 +275,11 @@
             this.gData.Location = new System.Drawing.Point(0, 0);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gData.RowHeadersVisible = false;
             this.gData.RowTemplate.Height = 40;
+            this.gData.RowTemplate.ReadOnly = true;
             this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(798, 337);
@@ -298,11 +298,13 @@
             // 
             this.ColumnAdminNo.HeaderText = "Admin No";
             this.ColumnAdminNo.Name = "ColumnAdminNo";
+            this.ColumnAdminNo.ReadOnly = true;
             // 
             // ColumnName
             // 
             this.ColumnName.HeaderText = "Name";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // Form
             // 

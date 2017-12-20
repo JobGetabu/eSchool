@@ -408,6 +408,7 @@
             this.gData.Location = new System.Drawing.Point(20, 10);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -421,6 +422,7 @@
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gData.RowTemplate.Height = 40;
+            this.gData.RowTemplate.ReadOnly = true;
             this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(768, 423);
@@ -433,11 +435,13 @@
             this.ColumnAdminNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnAdminNo.HeaderText = "Invoice #";
             this.ColumnAdminNo.Name = "ColumnAdminNo";
+            this.ColumnAdminNo.ReadOnly = true;
             // 
             // ColumnName
             // 
             this.ColumnName.HeaderText = "Category";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // ColumnClient
             // 
