@@ -609,6 +609,8 @@ namespace eSchool.Profiles
                                     GridInitilizer();
                                     //Trying to update chart
                                     ChartUpdate(context, student);
+                                    //update balances
+                                    OverallPayments();
                                 }
 
                             }
@@ -658,8 +660,19 @@ namespace eSchool.Profiles
         {
             decimal amountsRqd = await AmountRequiredToBePaid();
             decimal amountsPaid = await AmountPaidToNow();
-            //Balances: KES 0
-            lblBalance.Text = $"Balances: KES {String.Format("{0:0,0}", amountsRqd)}";
+
+            decimal ggg = Decimal.Subtract(amountsRqd, amountsPaid);
+
+            if (ggg < 0)
+            {
+                //Credit: KES 0
+                lblCredit.Text = $"Credit: KES {String.Format("{0:0,0}", Decimal.Negate(ggg))}";
+            }
+            else
+            {
+                //Balances: KES 0
+                lblBalance.Text = $"Balances: KES {String.Format("{0:0,0}", ggg)}";
+            }
 
         }
 
@@ -719,7 +732,7 @@ namespace eSchool.Profiles
         private async Task<decimal> AmountRequiredToBePaid()
         {
             int count = 0;
-            decimal runningAmount =0;
+            decimal runningAmount = 0;
             using (var context = new EschoolEntities())
             {
                 for (int i = student.RegYear.Value; i <= GYear; i++)
@@ -735,10 +748,10 @@ namespace eSchool.Profiles
                             //set up fee info
                             decimal editfrpt = await Task.Factory.StartNew(() =>
                             {
-                               return context.FeesRequiredPerTerms
-                               .Where(x => x.Year == i & x.Term == j & x.Form == student.Form)
-                               .Select(x => x.FeeRequired)
-                               .FirstOrDefault();
+                                return context.FeesRequiredPerTerms
+                                .Where(x => x.Year == i & x.Term == j & x.Form == student.Form)
+                                .Select(x => x.FeeRequired)
+                                .FirstOrDefault();
                             });
 
                             runningAmount += editfrpt;
