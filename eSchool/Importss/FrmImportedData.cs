@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using eSchool.Importss;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,20 +66,28 @@ namespace eSchool
                             dr.Cells["ADMIN NO"].ToolTipText = "This record exists in the database";
                             return;
                         }
-                        context.Student_Basic.Add(new Student_Basic
+
+                        try
                         {
-                            //check for duplicate Admin number 
-                            Admin_No = Convert.ToInt32(dr.Cells["ADMIN NO"].Value),
-                            First_Name = dr.Cells["FIRST NAME"].Value.ToString(),
-                            Middle_Name = dr.Cells["MIDDLE NAME"].Value.ToString(),
-                            Last_Name = dr.Cells["LAST NAME"].Value.ToString(),
-                            Form = Convert.ToInt32(dr.Cells["FORM"].Value.ToString()),
-                            Class = dr.Cells["CLASS"].Value.ToString(),
-                            Gender = dr.Cells["GENDER"].Value.ToString(),
-                            ModeOfLearning = dr.Cells["MODE OF LEARNING"].Value.ToString(),
-                            RegYear = Convert.ToInt32(dr.Cells["REGISTRATION YEAR"].Value),
-                            RegTerm = Convert.ToInt32(dr.Cells["REGISTRATION TERM"].Value),
-                        });
+                            context.Student_Basic.Add(new Student_Basic
+                            {
+                                //check for duplicate Admin number 
+                                Admin_No = Convert.ToInt32(dr.Cells["ADMIN NO"].Value),
+                                First_Name = dr.Cells["FIRST NAME"].Value.ToString(),
+                                Middle_Name = dr.Cells["MIDDLE NAME"].Value.ToString(),
+                                Last_Name = dr.Cells["LAST NAME"].Value.ToString(),
+                                Form = Convert.ToInt32(dr.Cells["FORM"].Value.ToString()),
+                                Class = dr.Cells["CLASS"].Value.ToString(),
+                                Gender = dr.Cells["GENDER"].Value.ToString(),
+                                ModeOfLearning = dr.Cells["MODE OF LEARNING"].Value.ToString(),
+                                RegYear = Convert.ToInt32(dr.Cells["REGISTRATION YEAR"].Value),
+                                RegTerm = Convert.ToInt32(dr.Cells["REGISTRATION TERM"].Value),
+                            });
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Check all entries are correct and retry", "Error");
+                        }
                     }
                     else
                     {
@@ -93,7 +102,9 @@ namespace eSchool
 
                     //used for save data students imports
                     MyDialogueResult = true;
-                //refresh both grids
+                    //refresh both grids
+                    StudentsData ss = StudentsData.Instance;
+                    ss.GridInitilizer(); 
                 //redirect to students tab
 
                     if (metroCBSheets.Items.Count > 0)

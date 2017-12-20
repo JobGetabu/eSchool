@@ -52,7 +52,7 @@ namespace eSchool.Profiles
         public decimal Term2Fee { get; set; }
         public decimal Term3Fee { get; set; }
 
-        private decimal term1Paid =0;
+        private decimal term1Paid = 0;
         private decimal term2Paid = 0;
         private decimal term3Paid = 0;
         public decimal Term1Paid
@@ -94,6 +94,104 @@ namespace eSchool.Profiles
         private string date;   //Admitted - 12/05/2013
         string path = "";
 
+
+        private void SetUpChart()
+        {
+            int count = 0;
+            using (var context = new EschoolEntities())
+            {
+
+                ChartValues<decimal> editVarPaid = new ChartValues<decimal>();
+                ChartValues<decimal> editVarRqd = new ChartValues<decimal>();
+                List<string> chartLbls = new List<string>();
+
+                for (int i = student.RegYear.Value; i <= GYear; i++)
+                {
+                    for (int j = 1; j <= 3; j++)
+                    {
+                        if (count == 0)
+                        {
+                            j = student.RegTerm.Value;
+                        }
+                        if (GYear == i & GTerm == j)
+                        {
+                            //last bit
+
+                            //set up fee info
+                            decimal editfrpt = context.FeesRequiredPerTerms
+                               .Where(x => x.Year == i & x.Term == j & x.Form == student.Form)
+                               .Select(x => x.FeeRequired)
+                               .FirstOrDefault();
+
+                            decimal editTerm1Paid1 = context.Fees
+                              .Where(x => x.Admin_No == student.Admin_No & x.Year == i & x.Term == j)
+                              .Select(x => x.Amount_Paid)
+                              .ToList()
+                              .Sum();
+
+                            editVarPaid.Add(editTerm1Paid1);
+                            editVarRqd.Add(editfrpt);
+                            chartLbls.Add($"{i}\nTerm {j}");
+
+                            Console.WriteLine($"=>Period{count} Year {i} Term {j}");
+                            break;
+
+                        }
+                        //set up fee info
+                        decimal editfrpt1 = context.FeesRequiredPerTerms
+                           .Where(x => x.Year == i & x.Term == j & x.Form == student.Form)
+                           .Select(x => x.FeeRequired)
+                           .FirstOrDefault();
+
+                        decimal editTerm1Paid = context.Fees
+                          .Where(x => x.Admin_No == student.Admin_No & x.Year == i & x.Term == j)
+                          .Select(x => x.Amount_Paid)
+                          .ToList()
+                          .Sum();
+
+                        editVarPaid.Add(editTerm1Paid);
+                        editVarRqd.Add(editfrpt1);
+                        chartLbls.Add($"{i}\nTerm {j}");
+
+                        Console.WriteLine($"Period{count} Year {i} Term {j}");
+                        count += 1;
+                    }
+                }
+
+                MyValues = editVarPaid;
+                cartesianChart1.Series = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "Fee Required",
+                    Values = editVarRqd
+                }
+            };
+
+                //adding series will update and animate the chart automatically
+                cartesianChart1.Series.Add(new ColumnSeries
+                {
+                    Title = "Paid",
+                    Values = MyValues
+                });
+
+                //also adding values updates and animates the chart automatically
+                //cartesianChart1.Series[1].Values.Add(48d);
+
+                cartesianChart1.AxisX.Add(new Axis
+                {
+                    Title = "Periods",
+                    Labels = chartLbls
+                });
+
+                cartesianChart1.AxisY.Add(new Axis
+                {
+                    Title = "Amount",
+                    LabelFormatter = value => $"KES {String.Format("{0:0,0}", value)}"
+
+                });
+            }
+        }
         public StudentProfile(Student_Basic stud)
         {
             InitializeComponent();
@@ -127,26 +225,25 @@ namespace eSchool.Profiles
 
 
 
-                 Term1Paid = context.Fees
-                            .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 1)
-                            .Select(x => x.Amount_Paid)
-                            .ToList()
-                            .Sum();
+                Term1Paid = context.Fees
+                           .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 1)
+                           .Select(x => x.Amount_Paid)
+                           .ToList()
+                           .Sum();
 
-                 Term2Paid = context.Fees
-                            .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 2)
-                            .Select(x => x.Amount_Paid)
-                            .ToList()
-                            .Sum();
-                 Term3Paid = context.Fees
-                            .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 3)
-                            .Select(x => x.Amount_Paid)
-                            .ToList()
-                            .Sum();
-                MyValues = new ChartValues<decimal> { Term1Paid, Term2Paid, Term3Paid };
+                Term2Paid = context.Fees
+                           .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 2)
+                           .Select(x => x.Amount_Paid)
+                           .ToList()
+                           .Sum();
+                Term3Paid = context.Fees
+                           .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 3)
+                           .Select(x => x.Amount_Paid)
+                           .ToList()
+                           .Sum();
 
                 #region chart
-
+                /*
                 cartesianChart1.Series = new SeriesCollection
             {
                 new ColumnSeries
@@ -178,34 +275,60 @@ namespace eSchool.Profiles
                     LabelFormatter = value => $"KES {String.Format("{0:0,0}", value)}"
 
                 });
-                
+                */
                 #endregion
+
+                SetUpChart();
             }
         }
 
         private void ChartUpdate(EschoolEntities context, Student_Basic stud)
         {
+            int count = 0;
+            using (var contexts = new EschoolEntities())
+            {
 
-            Term1Paid = context.Fees
-                        .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 1)
-                        .Select(x => x.Amount_Paid)
-                        .ToList()
-                        .Sum();
+                ChartValues<decimal> editVarPaid = new ChartValues<decimal>();
 
-            Term2Paid = context.Fees
-                        .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 2)
-                        .Select(x => x.Amount_Paid)
-                        .ToList()
-                        .Sum();
-            Term3Paid = context.Fees
-                        .Where(x => x.Admin_No == stud.Admin_No & x.Year == GYear & x.Term == 3)
-                        .Select(x => x.Amount_Paid)
-                        .ToList()
-                        .Sum();
+                for (int i = student.RegYear.Value; i <= GYear; i++)
+                {
+                    for (int j = 1; j <= 3; j++)
+                    {
+                        if (count == 0)
+                        {
+                            j = student.RegTerm.Value;
+                        }
+                        if (GYear == i & GTerm == j)
+                        {
+                            //last bit
 
-            var vv = new ChartValues<decimal> { Term1Paid, Term2Paid, Term3Paid };
-            MyValues.Clear();
-            MyValues.AddRange(vv);
+                            decimal editTerm1Paid1 = context.Fees
+                              .Where(x => x.Admin_No == student.Admin_No & x.Year == i & x.Term == j)
+                              .Select(x => x.Amount_Paid)
+                              .ToList()
+                              .Sum();
+
+                            editVarPaid.Add(editTerm1Paid1);
+
+                            break;
+
+                        }
+
+
+                        decimal editTerm1Paid = context.Fees
+                          .Where(x => x.Admin_No == student.Admin_No & x.Year == i & x.Term == j)
+                          .Select(x => x.Amount_Paid)
+                          .ToList()
+                          .Sum();
+
+                        editVarPaid.Add(editTerm1Paid);
+                        count += 1;
+                    }
+                }
+
+                MyValues.Clear();
+                MyValues.AddRange(editVarPaid);
+            }
         }
 
         public void Global_StudentProfile_Load()
@@ -272,7 +395,7 @@ namespace eSchool.Profiles
         }
 
         EschoolEntities db = new EschoolEntities();
-        
+
 
         private void btnBack_Click_1(object sender, EventArgs e)
         {
@@ -361,7 +484,7 @@ namespace eSchool.Profiles
             FrmEditStudent fes = new FrmEditStudent(student);
             fes.ShowDialog();
 
-           
+
         }
 
         private string AccType(List<Account> accs, int accId)
@@ -370,7 +493,7 @@ namespace eSchool.Profiles
             Account d = accs.Where(x => x.Id == accId).FirstOrDefault();
             if (d != null)
             {
-                 m = $"{d.AccName} \n ({d.AccNo})";
+                m = $"{d.AccName} \n ({d.AccNo})";
             }
             return m;
         }
@@ -383,24 +506,24 @@ namespace eSchool.Profiles
         {
             this.gData.Rows.Clear();
 
-            List<Fee> fees= await Task.Factory.StartNew(() =>
-            {
-                using (var context = new EschoolEntities())
-                {
-                    return context.Fees.OrderBy(c => c.FeesId)
-                    .Where(x=>x.Admin_No==student.Admin_No)
-                    .ToList();
-                }
-            });
+            List<Fee> fees = await Task.Factory.StartNew(() =>
+             {
+                 using (var context = new EschoolEntities())
+                 {
+                     return context.Fees.OrderBy(c => c.FeesId)
+                     .Where(x => x.Admin_No == student.Admin_No)
+                     .ToList();
+                 }
+             });
 
-           List<Account> accs = await Task.Factory.StartNew(() =>
-            {
-                using (var context = new EschoolEntities())
-                {
-                    return context.Accounts
-                    .ToList();
-                }
-            });
+            List<Account> accs = await Task.Factory.StartNew(() =>
+             {
+                 using (var context = new EschoolEntities())
+                 {
+                     return context.Accounts
+                     .ToList();
+                 }
+             });
 
             this.gData.Rows.Clear();
             foreach (var f in fees)
@@ -463,6 +586,16 @@ namespace eSchool.Profiles
                             {
                                 if ((MetroMessageBox.Show(this, $"Are You Sure You Want To Delete This Fee Payment Record ! \nThis action is irreversible", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes))
                                 {
+                                    //Deduct amount in the account
+                                    string acs = this.gData.Rows[e.RowIndex].Cells[3].Value.ToString();
+                                    Account accAssociated = FindSelAccount(acs);
+                                    if (accAssociated != null)
+                                    {
+                                        accAssociated.Amount -= (await GridDelImageAsync                                                            (e.RowIndex)).Amount_Paid;
+
+                                        context.Entry<Account>(accAssociated).State = EntityState.Modified;
+                                    }
+
                                     context.Entry<Fee>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
                                     context.SaveChanges();
 
@@ -474,7 +607,7 @@ namespace eSchool.Profiles
                                     //Trying to update chart
                                     ChartUpdate(context, student);
                                 }
-                                
+
                             }
                             catch (Exception exp)
                             {
@@ -495,6 +628,25 @@ namespace eSchool.Profiles
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private Account FindSelAccount(String account)
+        {
+            // account = Equity(075465156)
+            using (var context = new EschoolEntities())
+            {
+                var accListAsync = context.Accounts.ToList();
+
+                foreach (var c in accListAsync)
+                {
+                    string f = ($"{c.AccName}({c.AccNo})");
+                    if (account.Equals(f))
+                    {
+                        return c;
+                    }
+                }
+            }
+            return null;
         }
 
     }

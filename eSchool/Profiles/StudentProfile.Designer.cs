@@ -68,7 +68,6 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnChangePic = new System.Windows.Forms.Button();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCredit = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -78,6 +77,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEditDetails = new System.Windows.Forms.Button();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panelBody.SuspendLayout();
             this.panelBotom.SuspendLayout();
             this.panelPayment.SuspendLayout();
@@ -93,10 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBody
@@ -181,6 +181,7 @@
             this.gData.Location = new System.Drawing.Point(7, 64);
             this.gData.MultiSelect = false;
             this.gData.Name = "gData";
+            this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -194,6 +195,7 @@
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gData.RowTemplate.Height = 40;
+            this.gData.RowTemplate.ReadOnly = true;
             this.gData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(718, 164);
@@ -207,6 +209,7 @@
             this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnDate.HeaderText = "Date";
             this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
             // 
             // ColumnName
             // 
@@ -214,6 +217,7 @@
             this.ColumnName.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnName.HeaderText = "Details";
             this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
             // Form
             // 
@@ -234,6 +238,7 @@
             // 
             this.ColumnRef.HeaderText = "Ref. #";
             this.ColumnRef.Name = "ColumnRef";
+            this.ColumnRef.ReadOnly = true;
             // 
             // ColumnViewRpt
             // 
@@ -501,16 +506,6 @@
             this.btnChangePic.UseVisualStyleBackColor = false;
             this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 1;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
@@ -639,6 +634,16 @@
             this.btnEditDetails.UseVisualStyleBackColor = false;
             this.btnEditDetails.Click += new System.EventHandler(this.btnEditDetails_Click);
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 1;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // StudentProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -666,11 +671,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
