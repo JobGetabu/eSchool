@@ -377,6 +377,8 @@ namespace eSchool.Profiles
             }
 
             GridInitilizer();
+
+            OverallPayments()
         }
 
         //nav
@@ -591,7 +593,7 @@ namespace eSchool.Profiles
                                     Account accAssociated = FindSelAccount(acs);
                                     if (accAssociated != null)
                                     {
-                                        accAssociated.Amount -= (await GridDelImageAsync                                                            (e.RowIndex)).Amount_Paid;
+                                        accAssociated.Amount -= (await GridDelImageAsync(e.RowIndex)).Amount_Paid;
 
                                         context.Entry<Account>(accAssociated).State = EntityState.Modified;
                                     }
@@ -650,5 +652,61 @@ namespace eSchool.Profiles
             return null;
         }
 
+
+        //calculation of overall payment
+        private async void OverallPayments()
+        {
+            decimal amountsRqd = await AmountRequiredToBePaid();
+            lblBalance.Text = $"KES {String.Format("{0:0,0}", amountsRqd)}";
+
+        }
+
+        private async Task<decimal> AmountRequiredToBePaid()
+        {
+            int count = 0;
+            decimal runningAmount =0;
+            using (var context = new EschoolEntities())
+            {
+                for (int i = student.RegYear.Value; i <= GYear; i++)
+                {
+                    for (int j = 1; j <= 3; j++)
+                    {
+                        if (count == 0)
+                        {
+                            j = student.RegTerm.Value;
+                        }
+                        if (GYear == i & GTerm == j)
+                        {
+                            //set up fee info
+                            decimal editfrpt = await Task.Factory.StartNew(() =>
+                            {
+                               return context.FeesRequiredPerTerms
+                               .Where(x => x.Year == i & x.Term == j & x.Form == student.Form)
+                               .Select(x => x.FeeRequired)
+                               .FirstOrDefault();
+                            });
+
+                            runningAmount += editfrpt;
+
+                            Console.WriteLine($"=>Period{count} Year {i} Term {j}");
+                            break;
+                        }
+
+                        //set up fee info
+                        decimal editfrpt1 = await Task.Factory.StartNew(() =>
+                        {
+                            return context.FeesRequiredPerTerms
+                            .Where(x => x.Year == i & x.Term == j & x.Form == student.Form)
+                            .Select(x => x.FeeRequired)
+                            .FirstOrDefault();
+                        });
+
+                        runningAmount += editfrpt1;
+                    }
+                }
+            }
+
+            return runningAmount;
+        }
     }
 }

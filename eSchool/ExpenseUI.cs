@@ -312,5 +312,7 @@ namespace eSchool
             }
             this.lblPaid.Text = $"KES {String.Format("{0:0,0}", totalRunning)}";
         }
+
+
     }
 }
