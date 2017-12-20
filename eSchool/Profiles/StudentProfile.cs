@@ -378,7 +378,7 @@ namespace eSchool.Profiles
 
             GridInitilizer();
 
-            OverallPayments()
+            OverallPayments();
         }
 
         //nav
@@ -657,8 +657,63 @@ namespace eSchool.Profiles
         private async void OverallPayments()
         {
             decimal amountsRqd = await AmountRequiredToBePaid();
-            lblBalance.Text = $"KES {String.Format("{0:0,0}", amountsRqd)}";
+            decimal amountsPaid = await AmountPaidToNow();
+            //Balances: KES 0
+            lblBalance.Text = $"Balances: KES {String.Format("{0:0,0}", amountsRqd)}";
 
+        }
+
+        private async Task<decimal> AmountPaidToNow()
+        {
+            int count = 0;
+            decimal runningAmount = 0;
+            using (var context = new EschoolEntities())
+            {
+                for (int i = student.RegYear.Value; i <= GYear; i++)
+                {
+                    for (int j = 1; j <= 3; j++)
+                    {
+                        if (count == 0)
+                        {
+                            j = student.RegTerm.Value;
+                        }
+                        if (GYear == i & GTerm == j)
+                        {
+                            //set up fee info
+                            decimal editPaid = await Task.Factory.StartNew(() =>
+                            {
+                                return
+                               context.Fees
+                                  .Where(x => x.Admin_No == student.Admin_No & x.Year == i & x.Term == j)
+                                  .Select(x => x.Amount_Paid)
+                                  .ToList()
+                                  .Sum();
+                            });
+
+                            runningAmount += editPaid;
+
+                            //Console.WriteLine($"=>Period{count} Year {i} Term {j}");
+                            break;
+                        }
+
+                        //set up fee info
+                        decimal editPaid1 = await Task.Factory.StartNew(() =>
+                        {
+                            return
+                           context.Fees
+                              .Where(x => x.Admin_No == student.Admin_No & x.Year == i & x.Term == j)
+                              .Select(x => x.Amount_Paid)
+                              .ToList()
+                              .Sum();
+                        });
+
+                        runningAmount += editPaid1;
+                        count += 1;
+                    }
+                }
+            }
+
+            return runningAmount;
         }
 
         private async Task<decimal> AmountRequiredToBePaid()
@@ -688,7 +743,7 @@ namespace eSchool.Profiles
 
                             runningAmount += editfrpt;
 
-                            Console.WriteLine($"=>Period{count} Year {i} Term {j}");
+                            //Console.WriteLine($"=>Period{count} Year {i} Term {j}");
                             break;
                         }
 
@@ -702,6 +757,7 @@ namespace eSchool.Profiles
                         });
 
                         runningAmount += editfrpt1;
+                        count += 1;
                     }
                 }
             }
