@@ -31,12 +31,16 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaymentReceipt));
+            this.PaymentOverheadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelRpt = new System.Windows.Forms.Panel();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PaymentOverheadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelRpt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentOverheadsBindingSource)).BeginInit();
+            this.panelRpt.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // PaymentOverheadsBindingSource
+            // 
+            this.PaymentOverheadsBindingSource.DataSource = typeof(eSchool.ReceiptPrints.PaymentOverheads);
             // 
             // panelRpt
             // 
@@ -66,10 +70,6 @@
             this.reportViewer.Size = new System.Drawing.Size(812, 542);
             this.reportViewer.TabIndex = 0;
             // 
-            // PaymentOverheadsBindingSource
-            // 
-            this.PaymentOverheadsBindingSource.DataSource = typeof(eSchool.ReceiptPrints.PaymentOverheads);
-            // 
             // FrmPaymentReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -80,9 +80,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPaymentReceipt";
             this.Text = "Payment Receipt";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPaymentReceipt_FormClosing);
             this.Load += new System.EventHandler(this.FrmPaymentReceipt_Load);
-            this.panelRpt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PaymentOverheadsBindingSource)).EndInit();
+            this.panelRpt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
