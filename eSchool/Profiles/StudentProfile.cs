@@ -22,6 +22,7 @@ namespace eSchool.Profiles
 {
     public partial class StudentProfile : UserControl
     {
+        private int counter = 6;
         static Student_Basic student = new Student_Basic();
         private static StudentProfile _instance;
         public static StudentProfile Instance
@@ -626,7 +627,11 @@ namespace eSchool.Profiles
             }
             if (e.ColumnIndex == 5)
             {
+                alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
+
+                await Task.Delay(5000);
                 PrintService(e.RowIndex);
+                
             }
         }
 
@@ -634,6 +639,7 @@ namespace eSchool.Profiles
         //local but global
         private decimal psBalance =0;
         private decimal psCredit = 0;
+        
         private async void PrintService(int rowIndex)
         {
             List<Fee> fees = await Task.Factory.StartNew(() =>
@@ -716,12 +722,15 @@ namespace eSchool.Profiles
                 if (psBalance > 0)
                 {
                     payee.Status = "Uncleared";
+                }else
+                {
+                    payee.Status = "Cleared";
                 }
                 payee.Balance= $"Balance: KES {String.Format("{0:0,0}", psBalance)}";
                 payee.Credit = $"Credit: KES {String.Format("{0:0,0}", psCredit)}";
 
                 FrmPaymentReceipt fpr = new FrmPaymentReceipt(listPayOv, payee, sdd);
-                fpr.ShowDialog();
+                fpr.ShowDialog(StudentProfile.Instance);
             }
         }
 
@@ -879,6 +888,14 @@ namespace eSchool.Profiles
             }
 
             return runningAmount;
+        }
+
+        public async Task Foo(Delegate Fu)
+        {
+            await Task.Delay(6000);
+            //txtConsole.AppendText("Waiting...");
+            //DoStuff();
+            
         }
     }
 }

@@ -173,7 +173,9 @@ namespace eSchool
                     List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, fp.selFilYear, fp.selFilForm);
                     string lbl = $"{fp.selFilYear} Form {fp.frmlbl} Fees Structure"; //2017 Form Four Fees Structure
 
-                    FrmAnnualFsReport frm = new FrmAnnualFsReport(lbl, feestructureList);
+                    alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
+                    await Task.Delay(6000);
+                    FrmAnnualFsReport frm = new FrmAnnualFsReport(lbl, feestructureList);                  
                     frm.ShowDialog();
                 }
             }
@@ -188,6 +190,9 @@ namespace eSchool
             {
                 FeeUI_Show fus = FeeUI_Show.Instance;
                 fus.RpInit();
+
+                alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
+                await Task.Delay(6000);
                 DoPrint(fus.rpYear, fus.rpTerm, fus.rpForms[0], fus.rpTitle);
             }
         }
@@ -213,6 +218,7 @@ namespace eSchool
             string lbl = $"{title} Term {FeesUI.autoSelTerm} Fees Structure"; //2017 Form Four Fees Structure
 
             FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
+           
             frm.ShowDialog();
         }
 
@@ -309,6 +315,11 @@ namespace eSchool
         {
             //show FeeUI_List
             TabSwitcher(FeeUI_Show.Instance);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
