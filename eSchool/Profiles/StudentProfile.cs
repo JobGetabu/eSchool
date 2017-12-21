@@ -622,14 +622,11 @@ namespace eSchool.Profiles
                             }
                         }
                     }
-                }
+                }             
             }
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewLinkCell && e.RowIndex >= 0)
+            if (e.ColumnIndex == 5)
             {
-                if (e.ColumnIndex == 5)
-                {
-                    PrintService(e.RowIndex);
-                }
+                PrintService(e.RowIndex);
             }
         }
 

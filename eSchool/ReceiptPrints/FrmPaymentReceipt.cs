@@ -32,7 +32,7 @@ namespace eSchool.ReceiptPrints
         private void FrmPaymentReceipt_Load(object sender, EventArgs e)
         {
             PaymentOverheadsBindingSource.DataSource = listPayOv;
-            string dd = DateTime.Now.ToShortDateString();
+            string dd = "Receipt Date: " + DateTime.Now.ToShortDateString();
         Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
            {
                 new Microsoft.Reporting.WinForms.ReportParameter("schoolName",schoolName),
