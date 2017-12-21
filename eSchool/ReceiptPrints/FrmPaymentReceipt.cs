@@ -12,7 +12,7 @@ namespace eSchool.ReceiptPrints
 {
     public partial class FrmPaymentReceipt : Form
     {
-        public FrmPaymentReceipt()
+        public FrmPaymentReceipt(List<PaymentOverheads> listPayOv, PaymentDetails pDetails,StudentDetails sDetails)
         {
             InitializeComponent();
         }

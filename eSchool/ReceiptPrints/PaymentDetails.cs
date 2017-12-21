@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eSchool.ReceiptPrints
 {
-    internal class PaymentDetails
+    public class PaymentDetails
     {
         public string FeeId { get; set; }
         public string Status { get; set; }

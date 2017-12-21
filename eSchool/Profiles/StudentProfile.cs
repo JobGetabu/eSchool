@@ -16,6 +16,7 @@ using custom_alert_notifications;
 using System.Data.Entity.Infrastructure;
 using System.Globalization;
 using LiveCharts.Defaults;
+using eSchool.ReceiptPrints;
 
 namespace eSchool.Profiles
 {
@@ -575,6 +576,7 @@ namespace eSchool.Profiles
         {
             var senderGrid = (DataGridView)sender;
 
+ 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
             {
@@ -622,6 +624,108 @@ namespace eSchool.Profiles
                     }
                 }
             }
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewLinkCell && e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 5)
+                {
+                    PrintService(e.RowIndex);
+                }
+            }
+        }
+
+
+        //local but global
+        private decimal psBalance =0;
+        private decimal psCredit = 0;
+        private async void PrintService(int rowIndex)
+        {
+            List<Fee> fees = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Fees
+                    .Where(x => x.Admin_No == student.Admin_No)
+                    .ToList();
+                }
+            });
+
+            string details;
+            details = (string)this.gData.Rows[rowIndex].Cells[4].Value;
+            string test = details;
+            string t1 = test.Remove(0, 4);
+            t1.TrimEnd();
+
+            Fee cFee = null;
+            foreach (var fi in fees)
+            {
+                if (fi.FeesId == int.Parse(t1))
+                {
+                    cFee= fi;
+                }
+            }
+
+            if (cFee != null)
+            {
+                //look for the fee structure associated
+                GroupedFeeStructure grpFs = await Task.Factory.StartNew(() =>
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        return context.GroupedFeeStructures
+                        .Where(x => x.selTerm == cFee.Term & x.selYear == cFee.Year)
+                        .FirstOrDefault(x => x.selFm1 == cFee.Form | x.selFm2 == cFee.Form | x.selFm3 == cFee.Form | x.selFm4 == cFee.Form);
+                    }
+                });
+                //look for associted required fee that term
+                FeesRequiredPerTerm frpt = await Task.Factory.StartNew(() =>
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        return context.FeesRequiredPerTerms
+                        .Where(x => x.Term == cFee.Term & x.Year == cFee.Year & x.Form == cFee.Form)
+                        .FirstOrDefault( );
+                    }
+                });
+
+                //look for list of overheadcatperyear associated
+                List<OverHeadCategoryPerYear> ovCpyear = await Task.Factory.StartNew(() =>
+                {
+                    using (var context = new EschoolEntities())
+                    {
+                        return context.OverHeadCategoryPerYears
+                        .Where(x => x.Term == cFee.Term & x.Year == cFee.Year & x.Form == cFee.Form)
+                        .ToList();
+                    }
+                });
+
+                //var listOverheads = ovCpyear.Select(x => x.Category).Distinct();
+                List<PaymentOverheads> listPayOv = new List<PaymentOverheads>();
+                foreach (var item in ovCpyear)
+                {
+                    PaymentOverheads p = new PaymentOverheads();
+                    p.Overhead = item.Category;
+                    decimal t = Decimal.Divide(item.Amount, frpt.FeeRequired) * cFee.Amount_Paid;
+                    p.Amount = t;
+
+                    listPayOv.Add(p);
+                }
+
+                //student details
+                StudentDetails sdd = new StudentDetails(student);
+
+                //payment details
+                PaymentDetails payee = new PaymentDetails();
+                payee.FeeId = details;
+                if (psBalance > 0)
+                {
+                    payee.Status = "Uncleared";
+                }
+                payee.Balance= $"Balance: KES {String.Format("{0:0,0}", psBalance)}";
+                payee.Credit = $"Credit: KES {String.Format("{0:0,0}", psCredit)}";
+
+                FrmPaymentReceipt fpr = new FrmPaymentReceipt(listPayOv, payee, sdd);
+                fpr.ShowDialog();
+            }
         }
 
         //public event Action PointChanged;
@@ -667,11 +771,13 @@ namespace eSchool.Profiles
             {
                 //Credit: KES 0
                 lblCredit.Text = $"Credit: KES {String.Format("{0:0,0}", Decimal.Negate(ggg))}";
+                psCredit = Decimal.Negate(ggg);
             }
             else
             {
                 //Balances: KES 0
                 lblBalance.Text = $"Balances: KES {String.Format("{0:0,0}", ggg)}";
+                psBalance = ggg;
             }
 
         }

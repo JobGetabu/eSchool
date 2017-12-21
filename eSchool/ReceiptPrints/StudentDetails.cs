@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eSchool.ReceiptPrints
 {
-    internal class StudentDetails
+    public class StudentDetails
     {
         public string StudentAdminNo { get; set; }
 

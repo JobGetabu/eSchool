@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eSchool.ReceiptPrints
 {
-    internal class PaymentOverheads
+    public class PaymentOverheads
     {
         public string Overhead { get; set; }
         public decimal Amount { get; set; }
