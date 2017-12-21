@@ -483,6 +483,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptPrints\PaymentDetails.cs" />
+    <Compile Include="ReceiptPrints\PaymentOverheads.cs" />
     <Compile Include="ReceiptPrints\StudentDetails.cs" />
     <Compile Include="SchoolPeriodTerm.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
@@ -797,6 +799,10 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Category.datasource" />
     <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure.datasource" />
+    <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure1.datasource" />
+    <None Include="Properties\DataSources\eSchool.ReceiptPrints.PaymentDetails.datasource" />
+    <None Include="Properties\DataSources\eSchool.ReceiptPrints.PaymentOverheads.datasource" />
+    <None Include="Properties\DataSources\eSchool.ReceiptPrints.StudentDetails.datasource" />
     <None Include="Properties\DataSources\Fee.datasource" />
     <None Include="Properties\DataSources\OverHeadCategory.datasource" />
     <None Include="Properties\DataSources\OverHeadCategoryPerYear.datasource" />
