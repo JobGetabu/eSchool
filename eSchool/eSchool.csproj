@@ -566,6 +566,7 @@
     <Compile Include="TransionX\FrmFilterTransaction.Designer.cs">
       <DependentUpon>FrmFilterTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrialBal\ExpenseDetails.cs" />
     <Compile Include="TrialBal\FrmMonthlyTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +579,7 @@
     <Compile Include="TrialBal\FrmTermlyTB.Designer.cs">
       <DependentUpon>FrmTermlyTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrialBal\IncomeDetails.cs" />
     <Content Include="EschoolModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EschoolModel.Context.cs</LastGenOutput>
@@ -813,6 +815,7 @@
     <EmbeddedResource Include="TrialBal\FrmTermlyTB.resx">
       <DependentUpon>FrmTermlyTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrialBal\TrialBalance.rdlc" />
     <EntityDeploy Include="EschoolModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EschoolModel.Designer.cs</LastGenOutput>
@@ -830,6 +833,8 @@
     <None Include="Properties\DataSources\eSchool.ReceiptPrints.PaymentDetails.datasource" />
     <None Include="Properties\DataSources\eSchool.ReceiptPrints.PaymentOverheads.datasource" />
     <None Include="Properties\DataSources\eSchool.ReceiptPrints.StudentDetails.datasource" />
+    <None Include="Properties\DataSources\eSchool.TrialBal.ExpenseDetails.datasource" />
+    <None Include="Properties\DataSources\eSchool.TrialBal.IncomeDetails.datasource" />
     <None Include="Properties\DataSources\Fee.datasource" />
     <None Include="Properties\DataSources\OverHeadCategory.datasource" />
     <None Include="Properties\DataSources\OverHeadCategoryPerYear.datasource" />
