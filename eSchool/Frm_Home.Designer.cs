@@ -36,10 +36,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.containerUIs = new System.Windows.Forms.Panel();
             this.sidebar = new System.Windows.Forms.Panel();
+            this.btn_Accounts = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_settings = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_settings = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_imports = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_transations = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_fees = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -50,6 +51,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProf = new System.Windows.Forms.Panel();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageBtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroComboBoxSearch = new MetroFramework.Controls.MetroComboBox();
@@ -59,8 +61,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuTransitionUIs = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.logoAnim = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.btn_Accounts = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.sidebar.SuspendLayout();
@@ -69,11 +69,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -135,6 +135,84 @@
             this.sidebar.Size = new System.Drawing.Size(240, 637);
             this.sidebar.TabIndex = 1;
             // 
+            // btn_Accounts
+            // 
+            this.btn_Accounts.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.btn_Accounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.btn_Accounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Accounts.BorderRadius = 0;
+            this.btn_Accounts.ButtonText = "   Accounts";
+            this.btn_Accounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoAnim.SetDecoration(this.btn_Accounts, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransitionUIs.SetDecoration(this.btn_Accounts, BunifuAnimatorNS.DecorationType.None);
+            this.btn_Accounts.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Accounts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Accounts.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Accounts.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Accounts.Iconimage")));
+            this.btn_Accounts.Iconimage_right = null;
+            this.btn_Accounts.Iconimage_right_Selected = null;
+            this.btn_Accounts.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btn_Accounts.Iconimage_Selected")));
+            this.btn_Accounts.IconMarginLeft = 25;
+            this.btn_Accounts.IconMarginRight = 0;
+            this.btn_Accounts.IconRightVisible = true;
+            this.btn_Accounts.IconRightZoom = 0D;
+            this.btn_Accounts.IconVisible = true;
+            this.btn_Accounts.IconZoom = 40D;
+            this.btn_Accounts.IsTab = true;
+            this.btn_Accounts.Location = new System.Drawing.Point(0, 558);
+            this.btn_Accounts.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.btn_Accounts.Name = "btn_Accounts";
+            this.btn_Accounts.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.btn_Accounts.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.btn_Accounts.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Accounts.selected = false;
+            this.btn_Accounts.Size = new System.Drawing.Size(240, 81);
+            this.btn_Accounts.TabIndex = 10;
+            this.btn_Accounts.Text = "   Accounts";
+            this.btn_Accounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Accounts.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.btn_Accounts.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Accounts.Click += new System.EventHandler(this.btn_Accounts_Click);
+            // 
+            // btn_settings
+            // 
+            this.btn_settings.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.btn_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.btn_settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_settings.BorderRadius = 0;
+            this.btn_settings.ButtonText = "   Settings";
+            this.btn_settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoAnim.SetDecoration(this.btn_settings, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuTransitionUIs.SetDecoration(this.btn_settings, BunifuAnimatorNS.DecorationType.None);
+            this.btn_settings.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_settings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_settings.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_settings.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_settings.Iconimage")));
+            this.btn_settings.Iconimage_right = null;
+            this.btn_settings.Iconimage_right_Selected = null;
+            this.btn_settings.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btn_settings.Iconimage_Selected")));
+            this.btn_settings.IconMarginLeft = 25;
+            this.btn_settings.IconMarginRight = 0;
+            this.btn_settings.IconRightVisible = true;
+            this.btn_settings.IconRightZoom = 0D;
+            this.btn_settings.IconVisible = true;
+            this.btn_settings.IconZoom = 40D;
+            this.btn_settings.IsTab = true;
+            this.btn_settings.Location = new System.Drawing.Point(0, 488);
+            this.btn_settings.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
+            this.btn_settings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.btn_settings.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_settings.selected = false;
+            this.btn_settings.Size = new System.Drawing.Size(240, 70);
+            this.btn_settings.TabIndex = 8;
+            this.btn_settings.Text = "   Settings";
+            this.btn_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_settings.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
+            this.btn_settings.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.bunifuImageButton3);
@@ -176,45 +254,6 @@
             this.bunifuImageButton2.TabIndex = 0;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 2;
-            // 
-            // btn_settings
-            // 
-            this.btn_settings.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.btn_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
-            this.btn_settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_settings.BorderRadius = 0;
-            this.btn_settings.ButtonText = "   Settings";
-            this.btn_settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoAnim.SetDecoration(this.btn_settings, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransitionUIs.SetDecoration(this.btn_settings, BunifuAnimatorNS.DecorationType.None);
-            this.btn_settings.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_settings.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_settings.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_settings.Iconimage")));
-            this.btn_settings.Iconimage_right = null;
-            this.btn_settings.Iconimage_right_Selected = null;
-            this.btn_settings.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btn_settings.Iconimage_Selected")));
-            this.btn_settings.IconMarginLeft = 25;
-            this.btn_settings.IconMarginRight = 0;
-            this.btn_settings.IconRightVisible = true;
-            this.btn_settings.IconRightZoom = 0D;
-            this.btn_settings.IconVisible = true;
-            this.btn_settings.IconZoom = 40D;
-            this.btn_settings.IsTab = true;
-            this.btn_settings.Location = new System.Drawing.Point(0, 488);
-            this.btn_settings.Margin = new System.Windows.Forms.Padding(12, 3, 12, 3);
-            this.btn_settings.Name = "btn_settings";
-            this.btn_settings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
-            this.btn_settings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.btn_settings.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_settings.selected = false;
-            this.btn_settings.Size = new System.Drawing.Size(240, 70);
-            this.btn_settings.TabIndex = 8;
-            this.btn_settings.Text = "   Settings";
-            this.btn_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_settings.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
-            this.btn_settings.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // btn_imports
             // 
@@ -529,6 +568,20 @@
             this.panelProf.Size = new System.Drawing.Size(284, 50);
             this.panelProf.TabIndex = 5;
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.logoAnim.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 9;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // bunifuDropdownDashMenu
             // 
             this.bunifuDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -703,59 +756,6 @@
             animation1.TransparencyCoeff = 0F;
             this.logoAnim.DefaultAnimation = animation1;
             // 
-            // btn_Accounts
-            // 
-            this.btn_Accounts.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.btn_Accounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
-            this.btn_Accounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Accounts.BorderRadius = 0;
-            this.btn_Accounts.ButtonText = "   Accounts";
-            this.btn_Accounts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoAnim.SetDecoration(this.btn_Accounts, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransitionUIs.SetDecoration(this.btn_Accounts, BunifuAnimatorNS.DecorationType.None);
-            this.btn_Accounts.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_Accounts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Accounts.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_Accounts.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_Accounts.Iconimage")));
-            this.btn_Accounts.Iconimage_right = null;
-            this.btn_Accounts.Iconimage_right_Selected = null;
-            this.btn_Accounts.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btn_Accounts.Iconimage_Selected")));
-            this.btn_Accounts.IconMarginLeft = 25;
-            this.btn_Accounts.IconMarginRight = 0;
-            this.btn_Accounts.IconRightVisible = true;
-            this.btn_Accounts.IconRightZoom = 0D;
-            this.btn_Accounts.IconVisible = true;
-            this.btn_Accounts.IconZoom = 40D;
-            this.btn_Accounts.IsTab = true;
-            this.btn_Accounts.Location = new System.Drawing.Point(0, 558);
-            this.btn_Accounts.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
-            this.btn_Accounts.Name = "btn_Accounts";
-            this.btn_Accounts.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(26)))));
-            this.btn_Accounts.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.btn_Accounts.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_Accounts.selected = false;
-            this.btn_Accounts.Size = new System.Drawing.Size(240, 81);
-            this.btn_Accounts.TabIndex = 10;
-            this.btn_Accounts.Text = "   Accounts";
-            this.btn_Accounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Accounts.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
-            this.btn_Accounts.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Accounts.Click += new System.EventHandler(this.btn_Accounts_Click);
-            // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.logoAnim.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 9;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -782,11 +782,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelProf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageBtnSearch)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

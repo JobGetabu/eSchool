@@ -845,5 +845,10 @@ namespace eSchool
             }
             this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
