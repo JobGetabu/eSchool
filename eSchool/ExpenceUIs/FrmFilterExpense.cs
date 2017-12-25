@@ -122,7 +122,7 @@ namespace eSchool.ExpenceUIs
                 ListInit();
             }
 
-            if (selFilTerms.Count == -1)
+            if (selFilTerms.Count == 0)
             {
                 // custom notification
                 //MetroMessageBox.Show(this, "Select at least a form !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);

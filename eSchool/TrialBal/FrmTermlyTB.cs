@@ -13,8 +13,9 @@ namespace eSchool.TrialBal
 {
     public partial class FrmTermlyTB : Form
     {
-        private List<int> selFilTerms;
+        private List<int> selFilTerms = new List<int>();
         private int selYear = 0;
+        private int close = 0;
         public FrmTermlyTB()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace eSchool.TrialBal
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            close = 1;
             this.Close();
         }
 
@@ -33,7 +35,7 @@ namespace eSchool.TrialBal
 
         private void ListInit()
         {
-            selFilTerms = new List<int>();
+            selFilTerms.Clear();
             selFilTerms.Add(1); selFilTerms.Add(2); selFilTerms.Add(3);
         }
         private async void PreparingComboBoxesAsync()
@@ -72,6 +74,10 @@ namespace eSchool.TrialBal
 
         private void FrmTermlyTB_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (close==1)
+            {
+                e.Cancel = false;
+            }
 
             if (selYear == 0)
             {
@@ -85,7 +91,7 @@ namespace eSchool.TrialBal
                 ListInit();
             }
 
-            if (selFilTerms.Count == -1)
+            if (selFilTerms.Count == 0)
             {
                 alert.Show("Required info \n Select at least a term !", alert.AlertType.warnig);
                 e.Cancel = true;

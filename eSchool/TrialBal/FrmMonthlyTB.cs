@@ -16,7 +16,7 @@ namespace eSchool.TrialBal
         string periodType; //either Month or Year
         private string selMonth;
         private int selYear=0;
-
+        private int close = 0;
         public FrmMonthlyTB(string periodType)
         {
             InitializeComponent();
@@ -91,6 +91,10 @@ namespace eSchool.TrialBal
 
         private void FrmMonthlyTB_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (close == 1)
+            {
+                e.Cancel = false;
+            }
             if (periodType.Equals("Month"))
             {
                 if (String.IsNullOrEmpty(selMonth))
