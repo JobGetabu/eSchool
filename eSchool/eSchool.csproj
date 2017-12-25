@@ -586,6 +586,7 @@
       <DependentUpon>FrmTrialBalance.cs</DependentUpon>
     </Compile>
     <Compile Include="TrialBal\IncomeDetails.cs" />
+    <Compile Include="TrialBal\TrialDetails.cs" />
     <Content Include="EschoolModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EschoolModel.Context.cs</LastGenOutput>

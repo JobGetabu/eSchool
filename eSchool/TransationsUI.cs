@@ -195,11 +195,6 @@ namespace eSchool
             }
         }
 
-        private void btnTrialBal_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void TransCashlbl(int term, int year)
         {
 
