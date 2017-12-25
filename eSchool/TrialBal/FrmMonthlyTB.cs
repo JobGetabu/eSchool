@@ -1,4 +1,5 @@
-﻿using System;
+﻿using custom_alert_notifications;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace eSchool.TrialBal
         private string frmLbl;    //Select Month
         private string promptCb;  //Select Month
         string periodType; //either Month or Year
+        private string selMonth;
+        private int selYear;
+
         public FrmMonthlyTB(string periodType, bool IsMonthly)
         {
             InitializeComponent();
@@ -27,6 +31,7 @@ namespace eSchool.TrialBal
             if (periodType.Equals("Month"))
             {
                 lblFrm.Text = "Select Month";
+                cbItem.PromptText = "Select Month";
                 //process monthly data
                 List<string> monthList = new List<string>()
                 {
@@ -46,8 +51,10 @@ namespace eSchool.TrialBal
             }
             else
             {
-                //process yearly data
+                lblFrm.Text = "Select Year";
+                cbItem.PromptText = "Select Year";
                 PreparingComboBoxesAsync();
+                //process yearly data
             }
         }
 
@@ -71,13 +78,22 @@ namespace eSchool.TrialBal
         {
             if (periodType.Equals("Month"))
             {
+                if (String.IsNullOrEmpty(selMonth))
+                {
+                    alert.Show("Required info \n Select month !", alert.AlertType.warnig);
+                    return;
+                }
                 //pass monthly data
 
             }
             else
             {
+                if (selYear == 0)
+                {
+                    alert.Show("Required info \n Select year !", alert.AlertType.warnig);
+                    return;
+                }
                 //pass yearly data
-               
             }
 
         }
@@ -89,6 +105,7 @@ namespace eSchool.TrialBal
 
         private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selMonth = cbItem.SelectedItem.ToString();
 
         }
     }
