@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eSchool.TransionX;
+using eSchool.TrialBal;
 
 namespace eSchool
 {
@@ -846,9 +847,23 @@ namespace eSchool
             this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbTrialBalance_onItemSelected(object sender, EventArgs e)
         {
-
+            if (cbTrialBalance.selectedValue.Equals("Trial Balance: Monthly"))
+            {
+                FrmMonthlyTB frm = new FrmMonthlyTB("Month", true);
+                frm.ShowDialog();
+            }
+            if (cbTrialBalance.selectedValue.Equals("Trial Balance: Termly"))
+            {
+                FrmTermlyTB frm = new FrmTermlyTB();
+                frm.ShowDialog();
+            }
+            if (cbTrialBalance.selectedValue.Equals("Trial Balance: Yearly"))
+            {
+                FrmMonthlyTB frm = new FrmMonthlyTB("Year", true);
+                frm.ShowDialog();
+            }
         }
     }
 }

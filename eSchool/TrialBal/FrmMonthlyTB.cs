@@ -17,7 +17,7 @@ namespace eSchool.TrialBal
         private string promptCb;  //Select Month
         string periodType; //either Month or Year
         private string selMonth;
-        private int selYear;
+        private int selYear=0;
 
         public FrmMonthlyTB(string periodType, bool IsMonthly)
         {
@@ -106,7 +106,10 @@ namespace eSchool.TrialBal
         private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
         {
             selMonth = cbItem.SelectedItem.ToString();
-
+            if (periodType.Equals("Year"))
+            {
+                selYear = int.Parse(cbItem.SelectedItem.ToString());
+            }
         }
     }
 }

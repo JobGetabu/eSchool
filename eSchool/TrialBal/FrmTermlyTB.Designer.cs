@@ -46,7 +46,7 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.switch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cbMonth = new MetroFramework.Controls.MetroComboBox();
+            this.cbYear = new MetroFramework.Controls.MetroComboBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -154,6 +154,7 @@
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.DarkGray;
             this.btnCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnPrint
             // 
@@ -176,6 +177,7 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // bunifuCustomLabel5
             // 
@@ -201,6 +203,7 @@
             this.switch3.TabIndex = 56;
             this.switch3.Tag = "3";
             this.switch3.Value = true;
+            this.switch3.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // bunifuCustomLabel3
             // 
@@ -226,6 +229,7 @@
             this.switch2.TabIndex = 55;
             this.switch2.Tag = "2";
             this.switch2.Value = true;
+            this.switch2.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // bunifuCustomLabel2
             // 
@@ -251,6 +255,7 @@
             this.switch1.TabIndex = 54;
             this.switch1.Tag = "1";
             this.switch1.Value = true;
+            this.switch1.OnValueChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // lblYear
             // 
@@ -262,11 +267,11 @@
             this.lblYear.TabIndex = 53;
             this.lblYear.Text = "Term";
             // 
-            // cbMonth
+            // cbYear
             // 
-            this.cbMonth.FormattingEnabled = true;
-            this.cbMonth.ItemHeight = 23;
-            this.cbMonth.Items.AddRange(new object[] {
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.ItemHeight = 23;
+            this.cbYear.Items.AddRange(new object[] {
             "January",
             "February",
             "March",
@@ -279,12 +284,13 @@
             "October",
             "November",
             "December"});
-            this.cbMonth.Location = new System.Drawing.Point(27, 78);
-            this.cbMonth.Name = "cbMonth";
-            this.cbMonth.PromptText = "Select Year";
-            this.cbMonth.Size = new System.Drawing.Size(218, 29);
-            this.cbMonth.TabIndex = 60;
-            this.cbMonth.UseSelectable = true;
+            this.cbYear.Location = new System.Drawing.Point(27, 78);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.PromptText = "Select Year";
+            this.cbYear.Size = new System.Drawing.Size(218, 29);
+            this.cbYear.TabIndex = 60;
+            this.cbYear.UseSelectable = true;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
             // FrmTermlyTB
             // 
@@ -292,7 +298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(284, 298);
-            this.Controls.Add(this.cbMonth);
+            this.Controls.Add(this.cbYear);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.switch3);
             this.Controls.Add(this.bunifuCustomLabel3);
@@ -311,6 +317,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTermlyTB";
+            this.Load += new System.EventHandler(this.FrmTermlyTB_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -337,6 +344,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         public Bunifu.Framework.UI.BunifuiOSSwitch switch1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
-        private MetroFramework.Controls.MetroComboBox cbMonth;
+        private MetroFramework.Controls.MetroComboBox cbYear;
     }
 }
