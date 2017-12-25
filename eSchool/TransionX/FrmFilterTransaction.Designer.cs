@@ -40,11 +40,11 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.btnSwap = new Bunifu.Framework.UI.BunifuImageButton();
-            this.cbYear = new MetroFramework.Controls.MetroComboBox();
             this.container = new System.Windows.Forms.Panel();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new System.Windows.Forms.Button();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.cbYear = new MetroFramework.Controls.MetroComboBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTop.SuspendLayout();
@@ -153,19 +153,6 @@
             this.btnSwap.Zoom = 10;
             this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
             // 
-            // cbYear
-            // 
-            this.bunifuTransition1.SetDecoration(this.cbYear, BunifuAnimatorNS.DecorationType.None);
-            this.cbYear.FormattingEnabled = true;
-            this.cbYear.ItemHeight = 23;
-            this.cbYear.Location = new System.Drawing.Point(23, 19);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.PromptText = "Year";
-            this.cbYear.Size = new System.Drawing.Size(218, 29);
-            this.cbYear.TabIndex = 26;
-            this.cbYear.UseSelectable = true;
-            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
-            // 
             // container
             // 
             this.bunifuTransition1.SetDecoration(this.container, BunifuAnimatorNS.DecorationType.None);
@@ -256,6 +243,19 @@
             this.bunifuTransition1.DefaultAnimation = animation1;
             this.bunifuTransition1.Interval = 5;
             // 
+            // cbYear
+            // 
+            this.bunifuTransition1.SetDecoration(this.cbYear, BunifuAnimatorNS.DecorationType.None);
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.ItemHeight = 23;
+            this.cbYear.Location = new System.Drawing.Point(23, 19);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.PromptText = "Year";
+            this.cbYear.Size = new System.Drawing.Size(218, 29);
+            this.cbYear.TabIndex = 26;
+            this.cbYear.UseSelectable = true;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            // 
             // FrmFilterTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,10 +296,10 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel container;
         private System.Windows.Forms.Panel panelTop;
-        private MetroFramework.Controls.MetroComboBox cbYear;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnSave;
         private Bunifu.Framework.UI.BunifuImageButton btnSwap;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
+        private MetroFramework.Controls.MetroComboBox cbYear;
     }
 }

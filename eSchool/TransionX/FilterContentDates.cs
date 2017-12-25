@@ -12,24 +12,6 @@ namespace eSchool.TransionX
 {
     public partial class FilterContentDates : UserControl
     {
-
-        //Singleton pattern ***best practices***
-        private static FilterContentDates _instance;
-        public static FilterContentDates Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new FilterContentDates();
-                }
-                return _instance;
-            }
-            set
-            {
-                value = _instance;
-            }
-        }
         public FilterContentDates()
         {
             InitializeComponent();          
@@ -40,7 +22,7 @@ namespace eSchool.TransionX
         private void Nullify()
         {
             selDate = DateTime.Now;
-
+            this.DatepickerStart.Value = DateTime.Now;
         }
         private void FilterContentDates_Load(object sender, EventArgs e)
         {

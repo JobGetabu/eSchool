@@ -14,20 +14,6 @@ namespace eSchool.TransionX
 {
     public partial class FrmFilterTransaction : Form
     {
-
-        //Singleton pattern ***best practices***
-        private static FrmFilterTransaction _instance;
-        public static FrmFilterTransaction Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new FrmFilterTransaction();
-                }
-                return _instance;
-            }
-        }
         public FrmFilterTransaction()
         {
             InitializeComponent();
@@ -35,10 +21,10 @@ namespace eSchool.TransionX
         private void TabSwitcher(Control UIinstance)
         {
             UIinstance.Visible = false;
-            if (!FrmFilterTransaction.Instance.container.Controls.Contains(UIinstance))
+            if (!this.container.Controls.Contains(UIinstance))
             {
                 UIinstance.Visible = false;
-                FrmFilterTransaction.Instance.container.Controls.Add(UIinstance);
+                this.container.Controls.Add(UIinstance);
                 UIinstance.Dock = DockStyle.Fill;
                 UIinstance.BringToFront();
 
@@ -72,7 +58,10 @@ namespace eSchool.TransionX
         public  List<int> selFilTerms;
         public  DateTime selDate;
         public  string trmslbl;
-        public  bool IsTerms; 
+        public  bool IsTerms;
+
+        FilterContentDates fcd = new FilterContentDates();
+        FilterContentTerms fct = new FilterContentTerms();
         private void Nullify()
         {
             trmslbl = "";
@@ -82,18 +71,11 @@ namespace eSchool.TransionX
             selDate = DateTime.Now;
             IsTerms = false;
         }
-
-        private void ListInit()
-        {
-            selFilTerms.Clear();
-            selFilTerms.Add(1); selFilTerms.Add(2); selFilTerms.Add(3);
-        }
         private void FrmFilterTransaction_Load(object sender, EventArgs e)
         {
             Nullify();
-            ListInit();
             PreparingComboBoxesAsync();
-            TabSwitcher(FilterContentTerms.Instance);
+            TabSwitcher(fct);
             IsTerms = true;
         }
 
@@ -106,18 +88,28 @@ namespace eSchool.TransionX
                     return context.SchoolPeriodYears.OrderByDescending(y => y.Year).Select(y => y.Year).ToList();
                 });
 
+                cbYear.Items.Clear();
                 foreach (var y in await listYear)
                 {
                     cbYear.Items.Add(y);
                 }
             }
         }
+
+
         private void FrmFilterTransaction_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (close == 1)
             {
                 e.Cancel = false;
                 return;
+            }
+
+            
+            selDate = fcd.selDate;
+            if (!IsTerms)
+            {
+                selFilYear = selDate.Year; 
             }
 
             if (selFilYear == 0)
@@ -128,16 +120,9 @@ namespace eSchool.TransionX
                 return;
             }
 
-            FilterContentTerms frmTerm = FilterContentTerms.Instance;
-            selFilTerms = frmTerm.selFilTerms;
+            
+            selFilTerms = fct.selFilTerms;
 
-            FilterContentDates frmDates = FilterContentDates.Instance;
-            selDate = frmDates.selDate;
-           
-            if (frmTerm.switch1.Value & frmTerm.switch2.Value & frmTerm.switch3.Value)
-            {
-                ListInit();
-            }
             if (IsTerms)
             {
                 if (selFilTerms.Count == 0)
@@ -150,11 +135,6 @@ namespace eSchool.TransionX
                     return;
                 }
             }
-
-            FilterContentDates.Instance = null;
-            FilterContentTerms.Instance = null;
-            _instance = null;
-            e.Cancel = false;
         }
 
         bool _isIt;
@@ -164,15 +144,16 @@ namespace eSchool.TransionX
 
             if (_isIt)
             {
-                TabSwitcher(FilterContentDates.Instance);
+                fcd = new FilterContentDates();
+                TabSwitcher(fcd);
                 IsTerms = false;           
             }
             else
             {
-                TabSwitcher(FilterContentTerms.Instance);
+                fct = new FilterContentTerms();
+                TabSwitcher(fct);
                 IsTerms = true;
             }
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

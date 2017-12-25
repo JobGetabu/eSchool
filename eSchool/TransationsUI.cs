@@ -129,7 +129,7 @@ namespace eSchool
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            FrmFilterTransaction frm = FrmFilterTransaction.Instance;
+            FrmFilterTransaction frm = new FrmFilterTransaction();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 //logic
@@ -162,7 +162,7 @@ namespace eSchool
                     lblTermSet(selTerms);
                     filYear = frm.selFilYear;
                     this.lblYear.Text = $"Year: {filYear.ToString()}";//Year: 2017
-                    lblT1.Text = ""; lblT2.Text = ""; lblT3.Text = "";
+                    //lblT1.Text = ""; lblT2.Text = ""; lblT3.Text = "";
 
                     //TODO overloaded
                     TransCashlbl(selDate, filYear, true);
@@ -648,6 +648,7 @@ namespace eSchool
                         });
                 }
             }
+            this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
 
@@ -842,6 +843,7 @@ namespace eSchool
                            item.Date.ToString("dd MMM yyy")
                     });
             }
+            this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
     }
 }

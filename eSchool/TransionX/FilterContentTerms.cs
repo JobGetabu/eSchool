@@ -12,26 +12,12 @@ namespace eSchool.TransionX
 {
     public partial class FilterContentTerms : UserControl
     {
-        //Singleton pattern ***best practices***
-        private static FilterContentTerms _instance;
-        public static FilterContentTerms Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new FilterContentTerms();
-                }
-                return _instance;
-            }
-            set
-            {
-                value = _instance;
-            }
-        }
         public FilterContentTerms()
         {
-            InitializeComponent();          
+            InitializeComponent();
+
+            Nullify();
+            ListInit();
         }
         
         public List<int> selFilTerms;
@@ -42,6 +28,7 @@ namespace eSchool.TransionX
         {
             selFilTerms.Clear();
             selFilTerms.Add(1); selFilTerms.Add(2); selFilTerms.Add(3);
+            // switch1.Value = true; switch2.Value = true; switch3.Value = true;
         }
         private void Nullify()
         {
@@ -51,8 +38,7 @@ namespace eSchool.TransionX
         }
         private void FilterContentTerms_Load(object sender, EventArgs e)
         {
-            Nullify();
-            ListInit();
+            
         }
         private void lblSetter(string tag, bool value)
         {
