@@ -65,12 +65,18 @@ namespace eSchool.TrialBal
             }
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selYear = int.Parse(cbYear.SelectedItem.ToString());
+        }
+
+        private void FrmTermlyTB_FormClosing(object sender, FormClosingEventArgs e)
         {
 
             if (selYear == 0)
             {
                 alert.Show("Required info \n Select a year !", alert.AlertType.warnig);
+                e.Cancel = true;
                 return;
             }
 
@@ -82,15 +88,14 @@ namespace eSchool.TrialBal
             if (selFilTerms.Count == -1)
             {
                 alert.Show("Required info \n Select at least a term !", alert.AlertType.warnig);
+                e.Cancel = true;
                 return;
             }
 
             //load the print
-        }
 
-        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selYear = int.Parse(cbYear.SelectedItem.ToString());
+
+            e.Cancel = false;
         }
     }
 }

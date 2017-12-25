@@ -182,7 +182,6 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // FrmMonthlyTB
             // 
@@ -202,6 +201,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMonthlyTB";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMonthlyTB_FormClosing);
             this.Load += new System.EventHandler(this.FrmMonthlyTB_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();

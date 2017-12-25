@@ -177,7 +177,6 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // bunifuCustomLabel5
             // 
@@ -271,19 +270,6 @@
             // 
             this.cbYear.FormattingEnabled = true;
             this.cbYear.ItemHeight = 23;
-            this.cbYear.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
             this.cbYear.Location = new System.Drawing.Point(27, 78);
             this.cbYear.Name = "cbYear";
             this.cbYear.PromptText = "Select Year";
@@ -317,6 +303,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTermlyTB";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTermlyTB_FormClosing);
             this.Load += new System.EventHandler(this.FrmTermlyTB_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();

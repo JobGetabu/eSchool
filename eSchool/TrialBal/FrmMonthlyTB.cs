@@ -13,13 +13,11 @@ namespace eSchool.TrialBal
 {
     public partial class FrmMonthlyTB : Form
     {
-        private string frmLbl;    //Select Month
-        private string promptCb;  //Select Month
         string periodType; //either Month or Year
         private string selMonth;
         private int selYear=0;
 
-        public FrmMonthlyTB(string periodType, bool IsMonthly)
+        public FrmMonthlyTB(string periodType)
         {
             InitializeComponent();
             this.periodType = periodType;
@@ -33,7 +31,7 @@ namespace eSchool.TrialBal
                 lblFrm.Text = "Select Month";
                 cbItem.PromptText = "Select Month";
                 //process monthly data
-                List<string> monthList = new List<string>()
+                String[] monthList = new string[]
                 {
                     "January",
                     "February",
@@ -48,6 +46,8 @@ namespace eSchool.TrialBal
                     "November",
                     "December"
                 };
+                cbItem.Items.Clear();
+                cbItem.Items.AddRange(monthList);
             }
             else
             {
@@ -60,6 +60,7 @@ namespace eSchool.TrialBal
 
         private async void PreparingComboBoxesAsync()
         {
+            cbItem.Items.Clear();
             using (var context = new EschoolEntities())
             {
                 var listYear = Task.Factory.StartNew(() =>
@@ -74,30 +75,6 @@ namespace eSchool.TrialBal
             }
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            if (periodType.Equals("Month"))
-            {
-                if (String.IsNullOrEmpty(selMonth))
-                {
-                    alert.Show("Required info \n Select month !", alert.AlertType.warnig);
-                    return;
-                }
-                //pass monthly data
-
-            }
-            else
-            {
-                if (selYear == 0)
-                {
-                    alert.Show("Required info \n Select year !", alert.AlertType.warnig);
-                    return;
-                }
-                //pass yearly data
-            }
-
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -110,6 +87,34 @@ namespace eSchool.TrialBal
             {
                 selYear = int.Parse(cbItem.SelectedItem.ToString());
             }
+        }
+
+        private void FrmMonthlyTB_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (periodType.Equals("Month"))
+            {
+                if (String.IsNullOrEmpty(selMonth))
+                {
+                    alert.Show("Required info \n Select month !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                //pass monthly data
+
+                e.Cancel = false;
+            }
+            else
+            {
+                if (selYear == 0)
+                {
+                    alert.Show("Required info \n Select year !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                //pass yearly data
+                e.Cancel = false;
+            }
+
         }
     }
 }
