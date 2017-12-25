@@ -579,6 +579,12 @@
     <Compile Include="TrialBal\FrmTermlyTB.Designer.cs">
       <DependentUpon>FrmTermlyTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrialBal\FrmTrialBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrialBal\FrmTrialBalance.Designer.cs">
+      <DependentUpon>FrmTrialBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrialBal\IncomeDetails.cs" />
     <Content Include="EschoolModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -814,6 +820,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrialBal\FrmTermlyTB.resx">
       <DependentUpon>FrmTermlyTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrialBal\FrmTrialBalance.resx">
+      <DependentUpon>FrmTrialBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrialBal\TrialBalance.rdlc" />
     <EntityDeploy Include="EschoolModel.edmx">

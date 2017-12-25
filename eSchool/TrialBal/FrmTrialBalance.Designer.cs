@@ -1,6 +1,6 @@
-﻿namespace eSchool.ReceiptPrints
+﻿namespace eSchool.TrialBal
 {
-    partial class FrmPaymentReceipt
+    partial class FrmTrialBalance
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaymentReceipt));
-            this.PaymentOverheadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrialBalance));
             this.panelRpt = new System.Windows.Forms.Panel();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.PaymentOverheadsBindingSource)).BeginInit();
+            this.IncomeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ExpenseDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelRpt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IncomeDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpenseDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PaymentOverheadsBindingSource
-            // 
-            this.PaymentOverheadsBindingSource.DataSource = typeof(eSchool.ReceiptPrints.PaymentOverheads);
             // 
             // panelRpt
             // 
@@ -49,15 +48,18 @@
             this.panelRpt.Location = new System.Drawing.Point(0, 0);
             this.panelRpt.Name = "panelRpt";
             this.panelRpt.Size = new System.Drawing.Size(812, 542);
-            this.panelRpt.TabIndex = 1;
+            this.panelRpt.TabIndex = 2;
             // 
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet2";
-            reportDataSource1.Value = this.PaymentOverheadsBindingSource;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.IncomeDetailsBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.ExpenseDetailsBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "eSchool.ReceiptPrints.PaymentReceipt.rdlc";
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "eSchool.TrialBal.TrialBalance.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.Padding = new System.Windows.Forms.Padding(10);
@@ -70,7 +72,15 @@
             this.reportViewer.Size = new System.Drawing.Size(812, 542);
             this.reportViewer.TabIndex = 0;
             // 
-            // FrmPaymentReceipt
+            // IncomeDetailsBindingSource
+            // 
+            this.IncomeDetailsBindingSource.DataSource = typeof(eSchool.TrialBal.IncomeDetails);
+            // 
+            // ExpenseDetailsBindingSource
+            // 
+            this.ExpenseDetailsBindingSource.DataSource = typeof(eSchool.TrialBal.ExpenseDetails);
+            // 
+            // FrmTrialBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,13 +88,13 @@
             this.Controls.Add(this.panelRpt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmPaymentReceipt";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Payment Receipt";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPaymentReceipt_FormClosing);
-            this.Load += new System.EventHandler(this.FrmPaymentReceipt_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PaymentOverheadsBindingSource)).EndInit();
+            this.Name = "FrmTrialBalance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Trial Balance";
+            this.Load += new System.EventHandler(this.FrmTrialBalance_Load);
             this.panelRpt.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IncomeDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpenseDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -93,6 +103,7 @@
 
         private System.Windows.Forms.Panel panelRpt;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
-        private System.Windows.Forms.BindingSource PaymentOverheadsBindingSource;
+        private System.Windows.Forms.BindingSource IncomeDetailsBindingSource;
+        private System.Windows.Forms.BindingSource ExpenseDetailsBindingSource;
     }
 }
