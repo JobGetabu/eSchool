@@ -846,8 +846,12 @@ namespace eSchool
         {
             if (cbTrialBalance.selectedValue.Equals("Trial Balance: Monthly"))
             {
-                FrmMonthlyTB frm1 = new FrmMonthlyTB("Month");
-                frm1.ShowDialog();
+                FrmMonthlyTB frm1 = new FrmMonthlyTB();
+                
+                if (frm1.ShowDialog() == DialogResult.OK)
+                {
+                    frm1.LauchPrint(this);
+                }
             }
             if (cbTrialBalance.selectedValue.Equals("Trial Balance: Termly"))
             {
@@ -856,7 +860,7 @@ namespace eSchool
             }
             if (cbTrialBalance.selectedValue.Equals("Trial Balance: Yearly"))
             {
-                FrmMonthlyTB frm3 = new FrmMonthlyTB("Year");
+                FrmYearlyTB frm3 = new FrmYearlyTB();
                 frm3.ShowDialog();
             }
         }

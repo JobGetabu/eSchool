@@ -585,6 +585,12 @@
     <Compile Include="TrialBal\FrmTrialBalance.Designer.cs">
       <DependentUpon>FrmTrialBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrialBal\FrmYearlyTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrialBal\FrmYearlyTB.Designer.cs">
+      <DependentUpon>FrmYearlyTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrialBal\IncomeDetails.cs" />
     <Compile Include="TrialBal\TrialDetails.cs" />
     <Content Include="EschoolModel.Context.tt">
@@ -824,6 +830,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrialBal\FrmTrialBalance.resx">
       <DependentUpon>FrmTrialBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrialBal\FrmYearlyTB.resx">
+      <DependentUpon>FrmYearlyTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrialBal\TrialBalance.rdlc" />
     <EntityDeploy Include="EschoolModel.edmx">

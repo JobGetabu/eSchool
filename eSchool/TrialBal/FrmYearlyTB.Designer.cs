@@ -1,6 +1,6 @@
 ﻿namespace eSchool.TrialBal
 {
-    partial class FrmMonthlyTB
+    partial class FrmYearlyTB
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMonthlyTB));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmYearlyTB));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,10 +37,9 @@
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFrm = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cbItem = new MetroFramework.Controls.MetroComboBox();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.lblYear = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.DatepickerStart = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,8 +55,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(274, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 197);
-            this.panel2.TabIndex = 47;
+            this.panel2.Size = new System.Drawing.Size(10, 181);
+            this.panel2.TabIndex = 53;
             // 
             // panel1
             // 
@@ -65,8 +64,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 197);
-            this.panel1.TabIndex = 46;
+            this.panel1.Size = new System.Drawing.Size(10, 181);
+            this.panel1.TabIndex = 52;
             // 
             // bunifuDragControl1
             // 
@@ -91,7 +90,7 @@
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 20;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(284, 63);
-            this.bunifuGradientPanel1.TabIndex = 45;
+            this.bunifuGradientPanel1.TabIndex = 51;
             // 
             // pictureBox1
             // 
@@ -115,6 +114,17 @@
             this.lblFrm.TabIndex = 0;
             this.lblFrm.Text = "Select Month";
             // 
+            // cbItem
+            // 
+            this.cbItem.FormattingEnabled = true;
+            this.cbItem.ItemHeight = 23;
+            this.cbItem.Location = new System.Drawing.Point(33, 85);
+            this.cbItem.Name = "cbItem";
+            this.cbItem.PromptText = "Select Month";
+            this.cbItem.Size = new System.Drawing.Size(218, 29);
+            this.cbItem.TabIndex = 54;
+            this.cbItem.UseSelectable = true;
+            // 
             // btnCancel
             // 
             this.btnCancel.Activecolor = System.Drawing.Color.WhiteSmoke;
@@ -136,19 +146,18 @@
             this.btnCancel.IconVisible = true;
             this.btnCancel.IconZoom = 50D;
             this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(27, 206);
+            this.btnCancel.Location = new System.Drawing.Point(27, 187);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.OnHovercolor = System.Drawing.Color.Silver;
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = false;
             this.btnCancel.Size = new System.Drawing.Size(222, 33);
-            this.btnCancel.TabIndex = 44;
+            this.btnCancel.TabIndex = 50;
             this.btnCancel.Text = " Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.DarkGray;
             this.btnCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnPrint
             // 
@@ -162,67 +171,37 @@
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Image = global::eSchool.FeeUILogo.Ok_0px;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(27, 166);
+            this.btnPrint.Location = new System.Drawing.Point(27, 147);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
             this.btnPrint.Size = new System.Drawing.Size(222, 31);
-            this.btnPrint.TabIndex = 43;
+            this.btnPrint.TabIndex = 49;
             this.btnPrint.Text = " Print";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click_1);
             // 
-            // lblYear
-            // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblYear.Location = new System.Drawing.Point(16, 75);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(111, 17);
-            this.lblYear.TabIndex = 49;
-            this.lblYear.Text = "Pick Month Date";
-            // 
-            // DatepickerStart
-            // 
-            this.DatepickerStart.BackColor = System.Drawing.Color.SeaGreen;
-            this.DatepickerStart.BorderRadius = 0;
-            this.DatepickerStart.ForeColor = System.Drawing.Color.White;
-            this.DatepickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatepickerStart.FormatCustom = "dd MMM yyy";
-            this.DatepickerStart.Location = new System.Drawing.Point(19, 105);
-            this.DatepickerStart.Name = "DatepickerStart";
-            this.DatepickerStart.Size = new System.Drawing.Size(230, 36);
-            this.DatepickerStart.TabIndex = 48;
-            this.DatepickerStart.Value = new System.DateTime(2017, 12, 26, 12, 56, 15, 0);
-            this.DatepickerStart.onValueChanged += new System.EventHandler(this.DatepickerStart_onValueChanged);
-            // 
-            // FrmMonthlyTB
+            // FrmYearlyTB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(284, 260);
-            this.Controls.Add(this.lblYear);
-            this.Controls.Add(this.DatepickerStart);
+            this.ClientSize = new System.Drawing.Size(284, 244);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.cbItem);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmMonthlyTB";
+            this.Name = "FrmYearlyTB";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmMonthlyTB";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMonthlyTB_FormClosing);
-            this.Load += new System.EventHandler(this.FrmMonthlyTB_Load);
+            this.Text = "FrmYearlyTB";
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -234,10 +213,9 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblFrm;
+        private MetroFramework.Controls.MetroComboBox cbItem;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnPrint;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblYear;
-        private Bunifu.Framework.UI.BunifuDatepicker DatepickerStart;
     }
 }

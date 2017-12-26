@@ -13,72 +13,29 @@ namespace eSchool.TrialBal
 {
     public partial class FrmMonthlyTB : Form
     {
-        string periodType; //either Month or Year
-        private int selMonth =0;
-        private int selYear=0;
+        private int selMonth = 0;
+        private int selYear = 0;
+        private DateTime datePicked;
         private int close = 0;
 
         //report vars
         string totalIncome, totalExpense, openingBal, closingBal;
         List<ExpenseDetails> expenseDetails = new List<ExpenseDetails>();
         List<IncomeDetails> incomeDetails = new List<IncomeDetails>();
+        FrmTrialBalance frmT;
 
-        public FrmMonthlyTB(string periodType)
+        public FrmMonthlyTB()
         {
             InitializeComponent();
-            this.periodType = periodType;
 
         }
 
         private void FrmMonthlyTB_Load(object sender, EventArgs e)
         {
-            if (periodType.Equals("Month"))
-            {
-                lblFrm.Text = "Select Month";
-                cbItem.PromptText = "Select Month";
-                //process monthly data
-                String[] monthList = new string[]
-                {
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December"
-                };
-                cbItem.Items.Clear();
-                cbItem.Items.AddRange(monthList);
-            }
-            else
-            {
-                lblFrm.Text = "Select Year";
-                cbItem.PromptText = "Select Year";
-                PreparingComboBoxesAsync();
-                //process yearly data
-            }
-        }
-
-        private async void PreparingComboBoxesAsync()
-        {
-            cbItem.Items.Clear();
-            using (var context = new EschoolEntities())
-            {
-                var listYear = Task.Factory.StartNew(() =>
-                {
-                    return context.SchoolPeriodYears.OrderByDescending(y => y.Year).Select(y => y.Year).ToList();
-                });
-
-                foreach (var y in await listYear)
-                {
-                    cbItem.Items.Add(y);
-                }
-            }
+            selMonth = DateTime.Now.Month;
+            selYear = DateTime.Now.Year;
+            datePicked = DateTime.Now;
+            DatepickerStart.Value = DateTime.Now;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -86,82 +43,77 @@ namespace eSchool.TrialBal
             this.Close();
         }
 
-        private void cbItem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selMonth = 1 + (cbItem.SelectedIndex);
-            if (periodType.Equals("Year"))
-            {
-                selYear = int.Parse(cbItem.SelectedItem.ToString());
-            }
-        }
-
-        private async void FrmMonthlyTB_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmMonthlyTB_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (close == 1)
             {
                 e.Cancel = false;
             }
-            if (periodType.Equals("Month"))
+            if (selYear == 0)
             {
-                if (selMonth ==0)
-                {
-                    alert.Show("Required info \n Select month !", alert.AlertType.warnig);
-                    e.Cancel = true;
-                    return;
-                }
-                //pass monthly data
-
-                e.Cancel = false;
+                alert.Show("Required info \n Select year !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
             }
-            else
-            {
-                if (selYear == 0)
-                {
-                    alert.Show("Required info \n Select year !", alert.AlertType.warnig);
-                    e.Cancel = true;
-                    return;
-                }
-                //pass yearly data
+            //pass yearly data
 
-                TrialDetails tdd = new TrialDetails()
-                {
-                    PeriodText = "Month",
-                    PeriodValue = cbItem.SelectedItem.ToString(),
-                    TotalIncome = totalIncome,
-                    TotalExpense = totalExpense,
-                    OpeningBal = openingBal,
-                    ClosingBal = closingBal
-                };
 
-                //notification
-                alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
-                await Task.Delay(5000);
+            e.Cancel = false;
 
-                FrmTrialBalance frmT = new FrmTrialBalance(tdd, incomeDetails, expenseDetails);
-                frmT.ShowDialog();
-
-                e.Cancel = false;
-            }
 
         }
 
+        public async void LauchPrint(IWin32Window t)
+        {
+            //notification
+            alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
+            await Task.Delay(5000);
+
+            frmT.ShowDialog(t);
+        }
+
+
+        private void DatepickerStart_onValueChanged(object sender, EventArgs e)
+        {
+            selMonth = DatepickerStart.Value.Month;
+            selYear = DatepickerStart.Value.Year;
+            datePicked = DatepickerStart.Value;
+        }
+
+        private async void btnPrint_Click_1(object sender, EventArgs e)
+        {
+            int i = await TransCashlbl(datePicked, selYear, true);
+            
+
+            TrialDetails tdd = new TrialDetails()
+            {
+                PeriodText = "Month",
+                PeriodValue = datePicked.ToString("MMMM"),
+                TotalIncome = totalIncome,
+                TotalExpense = totalExpense,
+                OpeningBal = openingBal,
+                ClosingBal = closingBal
+            };
+
+            frmT = new FrmTrialBalance(tdd, incomeDetails, expenseDetails);
+        }
 
         #region Complexies
 
-        private async void TransCashlbl(int datePicked, int year, bool filtered)
+        private async Task<int> TransCashlbl(DateTime datePicked, int year, bool filtered)
         {
-
+            int ttt = datePicked.Month;
             #region lbl_income&lbl_expense
             var myIncomes = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
                 {
                     return context.Incomes
-                    .Where(t => (t.Date.Month == datePicked))
+                    .Where(t => (t.Date.Month == ttt))
                     .ToList();
                 }
             });
-            decimal totalIncome1 = myIncomes.Where(t => (t.Date.Month == datePicked)).Sum(x => x.Amount);
+            decimal totalIncome1 = myIncomes.Where(t => (t.Date.Month == ttt)).Sum(x => x.Amount);
 
             foreach (var item in myIncomes)
             {
@@ -179,11 +131,13 @@ namespace eSchool.TrialBal
                 using (var context = new EschoolEntities())
                 {
                     return context.Fees
-                           .Where(t => (t.Date.Month == datePicked))
+                           .Where(t => (t.Date.Month == ttt))
                            .ToList();
                 }
             });
-            decimal totalFee = myFees.Where(t => (t.Date.Month == datePicked)).Sum(x => x.Amount_Paid);
+            decimal totalFee = myFees
+                .Where(t => (t.Date.Month == ttt))
+                .Sum(x => x.Amount_Paid);
             IncomeDetails inc1 = new IncomeDetails()
             {
                 IncomeName = "Fees",
@@ -198,11 +152,13 @@ namespace eSchool.TrialBal
                 using (var context = new EschoolEntities())
                 {
                     return context.Expenses
-                    .Where(t => (t.Date.Month == datePicked))
+                    .Where(t => (t.Date.Month == ttt))
                     .ToList();
                 }
             });
-            decimal totalExpenses1 = myExpenses.Where(t => (t.Date.Month == datePicked)).Sum(x => x.Amount);
+            decimal totalExpenses1 = myExpenses
+                .Where(t => (t.Date.Month == ttt))
+                .Sum(x => x.Amount);
 
             foreach (var item in myExpenses)
             {
@@ -221,7 +177,7 @@ namespace eSchool.TrialBal
             #region lbl_opening&lbl_closing_Balance
 
 
-            ClosingBalance prevClosingBalance = await checkPeriodClosingBal(datePicked, year, filtered);
+            ClosingBalance prevClosingBalance = await checkPeriodClosingBal(datePicked.Month, year, filtered);
             decimal openingBal1 = 0;
             if (prevClosingBalance != null)
             {
@@ -239,13 +195,13 @@ namespace eSchool.TrialBal
             }
 
 
-             openingBal = $"KES {String.Format("{0:0,0}", openingBal1)}";
+            openingBal = $"KES {String.Format("{0:0,0}", openingBal1)}";
 
             decimal closingBal1 = openingBal1 + ((totalIncome1 + totalFee) - totalExpenses1);
 
             closingBal = $"KES {String.Format("{0:0,0}", closingBal1)}";
 
-            ClosingBalance curClosingBalance = await ThisPeriodClosingBal(datePicked, year, filtered);
+            ClosingBalance curClosingBalance = await ThisPeriodClosingBal(datePicked.Month, year, filtered);
             using (var context = new EschoolEntities())
             {
 
@@ -254,7 +210,7 @@ namespace eSchool.TrialBal
                     curClosingBalance.Amount = closingBal1;
                     curClosingBalance.Term = 0;
                     curClosingBalance.Year = year;
-                    curClosingBalance.Month = datePicked;
+                    curClosingBalance.Month = datePicked.Month;
 
                     context.Entry<ClosingBalance>(curClosingBalance).State = EntityState.Modified;
                     try
@@ -273,7 +229,7 @@ namespace eSchool.TrialBal
                         Amount = closingBal1,
                         Term = 0,
                         Year = year,
-                        Month = datePicked
+                        Month = datePicked.Month
                     };
                     context.ClosingBalances.Add(newCloseBal);
                     try
@@ -286,6 +242,8 @@ namespace eSchool.TrialBal
                     }
                 }
             }
+
+            return 1;
             #endregion
         }
 
