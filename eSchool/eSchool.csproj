@@ -82,6 +82,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Syncfusion.Shared.Base, Version=15.2460.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -458,6 +459,12 @@
     <Compile Include="NewImportsUI.Designer.cs">
       <DependentUpon>NewImportsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewSettings.Designer.cs">
+      <DependentUpon>NewSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -772,6 +779,9 @@
     <EmbeddedResource Include="FeeUIs\OverHeadListItem.resx">
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewSettings.resx">
+      <DependentUpon>NewSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profiles\StudentProfile.resx">
       <DependentUpon>StudentProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -915,6 +925,11 @@
     <None Include="Resources\STrash_px.png" />
     <None Include="Resources\Photo Editor_50px.png" />
     <None Include="Resources\student.png" />
+    <None Include="Resources\Coderwall_50px.png" />
+    <None Include="Resources\Coderwall_px.png" />
+    <None Include="Resources\Message_50px.png" />
+    <None Include="Resources\Phone_50px.png" />
+    <None Include="Resources\Update_50px.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

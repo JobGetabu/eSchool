@@ -17,7 +17,6 @@ namespace eSchool
         //Singleton pattern ***best practices***
         private static SettingsUI _instance;
 
-        private EschoolEntities db;
         public static SettingsUI Instance
         {
             get
@@ -29,6 +28,7 @@ namespace eSchool
                 return _instance;
             }
         }
+        private EschoolEntities db;
         public SettingsUI()
         {          
                 InitializeComponent();

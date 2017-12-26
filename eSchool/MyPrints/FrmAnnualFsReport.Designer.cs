@@ -48,7 +48,7 @@
             this.panelRpt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRpt.Location = new System.Drawing.Point(0, 0);
             this.panelRpt.Name = "panelRpt";
-            this.panelRpt.Size = new System.Drawing.Size(812, 542);
+            this.panelRpt.Size = new System.Drawing.Size(751, 621);
             this.panelRpt.TabIndex = 0;
             // 
             // reportViewer
@@ -67,14 +67,14 @@
             this.reportViewer.ShowCredentialPrompts = false;
             this.reportViewer.ShowDocumentMapButton = false;
             this.reportViewer.ShowFindControls = false;
-            this.reportViewer.Size = new System.Drawing.Size(812, 542);
+            this.reportViewer.Size = new System.Drawing.Size(751, 621);
             this.reportViewer.TabIndex = 0;
             // 
             // FrmAnnualFsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 542);
+            this.ClientSize = new System.Drawing.Size(751, 621);
             this.Controls.Add(this.panelRpt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

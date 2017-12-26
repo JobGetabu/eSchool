@@ -77,13 +77,13 @@ namespace eSchool.TrialBal
 
         private async void btnPrint_Click_1(object sender, EventArgs e)
         {
-            int i = await TransCashlbl(datePicked, selYear, true);
+             await TransCashlbl(datePicked, selYear, true);
             
 
             TrialDetails tdd = new TrialDetails()
             {
                 PeriodText = "Month",
-                PeriodValue = datePicked.ToString("MMMM"),
+                PeriodValue = $"{selYear} "+datePicked.ToString("MMMM"),
                 TotalIncome = totalIncome,
                 TotalExpense = totalExpense,
                 OpeningBal = openingBal,
@@ -95,7 +95,7 @@ namespace eSchool.TrialBal
 
         #region Complexies
 
-        private async Task<int> TransCashlbl(DateTime datePicked, int year, bool filtered)
+        private async Task TransCashlbl(DateTime datePicked, int year, bool filtered)
         {
             int ttt = datePicked.Month;
             #region lbl_income&lbl_expense
@@ -237,8 +237,6 @@ namespace eSchool.TrialBal
                     }
                 }
             }
-
-            return 1;
             #endregion
         }
 

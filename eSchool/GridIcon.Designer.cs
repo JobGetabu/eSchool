@@ -133,6 +133,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Message_50px {
+            get {
+                object obj = ResourceManager.GetObject("Message_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Money_50px {
             get {
                 object obj = ResourceManager.GetObject("Money_50px", resourceCulture);
@@ -196,6 +206,16 @@ namespace eSchool {
         internal static System.Drawing.Bitmap ok80 {
             get {
                 object obj = ResourceManager.GetObject("ok80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Phone_50px {
+            get {
+                object obj = ResourceManager.GetObject("Phone_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +296,16 @@ namespace eSchool {
         internal static System.Drawing.Bitmap Trash_Can_50px {
             get {
                 object obj = ResourceManager.GetObject("Trash_Can_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Update_50px {
+            get {
+                object obj = ResourceManager.GetObject("Update_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

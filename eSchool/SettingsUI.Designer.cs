@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsUI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,45 +36,46 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsUI));
             this.panelHCD = new System.Windows.Forms.Panel();
             this.lblFinancialYear = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCurrentTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelWithDashDate = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelDataGrid = new System.Windows.Forms.Panel();
-            this.btnHasPrevious = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnHasNext = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panelEditTermYear = new System.Windows.Forms.Panel();
             this.groupBoxTY = new System.Windows.Forms.GroupBox();
-            this.bunifuFlatBtnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.metroTextBxEditTerm = new MetroFramework.Controls.MetroTextBox();
             this.lblSetTerm = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnHasPrevious = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnHasNext = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bunifuFlatBtnSave = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelHCD.SuspendLayout();
             this.panelWithDashDate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelDataGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHasPrevious)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHasNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.panelEditTermYear.SuspendLayout();
             this.groupBoxTY.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHasPrevious)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHasNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHCD
@@ -148,16 +148,6 @@
             this.panelWithDashDate.Size = new System.Drawing.Size(184, 66);
             this.panelWithDashDate.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(42, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label
             // 
             this.label.AutoSize = true;
@@ -193,74 +183,6 @@
             this.panelDataGrid.Name = "panelDataGrid";
             this.panelDataGrid.Size = new System.Drawing.Size(399, 339);
             this.panelDataGrid.TabIndex = 0;
-            // 
-            // btnHasPrevious
-            // 
-            this.btnHasPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHasPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.btnHasPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnHasPrevious.Image")));
-            this.btnHasPrevious.ImageActive = null;
-            this.btnHasPrevious.Location = new System.Drawing.Point(334, 308);
-            this.btnHasPrevious.Name = "btnHasPrevious";
-            this.btnHasPrevious.Size = new System.Drawing.Size(28, 28);
-            this.btnHasPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnHasPrevious.TabIndex = 7;
-            this.btnHasPrevious.TabStop = false;
-            this.btnHasPrevious.Visible = false;
-            this.btnHasPrevious.Zoom = 10;
-            this.btnHasPrevious.Click += new System.EventHandler(this.btnHasPrevious_Click);
-            // 
-            // btnHasNext
-            // 
-            this.btnHasNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHasNext.BackColor = System.Drawing.Color.Transparent;
-            this.btnHasNext.Image = ((System.Drawing.Image)(resources.GetObject("btnHasNext.Image")));
-            this.btnHasNext.ImageActive = null;
-            this.btnHasNext.Location = new System.Drawing.Point(368, 308);
-            this.btnHasNext.Name = "btnHasNext";
-            this.btnHasNext.Size = new System.Drawing.Size(28, 28);
-            this.btnHasNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnHasNext.TabIndex = 6;
-            this.btnHasNext.TabStop = false;
-            this.btnHasNext.Visible = false;
-            this.btnHasNext.Zoom = 10;
-            this.btnHasNext.Click += new System.EventHandler(this.btnHasNext_Click);
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.Silver;
-            this.bunifuFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.LightGray;
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 7;
-            this.bunifuFlatButton2.ButtonText = "Add Category";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 50D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(4, 303);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.LightGray;
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.DarkGray;
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(143, 33);
-            this.bunifuFlatButton2.TabIndex = 5;
-            this.bunifuFlatButton2.Text = "Add Category";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // bunifuCustomDataGrid1
             // 
@@ -347,43 +269,6 @@
             this.groupBoxTY.TabStop = false;
             this.groupBoxTY.Text = "Edit Term";
             // 
-            // bunifuFlatBtnSave
-            // 
-            this.bunifuFlatBtnSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.bunifuFlatBtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuFlatBtnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.bunifuFlatBtnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatBtnSave.BorderRadius = 7;
-            this.bunifuFlatBtnSave.ButtonText = "    Save";
-            this.bunifuFlatBtnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatBtnSave.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatBtnSave.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatBtnSave.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatBtnSave.Iconimage")));
-            this.bunifuFlatBtnSave.Iconimage_right = null;
-            this.bunifuFlatBtnSave.Iconimage_right_Selected = null;
-            this.bunifuFlatBtnSave.Iconimage_Selected = null;
-            this.bunifuFlatBtnSave.IconMarginLeft = 50;
-            this.bunifuFlatBtnSave.IconMarginRight = 0;
-            this.bunifuFlatBtnSave.IconRightVisible = true;
-            this.bunifuFlatBtnSave.IconRightZoom = 0D;
-            this.bunifuFlatBtnSave.IconVisible = true;
-            this.bunifuFlatBtnSave.IconZoom = 40D;
-            this.bunifuFlatBtnSave.IsTab = false;
-            this.bunifuFlatBtnSave.Location = new System.Drawing.Point(36, 80);
-            this.bunifuFlatBtnSave.Name = "bunifuFlatBtnSave";
-            this.bunifuFlatBtnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.bunifuFlatBtnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.bunifuFlatBtnSave.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatBtnSave.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.bunifuFlatBtnSave.selected = false;
-            this.bunifuFlatBtnSave.Size = new System.Drawing.Size(179, 40);
-            this.bunifuFlatBtnSave.TabIndex = 4;
-            this.bunifuFlatBtnSave.Text = "    Save";
-            this.bunifuFlatBtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatBtnSave.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatBtnSave.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuFlatBtnSave.Click += new System.EventHandler(this.bunifuFlatBtnSave_Click);
-            // 
             // metroTextBxEditTerm
             // 
             // 
@@ -445,14 +330,6 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(112, 26);
             this.contextMenuStrip1.Click += new System.EventHandler(this.contextMenuStrip1_Click);
             // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.deleteToolStripMenuItem.Text = "Delete ";
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
@@ -463,9 +340,73 @@
             this.bunifuElipse2.ElipseRadius = 5;
             this.bunifuElipse2.TargetControl = this.panelDataGrid;
             // 
-            // categoryBindingSource
+            // btnHasPrevious
             // 
-            this.categoryBindingSource.DataSource = typeof(eSchool.Category);
+            this.btnHasPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHasPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.btnHasPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnHasPrevious.Image")));
+            this.btnHasPrevious.ImageActive = null;
+            this.btnHasPrevious.Location = new System.Drawing.Point(334, 308);
+            this.btnHasPrevious.Name = "btnHasPrevious";
+            this.btnHasPrevious.Size = new System.Drawing.Size(28, 28);
+            this.btnHasPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHasPrevious.TabIndex = 7;
+            this.btnHasPrevious.TabStop = false;
+            this.btnHasPrevious.Visible = false;
+            this.btnHasPrevious.Zoom = 10;
+            this.btnHasPrevious.Click += new System.EventHandler(this.btnHasPrevious_Click);
+            // 
+            // btnHasNext
+            // 
+            this.btnHasNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHasNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnHasNext.Image = ((System.Drawing.Image)(resources.GetObject("btnHasNext.Image")));
+            this.btnHasNext.ImageActive = null;
+            this.btnHasNext.Location = new System.Drawing.Point(368, 308);
+            this.btnHasNext.Name = "btnHasNext";
+            this.btnHasNext.Size = new System.Drawing.Size(28, 28);
+            this.btnHasNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHasNext.TabIndex = 6;
+            this.btnHasNext.TabStop = false;
+            this.btnHasNext.Visible = false;
+            this.btnHasNext.Zoom = 10;
+            this.btnHasNext.Click += new System.EventHandler(this.btnHasNext_Click);
+            // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.Silver;
+            this.bunifuFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.LightGray;
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 7;
+            this.bunifuFlatButton2.ButtonText = "Add Category";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 50D;
+            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(4, 303);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.LightGray;
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.DarkGray;
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(143, 33);
+            this.bunifuFlatButton2.TabIndex = 5;
+            this.bunifuFlatButton2.Text = "Add Category";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // typeDataGridViewTextBoxColumn
             // 
@@ -489,6 +430,65 @@
             this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
             this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(eSchool.Category);
+            // 
+            // bunifuFlatBtnSave
+            // 
+            this.bunifuFlatBtnSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.bunifuFlatBtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuFlatBtnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.bunifuFlatBtnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatBtnSave.BorderRadius = 7;
+            this.bunifuFlatBtnSave.ButtonText = "    Save";
+            this.bunifuFlatBtnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatBtnSave.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatBtnSave.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatBtnSave.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatBtnSave.Iconimage")));
+            this.bunifuFlatBtnSave.Iconimage_right = null;
+            this.bunifuFlatBtnSave.Iconimage_right_Selected = null;
+            this.bunifuFlatBtnSave.Iconimage_Selected = null;
+            this.bunifuFlatBtnSave.IconMarginLeft = 50;
+            this.bunifuFlatBtnSave.IconMarginRight = 0;
+            this.bunifuFlatBtnSave.IconRightVisible = true;
+            this.bunifuFlatBtnSave.IconRightZoom = 0D;
+            this.bunifuFlatBtnSave.IconVisible = true;
+            this.bunifuFlatBtnSave.IconZoom = 40D;
+            this.bunifuFlatBtnSave.IsTab = false;
+            this.bunifuFlatBtnSave.Location = new System.Drawing.Point(36, 80);
+            this.bunifuFlatBtnSave.Name = "bunifuFlatBtnSave";
+            this.bunifuFlatBtnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.bunifuFlatBtnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.bunifuFlatBtnSave.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatBtnSave.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.bunifuFlatBtnSave.selected = false;
+            this.bunifuFlatBtnSave.Size = new System.Drawing.Size(179, 40);
+            this.bunifuFlatBtnSave.TabIndex = 4;
+            this.bunifuFlatBtnSave.Text = "    Save";
+            this.bunifuFlatBtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatBtnSave.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatBtnSave.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuFlatBtnSave.Click += new System.EventHandler(this.bunifuFlatBtnSave_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(42, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.deleteToolStripMenuItem.Text = "Delete ";
+            // 
             // SettingsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,17 +505,17 @@
             this.panelHCD.PerformLayout();
             this.panelWithDashDate.ResumeLayout(false);
             this.panelWithDashDate.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelDataGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnHasPrevious)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHasNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.panelEditTermYear.ResumeLayout(false);
             this.groupBoxTY.ResumeLayout(false);
             this.groupBoxTY.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHasPrevious)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHasNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -66,20 +66,23 @@ namespace eSchool.TrialBal
         }
         private async void btnPrint_Click(object sender, EventArgs e)
         {
-            int i = await TransCashlbl(selTerms,selYear,true);
-
-
-            TrialDetails tdd = new TrialDetails()
+            if (selYear != 0)
             {
-                PeriodText = "Year",
-                PeriodValue = selYear.ToString(),
-                TotalIncome = totalIncome,
-                TotalExpense = totalExpense,
-                OpeningBal = openingBal,
-                ClosingBal = closingBal
-            };
+                 await TransCashlbl(selTerms, selYear, true);
 
-            frmT = new FrmTrialBalance(tdd, incomeDetails, expenseDetails);
+
+                TrialDetails tdd = new TrialDetails()
+                {
+                    PeriodText = "Year",
+                    PeriodValue = selYear.ToString(),
+                    TotalIncome = totalIncome,
+                    TotalExpense = totalExpense,
+                    OpeningBal = openingBal,
+                    ClosingBal = closingBal
+                };
+
+                frmT = new FrmTrialBalance(tdd, incomeDetails, expenseDetails); 
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -90,9 +93,10 @@ namespace eSchool.TrialBal
 
         private void FrmYearlyTB_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (close ==1)
+            if (close == 1)
             {
                 e.Cancel = false;
+                return;
             }
 
             if (selYear == 0)
@@ -101,13 +105,15 @@ namespace eSchool.TrialBal
                 e.Cancel = true;
                 return;
             }
+
+            e.Cancel = false;
         }
 
 
 
         #region Complexities
 
-        private async Task<int> TransCashlbl(List<int> selTerms, int year, bool filtered)
+        private async Task TransCashlbl(List<int> selTerms, int year, bool filtered)
         {
             decimal runningTotalIncome = 0;
             decimal runningTotalFees = 0;
@@ -279,7 +285,6 @@ namespace eSchool.TrialBal
                 }
                 #endregion 
             }
-            return 1;
         }
 
 

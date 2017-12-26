@@ -192,7 +192,7 @@ namespace eSchool
 
             btn_settings.selected = true;
 
-            TabSwitcher(SettingsUI.Instance);
+            TabSwitcher(NewSettings.Instance);
         }
 
         private void btn_imports_Click(object sender, EventArgs e)
