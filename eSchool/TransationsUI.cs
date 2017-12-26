@@ -861,7 +861,10 @@ namespace eSchool
             if (cbTrialBalance.selectedValue.Equals("Trial Balance: Yearly"))
             {
                 FrmYearlyTB frm3 = new FrmYearlyTB();
-                frm3.ShowDialog();
+                if (frm3.ShowDialog() == DialogResult.OK)
+                {
+                    frm3.LauchPrint(this);
+                }
             }
         }
     }

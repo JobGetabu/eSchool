@@ -49,12 +49,7 @@ namespace eSchool.TrialBal
             {
                 e.Cancel = false;
             }
-            if (selYear == 0)
-            {
-                alert.Show("Required info \n Select year !", alert.AlertType.warnig);
-                e.Cancel = true;
-                return;
-            }
+           
             //pass yearly data
 
 

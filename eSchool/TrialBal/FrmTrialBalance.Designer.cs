@@ -32,14 +32,22 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrialBalance));
-            this.panelRpt = new System.Windows.Forms.Panel();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.IncomeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ExpenseDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelRpt.SuspendLayout();
+            this.panelRpt = new System.Windows.Forms.Panel();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.IncomeDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseDetailsBindingSource)).BeginInit();
+            this.panelRpt.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // IncomeDetailsBindingSource
+            // 
+            this.IncomeDetailsBindingSource.DataSource = typeof(eSchool.TrialBal.IncomeDetails);
+            // 
+            // ExpenseDetailsBindingSource
+            // 
+            this.ExpenseDetailsBindingSource.DataSource = typeof(eSchool.TrialBal.ExpenseDetails);
             // 
             // panelRpt
             // 
@@ -47,7 +55,7 @@
             this.panelRpt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRpt.Location = new System.Drawing.Point(0, 0);
             this.panelRpt.Name = "panelRpt";
-            this.panelRpt.Size = new System.Drawing.Size(812, 542);
+            this.panelRpt.Size = new System.Drawing.Size(844, 542);
             this.panelRpt.TabIndex = 2;
             // 
             // reportViewer
@@ -69,22 +77,14 @@
             this.reportViewer.ShowCredentialPrompts = false;
             this.reportViewer.ShowDocumentMapButton = false;
             this.reportViewer.ShowFindControls = false;
-            this.reportViewer.Size = new System.Drawing.Size(812, 542);
+            this.reportViewer.Size = new System.Drawing.Size(844, 542);
             this.reportViewer.TabIndex = 0;
-            // 
-            // IncomeDetailsBindingSource
-            // 
-            this.IncomeDetailsBindingSource.DataSource = typeof(eSchool.TrialBal.IncomeDetails);
-            // 
-            // ExpenseDetailsBindingSource
-            // 
-            this.ExpenseDetailsBindingSource.DataSource = typeof(eSchool.TrialBal.ExpenseDetails);
             // 
             // FrmTrialBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 542);
+            this.ClientSize = new System.Drawing.Size(844, 542);
             this.Controls.Add(this.panelRpt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -92,9 +92,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trial Balance";
             this.Load += new System.EventHandler(this.FrmTrialBalance_Load);
-            this.panelRpt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IncomeDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseDetailsBindingSource)).EndInit();
+            this.panelRpt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

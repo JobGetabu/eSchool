@@ -179,9 +179,9 @@
             this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblYear.Location = new System.Drawing.Point(16, 75);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(111, 17);
+            this.lblYear.Size = new System.Drawing.Size(77, 17);
             this.lblYear.TabIndex = 49;
-            this.lblYear.Text = "Pick Month Date";
+            this.lblYear.Text = "Pick Month";
             // 
             // DatepickerStart
             // 

@@ -37,7 +37,7 @@
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFrm = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cbItem = new MetroFramework.Controls.MetroComboBox();
+            this.cbYear = new MetroFramework.Controls.MetroComboBox();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPrint = new System.Windows.Forms.Button();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -110,20 +110,21 @@
             this.lblFrm.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrm.Location = new System.Drawing.Point(60, 24);
             this.lblFrm.Name = "lblFrm";
-            this.lblFrm.Size = new System.Drawing.Size(128, 25);
+            this.lblFrm.Size = new System.Drawing.Size(108, 25);
             this.lblFrm.TabIndex = 0;
-            this.lblFrm.Text = "Select Month";
+            this.lblFrm.Text = "Select Year";
             // 
-            // cbItem
+            // cbYear
             // 
-            this.cbItem.FormattingEnabled = true;
-            this.cbItem.ItemHeight = 23;
-            this.cbItem.Location = new System.Drawing.Point(33, 85);
-            this.cbItem.Name = "cbItem";
-            this.cbItem.PromptText = "Select Month";
-            this.cbItem.Size = new System.Drawing.Size(218, 29);
-            this.cbItem.TabIndex = 54;
-            this.cbItem.UseSelectable = true;
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.ItemHeight = 23;
+            this.cbYear.Location = new System.Drawing.Point(33, 85);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.PromptText = "Select Year";
+            this.cbYear.Size = new System.Drawing.Size(218, 29);
+            this.cbYear.TabIndex = 54;
+            this.cbYear.UseSelectable = true;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
             // 
             // btnCancel
             // 
@@ -158,6 +159,7 @@
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.DarkGray;
             this.btnCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnPrint
             // 
@@ -180,6 +182,7 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // FrmYearlyTB
             // 
@@ -190,14 +193,17 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.cbItem);
+            this.Controls.Add(this.cbYear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmYearlyTB";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmYearlyTB";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmYearlyTB_FormClosing);
+            this.Load += new System.EventHandler(this.FrmYearlyTB_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -213,7 +219,7 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblFrm;
-        private MetroFramework.Controls.MetroComboBox cbItem;
+        private MetroFramework.Controls.MetroComboBox cbYear;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnPrint;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
