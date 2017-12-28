@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using custom_alert_notifications;
 using eSchool.MySettings;
+using System.Resources;
+using System.IO;
 
 namespace eSchool
 {
@@ -17,6 +19,7 @@ namespace eSchool
 
         //Singleton pattern ***best practices***
         private static NewSettings _instance;
+
 
         public static NewSettings Instance
         {
@@ -34,6 +37,10 @@ namespace eSchool
             InitializeComponent();
         }
 
+        private string path;
+        //MyLogos.resx
+        string resxFile = @".\MyLogo.resx";
+
         private void NewSettings_Load(object sender, EventArgs e)
         {
             //init school details
@@ -41,6 +48,9 @@ namespace eSchool
             //change color of Type to greenish
             gData.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(23, 123, 189);
             GridInitilizer();
+
+
+            ReadLogo();
         }
 
         private void InitSchool()
@@ -51,6 +61,7 @@ namespace eSchool
             lblScType.Text = $"Secondary - {Properties.Settings.Default.schoolType}"; //Secondary - Bording School
             lblName.Text = Properties.Settings.Default.schoolName;
             lblScCode.Text = $"Code : {Properties.Settings.Default.schoolreg}"; //Code : 2040700
+
         }
         public async void GridInitilizer()
         {
@@ -155,6 +166,148 @@ namespace eSchool
             {
                 InitSchool();
             }
+        }
+
+        private void btnChangePic_Click(object sender, EventArgs e)
+        {
+            //Open up the search pic dialogue
+            try
+            {
+                using (OpenFileDialog opf = new OpenFileDialog()
+                { Filter = "Select Picture|*.jpg|*.JPEG|*.png|GIF|*gif", ValidateNames = true, Multiselect = false })
+                {
+                    if (opf.ShowDialog() == DialogResult.OK)
+                    {
+                       // this.pictureBox1.Image = Image.FromFile(opf.FileName);
+                       // this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        path = opf.FileName;
+
+                        byte[] imageByte = ConvertFileToByte(path);
+                        Image immm = ConvertByteToImage(imageByte);
+
+                        //method to save it to resources
+                        //SaveLogo(path, imageByte);
+                        SaveLogo(path);
+                        ReadLogo();
+                        // short Custom Notification
+                        alert.Show("Updated", alert.AlertType.success);
+                    }
+
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+        }
+
+        private void SetUpImage()
+        {
+            // Get resources from .resx file.
+            using (ResXResourceSet resxSet = new ResXResourceSet(resxFile))
+            {
+                Image mByte = null;
+                try
+                {
+                    mByte = (Image)resxSet.GetObject("elogo");
+                }
+                catch (Exception)
+                {
+
+                    //throw;
+                }
+                //set up picture
+                if (mByte == null)
+                {
+                    // path = "";
+                    pictureBox1.Image = GridIcon.logo;
+                }
+                else
+                {
+                    try
+                    {
+                        this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox1.Image = mByte;
+                    }
+                    catch (Exception exp)
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
+        private void SaveLogo(string path, byte[] imageByte)
+        {
+            using (ResXResourceWriter resx = new ResXResourceWriter(resxFile))
+            {
+                resx.AddResource("elogo", imageByte);
+            }
+        }
+
+        private void SaveLogo(string path)
+        {
+            //read image
+            Bitmap bmp = new Bitmap(path);
+
+            //load image in picturebox
+            pictureBox1.Image = bmp;
+
+            //write image
+            bmp.Save(".\\Output.png");
+        }
+        private void ReadLogo()
+        {
+            Image mByte = null;
+            try
+            {
+                mByte = new Bitmap(".\\Output.png");
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+            //set up picture
+            if (mByte == null)
+            {
+                // path = "";
+                pictureBox1.Image = GridIcon.logo;
+            }
+            else
+            {
+                try
+                {
+                    this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox1.Image = mByte;
+                }
+                catch (Exception exp)
+                {
+                    throw;
+                }
+            }
+        }
+
+        private byte[] ConvertFileToByte(string spath)
+        {
+            byte[] data = null;
+            FileInfo fInfo = new FileInfo(spath);
+            long numBytes = fInfo.Length;
+            FileStream fStream = new FileStream(spath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fStream);
+            data = br.ReadBytes((int)numBytes);
+            return data;
+        }
+
+        private Image ConvertByteToImage(byte[] photoByte)
+        {
+            Image nImage;
+            using (MemoryStream ms = new MemoryStream(photoByte, 0, photoByte.Length))
+            {
+                ms.Write(photoByte, 0, photoByte.Length);
+                nImage = Image.FromStream(ms, true);
+            }
+
+            return nImage;
         }
     }
 }

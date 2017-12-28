@@ -266,6 +266,12 @@
     <Compile Include="FeeUIs\FeeUI_Show.Designer.cs">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyLogo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLogo.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="MySettings\FrmAddCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -687,6 +693,11 @@
     <EmbeddedResource Include="FeeUIs\FeeUI_Show.resx">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyLogo.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyLogo.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="MySettings\FrmAddCategories.resx">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </EmbeddedResource>
@@ -939,6 +950,7 @@
     <None Include="Resources\Message_50px.png" />
     <None Include="Resources\Phone_50px.png" />
     <None Include="Resources\Update_50px.png" />
+    <None Include="Resources\logo.jpg" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
