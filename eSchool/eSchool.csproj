@@ -465,6 +465,12 @@
     <Compile Include="MySettings\FrmAddSchool.Designer.cs">
       <DependentUpon>FrmAddSchool.cs</DependentUpon>
     </Compile>
+    <Compile Include="MySettings\FrmPeriods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MySettings\FrmPeriods.Designer.cs">
+      <DependentUpon>FrmPeriods.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewImportsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -792,6 +798,9 @@
     <EmbeddedResource Include="MyPrints\MyFeeStructure.rdlc" />
     <EmbeddedResource Include="MySettings\FrmAddSchool.resx">
       <DependentUpon>FrmAddSchool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MySettings\FrmPeriods.resx">
+      <DependentUpon>FrmPeriods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewImportsUI.resx">
       <DependentUpon>NewImportsUI.cs</DependentUpon>

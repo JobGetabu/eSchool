@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="CurrentTerm" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="CurrentYear" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2017</Value>

@@ -35,14 +35,11 @@ namespace eSchool
             InitializeComponent();
         }
 
-        private string path;
-        //MyLogos.resx
-        string resxFile = @".\MyLogo.resx";
-
         private void NewSettings_Load(object sender, EventArgs e)
         {
             //init school details
             InitSchool();
+            InitPeriod();
             //change color of Type to greenish
             gData.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(23, 123, 189);
             GridInitilizer();
@@ -59,6 +56,12 @@ namespace eSchool
             lblName.Text = Properties.Settings.Default.schoolName;
             lblScCode.Text = $"Code : {Properties.Settings.Default.schoolreg}"; //Code : 2040700
 
+        }
+
+        private void InitPeriod()
+        {
+            lblTerm.Text = $"Current Term:    {Properties.Settings.Default.CurrentTerm}"; //Current Term:    3  
+            lblYear.Text = $"Financial Year:    {Properties.Settings.Default.CurrentYear}"; //Financial Year:    2017  
         }
         public async void GridInitilizer()
         {
@@ -168,6 +171,7 @@ namespace eSchool
         private void btnChangePic_Click(object sender, EventArgs e)
         {
             //Open up the search pic dialogue
+            string path;
             try
             {
                 using (OpenFileDialog opf = new OpenFileDialog()
@@ -262,6 +266,15 @@ namespace eSchool
             }
 
             return nImage;
+        }
+
+        private void btnUpdatePeriod_Click(object sender, EventArgs e)
+        {
+            FrmPeriods frm = new FrmPeriods();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                InitPeriod();
+            }
         }
     }
 }
