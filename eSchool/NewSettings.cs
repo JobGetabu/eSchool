@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using custom_alert_notifications;
+using eSchool.MySettings;
 
 namespace eSchool
 {
@@ -35,11 +36,22 @@ namespace eSchool
 
         private void NewSettings_Load(object sender, EventArgs e)
         {
+            //init school details
+            InitSchool();
             //change color of Type to greenish
             gData.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(23, 123, 189);
             GridInitilizer();
         }
 
+        private void InitSchool()
+        {
+            lblAddress.Text = Properties.Settings.Default.schoolAddress;//
+            btnScCell.Text = Properties.Settings.Default.schoolCell;
+            btnScEmail.Text = Properties.Settings.Default.schoolEmail;
+            lblScType.Text = $"Secondary - {Properties.Settings.Default.schoolType}"; //Secondary - Bording School
+            lblName.Text = Properties.Settings.Default.schoolName;
+            lblScCode.Text = $"Code : {Properties.Settings.Default.schoolreg}"; //Code : 2040700
+        }
         public async void GridInitilizer()
         {
             var catListAsync = await Task.Factory.StartNew(() =>
@@ -128,7 +140,21 @@ namespace eSchool
 
         private void btnAddCategories_Click(object sender, EventArgs e)
         {
+            FrmAddCategories frm = new FrmAddCategories();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                GridInitilizer();
+            }
 
+        }
+
+        private void btnUpdateSchool_Click(object sender, EventArgs e)
+        {
+            FrmAddSchool frm = new FrmAddSchool();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                InitSchool();
+            }
         }
     }
 }

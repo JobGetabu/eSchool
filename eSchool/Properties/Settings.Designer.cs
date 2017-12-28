@@ -109,7 +109,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("P.O BOX 1234-234 NAIROBI")]
+        [global::System.Configuration.DefaultSettingValueAttribute("P .O BOX 123-00100 NYERI, KENYA")]
         public string schoolAddress {
             get {
                 return ((string)(this["schoolAddress"]));
@@ -140,6 +140,18 @@ namespace eSchool.Properties {
             }
             set {
                 this["schoolreg"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Bording School")]
+        public string schoolType {
+            get {
+                return ((string)(this["schoolType"]));
+            }
+            set {
+                this["schoolType"] = value;
             }
         }
     }

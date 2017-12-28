@@ -103,51 +103,13 @@ namespace eSchool
         private async void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             FrmAddCategories frm = new FrmAddCategories();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-
-            //Frm_Home.Instance.Opacity = 0.6;
             frm.ShowDialog(this);
-
-            //refresh list
-            //catList = await GetPagedCategoryList(pageNumber);
-            //this.bunifuCustomDataGrid1.DataSource = catList.ToList();
-            //bunifuCustomDataGrid1.Columns[0].DataPropertyName = 
 
             categoryBindingSource.DataSource = await CategoryDataSourceAsync();
             bunifuCustomDataGrid1.Update();
             bunifuCustomDataGrid1.Refresh();
         }
-
-        
-
-        
-        //static async void  GridGenerator()
-        //{
-        //    catList = await GetPagedCategoryList(Instance.pageNumber);
-        //    int n = 0;
-        //    Instance.btnHasNext.Visible = catList.HasNextPage;
-        //    Instance.btnHasPrevious.Visible = catList.HasPreviousPage;
-
-        //    catList.Count();
-        //    MyClass cmplxType = new MyClass();
-        //    foreach (var category in catList)
-        //    {
-        //        n = Instance.bunifuCustomDataGrid1.Rows.Add();
-
-        //        //Instance.bunifuCustomDataGrid1.Rows[n].Cells[0].Value = category.Type;
-        //        //Instance.bunifuCustomDataGrid1.Rows[n].Cells[1].Value = category.CategoryName;
-        //        Instance.btnDel.Text = "Delete";
-        //        Instance.btnDel.UseColumnTextForButtonValue = true;
-
-        //        cmplxType.catType = category.Type;
-        //        cmplxType.catName = category.CategoryName;
-        //        cmplxType.delBtn =Instance.btnDel;
-        //        cmplxType.cmplxList.Add(cmplxType);
-        //    }
-        //    Instance.bunifuCustomDataGrid1.DataSource = cmplxType.cmplxList.ToList();
-        //}
-
-        
+      
 
         private async void btnHasPrevious_Click(object sender, EventArgs e)
         {
@@ -184,42 +146,6 @@ namespace eSchool
         //returns a asynchrounous query of category Ids
         //not used
 
-        public async Task<bool> IsIdDuplicateuplicateAsync(int yearKey)
-        {
-            bool duplicate = false;
-            await Task.Factory.StartNew(() =>
-            {
-                var query = db.SchoolPeriodYears.Select(c => c.Year).ToList();
-
-                foreach (var catID in  query)
-                {
-                    if (yearKey == catID)
-                    {
-                        duplicate = true;
-                        return duplicate;
-                    }
-                }
-                return duplicate;
-            });
-            return duplicate;
-        }
-
-        public bool IsIdDuplicateuplicate(int yearKey)
-        {
-            bool duplicate = false;
- 
-                var query = db.SchoolPeriodYears.Select(c => c.Year).ToList();
-
-                foreach (var catID in query)
-                {
-                    if (yearKey == catID)
-                    {
-                        duplicate = true;
-                        return duplicate;
-                    }
-                }
-            return duplicate;
-        }
 
         private void contextMenuStrip1_Click(object sender, EventArgs e)
         {
@@ -248,32 +174,6 @@ namespace eSchool
             //reflects changes made at scope level
             lblCurrentTerm.Text = Properties.Settings.Default.CurrentTerm.ToString();
         }
-
-
-        public async Task<bool> IsYearDuplicateuplicate(int yearNow)
-        {
-            bool duplicate = false;
-            await Task.Factory.StartNew(() =>
-            {
-                var query = db.SchoolPeriodYears.Select(c => c.Year).ToList();
-
-                foreach (var catID in query)
-                {
-                    if (yearNow == catID)
-                    {
-                        duplicate = true;
-                        return duplicate;
-                    }
-                }
-                return duplicate;
-            });
-            return duplicate;
-        }
-
-
-        //TODO 1 set up UI for fee structure reporting
-        //TODO 2 set up UI for fee receipt reporting
-        //TODO 2 Delete all transaction 
         //TODO 2 promote students
 
     }

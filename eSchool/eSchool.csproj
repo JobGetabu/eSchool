@@ -453,6 +453,12 @@
     <Compile Include="MyPrints\FrmPrompt.Designer.cs">
       <DependentUpon>FrmPrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="MySettings\FrmAddSchool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MySettings\FrmAddSchool.Designer.cs">
+      <DependentUpon>FrmAddSchool.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewImportsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -773,6 +779,9 @@
       <DependentUpon>FrmPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyPrints\MyFeeStructure.rdlc" />
+    <EmbeddedResource Include="MySettings\FrmAddSchool.resx">
+      <DependentUpon>FrmAddSchool.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewImportsUI.resx">
       <DependentUpon>NewImportsUI.cs</DependentUpon>
     </EmbeddedResource>
