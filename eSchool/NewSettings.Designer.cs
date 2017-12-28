@@ -32,9 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSettings));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSettings));
             this.panelBody = new System.Windows.Forms.Panel();
             this.bcSchool = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -55,10 +55,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bccpaneldd = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAddCategories = new System.Windows.Forms.Button();
             this.bccpaneltt = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -87,6 +85,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelBody.SuspendLayout();
             this.bcSchool.SuspendLayout();
             this.bcCat.SuspendLayout();
@@ -433,7 +434,8 @@
             this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
-            this.ColumnName});
+            this.ColumnName,
+            this.ColumnDel});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -470,53 +472,40 @@
             this.gData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gData.Size = new System.Drawing.Size(830, 216);
             this.gData.TabIndex = 6;
-            // 
-            // ColumnDate
-            // 
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColumnDate.HeaderText = "Type";
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColumnName.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
+            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
+            this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded);
             // 
             // bccpaneldd
             // 
-            this.bccpaneldd.Controls.Add(this.button4);
+            this.bccpaneldd.Controls.Add(this.btnAddCategories);
             this.bccpaneldd.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bccpaneldd.Location = new System.Drawing.Point(0, 258);
             this.bccpaneldd.Name = "bccpaneldd";
             this.bccpaneldd.Size = new System.Drawing.Size(830, 42);
             this.bccpaneldd.TabIndex = 5;
             // 
-            // button4
+            // btnAddCategories
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(611, 6);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(148, 31);
-            this.button4.TabIndex = 59;
-            this.button4.Text = "Add Categories";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAddCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.btnAddCategories.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddCategories.FlatAppearance.BorderSize = 0;
+            this.btnAddCategories.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
+            this.btnAddCategories.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
+            this.btnAddCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategories.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategories.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategories.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategories.Image")));
+            this.btnAddCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCategories.Location = new System.Drawing.Point(611, 6);
+            this.btnAddCategories.Name = "btnAddCategories";
+            this.btnAddCategories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAddCategories.Size = new System.Drawing.Size(148, 31);
+            this.btnAddCategories.TabIndex = 59;
+            this.btnAddCategories.Text = "Add Categories";
+            this.btnAddCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCategories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddCategories.UseVisualStyleBackColor = false;
+            this.btnAddCategories.Click += new System.EventHandler(this.btnAddCategories_Click);
             // 
             // bccpaneltt
             // 
@@ -863,6 +852,28 @@
             this.bunifuCustomLabel10.Text = "Fee Payment Details";
             this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // ColumnDate
+            // 
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ColumnDate.HeaderText = "Type";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnName.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            // 
+            // ColumnDel
+            // 
+            this.ColumnDel.HeaderText = "";
+            this.ColumnDel.Name = "ColumnDel";
+            this.ColumnDel.ReadOnly = true;
+            // 
             // NewSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -958,12 +969,13 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.Panel panel5;
         private Bunifu.Framework.UI.BunifuCustomDataGrid gData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.Panel bccpaneldd;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAddCategories;
         private System.Windows.Forms.Panel bccpaneltt;
         private System.Windows.Forms.PictureBox pictureBox5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnDel;
     }
 }

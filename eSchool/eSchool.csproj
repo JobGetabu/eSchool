@@ -266,10 +266,10 @@
     <Compile Include="FeeUIs\FeeUI_Show.Designer.cs">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddCategories.cs">
+    <Compile Include="MySettings\FrmAddCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddCategories.Designer.cs">
+    <Compile Include="MySettings\FrmAddCategories.Designer.cs">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="FeeUIs\FrmAddFeeCategory.cs">
@@ -681,7 +681,7 @@
     <EmbeddedResource Include="FeeUIs\FeeUI_Show.resx">
       <DependentUpon>FeeUI_Show.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddCategories.resx">
+    <EmbeddedResource Include="MySettings\FrmAddCategories.resx">
       <DependentUpon>FrmAddCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeeUIs\FrmAddFeeCategory.resx">

@@ -170,7 +170,6 @@ namespace eSchool
             btn_dashboard.selected = true;
             btn_dashboard.Textcolor = _white;
             DashboardUI.collapse += CollapseNavBar;
-            FrmAddCategories.reLoadSettings += btn_settings_Click;
             TabSwitcher(DashboardUI.Instance);
 
             this.metroComboBoxSearch.SelectedIndex = 0;

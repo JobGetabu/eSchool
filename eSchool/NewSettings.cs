@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using custom_alert_notifications;
 
 namespace eSchool
 {
@@ -33,6 +34,99 @@ namespace eSchool
         }
 
         private void NewSettings_Load(object sender, EventArgs e)
+        {
+            //change color of Type to greenish
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(23, 123, 189);
+            GridInitilizer();
+        }
+
+        public async void GridInitilizer()
+        {
+            var catListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Categories
+                    .OrderBy(t => t.Id)
+                    .ToList();
+                }
+            });
+            gData.Rows.Clear();
+            foreach (var item in catListAsync)
+            {
+                gData.Rows.Add(new string[]
+                {
+                       item.Type,
+                       item.CategoryName
+                });
+            }
+        }
+
+        private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            //this.lblRowCount.Text = gData.Rows.Count.ToString();
+            this.gData.Rows[e.RowIndex].Cells[2].Value = GridIcon.Trash_Can_50px;
+        }
+
+        private async void gData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
+                e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    if ((await GridDelImageAsync(e.RowIndex)) != null)
+                    {
+                        using (var context = new EschoolEntities())
+                        {
+                            try
+                            {
+                                context.Entry<Category>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
+                                context.SaveChanges();
+
+                                //short Custom Notification
+                                alert.Show("Deleted", alert.AlertType.warnig);
+                                gData.Rows[e.RowIndex].Visible = false;
+                                //Load the grid again
+                                GridInitilizer();
+                            }
+                            catch (Exception exp)
+                            {
+                                MessageBox.Show("Something went wrong" + exp.Message, "Unsuccessful");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private async Task<Category> GridDelImageAsync(int rowIndex)
+        {
+            List<Category> catList = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Categories.ToList();
+                }
+            });
+
+            string details;
+            details = $"({(string)this.gData.Rows[rowIndex].Cells[0].Value}){(string)this.gData.Rows[rowIndex].Cells[1].Value}";
+
+            foreach (Category cc in catList)
+            {
+                string s = $"({cc.Type}){cc.CategoryName}";
+                if (s.Equals(details))
+                {
+                    return cc;
+                }
+            }
+            return null;
+        }
+
+        private void btnAddCategories_Click(object sender, EventArgs e)
         {
 
         }
