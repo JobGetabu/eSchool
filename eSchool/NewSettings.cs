@@ -19,8 +19,6 @@ namespace eSchool
 
         //Singleton pattern ***best practices***
         private static NewSettings _instance;
-
-
         public static NewSettings Instance
         {
             get
@@ -48,7 +46,6 @@ namespace eSchool
             //change color of Type to greenish
             gData.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(23, 123, 189);
             GridInitilizer();
-
 
             ReadLogo();
         }
@@ -174,12 +171,12 @@ namespace eSchool
             try
             {
                 using (OpenFileDialog opf = new OpenFileDialog()
-                { Filter = "Select Picture|*.jpg|*.JPEG|*.png|GIF|*gif", ValidateNames = true, Multiselect = false })
+                { Filter = "Select Picture|*.jpg|*.JPEG|", ValidateNames = true, Multiselect = false })
                 {
                     if (opf.ShowDialog() == DialogResult.OK)
                     {
-                       // this.pictureBox1.Image = Image.FromFile(opf.FileName);
-                       // this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        // this.pictureBox1.Image = Image.FromFile(opf.FileName);
+                        // this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                         path = opf.FileName;
 
                         byte[] imageByte = ConvertFileToByte(path);
@@ -201,89 +198,46 @@ namespace eSchool
             }
         }
 
-        private void SetUpImage()
-        {
-            // Get resources from .resx file.
-            using (ResXResourceSet resxSet = new ResXResourceSet(resxFile))
-            {
-                Image mByte = null;
-                try
-                {
-                    mByte = (Image)resxSet.GetObject("elogo");
-                }
-                catch (Exception)
-                {
-
-                    //throw;
-                }
-                //set up picture
-                if (mByte == null)
-                {
-                    // path = "";
-                    pictureBox1.Image = GridIcon.logo;
-                }
-                else
-                {
-                    try
-                    {
-                        this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                        pictureBox1.Image = mByte;
-                    }
-                    catch (Exception exp)
-                    {
-                        throw;
-                    }
-                }
-            }
-        }
-        private void SaveLogo(string path, byte[] imageByte)
-        {
-            using (ResXResourceWriter resx = new ResXResourceWriter(resxFile))
-            {
-                resx.AddResource("elogo", imageByte);
-            }
-        }
-
         private void SaveLogo(string path)
         {
+            Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "eSchool"));
+            string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+            string myf = tt + ".\\Output.jpg";
             //read image
-            Bitmap bmp = new Bitmap(path);
 
-            //load image in picturebox
-            pictureBox1.Image = bmp;
+            pictureBox1.Image.Dispose();
+            using (Bitmap bmp = new Bitmap(path))
+            {
+                if (System.IO.File.Exists(myf))
+                    System.IO.File.Delete(myf);
 
-            //write image
-            bmp.Save(".\\Output.png");
+                //load image in picturebox
+                pictureBox1.Image = bmp;
+
+                //write image
+                bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //bmp.Dispose(); 
+            }
         }
         private void ReadLogo()
         {
-            Image mByte = null;
-            try
+            string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+            string myf = tt + ".\\Output.jpg";
+            if ((File.Exists(myf)))
             {
-                mByte = new Bitmap(".\\Output.png");
-            }
-            catch (Exception)
-            {
+                pictureBox1.Image = Image.FromFile(myf,true);
+                this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                //using (Image mm = Image.FromFile(myf,true))
+                //{
+                //    pictureBox1.Image = mm;
+                //    this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom; 
+                //}
 
-                //throw;
-            }
-            //set up picture
-            if (mByte == null)
-            {
-                // path = "";
-                pictureBox1.Image = GridIcon.logo;
             }
             else
             {
-                try
-                {
-                    this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox1.Image = mByte;
-                }
-                catch (Exception exp)
-                {
-                    throw;
-                }
+                pictureBox1.Image = GridIcon.logo;
+                this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 

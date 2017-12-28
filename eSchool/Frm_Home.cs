@@ -94,6 +94,10 @@ namespace eSchool
                 {
                     MessageBox.Show(exp.Message + " \n" + exp.InnerException.Message);
                 }
+                catch (Exception exx)
+                {
+                    MessageBox.Show(exx.Message,"Try again");
+                }
             }
             else
             {
@@ -189,7 +193,7 @@ namespace eSchool
 
             //End UI Design code
 
-            btn_settings.selected = true;
+           // btn_settings.selected = true;
 
             TabSwitcher(NewSettings.Instance);
         }
