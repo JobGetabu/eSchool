@@ -308,7 +308,24 @@ namespace eSchool
             }
         }
 
-
+        private void bDropdownDashMenu_onItemSelected(object sender, EventArgs e)
+        {
+            //Profile
+            //Settings
+            //Log out
+            if (bDropdownDashMenu.selectedValue.Equals("Settings"))
+            {
+                btn_settings_Click(sender, e);
+            }
+            if (bDropdownDashMenu.selectedValue.Equals("Profile"))
+            {
+                
+            }
+            if (bDropdownDashMenu.selectedValue.Equals("Log out"))
+            {
+                
+            }
+        }
     }
 
     //TODO InvalidOperationException

@@ -276,5 +276,8 @@ namespace eSchool
                 InitPeriod();
             }
         }
+
+        //TODO Payment details.
+        //TODO put logo in print outs.
     }
 }

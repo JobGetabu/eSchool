@@ -52,7 +52,7 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProf = new System.Windows.Forms.Panel();
             this.ovalPictureBox1 = new eSchool.OvalPictureBox();
-            this.bunifuDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageBtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroComboBoxSearch = new MetroFramework.Controls.MetroComboBox();
             this.metro_search_box = new MetroFramework.Controls.MetroTextBox();
@@ -559,7 +559,7 @@
             // panelProf
             // 
             this.panelProf.Controls.Add(this.ovalPictureBox1);
-            this.panelProf.Controls.Add(this.bunifuDropdownDashMenu);
+            this.panelProf.Controls.Add(this.bDropdownDashMenu);
             this.logoAnim.SetDecoration(this.panelProf, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransitionUIs.SetDecoration(this.panelProf, BunifuAnimatorNS.DecorationType.None);
             this.panelProf.Dock = System.Windows.Forms.DockStyle.Right;
@@ -582,27 +582,28 @@
             this.ovalPictureBox1.TabIndex = 9;
             this.ovalPictureBox1.TabStop = false;
             // 
-            // bunifuDropdownDashMenu
+            // bDropdownDashMenu
             // 
-            this.bunifuDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bunifuDropdownDashMenu.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdownDashMenu.BorderRadius = 3;
-            this.bunifuTransitionUIs.SetDecoration(this.bunifuDropdownDashMenu, BunifuAnimatorNS.DecorationType.None);
-            this.logoAnim.SetDecoration(this.bunifuDropdownDashMenu, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuDropdownDashMenu.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdownDashMenu.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdownDashMenu.Items = new string[] {
+            this.bDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bDropdownDashMenu.BackColor = System.Drawing.Color.Transparent;
+            this.bDropdownDashMenu.BorderRadius = 3;
+            this.bunifuTransitionUIs.SetDecoration(this.bDropdownDashMenu, BunifuAnimatorNS.DecorationType.None);
+            this.logoAnim.SetDecoration(this.bDropdownDashMenu, BunifuAnimatorNS.DecorationType.None);
+            this.bDropdownDashMenu.DisabledColor = System.Drawing.Color.Gray;
+            this.bDropdownDashMenu.ForeColor = System.Drawing.Color.White;
+            this.bDropdownDashMenu.Items = new string[] {
         "Profile",
         "Settings",
         "Log out"};
-            this.bunifuDropdownDashMenu.Location = new System.Drawing.Point(96, 7);
-            this.bunifuDropdownDashMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bunifuDropdownDashMenu.Name = "bunifuDropdownDashMenu";
-            this.bunifuDropdownDashMenu.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.bunifuDropdownDashMenu.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.bunifuDropdownDashMenu.selectedIndex = 0;
-            this.bunifuDropdownDashMenu.Size = new System.Drawing.Size(175, 35);
-            this.bunifuDropdownDashMenu.TabIndex = 8;
+            this.bDropdownDashMenu.Location = new System.Drawing.Point(96, 7);
+            this.bDropdownDashMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bDropdownDashMenu.Name = "bDropdownDashMenu";
+            this.bDropdownDashMenu.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.bDropdownDashMenu.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
+            this.bDropdownDashMenu.selectedIndex = 0;
+            this.bDropdownDashMenu.Size = new System.Drawing.Size(175, 35);
+            this.bDropdownDashMenu.TabIndex = 8;
+            this.bDropdownDashMenu.onItemSelected += new System.EventHandler(this.bDropdownDashMenu_onItemSelected);
             // 
             // bunifuImageBtnSearch
             // 
@@ -800,7 +801,7 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelProf;
         private OvalPictureBox ovalPictureBox1;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdownDashMenu;
+        private Bunifu.Framework.UI.BunifuDropdown bDropdownDashMenu;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageBtnSearch;
         private MetroFramework.Controls.MetroComboBox metroComboBoxSearch;
         private MetroFramework.Controls.MetroTextBox metro_search_box;
