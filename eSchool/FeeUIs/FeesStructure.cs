@@ -11,6 +11,7 @@ using MetroFramework;
 using eSchool.MyPrints;
 using custom_alert_notifications;
 using eSchool.MyPrints2;
+using System.IO;
 
 namespace eSchool
 {
@@ -119,6 +120,18 @@ namespace eSchool
         }
         private List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform)
         {
+            //img
+
+            PrintsLogo printsLogo = new PrintsLogo();
+            printsLogo.ImgPath = "";
+            string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+            string myf = tt + ".\\Output.jpg";
+            if ((File.Exists(myf)))
+            {
+                //path
+                printsLogo.ImgPath = myf;
+            }
+
             List<AnnualFeeStructure> feestructureList = new List<AnnualFeeStructure>();
             var ovfees = ovfeestructureListAsync.OrderBy(a => a.Category).Select(a => a.Category);
             var ovfeescat = ovfees.Distinct();
@@ -127,7 +140,7 @@ namespace eSchool
                 AnnualFeeStructure afs = new AnnualFeeStructure();
                 afs.overHeadName = ov;
                 foreach (var item in ovfeestructureListAsync)
-                {
+                {                    
                     if (item.Category.Equals(ov))
                     {
                         if (item.Term == 1)
@@ -172,6 +185,8 @@ namespace eSchool
 
                     List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, fp.selFilYear, fp.selFilForm);
                     string lbl = $"{fp.selFilYear} Form {fp.frmlbl} Fees Structure"; //2017 Form Four Fees Structure
+
+                   
 
                     alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
                     await Task.Delay(6000);

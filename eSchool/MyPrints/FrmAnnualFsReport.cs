@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ namespace eSchool.MyPrints
     {
         private String lblFeeStruc;
         List<AnnualFeeStructure> lFeeStruc;
+
         public FrmAnnualFsReport(string lblFeeStruc, List<AnnualFeeStructure> listFeeStruc)
         {
             InitializeComponent();
@@ -29,19 +32,36 @@ namespace eSchool.MyPrints
         private void FrmAnnualFsReport_Load(object sender, EventArgs e)
         {
             AnnualFeeStructureBindingSource.DataSource = lFeeStruc;
-     
-            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
-            {
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolName",schoolName),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress",schoolAddress),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo",schoolCell),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolMotto",schoolMotto),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail",schoolEmail),
-                new Microsoft.Reporting.WinForms.ReportParameter("formfeeslbl",lblFeeStruc),
-                 new Microsoft.Reporting.WinForms.ReportParameter("schoolLogo","school2")
-                //table data from list
-            };
+           
 
+            ReportParameter[] p = new ReportParameter[7];
+            p[0] = new ReportParameter("schoolName", schoolName);
+            p[1] = new ReportParameter("schoolAddress", schoolAddress);
+            p[2] = new ReportParameter("schoolCellNo", schoolCell);
+            p[3] = new ReportParameter("schoolMotto", schoolMotto);
+            p[4] = new ReportParameter("schoolEmail", schoolEmail);
+            p[5] = new ReportParameter("formfeeslbl", lblFeeStruc);
+
+
+            PrintsLogo printsLogo = new PrintsLogo();
+            printsLogo.ImgPath = "";
+            string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+            string myf = tt + ".\\Output.jpg";
+            if ((File.Exists(myf)))
+            {
+                //path
+                printsLogo.ImgPath = myf;
+            }
+            else
+            {
+                //TODO else default image
+            }
+            string ff = new Uri(myf).AbsoluteUri;
+
+
+            p[6] = new ReportParameter("ImagePath", ff);
+
+            this.reportViewer.LocalReport.EnableExternalImages = true;
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();
             

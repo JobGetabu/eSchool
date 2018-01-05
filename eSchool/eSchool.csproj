@@ -82,7 +82,6 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Syncfusion.Shared.Base, Version=15.2460.0.40, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -272,6 +271,7 @@
       <DependentUpon>MyLogo.resx</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="MyPrints\PrintsLogo.cs" />
     <Compile Include="MySettings\FrmAddCategories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -888,6 +888,7 @@
     <None Include="Properties\DataSources\Category.datasource" />
     <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure.datasource" />
     <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure1.datasource" />
+    <None Include="Properties\DataSources\eSchool.MyPrints.PrintsLogo.datasource" />
     <None Include="Properties\DataSources\eSchool.ReceiptPrints.PaymentDetails.datasource" />
     <None Include="Properties\DataSources\eSchool.ReceiptPrints.PaymentOverheads.datasource" />
     <None Include="Properties\DataSources\eSchool.ReceiptPrints.StudentDetails.datasource" />
@@ -960,6 +961,9 @@
     <None Include="Resources\Phone_50px.png" />
     <None Include="Resources\Update_50px.png" />
     <None Include="Resources\logo.jpg" />
+    <EmbeddedResource Include="school2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

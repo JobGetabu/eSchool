@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace eSchool.TrialBal
 {
@@ -20,7 +22,7 @@ namespace eSchool.TrialBal
         {
             InitializeComponent();
         }
-        public FrmTrialBalance(TrialDetails trialDetails,List<IncomeDetails> incomeDetails,List<ExpenseDetails> expenseDetails)
+        public FrmTrialBalance(TrialDetails trialDetails, List<IncomeDetails> incomeDetails, List<ExpenseDetails> expenseDetails)
         {
             InitializeComponent();
 
@@ -45,7 +47,6 @@ namespace eSchool.TrialBal
                 new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress",schoolAddress),
                 new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo",schoolCell),
                 new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail",schoolEmail),
-                 new Microsoft.Reporting.WinForms.ReportParameter("schoolLogo","school2"),
                   new Microsoft.Reporting.WinForms.ReportParameter("periodText",$"{trialDetails.PeriodText}"),
                    new Microsoft.Reporting.WinForms.ReportParameter("periodValue",$"{trialDetails.PeriodValue}"),
 
@@ -57,7 +58,22 @@ namespace eSchool.TrialBal
 
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();
+        }
 
+        private void SetImage(Microsoft.Reporting.WinForms.ReportParameter[] p,int index)
+        {
+            reportViewer.LocalReport.EnableExternalImages = true;
+
+            string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+            string myf = tt + ".\\Output.jpg";
+            if ((File.Exists(myf)))
+            {
+                p[index] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", myf);
+            }
+            if ((File.Exists(".\\school2.jpg")))
+            {
+                p[index] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ".\\school2.jpg");
+            }
         }
     }
 }

@@ -1014,14 +1014,14 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="schoollogo">
+        <Image Name="schoolLogo">
           <Source>Embedded</Source>
           <Value>school21</Value>
-          <Sizing>Fit</Sizing>
+          <Sizing>FitProportional</Sizing>
           <Top>0.10516in</Top>
           <Left>0.8099in</Left>
           <Height>0.78223in</Height>
-          <Width>2.01041in</Width>
+          <Width>1.99999in</Width>
           <ZIndex>4</ZIndex>
           <ToolTip>School Logo</ToolTip>
           <Style>
@@ -1173,7 +1173,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="schoolLogo">
+    <ReportParameter Name="ImagePath">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
