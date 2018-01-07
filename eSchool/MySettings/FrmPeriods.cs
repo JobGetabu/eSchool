@@ -58,6 +58,12 @@ namespace eSchool.MySettings
                 e.Cancel = true;
                 return;
             }
+            if (test1 < 1979)
+            {
+                alert.Show("Invalid year input !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
 
             Properties.Settings.Default.CurrentTerm = selTerm;
             Properties.Settings.Default.CurrentYear = test1;

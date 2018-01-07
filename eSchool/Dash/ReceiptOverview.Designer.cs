@@ -34,10 +34,10 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblReceipted = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblPending = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1.SuspendLayout();
             this.tableLPanelBody.SuspendLayout();
@@ -109,7 +109,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.bunifuCustomLabel2);
+            this.panel2.Controls.Add(this.lblReceipted);
             this.panel2.Controls.Add(this.bunifuCustomLabel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(115, 3);
@@ -117,19 +117,19 @@
             this.panel2.Size = new System.Drawing.Size(106, 59);
             this.panel2.TabIndex = 1;
             // 
-            // bunifuCustomLabel2
+            // lblReceipted
             // 
-            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblReceipted.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(45, 5);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(23, 28);
-            this.bunifuCustomLabel2.TabIndex = 12;
-            this.bunifuCustomLabel2.Text = "8";
+            this.lblReceipted.AutoSize = true;
+            this.lblReceipted.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
+            this.lblReceipted.ForeColor = System.Drawing.Color.Black;
+            this.lblReceipted.Location = new System.Drawing.Point(45, 5);
+            this.lblReceipted.Name = "lblReceipted";
+            this.lblReceipted.Size = new System.Drawing.Size(23, 28);
+            this.lblReceipted.TabIndex = 12;
+            this.lblReceipted.Text = "8";
             // 
             // bunifuCustomLabel3
             // 
@@ -147,7 +147,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
+            this.panel1.Controls.Add(this.lblPending);
             this.panel1.Controls.Add(this.bunifuCustomLabel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -155,19 +155,19 @@
             this.panel1.Size = new System.Drawing.Size(106, 59);
             this.panel1.TabIndex = 0;
             // 
-            // bunifuCustomLabel1
+            // lblPending
             // 
-            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblPending.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(50, 5);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(23, 28);
-            this.bunifuCustomLabel1.TabIndex = 10;
-            this.bunifuCustomLabel1.Text = "0";
+            this.lblPending.AutoSize = true;
+            this.lblPending.Font = new System.Drawing.Font("Segoe UI Semibold", 14.75F, System.Drawing.FontStyle.Bold);
+            this.lblPending.ForeColor = System.Drawing.Color.Black;
+            this.lblPending.Location = new System.Drawing.Point(50, 5);
+            this.lblPending.Name = "lblPending";
+            this.lblPending.Size = new System.Drawing.Size(23, 28);
+            this.lblPending.TabIndex = 10;
+            this.lblPending.Text = "0";
             // 
             // bunifuCustomLabel5
             // 
@@ -213,8 +213,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblReceipted;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblPending;
     }
 }
