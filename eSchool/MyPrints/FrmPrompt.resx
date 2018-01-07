@@ -120,6 +120,9 @@
   <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>62</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -150,13 +153,13 @@
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAEqSURBVHhe7c4xikQxEAPRf/9Lz+bCUCtoFw76gSIF0rfWWmutVfg9nutOoy/lutPoS7nuNPpS
-        rtMHgf5HHwT6H30Q6H/0QaD/0QeB/kcfBPofGsx+Oon6cTSY/XQS9eNoMPvpJOrH0WD200nUj9MHgf5H
-        HwT6H30Q6H/0QaD/ocG2b5OoH0eDbd8mUT+OBtu+TaJ+HA22fZtE/Th9EOh/9EGg/9EHgf5HHwT6Hxps
-        +zaJ+nE02PZtEvXjaLDt2yTqx9Fg27dJ1I/TB4H+Rx8E+h99EOh/9EGg/6HBtm+TqB9Hg23fJlE/jgbb
-        vk2ifhwNtn2bRP04fRDof/RBoP/RB4H+Rx8E+h99EOh/9EGg/8nB13LdafSlXHcafSnXnUZfylprrbXW
-        P3zfH8i8zF6wyOi2AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAASpJREFUeF7t
+        zjGKRDEQA9F//0vP5sJQK2gXDvqBIgXSt9Zaa61V+D2e606jL+W60+hLue40+lKu0weB/kcfBPoffRDo
+        f/RBoP/RB4H+Rx8E+h8azH46ifpxNJj9dBL142gw++kk6sfRYPbTSdSP0weB/kcfBPoffRDof/RBoP+h
+        wbZvk6gfR4Nt3yZRP44G275Non4cDbZ9m0T9OH0Q6H/0QaD/0QeB/kcfBPofGmz7Non6cTTY9m0S9eNo
+        sO3bJOrH0WDbt0nUj9MHgf5HHwT6H30Q6H/0QaD/ocG2b5OoH0eDbd8mUT+OBtu+TaJ+HA22fZtE/Th9
+        EOh/9EGg/9EHgf5HHwT6H30Q6H/0QaD/ycHXct1p9KVcdxp9KdedRl/KWmuttdY/fN8fyLzMXrDI6LYA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnCancel.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -185,9 +188,6 @@
         zAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="bunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>303, 19</value>
-  </metadata>
   <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>427, 19</value>
   </metadata>

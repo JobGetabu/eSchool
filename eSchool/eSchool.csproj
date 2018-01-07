@@ -499,6 +499,12 @@
       <DependentUpon>OverHeadListItem.cs</DependentUpon>
     </Compile>
     <Compile Include="PassDataEventArgs.cs" />
+    <Compile Include="Profiles\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profiles\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profiles\FrmEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -822,6 +828,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewSettings.resx">
       <DependentUpon>NewSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profiles\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profiles\FrmEditUser.resx">
       <DependentUpon>FrmEditUser.cs</DependentUpon>
