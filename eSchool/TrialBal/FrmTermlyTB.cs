@@ -128,8 +128,8 @@ namespace eSchool.TrialBal
             {
                 if (selYear != 0)
                 {
-                   // await Task.Run(() => TransCashlbl(selFilTerms, selYear, true)) ;
-                   await TransCashlbl(selFilTerms, selYear, true);
+                   await Task.Run(() => TransCashlbl(selFilTerms, selYear, true));
+                  // await TransCashlbl(selFilTerms, selYear, true);
 
                     TrialDetails tdd = new TrialDetails()
                     {

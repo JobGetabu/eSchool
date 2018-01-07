@@ -43,19 +43,19 @@ namespace eSchool.TrialBal
             this.ExpenseDetailsBindingSource.DataSource = expenseDetails;
             this.IncomeDetailsBindingSource.DataSource = incomeDetails;
 
-            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[12];
+            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[11];
 
             p[0] = new ReportParameter("schoolName", schoolName);
             p[1] = new ReportParameter("schoolAddress", schoolAddress);
             p[2] = new ReportParameter("schoolCellNo", schoolCell);
             p[3] = new ReportParameter("schoolEmail", schoolEmail);
             p[4] = new ReportParameter("periodText", $"{trialDetails.PeriodText}");
-            p[6] = new ReportParameter("periodValue", $"{trialDetails.PeriodValue}");
+            p[5] = new ReportParameter("periodValue", $"{trialDetails.PeriodValue}");
 
-            p[7] = new ReportParameter("openingBal", $"{trialDetails.OpeningBal}");
-            p[8] = new ReportParameter("closingBal", $"{trialDetails.ClosingBal}");
-            p[9] = new ReportParameter("totalIncome", $"{trialDetails.TotalIncome}");
-            p[10] = new ReportParameter("totalExpense", $"{trialDetails.TotalExpense}");
+            p[6] = new ReportParameter("openingBal", $"{trialDetails.OpeningBal}");
+            p[7] = new ReportParameter("closingBal", $"{trialDetails.ClosingBal}");
+            p[8] = new ReportParameter("totalIncome", $"{trialDetails.TotalIncome}");
+            p[9] = new ReportParameter("totalExpense", $"{trialDetails.TotalExpense}");
 
 
             PrintsLogo printsLogo = new PrintsLogo();
@@ -76,9 +76,9 @@ namespace eSchool.TrialBal
             string ff = new Uri(myf).AbsoluteUri;
 
 
-            p[11] = new ReportParameter("ImagePath", ff);
+            p[10] = new ReportParameter("ImagePath", ff);
 
-            reportViewer.LocalReport.EnableExternalImages = true;
+            this.reportViewer.LocalReport.EnableExternalImages = true;
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();
         }
