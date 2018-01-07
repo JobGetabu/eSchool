@@ -1,8 +1,11 @@
-﻿using System;
+﻿using eSchool.MyPrints;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,22 +36,40 @@ namespace eSchool.ReceiptPrints
         {
             PaymentOverheadsBindingSource.DataSource = listPayOv;
             string dd = "Receipt Date: " + DateTime.Now.ToShortDateString();
-        Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
-           {
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolName",schoolName),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress",schoolAddress),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo",schoolCell),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail",schoolEmail),
-                 new Microsoft.Reporting.WinForms.ReportParameter("schoolLogo","school2"),
-                  new Microsoft.Reporting.WinForms.ReportParameter("studentName",$"{sDetails.StudentName}"),
-                   new Microsoft.Reporting.WinForms.ReportParameter("studentReg",$"{sDetails.StudentAdminNo}"),
+        Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[12];
 
-                    new Microsoft.Reporting.WinForms.ReportParameter("feeId",$"{pDetails.FeeId}"),
-                     new Microsoft.Reporting.WinForms.ReportParameter("status",$"{pDetails.Status}"),
-                      new Microsoft.Reporting.WinForms.ReportParameter("credit",$"{pDetails.Credit}"),
-                       new Microsoft.Reporting.WinForms.ReportParameter("balance",$"{pDetails.Balance}"),
-                       new Microsoft.Reporting.WinForms.ReportParameter("date",$"{dd}")
-           };
+            p[0] = new ReportParameter("schoolName", schoolName);
+            p[1] = new ReportParameter("schoolAddress", schoolAddress);
+            p[2] = new ReportParameter("schoolCellNo", schoolCell);
+
+            p[3] = new ReportParameter("schoolEmail", schoolEmail);
+            p[4] = new ReportParameter("studentName", $"{sDetails.StudentName}");
+            p[5] = new ReportParameter("studentReg", $"{sDetails.StudentAdminNo}");
+            p[6] = new ReportParameter("feeId", $"{pDetails.FeeId}");
+            p[7] = new ReportParameter("status", $"{pDetails.Status}");
+            p[8] = new ReportParameter("credit", $"{pDetails.Credit}");
+            p[9] = new ReportParameter("balance", $"{pDetails.Balance}");
+            p[10] = new ReportParameter("date", $"{dd}");
+
+
+            PrintsLogo printsLogo = new PrintsLogo();
+            printsLogo.ImgPath = "";
+            string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+            string myf = tt + ".\\Output.jpg";
+            if ((File.Exists(myf)))
+            {
+                //path
+                printsLogo.ImgPath = myf;
+            }
+            else
+            {
+                //TODO else default image
+               
+            }
+            string ff = new Uri(myf).AbsoluteUri;
+
+            p[11] = new ReportParameter("ImagePath", ff);
+
 
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();

@@ -177,6 +177,36 @@ namespace eSchool
             TabSwitcher(DashboardUI.Instance);
 
             this.metroComboBoxSearch.SelectedIndex = 0;
+
+            //create a directory at My Documents
+            //save a default logo image
+            try
+            {
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "eSchool"));
+
+                string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+                string myf = tt + ".\\school2.jpg";
+                if (File.Exists(myf))
+                {
+
+                }
+                else
+                {
+                    using (Bitmap bmp = new Bitmap(MyLogo.school2))
+                    {  
+                        //write image                     
+                        bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);  
+                    }              
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("Start App as Administrator");
+            }
+            catch (Exception)
+            {
+
+            }
         }
         private void btn_settings_Click(object sender, EventArgs e)
         {
