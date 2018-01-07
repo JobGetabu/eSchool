@@ -508,8 +508,8 @@
           </Style>
         </Textbox>
         <Image Name="schoollogo">
-          <Source>Embedded</Source>
-          <Value>school21</Value>
+          <Source>External</Source>
+          <Value>=Parameters!ImagePath.Value</Value>
           <Sizing>Fit</Sizing>
           <Top>0.10516in</Top>
           <Left>2.52604in</Left>
@@ -613,8 +613,9 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="schoolLogo">
+    <ReportParameter Name="ImagePath">
       <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

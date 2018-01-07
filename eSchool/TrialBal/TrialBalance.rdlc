@@ -1015,8 +1015,8 @@
           </Style>
         </Textbox>
         <Image Name="schoolLogo">
-          <Source>Embedded</Source>
-          <Value>school21</Value>
+          <Source>External</Source>
+          <Value>=Parameters!ImagePath.Value</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.10516in</Top>
           <Left>0.8099in</Left>
@@ -1175,6 +1175,7 @@
     </ReportParameter>
     <ReportParameter Name="ImagePath">
       <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="periodText">

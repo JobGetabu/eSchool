@@ -1,4 +1,6 @@
-﻿using System;
+﻿using eSchool.MyPrints;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,39 +43,44 @@ namespace eSchool.TrialBal
             this.ExpenseDetailsBindingSource.DataSource = expenseDetails;
             this.IncomeDetailsBindingSource.DataSource = incomeDetails;
 
-            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
-          {
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolName",schoolName),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress",schoolAddress),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo",schoolCell),
-                new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail",schoolEmail),
-                  new Microsoft.Reporting.WinForms.ReportParameter("periodText",$"{trialDetails.PeriodText}"),
-                   new Microsoft.Reporting.WinForms.ReportParameter("periodValue",$"{trialDetails.PeriodValue}"),
+            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[12];
 
-                    new Microsoft.Reporting.WinForms.ReportParameter("openingBal",$"{trialDetails.OpeningBal}"),
-                     new Microsoft.Reporting.WinForms.ReportParameter("closingBal",$"{trialDetails.ClosingBal}"),
-                      new Microsoft.Reporting.WinForms.ReportParameter("totalIncome",$"{trialDetails.TotalIncome}"),
-                       new Microsoft.Reporting.WinForms.ReportParameter("totalExpense",$"{trialDetails.TotalExpense}")
-          };
+            p[0] = new ReportParameter("schoolName", schoolName);
+            p[1] = new ReportParameter("schoolAddress", schoolAddress);
+            p[2] = new ReportParameter("schoolCellNo", schoolCell);
+            p[3] = new ReportParameter("schoolEmail", schoolEmail);
+            p[4] = new ReportParameter("periodText", $"{trialDetails.PeriodText}");
+            p[6] = new ReportParameter("periodValue", $"{trialDetails.PeriodValue}");
 
-            this.reportViewer.LocalReport.SetParameters(p);
-            this.reportViewer.RefreshReport();
-        }
+            p[7] = new ReportParameter("openingBal", $"{trialDetails.OpeningBal}");
+            p[8] = new ReportParameter("closingBal", $"{trialDetails.ClosingBal}");
+            p[9] = new ReportParameter("totalIncome", $"{trialDetails.TotalIncome}");
+            p[10] = new ReportParameter("totalExpense", $"{trialDetails.TotalExpense}");
 
-        private void SetImage(Microsoft.Reporting.WinForms.ReportParameter[] p,int index)
-        {
-            reportViewer.LocalReport.EnableExternalImages = true;
 
+            PrintsLogo printsLogo = new PrintsLogo();
+            printsLogo.ImgPath = "";
             string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
             string myf = tt + ".\\Output.jpg";
             if ((File.Exists(myf)))
             {
-                p[index] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", myf);
+                //path
+                printsLogo.ImgPath = myf;
             }
-            if ((File.Exists(".\\school2.jpg")))
+            else
             {
-                p[index] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ".\\school2.jpg");
+                //TODO else default image
+                myf = tt + ".\\school2.jpg";
+                printsLogo.ImgPath = myf;
             }
+            string ff = new Uri(myf).AbsoluteUri;
+
+
+            p[11] = new ReportParameter("ImagePath", ff);
+
+            reportViewer.LocalReport.EnableExternalImages = true;
+            this.reportViewer.LocalReport.SetParameters(p);
+            this.reportViewer.RefreshReport();
         }
     }
 }

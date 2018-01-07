@@ -64,13 +64,14 @@ namespace eSchool.ReceiptPrints
             else
             {
                 //TODO else default image
-               
+                myf = tt + ".\\school2.jpg";
+                printsLogo.ImgPath = myf;
             }
             string ff = new Uri(myf).AbsoluteUri;
 
             p[11] = new ReportParameter("ImagePath", ff);
 
-
+            this.reportViewer.LocalReport.EnableExternalImages = true;
             this.reportViewer.LocalReport.SetParameters(p);
             this.reportViewer.RefreshReport();
         }

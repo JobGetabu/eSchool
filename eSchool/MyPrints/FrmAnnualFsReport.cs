@@ -55,6 +55,8 @@ namespace eSchool.MyPrints
             else
             {
                 //TODO else default image
+                myf = tt + ".\\school2.jpg";
+                printsLogo.ImgPath = myf;
             }
             string ff = new Uri(myf).AbsoluteUri;
 

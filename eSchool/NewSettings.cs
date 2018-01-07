@@ -203,8 +203,7 @@ namespace eSchool
         }
 
         private void SaveLogo(string path)
-        {
-           
+        {         
             string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
             string myf = tt + ".\\Output.jpg";
             //read image
