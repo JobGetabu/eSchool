@@ -51,6 +51,7 @@ namespace eSchool
 
         DashboardUI das = DashboardUI.Instance;
 
+         
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
             //UI design Code
@@ -338,6 +339,18 @@ namespace eSchool
             }
         }
 
+        private void ColorSelection()
+        {
+            btn_dashboard.selected = false;
+            btn_expenses.selected = false;
+            btn_fees.selected = false;
+            btn_imports.selected = false;
+            btn_income.selected = false;
+            btn_invoices.selected = false;
+            btn_transations.selected = false;
+            btn_Accounts.selected = false;
+            btn_settings.selected = false;
+        }
         private void bDropdownDashMenu_onItemSelected(object sender, EventArgs e)
         {
             //Profile
@@ -345,15 +358,18 @@ namespace eSchool
             //Log out
             if (bDropdownDashMenu.selectedValue.Equals("Settings"))
             {
+                ColorSelection();
+                btn_settings.selected = true;
+                btn_settings.Focus();
                 btn_settings_Click(sender, e);
             }
             if (bDropdownDashMenu.selectedValue.Equals("Profile"))
             {
-                
+                ColorSelection();
             }
             if (bDropdownDashMenu.selectedValue.Equals("Log out"))
             {
-                
+                ColorSelection();
             }
         }
     }
