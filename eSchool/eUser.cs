@@ -12,11 +12,17 @@ namespace eSchool
     using System;
     using System.Collections.Generic;
     
-    public partial class Login_Users
+    public partial class eUser
     {
         public int Id { get; set; }
-        public string User_Name { get; set; }
+        public string Email { get; set; }
+        public string username { get; set; }
+        public string FullName { get; set; }
+        public string Type { get; set; }
+        public string Occupation { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
+        public string Phone { get; set; }
+        public System.DateTime DateRegistered { get; set; }
+        public string ProfImage { get; set; }
     }
 }

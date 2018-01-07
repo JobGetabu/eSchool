@@ -34,6 +34,21 @@
           <Property Name="Year" Type="int" />
           <Property Name="Month" Type="int" />
         </EntityType>
+        <EntityType Name="eUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="username" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Occupation" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateRegistered" Type="datetime" Nullable="false" />
+          <Property Name="ProfImage" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="Expense">
           <Key>
             <PropertyRef Name="ExId" />
@@ -116,15 +131,6 @@
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Term" Type="int" />
           <Property Name="Year" Type="int" />
-        </EntityType>
-        <EntityType Name="Login_Users">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="User Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Role" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OverHeadCategory">
           <Key>
@@ -417,13 +423,13 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySet Name="Accounts" EntityType="Self.Accounts" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
           <EntitySet Name="ClosingBalances" EntityType="Self.ClosingBalances" store:Type="Tables" />
+          <EntitySet Name="eUser" EntityType="Self.eUser" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" store:Type="Tables" />
           <EntitySet Name="Fees" EntityType="Self.Fees" store:Type="Tables" />
           <EntitySet Name="FeesRequiredPerTerm" EntityType="Self.FeesRequiredPerTerm" store:Type="Tables" />
           <EntitySet Name="GroupedFeeStructures" EntityType="Self.GroupedFeeStructures" store:Type="Tables" />
           <EntitySet Name="Income" EntityType="Self.Income" store:Type="Tables" />
           <EntitySet Name="Invoices" EntityType="Self.Invoices" store:Type="Tables" />
-          <EntitySet Name="Login_Users" EntityType="Self.Login_Users" store:Type="Tables" />
           <EntitySet Name="OverHeadCategory" EntityType="Self.OverHeadCategory" store:Type="Tables" />
           <EntitySet Name="OverHeadCategoryPerYear" EntityType="Self.OverHeadCategoryPerYear" store:Type="Tables" />
           <EntitySet Name="SchoolPeriodTerm" EntityType="Self.SchoolPeriodTerm" store:Type="Tables" />
@@ -565,15 +571,6 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Income" FromRole="Income" ToRole="SchoolPeriodYear" />
           <Property Name="Acc_Fk" Type="Int32" />
           <NavigationProperty Name="Account" Relationship="EschoolModel.Accounts_IncFk" FromRole="Income" ToRole="Account" />
-        </EntityType>
-        <EntityType Name="Login_Users">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OverHeadCategory">
           <Key>
@@ -781,7 +778,6 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySet Name="Fees" EntityType="Self.Fee" />
           <EntitySet Name="FeesRequiredPerTerms" EntityType="Self.FeesRequiredPerTerm" />
           <EntitySet Name="Incomes" EntityType="Self.Income" />
-          <EntitySet Name="Login_Users" EntityType="Self.Login_Users" />
           <EntitySet Name="OverHeadCategories" EntityType="Self.OverHeadCategory" />
           <EntitySet Name="OverHeadCategoryPerYears" EntityType="Self.OverHeadCategoryPerYear" />
           <EntitySet Name="SchoolPeriodTerms" EntityType="Self.SchoolPeriodTerm" />
@@ -858,6 +854,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Income" EntitySet="Incomes" />
           </AssociationSet>
+          <EntitySet Name="eUsers" EntityType="EschoolModel.eUser" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -1017,6 +1014,21 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="eUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Occupation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateRegistered" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProfImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1077,16 +1089,6 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
                 <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Login_Users">
-            <EntityTypeMapping TypeName="EschoolModel.Login_Users">
-              <MappingFragment StoreEntitySet="Login_Users">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="User_Name" ColumnName="User Name" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1228,6 +1230,22 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
                 <ScalarProperty Name="AccNo" ColumnName="AccNo" />
                 <ScalarProperty Name="AccName" ColumnName="AccName" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eUsers">
+            <EntityTypeMapping TypeName="EschoolModel.eUser">
+              <MappingFragment StoreEntitySet="eUser">
+                <ScalarProperty Name="ProfImage" ColumnName="ProfImage" />
+                <ScalarProperty Name="DateRegistered" ColumnName="DateRegistered" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

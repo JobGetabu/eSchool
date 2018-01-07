@@ -29,7 +29,6 @@ namespace eSchool
         public DbSet<Fee> Fees { get; set; }
         public DbSet<FeesRequiredPerTerm> FeesRequiredPerTerms { get; set; }
         public DbSet<Income> Incomes { get; set; }
-        public DbSet<Login_Users> Login_Users { get; set; }
         public DbSet<OverHeadCategory> OverHeadCategories { get; set; }
         public DbSet<OverHeadCategoryPerYear> OverHeadCategoryPerYears { get; set; }
         public DbSet<SchoolPeriodTerm> SchoolPeriodTerms { get; set; }
@@ -42,5 +41,6 @@ namespace eSchool
         public DbSet<StudentImport> StudentImports { get; set; }
         public DbSet<ClosingBalance> ClosingBalances { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<eUser> eUsers { get; set; }
     }
 }

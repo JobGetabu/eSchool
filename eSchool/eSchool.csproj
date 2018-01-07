@@ -154,6 +154,9 @@
     <Compile Include="Dash\TransOverview.Designer.cs">
       <DependentUpon>TransOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="eUser.cs">
+      <DependentUpon>EschoolModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ExpenceUIs\ExpenceLogo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -436,9 +439,6 @@
     </Compile>
     <Compile Include="ListControl.Designer.cs">
       <DependentUpon>ListControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login_Users.cs">
-      <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyPrints2\FrmTermFsReport.cs">
       <SubType>Form</SubType>
