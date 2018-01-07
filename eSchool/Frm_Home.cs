@@ -1,5 +1,6 @@
 ﻿using Bunifu.Framework.UI;
 using eSchool.Dash;
+using eSchool.Profiles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -366,6 +367,7 @@ namespace eSchool
             if (bDropdownDashMenu.selectedValue.Equals("Profile"))
             {
                 ColorSelection();
+                TabSwitcher(UserProfile.Instance);
             }
             if (bDropdownDashMenu.selectedValue.Equals("Log out"))
             {
