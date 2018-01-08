@@ -1,6 +1,7 @@
 ﻿using Bunifu.Framework.UI;
 using eSchool.Dash;
 using eSchool.Profiles;
+using eSchool.TheLogins;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -372,6 +373,8 @@ namespace eSchool
             if (bDropdownDashMenu.selectedValue.Equals("Log out"))
             {
                 ColorSelection();
+                FrmLogin xx = new FrmLogin();
+                xx.Show();
             }
         }
     }

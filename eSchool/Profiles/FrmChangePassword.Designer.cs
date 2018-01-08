@@ -38,8 +38,8 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbSchoolCode = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.tbCurrentPs = new MetroFramework.Controls.MetroTextBox();
+            this.tbNewPs = new MetroFramework.Controls.MetroTextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -163,75 +163,75 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // tbSchoolCode
+            // tbCurrentPs
             // 
             // 
             // 
             // 
-            this.tbSchoolCode.CustomButton.Image = null;
-            this.tbSchoolCode.CustomButton.Location = new System.Drawing.Point(185, 1);
-            this.tbSchoolCode.CustomButton.Name = "";
-            this.tbSchoolCode.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.tbSchoolCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tbSchoolCode.CustomButton.TabIndex = 1;
-            this.tbSchoolCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbSchoolCode.CustomButton.UseSelectable = true;
-            this.tbSchoolCode.CustomButton.Visible = false;
-            this.tbSchoolCode.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.tbSchoolCode.Lines = new string[0];
-            this.tbSchoolCode.Location = new System.Drawing.Point(31, 83);
-            this.tbSchoolCode.MaxLength = 32767;
-            this.tbSchoolCode.Name = "tbSchoolCode";
-            this.tbSchoolCode.PasswordChar = '0';
-            this.tbSchoolCode.PromptText = "Current Password";
-            this.tbSchoolCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbSchoolCode.SelectedText = "";
-            this.tbSchoolCode.SelectionLength = 0;
-            this.tbSchoolCode.SelectionStart = 0;
-            this.tbSchoolCode.ShortcutsEnabled = true;
-            this.tbSchoolCode.Size = new System.Drawing.Size(211, 27);
-            this.tbSchoolCode.Style = MetroFramework.MetroColorStyle.Pink;
-            this.tbSchoolCode.TabIndex = 46;
-            this.tbSchoolCode.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbSchoolCode.UseSelectable = true;
-            this.tbSchoolCode.WaterMark = "Current Password";
-            this.tbSchoolCode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbSchoolCode.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCurrentPs.CustomButton.Image = null;
+            this.tbCurrentPs.CustomButton.Location = new System.Drawing.Point(185, 1);
+            this.tbCurrentPs.CustomButton.Name = "";
+            this.tbCurrentPs.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.tbCurrentPs.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbCurrentPs.CustomButton.TabIndex = 1;
+            this.tbCurrentPs.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbCurrentPs.CustomButton.UseSelectable = true;
+            this.tbCurrentPs.CustomButton.Visible = false;
+            this.tbCurrentPs.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.tbCurrentPs.Lines = new string[0];
+            this.tbCurrentPs.Location = new System.Drawing.Point(31, 83);
+            this.tbCurrentPs.MaxLength = 32767;
+            this.tbCurrentPs.Name = "tbCurrentPs";
+            this.tbCurrentPs.PasswordChar = '0';
+            this.tbCurrentPs.PromptText = "Current Password";
+            this.tbCurrentPs.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbCurrentPs.SelectedText = "";
+            this.tbCurrentPs.SelectionLength = 0;
+            this.tbCurrentPs.SelectionStart = 0;
+            this.tbCurrentPs.ShortcutsEnabled = true;
+            this.tbCurrentPs.Size = new System.Drawing.Size(211, 27);
+            this.tbCurrentPs.Style = MetroFramework.MetroColorStyle.Pink;
+            this.tbCurrentPs.TabIndex = 46;
+            this.tbCurrentPs.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbCurrentPs.UseSelectable = true;
+            this.tbCurrentPs.WaterMark = "Current Password";
+            this.tbCurrentPs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbCurrentPs.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // metroTextBox1
-            // 
-            // 
+            // tbNewPs
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(185, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(31, 126);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '0';
-            this.metroTextBox1.PromptText = "New Password";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(211, 27);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Pink;
-            this.metroTextBox1.TabIndex = 47;
-            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "New Password";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // 
+            this.tbNewPs.CustomButton.Image = null;
+            this.tbNewPs.CustomButton.Location = new System.Drawing.Point(185, 1);
+            this.tbNewPs.CustomButton.Name = "";
+            this.tbNewPs.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.tbNewPs.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbNewPs.CustomButton.TabIndex = 1;
+            this.tbNewPs.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbNewPs.CustomButton.UseSelectable = true;
+            this.tbNewPs.CustomButton.Visible = false;
+            this.tbNewPs.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.tbNewPs.Lines = new string[0];
+            this.tbNewPs.Location = new System.Drawing.Point(31, 126);
+            this.tbNewPs.MaxLength = 32767;
+            this.tbNewPs.Name = "tbNewPs";
+            this.tbNewPs.PasswordChar = '0';
+            this.tbNewPs.PromptText = "New Password";
+            this.tbNewPs.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbNewPs.SelectedText = "";
+            this.tbNewPs.SelectionLength = 0;
+            this.tbNewPs.SelectionStart = 0;
+            this.tbNewPs.ShortcutsEnabled = true;
+            this.tbNewPs.Size = new System.Drawing.Size(211, 27);
+            this.tbNewPs.Style = MetroFramework.MetroColorStyle.Pink;
+            this.tbNewPs.TabIndex = 47;
+            this.tbNewPs.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbNewPs.UseSelectable = true;
+            this.tbNewPs.WaterMark = "New Password";
+            this.tbNewPs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbNewPs.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // FrmChangePassword
             // 
@@ -239,8 +239,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(284, 276);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.tbSchoolCode);
+            this.Controls.Add(this.tbNewPs);
+            this.Controls.Add(this.tbCurrentPs);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -269,7 +269,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox tbSchoolCode;
+        private MetroFramework.Controls.MetroTextBox tbNewPs;
+        private MetroFramework.Controls.MetroTextBox tbCurrentPs;
     }
 }

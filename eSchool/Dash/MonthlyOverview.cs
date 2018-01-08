@@ -218,7 +218,7 @@ namespace eSchool.Dash
 
                 //TODO find the no of users in the system 
                 var usersList =
-                     context.Login_Users.ToList();
+                     context.eUsers.ToList();
 
 
                 int usersCount = usersList.Count;
@@ -321,7 +321,7 @@ namespace eSchool.Dash
                 //TODO find the no of users in the system 
                 var usersList = await Task.Factory.StartNew(() =>
                 {
-                    return context.Login_Users.ToList();
+                    return context.eUsers.ToList();
                 });
 
                 int usersCount = usersList.Count;

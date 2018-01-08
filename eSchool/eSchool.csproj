@@ -582,6 +582,12 @@
     <Compile Include="TheAccs\FrmAddAcc.Designer.cs">
       <DependentUpon>FrmAddAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="TheLogins\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheLogins\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transation.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
@@ -875,6 +881,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TheAccs\FrmAddAcc.resx">
       <DependentUpon>FrmAddAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheLogins\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransationsUI.resx">
       <DependentUpon>TransationsUI.cs</DependentUpon>
