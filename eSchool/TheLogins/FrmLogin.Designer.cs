@@ -53,10 +53,10 @@
             this.tbUserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTrademark = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.tabSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tabSignUp = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.slideA.SuspendLayout();
             this.slideB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -102,6 +102,7 @@
             this.btnSignUP.TabIndex = 13;
             this.btnSignUP.Text = "Sign Up";
             this.btnSignUP.UseVisualStyleBackColor = false;
+            this.btnSignUP.Click += new System.EventHandler(this.btnSignUP_Click);
             // 
             // bunifuCustomLabel3
             // 
@@ -378,6 +379,13 @@
             this.lblTrademark.TabIndex = 6;
             this.lblTrademark.Text = "eSchool Finance System";
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -443,13 +451,6 @@
             this.tabSignUp.TabIndex = 0;
             this.tabSignUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tabSignUp.Click += new System.EventHandler(this.tabSignUp_Click);
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
-            this.bunifuDragControl1.Vertical = true;
             // 
             // FrmLogin
             // 
