@@ -397,8 +397,8 @@ namespace eSchool
             if (bDropdownDashMenu.selectedValue.Equals("Log out"))
             {
                 ColorSelection();
-                FrmLogin xx = new FrmLogin();
-                xx.Show();
+                this.Close();
+                
             }
         }
     }

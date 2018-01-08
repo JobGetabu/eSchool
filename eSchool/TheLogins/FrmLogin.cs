@@ -20,7 +20,8 @@ namespace eSchool.TheLogins
 
         private bool isSignUP = false;
         public eUser currentUser;
-        private string role;
+        private string role = "Administrator";
+        private int close = 0;
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,6 +79,7 @@ namespace eSchool.TheLogins
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            close = 1;
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
@@ -153,7 +155,7 @@ namespace eSchool.TheLogins
 
             //check availability of user name
 
-            if (string.IsNullOrEmpty(tbUserName.Text))
+            if (string.IsNullOrEmpty(tbUserNameSignUP.Text))
             {
                 //UI code  
                 UIcode();
@@ -162,7 +164,7 @@ namespace eSchool.TheLogins
                 e.Cancel = true;
                 return;
             }
-            eUser xx = UserFoundAsync(tbUserName.Text);
+            eUser xx = UserFoundAsync(tbUserNameSignUP.Text);
             if (xx != null)
             {
                 //UI code  
@@ -214,13 +216,15 @@ namespace eSchool.TheLogins
         {
             eUser reg = new eUser();
             reg.FullName = tbFullName.Text;
-            reg.HasAccess = 0;
+            short x = 0;
+            reg.HasAccess = x;
             reg.Email = tbEmail.Text;
             reg.DateRegistered = DateTime.Now;
             reg.Password = Encode(tbPasswordSignUp.Text);
             reg.username = tbUserNameSignUP.Text;
             reg.Type = role;
 
+            
             using (var context = new EschoolEntities())
             {
                 context.eUsers.Add(reg);
@@ -238,6 +242,11 @@ namespace eSchool.TheLogins
         }
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (close ==1)
+            {
+                e.Cancel = false;
+                return;
+            }
             if (isSignUP)
             {
                 //validate
@@ -254,7 +263,7 @@ namespace eSchool.TheLogins
 
                 //check availability of user name
 
-                if (string.IsNullOrEmpty(tbUserName.Text))
+                if (string.IsNullOrEmpty(tbUserNameSignUP.Text))
                 {
                     //UI code  
                     UIcode();
@@ -263,7 +272,7 @@ namespace eSchool.TheLogins
                     e.Cancel = true;
                     return;
                 }
-                eUser xx =  UserFoundAsync(tbUserName.Text);
+                eUser xx =  UserFoundAsync(tbUserNameSignUP.Text);
                 if (xx != null)
                 {
                     //UI code  
@@ -353,6 +362,7 @@ namespace eSchool.TheLogins
 
         private void btnSignIn_Click_1(object sender, EventArgs e)
         {
+            isSignUP = false;
             this.Close();
         }
 

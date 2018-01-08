@@ -221,7 +221,7 @@ namespace eSchool.Dash
                      context.eUsers.ToList();
 
 
-                int usersCount = usersList.Count;
+                int usersCount = usersList.Count -1;
 
                 lblUsers.Text = (usersCount).ToString();
 
