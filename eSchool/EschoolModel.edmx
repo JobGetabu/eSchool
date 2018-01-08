@@ -48,6 +48,7 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="DateRegistered" Type="datetime" Nullable="false" />
           <Property Name="ProfImage" Type="nvarchar" MaxLength="200" />
+          <Property Name="HasAccess" Type="smallint" />
         </EntityType>
         <EntityType Name="Expense">
           <Key>
@@ -1028,6 +1029,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="DateRegistered" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ProfImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HasAccess" Type="Int16" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1237,6 +1239,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="eUsers">
             <EntityTypeMapping TypeName="EschoolModel.eUser">
               <MappingFragment StoreEntitySet="eUser">
+                <ScalarProperty Name="HasAccess" ColumnName="HasAccess" />
                 <ScalarProperty Name="ProfImage" ColumnName="ProfImage" />
                 <ScalarProperty Name="DateRegistered" ColumnName="DateRegistered" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />

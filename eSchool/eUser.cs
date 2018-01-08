@@ -24,5 +24,6 @@ namespace eSchool
         public string Phone { get; set; }
         public System.DateTime DateRegistered { get; set; }
         public string ProfImage { get; set; }
+        public Nullable<short> HasAccess { get; set; }
     }
 }
