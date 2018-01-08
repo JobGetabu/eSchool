@@ -24,8 +24,10 @@ namespace eSchool.TheLogins
 
         private void tabSignUp_Click(object sender, EventArgs e)
         {
-            //UI code
-          
+            btnExit.Image = GridIcon.Shutdown_px;  // exit is now invisible;
+            btnExit.Focus();
+
+            //UI code          
             if (slideA.Left == 626)
             {
                 slideB.Visible = false;
@@ -45,8 +47,10 @@ namespace eSchool.TheLogins
 
         private void tabSignIn_Click(object sender, EventArgs e)
         {
-            //UI code
-           
+            btnExit.Image = GridIcon.Shutdown_32px;  //red exit is now visible;
+            btnExit.Focus();
+
+            //UI code          
             if (slideB.Left == 626)
             {
                 slideA.Visible = false;
@@ -67,6 +71,12 @@ namespace eSchool.TheLogins
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             tabSignUp_Click(sender,e);
+            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

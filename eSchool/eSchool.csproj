@@ -1001,6 +1001,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Resources\school2.jpg" />
+    <None Include="Resources\Shutdown_32px.png" />
+    <None Include="Resources\Shutdown_px.png" />
+    <None Include="Resources\profile1.jpg" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

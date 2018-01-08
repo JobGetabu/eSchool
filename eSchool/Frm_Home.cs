@@ -181,6 +181,12 @@ namespace eSchool
 
             this.metroComboBoxSearch.SelectedIndex = 0;
 
+
+            PrepareFolder();           
+        }
+
+        private void PrepareFolder()
+        {
             //create a directory at My Documents
             //save a default logo image
             try
@@ -196,10 +202,23 @@ namespace eSchool
                 else
                 {
                     using (Bitmap bmp = new Bitmap(MyLogo.school2))
-                    {  
+                    {
                         //write image                     
-                        bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);  
-                    }              
+                        bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                }
+                string fff = tt + ".\\profile1.jpg";
+                if (File.Exists(fff))
+                {
+
+                }
+                else
+                {
+                    using (Bitmap bmp = new Bitmap(MyLogo.profile1))
+                    {
+                        //write image                     
+                        bmp.Save(fff, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
                 }
             }
             catch (UnauthorizedAccessException)

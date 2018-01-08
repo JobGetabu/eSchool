@@ -34,30 +34,33 @@
             this.tabSignUp = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tabSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.slideA = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbFullName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.btnSignUP = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bDropdownRole = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbPasswordSignUp = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbEmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbUserNameSignUP = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbFullName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.slideB = new System.Windows.Forms.Panel();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbUserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbUserNameSignUP = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbPasswordSignUp = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbEmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bDropdownRole = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTrademark = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnSignIn = new System.Windows.Forms.Button();
-            this.btnSignUP = new System.Windows.Forms.Button();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.slideA.SuspendLayout();
             this.slideB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -136,16 +139,151 @@
             this.slideA.Size = new System.Drawing.Size(454, 394);
             this.slideA.TabIndex = 3;
             // 
-            // bunifuCustomLabel1
+            // btnSignUP
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(159, 15);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(83, 24);
-            this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = "Sign Up";
+            this.btnSignUP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.btnSignUP.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSignUP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.btnSignUP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.btnSignUP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.btnSignUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignUP.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSignUP.ForeColor = System.Drawing.Color.White;
+            this.btnSignUP.Location = new System.Drawing.Point(73, 318);
+            this.btnSignUP.Name = "btnSignUP";
+            this.btnSignUP.Size = new System.Drawing.Size(277, 40);
+            this.btnSignUP.TabIndex = 13;
+            this.btnSignUP.Text = "Sign Up";
+            this.btnSignUP.UseVisualStyleBackColor = false;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(36, 230);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(36, 17);
+            this.bunifuCustomLabel3.TabIndex = 12;
+            this.bunifuCustomLabel3.Text = "Role";
+            // 
+            // bDropdownRole
+            // 
+            this.bDropdownRole.BackColor = System.Drawing.Color.White;
+            this.bDropdownRole.BorderRadius = 3;
+            this.bDropdownRole.DisabledColor = System.Drawing.Color.Gray;
+            this.bDropdownRole.ForeColor = System.Drawing.Color.White;
+            this.bDropdownRole.Items = new string[] {
+        "Administrator",
+        "Finance",
+        "Teacher",
+        "Secretary"};
+            this.bDropdownRole.Location = new System.Drawing.Point(22, 256);
+            this.bDropdownRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bDropdownRole.Name = "bDropdownRole";
+            this.bDropdownRole.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.bDropdownRole.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.bDropdownRole.selectedIndex = 0;
+            this.bDropdownRole.Size = new System.Drawing.Size(394, 34);
+            this.bDropdownRole.TabIndex = 11;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(245, 139);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(69, 17);
+            this.bunifuCustomLabel8.TabIndex = 10;
+            this.bunifuCustomLabel8.Text = "Password";
+            // 
+            // tbPasswordSignUp
+            // 
+            this.tbPasswordSignUp.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.tbPasswordSignUp.BorderColorIdle = System.Drawing.Color.White;
+            this.tbPasswordSignUp.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.tbPasswordSignUp.BorderThickness = 1;
+            this.tbPasswordSignUp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPasswordSignUp.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbPasswordSignUp.ForeColor = System.Drawing.Color.White;
+            this.tbPasswordSignUp.isPassword = true;
+            this.tbPasswordSignUp.Location = new System.Drawing.Point(231, 167);
+            this.tbPasswordSignUp.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPasswordSignUp.Name = "tbPasswordSignUp";
+            this.tbPasswordSignUp.Size = new System.Drawing.Size(185, 34);
+            this.tbPasswordSignUp.TabIndex = 9;
+            this.tbPasswordSignUp.Text = "Mike kennedy ";
+            this.tbPasswordSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(36, 139);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(43, 17);
+            this.bunifuCustomLabel9.TabIndex = 8;
+            this.bunifuCustomLabel9.Text = "Email";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.tbEmail.BorderColorIdle = System.Drawing.Color.White;
+            this.tbEmail.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.tbEmail.BorderThickness = 1;
+            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbEmail.ForeColor = System.Drawing.Color.White;
+            this.tbEmail.isPassword = false;
+            this.tbEmail.Location = new System.Drawing.Point(22, 167);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(185, 34);
+            this.tbEmail.TabIndex = 7;
+            this.tbEmail.Text = "Mike kennedy ";
+            this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(245, 53);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(77, 17);
+            this.bunifuCustomLabel7.TabIndex = 6;
+            this.bunifuCustomLabel7.Text = "User Name";
+            // 
+            // tbUserNameSignUP
+            // 
+            this.tbUserNameSignUP.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.tbUserNameSignUP.BorderColorIdle = System.Drawing.Color.White;
+            this.tbUserNameSignUP.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.tbUserNameSignUP.BorderThickness = 1;
+            this.tbUserNameSignUP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUserNameSignUP.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbUserNameSignUP.ForeColor = System.Drawing.Color.White;
+            this.tbUserNameSignUP.isPassword = false;
+            this.tbUserNameSignUP.Location = new System.Drawing.Point(231, 81);
+            this.tbUserNameSignUP.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUserNameSignUP.Name = "tbUserNameSignUP";
+            this.tbUserNameSignUP.Size = new System.Drawing.Size(185, 34);
+            this.tbUserNameSignUP.TabIndex = 5;
+            this.tbUserNameSignUP.Text = "Mike kennedy ";
+            this.tbUserNameSignUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(36, 53);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(72, 17);
+            this.bunifuCustomLabel2.TabIndex = 2;
+            this.bunifuCustomLabel2.Text = "Full Name";
             // 
             // tbFullName
             // 
@@ -165,22 +303,22 @@
             this.tbFullName.Text = "Mike kennedy ";
             this.tbFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuCustomLabel2
+            // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(36, 53);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(72, 17);
-            this.bunifuCustomLabel2.TabIndex = 2;
-            this.bunifuCustomLabel2.Text = "Full Name";
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(159, 15);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(83, 24);
+            this.bunifuCustomLabel1.TabIndex = 0;
+            this.bunifuCustomLabel1.Text = "Sign Up";
             // 
             // bunifuDragControl1
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.TargetControl = this.panel1;
             this.bunifuDragControl1.Vertical = true;
             // 
             // bSeparator1
@@ -207,6 +345,23 @@
             this.slideB.Name = "slideB";
             this.slideB.Size = new System.Drawing.Size(454, 394);
             this.slideB.TabIndex = 5;
+            // 
+            // btnSignIn
+            // 
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.btnSignIn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSignIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
+            this.btnSignIn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.btnSignIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSignIn.ForeColor = System.Drawing.Color.White;
+            this.btnSignIn.Location = new System.Drawing.Point(95, 290);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(277, 40);
+            this.btnSignIn.TabIndex = 5;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = false;
             // 
             // bunifuCustomLabel4
             // 
@@ -275,124 +430,6 @@
             this.bunifuCustomLabel6.TabIndex = 0;
             this.bunifuCustomLabel6.Text = "Sign In";
             // 
-            // bunifuCustomLabel7
-            // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(245, 53);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(77, 17);
-            this.bunifuCustomLabel7.TabIndex = 6;
-            this.bunifuCustomLabel7.Text = "User Name";
-            // 
-            // tbUserNameSignUP
-            // 
-            this.tbUserNameSignUP.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.tbUserNameSignUP.BorderColorIdle = System.Drawing.Color.White;
-            this.tbUserNameSignUP.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.tbUserNameSignUP.BorderThickness = 1;
-            this.tbUserNameSignUP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserNameSignUP.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbUserNameSignUP.ForeColor = System.Drawing.Color.White;
-            this.tbUserNameSignUP.isPassword = false;
-            this.tbUserNameSignUP.Location = new System.Drawing.Point(231, 81);
-            this.tbUserNameSignUP.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserNameSignUP.Name = "tbUserNameSignUP";
-            this.tbUserNameSignUP.Size = new System.Drawing.Size(185, 34);
-            this.tbUserNameSignUP.TabIndex = 5;
-            this.tbUserNameSignUP.Text = "Mike kennedy ";
-            this.tbUserNameSignUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(245, 139);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(69, 17);
-            this.bunifuCustomLabel8.TabIndex = 10;
-            this.bunifuCustomLabel8.Text = "Password";
-            // 
-            // tbPasswordSignUp
-            // 
-            this.tbPasswordSignUp.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.tbPasswordSignUp.BorderColorIdle = System.Drawing.Color.White;
-            this.tbPasswordSignUp.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.tbPasswordSignUp.BorderThickness = 1;
-            this.tbPasswordSignUp.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPasswordSignUp.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbPasswordSignUp.ForeColor = System.Drawing.Color.White;
-            this.tbPasswordSignUp.isPassword = true;
-            this.tbPasswordSignUp.Location = new System.Drawing.Point(231, 167);
-            this.tbPasswordSignUp.Margin = new System.Windows.Forms.Padding(4);
-            this.tbPasswordSignUp.Name = "tbPasswordSignUp";
-            this.tbPasswordSignUp.Size = new System.Drawing.Size(185, 34);
-            this.tbPasswordSignUp.TabIndex = 9;
-            this.tbPasswordSignUp.Text = "Mike kennedy ";
-            this.tbPasswordSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel9
-            // 
-            this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(36, 139);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(43, 17);
-            this.bunifuCustomLabel9.TabIndex = 8;
-            this.bunifuCustomLabel9.Text = "Email";
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.tbEmail.BorderColorIdle = System.Drawing.Color.White;
-            this.tbEmail.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.tbEmail.BorderThickness = 1;
-            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbEmail.ForeColor = System.Drawing.Color.White;
-            this.tbEmail.isPassword = false;
-            this.tbEmail.Location = new System.Drawing.Point(22, 167);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(185, 34);
-            this.tbEmail.TabIndex = 7;
-            this.tbEmail.Text = "Mike kennedy ";
-            this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bDropdownRole
-            // 
-            this.bDropdownRole.BackColor = System.Drawing.Color.White;
-            this.bDropdownRole.BorderRadius = 3;
-            this.bDropdownRole.DisabledColor = System.Drawing.Color.Gray;
-            this.bDropdownRole.ForeColor = System.Drawing.Color.White;
-            this.bDropdownRole.Items = new string[] {
-        "Administrator",
-        "Finance",
-        "Teacher",
-        "Secretary"};
-            this.bDropdownRole.Location = new System.Drawing.Point(22, 256);
-            this.bDropdownRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bDropdownRole.Name = "bDropdownRole";
-            this.bDropdownRole.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.bDropdownRole.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.bDropdownRole.selectedIndex = 0;
-            this.bDropdownRole.Size = new System.Drawing.Size(394, 34);
-            this.bDropdownRole.TabIndex = 11;
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(36, 230);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(36, 17);
-            this.bunifuCustomLabel3.TabIndex = 12;
-            this.bunifuCustomLabel3.Text = "Role";
-            // 
             // lblTrademark
             // 
             this.lblTrademark.AutoSize = true;
@@ -405,39 +442,26 @@
             this.lblTrademark.TabIndex = 6;
             this.lblTrademark.Text = "eSchool Finance System";
             // 
-            // btnSignIn
+            // btnExit
             // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.btnSignIn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSignIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.btnSignIn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.btnSignIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(95, 290);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(277, 40);
-            this.btnSignIn.TabIndex = 5;
-            this.btnSignIn.Text = "Sign In";
-            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageActive")));
+            this.btnExit.Location = new System.Drawing.Point(495, 10);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(20, 20);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 65;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnSignUP
+            // panel1
             // 
-            this.btnSignUP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.btnSignUP.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSignUP.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
-            this.btnSignUP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.btnSignUP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.btnSignUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUP.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnSignUP.ForeColor = System.Drawing.Color.White;
-            this.btnSignUP.Location = new System.Drawing.Point(73, 318);
-            this.btnSignUP.Name = "btnSignUP";
-            this.btnSignUP.Size = new System.Drawing.Size(277, 40);
-            this.btnSignUP.TabIndex = 13;
-            this.btnSignUP.Text = "Sign Up";
-            this.btnSignUP.UseVisualStyleBackColor = false;
+            this.panel1.Location = new System.Drawing.Point(10, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(479, 13);
+            this.panel1.TabIndex = 66;
             // 
             // FrmLogin
             // 
@@ -445,6 +469,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
             this.ClientSize = new System.Drawing.Size(526, 499);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblTrademark);
             this.Controls.Add(this.slideB);
             this.Controls.Add(this.bSeparator1);
@@ -461,6 +487,7 @@
             this.slideA.PerformLayout();
             this.slideB.ResumeLayout(false);
             this.slideB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,5 +521,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblTrademark;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnSignUP;
+        private Bunifu.Framework.UI.BunifuImageButton btnExit;
+        private System.Windows.Forms.Panel panel1;
     }
 }
