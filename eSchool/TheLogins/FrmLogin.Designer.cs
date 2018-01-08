@@ -134,6 +134,7 @@
             this.bDropdownRole.selectedIndex = 0;
             this.bDropdownRole.Size = new System.Drawing.Size(394, 34);
             this.bDropdownRole.TabIndex = 11;
+            this.bDropdownRole.onItemSelected += new System.EventHandler(this.bDropdownRole_onItemSelected);
             // 
             // bunifuCustomLabel8
             // 
@@ -299,6 +300,7 @@
             this.btnSignIn.TabIndex = 5;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click_1);
             // 
             // bunifuCustomLabel4
             // 
@@ -457,7 +459,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.ClientSize = new System.Drawing.Size(1152, 499);
+            this.ClientSize = new System.Drawing.Size(526, 499);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblTrademark);
             this.Controls.Add(this.slideB);

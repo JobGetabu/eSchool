@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using custom_alert_notifications;
 using eSchool.Dash;
 using eSchool.Profiles;
 using eSchool.TheLogins;
@@ -18,6 +19,7 @@ namespace eSchool
 
     public partial class Frm_Home : Form
     {
+        eUser currentUser = null;
 
         //Singleton pattern ***best practices***
         private static Frm_Home _instance;
@@ -27,7 +29,7 @@ namespace eSchool
             {
                 if (_instance == null)
                 {
-                    _instance = new Frm_Home();
+                    _instance = new Frm_Home(_instance.currentUser);
                 }
                 return _instance;
             }
@@ -42,9 +44,12 @@ namespace eSchool
         /// <summary>
         /// TODO 1 Check for null settings to handle all NullException gracefully
         /// </summary>
-        public Frm_Home()
+        public Frm_Home(eUser currentUser)
         {
             InitializeComponent();
+
+            this.currentUser = currentUser;
+            alert.Show($"Welcome back {currentUser.username}", alert.AlertType.success);
         }
 
         Color _normal = Color.FromArgb(126, 135, 169);

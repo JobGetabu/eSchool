@@ -1,4 +1,5 @@
-﻿using System;
+﻿using custom_alert_notifications;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,9 @@ namespace eSchool.TheLogins
             InitializeComponent();
         }
 
-        int close = 0;
-
+        private bool isSignUP = false;
+        public eUser currentUser;
+        private string role;
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,8 +28,7 @@ namespace eSchool.TheLogins
 
         private void tabSignUp_Click(object sender, EventArgs e)
         {
-            btnExit.Image = GridIcon.Shutdown_px;  // exit is now invisible;
-            btnExit.Focus();
+           
 
             //UI code          
             if (slideA.Left == 626)
@@ -49,8 +50,7 @@ namespace eSchool.TheLogins
 
         private void tabSignIn_Click(object sender, EventArgs e)
         {
-            btnExit.Image = GridIcon.Shutdown_32px;  //red exit is now visible;
-            btnExit.Focus();
+           
 
             //UI code          
             if (slideB.Left == 626)
@@ -72,28 +72,319 @@ namespace eSchool.TheLogins
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            tabSignUp_Click(sender,e);
-            
+            tabSignUp_Click(sender, e);
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            close = 1;
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         private void btnSignUP_Click(object sender, EventArgs e)
         {
+            isSignUP = true;
+
+            //sign this up
             this.Close();
         }
 
+        private void UIcode()
+        {
+            //UI code  
+            btnExit.Image = GridIcon.Shutdown_32px;  //red exit is now visible;
+            btnExit.Focus();
+        }
+
+        private void UIcode2()
+        {
+            //UI code 
+            btnExit.Image = GridIcon.Shutdown_px;  // exit is now invisible;
+            btnExit.Focus();
+        }
+        private eUser UserFoundAsync(string username)
+        {
+            using (var context = new EschoolEntities())
+            {
+                var userList =  context.eUsers.ToList();
+
+                foreach (var ss in userList.Where(a => a.username.Equals(username)))
+                {
+                    if (username == ss.username)
+                    {
+                        return ss;
+                    }
+                }
+                return null; 
+            }
+        }
+
+        private eUser UserFoundAsync(string username, string password)
+        {
+            using (var context = new EschoolEntities())
+            {
+                var userList = context.eUsers.ToList();
+                //encode password
+                string yy = Encode(password);
+
+                foreach (var ss in userList.Where(a => a.username.Equals(username) & a.Password.Equals(yy)))
+                {
+                    if (username == ss.username)
+                    {                        
+                        //await Task.Delay(2000);
+                        return ss;
+                    }
+                }
+                return null; 
+            }
+        }
+        private void ValidateSignUp(FormClosingEventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbFullName.Text))
+            {
+                //UI code  
+                UIcode();
+
+                alert.Show("Required info \n Enter Full Name !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+
+            //check availability of user name
+
+            if (string.IsNullOrEmpty(tbUserName.Text))
+            {
+                //UI code  
+                UIcode();
+
+                alert.Show("Required info \n Enter User Name !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+            eUser xx = UserFoundAsync(tbUserName.Text);
+            if (xx != null)
+            {
+                //UI code  
+                UIcode();
+
+                alert.Show("This UserName is not available", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(tbEmail.Text))
+            {
+                alert.Show("Required info \n Enter Email !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(tbPasswordSignUp.Text))
+            {
+                //UI code  
+                UIcode();
+
+                alert.Show("Required info \n Enter Password !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+        }
+        private void ValidateSignIn(FormClosingEventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbUserName.Text))
+            {
+                //UI code  
+                UIcode();
+
+                alert.Show("Required info \n Enter User Name !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(tbPassword.Text))
+            {
+                //UI code  
+                UIcode();
+
+                alert.Show("Required info \n Enter Password !", alert.AlertType.warnig);
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void Register()
+        {
+            eUser reg = new eUser();
+            reg.FullName = tbFullName.Text;
+            reg.HasAccess = 0;
+            reg.Email = tbEmail.Text;
+            reg.DateRegistered = DateTime.Now;
+            reg.Password = Encode(tbPasswordSignUp.Text);
+            reg.username = tbUserNameSignUP.Text;
+            reg.Type = role;
+
+            using (var context = new EschoolEntities())
+            {
+                context.eUsers.Add(reg);
+                try
+                {
+                    context.SaveChanges();
+
+                    alert.Show("Success !", alert.AlertType.success);
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
+        }
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (true)
+            if (isSignUP)
             {
+                //validate
+                #region ValidateSignUp
+                if (string.IsNullOrEmpty(tbFullName.Text))
+                {
+                    //UI code  
+                    UIcode();
+
+                    alert.Show("Required info \n Enter Full Name !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+
+                //check availability of user name
+
+                if (string.IsNullOrEmpty(tbUserName.Text))
+                {
+                    //UI code  
+                    UIcode();
+
+                    alert.Show("Required info \n Enter User Name !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                eUser xx =  UserFoundAsync(tbUserName.Text);
+                if (xx != null)
+                {
+                    //UI code  
+                    UIcode();
+
+                    alert.Show("This UserName is not available", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                if (string.IsNullOrEmpty(tbEmail.Text))
+                {
+                    alert.Show("Required info \n Enter Email !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                if (string.IsNullOrEmpty(tbPasswordSignUp.Text))
+                {
+                    //UI code  
+                    UIcode();
+
+                    alert.Show("Required info \n Enter Password !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                #endregion
+
+                Register();
+
+                //sign in page
+                tabSignIn.Focus();
+                tabSignIn.Select();
+                tabSignIn_Click(sender, e);
+
+                UIcode2();
+                e.Cancel = true;
+
 
             }
+            else
+            {
+                //validate
+                #region ValidateSignIn
+                if (string.IsNullOrEmpty(tbUserName.Text))
+                {
+                    //UI code  
+                    UIcode();
+
+                    alert.Show("Required info \n Enter User Name !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                if (string.IsNullOrEmpty(tbPassword.Text))
+                {
+                    //UI code  
+                    UIcode();
+
+                    alert.Show("Required info \n Enter Password !", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+                #endregion
+
+                //check the user
+                eUser xx = UserFoundAsync(tbUserName.Text, tbPassword.Text);
+
+                if (xx == null)
+                {
+                    alert.Show("Wrong UserName or Password!", alert.AlertType.warnig);
+                    e.Cancel = true;
+                    return;
+                }
+
+                if (xx.HasAccess == 0)
+                {
+                    alert.Show("Contact Administrator \n For Access Privilage!", alert.AlertType.success);
+                    e.Cancel = true;
+                    return;
+                }
+                currentUser = xx;
+                //successfull
+                UIcode2();
+                //alert.Show($"Welcome back {xx.username}", alert.AlertType.warnig);
+
+                e.Cancel = false;
+            }
+        }
+
+        private void btnSignIn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private string Encode(String password)
+        {
+            string encode = "";
+            int num = 7;
+
+            for (int i = 0; i < password.Length; i++)
+            {
+                encode += (char)(password[i] + num);
+            }
+
+            return encode;
+        }
+
+        private string Decode(string encryptedPass)
+        {
+            string decode = "";
+            int num = 7;
+
+            for (int i = 0; i < encryptedPass.Length; i++)
+            {
+                decode += (char)(encryptedPass[i] - num);
+            }
+
+            return decode;
+        }
+
+        private void bDropdownRole_onItemSelected(object sender, EventArgs e)
+        {
+            role = bDropdownRole.selectedValue.ToString();
         }
     }
 }

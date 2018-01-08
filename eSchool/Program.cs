@@ -1,4 +1,5 @@
-﻿using eSchool.TheLogins;
+﻿using custom_alert_notifications;
+using eSchool.TheLogins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,8 @@ namespace eSchool
                 Application.Run(elogin);
                 if (elogin.DialogResult == DialogResult.OK)
                 {
-                    Application.Run(new Frm_Home()); 
+                    //pass user
+                    Application.Run(new Frm_Home(elogin.currentUser));                   
                 }
             }
             catch (Exception)
