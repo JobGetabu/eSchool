@@ -38,8 +38,10 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbCurrentPs = new MetroFramework.Controls.MetroTextBox();
-            this.tbNewPs = new MetroFramework.Controls.MetroTextBox();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbCPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbNPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +57,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(274, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 213);
+            this.panel2.Size = new System.Drawing.Size(10, 256);
             this.panel2.TabIndex = 45;
             // 
             // panel1
@@ -64,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 213);
+            this.panel1.Size = new System.Drawing.Size(10, 256);
             this.panel1.TabIndex = 44;
             // 
             // bunifuGradientPanel1
@@ -128,7 +130,7 @@
             this.btnCancel.IconVisible = true;
             this.btnCancel.IconZoom = 50D;
             this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(27, 221);
+            this.btnCancel.Location = new System.Drawing.Point(27, 274);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.OnHovercolor = System.Drawing.Color.Silver;
@@ -153,7 +155,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::eSchool.FeeUILogo.Ok_0px;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(27, 181);
+            this.btnSave.Location = new System.Drawing.Point(27, 234);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(222, 31);
@@ -163,84 +165,72 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // tbCurrentPs
+            // bunifuCustomLabel8
             // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(37, 75);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(121, 17);
+            this.bunifuCustomLabel8.TabIndex = 47;
+            this.bunifuCustomLabel8.Text = "Current Password";
             // 
+            // tbCPassword
             // 
+            this.tbCPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbCPassword.BorderColorIdle = System.Drawing.Color.Black;
+            this.tbCPassword.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbCPassword.BorderThickness = 1;
+            this.tbCPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbCPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbCPassword.isPassword = true;
+            this.tbCPassword.Location = new System.Drawing.Point(23, 103);
+            this.tbCPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCPassword.Name = "tbCPassword";
+            this.tbCPassword.Size = new System.Drawing.Size(230, 34);
+            this.tbCPassword.TabIndex = 46;
+            this.tbCPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            this.tbCurrentPs.CustomButton.Image = null;
-            this.tbCurrentPs.CustomButton.Location = new System.Drawing.Point(185, 1);
-            this.tbCurrentPs.CustomButton.Name = "";
-            this.tbCurrentPs.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.tbCurrentPs.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tbCurrentPs.CustomButton.TabIndex = 1;
-            this.tbCurrentPs.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbCurrentPs.CustomButton.UseSelectable = true;
-            this.tbCurrentPs.CustomButton.Visible = false;
-            this.tbCurrentPs.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.tbCurrentPs.Lines = new string[0];
-            this.tbCurrentPs.Location = new System.Drawing.Point(31, 83);
-            this.tbCurrentPs.MaxLength = 32767;
-            this.tbCurrentPs.Name = "tbCurrentPs";
-            this.tbCurrentPs.PasswordChar = '0';
-            this.tbCurrentPs.PromptText = "Current Password";
-            this.tbCurrentPs.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbCurrentPs.SelectedText = "";
-            this.tbCurrentPs.SelectionLength = 0;
-            this.tbCurrentPs.SelectionStart = 0;
-            this.tbCurrentPs.ShortcutsEnabled = true;
-            this.tbCurrentPs.Size = new System.Drawing.Size(211, 27);
-            this.tbCurrentPs.Style = MetroFramework.MetroColorStyle.Pink;
-            this.tbCurrentPs.TabIndex = 46;
-            this.tbCurrentPs.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbCurrentPs.UseSelectable = true;
-            this.tbCurrentPs.WaterMark = "Current Password";
-            this.tbCurrentPs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbCurrentPs.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // bunifuCustomLabel2
             // 
-            // tbNewPs
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 152);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(103, 17);
+            this.bunifuCustomLabel2.TabIndex = 49;
+            this.bunifuCustomLabel2.Text = "New Password";
             // 
+            // tbNPassword
             // 
-            // 
-            // 
-            this.tbNewPs.CustomButton.Image = null;
-            this.tbNewPs.CustomButton.Location = new System.Drawing.Point(185, 1);
-            this.tbNewPs.CustomButton.Name = "";
-            this.tbNewPs.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.tbNewPs.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tbNewPs.CustomButton.TabIndex = 1;
-            this.tbNewPs.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbNewPs.CustomButton.UseSelectable = true;
-            this.tbNewPs.CustomButton.Visible = false;
-            this.tbNewPs.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.tbNewPs.Lines = new string[0];
-            this.tbNewPs.Location = new System.Drawing.Point(31, 126);
-            this.tbNewPs.MaxLength = 32767;
-            this.tbNewPs.Name = "tbNewPs";
-            this.tbNewPs.PasswordChar = '0';
-            this.tbNewPs.PromptText = "New Password";
-            this.tbNewPs.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbNewPs.SelectedText = "";
-            this.tbNewPs.SelectionLength = 0;
-            this.tbNewPs.SelectionStart = 0;
-            this.tbNewPs.ShortcutsEnabled = true;
-            this.tbNewPs.Size = new System.Drawing.Size(211, 27);
-            this.tbNewPs.Style = MetroFramework.MetroColorStyle.Pink;
-            this.tbNewPs.TabIndex = 47;
-            this.tbNewPs.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbNewPs.UseSelectable = true;
-            this.tbNewPs.WaterMark = "New Password";
-            this.tbNewPs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbNewPs.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbNPassword.BorderColorIdle = System.Drawing.Color.Black;
+            this.tbNPassword.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbNPassword.BorderThickness = 1;
+            this.tbNPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbNPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbNPassword.isPassword = true;
+            this.tbNPassword.Location = new System.Drawing.Point(23, 180);
+            this.tbNPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNPassword.Name = "tbNPassword";
+            this.tbNPassword.Size = new System.Drawing.Size(230, 34);
+            this.tbNPassword.TabIndex = 48;
+            this.tbNPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FrmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(284, 276);
-            this.Controls.Add(this.tbNewPs);
-            this.Controls.Add(this.tbCurrentPs);
+            this.ClientSize = new System.Drawing.Size(284, 319);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.tbNPassword);
+            this.Controls.Add(this.bunifuCustomLabel8);
+            this.Controls.Add(this.tbCPassword);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -256,6 +246,7 @@
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -269,7 +260,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private MetroFramework.Controls.MetroTextBox tbNewPs;
-        private MetroFramework.Controls.MetroTextBox tbCurrentPs;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tbNPassword;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tbCPassword;
     }
 }

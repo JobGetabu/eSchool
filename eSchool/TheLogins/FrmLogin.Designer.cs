@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.tabSignUp = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.tabSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.slideA = new System.Windows.Forms.Panel();
             this.btnSignUP = new System.Windows.Forms.Button();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -46,7 +44,6 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbFullName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.slideB = new System.Windows.Forms.Panel();
             this.btnSignIn = new System.Windows.Forms.Button();
@@ -57,7 +54,9 @@
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblTrademark = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.tabSignUp = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.slideA.SuspendLayout();
             this.slideB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -67,58 +66,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 7;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // tabSignUp
-            // 
-            this.tabSignUp.ActiveBorderThickness = 1;
-            this.tabSignUp.ActiveCornerRadius = 1;
-            this.tabSignUp.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.tabSignUp.ActiveForecolor = System.Drawing.Color.White;
-            this.tabSignUp.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.tabSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.tabSignUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabSignUp.BackgroundImage")));
-            this.tabSignUp.ButtonText = "Sign Up";
-            this.tabSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabSignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabSignUp.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tabSignUp.IdleBorderThickness = 1;
-            this.tabSignUp.IdleCornerRadius = 1;
-            this.tabSignUp.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.tabSignUp.IdleForecolor = System.Drawing.Color.White;
-            this.tabSignUp.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.tabSignUp.Location = new System.Drawing.Point(78, 23);
-            this.tabSignUp.Margin = new System.Windows.Forms.Padding(5);
-            this.tabSignUp.Name = "tabSignUp";
-            this.tabSignUp.Size = new System.Drawing.Size(168, 48);
-            this.tabSignUp.TabIndex = 0;
-            this.tabSignUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tabSignUp.Click += new System.EventHandler(this.tabSignUp_Click);
-            // 
-            // tabSignIn
-            // 
-            this.tabSignIn.ActiveBorderThickness = 1;
-            this.tabSignIn.ActiveCornerRadius = 1;
-            this.tabSignIn.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.tabSignIn.ActiveForecolor = System.Drawing.Color.White;
-            this.tabSignIn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
-            this.tabSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.tabSignIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabSignIn.BackgroundImage")));
-            this.tabSignIn.ButtonText = "Sign In";
-            this.tabSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabSignIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabSignIn.ForeColor = System.Drawing.Color.SeaGreen;
-            this.tabSignIn.IdleBorderThickness = 1;
-            this.tabSignIn.IdleCornerRadius = 1;
-            this.tabSignIn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.tabSignIn.IdleForecolor = System.Drawing.Color.White;
-            this.tabSignIn.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.tabSignIn.Location = new System.Drawing.Point(246, 23);
-            this.tabSignIn.Margin = new System.Windows.Forms.Padding(5);
-            this.tabSignIn.Name = "tabSignIn";
-            this.tabSignIn.Size = new System.Drawing.Size(168, 48);
-            this.tabSignIn.TabIndex = 1;
-            this.tabSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tabSignIn.Click += new System.EventHandler(this.tabSignIn_Click);
             // 
             // slideA
             // 
@@ -213,7 +160,6 @@
             this.tbPasswordSignUp.Name = "tbPasswordSignUp";
             this.tbPasswordSignUp.Size = new System.Drawing.Size(185, 34);
             this.tbPasswordSignUp.TabIndex = 9;
-            this.tbPasswordSignUp.Text = "Mike kennedy ";
             this.tbPasswordSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel9
@@ -242,7 +188,6 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(185, 34);
             this.tbEmail.TabIndex = 7;
-            this.tbEmail.Text = "Mike kennedy ";
             this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel7
@@ -271,7 +216,6 @@
             this.tbUserNameSignUP.Name = "tbUserNameSignUP";
             this.tbUserNameSignUP.Size = new System.Drawing.Size(185, 34);
             this.tbUserNameSignUP.TabIndex = 5;
-            this.tbUserNameSignUP.Text = "Mike kennedy ";
             this.tbUserNameSignUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel2
@@ -300,7 +244,6 @@
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(185, 34);
             this.tbFullName.TabIndex = 1;
-            this.tbFullName.Text = "Mike kennedy ";
             this.tbFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel1
@@ -313,13 +256,6 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(83, 24);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Sign Up";
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel1;
-            this.bunifuDragControl1.Vertical = true;
             // 
             // bSeparator1
             // 
@@ -456,12 +392,64 @@
             this.btnExit.Zoom = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panel1
+            // tabSignIn
             // 
-            this.panel1.Location = new System.Drawing.Point(10, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 13);
-            this.panel1.TabIndex = 66;
+            this.tabSignIn.ActiveBorderThickness = 1;
+            this.tabSignIn.ActiveCornerRadius = 1;
+            this.tabSignIn.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.tabSignIn.ActiveForecolor = System.Drawing.Color.White;
+            this.tabSignIn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.tabSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.tabSignIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabSignIn.BackgroundImage")));
+            this.tabSignIn.ButtonText = "Sign In";
+            this.tabSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabSignIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSignIn.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tabSignIn.IdleBorderThickness = 1;
+            this.tabSignIn.IdleCornerRadius = 1;
+            this.tabSignIn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.tabSignIn.IdleForecolor = System.Drawing.Color.White;
+            this.tabSignIn.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.tabSignIn.Location = new System.Drawing.Point(246, 23);
+            this.tabSignIn.Margin = new System.Windows.Forms.Padding(5);
+            this.tabSignIn.Name = "tabSignIn";
+            this.tabSignIn.Size = new System.Drawing.Size(168, 48);
+            this.tabSignIn.TabIndex = 1;
+            this.tabSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabSignIn.Click += new System.EventHandler(this.tabSignIn_Click);
+            // 
+            // tabSignUp
+            // 
+            this.tabSignUp.ActiveBorderThickness = 1;
+            this.tabSignUp.ActiveCornerRadius = 1;
+            this.tabSignUp.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.tabSignUp.ActiveForecolor = System.Drawing.Color.White;
+            this.tabSignUp.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(115)))), ((int)(((byte)(125)))));
+            this.tabSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.tabSignUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabSignUp.BackgroundImage")));
+            this.tabSignUp.ButtonText = "Sign Up";
+            this.tabSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabSignUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSignUp.ForeColor = System.Drawing.Color.SeaGreen;
+            this.tabSignUp.IdleBorderThickness = 1;
+            this.tabSignUp.IdleCornerRadius = 1;
+            this.tabSignUp.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.tabSignUp.IdleForecolor = System.Drawing.Color.White;
+            this.tabSignUp.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
+            this.tabSignUp.Location = new System.Drawing.Point(78, 23);
+            this.tabSignUp.Margin = new System.Windows.Forms.Padding(5);
+            this.tabSignUp.Name = "tabSignUp";
+            this.tabSignUp.Size = new System.Drawing.Size(168, 48);
+            this.tabSignUp.TabIndex = 0;
+            this.tabSignUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabSignUp.Click += new System.EventHandler(this.tabSignUp_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FrmLogin
             // 
@@ -469,7 +457,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
             this.ClientSize = new System.Drawing.Size(526, 499);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblTrademark);
             this.Controls.Add(this.slideB);
@@ -502,7 +489,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuThinButton2 tabSignIn;
         private Bunifu.Framework.UI.BunifuThinButton2 tabSignUp;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuSeparator bSeparator1;
         private System.Windows.Forms.Panel slideB;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
@@ -522,6 +508,6 @@
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnSignUP;
         private Bunifu.Framework.UI.BunifuImageButton btnExit;
-        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

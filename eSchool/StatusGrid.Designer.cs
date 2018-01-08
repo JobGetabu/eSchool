@@ -63,6 +63,16 @@ namespace eSchool {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1approved {
+            get {
+                object obj = ResourceManager.GetObject("_1approved", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1cancelled {
             get {
                 object obj = ResourceManager.GetObject("_1cancelled", resourceCulture);
@@ -106,6 +116,16 @@ namespace eSchool {
         internal static System.Drawing.Bitmap _1paid {
             get {
                 object obj = ResourceManager.GetObject("_1paid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1pending {
+            get {
+                object obj = ResourceManager.GetObject("_1pending", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
