@@ -457,7 +457,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(85)))), ((int)(((byte)(97)))));
-            this.ClientSize = new System.Drawing.Size(526, 499);
+            this.ClientSize = new System.Drawing.Size(1152, 499);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblTrademark);
             this.Controls.Add(this.slideB);
@@ -470,6 +470,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.slideA.ResumeLayout(false);
             this.slideA.PerformLayout();

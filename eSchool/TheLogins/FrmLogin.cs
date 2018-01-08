@@ -17,6 +17,8 @@ namespace eSchool.TheLogins
             InitializeComponent();
         }
 
+        int close = 0;
+
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -76,6 +78,7 @@ namespace eSchool.TheLogins
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            close = 1;
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
@@ -83,6 +86,14 @@ namespace eSchool.TheLogins
         private void btnSignUP_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (true)
+            {
+
+            }
         }
     }
 }
