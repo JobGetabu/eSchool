@@ -179,6 +179,9 @@ namespace eSchool
 
         private void Frm_Home_Load(object sender, EventArgs e)
         {
+            SetToolTip(btnLogout,"Logout");
+            SetToolTip(btnAbout,"About");
+
             btn_dashboard.selected = true;
             btn_dashboard.Textcolor = _white;
             DashboardUI.collapse += CollapseNavBar;
@@ -435,6 +438,7 @@ namespace eSchool
             if (bDropdownDashMenu.selectedValue.Equals("Profile"))
             {
                 ColorSelection();
+                UserProfile.Instance = new UserProfile(currentUser);
                 TabSwitcher(UserProfile.Instance);
             }
             if (bDropdownDashMenu.selectedValue.Equals("Log out"))
@@ -443,6 +447,28 @@ namespace eSchool
                 this.Close();
 
             }
+        }
+
+        private void SetToolTip(Control ctl,string message)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.UseFading = true;
+            toolTip1.UseAnimation = true;
+            //toolTip1.IsBalloon = true;
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(ctl, message);
+        }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            //TODO About page
         }
     }
 

@@ -218,10 +218,12 @@ namespace eSchool.Dash
 
                 //TODO find the no of users in the system 
                 var usersList =
-                     context.eUsers.ToList();
+                     context.eUsers
+                     .Where(x => x.Email != "getabujob@gmail.com")
+                     .ToList();
 
 
-                int usersCount = usersList.Count -1;
+                int usersCount = usersList.Count;
 
                 lblUsers.Text = (usersCount).ToString();
 

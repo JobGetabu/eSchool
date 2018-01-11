@@ -32,7 +32,7 @@ namespace eSchool.Profiles
             }
         }
 
-        string name, school, type, reg, occupation, cell, email, usern;
+        string name, school, type, reg, occupation, usern;
 
         public UserProfile(eUser currentUser)
         {

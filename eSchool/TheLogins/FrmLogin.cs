@@ -73,8 +73,7 @@ namespace eSchool.TheLogins
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            tabSignUp_Click(sender, e);
-
+            tabSignIn_Click(sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
