@@ -64,6 +64,42 @@ namespace eSchool.Profiles
             }
             }
 
+        private void btnEditDetails_Click(object sender, EventArgs e)
+        {
+            FrmEditUser uf = new FrmEditUser(cUser);
+            if (uf.ShowDialog() == DialogResult.OK)
+            {
+                UIRefresh();
+            }    
+        }
+
+        private void UIRefresh()
+        {
+            //passed
+            name = $"{cUser.Type} {cUser.username}";//Administrator Jane
+            school = $"{Properties.Settings.Default.schoolName} - {Properties.Settings.Default.schoolreg}";//EschoolKe Secondary - 20154245
+            type = $"Type : {cUser.Type}";//Type : Administrator
+            reg = $"Registered: {cUser.DateRegistered.ToShortDateString()}";//Registered: 12/12/17 15:00
+            occupation = $"{cUser.Occupation}";//
+
+            usern = $"UserName: {cUser.username}";//UserName: Admin
+
+            lblName.Text = name;
+            lbloccupation.Text = occupation;
+            lblRegDate.Text = reg;
+            lblSchool.Text = school;
+            lblUsername.Text = usern;
+            lbluserType.Text = type;
+
+            btnCell.Text = $"{cUser.Phone}";
+            btnEmail.Text = $"{cUser.Email}";
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             using (var context = new EschoolEntities())
@@ -183,5 +219,6 @@ namespace eSchool.Profiles
                 }
             }
         }
+     
     }
 }

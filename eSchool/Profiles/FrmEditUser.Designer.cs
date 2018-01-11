@@ -70,6 +70,7 @@
             this.cbType.Size = new System.Drawing.Size(211, 29);
             this.cbType.TabIndex = 27;
             this.cbType.UseSelectable = true;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // tbEmail
             // 
@@ -161,7 +162,7 @@
             this.tbUserName.MaxLength = 32767;
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.PasswordChar = '\0';
-            this.tbUserName.PromptText = "School Name";
+            this.tbUserName.PromptText = "User Name";
             this.tbUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbUserName.SelectedText = "";
             this.tbUserName.SelectionLength = 0;
@@ -172,7 +173,7 @@
             this.tbUserName.TabIndex = 22;
             this.tbUserName.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbUserName.UseSelectable = true;
-            this.tbUserName.WaterMark = "School Name";
+            this.tbUserName.WaterMark = "User Name";
             this.tbUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -369,6 +370,7 @@
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.DarkGray;
             this.btnCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -414,6 +416,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditUser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEditUser_FormClosing);
+            this.Load += new System.EventHandler(this.FrmEditUser_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
