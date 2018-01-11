@@ -58,7 +58,7 @@ namespace eSchool
 
         DashboardUI das = DashboardUI.Instance;
 
-         
+
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
             //UI design Code
@@ -104,7 +104,7 @@ namespace eSchool
                 }
                 catch (Exception exx)
                 {
-                    MessageBox.Show(exx.Message,"Try again");
+                    MessageBox.Show(exx.Message, "Try again");
                 }
             }
             else
@@ -186,10 +186,14 @@ namespace eSchool
 
             this.metroComboBoxSearch.SelectedIndex = 0;
 
-
-            PrepareFolder();           
+            //set images
+            PrepareFolder();
+            DisplayProf();
         }
 
+        /// <summary>
+        /// prepare folder save images
+        /// </summary>
         private void PrepareFolder()
         {
             //create a directory at My Documents
@@ -235,6 +239,45 @@ namespace eSchool
 
             }
         }
+
+        private void DisplayProf()
+        {
+            //set up picture
+            if (String.IsNullOrEmpty(currentUser.ProfImage))
+            {
+                string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+                string fff = tt + ".\\profile1.jpg";
+                if (File.Exists(fff))
+                {
+                    ovalPictureBox1.Image = Image.FromFile(fff);
+                }
+            }
+            else
+            {
+                if (File.Exists(currentUser.ProfImage))
+                {
+                    try
+                    {
+                        var y = Image.FromFile(currentUser.ProfImage);
+                        this.ovalPictureBox1.Image = y;
+                        this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
+                }
+                else
+                {
+                    string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
+                    string fff = tt + ".\\profile1.jpg";
+                    if (File.Exists(fff))
+                    {
+                        ovalPictureBox1.Image = Image.FromFile(fff);
+                    }
+                }
+            }
+        }
         private void btn_settings_Click(object sender, EventArgs e)
         {
             //UI design Code
@@ -250,7 +293,7 @@ namespace eSchool
 
             //End UI Design code
 
-           // btn_settings.selected = true;
+            // btn_settings.selected = true;
 
             TabSwitcher(NewSettings.Instance);
         }
@@ -398,7 +441,7 @@ namespace eSchool
             {
                 ColorSelection();
                 this.Close();
-                
+
             }
         }
     }

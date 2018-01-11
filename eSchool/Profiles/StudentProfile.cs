@@ -356,7 +356,7 @@ namespace eSchool.Profiles
                 ovalPictureBox1.Image = GridIcon.student;
             }
             else
-            {
+            {   
                 if (File.Exists(student.PictureLocation))
                 {
                     path = student.PictureLocation;

@@ -262,7 +262,7 @@ namespace eSchool.TheLogins
                 }
 
                 //check availability of user name
-
+                
                 if (string.IsNullOrEmpty(tbUserNameSignUP.Text))
                 {
                     //UI code  
