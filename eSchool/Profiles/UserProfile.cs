@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using custom_alert_notifications;
 
 namespace eSchool.Profiles
 {
@@ -33,6 +34,84 @@ namespace eSchool.Profiles
         }
 
         string name, school, type, reg, occupation, usern;
+        private string path;
+
+
+        private void btnEditUserName_Click(object sender, EventArgs e)
+        {
+            FrmEditUserN ff = new FrmEditUserN(cUser);
+
+            if (ff.ShowDialog() == DialogResult.OK)
+            {
+                using (var context = new EschoolEntities())
+                {
+                    //pass the edited username
+
+                    cUser.username = ff.userN;
+                    context.Entry<eUser>(cUser).State = EntityState.Modified;
+                    try
+                    {
+                        //save edited student
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    } 
+                    lblUsername.Text = $"UserName: {cUser.username}";//UserName: Admin
+                    lblName.Text = $"{cUser.Type} {cUser.username}";//Administrator Jane
+                }
+            }
+            }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            using (var context = new EschoolEntities())
+            {
+                //under auto modification 
+                cUser.ProfImage = path;
+                context.Entry<eUser>(cUser).State = EntityState.Modified;
+                try
+                {
+                    //save edited student
+                    context.SaveChanges();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
+
+
+            // short Custom Notification
+            alert.Show("Updated", alert.AlertType.success);
+            btnSaveChanges.Visible = false;
+        }
+
+
+        private void btnChangePic_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog opf = new OpenFileDialog()
+                { Filter = "Picture|*.jpg|*.JPEG|*.png", ValidateNames = true, Multiselect = false })
+                {
+                    if (opf.ShowDialog() == DialogResult.OK)
+                    {
+                        this.ovalPictureBox1.Image = Image.FromFile(opf.FileName);
+                        this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        path = opf.FileName;
+                    }
+
+                    btnSaveChanges.Visible = true;
+
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+        }
 
         public UserProfile(eUser currentUser)
         {
@@ -46,7 +125,7 @@ namespace eSchool.Profiles
             type = $"Type : {cUser.Type}";//Type : Administrator
             reg = $"Registered: {cUser.DateRegistered.ToShortDateString()}";//Registered: 12/12/17 15:00
             occupation = $"{cUser.Occupation}";//
-            
+
             usern = $"UserName: {cUser.username}";//UserName: Admin
         }
 
@@ -58,7 +137,7 @@ namespace eSchool.Profiles
             lblSchool.Text = school;
             lblUsername.Text = usern;
             lbluserType.Text = type;
-            
+
             btnCell.Text = $"{cUser.Phone}";
             btnEmail.Text = $"{cUser.Email}";
 

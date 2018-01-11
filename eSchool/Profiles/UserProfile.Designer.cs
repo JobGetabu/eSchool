@@ -31,40 +31,41 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfile));
             this.panelTT = new System.Windows.Forms.Panel();
             this.bcSchool = new Bunifu.Framework.UI.BunifuCards();
-            this.lblUsername = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lbloccupation = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblRegDate = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lbluserType = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblSchool = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bCardsTT = new Bunifu.Framework.UI.BunifuCards();
-            this.panelTop = new System.Windows.Forms.Panel();
             this.btnEditUserName = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUsername = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lbloccupation = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.btnEmail = new System.Windows.Forms.Button();
             this.btnCell = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblRegDate = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbluserType = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblSchool = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnChangePic = new System.Windows.Forms.Button();
+            this.bCardsTT = new Bunifu.Framework.UI.BunifuCards();
+            this.panelTop = new System.Windows.Forms.Panel();
             this.btnForgotPassword = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEditDetails = new System.Windows.Forms.Button();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
             this.panelTT.SuspendLayout();
             this.bcSchool.SuspendLayout();
-            this.bCardsTT.SuspendLayout();
-            this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.bCardsTT.SuspendLayout();
+            this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTT
@@ -110,6 +111,30 @@
             this.bcSchool.Size = new System.Drawing.Size(798, 347);
             this.bcSchool.TabIndex = 1;
             // 
+            // btnEditUserName
+            // 
+            this.btnEditUserName.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditUserName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.Image")));
+            this.btnEditUserName.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.ImageActive")));
+            this.btnEditUserName.Location = new System.Drawing.Point(516, 293);
+            this.btnEditUserName.Name = "btnEditUserName";
+            this.btnEditUserName.Size = new System.Drawing.Size(20, 20);
+            this.btnEditUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditUserName.TabIndex = 64;
+            this.btnEditUserName.TabStop = false;
+            this.btnEditUserName.Zoom = 10;
+            this.btnEditUserName.Click += new System.EventHandler(this.btnEditUserName_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(294, 293);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -122,6 +147,16 @@
             this.lblUsername.TabIndex = 62;
             this.lblUsername.Text = "UserName: Admin";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(294, 153);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 61;
+            this.pictureBox5.TabStop = false;
             // 
             // lbloccupation
             // 
@@ -136,119 +171,16 @@
             this.lbloccupation.Text = "Teacher";
             this.lbloccupation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblRegDate
+            // ovalPictureBox1
             // 
-            this.lblRegDate.AutoSize = true;
-            this.lblRegDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.lblRegDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblRegDate.Location = new System.Drawing.Point(341, 127);
-            this.lblRegDate.Name = "lblRegDate";
-            this.lblRegDate.Size = new System.Drawing.Size(165, 17);
-            this.lblRegDate.TabIndex = 53;
-            this.lblRegDate.Text = "Registered: 12/12/17 15:00";
-            this.lblRegDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbluserType
-            // 
-            this.lbluserType.AutoSize = true;
-            this.lbluserType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluserType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.lbluserType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbluserType.Location = new System.Drawing.Point(341, 101);
-            this.lbluserType.Name = "lbluserType";
-            this.lbluserType.Size = new System.Drawing.Size(125, 17);
-            this.lbluserType.TabIndex = 51;
-            this.lbluserType.Text = "Type : Administrator";
-            this.lbluserType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSchool
-            // 
-            this.lblSchool.AutoSize = true;
-            this.lblSchool.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.lblSchool.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblSchool.Location = new System.Drawing.Point(341, 75);
-            this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(202, 17);
-            this.lblSchool.TabIndex = 49;
-            this.lblSchool.Text = "EschoolKe Secondary - 20154245";
-            this.lblSchool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblName.Location = new System.Drawing.Point(289, 27);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(194, 30);
-            this.lblName.TabIndex = 45;
-            this.lblName.Text = "Administrator Jane";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bCardsTT
-            // 
-            this.bCardsTT.BackColor = System.Drawing.Color.Transparent;
-            this.bCardsTT.BorderRadius = 5;
-            this.bCardsTT.BottomSahddow = true;
-            this.bCardsTT.color = System.Drawing.Color.Transparent;
-            this.bCardsTT.Controls.Add(this.panelTop);
-            this.bCardsTT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bCardsTT.LeftSahddow = false;
-            this.bCardsTT.Location = new System.Drawing.Point(0, 0);
-            this.bCardsTT.Name = "bCardsTT";
-            this.bCardsTT.RightSahddow = false;
-            this.bCardsTT.ShadowDepth = 25;
-            this.bCardsTT.Size = new System.Drawing.Size(798, 55);
-            this.bCardsTT.TabIndex = 0;
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panelTop.Controls.Add(this.btnForgotPassword);
-            this.panelTop.Controls.Add(this.btnChangePassword);
-            this.panelTop.Controls.Add(this.btnBack);
-            this.panelTop.Controls.Add(this.btnEditDetails);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(798, 55);
-            this.panelTop.TabIndex = 1;
-            // 
-            // btnEditUserName
-            // 
-            this.btnEditUserName.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditUserName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.Image")));
-            this.btnEditUserName.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.ImageActive")));
-            this.btnEditUserName.Location = new System.Drawing.Point(516, 293);
-            this.btnEditUserName.Name = "btnEditUserName";
-            this.btnEditUserName.Size = new System.Drawing.Size(20, 20);
-            this.btnEditUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditUserName.TabIndex = 64;
-            this.btnEditUserName.TabStop = false;
-            this.btnEditUserName.Zoom = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(294, 293);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(294, 153);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 61;
-            this.pictureBox5.TabStop = false;
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(73, 30);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 59;
+            this.ovalPictureBox1.TabStop = false;
             // 
             // btnEmail
             // 
@@ -304,6 +236,19 @@
             this.pictureBox4.TabIndex = 54;
             this.pictureBox4.TabStop = false;
             // 
+            // lblRegDate
+            // 
+            this.lblRegDate.AutoSize = true;
+            this.lblRegDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.lblRegDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblRegDate.Location = new System.Drawing.Point(341, 127);
+            this.lblRegDate.Name = "lblRegDate";
+            this.lblRegDate.Size = new System.Drawing.Size(165, 17);
+            this.lblRegDate.TabIndex = 53;
+            this.lblRegDate.Text = "Registered: 12/12/17 15:00";
+            this.lblRegDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -314,6 +259,19 @@
             this.pictureBox3.TabIndex = 52;
             this.pictureBox3.TabStop = false;
             // 
+            // lbluserType
+            // 
+            this.lbluserType.AutoSize = true;
+            this.lbluserType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluserType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.lbluserType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbluserType.Location = new System.Drawing.Point(341, 101);
+            this.lbluserType.Name = "lbluserType";
+            this.lbluserType.Size = new System.Drawing.Size(125, 17);
+            this.lbluserType.TabIndex = 51;
+            this.lbluserType.Text = "Type : Administrator";
+            this.lbluserType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -323,6 +281,32 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 50;
             this.pictureBox2.TabStop = false;
+            // 
+            // lblSchool
+            // 
+            this.lblSchool.AutoSize = true;
+            this.lblSchool.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSchool.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.lblSchool.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSchool.Location = new System.Drawing.Point(341, 75);
+            this.lblSchool.Name = "lblSchool";
+            this.lblSchool.Size = new System.Drawing.Size(202, 17);
+            this.lblSchool.TabIndex = 49;
+            this.lblSchool.Text = "EschoolKe Secondary - 20154245";
+            this.lblSchool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblName.Location = new System.Drawing.Point(289, 27);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(194, 30);
+            this.lblName.TabIndex = 45;
+            this.lblName.Text = "Administrator Jane";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnChangePic
             // 
@@ -344,6 +328,37 @@
             this.btnChangePic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangePic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePic.UseVisualStyleBackColor = false;
+            this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
+            // 
+            // bCardsTT
+            // 
+            this.bCardsTT.BackColor = System.Drawing.Color.Transparent;
+            this.bCardsTT.BorderRadius = 5;
+            this.bCardsTT.BottomSahddow = true;
+            this.bCardsTT.color = System.Drawing.Color.Transparent;
+            this.bCardsTT.Controls.Add(this.panelTop);
+            this.bCardsTT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bCardsTT.LeftSahddow = false;
+            this.bCardsTT.Location = new System.Drawing.Point(0, 0);
+            this.bCardsTT.Name = "bCardsTT";
+            this.bCardsTT.RightSahddow = false;
+            this.bCardsTT.ShadowDepth = 25;
+            this.bCardsTT.Size = new System.Drawing.Size(798, 55);
+            this.bCardsTT.TabIndex = 0;
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panelTop.Controls.Add(this.btnSaveChanges);
+            this.panelTop.Controls.Add(this.btnForgotPassword);
+            this.panelTop.Controls.Add(this.btnChangePassword);
+            this.panelTop.Controls.Add(this.btnBack);
+            this.panelTop.Controls.Add(this.btnEditDetails);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(798, 55);
+            this.panelTop.TabIndex = 1;
             // 
             // btnForgotPassword
             // 
@@ -422,16 +437,28 @@
             this.btnEditDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditDetails.UseVisualStyleBackColor = false;
             // 
-            // ovalPictureBox1
+            // btnSaveChanges
             // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(73, 30);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(140, 140);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 59;
-            this.ovalPictureBox1.TabStop = false;
+            this.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.btnSaveChanges.FlatAppearance.BorderSize = 0;
+            this.btnSaveChanges.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(157)))), ((int)(((byte)(194)))));
+            this.btnSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(157)))), ((int)(((byte)(194)))));
+            this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
+            this.btnSaveChanges.Image = global::eSchool.FeeUILogo.Ok_0px;
+            this.btnSaveChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveChanges.Location = new System.Drawing.Point(586, 9);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSaveChanges.Size = new System.Drawing.Size(138, 31);
+            this.btnSaveChanges.TabIndex = 38;
+            this.btnSaveChanges.Text = "Save Changes";
+            this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveChanges.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Visible = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // UserProfile
             // 
@@ -445,16 +472,16 @@
             this.panelTT.ResumeLayout(false);
             this.bcSchool.ResumeLayout(false);
             this.bcSchool.PerformLayout();
-            this.bCardsTT.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnEditUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.bCardsTT.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,5 +513,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblUsername;
         private System.Windows.Forms.PictureBox pictureBox5;
         private Bunifu.Framework.UI.BunifuCustomLabel lbloccupation;
+        private System.Windows.Forms.Button btnSaveChanges;
     }
 }

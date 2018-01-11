@@ -68,6 +68,7 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnChangePic = new System.Windows.Forms.Button();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCredit = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -77,7 +78,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEditDetails = new System.Windows.Forms.Button();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
             this.panelBody.SuspendLayout();
             this.panelBotom.SuspendLayout();
             this.panelPayment.SuspendLayout();
@@ -93,10 +94,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBody
@@ -506,6 +507,16 @@
             this.btnChangePic.UseVisualStyleBackColor = false;
             this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 1;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
@@ -566,6 +577,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panelTop.Controls.Add(this.btnSaveChanges);
             this.panelTop.Controls.Add(this.btnDelete);
             this.panelTop.Controls.Add(this.btnBack);
             this.panelTop.Controls.Add(this.btnEditDetails);
@@ -614,7 +626,6 @@
             // btnEditDetails
             // 
             this.btnEditDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.btnEditDetails.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnEditDetails.FlatAppearance.BorderSize = 0;
             this.btnEditDetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(157)))), ((int)(((byte)(194)))));
             this.btnEditDetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(157)))), ((int)(((byte)(194)))));
@@ -634,15 +645,28 @@
             this.btnEditDetails.UseVisualStyleBackColor = false;
             this.btnEditDetails.Click += new System.EventHandler(this.btnEditDetails_Click);
             // 
-            // ovalPictureBox1
+            // btnSaveChanges
             // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(61, 16);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(132, 132);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 1;
-            this.ovalPictureBox1.TabStop = false;
+            this.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.btnSaveChanges.FlatAppearance.BorderSize = 0;
+            this.btnSaveChanges.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(157)))), ((int)(((byte)(194)))));
+            this.btnSaveChanges.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(157)))), ((int)(((byte)(194)))));
+            this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveChanges.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
+            this.btnSaveChanges.Image = global::eSchool.FeeUILogo.Ok_0px;
+            this.btnSaveChanges.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveChanges.Location = new System.Drawing.Point(444, 9);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSaveChanges.Size = new System.Drawing.Size(138, 31);
+            this.btnSaveChanges.TabIndex = 37;
+            this.btnSaveChanges.Text = "Save Changes";
+            this.btnSaveChanges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveChanges.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveChanges.UseVisualStyleBackColor = false;
+            this.btnSaveChanges.Visible = false;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // StudentProfile
             // 
@@ -671,11 +695,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,5 +748,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRef;
         private System.Windows.Forms.DataGridViewLinkColumn ColumnViewRpt;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDel;
+        private System.Windows.Forms.Button btnSaveChanges;
     }
 }

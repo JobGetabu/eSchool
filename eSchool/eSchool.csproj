@@ -511,6 +511,12 @@
     <Compile Include="Profiles\FrmEditUser.Designer.cs">
       <DependentUpon>FrmEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\FrmEditUserN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profiles\FrmEditUserN.Designer.cs">
+      <DependentUpon>FrmEditUserN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profiles\PayMent.cs" />
     <Compile Include="Profiles\StudentProfile.cs">
       <SubType>UserControl</SubType>
@@ -840,6 +846,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profiles\FrmEditUser.resx">
       <DependentUpon>FrmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profiles\FrmEditUserN.resx">
+      <DependentUpon>FrmEditUserN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profiles\StudentProfile.resx">
       <DependentUpon>StudentProfile.cs</DependentUpon>

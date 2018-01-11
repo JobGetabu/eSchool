@@ -398,30 +398,13 @@ namespace eSchool.Profiles
             }
         }
 
-        EschoolEntities db = new EschoolEntities();
-
 
         private void btnBack_Click_1(object sender, EventArgs e)
         {
-            //under auto modification 
-            student.PictureLocation = path;
-            db.Entry<Student_Basic>(student).State = EntityState.Modified;
-
+           
             //back to import UI
             //show students data UI
             TabSwitcher(StudentsData.Instance);
-
-            try
-            {
-                //save edited student
-                db.SaveChanges();
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.Message);
-            }
-
-            db.Dispose();
         }
 
 
@@ -439,8 +422,8 @@ namespace eSchool.Profiles
                         path = opf.FileName;
                     }
 
-                    // short Custom Notification
-                    alert.Show("Updated", alert.AlertType.success);
+                    btnSaveChanges.Visible = true;
+                    
                 }
             }
             catch (Exception exp)
@@ -455,21 +438,24 @@ namespace eSchool.Profiles
             {
                 try
                 {
-                    db.Entry<Student_Basic>(student).State = EntityState.Deleted;
-                    //save edited student
-                    db.SaveChanges();
+                    using (var context = new EschoolEntities())
+                    {
+                        context.Entry<Student_Basic>(student).State = EntityState.Deleted;
+                        //save edited student
+                        context.SaveChanges();
 
-                    // short Custom Notification
-                    alert.Show("Deleted", alert.AlertType.warnig);
+                        // short Custom Notification
+                        alert.Show("Deleted", alert.AlertType.warnig);
 
-                    //refresh grids
-                    StudentsData d = StudentsData.Instance;
-                    d.GridInitilizer();
+                        //refresh grids
+                        StudentsData d = StudentsData.Instance;
+                        d.GridInitilizer();
 
-                    //back to import UI
-                    //show students data UI
-                    TabSwitcher(StudentsData.Instance);
-                    db.Dispose();
+                        //back to import UI
+                        //show students data UI
+                        TabSwitcher(StudentsData.Instance);
+
+                    }
                 }
                 catch (DbUpdateException)
                 {
@@ -896,6 +882,30 @@ namespace eSchool.Profiles
             //txtConsole.AppendText("Waiting...");
             //DoStuff();
             
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            using (var context = new EschoolEntities())
+            {
+                //under auto modification 
+                student.PictureLocation = path;
+                context.Entry<Student_Basic>(student).State = EntityState.Modified;
+                try
+                {
+                    //save edited student
+                    context.SaveChanges();
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                } 
+            }
+
+
+            // short Custom Notification
+            alert.Show("Updated", alert.AlertType.success);
+            btnSaveChanges.Visible = false;
         }
     }
 }
