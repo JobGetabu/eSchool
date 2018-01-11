@@ -100,6 +100,20 @@ namespace eSchool.Profiles
             
         }
 
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            FrmChangePassword cc = new FrmChangePassword(cUser);
+            if (cc.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             using (var context = new EschoolEntities())

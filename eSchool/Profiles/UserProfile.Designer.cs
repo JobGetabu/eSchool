@@ -389,6 +389,7 @@
             this.btnForgotPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnForgotPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnForgotPassword.UseVisualStyleBackColor = false;
+            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // btnChangePassword
             // 
@@ -410,6 +411,7 @@
             this.btnChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnEditDetails
             // 
