@@ -219,13 +219,13 @@ namespace eSchool.Dash
                 //TODO find the no of users in the system 
                 var usersList =
                      context.eUsers
-                     .Where(x => x.Email != "getabujob@gmail.com")
+                     .Where(x => !x.Email.Equals("getabujob@gmail.com"))
                      .ToList();
 
 
-                int usersCount = usersList.Count;
+                //int usersCount = usersList.Count;
 
-                lblUsers.Text = (usersCount).ToString();
+                lblUsers.Text = (usersList.Count).ToString();
 
 
                 var GMonth = DateTime.Now.Month;
@@ -323,12 +323,14 @@ namespace eSchool.Dash
                 //TODO find the no of users in the system 
                 var usersList = await Task.Factory.StartNew(() =>
                 {
-                    return context.eUsers.ToList();
+                    return context.eUsers
+                     .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .ToList();
                 });
 
-                int usersCount = usersList.Count;
+                //int usersCount = usersList.Count;
 
-                lblUsers.Text = (usersCount).ToString();
+                lblUsers.Text = (usersList.Count).ToString();
 
                 //chart area below
                 //set of monthly variables days = 30 or 31 || 28 interval = 5

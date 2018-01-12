@@ -547,6 +547,7 @@
             this.gData.Size = new System.Drawing.Size(792, 132);
             this.gData.TabIndex = 4;
             this.gData.Visible = false;
+            this.gData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gData_CellContentClick);
             this.gData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gData_RowsAdded_1);
             // 
             // ColumnUser

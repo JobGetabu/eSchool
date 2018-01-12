@@ -99,7 +99,7 @@
             this.btnSignUP.Location = new System.Drawing.Point(73, 318);
             this.btnSignUP.Name = "btnSignUP";
             this.btnSignUP.Size = new System.Drawing.Size(277, 40);
-            this.btnSignUP.TabIndex = 13;
+            this.btnSignUP.TabIndex = 5;
             this.btnSignUP.Text = "Sign Up";
             this.btnSignUP.UseVisualStyleBackColor = false;
             this.btnSignUP.Click += new System.EventHandler(this.btnSignUP_Click);
@@ -133,7 +133,7 @@
             this.bDropdownRole.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(195)))), ((int)(((byte)(171)))));
             this.bDropdownRole.selectedIndex = 0;
             this.bDropdownRole.Size = new System.Drawing.Size(394, 34);
-            this.bDropdownRole.TabIndex = 11;
+            this.bDropdownRole.TabIndex = 4;
             this.bDropdownRole.onItemSelected += new System.EventHandler(this.bDropdownRole_onItemSelected);
             // 
             // bunifuCustomLabel8
@@ -161,7 +161,7 @@
             this.tbPasswordSignUp.Margin = new System.Windows.Forms.Padding(4);
             this.tbPasswordSignUp.Name = "tbPasswordSignUp";
             this.tbPasswordSignUp.Size = new System.Drawing.Size(185, 34);
-            this.tbPasswordSignUp.TabIndex = 9;
+            this.tbPasswordSignUp.TabIndex = 3;
             this.tbPasswordSignUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel9
@@ -189,7 +189,7 @@
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(185, 34);
-            this.tbEmail.TabIndex = 7;
+            this.tbEmail.TabIndex = 2;
             this.tbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel7
@@ -217,7 +217,7 @@
             this.tbUserNameSignUP.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserNameSignUP.Name = "tbUserNameSignUP";
             this.tbUserNameSignUP.Size = new System.Drawing.Size(185, 34);
-            this.tbUserNameSignUP.TabIndex = 5;
+            this.tbUserNameSignUP.TabIndex = 1;
             this.tbUserNameSignUP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel2
@@ -245,7 +245,7 @@
             this.tbFullName.Margin = new System.Windows.Forms.Padding(4);
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(185, 34);
-            this.tbFullName.TabIndex = 1;
+            this.tbFullName.TabIndex = 0;
             this.tbFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel1
@@ -297,7 +297,7 @@
             this.btnSignIn.Location = new System.Drawing.Point(95, 290);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(277, 40);
-            this.btnSignIn.TabIndex = 5;
+            this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click_1);
@@ -327,7 +327,7 @@
             this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(323, 34);
-            this.tbPassword.TabIndex = 3;
+            this.tbPassword.TabIndex = 1;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel5
@@ -355,7 +355,7 @@
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(323, 34);
-            this.tbUserName.TabIndex = 1;
+            this.tbUserName.TabIndex = 0;
             this.tbUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel6

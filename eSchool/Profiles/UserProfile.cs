@@ -159,6 +159,7 @@ namespace eSchool.Profiles
                         null
                 });
             }
+            gData.Refresh();
         }
 
         private async void GridIconPicker(DataGridViewCell username, DataGridViewCell rPic, DataGridViewRowsAddedEventArgs e)
@@ -182,22 +183,25 @@ namespace eSchool.Profiles
 
         private async Task<eUser> UserFoundAsync(string username)
         {
-            using (var context = new EschoolEntities())
+            List<eUser> userlist = await Task.Factory.StartNew(() =>
             {
-                var userList = await Task.Factory.StartNew(() =>
+                using (var context = new EschoolEntities())
                 {
-                    return context.eUsers.ToList();
-                });
-
-                foreach (var ss in userList.Where(a => a.username.Equals(username)))
-                {
-                    if (username == ss.username)
-                    {
-                        return ss;
-                    }
+                    return context.eUsers.OrderBy(c => c.Id)
+                    .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .ToList();
                 }
-                return null;
+            });
+
+            foreach (var ss in userlist.Where(a => a.username.Equals(username)))
+            {
+                if (username == ss.username)
+                {
+                    return ss;
+                }
             }
+            return null;
+
         }
 
         private void gData_RowsAdded_1(object sender, DataGridViewRowsAddedEventArgs e)
@@ -205,6 +209,125 @@ namespace eSchool.Profiles
             this.gData.Rows[e.RowIndex].Cells[5].Value = GridIcon.Trash_Can_50px;
 
             GridIconPicker(gData.Rows[e.RowIndex].Cells[0], gData.Rows[e.RowIndex].Cells[3], e);
+            gData.Refresh();
+        }
+
+        private async void gData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
+                e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 5)
+                {
+                    if ((await GridDelImageAsync(e.RowIndex)) != null)
+                    {
+                        using (var context = new EschoolEntities())
+                        {
+                            try
+                            {
+                                if ((MetroMessageBox.Show(this, $"Are You Sure You Want To Delete This User !", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes))
+                                {
+
+                                    context.Entry<eUser>(await GridDelImageAsync(e.RowIndex)).State = EntityState.Deleted;
+                                    context.SaveChanges();
+
+                                    // Custom Notification
+                                    alert.Show("Deleted", alert.AlertType.warnig);
+                                    gData.Rows[e.RowIndex].Visible = false;
+
+                                    //Load the grid again
+                                    GridInitilizer();
+                                }
+                            }
+                            catch (Exception exp)
+                            {
+                                MessageBox.Show("Something went wrong" + exp.Message, "Unsuccessful");
+                            }
+                        }
+                    }
+                }
+            }
+            if (e.ColumnIndex == 4)
+            {
+                if ((MetroMessageBox.Show(this, $"Confirm Action!", "Confirm ", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+                {
+                    GiveAccess(e.RowIndex);
+
+                    //Load the grid again
+                    GridInitilizer();
+
+                }
+            }
+        }
+
+        private async Task<eUser> GridDelImageAsync(int rowIndex)
+        {
+            List<eUser> userlist = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.eUsers.OrderBy(c => c.Id)
+                    .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .ToList();
+                }
+            });
+
+            string usernm;
+            usernm = (string)this.gData.Rows[rowIndex].Cells[0].Value;
+
+            eUser mm = await UserFoundAsync(usernm);
+
+            if (mm != null)
+            {
+                return mm;
+            }
+            return null;
+        }
+
+        private async void GiveAccess(int rowIndex)
+        {
+            bool IsGivingAccess;
+            string usernm = (string)this.gData.Rows[rowIndex].Cells[0].Value;
+            string cmdType = (string)this.gData.Rows[rowIndex].Cells[4].Value;
+
+            if (cmdType.Equals("Revoke"))
+            {
+                IsGivingAccess = false;
+            }
+            else
+            {
+                IsGivingAccess = true;
+            }
+            eUser mm = await UserFoundAsync(usernm);
+
+            if (mm != null)
+            {
+                using (var context = new EschoolEntities())
+                {
+                    if (IsGivingAccess)
+                    {
+                        mm.HasAccess = 1;
+                    }
+                    else
+                    {
+                        mm.HasAccess = 0;
+                    }
+                    context.Entry<eUser>(mm).State = EntityState.Modified;
+                    try
+                    {
+                        //save edited student
+                        context.SaveChanges();
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show(exp.Message);
+                    }
+                }
+                // short Custom Notification
+                alert.Show("Updated", alert.AlertType.success);
+            }
 
         }
 
