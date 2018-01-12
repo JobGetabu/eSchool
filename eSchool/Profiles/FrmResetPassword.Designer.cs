@@ -1,6 +1,6 @@
 ﻿namespace eSchool.Profiles
 {
-    partial class FrmChangePassword
+    partial class FrmResetPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChangePassword));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmResetPassword));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbCnPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbNPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -38,11 +42,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbCPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbNPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbUserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,14 +54,70 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(38, 222);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(125, 17);
+            this.bunifuCustomLabel2.TabIndex = 58;
+            this.bunifuCustomLabel2.Text = "Confirm Password";
+            // 
+            // tbCnPassword
+            // 
+            this.tbCnPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbCnPassword.BorderColorIdle = System.Drawing.Color.Black;
+            this.tbCnPassword.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbCnPassword.BorderThickness = 1;
+            this.tbCnPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCnPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbCnPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbCnPassword.isPassword = true;
+            this.tbCnPassword.Location = new System.Drawing.Point(24, 250);
+            this.tbCnPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCnPassword.Name = "tbCnPassword";
+            this.tbCnPassword.Size = new System.Drawing.Size(230, 34);
+            this.tbCnPassword.TabIndex = 57;
+            this.tbCnPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(38, 145);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(103, 17);
+            this.bunifuCustomLabel8.TabIndex = 56;
+            this.bunifuCustomLabel8.Text = "New Password";
+            // 
+            // tbNPassword
+            // 
+            this.tbNPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbNPassword.BorderColorIdle = System.Drawing.Color.Black;
+            this.tbNPassword.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbNPassword.BorderThickness = 1;
+            this.tbNPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbNPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbNPassword.isPassword = true;
+            this.tbNPassword.Location = new System.Drawing.Point(24, 173);
+            this.tbNPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNPassword.Name = "tbNPassword";
+            this.tbNPassword.Size = new System.Drawing.Size(230, 34);
+            this.tbNPassword.TabIndex = 55;
+            this.tbNPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(274, 63);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 256);
-            this.panel2.TabIndex = 45;
+            this.panel2.Size = new System.Drawing.Size(10, 331);
+            this.panel2.TabIndex = 54;
             // 
             // panel1
             // 
@@ -67,8 +125,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 256);
-            this.panel1.TabIndex = 44;
+            this.panel1.Size = new System.Drawing.Size(10, 331);
+            this.panel1.TabIndex = 53;
             // 
             // bunifuGradientPanel1
             // 
@@ -86,7 +144,7 @@
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 20;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(284, 63);
-            this.bunifuGradientPanel1.TabIndex = 43;
+            this.bunifuGradientPanel1.TabIndex = 52;
             // 
             // pictureBox1
             // 
@@ -106,9 +164,9 @@
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(60, 24);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(171, 25);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(154, 25);
             this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = "Change Password";
+            this.bunifuCustomLabel1.Text = "Reset Password";
             // 
             // btnCancel
             // 
@@ -131,14 +189,14 @@
             this.btnCancel.IconVisible = true;
             this.btnCancel.IconZoom = 50D;
             this.btnCancel.IsTab = false;
-            this.btnCancel.Location = new System.Drawing.Point(27, 274);
+            this.btnCancel.Location = new System.Drawing.Point(28, 344);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.OnHovercolor = System.Drawing.Color.Silver;
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = false;
             this.btnCancel.Size = new System.Drawing.Size(222, 33);
-            this.btnCancel.TabIndex = 42;
+            this.btnCancel.TabIndex = 51;
             this.btnCancel.Text = " Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.Textcolor = System.Drawing.Color.DarkGray;
@@ -157,71 +215,15 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::eSchool.FeeUILogo.Ok_0px;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(27, 234);
+            this.btnSave.Location = new System.Drawing.Point(28, 304);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(65, 0, 0, 0);
             this.btnSave.Size = new System.Drawing.Size(222, 31);
-            this.btnSave.TabIndex = 41;
+            this.btnSave.TabIndex = 50;
             this.btnSave.Text = " Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(37, 75);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(121, 17);
-            this.bunifuCustomLabel8.TabIndex = 47;
-            this.bunifuCustomLabel8.Text = "Current Password";
-            // 
-            // tbCPassword
-            // 
-            this.tbCPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.tbCPassword.BorderColorIdle = System.Drawing.Color.Black;
-            this.tbCPassword.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.tbCPassword.BorderThickness = 1;
-            this.tbCPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbCPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbCPassword.isPassword = true;
-            this.tbCPassword.Location = new System.Drawing.Point(23, 103);
-            this.tbCPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.tbCPassword.Name = "tbCPassword";
-            this.tbCPassword.Size = new System.Drawing.Size(230, 34);
-            this.tbCPassword.TabIndex = 46;
-            this.tbCPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 152);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(103, 17);
-            this.bunifuCustomLabel2.TabIndex = 49;
-            this.bunifuCustomLabel2.Text = "New Password";
-            // 
-            // tbNPassword
-            // 
-            this.tbNPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.tbNPassword.BorderColorIdle = System.Drawing.Color.Black;
-            this.tbNPassword.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
-            this.tbNPassword.BorderThickness = 1;
-            this.tbNPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbNPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbNPassword.isPassword = true;
-            this.tbNPassword.Location = new System.Drawing.Point(23, 180);
-            this.tbNPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.tbNPassword.Name = "tbNPassword";
-            this.tbNPassword.Size = new System.Drawing.Size(230, 34);
-            this.tbNPassword.TabIndex = 48;
-            this.tbNPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuDragControl1
             // 
@@ -230,29 +232,58 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // FrmChangePassword
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(38, 76);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(77, 17);
+            this.bunifuCustomLabel3.TabIndex = 60;
+            this.bunifuCustomLabel3.Text = "User Name";
+            // 
+            // tbUserName
+            // 
+            this.tbUserName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbUserName.BorderColorIdle = System.Drawing.Color.Black;
+            this.tbUserName.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(108)))), ((int)(((byte)(164)))));
+            this.tbUserName.BorderThickness = 1;
+            this.tbUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUserName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbUserName.ForeColor = System.Drawing.Color.Black;
+            this.tbUserName.isPassword = true;
+            this.tbUserName.Location = new System.Drawing.Point(24, 104);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUserName.Name = "tbUserName";
+            this.tbUserName.Size = new System.Drawing.Size(230, 34);
+            this.tbUserName.TabIndex = 59;
+            this.tbUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // FrmResetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(284, 319);
+            this.ClientSize = new System.Drawing.Size(284, 394);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.tbNPassword);
+            this.Controls.Add(this.tbCnPassword);
             this.Controls.Add(this.bunifuCustomLabel8);
-            this.Controls.Add(this.tbCPassword);
+            this.Controls.Add(this.tbNPassword);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmChangePassword";
+            this.Name = "FrmResetPassword";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmChangePassword";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmChangePassword_FormClosing);
-            this.Load += new System.EventHandler(this.FrmChangePassword_Load);
+            this.Text = "FrmResetPassword";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmResetPassword_FormClosing);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -264,6 +295,10 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tbCnPassword;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tbNPassword;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
@@ -271,10 +306,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tbNPassword;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tbCPassword;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tbUserName;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

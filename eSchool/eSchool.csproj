@@ -517,6 +517,12 @@
     <Compile Include="Profiles\FrmEditUserN.Designer.cs">
       <DependentUpon>FrmEditUserN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\FrmResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profiles\FrmResetPassword.Designer.cs">
+      <DependentUpon>FrmResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profiles\PayMent.cs" />
     <Compile Include="Profiles\StudentProfile.cs">
       <SubType>UserControl</SubType>
@@ -648,6 +654,7 @@
     </Compile>
     <Compile Include="TrialBal\IncomeDetails.cs" />
     <Compile Include="TrialBal\TrialDetails.cs" />
+    <Compile Include="UserType.cs" />
     <Content Include="EschoolModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EschoolModel.Context.cs</LastGenOutput>
@@ -849,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profiles\FrmEditUserN.resx">
       <DependentUpon>FrmEditUserN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profiles\FrmResetPassword.resx">
+      <DependentUpon>FrmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profiles\StudentProfile.resx">
       <DependentUpon>StudentProfile.cs</DependentUpon>

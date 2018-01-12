@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using custom_alert_notifications;
+using MetroFramework;
 
 namespace eSchool.Profiles
 {
@@ -57,12 +58,12 @@ namespace eSchool.Profiles
                     catch (Exception exp)
                     {
                         MessageBox.Show(exp.Message);
-                    } 
+                    }
                     lblUsername.Text = $"UserName: {cUser.username}";//UserName: Admin
                     lblName.Text = $"{cUser.Type} {cUser.username}";//Administrator Jane
                 }
             }
-            }
+        }
 
         private void btnEditDetails_Click(object sender, EventArgs e)
         {
@@ -70,7 +71,7 @@ namespace eSchool.Profiles
             if (uf.ShowDialog() == DialogResult.OK)
             {
                 UIRefresh();
-            }    
+            }
         }
 
         private void UIRefresh()
@@ -97,7 +98,7 @@ namespace eSchool.Profiles
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -111,6 +112,12 @@ namespace eSchool.Profiles
 
         private void btnForgotPassword_Click(object sender, EventArgs e)
         {
+            if (!cUser.Type.Equals(UserTypes.UserType.Administrator))
+            {
+                MetroMessageBox.Show(this, $"Administrator needed to reset password !", "Info ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
 
         }
 
@@ -233,6 +240,6 @@ namespace eSchool.Profiles
                 }
             }
         }
-     
+
     }
 }
