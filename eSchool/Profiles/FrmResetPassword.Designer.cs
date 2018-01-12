@@ -252,7 +252,7 @@
             this.tbUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUserName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbUserName.ForeColor = System.Drawing.Color.Black;
-            this.tbUserName.isPassword = true;
+            this.tbUserName.isPassword = false;
             this.tbUserName.Location = new System.Drawing.Point(24, 104);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";

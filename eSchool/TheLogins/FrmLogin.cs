@@ -339,6 +339,9 @@ namespace eSchool.TheLogins
 
                 if (xx == null)
                 {
+                    //UI code  
+                    UIcode();
+
                     alert.Show("Wrong UserName or Password!", alert.AlertType.warnig);
                     e.Cancel = true;
                     return;
@@ -346,6 +349,9 @@ namespace eSchool.TheLogins
 
                 if (xx.HasAccess == 0)
                 {
+                    //UI code  
+                    UIcode();
+
                     alert.Show("Contact Administrator \n For Access Privilage!", alert.AlertType.success);
                     e.Cancel = true;
                     return;

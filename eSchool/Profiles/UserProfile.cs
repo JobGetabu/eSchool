@@ -96,11 +96,6 @@ namespace eSchool.Profiles
             btnEmail.Text = $"{cUser.Email}";
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             FrmChangePassword cc = new FrmChangePassword(cUser);
@@ -112,12 +107,104 @@ namespace eSchool.Profiles
 
         private void btnForgotPassword_Click(object sender, EventArgs e)
         {
-            if (!cUser.Type.Equals(UserTypes.UserType.Administrator))
+            if (!cUser.Type.Equals(UserTypes.UserType.Administrator.ToString()))
             {
                 MetroMessageBox.Show(this, $"Administrator needed to reset password !", "Info ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            FrmResetPassword ch = new FrmResetPassword();
+            if (ch.ShowDialog() == DialogResult.OK)
+            {
 
             }
 
+        }
+
+        public async void GridInitilizer()
+        {
+            this.gData.Rows.Clear();
+
+            List<eUser> userlist = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.eUsers.OrderBy(c => c.Id)
+                    .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .ToList();
+                }
+            });
+
+            this.gData.Rows.Clear();
+            //Do a check whether link is approve or revoke
+            foreach (var f in userlist)
+            {
+                string status;
+                if (f.HasAccess == 1)
+                {
+                    status = "Revoke";
+                }
+                else
+                {
+                    status = "Approve";
+                }
+
+                gData.Rows.Add(new string[]
+                {
+                        $"{f.username}",
+                        $"{f.Type}",
+                        $"{f.Phone}",
+                        null,
+                        $"{status}",
+                        null
+                });
+            }
+        }
+
+        private async void GridIconPicker(DataGridViewCell username, DataGridViewCell rPic, DataGridViewRowsAddedEventArgs e)
+        {
+            string uname = (string)username.Value;
+
+            eUser mm = await UserFoundAsync(uname);
+
+            if (mm != null)
+            {
+                if (mm.HasAccess == 1)
+                {
+                    rPic.Value = StatusGrid._1approved;
+                }
+                else
+                {
+                    rPic.Value = StatusGrid._1pending;
+                }
+            }
+        }
+
+        private async Task<eUser> UserFoundAsync(string username)
+        {
+            using (var context = new EschoolEntities())
+            {
+                var userList = await Task.Factory.StartNew(() =>
+                {
+                    return context.eUsers.ToList();
+                });
+
+                foreach (var ss in userList.Where(a => a.username.Equals(username)))
+                {
+                    if (username == ss.username)
+                    {
+                        return ss;
+                    }
+                }
+                return null;
+            }
+        }
+
+        private void gData_RowsAdded_1(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            this.gData.Rows[e.RowIndex].Cells[5].Value = GridIcon.Trash_Can_50px;
+
+            GridIconPicker(gData.Rows[e.RowIndex].Cells[0], gData.Rows[e.RowIndex].Cells[3], e);
 
         }
 
@@ -200,6 +287,17 @@ namespace eSchool.Profiles
 
             // picture
             DisplayProf();
+
+            //grid
+            if (cUser.Type.Equals(UserTypes.UserType.Administrator.ToString()))
+            {
+                gData.Visible = true;
+            }
+
+            //change color of INX to green
+            gData.Columns[2].DefaultCellStyle.ForeColor = Color.Blue;
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
+            GridInitilizer();
         }
 
         private void DisplayProf()

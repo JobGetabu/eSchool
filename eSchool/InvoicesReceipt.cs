@@ -86,6 +86,9 @@ namespace eSchool
             //UI code
             TermImageSet();
 
+            //change color of INX to green
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
+
             //load the grid
             GridInitializer();
             //lbls
@@ -95,6 +98,9 @@ namespace eSchool
         {
             //UI code
             TermImageSet();
+
+            //change color of INX to green
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
 
             //load the grid
             GridInitializer();
@@ -205,8 +211,7 @@ namespace eSchool
 
         public async void GridInitilizer(List<int> selTerms, int filYear)
         {
-            //change color of INX to green
-            gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
+           
             var invoiceListAsync = await Task.Factory.StartNew(() =>
             {
                 using (var context = new EschoolEntities())
