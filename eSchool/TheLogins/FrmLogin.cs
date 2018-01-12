@@ -401,5 +401,12 @@ namespace eSchool.TheLogins
         {
             role = bDropdownRole.selectedValue.ToString();
         }
+
+        private void lblTrademark_Click(object sender, EventArgs e)
+        {
+            // About page
+            FrmAbout ab = new FrmAbout();
+            ab.Show();
+        }
     }
 }

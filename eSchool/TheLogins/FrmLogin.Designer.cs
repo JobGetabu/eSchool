@@ -380,6 +380,7 @@
             this.lblTrademark.Size = new System.Drawing.Size(184, 18);
             this.lblTrademark.TabIndex = 6;
             this.lblTrademark.Text = "eSchool Finance System";
+            this.lblTrademark.Click += new System.EventHandler(this.lblTrademark_Click);
             // 
             // bunifuDragControl1
             // 

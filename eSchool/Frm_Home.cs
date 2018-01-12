@@ -468,7 +468,9 @@ namespace eSchool
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            //TODO About page
+            // About page
+            FrmAbout ab = new FrmAbout();
+            ab.Show();
         }
     }
 
