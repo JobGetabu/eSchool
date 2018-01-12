@@ -254,10 +254,6 @@ namespace eSchool.Profiles
                 if ((MetroMessageBox.Show(this, $"Confirm Action!", "Confirm ", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
                 {
                     GiveAccess(e.RowIndex);
-
-                    //Load the grid again
-                    GridInitilizer();
-
                 }
             }
         }
@@ -329,6 +325,8 @@ namespace eSchool.Profiles
                 alert.Show("Updated", alert.AlertType.success);
             }
 
+            //Load the grid again
+            GridInitilizer();
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
