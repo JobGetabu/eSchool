@@ -1,7 +1,9 @@
 ﻿using Bunifu.Framework.UI;
 using custom_alert_notifications;
 using eSchool.Dash;
+using eSchool.Importss;
 using eSchool.Profiles;
+using eSchool.SearchCriteria;
 using eSchool.TheLogins;
 using System;
 using System.Collections.Generic;
@@ -91,7 +93,12 @@ namespace eSchool
 
                 try
                 {
-                    this.bunifuTransitionUIs.ShowSync(UIinstance);
+                    using (BunifuAnimatorNS.BunifuTransition ss = new BunifuAnimatorNS.BunifuTransition())
+                    {
+                        ss.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
+                        //this.bunifuTransitionUIs
+                        ss.ShowSync(UIinstance); 
+                    }
                 }
                 catch (InvalidOperationException)
                 {
@@ -113,6 +120,8 @@ namespace eSchool
                 //only occurs once
                 //this.bunifuTransitionUIs.ShowSync(UIinstance);
             }
+
+            containerUIs.Refresh();
         }
 
         private void btn_invoices_Click(object sender, EventArgs e)
@@ -177,21 +186,28 @@ namespace eSchool
             exp.Global_ExpenseUI_Load();
         }
 
+
+        //Global vars
+        private string selSearch;
         private void Frm_Home_Load(object sender, EventArgs e)
         {
-            SetToolTip(btnLogout,"Logout");
-            SetToolTip(btnAbout,"About");
+            SetToolTip(btnLogout, "Logout");
+            SetToolTip(btnAbout, "About");
 
             btn_dashboard.selected = true;
             btn_dashboard.Textcolor = _white;
             DashboardUI.collapse += CollapseNavBar;
             TabSwitcher(DashboardUI.Instance);
 
-            this.metroComboBoxSearch.SelectedIndex = 0;
+            this.cbSearch.SelectedIndex = 0;
+            selSearch = cbSearch.SelectedItem.ToString();
 
             //set images
             PrepareFolder();
             DisplayProf();
+
+            //set up auto complete for search 
+            AutoComplete(tbSearch);
         }
 
         /// <summary>
@@ -449,7 +465,7 @@ namespace eSchool
             }
         }
 
-        private void SetToolTip(Control ctl,string message)
+        private void SetToolTip(Control ctl, string message)
         {
             ToolTip toolTip1 = new ToolTip();
             toolTip1.UseFading = true;
@@ -471,6 +487,69 @@ namespace eSchool
             // About page
             FrmAbout ab = new FrmAbout();
             ab.Show();
+        }
+
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selSearch = cbSearch.SelectedItem.ToString();
+        }
+
+        private async void AutoComplete(MetroFramework.Controls.MetroTextBox tb)
+        {
+            tbSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            tbSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+
+            //auto complete for student names in search
+
+            List<string> studName = new List<string>();
+
+            var studList = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Student_Basic
+                    .OrderBy(x => x.Admin_No)
+                    .ToList();
+                }
+            });
+
+            var names = studList.Select(x => new
+            {
+                Names = $"{x.First_Name} {x.Middle_Name} {x.Last_Name}"
+            });
+
+
+
+            if (tb == tbSearch)
+            {
+                col.Clear();
+                foreach (var item in names)
+                {
+                    col.Add(item.Names);
+                }               
+                tb.AutoCompleteCustomSource = col;
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            //Do search
+            //Pop up
+            if (!string.IsNullOrEmpty(tbSearch.Text))
+            {
+                NewImportsUI ssim = NewImportsUI.Instance;
+                //do tabswitch
+                TabSwitcher(ssim);
+
+                ssim.Global_tab2_Click();
+                StudentsData sdata = StudentsData.Instance;
+
+                sdata.IsSearchInit = true;
+                sdata.searchText = tbSearch.Text;
+                sdata.Global_Search(tbSearch.Text);
+
+            }          
         }
     }
 

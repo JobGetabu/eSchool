@@ -239,6 +239,15 @@ namespace eSchool.TheLogins
                 }
             }
         }
+
+        private void ClearTxt()
+        {
+            tbFullName.Text = "";
+            tbEmail.Text = "";
+            tbPasswordSignUp.Text = "";
+            tbUserNameSignUP.Text = "";
+            tbPassword.Text = "";
+        }
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (close ==1)
@@ -306,6 +315,7 @@ namespace eSchool.TheLogins
                 tabSignIn_Click(sender, e);
 
                 UIcode2();
+                ClearTxt();
                 e.Cancel = true;
 
 
@@ -353,6 +363,7 @@ namespace eSchool.TheLogins
                     UIcode();
 
                     alert.Show("Contact Administrator \n For Access Privilage!", alert.AlertType.success);
+                    ClearTxt();
                     e.Cancel = true;
                     return;
                 }
@@ -407,6 +418,22 @@ namespace eSchool.TheLogins
             // About page
             FrmAbout ab = new FrmAbout();
             ab.Show();
+        }
+
+        private void tbUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                tbPassword.Focus();
+            }
+        }
+
+        private void tbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnSignIn.Focus();
+            }
         }
     }
 }

@@ -40,23 +40,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTT = new System.Windows.Forms.Panel();
             this.bcSchool = new Bunifu.Framework.UI.BunifuCards();
-            this.lblUsername = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lbloccupation = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblRegDate = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lbluserType = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblSchool = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bCardsTT = new Bunifu.Framework.UI.BunifuCards();
-            this.panelTop = new System.Windows.Forms.Panel();
             this.btnEditUserName = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUsername = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lbloccupation = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.btnEmail = new System.Windows.Forms.Button();
             this.btnCell = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblRegDate = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbluserType = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblSchool = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnChangePic = new System.Windows.Forms.Button();
+            this.bCardsTT = new Bunifu.Framework.UI.BunifuCards();
+            this.panelTop = new System.Windows.Forms.Panel();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnForgotPassword = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -70,21 +71,20 @@
             this.ColumnDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnViewRpt = new System.Windows.Forms.DataGridViewLinkColumn();
             this.ColumnDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panelTT.SuspendLayout();
             this.bcSchool.SuspendLayout();
-            this.bCardsTT.SuspendLayout();
-            this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.bCardsTT.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.bCardsGrid.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTT
@@ -130,6 +130,30 @@
             this.bcSchool.Size = new System.Drawing.Size(798, 347);
             this.bcSchool.TabIndex = 1;
             // 
+            // btnEditUserName
+            // 
+            this.btnEditUserName.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditUserName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.Image")));
+            this.btnEditUserName.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.ImageActive")));
+            this.btnEditUserName.Location = new System.Drawing.Point(516, 293);
+            this.btnEditUserName.Name = "btnEditUserName";
+            this.btnEditUserName.Size = new System.Drawing.Size(20, 20);
+            this.btnEditUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditUserName.TabIndex = 64;
+            this.btnEditUserName.TabStop = false;
+            this.btnEditUserName.Zoom = 10;
+            this.btnEditUserName.Click += new System.EventHandler(this.btnEditUserName_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(294, 293);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -142,6 +166,16 @@
             this.lblUsername.TabIndex = 62;
             this.lblUsername.Text = "UserName: Admin";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(294, 153);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 61;
+            this.pictureBox5.TabStop = false;
             // 
             // lbloccupation
             // 
@@ -156,6 +190,71 @@
             this.lbloccupation.Text = "Teacher";
             this.lbloccupation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(73, 30);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 59;
+            this.ovalPictureBox1.TabStop = false;
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
+            this.btnEmail.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnEmail.FlatAppearance.BorderSize = 0;
+            this.btnEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.btnEmail.Image = global::eSchool.GridIcon.Message_50px;
+            this.btnEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmail.Location = new System.Drawing.Point(294, 235);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEmail.Size = new System.Drawing.Size(242, 41);
+            this.btnEmail.TabIndex = 57;
+            this.btnEmail.Text = "      jane@gmail.com";
+            this.btnEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEmail.UseVisualStyleBackColor = false;
+            // 
+            // btnCell
+            // 
+            this.btnCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
+            this.btnCell.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCell.FlatAppearance.BorderSize = 0;
+            this.btnCell.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnCell.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnCell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.btnCell.Image = global::eSchool.GridIcon.Phone_50px;
+            this.btnCell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCell.Location = new System.Drawing.Point(294, 188);
+            this.btnCell.Name = "btnCell";
+            this.btnCell.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCell.Size = new System.Drawing.Size(242, 41);
+            this.btnCell.TabIndex = 56;
+            this.btnCell.Text = "    +254 74565 123";
+            this.btnCell.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCell.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(294, 127);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 54;
+            this.pictureBox4.TabStop = false;
+            // 
             // lblRegDate
             // 
             this.lblRegDate.AutoSize = true;
@@ -169,6 +268,16 @@
             this.lblRegDate.Text = "Registered: 12/12/17 15:00";
             this.lblRegDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(294, 101);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 52;
+            this.pictureBox3.TabStop = false;
+            // 
             // lbluserType
             // 
             this.lbluserType.AutoSize = true;
@@ -181,6 +290,16 @@
             this.lbluserType.TabIndex = 51;
             this.lbluserType.Text = "Type : Administrator";
             this.lbluserType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(294, 75);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
             // 
             // lblSchool
             // 
@@ -207,6 +326,28 @@
             this.lblName.TabIndex = 45;
             this.lblName.Text = "Administrator Jane";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnChangePic
+            // 
+            this.btnChangePic.BackColor = System.Drawing.Color.White;
+            this.btnChangePic.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnChangePic.FlatAppearance.BorderSize = 0;
+            this.btnChangePic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnChangePic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnChangePic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePic.ForeColor = System.Drawing.Color.Gray;
+            this.btnChangePic.Image = global::eSchool.GridIcon.Photo_Editor_50px;
+            this.btnChangePic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangePic.Location = new System.Drawing.Point(73, 192);
+            this.btnChangePic.Name = "btnChangePic";
+            this.btnChangePic.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnChangePic.Size = new System.Drawing.Size(138, 31);
+            this.btnChangePic.TabIndex = 38;
+            this.btnChangePic.Text = "Change Photo";
+            this.btnChangePic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangePic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePic.UseVisualStyleBackColor = false;
+            this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
             // bCardsTT
             // 
@@ -236,136 +377,6 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(798, 55);
             this.panelTop.TabIndex = 1;
-            // 
-            // btnEditUserName
-            // 
-            this.btnEditUserName.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditUserName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.Image")));
-            this.btnEditUserName.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnEditUserName.ImageActive")));
-            this.btnEditUserName.Location = new System.Drawing.Point(516, 293);
-            this.btnEditUserName.Name = "btnEditUserName";
-            this.btnEditUserName.Size = new System.Drawing.Size(20, 20);
-            this.btnEditUserName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditUserName.TabIndex = 64;
-            this.btnEditUserName.TabStop = false;
-            this.btnEditUserName.Zoom = 10;
-            this.btnEditUserName.Click += new System.EventHandler(this.btnEditUserName_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(294, 293);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(294, 153);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 61;
-            this.pictureBox5.TabStop = false;
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
-            this.btnEmail.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEmail.FlatAppearance.BorderSize = 0;
-            this.btnEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.btnEmail.Image = global::eSchool.GridIcon.Message_50px;
-            this.btnEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmail.Location = new System.Drawing.Point(294, 235);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmail.Size = new System.Drawing.Size(242, 41);
-            this.btnEmail.TabIndex = 57;
-            this.btnEmail.Text = "    jane@gmail.com";
-            this.btnEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmail.UseVisualStyleBackColor = false;
-            // 
-            // btnCell
-            // 
-            this.btnCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
-            this.btnCell.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCell.FlatAppearance.BorderSize = 0;
-            this.btnCell.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnCell.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnCell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.btnCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.btnCell.Image = global::eSchool.GridIcon.Phone_50px;
-            this.btnCell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCell.Location = new System.Drawing.Point(294, 188);
-            this.btnCell.Name = "btnCell";
-            this.btnCell.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCell.Size = new System.Drawing.Size(242, 41);
-            this.btnCell.TabIndex = 56;
-            this.btnCell.Text = "  +254 74565 123";
-            this.btnCell.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCell.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(294, 127);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 54;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(294, 101);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 52;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(294, 75);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnChangePic
-            // 
-            this.btnChangePic.BackColor = System.Drawing.Color.White;
-            this.btnChangePic.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnChangePic.FlatAppearance.BorderSize = 0;
-            this.btnChangePic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnChangePic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnChangePic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePic.ForeColor = System.Drawing.Color.Gray;
-            this.btnChangePic.Image = global::eSchool.GridIcon.Photo_Editor_50px;
-            this.btnChangePic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChangePic.Location = new System.Drawing.Point(73, 192);
-            this.btnChangePic.Name = "btnChangePic";
-            this.btnChangePic.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnChangePic.Size = new System.Drawing.Size(138, 31);
-            this.btnChangePic.TabIndex = 38;
-            this.btnChangePic.Text = "Change Photo";
-            this.btnChangePic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChangePic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangePic.UseVisualStyleBackColor = false;
-            this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
             // btnSaveChanges
             // 
@@ -603,17 +614,6 @@
             this.ColumnDelete.Name = "ColumnDelete";
             this.ColumnDelete.ReadOnly = true;
             // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(73, 30);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(140, 140);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 59;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // UserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,18 +627,18 @@
             this.panelTT.ResumeLayout(false);
             this.bcSchool.ResumeLayout(false);
             this.bcSchool.PerformLayout();
-            this.bCardsTT.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnEditUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.bCardsTT.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
             this.bCardsGrid.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

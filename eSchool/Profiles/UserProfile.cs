@@ -382,6 +382,7 @@ namespace eSchool.Profiles
         {
             InitializeComponent();
 
+           
             cUser = currentUser;
 
             //passed
@@ -403,8 +404,8 @@ namespace eSchool.Profiles
             lblUsername.Text = usern;
             lbluserType.Text = type;
 
-            btnCell.Text = $"{cUser.Phone}";
-            btnEmail.Text = $"{cUser.Email}";
+            btnCell.Text = $"   {cUser.Phone}";
+            btnEmail.Text = $"   {cUser.Email}";
 
             // picture
             DisplayProf();
@@ -419,6 +420,7 @@ namespace eSchool.Profiles
             gData.Columns[2].DefaultCellStyle.ForeColor = Color.Blue;
             gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
             GridInitilizer();
+            _instance.Refresh();
         }
 
         private void DisplayProf()

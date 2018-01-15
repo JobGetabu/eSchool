@@ -553,6 +553,12 @@
     <Compile Include="SchoolPeriodYear.cs">
       <DependentUpon>EschoolModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SearchCriteria\FrmStudentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCriteria\FrmStudentSearch.Designer.cs">
+      <DependentUpon>FrmStudentSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -888,6 +894,9 @@
       <DependentUpon>FrmPaymentReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReceiptPrints\PaymentReceipt.rdlc" />
+    <EmbeddedResource Include="SearchCriteria\FrmStudentSearch.resx">
+      <DependentUpon>FrmStudentSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsUI.resx">
       <DependentUpon>SettingsUI.cs</DependentUpon>
     </EmbeddedResource>

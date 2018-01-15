@@ -37,6 +37,9 @@ namespace eSchool.Importss
         }
 
         private List<Student_Basic> studentListAsync;
+
+        public bool IsSearchInit = false;
+        public string searchText = "";
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             GridIconPicker(this.gData.Rows[e.RowIndex].Cells[0], this.gData.Rows[e.RowIndex].Cells[1],e);
@@ -47,6 +50,15 @@ namespace eSchool.Importss
 
         private void StudentsData_Load(object sender, EventArgs e)
         {
+
+            if (IsSearchInit)
+            {
+                gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
+                GridInitilizer();
+                Global_Search(searchText);
+
+                return;
+            }
             //UI code
             //change color of Nos to green
             gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
@@ -238,6 +250,41 @@ namespace eSchool.Importss
             }
         }
 
+        public async void Global_Search(string searchTxt)
+        {
+            if (studentListAsync == null)
+            {
+                studentListAsync = await StudentListAsync();
+            }
+            gData.Rows.Clear();
+            var filList = studentListAsync.Where(s =>
+                 Regex.IsMatch(s.Admin_No.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+                  Regex.IsMatch(s.First_Name.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+                  Regex.IsMatch(s.Middle_Name.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+                  Regex.IsMatch(s.Last_Name.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+                  Regex.IsMatch(s.Class.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+                  Regex.IsMatch(s.ModeOfLearning.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+                   Regex.IsMatch($"{s.First_Name.ToString()} {s.Middle_Name.ToString()} {s.Last_Name.ToString()}", searchTxt, RegexOptions.IgnoreCase) ||
+                 Regex.IsMatch(s.Form.ToString(), searchTxt, RegexOptions.IgnoreCase))
+                 .OrderBy(t => t.Admin_No)
+                 .ToList();
+
+            foreach (var cat in filList)
+            {
+                gData.Rows.Add(new string[]
+                {
+                        null,
+                        cat.Admin_No.ToString(),
+                        $"{cat.First_Name} {cat.Middle_Name} {cat.Last_Name}",
+                        cat.Form.ToString(),
+                        cat.Class,
+                        cat.ModeOfLearning,
+                        null
+                });
+            }
+
+        }
+
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
             this.lblForm.Text = "Form : 1 2 3 4";
@@ -365,5 +412,7 @@ namespace eSchool.Importss
                 UIinstance.BringToFront();
             }
         }
+
+        //search comes here directly
     }
 }

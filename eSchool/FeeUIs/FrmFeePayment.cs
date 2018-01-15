@@ -71,6 +71,8 @@ namespace eSchool
 
             PreparingComboBoxesAsync();
         }
+
+        //TODO check if its working
         private void AutoComplete(MetroFramework.Controls.MetroTextBox tb)
         {
             tbForm.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

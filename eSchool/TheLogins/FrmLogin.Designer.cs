@@ -329,6 +329,7 @@
             this.tbPassword.Size = new System.Drawing.Size(323, 34);
             this.tbPassword.TabIndex = 1;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPassword_KeyPress);
             // 
             // bunifuCustomLabel5
             // 
@@ -357,6 +358,7 @@
             this.tbUserName.Size = new System.Drawing.Size(323, 34);
             this.tbUserName.TabIndex = 0;
             this.tbUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUserName_KeyPress);
             // 
             // bunifuCustomLabel6
             // 
