@@ -188,6 +188,7 @@
             this.btnActivate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActivate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActivate.UseVisualStyleBackColor = false;
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
             // lblExpiry
             // 

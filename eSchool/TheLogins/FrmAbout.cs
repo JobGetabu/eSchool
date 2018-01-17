@@ -1,4 +1,5 @@
-﻿using System;
+﻿using productActivation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,14 @@ namespace eSchool.TheLogins
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnActivate_Click(object sender, EventArgs e)
+        {
+            //init trialMaker library here
+            //TODO check trial mode
+            FrmActivate act = new FrmActivate();
+            act.ShowDialog();
         }
     }
 }

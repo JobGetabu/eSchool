@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace eSchool
 {
-    class OvalPictureBox : PictureBox
+    public class OvalPictureBox : PictureBox
     {
         public OvalPictureBox()
         {

@@ -1073,6 +1073,10 @@
       <Project>{c6009a3f-00ee-45d4-9944-d80400ecd12c}</Project>
       <Name>custom_alert_notifications</Name>
     </ProjectReference>
+    <ProjectReference Include="..\productActivation\productActivation.csproj">
+      <Project>{8c2ef34b-2a1d-4c1a-8256-1fb06116507e}</Project>
+      <Name>productActivation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
