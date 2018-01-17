@@ -348,8 +348,9 @@ namespace eSchool.Profiles
             }
 
 
-            this.ovalPictureBox1.Image = Image.FromFile(cUser.ProfImage);
-            this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            Frm_Home hh = Frm_Home.Instance;
+            hh.ovalPictureBox1.Image = Image.FromFile(cUser.ProfImage);
+            hh.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             // short Custom Notification
             alert.Show("Updated", alert.AlertType.success);
             btnSaveChanges.Visible = false;

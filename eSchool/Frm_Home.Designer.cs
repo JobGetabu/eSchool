@@ -804,7 +804,6 @@
         private BunifuAnimatorNS.BunifuTransition bunifuTransitionUIs;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelProf;
-        private OvalPictureBox ovalPictureBox1;
         private Bunifu.Framework.UI.BunifuDropdown bDropdownDashMenu;
         private Bunifu.Framework.UI.BunifuImageButton BtnSearch;
         private MetroFramework.Controls.MetroComboBox cbSearch;
@@ -827,5 +826,6 @@
         private BunifuAnimatorNS.BunifuTransition logoAnim;
         private Bunifu.Framework.UI.BunifuFlatButton btn_Accounts;
         public MetroFramework.Controls.MetroTextBox tbSearch;
+        public OvalPictureBox ovalPictureBox1;
     }
 }

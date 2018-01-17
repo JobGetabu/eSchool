@@ -99,6 +99,8 @@ namespace eSchool
             //UI code
             TermImageSet();
 
+            lblDateNow.Text = DateTime.Now.ToString("dd MMM yyy");
+            lblDateDay.Text = DateTime.Now.DayOfWeek.ToString();
             //change color of INX to green
             gData.Columns[0].DefaultCellStyle.ForeColor = Color.Blue;
 
