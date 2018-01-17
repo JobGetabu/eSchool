@@ -15,7 +15,7 @@ using custom_alert_notifications;
 using eSchool.Profiles;
 
 namespace eSchool.Importss
-{   
+{
     public partial class StudentsData : UserControl
     {
 
@@ -39,10 +39,12 @@ namespace eSchool.Importss
         private List<Student_Basic> studentListAsync;
 
         public bool IsSearchInit = false;
+        public bool IsForm = false;
+
         public string searchText = "";
         private void gData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            GridIconPicker(this.gData.Rows[e.RowIndex].Cells[0], this.gData.Rows[e.RowIndex].Cells[1],e);
+            GridIconPicker(this.gData.Rows[e.RowIndex].Cells[0], this.gData.Rows[e.RowIndex].Cells[1], e);
             this.gData.Rows[e.RowIndex].Cells[6].Value = GridIcon.Trash_Can_50px;
             //lblRowCount.Text = gData.RowCount.ToString();
             this.lblRowCount.Text = gData.Rows.Count.ToString();
@@ -55,7 +57,7 @@ namespace eSchool.Importss
             {
                 gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
                 GridInitilizer();
-                Global_Search(searchText);
+                Global_Search(searchText, IsForm);
 
                 return;
             }
@@ -84,7 +86,7 @@ namespace eSchool.Importss
 
             if (studentListAsync == null)
             {
-                studentListAsync = await StudentListAsync(); 
+                studentListAsync = await StudentListAsync();
             }
 
             NewImportsUI niUI = NewImportsUI.Instance;
@@ -126,7 +128,7 @@ namespace eSchool.Importss
             Student_Basic stud = await StudFoundAsync(int.Parse(adminNo.Value.ToString()));
             if (stud != null)
             {
-                if (stud.Gender.Equals("M")|| stud.Gender.Equals("m"))
+                if (stud.Gender.Equals("M") || stud.Gender.Equals("m"))
                 {
                     rPic.Value = StatusGrid.Male_User_50px;
                 }
@@ -158,7 +160,7 @@ namespace eSchool.Importss
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
-            {               
+            {
                 if (e.ColumnIndex == 6)
                 {
                     if ((await GridDelImageAsync(e.RowIndex)) != null)
@@ -250,15 +252,26 @@ namespace eSchool.Importss
             }
         }
 
-        public async void Global_Search(string searchTxt)
+        public async void Global_Search(string searchTxt, bool searchForm)
         {
             if (studentListAsync == null)
             {
                 studentListAsync = await StudentListAsync();
             }
+            var temp = studentListAsync;
+            if (searchForm)
+            {
+                try
+                {
+                    temp = studentListAsync.Where(x => x.Form == int.Parse(searchText))
+                       .ToList();
+                }
+                catch (Exception) { }
+
+            }
             gData.Rows.Clear();
-            var filList = studentListAsync.Where(s =>
-                 Regex.IsMatch(s.Admin_No.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
+            var filList = temp.Where(s =>
+                  //Regex.IsMatch(s.Admin_No.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
                   Regex.IsMatch(s.First_Name.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
                   Regex.IsMatch(s.Middle_Name.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
                   Regex.IsMatch(s.Last_Name.ToString(), searchTxt, RegexOptions.IgnoreCase) ||
@@ -282,6 +295,11 @@ namespace eSchool.Importss
                         null
                 });
             }
+
+        }
+
+        public async void Global_Search(bool IsForm)
+        {
 
         }
 
@@ -322,7 +340,7 @@ namespace eSchool.Importss
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             FrmAddStudent fas = new FrmAddStudent();
-            if(fas.ShowDialog()== DialogResult.OK)
+            if (fas.ShowDialog() == DialogResult.OK)
             {
 
             }
@@ -333,7 +351,7 @@ namespace eSchool.Importss
         private void btnFilter_Click(object sender, EventArgs e)
         {
             FrmFilterStudents frm = new FrmFilterStudents();
-            if (frm.ShowDialog()== DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 //logic
                 selForms = new List<int>();
@@ -347,7 +365,7 @@ namespace eSchool.Importss
                 GridInitilizer(man, female, selForms);
             }
         }
-        public async void GridInitilizer(bool man,bool female,List<int> selFilForms)
+        public async void GridInitilizer(bool man, bool female, List<int> selFilForms)
         {
             this.gData.Rows.Clear();
 
@@ -355,13 +373,13 @@ namespace eSchool.Importss
             {
                 studentListAsync = await StudentListAsync();
             }
-            List<Student_Basic> fil =null;
+            List<Student_Basic> fil = null;
             if (female & man)
             {
                 fil = studentListAsync
                     .Where(x => x.Gender.Equals("M") | x.Gender.Equals("m") | x.Gender.Equals("F") | x.Gender.Equals("F"))
                     .ToList();
-                    
+
             }
             else
             {
@@ -381,7 +399,7 @@ namespace eSchool.Importss
 
             foreach (var fm in selFilForms)
             {
-                foreach (var cat in fil.Where(x=>x.Form == fm))
+                foreach (var cat in fil.Where(x => x.Form == fm))
                 {
                     gData.Rows.Add(new string[]
                     {
@@ -393,7 +411,7 @@ namespace eSchool.Importss
                         cat.ModeOfLearning,
                         null
                     });
-                } 
+                }
             }
         }
 

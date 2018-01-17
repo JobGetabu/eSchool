@@ -97,7 +97,7 @@ namespace eSchool
                     {
                         ss.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
                         //this.bunifuTransitionUIs
-                        ss.ShowSync(UIinstance); 
+                        ss.ShowSync(UIinstance);
                     }
                 }
                 catch (InvalidOperationException)
@@ -527,7 +527,7 @@ namespace eSchool
                 foreach (var item in names)
                 {
                     col.Add(item.Names);
-                }               
+                }
                 tb.AutoCompleteCustomSource = col;
             }
         }
@@ -547,9 +547,50 @@ namespace eSchool
 
                 sdata.IsSearchInit = true;
                 sdata.searchText = tbSearch.Text;
-                sdata.Global_Search(tbSearch.Text);
+                sdata.Global_Search(tbSearch.Text, false);
+                if (cbSearch.SelectedIndex == 1)
+                {
+                    //searching for a form
+                    //var showing only form
+                    sdata.IsForm = true;
+                    tbSearch.Text.Trim();
+                    sdata.Global_Search(tbSearch.Text, true);
 
-            }          
+                    return;
+                }
+            }
+        }
+
+        private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                //Do search
+                //Pop up
+                if (!string.IsNullOrEmpty(tbSearch.Text))
+                {
+                    NewImportsUI ssim = NewImportsUI.Instance;
+                    //do tabswitch
+                    TabSwitcher(ssim);
+
+                    ssim.Global_tab2_Click();
+                    StudentsData sdata = StudentsData.Instance;
+
+                    sdata.IsSearchInit = true;
+                    sdata.searchText = tbSearch.Text;
+                    sdata.Global_Search(tbSearch.Text, false);
+                    if (cbSearch.SelectedIndex == 1)
+                    {
+                        //searching for a form
+                        //var showing only form
+                        sdata.IsForm = true;
+                        tbSearch.Text.Trim();
+                        sdata.Global_Search(tbSearch.Text,true);
+
+                        return;
+                    }
+                }
+            }
         }
     }
 

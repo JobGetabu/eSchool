@@ -348,6 +348,8 @@ namespace eSchool.Profiles
             }
 
 
+            this.ovalPictureBox1.Image = Image.FromFile(cUser.ProfImage);
+            this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             // short Custom Notification
             alert.Show("Updated", alert.AlertType.success);
             btnSaveChanges.Visible = false;
