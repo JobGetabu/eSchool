@@ -153,8 +153,11 @@ namespace eSchool.Importss
                 int adminNo = int.Parse(this.gData.Rows[e.RowIndex].Cells[1].Value.ToString());
                 Student_Basic stud = await StudFoundAsync(adminNo);
                 //set the new instance
-                StudentProfile prof = new StudentProfile(stud);
-                TabSwitcher(prof);
+                if (stud != null)
+                {
+                    StudentProfile prof = new StudentProfile(stud);
+                    TabSwitcher(prof);
+                }
 
             }
 

@@ -15,9 +15,6 @@ namespace eSchool
 {
     public partial class FrmEditStudent : Form
     {
-        EschoolEntities db;
-
-        Student_Basic objNew;
         //object passed
         Student_Basic obj;
         public FrmEditStudent(Student_Basic obj)
@@ -25,49 +22,37 @@ namespace eSchool
             InitializeComponent();
             this.obj = obj;
         }
-        public FrmEditStudent()
-        {
-            InitializeComponent();
-        }
-     
 
         private void FrmAddStudent_Load(object sender, EventArgs e)
         {
             //initialize objects
-            objNew = new Student_Basic();
-            db = new EschoolEntities();
-            if (obj != null)
+
+            //edit current student
+            metroTbAdminNo.Text = obj.Admin_No.ToString();
+            metroTbFName.Text = obj.First_Name;
+            metroTbMName.Text = obj.Middle_Name;
+            metroTbLName.Text = obj.Last_Name;
+            metroTbForm.Text = obj.Form.ToString();
+            metroTbClass.Text = obj.Class;
+            metroTbTerm.Text = obj.RegTerm.ToString();
+            metroTbYear.Text = obj.RegYear.ToString();
+
+            if (obj.Gender == "M")
             {
-                //edit current student
-                metroTbAdminNo.Text = obj.Admin_No.ToString();
-                metroTbFName.Text = obj.First_Name;
-                metroTbMName.Text = obj.Middle_Name;
-                metroTbLName.Text = obj.Last_Name;
-                metroTbForm.Text = obj.Form.ToString();
-                metroTbClass.Text = obj.Class;
-                metroTbTerm.Text = obj.RegTerm.ToString();
-                metroTbYear.Text = obj.RegYear.ToString();
-
-                if (obj.Gender == "M")
-                {
-                    metroComboGender.SelectedIndex = 0;
-                }
-                else
-                {
-                    metroComboGender.SelectedIndex = 1;
-                }
-                if (obj.ModeOfLearning == "Bording")
-                {
-                    metroComboGender.SelectedIndex = 0;
-                }
-                else
-                {
-                    metroComboGender.SelectedIndex = 1;
-                }
-
-                db.Student_Basic.Attach(obj);
+                metroComboGender.SelectedIndex = 0;
             }
-
+            else
+            {
+                metroComboGender.SelectedIndex = 1;
+            }
+            if (obj.ModeOfLearning == "Bording")
+            {
+                metroComboMofLearn.SelectedIndex = 0;
+            }
+            else
+            {
+                metroComboMofLearn.SelectedIndex = 1;
+            }
         }
 
         private void bunifuFlatCancel_Click(object sender, EventArgs e)
@@ -77,119 +62,74 @@ namespace eSchool
 
         private void bunifuFlatBtnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(metroTbAdminNo.Text) | string.IsNullOrEmpty(metroTbFName.Text) | string.IsNullOrEmpty(metroTbForm.Text))
+            if (string.IsNullOrEmpty(metroTbAdminNo.Text) & string.IsNullOrEmpty(metroTbFName.Text) | string.IsNullOrEmpty(metroTbForm.Text))
             {
-                //MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 alert.Show("Please fill all required fields", alert.AlertType.error);
                 return;
             }
 
-            try
+            if (string.IsNullOrEmpty(metroComboMofLearn.SelectedItem.ToString()) )
             {
-                if (obj != null)
-                {
-                    //add 
-                    objNew = null;
+                alert.Show("Please select Mode of learning", alert.AlertType.error);
+                return;
+            }
+            if (string.IsNullOrEmpty(metroComboGender.SelectedItem.ToString()))
+            {
+                alert.Show("Please select Mode of learning", alert.AlertType.error);
+                return;
+            }
 
-                    obj.Admin_No = int.Parse(metroTbAdminNo.Text);
-                    obj.First_Name = metroTbFName.Text;
-                    obj.Middle_Name = metroTbMName.Text;
-                    obj.Last_Name = metroTbLName.Text;
-                    obj.Form = int.Parse(metroTbForm.Text);
-                    obj.Class = metroTbClass.Text;
-                    obj.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
-                    obj.RegTerm = int.Parse(metroTbTerm.Text);
-                    obj.RegYear = int.Parse(metroTbYear.Text);
+
+            using (var db = new EschoolEntities())
+            {
+                obj.Admin_No = int.Parse(metroTbAdminNo.Text);
+                obj.First_Name = metroTbFName.Text;
+                obj.Middle_Name = metroTbMName.Text;
+                obj.Last_Name = metroTbLName.Text;
+                obj.Form = int.Parse(metroTbForm.Text.Trim());
+                obj.Class = metroTbClass.Text;
+                if (metroComboGender.SelectedIndex == 0)
+                    obj.Gender = "M";
+                else
+                    obj.Gender = "F";
+                obj.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
+                obj.RegTerm = int.Parse(metroTbTerm.Text);
+                obj.RegYear = int.Parse(metroTbYear.Text);
+
+
+
+                try
+                {
                     db.Entry<Student_Basic>(obj).State = EntityState.Modified;
-                    try
-                    {
-                        db.SaveChanges();
-                    }
-                    catch (Exception x)
-                    {
-                        MessageBox.Show(x.Message);
-                    }
-                    // add custom notification
-                    //MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    db.SaveChanges();
                     alert.Show("Updated", alert.AlertType.success);
                 }
-                else
+                catch (Exception x)
                 {
-                    objNew = new Student_Basic();
-                    //TODO 1 check invalid primary key at save
-                    objNew.Admin_No = int.Parse(metroTbAdminNo.Text);
-                    objNew.First_Name = metroTbFName.Text;
-                    objNew.Middle_Name = metroTbMName.Text;
-                    objNew.Last_Name = metroTbLName.Text;
-                    objNew.Form = int.Parse(metroTbForm.Text);
-                    objNew.Class = metroTbClass.Text;
-                    objNew.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
-                    objNew.RegTerm = int.Parse(metroTbTerm.Text);
-                    objNew.RegYear = int.Parse(metroTbYear.Text);
-
-                    if (metroComboGender.SelectedIndex == 0)
-                    {
-                        objNew.Gender = "M";
-
-                    }
-                    else
-                    {
-                        objNew.Gender = "F";
-
-                    }
-
-
-
-                    if ((IsIdDuplicateuplicate(objNew.Admin_No) == false))
-                    {
-
-                        db.Student_Basic.Add(objNew);
-                        try
-                        {
-                            db.SaveChanges();
-                        }
-                        catch (Exception x)
-                        {
-                            MessageBox.Show(x.Message);
-                        }
-
-                        // custom notification
-                        //MetroMessageBox.Show(this, "Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        alert.Show("Saved", alert.AlertType.success);
-                    }
-                    else
-                    {
-                        MetroMessageBox.Show(this, $"Fail \n The admnistration number {objNew.Admin_No} is already taken", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    }
-                }
+                    MessageBox.Show(x.Message);
+                } 
             }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.Message);
-            }
-            finally
-            {
-                //refresh
-                StudentsData s = StudentsData.Instance;
-                NewImportsUI n = NewImportsUI.Instance;
-                s.GridInitilizer();
-                n.Global_tab2_Click();
-            }
+
+            // add custom notification
+            //MetroMessageBox.Show(this, "Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //refresh
+            StudentsData s = StudentsData.Instance;
+            NewImportsUI n = NewImportsUI.Instance;
+            s.GridInitilizer();
+            n.Global_tab2_Click();
+
             this.Close();
         }
 
         private void metroComboMofLearn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            objNew.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
-            if (obj != null)
-            {
+
                 obj.ModeOfLearning = metroComboMofLearn.SelectedItem.ToString();
-            }
 
         }
 
-        public bool IsIdDuplicateuplicate(int adminNo)
+       /* public bool IsIdDuplicateuplicate(int adminNo)
         {
             bool duplicate = false;
 
@@ -204,17 +144,15 @@ namespace eSchool
                 }
             }
             return duplicate;
-        }
+        }*/
         private void FrmAddStudent_FormClosing(object sender, FormClosingEventArgs e)
         {
-            db.Dispose();
         }
 
         private void metroComboGender_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (metroComboGender.SelectedIndex == 0)
             {
-                objNew.Gender = "M";
                 if (obj != null)
                 {
                     obj.Gender = "M";
@@ -223,12 +161,10 @@ namespace eSchool
             }
             else
             {
-                objNew.Gender = "F";
                 if (obj != null)
                 {
                     obj.Gender = "F";
                 }
-
             }
         }
     }
