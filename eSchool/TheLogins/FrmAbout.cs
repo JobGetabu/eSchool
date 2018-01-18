@@ -23,7 +23,7 @@ namespace eSchool.TheLogins
         {
             if (btnActivate.Enabled)
             {
-                btnActivate.Focus(); 
+                btnActivate.Focus();
             }
         }
 
@@ -38,37 +38,19 @@ namespace eSchool.TheLogins
             //TODO check trial mode
 
 
+            //check registration here   //TODO test 3 runs
             TrialMaker t = new TrialMaker("eschool", Application.StartupPath + "\\RegFile.reg",
-               Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\TMSetp.dbf",
-               "Phone: -\nMobile: -",
-               1, 3, "777");
+                Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\eschoolReg.dbf",
+                "Phone: 0708440184 -\nMobile: -",
+                1, 3, "777");
 
             byte[] MyOwnKey = { 97, 250, 1, 5, 84, 21, 7, 63,
-            4, 54, 87, 56, 123, 10, 3, 62,
-            7, 9, 20, 36, 37, 21, 101, 57};
+                                4, 54, 87, 56, 123, 10, 3, 62,
+                                7, 9, 20, 36, 37, 21, 101, 57};
             t.TripleDESKey = MyOwnKey;
 
             TrialMaker.RunTypes RT = t.ShowDialog();
-            bool is_trial;
-            if (RT != TrialMaker.RunTypes.Expired)
-            {
-                if (RT == TrialMaker.RunTypes.Full)
-                    is_trial = false;
-                else
-                    is_trial = true;
-
-                Application.Run(new Form1(is_trial));
-            }
-
-
-
-
-
-
-
-
-            // FrmActivate act = new FrmActivate();
-            //act.ShowDialog();
+            
         }
 
         private void FrmAbout_Load(object sender, EventArgs e)
@@ -77,6 +59,19 @@ namespace eSchool.TheLogins
 
             this.tbLegalInfo.Text = MyLogo.License_eschool.ToString();
             this.tbLegalInfo.Text.TrimStart();
+
+            //look at trial
+            if (Properties.Settings.Default.IsTrialMode)
+            {
+                lblStatus.Text = "Not Activated";
+                lblExpiry.Text = Properties.Settings.Default.TrialExpireDt.ToShortDateString();
+            }
+            else
+            {
+                lblStatus.Text = "Activated";
+                lblExpiry.Text = "20/20/90";
+            }
+
         }
     }
 }

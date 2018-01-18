@@ -154,5 +154,28 @@ namespace eSchool.Properties {
                 this["schoolType"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsTrialMode {
+            get {
+                return ((bool)(this["IsTrialMode"]));
+            }
+            set {
+                this["IsTrialMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime TrialExpireDt {
+            get {
+                return ((global::System.DateTime)(this["TrialExpireDt"]));
+            }
+            set {
+                this["TrialExpireDt"] = value;
+            }
+        }
     }
 }
