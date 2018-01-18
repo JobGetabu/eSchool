@@ -42,6 +42,9 @@
     <Reference Include="SerialBoxes">
       <HintPath>..\..\..\license\Serial Maker\Serial Maker\bin\Debug\SerialBoxes.dll</HintPath>
     </Reference>
+    <Reference Include="SoftwareLocker">
+      <HintPath>..\..\..\license\TrialMaker Example\TrialMaker Example\bin\Debug\SoftwareLocker.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
