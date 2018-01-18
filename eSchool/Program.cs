@@ -32,17 +32,19 @@ namespace eSchool
                 Application.Run(elogin);
                 if (elogin.DialogResult == DialogResult.OK)
                 {
-                    //check registration here   //TODO test 3 runs
-                    TrialMaker t = new TrialMaker("eschool", Application.StartupPath + "\\RegFile.reg",
-                        Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\eschoolReg.dbf",
-                        "Phone: 0708440184 -\nMobile: -",
-                        1, 3, "777");
+                    
+                    //check registration here
+                    TrialMaker t = new TrialMaker("EschoolKe", Application.StartupPath + "\\EschoolReg.reg",
+                        Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\EschoolReg.dbf",
+                        "Phone: 0708440184 -\nMobile: Developer Job-",
+                        30, 300, "777");
 
                     byte[] MyOwnKey = { 97, 250, 1, 5, 84, 21, 7, 63,
                                         4, 54, 87, 56, 123, 10, 3, 62,
                                         7, 9, 20, 36, 37, 21, 101, 57};
                     t.TripleDESKey = MyOwnKey;
 
+                 
 
                     TrialMaker.RunTypes RT = t.ShowDialog();
                     bool is_trial;
@@ -63,14 +65,22 @@ namespace eSchool
                         }
 
                         //runs anyway since trial still on
+                        //pass user
                         Application.Run(new Frm_Home(elogin.currentUser));
                     }
                     else 
                     {
                         // must register launch about
-
+                        FrmAbout abt = new FrmAbout();
+                        abt.Show();
                     }
 
+                    try
+                    {
+                        Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(FrmActivate1.LeftDays);
+                        Properties.Settings.Default.Save();
+                    }
+                    catch(Exception) { }
                     //pass user
                     //Application.Run(new Frm_Home(elogin.currentUser));
                 }

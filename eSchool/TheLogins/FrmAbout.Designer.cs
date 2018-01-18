@@ -197,9 +197,8 @@
             this.lblExpiry.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblExpiry.Location = new System.Drawing.Point(142, 56);
             this.lblExpiry.Name = "lblExpiry";
-            this.lblExpiry.Size = new System.Drawing.Size(69, 20);
+            this.lblExpiry.Size = new System.Drawing.Size(0, 20);
             this.lblExpiry.TabIndex = 52;
-            this.lblExpiry.Text = "20/20/90";
             this.lblExpiry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStatus
@@ -211,9 +210,8 @@
             this.lblStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblStatus.Location = new System.Drawing.Point(142, 26);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(73, 20);
+            this.lblStatus.Size = new System.Drawing.Size(0, 20);
             this.lblStatus.TabIndex = 51;
-            this.lblStatus.Text = "Activated";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuCustomLabel4

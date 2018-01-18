@@ -1,3 +1,11 @@
+Contributions:
+    Developer : Job Getabu
+    Tel: 0708440184
+    Email: getabujob@gmail.com
+
+	Samwel Kamwana
+	Tel : 0702518467
+
 	ESchoolKe Software License Agreement
 
 This Software License is made by ESchoolKe under KeDevelopers, to the Customer as an essential element of the services to be rendered by ESchoolKe as defined in the system specification and any associated documents and agreement. System shall mean the deliverable product as defined in these documents.
@@ -38,3 +46,7 @@ ESchoolKe may terminate this license upon notice for failure to comply with any 
 
 As Customer’s duly authorized representative, I have read and agree to this License.
 
+Technical support and maintainance :
+  Developer : Job Getabu
+  Tel: 0708440184
+  Email: getabujob@gmail.com
