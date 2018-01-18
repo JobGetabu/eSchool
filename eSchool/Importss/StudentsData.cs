@@ -298,10 +298,6 @@ namespace eSchool.Importss
 
         }
 
-        public async void Global_Search(bool IsForm)
-        {
-
-        }
 
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {

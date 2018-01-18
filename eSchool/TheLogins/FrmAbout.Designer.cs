@@ -36,6 +36,7 @@
             this.btnTwitter = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbLegalInfo = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnActivate = new System.Windows.Forms.Button();
             this.lblExpiry = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -47,7 +48,6 @@
             this.lblName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.tbLegalInfo = new System.Windows.Forms.RichTextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnfB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTwitter)).BeginInit();
@@ -138,6 +138,17 @@
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Legal Notices";
+            // 
+            // tbLegalInfo
+            // 
+            this.tbLegalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(125)))), ((int)(((byte)(102)))));
+            this.tbLegalInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLegalInfo.Location = new System.Drawing.Point(14, 18);
+            this.tbLegalInfo.Name = "tbLegalInfo";
+            this.tbLegalInfo.ReadOnly = true;
+            this.tbLegalInfo.Size = new System.Drawing.Size(441, 79);
+            this.tbLegalInfo.TabIndex = 0;
+            this.tbLegalInfo.Text = "";
             // 
             // groupBox1
             // 
@@ -294,17 +305,6 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
-            // 
-            // tbLegalInfo
-            // 
-            this.tbLegalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(125)))), ((int)(((byte)(102)))));
-            this.tbLegalInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLegalInfo.Location = new System.Drawing.Point(14, 18);
-            this.tbLegalInfo.Name = "tbLegalInfo";
-            this.tbLegalInfo.ReadOnly = true;
-            this.tbLegalInfo.Size = new System.Drawing.Size(441, 79);
-            this.tbLegalInfo.TabIndex = 0;
-            this.tbLegalInfo.Text = "";
             // 
             // FrmAbout
             // 
