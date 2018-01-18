@@ -1,0 +1,40 @@
+	ESchoolKe Software License Agreement
+
+This Software License is made by ESchoolKe under KeDevelopers, to the Customer as an essential element of the services to be rendered by ESchoolKe as defined in the system specification and any associated documents and agreement. System shall mean the deliverable product as defined in these documents.
+
+Customer and ESchoolKe agree that this Software License is deemed to be part of, and subject to, the terms of the Agreement applicable to both parties.
+
+	SECTION 1	LICENSE GRANT AND OWNERSHIP
+
+1.1	ESchoolKe hereby grants to Customer a worldwide, perpetual, non-exclusive, non-transferable license to all software for Customer’s use in connection with the establishment, use, maintenance and modification of the system implemented by ESchoolKe. Software shall mean executable object code of software programs and the patches, scripts, modifications, enhancements, designs, concepts or other materials that constitute the software programs necessary for the proper function and operation of the system as delivered by the ESchoolKe and accepted by the Customer.
+1.2	Except as expressly set forth in this paragraph, ESchoolKe shall at all times own all intellectual property rights in the software. Any and all licenses, product warranties or service contracts provided by third parties in connection with any software, hardware or other software or services provided in the system shall be delivered to Customer for the sole benefit of Customer.
+1.3	Customer may supply to ESchoolKe or allow the ESchoolKe to use certain proprietary information, including service marks, logos, graphics, software, documents and business information and plans that have been authored or pre-owned by Customer. All such intellectual property shall remain the exclusive property of Customer and shall not be used by ESchoolKe for any purposes other than those associated with delivery of the system.
+
+	SECTION 2	COPIES, MODIFICATION, AND USE
+
+2.1	Customer may make copies of the software for archival purposes and as required for modifications to the system. All copies and distribution of the software shall remain within the direct control of Customer and its representatives.
+2.2	All express or implied warranties relating to the software shall be deemed null and void in case of any modification to the software made by any party other than ESchoolKe.
+
+	SECTION 3	WARRANTIES AND REPRESENTATIONS
+
+	ESchoolKe represents and warrants to Customer that:
+
+3.1	it has all necessary rights and authority to execute and deliver this Software License and perform its obligations hereunder and to grant the rights granted under this Software License to Customer; 
+3.2	the goods and services provided by contractor under this Software License, including the software and all intellectual property provided hereunder, are original to ESchoolKe or its subcontractors or partners; and
+3.3	the software, as delivered as part of the system, will not infringe or otherwise violate the rights of any third party, or violate any applicable law, rule or regulation.
+3.4	ESchoolKe further represents and warrants that, throughout the System Warranty Period, the executable object code of software and the system will perform substantially in accordance with the System Specifications and Agreement. If the software fails to perform as specified and accepted all remedies are pursuant to the policies set forth in the Specification and in the Agreement. 3.5	Except as expressly stated in this Agreement, there are no warranties, express or implied, including, but not limited to, the implied warranties of fitness for a particular purpose, of merchantability, or warranty of no infringement of third party intellectual property rights.
+
+	SECTION 4	INDEMNIFICATION
+
+4.1	ESchoolKe hereby indemnifies and shall defend and hold harmless Customer, its parent companies and its and their subsidiaries, affiliates, officers, directors, employees, agents and subcontractors from and against all liability, damages, loss, cost or expense, including but not limited to reasonable attorneys’ fees and expenses, arising out of or in connection with any breach or alleged breach of the Agreement or any third party claims that the software or system here provided by ESchoolKe infringes or otherwise violates any rights of any such third party.
+4.2	Customer hereby indemnifies and shall defend and hold harmless ESchoolKe, its and their subsidiaries, affiliates, officers, directors, employees, agents and subcontractors from and against all liability, damages, loss, cost or expense, including but not limited to reasonable attorneys’ fees and expenses, arising out of or in connection with any third party claims that Customer’s use of the software in contravention of the grant of rights infringes or otherwise violates any rights of any such third party.
+4.3	Upon the assertion of any claim or the commencement of any suit or proceeding against an indemnitee by any third party that may give rise to liability of an indemnitor hereunder, the indemnitee shall promptly notify the indemnitor of the existence of such a claim and shall give the indemnitor reasonable opportunity to defend and to settle the claim at its own expense and with counsel of its own selection. The indemnitee shall cooperate with the indemnitor, shall at all times have the right full to participate in such a defense at its own expense and shall not be obligated, against its consent, to participate in any settlement which it reasonably believes would have an adverse effect on its business.
+
+	SECTION 5	TRANSFER AND TERMINATION
+
+This license will automatically terminate upon the disassembly of the system cited above, unless the system is reassembled in its original configuration in another location.
+
+ESchoolKe may terminate this license upon notice for failure to comply with any of terms set forth in this Software License. Upon termination, Customer is obligated to immediately destroy the software, including all copies and modifications.
+
+As Customer’s duly authorized representative, I have read and agree to this License.
+

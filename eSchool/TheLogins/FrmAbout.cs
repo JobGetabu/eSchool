@@ -38,5 +38,13 @@ namespace eSchool.TheLogins
             FrmActivate act = new FrmActivate();
             act.ShowDialog();
         }
+
+        private void FrmAbout_Load(object sender, EventArgs e)
+        {
+            //load the licence file
+
+            this.tbLegalInfo.Text = MyLogo.License_eschool.ToString();
+            this.tbLegalInfo.Text.TrimStart();
+        }
     }
 }

@@ -79,7 +79,6 @@
             this.tbLegalInfo.ReadOnly = true;
             this.tbLegalInfo.Size = new System.Drawing.Size(293, 26);
             this.tbLegalInfo.TabIndex = 2;
-            this.tbLegalInfo.Text = "This software is licensed under Creative Commons License";
             // 
             // bunifuCustomLabel3
             // 

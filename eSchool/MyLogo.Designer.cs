@@ -61,6 +61,22 @@ namespace eSchool {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ESchoolKe Software License Agreement
+        ///
+        ///
+        ///This Software License is made by ESchoolKe under KeDevelopers, to the Customer as an essential element of the services to be rendered by ESchoolKe as defined in the system specification and any associated documents and agreement. System shall mean the deliverable product as defined in these documents.
+        ///
+        ///Customer and ESchoolKe agree that this Software License is deemed to be part of, and subject to, the terms of the Agreement applicable to both parties.
+        ///
+        ///SECTION 1 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string License_eschool {
+            get {
+                return ResourceManager.GetString("License_eschool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap profile1 {
