@@ -1,6 +1,6 @@
 ﻿using eSchool.MyPrints;
-using Microsoft.Reporting.WinForms;
 using System;
+using Microsoft.Reporting;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,12 +36,12 @@ namespace eSchool.MyPrints2
 
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[7];
 
-            p[0] = new ReportParameter("schoolName", schoolName);
-            p[1] = new ReportParameter("schoolAddress", schoolAddress);
-            p[2] = new ReportParameter("schoolCellNo", schoolCell);
-            p[3] = new ReportParameter("schoolMotto", schoolMotto);
-            p[4] = new ReportParameter("schoolEmail", schoolEmail);
-            p[5] = new ReportParameter("formfeeslbl", lblFeeStruc);
+            p[0] = new Microsoft.Reporting.WinForms.ReportParameter("schoolName", schoolName);
+            p[1] = new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress", schoolAddress);
+            p[2] = new Microsoft.Reporting.WinForms.ReportParameter("schoolCellNo", schoolCell);
+            p[3] = new Microsoft.Reporting.WinForms.ReportParameter("schoolMotto", schoolMotto);
+            p[4] = new Microsoft.Reporting.WinForms.ReportParameter("schoolEmail", schoolEmail);
+            p[5] = new Microsoft.Reporting.WinForms.ReportParameter("formfeeslbl", lblFeeStruc);
 
 
             PrintsLogo printsLogo = new PrintsLogo();
@@ -62,7 +62,7 @@ namespace eSchool.MyPrints2
             string ff = new Uri(myf).AbsoluteUri;
 
 
-            p[6] = new ReportParameter("ImagePath", ff);
+            p[6] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ff);
 
             this.reportViewer.LocalReport.EnableExternalImages = true;
             this.reportViewer.LocalReport.SetParameters(p);
