@@ -599,11 +599,7 @@ namespace eSchool
             }
         }
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
-        {
-            //refreshes auto complete for search 
-            AutoComplete(tbSearch);
-        }
+       
     }
 
     //TODO InvalidOperationException
