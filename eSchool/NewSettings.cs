@@ -35,6 +35,20 @@ namespace eSchool
             InitializeComponent();
         }
 
+        public void Global_NewSettings_Load()
+        {
+            //init school details
+            InitSchool();
+            InitPeriod();
+            //change color of Type to greenish
+            gData.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(23, 123, 189);
+            GridInitilizer();
+
+            ReadLogo();
+
+            //payment details
+            LblInitilizer();
+        }
         private void NewSettings_Load(object sender, EventArgs e)
         {
             //init school details
@@ -45,6 +59,9 @@ namespace eSchool
             GridInitilizer();
 
             ReadLogo();
+
+            //payment details
+            LblInitilizer();
         }
 
         private void InitSchool()
@@ -277,6 +294,53 @@ namespace eSchool
         }
 
         //TODO Payment details.
-        //TODO put logo in print outs.
+        
+        private async void LblInitilizer()
+        {
+            var accListAsync = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Accounts
+                    .OrderBy(t => t.Id)
+                    .ToList();
+                }
+            });
+            accountBindingSource.DataSource = accListAsync;
+
+            if (accListAsync.Count > 1)
+            {
+                btnNxt.Visible = true;
+                btnPrev.Visible = true;
+            }
+            else
+            {
+                btnNxt.Visible = false;
+                btnPrev.Visible = false;
+            }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            this.accountBindingSource.MovePrevious();
+        }
+
+        private void btnNxt_Click(object sender, EventArgs e)
+        {
+            this.accountBindingSource.MoveNext();
+        }
+
+        private void btnUpdateAccount_Click(object sender, EventArgs e)
+        {
+            if (accountBindingSource.Current != null)
+            {
+                FrmEditAcc ed = new FrmEditAcc(accountBindingSource.Current as Account);
+                if (ed.ShowDialog()== DialogResult.OK)
+                {
+                    //payment details
+                    LblInitilizer();
+                }
+            }
+        }
     }
 }

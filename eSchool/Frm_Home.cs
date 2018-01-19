@@ -315,6 +315,12 @@ namespace eSchool
             // btn_settings.selected = true;
 
             TabSwitcher(NewSettings.Instance);
+
+            //refresh the settings code pretty sensitive
+            NewSettings sss = NewSettings.Instance;
+            sss.Global_NewSettings_Load();
+            
+
         }
 
         private void btn_imports_Click(object sender, EventArgs e)

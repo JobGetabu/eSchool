@@ -465,6 +465,12 @@
     <Compile Include="MySettings\FrmAddSchool.Designer.cs">
       <DependentUpon>FrmAddSchool.cs</DependentUpon>
     </Compile>
+    <Compile Include="MySettings\FrmEditAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MySettings\FrmEditAcc.Designer.cs">
+      <DependentUpon>FrmEditAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="MySettings\FrmPeriods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -848,6 +854,9 @@
     <EmbeddedResource Include="MySettings\FrmAddSchool.resx">
       <DependentUpon>FrmAddSchool.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MySettings\FrmEditAcc.resx">
+      <DependentUpon>FrmEditAcc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MySettings\FrmPeriods.resx">
       <DependentUpon>FrmPeriods.cs</DependentUpon>
     </EmbeddedResource>
@@ -958,6 +967,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Account.datasource" />
     <None Include="Properties\DataSources\Category.datasource" />
     <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure.datasource" />
     <None Include="Properties\DataSources\eSchool.MyPrints.AnnualFeeStructure1.datasource" />

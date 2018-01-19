@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewSettings));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBody = new System.Windows.Forms.Panel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblAccNo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblAccountName = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblBankType = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblBankName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -48,8 +54,10 @@
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnPrev = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnNxt = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bcPeriod = new Bunifu.Framework.UI.BunifuCards();
@@ -91,12 +99,15 @@
             this.panelBody.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.bcPeriod.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -150,6 +161,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblAccNo);
+            this.panel3.Controls.Add(this.lblAccountName);
+            this.panel3.Controls.Add(this.lblBankType);
+            this.panel3.Controls.Add(this.lblBankName);
             this.panel3.Controls.Add(this.bunifuCustomLabel13);
             this.panel3.Controls.Add(this.pictureBox10);
             this.panel3.Controls.Add(this.pictureBox14);
@@ -166,6 +181,66 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(832, 279);
             this.panel3.TabIndex = 1;
+            // 
+            // lblAccNo
+            // 
+            this.lblAccNo.AutoSize = true;
+            this.lblAccNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccNo", true));
+            this.lblAccNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccNo.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblAccNo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAccNo.Location = new System.Drawing.Point(240, 201);
+            this.lblAccNo.Name = "lblAccNo";
+            this.lblAccNo.Size = new System.Drawing.Size(92, 17);
+            this.lblAccNo.TabIndex = 80;
+            this.lblAccNo.Text = "021549941266";
+            this.lblAccNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(eSchool.Account);
+            // 
+            // lblAccountName
+            // 
+            this.lblAccountName.AutoSize = true;
+            this.lblAccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccName", true));
+            this.lblAccountName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountName.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblAccountName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAccountName.Location = new System.Drawing.Point(240, 163);
+            this.lblAccountName.Name = "lblAccountName";
+            this.lblAccountName.Size = new System.Drawing.Size(131, 17);
+            this.lblAccountName.TabIndex = 79;
+            this.lblAccountName.Text = "Gathanithi Secondary";
+            this.lblAccountName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBankType
+            // 
+            this.lblBankType.AutoSize = true;
+            this.lblBankType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Type", true));
+            this.lblBankType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankType.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblBankType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblBankType.Location = new System.Drawing.Point(240, 126);
+            this.lblBankType.Name = "lblBankType";
+            this.lblBankType.Size = new System.Drawing.Size(66, 17);
+            this.lblBankType.TabIndex = 78;
+            this.lblBankType.Text = "Gathanithi";
+            this.lblBankType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBankName
+            // 
+            this.lblBankName.AutoSize = true;
+            this.lblBankName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Bank", true));
+            this.lblBankName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankName.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblBankName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblBankName.Location = new System.Drawing.Point(240, 93);
+            this.lblBankName.Name = "lblBankName";
+            this.lblBankName.Size = new System.Drawing.Size(43, 17);
+            this.lblBankName.TabIndex = 77;
+            this.lblBankName.Text = "Equity";
+            this.lblBankName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuCustomLabel13
             // 
@@ -254,9 +329,9 @@
             this.bunifuCustomLabel9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel9.Location = new System.Drawing.Point(153, 123);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(50, 17);
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(38, 17);
             this.bunifuCustomLabel9.TabIndex = 69;
-            this.bunifuCustomLabel9.Text = "Branch:";
+            this.bunifuCustomLabel9.Text = "Type:";
             this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuCustomLabel11
@@ -274,38 +349,41 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.btnUpdateAccount);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 237);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(832, 42);
             this.panel4.TabIndex = 67;
             // 
-            // button6
+            // btnUpdateAccount
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
-            this.button6.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(613, 4);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(148, 31);
-            this.button6.TabIndex = 59;
-            this.button6.Text = "Update Details";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnUpdateAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
+            this.btnUpdateAccount.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnUpdateAccount.FlatAppearance.BorderSize = 0;
+            this.btnUpdateAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
+            this.btnUpdateAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
+            this.btnUpdateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateAccount.Image")));
+            this.btnUpdateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateAccount.Location = new System.Drawing.Point(613, 4);
+            this.btnUpdateAccount.Name = "btnUpdateAccount";
+            this.btnUpdateAccount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUpdateAccount.Size = new System.Drawing.Size(148, 31);
+            this.btnUpdateAccount.TabIndex = 59;
+            this.btnUpdateAccount.Text = "Update Details";
+            this.btnUpdateAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdateAccount.UseVisualStyleBackColor = false;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnPrev);
+            this.panel7.Controls.Add(this.btnNxt);
             this.panel7.Controls.Add(this.pictureBox11);
             this.panel7.Controls.Add(this.bunifuCustomLabel10);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -313,6 +391,38 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(832, 42);
             this.panel7.TabIndex = 66;
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrev.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
+            this.btnPrev.ImageActive = null;
+            this.btnPrev.Location = new System.Drawing.Point(611, 10);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(25, 25);
+            this.btnPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrev.TabIndex = 67;
+            this.btnPrev.TabStop = false;
+            this.btnPrev.Visible = false;
+            this.btnPrev.Zoom = 10;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnNxt
+            // 
+            this.btnNxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNxt.BackColor = System.Drawing.Color.Transparent;
+            this.btnNxt.Image = ((System.Drawing.Image)(resources.GetObject("btnNxt.Image")));
+            this.btnNxt.ImageActive = null;
+            this.btnNxt.Location = new System.Drawing.Point(649, 10);
+            this.btnNxt.Name = "btnNxt";
+            this.btnNxt.Size = new System.Drawing.Size(25, 25);
+            this.btnNxt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNxt.TabIndex = 66;
+            this.btnNxt.TabStop = false;
+            this.btnNxt.Visible = false;
+            this.btnNxt.Zoom = 10;
+            this.btnNxt.Click += new System.EventHandler(this.btnNxt_Click);
             // 
             // pictureBox11
             // 
@@ -511,33 +621,33 @@
             // gData
             // 
             this.gData.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gData.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(68)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnName,
             this.ColumnDel});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gData.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gData.DefaultCellStyle = dataGridViewCellStyle5;
             this.gData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gData.DoubleBuffered = true;
             this.gData.EnableHeadersVisualStyles = false;
@@ -549,14 +659,14 @@
             this.gData.Name = "gData";
             this.gData.ReadOnly = true;
             this.gData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gData.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gData.RowHeadersVisible = false;
             this.gData.RowHeadersWidth = 42;
             this.gData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -571,16 +681,16 @@
             // 
             // ColumnDate
             // 
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnDate.HeaderText = "Type";
             this.ColumnDate.Name = "ColumnDate";
             this.ColumnDate.ReadOnly = true;
             // 
             // ColumnName
             // 
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColumnName.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnName.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnName.HeaderText = "Name";
             this.ColumnName.Name = "ColumnName";
             this.ColumnName.ReadOnly = true;
@@ -894,6 +1004,7 @@
             this.bunifuCards1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
@@ -901,6 +1012,8 @@
             this.panel4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNxt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.bcPeriod.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -959,7 +1072,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox11;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
@@ -983,5 +1096,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewImageColumn ColumnDel;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblAccNo;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblAccountName;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblBankType;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblBankName;
+        private Bunifu.Framework.UI.BunifuImageButton btnPrev;
+        private Bunifu.Framework.UI.BunifuImageButton btnNxt;
+        private System.Windows.Forms.BindingSource accountBindingSource;
     }
 }
