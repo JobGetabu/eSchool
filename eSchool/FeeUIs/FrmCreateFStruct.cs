@@ -75,7 +75,9 @@ namespace eSchool
         {
             using (var context = new EschoolEntities())
             {
-                var listYear = context.SchoolPeriodYears.OrderByDescending(y => y.Year).Select(y => y.Year).ToList();
+                var listYear = context.SchoolPeriodYears
+                    .OrderByDescending(y => y.Year)
+                    .Select(y => y.Year).ToList();
                 foreach (var y in listYear)
                 {
                     mCBoxYear.Items.Add(y);

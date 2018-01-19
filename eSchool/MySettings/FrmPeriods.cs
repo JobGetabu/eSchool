@@ -36,7 +36,7 @@ namespace eSchool.MySettings
             this.Close();
         }
 
-        private void FrmPeriods_FormClosing(object sender, FormClosingEventArgs e)
+        private async void FrmPeriods_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (close == 1)
             {
@@ -69,9 +69,81 @@ namespace eSchool.MySettings
             Properties.Settings.Default.CurrentYear = test1;
             Properties.Settings.Default.Save();
 
+            using (var context = new EschoolEntities())
+            {
+
+                //add five last years
+                for (int i = 0; i < 4; i++)
+                {
+                    SchoolPeriodYear y = new SchoolPeriodYear();
+                    int xx = Properties.Settings.Default.CurrentYear - i;
+                    y.Year = xx;
+                    if (!(await DoesYearExist(xx)))
+                    {
+                        //add it
+                        context.SchoolPeriodYears.Add(y);
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+
+
+                //populate the schoolPeriods
+                //check term 3 set next year available
+                if (Properties.Settings.Default.CurrentTerm == 3)
+                {
+                    int x = Properties.Settings.Default.CurrentYear + 1;
+                    //Add the year in the SchoolPeriodYears
+                    SchoolPeriodYear spy = new SchoolPeriodYear();
+                    spy.Year = x;
+
+                    if (!(await DoesYearExist(x)))
+                    {
+                        //add it
+                        context.SchoolPeriodYears.Add(spy);
+                        try
+                        {
+                            context.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+
+                } 
+            }
+
+
             alert.Show("Updated !", alert.AlertType.success);
             alert.Show("Updated\nRestart to effect changes !", alert.AlertType.success);
             e.Cancel = false;
+        }
+
+        private async Task<Boolean> DoesYearExist(int year)
+        {
+            var yAsyncList = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.SchoolPeriodYears.ToList();
+                }
+            });
+
+            foreach (var item in yAsyncList.Where(x => x.Year == year))
+            {
+                if (item.Year == year)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
