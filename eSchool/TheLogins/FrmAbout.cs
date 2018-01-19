@@ -101,5 +101,28 @@ namespace eSchool.TheLogins
             }
 
         }
+
+        private void btnTwitter_Click(object sender, EventArgs e)
+        {
+            string twitterPage = "https://twitter.com/eschoolke";
+            try
+            {
+                System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo(twitterPage);
+                System.Diagnostics.Process.Start(sInfo);
+            }
+            catch (Exception) { }
+
+        }
+
+        private void btnfB_Click(object sender, EventArgs e)
+        {
+            string fbPage = "https://web.facebook.com/eschoolke?_rdc=1&_rdr";
+            try
+            {
+                System.Diagnostics.ProcessStartInfo sInfo = new System.Diagnostics.ProcessStartInfo(fbPage);
+                System.Diagnostics.Process.Start(sInfo);
+            }
+            catch (Exception) { }
+        }
     }
 }

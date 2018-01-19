@@ -99,6 +99,7 @@
             this.btnfB.TabIndex = 53;
             this.btnfB.TabStop = false;
             this.btnfB.Zoom = 10;
+            this.btnfB.Click += new System.EventHandler(this.btnfB_Click);
             // 
             // btnTwitter
             // 
@@ -112,6 +113,7 @@
             this.btnTwitter.TabIndex = 52;
             this.btnTwitter.TabStop = false;
             this.btnTwitter.Zoom = 10;
+            this.btnTwitter.Click += new System.EventHandler(this.btnTwitter_Click);
             // 
             // btnExit
             // 
