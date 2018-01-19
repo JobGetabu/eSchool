@@ -677,6 +677,7 @@
             this.tbSearch.WaterMark = "Search";
             this.tbSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
             this.tbSearch.WaterMarkFont = new System.Drawing.Font("Lucida Bright", 11.75F);
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
             // 
             // panel5

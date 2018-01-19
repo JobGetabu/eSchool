@@ -67,6 +67,10 @@ namespace eSchool
 
             //show students data UI
             TabSwitcher(StudentsData.Instance);
+
+            //refresh grid
+            StudentsData sd = StudentsData.Instance;
+            sd.Global_StudentsData_Load();
         }
         private void tab2_Click(object sender, EventArgs e)
         {
@@ -76,6 +80,10 @@ namespace eSchool
 
             //show students data UI
             TabSwitcher(StudentsData.Instance);
+
+            //refresh grid
+            StudentsData sd = StudentsData.Instance;
+            sd.Global_StudentsData_Load();
         }
 
         private void tab3_Click(object sender, EventArgs e)

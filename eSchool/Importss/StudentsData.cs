@@ -36,7 +36,7 @@ namespace eSchool.Importss
             InitializeComponent();
         }
 
-        private List<Student_Basic> studentListAsync;
+        //private List<Student_Basic> studentListAsync;
 
         public bool IsSearchInit = false;
         public bool IsForm = false;
@@ -50,6 +50,14 @@ namespace eSchool.Importss
             this.lblRowCount.Text = gData.Rows.Count.ToString();
         }
 
+        public void Global_StudentsData_Load()
+        {
+            //UI code
+            //change color of Nos to green
+            gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
+
+            GridInitilizer();
+        }
         private void StudentsData_Load(object sender, EventArgs e)
         {
 
@@ -84,13 +92,12 @@ namespace eSchool.Importss
 
             this.gData.Rows.Clear();
 
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+            var studentListAsync = await StudentListAsync();
 
             NewImportsUI niUI = NewImportsUI.Instance;
             niUI.lblStudentCount.Text = studentListAsync.Count.ToString();
+
+            this.gData.Rows.Clear();
             foreach (var cat in studentListAsync)
             {
                 gData.Rows.Add(new string[]
@@ -108,10 +115,9 @@ namespace eSchool.Importss
 
         private async Task<Student_Basic> StudFoundAsync(int admin)
         {
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+
+            var studentListAsync = await StudentListAsync();
+
 
             foreach (var stud in studentListAsync.Where(a => a.Admin_No == admin))
             {
@@ -145,6 +151,8 @@ namespace eSchool.Importss
 
         private async void gData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            var studentListAsync = await StudentListAsync();
+
             var senderGrid = (DataGridView)sender;
 
             if (e.ColumnIndex == 0 | e.ColumnIndex == 1 | e.ColumnIndex == 2)
@@ -200,10 +208,9 @@ namespace eSchool.Importss
 
         private async Task<Student_Basic> GridDelImageAsync(int rowIndex)
         {
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+
+            var studentListAsync = await StudentListAsync();
+
 
             int adminNo;
             adminNo = int.Parse(this.gData.Rows[rowIndex].Cells[1].Value.ToString());
@@ -220,10 +227,9 @@ namespace eSchool.Importss
 
         private async void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+
+            var studentListAsync = await StudentListAsync();
+
             if (e.KeyChar == (char)13)
             {
                 gData.Rows.Clear();
@@ -257,10 +263,9 @@ namespace eSchool.Importss
 
         public async void Global_Search(string searchTxt, bool searchForm)
         {
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+
+            var studentListAsync = await StudentListAsync();
+
             var temp = studentListAsync;
             if (searchForm)
             {
@@ -305,10 +310,9 @@ namespace eSchool.Importss
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
             this.lblForm.Text = "Form : 1 2 3 4";
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+
+           var  studentListAsync = await StudentListAsync();
+
             gData.Rows.Clear();
             var filList = studentListAsync.Where(s =>
                  Regex.IsMatch(s.Admin_No.ToString(), tbSearch.Text, RegexOptions.IgnoreCase) ||
@@ -368,10 +372,8 @@ namespace eSchool.Importss
         {
             this.gData.Rows.Clear();
 
-            if (studentListAsync == null)
-            {
-                studentListAsync = await StudentListAsync();
-            }
+           var studentListAsync = await StudentListAsync();
+
             List<Student_Basic> fil = null;
             if (female & man)
             {
