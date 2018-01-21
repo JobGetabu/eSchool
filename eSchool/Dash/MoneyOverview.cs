@@ -40,6 +40,11 @@ namespace eSchool.Dash
         private void MoneyOverview_Load(object sender, EventArgs e)
         {
             DashUISet();
+
+            SetToolTip(panelBal, "Fee Balances");
+            SetToolTip(panelIncome, "Income & Fees");
+            SetToolTip(panelExpense, "Expenses");
+            SetToolTip(panelStatus, "Incomes less Expenses");
         }
 
         private decimal FeeRequiredAsync(int term, int year, int form)
@@ -223,6 +228,19 @@ namespace eSchool.Dash
                 this.lblstatus.Text = $"{String.Format("{0:0,0}", (totalIncome + totalFee) -totalExpenses)}";
 
             }
+        }
+
+        private void SetToolTip(Control ctl, string message)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.UseFading = true;
+            toolTip1.UseAnimation = true;
+            toolTip1.IsBalloon = true;
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(ctl, message);
         }
     }
 }

@@ -41,6 +41,8 @@ namespace eSchool.Dash
         {
             // get number of printed receipts here and pending
             Figures();
+            SetToolTip(panel2, "Students Cleared Fees");
+            SetToolTip(panel1, "Students With Balance");
         }
 
         private async void Figures()
@@ -115,6 +117,19 @@ namespace eSchool.Dash
                 }
                 return 0;
             }
+        }
+
+        private void SetToolTip(Control ctl, string message)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.UseFading = true;
+            toolTip1.UseAnimation = true;
+            toolTip1.IsBalloon = true;
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(ctl, message);
         }
     }
 }
