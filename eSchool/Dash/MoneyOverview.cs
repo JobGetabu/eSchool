@@ -42,20 +42,12 @@ namespace eSchool.Dash
             DashUISet();
         }
 
-        List<FeesRequiredPerTerm> fRPTerms;
-        private void fRPTermsList()
+        private decimal FeeRequiredAsync(int term, int year, int form)
         {
+            List<FeesRequiredPerTerm> fRPTerms;
             using (var context = new EschoolEntities())
             {
                 fRPTerms = context.FeesRequiredPerTerms.ToList();
-            }
-        }
-
-        private decimal FeeRequiredAsync(int term, int year, int form)
-        {
-            if (fRPTerms == null)
-            {
-                fRPTermsList();
             }
             foreach (var fr in fRPTerms)
             {
@@ -80,9 +72,10 @@ namespace eSchool.Dash
 
         private decimal FeeRequiredAsync(int term, int year, int fm1, int fm2, int fm3, int fm4)
         {
-            if (fRPTerms == null)
+            List<FeesRequiredPerTerm> fRPTerms;
+            using (var context = new EschoolEntities())
             {
-                fRPTermsList();
+                fRPTerms = context.FeesRequiredPerTerms.ToList();
             }
             decimal fm1Total = 0;
             decimal fm2Total = 0;
