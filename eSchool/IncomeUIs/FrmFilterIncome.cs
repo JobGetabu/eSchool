@@ -66,7 +66,7 @@ namespace eSchool.IncomeUIs
             {
                 if (!trmslbl.Contains(tag))
                 {
-                    trmslbl.Replace(tag, "");
+                    trmslbl.Replace("", tag);
                 }
             }
         }

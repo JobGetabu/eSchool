@@ -29,7 +29,7 @@ namespace eSchool
         public static int tmStore { get; set; }
         public static int yrStore { get; set; }
 
-        public static string frmslbl = "Form ";
+        public static string frmslbl = "Form";
         public FrmCreateFStruct(int term, int year)
         {
             InitializeComponent();
@@ -67,6 +67,8 @@ namespace eSchool
         /// </summary>
         private void FrmCreateFStruct_Load(object sender, EventArgs e)
         {
+            //for the checkBoxOnChange event
+            FrmCreateFStruct.fmStore.Add(1);
             PreparingComboBoxes();
 
         }
@@ -143,6 +145,7 @@ namespace eSchool
         }
         private void bFlatBtnSave_Click(object sender, EventArgs e)
         {
+           
             if (selectedTerm == 0)
             {
                 // custom notification
@@ -158,39 +161,42 @@ namespace eSchool
                 return;
             }
 
+            FrmCreateFStruct.tmStore = selectedTerm;
+            FrmCreateFStruct.yrStore = selectedYear;
+
             if (bCbox1.Checked)
             {
-                SaveFeeStructure(bCbox1);
+                //SaveFeeStructure(bCbox1);
                 if (!frmslbl.Contains("1"))
                 {
-                    frmslbl += "1";
+                    //frmslbl += "1";
                 }
             }
 
             if (bCbox2.Checked)
             {
-                SaveFeeStructure(bCbox2);
+                //SaveFeeStructure(bCbox2);
                 if (!frmslbl.Contains("2"))
                 {
-                    frmslbl += " 2";
+                    //frmslbl += " 2";
                 }
             }
 
             if (bCbox3.Checked)
             {
-                SaveFeeStructure(bCbox3);
+                //SaveFeeStructure(bCbox3);
                 if (!frmslbl.Contains("3"))
                 {
-                    frmslbl += " 3";
+                    //frmslbl += " 3";
                 }
             }
 
             if (bCbox4.Checked)
             {
-                SaveFeeStructure(bCbox4);
+                //SaveFeeStructure(bCbox4);
                 if (!frmslbl.Contains("4"))
                 {
-                    frmslbl += " 4";
+                    //frmslbl += " 4";
                 }
             }
 
@@ -205,10 +211,12 @@ namespace eSchool
             {
                 if (CheckExistFeeStruct(fm, tmStore, yrStore))
                 {
-                    alert.Show("This Fee Structure \n Already Exists !", alert.AlertType.info);
+                    alert.Show("This Fee Structure \n Already Exists !", alert.AlertType.warnig);
                     return;
                 }
             }
+
+            lblFmsUI(fmStore);
 
             //raise our event
             List<int> data = fmStore;
@@ -251,12 +259,12 @@ namespace eSchool
             {
                 List<FeesRequiredPerTerm> frptList =
                     context.FeesRequiredPerTerms
-                    .Where(x => x.Form == fm & x.Term == tmStore)
+                    .Where(x => x.Year == yrStore & x.Term == tmStore)
                     .ToList();
 
-                foreach (var item in frptList.Where(x => x.Year == yrStore))
+                foreach (var item in frptList.Where(x => x.Form == fm))
                 {
-                    if (item.Year == yrStore)
+                    if (item.Form == fm)
                     {
                         return true;
                     }
@@ -281,6 +289,49 @@ namespace eSchool
             else
             {
                 UIinstance.BringToFront();
+            }
+        }
+
+        //string lblblb = "Form"+" "+" ";
+        private void lblFmsUI(List<int> fms)
+        {
+            string lblT1, lblT2, lblT3, lblT4;
+             lblT1 = ""; lblT2 = ""; lblT3 = ""; lblT4 = "";
+            foreach (var tm in fms)
+            {
+                if (tm == 1)
+                {
+                    lblT1 = " 1";
+
+                }
+                if (tm == 2)
+                {
+                    lblT2 = " 2";
+
+                }
+                if (tm == 3)
+                {
+                    lblT3 = " 3";
+                }
+                if (tm == 4)
+                {
+                    lblT4 = " 4";
+                }
+            }
+            frmslbl += lblT1 + lblT2 + lblT3 + lblT4;
+        }
+        private void Switch_OnValueChange(object sender, EventArgs e)
+        {
+            Bunifu.Framework.UI.BunifuCheckbox sw = sender as Bunifu.Framework.UI.BunifuCheckbox;
+            if (sw.Checked)
+            {
+                FrmCreateFStruct.fmStore.Add(int.Parse(sw.Tag.ToString()));
+                //selFilTerms.Add(int.Parse(sw.Tag.ToString()));
+            }
+            else
+            {
+                FrmCreateFStruct.fmStore.Remove(int.Parse(sw.Tag.ToString()));
+                //selFilTerms.Remove(int.Parse(sw.Tag.ToString()));
             }
         }
     }

@@ -287,6 +287,7 @@
             this.bCbox1.Size = new System.Drawing.Size(20, 20);
             this.bCbox1.TabIndex = 12;
             this.bCbox1.Tag = "1";
+            this.bCbox1.OnChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // bCbox2
             // 
@@ -300,6 +301,7 @@
             this.bCbox2.Size = new System.Drawing.Size(20, 20);
             this.bCbox2.TabIndex = 13;
             this.bCbox2.Tag = "2";
+            this.bCbox2.OnChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // bCbox3
             // 
@@ -313,6 +315,7 @@
             this.bCbox3.Size = new System.Drawing.Size(20, 20);
             this.bCbox3.TabIndex = 14;
             this.bCbox3.Tag = "3";
+            this.bCbox3.OnChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // bCbox4
             // 
@@ -326,6 +329,7 @@
             this.bCbox4.Size = new System.Drawing.Size(20, 20);
             this.bCbox4.TabIndex = 15;
             this.bCbox4.Tag = "4";
+            this.bCbox4.OnChange += new System.EventHandler(this.Switch_OnValueChange);
             // 
             // FrmCreateFStruct
             // 
