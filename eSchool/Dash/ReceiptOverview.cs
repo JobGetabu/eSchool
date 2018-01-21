@@ -34,11 +34,12 @@ namespace eSchool.Dash
         int GYear = Properties.Settings.Default.CurrentYear;
         public void Global_ReceiptOverview_Load()
         {
-            //TODO get number of printed receipts here and pending
+            // get number of printed receipts here and pending
+            Figures();
         }
         private void ReceiptOverview_Load(object sender, EventArgs e)
         {
-            //TODO get number of printed receipts here and pending
+            // get number of printed receipts here and pending
             Figures();
         }
 
