@@ -68,7 +68,7 @@ namespace eSchool
         private void FrmCreateFStruct_Load(object sender, EventArgs e)
         {
             PreparingComboBoxes();
-            
+
         }
 
         private void PreparingComboBoxes()
@@ -85,7 +85,7 @@ namespace eSchool
                 //check term 3 set next year available
                 if (cTerm == 3)
                 {
-                    int x = Properties.Settings.Default.CurrentYear +1;
+                    int x = Properties.Settings.Default.CurrentYear + 1;
                     //Add the year in the SchoolPeriodYears
                     SchoolPeriodYear spy = new SchoolPeriodYear();
                     spy.Year = x;
@@ -108,7 +108,7 @@ namespace eSchool
                         MessageBox.Show("Unsuccessful " + exp.Message, "Error occured");
                         throw;
                     }
-                   
+
                 }
 
             }
@@ -119,7 +119,7 @@ namespace eSchool
             if (mCBoxYear.SelectedItem != null)
             {
                 selectedYear = int.Parse(mCBoxYear.SelectedItem.ToString());
-                bCLabelStructureYear.Text= mCBoxYear.SelectedItem.ToString();
+                bCLabelStructureYear.Text = mCBoxYear.SelectedItem.ToString();
             }
         }
 
@@ -137,7 +137,7 @@ namespace eSchool
             {
                 FrmCreateFStruct.fmStore.Add(int.Parse(ck.Tag.ToString()));
                 FrmCreateFStruct.tmStore = selectedTerm;
-                FrmCreateFStruct.yrStore = selectedYear;       
+                FrmCreateFStruct.yrStore = selectedYear;
             }
 
             //TODO check existence of a similer fees structure and warn 
@@ -157,14 +157,14 @@ namespace eSchool
                 // MetroMessageBox.Show(this, "Select the year", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 alert.Show("Required info \n Select the year", alert.AlertType.info);
                 return;
-            }   
+            }
 
             if (bCbox1.Checked)
             {
                 SaveFeeStructure(bCbox1);
                 if (!frmslbl.Contains("1"))
                 {
-                frmslbl += "1";
+                    frmslbl += "1";
                 }
             }
 
@@ -202,6 +202,14 @@ namespace eSchool
                 return;
             }
 
+            foreach (var fm in fmStore)
+            {
+                if (CheckExistFeeStruct(fm, tmStore, yrStore))
+                {
+                    alert.Show("This Fee Structure \n Already Exists !", alert.AlertType.info);
+                    return;
+                }
+            }
 
             //raise our event
             List<int> data = fmStore;
@@ -213,14 +221,14 @@ namespace eSchool
 
             //change label
             FeesStructure feeIns = FeesStructure.Instance;
-            feeIns.lblYFeeStructure.Text = selectedYear + " Fee Structure " ;
+            feeIns.lblYFeeStructure.Text = selectedYear + " Fee Structure ";
             feeIns.lblFFeeStructure.Text = frmslbl;
-            feeIns.lblTFeeStructure.Text = "Term "+ tmStore.ToString();
+            feeIns.lblTFeeStructure.Text = "Term " + tmStore.ToString();
             feeIns.lblTotalFeeStructure.Text = "Total KES 0";//Total KES 30,000
             feeIns.CheckAnnualPrintAvail(selectedYear);
 
             //Make Save btn visible if invisible
-            FeeUI_Show fui = FeeUI_Show.Instance; 
+            FeeUI_Show fui = FeeUI_Show.Instance;
             fui.btnSaveStructure.Visible = true;
             //refresh the list of fee items
             fui.OlistControlInitAsync();
@@ -232,6 +240,26 @@ namespace eSchool
             TabSwitcher(FeeUI_Show.Instance);
             this.Close();
 
+        }
+
+        private bool CheckExistFeeStruct(int fm, int tmStore, int yrStore)
+        {
+            using (var context = new EschoolEntities())
+            {
+                List<FeesRequiredPerTerm> frptList =
+                    context.FeesRequiredPerTerms
+                    .Where(x => x.Form == fm & x.Term == tmStore)
+                    .ToList();
+
+                foreach (var item in frptList.Where(x => x.Year == yrStore))
+                {
+                    if (item.Year == yrStore)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
 
         private void bFlatButtonCancel_Click(object sender, EventArgs e)
