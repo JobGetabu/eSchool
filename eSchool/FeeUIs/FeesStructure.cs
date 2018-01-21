@@ -97,7 +97,7 @@ namespace eSchool
 
             //loading comboBox
             CheckAnnualPrintAvail(GYear);
-            //TODO print avail if all 3 terms avail
+            //print avail if all 3 terms avail
         }
 
         public List<AnnualFeeStructure> SelectedOverHeads(List<OverHeadCategoryPerYear> ovfeestructureListAsync, int selYear, int selform, int selTerm)
@@ -140,7 +140,7 @@ namespace eSchool
                 AnnualFeeStructure afs = new AnnualFeeStructure();
                 afs.overHeadName = ov;
                 foreach (var item in ovfeestructureListAsync)
-                {                    
+                {
                     if (item.Category.Equals(ov))
                     {
                         if (item.Term == 1)
@@ -163,12 +163,12 @@ namespace eSchool
         }
         private async void bMenu_onItemSelected_1(object sender, EventArgs e)
         {
-            //ToDo use this externally to print item
-            //ToDo complex print func comes here
+            // use this externally to print item
+            // complex print func comes here
             if (bMenu.selectedValue.Equals("Print"))
             {
                 //alert.Show("Generating Document !", alert.AlertType.success);
-                //TODO open up a dialogue print fee
+                // open up a dialogue print fee
                 FrmPrompt fp = new FrmPrompt();
                 if (fp.ShowDialog() == DialogResult.OK)
                 {
@@ -186,19 +186,23 @@ namespace eSchool
                     List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, fp.selFilYear, fp.selFilForm);
                     string lbl = $"{fp.selFilYear} Form {fp.frmlbl} Fees Structure"; //2017 Form Four Fees Structure
 
-                   
 
-                    alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
-                    await Task.Delay(6000);
-                    FrmAnnualFsReport frm = new FrmAnnualFsReport(lbl, feestructureList);                  
+
+                    alert l = new alert("Please wait...\n Generating Document !", alert.AlertType.success);
+                    l.Show();
+                    await Task.Delay(2000);
+                    l.Close();
+                    FrmAnnualFsReport frm = new FrmAnnualFsReport(lbl, feestructureList);
                     frm.ShowDialog();
                 }
+                return;
             }
 
 
             if (bMenu.selectedValue.Equals("New Fee Structure"))
             {
                 CreateFeeStructClick();
+                return;
             }
 
             if (bMenu.selectedValue.Equals("Do Print"))
@@ -206,13 +210,16 @@ namespace eSchool
                 FeeUI_Show fus = FeeUI_Show.Instance;
                 fus.RpInit();
 
-                alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
-                await Task.Delay(6000);
+                alert l = new alert("Please wait...\n Generating Document !", alert.AlertType.success);
+                l.Show();
+                await Task.Delay(2000);
+                l.Close();
                 DoPrint(fus.rpYear, fus.rpTerm, fus.rpForms[0], fus.rpTitle);
+                return;
             }
         }
 
-        private async void DoPrint(int year,int term,int form,string title)
+        private async void DoPrint(int year, int term, int form, string title)
         {
             int fm = FeesUI.autoFilterListOfForms[0];
             var feestructureListAsync = await Task.Factory.StartNew(() =>
@@ -233,55 +240,49 @@ namespace eSchool
             string lbl = $"{title} Term {FeesUI.autoSelTerm} Fees Structure"; //2017 Form Four Fees Structure
 
             FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
-           
+
             frm.ShowDialog();
         }
 
         //loading comboBox
-        public async void CheckAnnualPrintAvail(int cYear)
+        public void CheckAnnualPrintAvail(int cYear)
         {
             //loading comboBox
-            string[] n = { };
-            bMenu.Items = n;
+            bMenu.Clear();
             bMenu.AddItem("New Fee Structure");
-
 
             bool bool1 = false;
             bool bool2 = false;
             bool bool3 = false;
-
-            var grpFsListAsync = await Task.Factory.StartNew(() =>
+            using (var context = new EschoolEntities())
             {
-                using (var context = new EschoolEntities())
-                {
-                    return context.GroupedFeeStructures
-                        .OrderBy(c => c.Id)
-                        .Where(c => c.selYear == cYear)
-                        .ToList();
-                }
-            });
+                var grpFsListAsync = context.GroupedFeeStructures
+                    .OrderBy(c => c.Id)
+                    .Where(c => c.selYear == cYear)
+                    .ToList();
 
-            foreach (var item in grpFsListAsync)
-            {
-                if (item.selTerm == 1)
+                foreach (var item in grpFsListAsync)
                 {
-                    bool1 = true;
+                    if (item.selTerm == 1)
+                    {
+                        bool1 = true;
+                    }
+                    if (item.selTerm == 2)
+                    {
+                        bool2 = true;
+                    }
+                    if (item.selTerm == 3)
+                    {
+                        bool3 = true;
+                    }
                 }
-                if (item.selTerm == 2)
+
+                //loading comboBox
+                if ((bool1 ? 1 : 0) + (bool2 ? 1 : 0) + (bool3 ? 1 : 0) == 3)
                 {
-                    bool2 = true;
-                }
-                if (item.selTerm == 3)
-                {
-                    bool3 = true;
+                    bMenu.AddItem("Print");
                 }
             }
-
-            if ((bool1 ? 1 : 0) + (bool2 ? 1 : 0) + (bool3 ? 1 : 0) == 3)
-            {
-                bMenu.AddItem("Print");
-            }
-
         }
         private void CreateFeeStructClick()
         {
@@ -336,5 +337,6 @@ namespace eSchool
         {
 
         }
+
     }
 }

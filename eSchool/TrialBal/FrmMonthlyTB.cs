@@ -61,9 +61,10 @@ namespace eSchool.TrialBal
         public async void LauchPrint(IWin32Window t)
         {
             //notification
-            alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
-            await Task.Delay(5000);
-
+            alert l = new alert("Please wait...\n Generating Document !", alert.AlertType.success);
+            l.Show();
+            await Task.Delay(2000);
+            l.Close();
             frmT.ShowDialog(t);
         }
 
@@ -182,7 +183,8 @@ namespace eSchool.TrialBal
             {
                 if (Properties.Settings.Default.FirstInstallUse)
                 {
-                    openingBal1 = Properties.Settings.Default.OpeningBalance;
+                    //Brings mathematical errors
+                    //openingBal1 = Properties.Settings.Default.OpeningBalance;
                     //this condition code is not to run again
                     Properties.Settings.Default.FirstInstallUse = false;
                     Properties.Settings.Default.Save();

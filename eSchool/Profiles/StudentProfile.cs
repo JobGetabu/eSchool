@@ -613,9 +613,10 @@ namespace eSchool.Profiles
             }
             if (e.ColumnIndex == 5)
             {
-                alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
-
-                await Task.Delay(6000);
+                alert l = new alert("Please wait...\n Generating Document !", alert.AlertType.success);
+                l.Show();
+                await Task.Delay(2000);
+                l.Close();
                 PrintService(e.RowIndex);
                 
             }
@@ -874,14 +875,6 @@ namespace eSchool.Profiles
             }
 
             return runningAmount;
-        }
-
-        public async Task Foo(Delegate Fu)
-        {
-            await Task.Delay(6000);
-            //txtConsole.AppendText("Waiting...");
-            //DoStuff();
-            
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)

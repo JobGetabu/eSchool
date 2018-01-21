@@ -106,7 +106,6 @@ namespace eSchool
                     {
                         //fatal must close program //must be logged
                         MessageBox.Show("Unsuccessful " + exp.Message, "Error occured");
-                        throw;
                     }
 
                 }
@@ -225,11 +224,15 @@ namespace eSchool
             feeIns.lblFFeeStructure.Text = frmslbl;
             feeIns.lblTFeeStructure.Text = "Term " + tmStore.ToString();
             feeIns.lblTotalFeeStructure.Text = "Total KES 0";//Total KES 30,000
+
+
             feeIns.CheckAnnualPrintAvail(selectedYear);
+            
 
             //Make Save btn visible if invisible
             FeeUI_Show fui = FeeUI_Show.Instance;
-            fui.btnSaveStructure.Visible = true;
+            fui.btnSaveStructure.Visible = false;
+            fui.btnCancel.Visible = true;
             //refresh the list of fee items
             fui.OlistControlInitAsync();
             //custom notification

@@ -114,6 +114,7 @@ namespace eSchool
                 //refresh the list of fee items
                 FeeUI_Show fui = FeeUI_Show.Instance;
                 fui.btnSaveStructure.Visible = false;
+                fui.btnCancel.Visible = true;
                 fui.OlistControlInitAsync();
 
                 //change label
@@ -124,8 +125,7 @@ namespace eSchool
                 feeIns.lblTotalFeeStructure.Text = $"Total {selFs.TotalTitle}"; //Total KES 30,000
 
                 //loading comboBox
-                string[] n = { };
-                feeIns.bMenu.Items = n;
+                feeIns.bMenu.Clear();
                 feeIns.bMenu.AddItem("Do Print"); //No print at this point
             }
 

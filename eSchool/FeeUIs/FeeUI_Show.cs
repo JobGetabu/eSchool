@@ -37,15 +37,10 @@ namespace eSchool
 
         private void FeeUI_Show_Load(object sender, EventArgs e)
         {
-            ////loading comboBox
-            //FeesStructure fs = FeesStructure.Instance;
-            //string[] n = { };
-            //fs.bMenu.Items = n;
-            //fs.bMenu.AddItem("Print"); //No print at this point
-            //fs.bMenu.AddItem("New Fee Structure");
 
             bGrid.Rows.Clear();
-            this.btnSaveStructure.Visible = true;
+            this.btnSaveStructure.Visible = false;
+            this.btnCancel.Visible = true;
             OlistControlInitAsync();
         }
 
@@ -247,7 +242,12 @@ namespace eSchool
 
                 if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} \n Total fee for {tmTitle} is {totalCash} \n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
                 {
-                    //alert.Show("Generating Document !", alert.AlertType.success);
+                    // print fee structure
+                    //notification
+                    alert l = new alert("Please wait...\n Generating Document !", alert.AlertType.success);
+                    l.Show();
+                    await Task.Delay(2000);
+                    l.Close();
                     int fm = FeesUI.autoFilterListOfForms[0];
                     var feestructureListAsync = await Task.Factory.StartNew(() =>
                     {
@@ -271,6 +271,7 @@ namespace eSchool
 
                 }
                 this.btnSaveStructure.Visible = false;
+                this.btnCancel.Visible = true;
                 //switch tabs to feeS list
                 //refresh the list
 
@@ -360,45 +361,48 @@ namespace eSchool
                 }
 
                 FeesStructure fss = FeesStructure.Instance;
+                //print fee structure
 
                 if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} \n Total fee for {tmTitle} is {totalCash} \n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
                 {
-                    //print fee structure
+                    // print fee structure
+                    //notification
+                    alert l = new alert("Please wait...\n Generating Document !", alert.AlertType.success);
+                    l.Show();
+                    await Task.Delay(2000);
+                    l.Close();
 
-                    if ((MetroMessageBox.Show(this, $"{title} has been saved for {tmTitle} \n Total fee for {tmTitle} is {totalCash} \n Do you wish to print the Fee Structure ?", "Print Fee Structure", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+
+                    int fm = OverHeadListItem.filterListOfForms[0];
+                    var feestructureListAsync = await Task.Factory.StartNew(() =>
                     {
-                        // print fee structure
-                        //alert.Show("Generating Document !", alert.AlertType.success);
-                        int fm = OverHeadListItem.filterListOfForms[0];
-                        var feestructureListAsync = await Task.Factory.StartNew(() =>
+                        using (var context = new EschoolEntities())
                         {
-                            using (var context = new EschoolEntities())
-                            {
-                                return context.OverHeadCategoryPerYears
-                                                   .OrderBy(c => c.Id)
-                                                   .Where(c => c.Year == OverHeadListItem.selYear
-                                                   & c.Form == fm
-                                                    & c.Term == OverHeadListItem.selTerm)
-                                                   .ToList();
-                            }
-                        });
+                            return context.OverHeadCategoryPerYears
+                                               .OrderBy(c => c.Id)
+                                               .Where(c => c.Year == OverHeadListItem.selYear
+                                               & c.Form == fm
+                                                & c.Term == OverHeadListItem.selTerm)
+                                               .ToList();
+                        }
+                    });
 
-                        List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, OverHeadListItem.selYear, fm, OverHeadListItem.selTerm);
+                    List<AnnualFeeStructure> feestructureList = SelectedOverHeads(feestructureListAsync, OverHeadListItem.selYear, fm, OverHeadListItem.selTerm);
 
-                        string lbl = $"{title} Term {OverHeadListItem.selTerm} Fees Structure"; //2017 Form Four Fees Structure
+                    string lbl = $"{title} Term {OverHeadListItem.selTerm} Fees Structure"; //2017 Form Four Fees Structure
 
-                        FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
-                        frm.ShowDialog();
-                    }
-                    this.btnSaveStructure.Visible = false;
-
-                    //switch tabs to feeS list
-                    //refresh the list
-
-                    fss.SwitchTabExt();
-                    FeeUI_List ful = FeeUI_List.Instance;
-                    ful.LoadListAsync(OverHeadListItem.selYear);
+                    FrmTermFsReport frm = new FrmTermFsReport(lbl, feestructureList);
+                    frm.ShowDialog();
                 }
+                this.btnSaveStructure.Visible = false;
+                this.btnCancel.Visible = true;
+                //switch tabs to feeS list
+                //refresh the list
+
+                fss.SwitchTabExt();
+                FeeUI_List ful = FeeUI_List.Instance;
+                ful.LoadListAsync(OverHeadListItem.selYear);
+
                 #endregion
 
                 //referesh the progress bars
@@ -413,7 +417,6 @@ namespace eSchool
                 feeIns.lblTotalFeeStructure.Text = $""; //Total KES 30,000
 
             }
-
         }
 
         private async void bGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -439,6 +442,7 @@ namespace eSchool
                                         context.SaveChanges();
                                         //enable save btn visible
                                         btnSaveStructure.Visible = true;
+                                        btnCancel.Visible = false;
                                         deleted = true;
                                     }
                                     catch (Exception exp)
@@ -655,6 +659,38 @@ namespace eSchool
             {
                 string totalCash = $"KES {String.Format("{0:0,0}", OverHeadListItem.totalCashPas)}";
                 feeIns.lblTotalFeeStructure.Text = "Total " + totalCash;//Total KES 30,000
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            FeeUI_List ful = FeeUI_List.Instance;
+            //show FeeUI_List
+            TabSwitcher(FeeUI_List.Instance);
+            //updates the list with current year fee structures
+            int yy = Properties.Settings.Default.CurrentYear;
+            ful.LoadListAsync(yy);
+
+            //label change
+            FeesStructure feeIns = FeesStructure.Instance;
+            feeIns.lblYFeeStructure.Text = $"{yy} Fees Structures";//2017 Fees Structures
+            feeIns.lblFFeeStructure.Text = "";
+            feeIns.lblTFeeStructure.Text = "";
+            feeIns.lblTotalFeeStructure.Text = "";
+            feeIns.CheckAnnualPrintAvail(yy);
+        }
+
+        private void TabSwitcher(Control UIinstance)
+        {
+            if (!FeesStructure.Instance.container.Controls.Contains(UIinstance))
+            {
+                FeesStructure.Instance.container.Controls.Add(UIinstance);
+                UIinstance.Dock = DockStyle.Fill;
+                UIinstance.BringToFront();
+            }
+            else
+            {
+                UIinstance.BringToFront();
             }
         }
     }

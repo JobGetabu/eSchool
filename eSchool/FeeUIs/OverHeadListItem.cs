@@ -77,6 +77,7 @@ namespace eSchool
 
                     //Revive save for changes to be updated
                     fui.btnSaveStructure.Visible = true;
+                    fui.btnCancel.Visible = false;
                 }
                 //refresh the data grid
                 if (FeesUI.autoGen)

@@ -145,21 +145,23 @@
   <metadata name="Del.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dataGridViewCellStyle3.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCancel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
-        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
-        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
-        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
-        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
-        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
-        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
-        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
-        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
-        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
-        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
-        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAAnCAYAAABjTfhOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMWSURBVHhe7dzLS1RhHMbx/pIWQVA2OjrjpFnQwlWbaNmm
+        O2GEGVK2iKLyMjNqZNNiIKGBoChIIpKwCxZdjRZGQkJUVLgQMswZ5j7Er553nJvnHW/51lk8i8/uPaOL
+        L+95z3nPOasS8aQQ2QFjJNtgjGQbjJFsgzGSbTBGso0lx/j6c0p6hjOyoz8m24Ixqe5NyOqOX0SqBTQB
+        aOTBeErbUDmLivH7z6ScuJOQDf6kVHdOiaP1mbgO3ZTapmtSvz8om3f7iFQLaAJUI+0TsqYzI0034vJp
+        cuEwF4yx635CKv0xqWkdlvp9l7T/BFE5DXt6pbp5UKp8YTWhzUT0nUHZGDEbbr8cFVfbK9m0t0/7h4gW
+        C1FiQtt6MSoTU/pZUhsjptTGQETqmm9pf5houTYevCKenoi8/WbtzhIjZkSEiIN0P0b0t7Dcc/vDlnWk
+        JUacmjkjkml1B/ply4WImvxy7ZXEeGowLu7jz7UHE600T8td2XU1ao0Ri0qHL6oWmroDiUyo6prOrx/z
+        MeKyG1c7ugOITKk5PCA7Q7FCjLj3U+FL8BYO/RfrvHF1ZlYxYtsGd8t1A4lMqzn5TkIj6WyMjcGMVLU8
+        0g4kMg2n6obA7Gkam9zYa9YNJDINt3nQYD5GbG7rBhKZhgcs8jFWdGfEeWRIO5DINJyV1/sz2Rivv0mL
+        6/S4diCRac5jL8T3cPZqGlsya7tS2oFEpuVufKsYATcecVWjG0xkinogpy9eugODMlGo7gAiU1xnv8jg
+        WPbpnXyMwNmR/qXiWdESI7ZkGs6H+V4LGYetZ49/Wt5PFJ5pLIkRcLp2eX/w6R0yqrb9q9weLcyKYIkR
+        7o3FVZB8AYtWGmZEhBh6mX1Sp5g2RsAMiXcVuDNDK0W9//Ln1Dx3RswpGyNgDYkXsl0dk3wnhpYN1yDu
+        Mx/VxUrxGnGueWPMefohpX7I4Z0RZ9uImi25pqT5oJHKo4/VRx/wpYmB0fIR5iwqxhxUHXiSVrMlvhSA
+        zW0iHTRybiilPoeja0lnSTESmcQYyTYYI9kGYyTbYIxkE0n5DbjtaMx/e+HcAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnSaveStructure.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

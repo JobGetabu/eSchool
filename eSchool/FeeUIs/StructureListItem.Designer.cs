@@ -31,20 +31,20 @@
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.imageDel = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSession = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.imageDel = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageDel)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageDel)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -87,6 +87,22 @@
             this.panel3.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
             this.panel3.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
+            // imageDel
+            // 
+            this.imageDel.BackColor = System.Drawing.Color.Transparent;
+            this.imageDel.Image = global::eSchool.StatusGrid.Waste_64px;
+            this.imageDel.ImageActive = null;
+            this.imageDel.Location = new System.Drawing.Point(132, 11);
+            this.imageDel.Name = "imageDel";
+            this.imageDel.Size = new System.Drawing.Size(22, 20);
+            this.imageDel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageDel.TabIndex = 5;
+            this.imageDel.TabStop = false;
+            this.imageDel.Zoom = 10;
+            this.imageDel.Click += new System.EventHandler(this.imageDel_Click);
+            this.imageDel.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
+            this.imageDel.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -96,6 +112,7 @@
             this.lblTotal.Size = new System.Drawing.Size(81, 20);
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "KES 20,000";
+            this.lblTotal.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
             this.lblTotal.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
             this.lblTotal.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
@@ -120,6 +137,7 @@
             this.lblSession.Size = new System.Drawing.Size(54, 20);
             this.lblSession.TabIndex = 2;
             this.lblSession.Text = "Term 3";
+            this.lblSession.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
             this.lblSession.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
             this.lblSession.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
@@ -145,6 +163,7 @@
             this.lblTitle.Size = new System.Drawing.Size(108, 20);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "2017 Form 1, 2";
+            this.lblTitle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
             this.lblTitle.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
             this.lblTitle.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
@@ -157,24 +176,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FsClick);
             this.pictureBox1.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
-            // 
-            // imageDel
-            // 
-            this.imageDel.BackColor = System.Drawing.Color.Transparent;
-            this.imageDel.Image = global::eSchool.StatusGrid.Waste_64px;
-            this.imageDel.ImageActive = null;
-            this.imageDel.Location = new System.Drawing.Point(132, 11);
-            this.imageDel.Name = "imageDel";
-            this.imageDel.Size = new System.Drawing.Size(22, 20);
-            this.imageDel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageDel.TabIndex = 5;
-            this.imageDel.TabStop = false;
-            this.imageDel.Zoom = 10;
-            this.imageDel.Click += new System.EventHandler(this.imageDel_Click);
-            this.imageDel.MouseEnter += new System.EventHandler(this.MouseEnterEffect);
-            this.imageDel.MouseLeave += new System.EventHandler(this.MouseLeaveEffect);
             // 
             // StructureListItem
             // 
@@ -191,12 +195,12 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageDel)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageDel)).EndInit();
             this.ResumeLayout(false);
 
         }

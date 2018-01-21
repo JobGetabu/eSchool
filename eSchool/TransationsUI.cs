@@ -267,7 +267,8 @@ namespace eSchool
             {
                 if (Properties.Settings.Default.FirstInstallUse)
                 {
-                    openingBal = Properties.Settings.Default.OpeningBalance;
+                    //Brings mathematical errors
+                    //openingBal = Properties.Settings.Default.OpeningBalance;
                     //this condition code is not to run again
                     Properties.Settings.Default.FirstInstallUse = false;
                     Properties.Settings.Default.Save();
@@ -365,12 +366,13 @@ namespace eSchool
 
                 using (var context = new EschoolEntities())
                 {
-                    //TODO instead of settings check do a db check
+                    // instead of settings check do a db check
                     if (Properties.Settings.Default.FirstInstallUse)
                     {
-                        lopeningBalance = Properties.Settings.Default.OpeningBalance;
+                        //Brings mathematical errors
+                        //lopeningBalance = Properties.Settings.Default.OpeningBalance;
                         //this condition code is not to run again
-                        Properties.Settings.Default.FirstInstallUse = false;
+                        //Properties.Settings.Default.FirstInstallUse = false;
                     }
                     else
                     {
@@ -555,7 +557,8 @@ namespace eSchool
                 {
                     if (Properties.Settings.Default.FirstInstallUse)
                     {
-                        openingBal = Properties.Settings.Default.OpeningBalance;
+                        //Brings mathematical errors
+                        //openingBal = Properties.Settings.Default.OpeningBalance;
                         //this condition code is not to run again
                         Properties.Settings.Default.FirstInstallUse = false;
                         Properties.Settings.Default.Save();
@@ -703,7 +706,8 @@ namespace eSchool
             {
                 if (Properties.Settings.Default.FirstInstallUse)
                 {
-                    openingBal = Properties.Settings.Default.OpeningBalance;
+                    //Brings mathematical errors
+                    //openingBal = Properties.Settings.Default.OpeningBalance;
                     //this condition code is not to run again
                     Properties.Settings.Default.FirstInstallUse = false;
                     Properties.Settings.Default.Save();
