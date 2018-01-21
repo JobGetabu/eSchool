@@ -615,7 +615,7 @@ namespace eSchool.Profiles
             {
                 alert.Show("Please wait...\n Generating Document !", alert.AlertType.success);
 
-                await Task.Delay(5000);
+                await Task.Delay(6000);
                 PrintService(e.RowIndex);
                 
             }
