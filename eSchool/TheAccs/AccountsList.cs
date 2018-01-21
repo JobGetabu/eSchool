@@ -70,8 +70,8 @@ namespace eSchool.TheAccs
                 {
                        null,
                        acc.Type,
-                       acc.AccName,
                        acc.Bank,
+                       acc.AccName,
                        acc.AccNo,
                        null
                 });

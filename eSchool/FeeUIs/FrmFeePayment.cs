@@ -37,7 +37,7 @@ namespace eSchool
 
                 foreach (var c in await accListAsync)
                 {
-                    cbAccount.Items.Add($"{c.AccName}({c.AccNo})");
+                    cbAccount.Items.Add($"{c.Bank}({c.AccNo})");
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace eSchool
 
                 foreach (var c in accListAsync)
                 {
-                    string f = ($"{c.AccName}({c.AccNo})");
+                    string f = ($"{c.Bank}({c.AccNo})");
                     if (account.Equals(f))
                     {
                         return c;
@@ -72,7 +72,7 @@ namespace eSchool
             PreparingComboBoxesAsync();
         }
 
-        //TODO check if its working
+        //check if its working
         private void AutoComplete(MetroFramework.Controls.MetroTextBox tb)
         {
             tbForm.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

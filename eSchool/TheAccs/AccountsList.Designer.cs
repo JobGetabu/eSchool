@@ -133,7 +133,7 @@
             // 
             // ColumnName
             // 
-            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.HeaderText = "Bank Name";
             this.ColumnName.Name = "ColumnName";
             this.ColumnName.ReadOnly = true;
             // 
