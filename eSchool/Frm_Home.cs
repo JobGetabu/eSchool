@@ -194,6 +194,10 @@ namespace eSchool
             SetToolTip(btnLogout, "Logout");
             SetToolTip(btnAbout, "About");
 
+            //sidebar autoscroll
+            sidebar.AutoScroll = true;
+            sidebar.VerticalScroll.Enabled = true;
+
             btn_dashboard.selected = true;
             btn_dashboard.Textcolor = _white;
             DashboardUI.collapse += CollapseNavBar;
@@ -421,6 +425,12 @@ namespace eSchool
                 logoAnim.Hide(pictureBox1);
 
                 sidebar.Width = 62;
+                if (sidebar.VerticalScroll.Visible)
+                {
+                    //increase the width a bit
+                    sidebar.Width = 67;
+                    sidebar.SetAutoScrollMargin(0, 0);
+                }
 
             }
             else
@@ -431,6 +441,14 @@ namespace eSchool
                 sidebar.Width = 240;
                 logoAnim.ShowSync(pictureBox1);
             }
+
+            //trying to hide scroll
+            //sidebar autoscroll
+            sidebar.AutoScroll = true;
+            sidebar.VerticalScroll.Visible = false;
+            sidebar.SetAutoScrollMargin(0, 0);
+            sidebar.HorizontalScroll.Visible = false;
+            sidebar.VerticalScroll.Enabled = true;
         }
 
         private void ColorSelection()
