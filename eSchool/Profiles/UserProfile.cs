@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using custom_alert_notifications;
 using MetroFramework;
+using System.Globalization;
 
 namespace eSchool.Profiles
 {
@@ -36,7 +37,7 @@ namespace eSchool.Profiles
 
         string name, school, type, reg, occupation, usern;
         private string path;
-
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
 
         private void btnEditUserName_Click(object sender, EventArgs e)
         {
@@ -48,7 +49,7 @@ namespace eSchool.Profiles
                 {
                     //pass the edited username
 
-                    cUser.username = ff.userN;
+                    cUser.username = ff.userN.ToUpper();
                     context.Entry<eUser>(cUser).State = EntityState.Modified;
                     try
                     {
@@ -59,8 +60,10 @@ namespace eSchool.Profiles
                     {
                         MessageBox.Show(exp.Message);
                     }
-                    lblUsername.Text = $"UserName: {cUser.username}";//UserName: Admin
-                    lblName.Text = $"{cUser.Type} {cUser.username}";//Administrator Jane
+                    
+                    var tt = textInfo.ToTitleCase(cUser.username);
+                    lblUsername.Text = $"UserName: {tt}";//UserName: Admin
+                    lblName.Text = $"{cUser.Type} {tt}";//Administrator Jane
                 }
             }
         }
@@ -83,7 +86,8 @@ namespace eSchool.Profiles
             reg = $"Registered: {cUser.DateRegistered.ToShortDateString()}";//Registered: 12/12/17 15:00
             occupation = $"{cUser.Occupation}";//
 
-            usern = $"UserName: {cUser.username}";//UserName: Admin
+            var tt = textInfo.ToTitleCase(cUser.username);
+            usern = $"UserName: {tt}";//UserName: Admin
 
             lblName.Text = name;
             lbloccupation.Text = occupation;
@@ -193,9 +197,9 @@ namespace eSchool.Profiles
                 }
             });
 
-            foreach (var ss in userlist.Where(a => a.username.Equals(username)))
+            foreach (var ss in userlist.Where(a => a.username.Equals(username.ToUpper())))
             {
-                if (username == ss.username)
+                if (username.ToUpper().Equals(ss.username))
                 {
                     return ss;
                 }
@@ -395,7 +399,8 @@ namespace eSchool.Profiles
             reg = $"Registered: {cUser.DateRegistered.ToShortDateString()}";//Registered: 12/12/17 15:00
             occupation = $"{cUser.Occupation}";//
 
-            usern = $"UserName: {cUser.username}";//UserName: Admin
+            var tt = textInfo.ToTitleCase(cUser.username);
+            usern = $"UserName: {tt}";//UserName: Admin
         }
 
         private void UserProfile_Load(object sender, EventArgs e)

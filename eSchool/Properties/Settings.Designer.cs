@@ -25,7 +25,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int CurrentTerm {
             get {
                 return ((int)(this["CurrentTerm"]));
@@ -37,7 +37,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2017")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2018")]
         public int CurrentYear {
             get {
                 return ((int)(this["CurrentYear"]));
@@ -121,7 +121,7 @@ namespace eSchool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CELL NO: +21 545 6543")]
+        [global::System.Configuration.DefaultSettingValueAttribute("CELL NO: +254 7084 40184")]
         public string schoolCell {
             get {
                 return ((string)(this["schoolCell"]));

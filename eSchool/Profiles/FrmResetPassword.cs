@@ -87,9 +87,9 @@ namespace eSchool.Profiles
             {
                 var userList = context.eUsers.ToList();
 
-                foreach (var ss in userList.Where(a => a.username.Equals(username)))
+                foreach (var ss in userList.Where(a => a.username.Equals(username.ToUpper())))
                 {
-                    if (username == ss.username)
+                    if (username.ToUpper().Equals(ss.username))
                     {
                         return ss;
                     }

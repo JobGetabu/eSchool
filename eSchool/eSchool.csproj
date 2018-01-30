@@ -1070,6 +1070,7 @@
     <None Include="Resources\1approved.png" />
     <None Include="Resources\1pending.png" />
     <None Include="Resources\License_eschool.txt" />
+    <None Include="Resources\eschool.png" />
     <Content Include="sqlceca40.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

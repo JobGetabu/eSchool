@@ -186,12 +186,12 @@
             // 
             this.lblAccNo.AutoSize = true;
             this.lblAccNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccNo", true));
-            this.lblAccNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccNo.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblAccNo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAccNo.Location = new System.Drawing.Point(240, 201);
             this.lblAccNo.Name = "lblAccNo";
-            this.lblAccNo.Size = new System.Drawing.Size(92, 17);
+            this.lblAccNo.Size = new System.Drawing.Size(92, 16);
             this.lblAccNo.TabIndex = 80;
             this.lblAccNo.Text = "021549941266";
             this.lblAccNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,12 +204,12 @@
             // 
             this.lblAccountName.AutoSize = true;
             this.lblAccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccName", true));
-            this.lblAccountName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountName.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblAccountName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAccountName.Location = new System.Drawing.Point(240, 163);
             this.lblAccountName.Name = "lblAccountName";
-            this.lblAccountName.Size = new System.Drawing.Size(131, 17);
+            this.lblAccountName.Size = new System.Drawing.Size(136, 16);
             this.lblAccountName.TabIndex = 79;
             this.lblAccountName.Text = "Gathanithi Secondary";
             this.lblAccountName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,12 +218,12 @@
             // 
             this.lblBankType.AutoSize = true;
             this.lblBankType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Type", true));
-            this.lblBankType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBankType.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblBankType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblBankType.Location = new System.Drawing.Point(240, 126);
             this.lblBankType.Name = "lblBankType";
-            this.lblBankType.Size = new System.Drawing.Size(66, 17);
+            this.lblBankType.Size = new System.Drawing.Size(67, 16);
             this.lblBankType.TabIndex = 78;
             this.lblBankType.Text = "Gathanithi";
             this.lblBankType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,12 +232,12 @@
             // 
             this.lblBankName.AutoSize = true;
             this.lblBankName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Bank", true));
-            this.lblBankName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBankName.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblBankName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblBankName.Location = new System.Drawing.Point(240, 93);
             this.lblBankName.Name = "lblBankName";
-            this.lblBankName.Size = new System.Drawing.Size(43, 17);
+            this.lblBankName.Size = new System.Drawing.Size(45, 16);
             this.lblBankName.TabIndex = 77;
             this.lblBankName.Text = "Equity";
             this.lblBankName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,12 +245,12 @@
             // bunifuCustomLabel13
             // 
             this.bunifuCustomLabel13.AutoSize = true;
-            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel13.ForeColor = System.Drawing.SystemColors.InfoText;
             this.bunifuCustomLabel13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel13.Location = new System.Drawing.Point(153, 201);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
-            this.bunifuCustomLabel13.Size = new System.Drawing.Size(51, 17);
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(51, 16);
             this.bunifuCustomLabel13.TabIndex = 76;
             this.bunifuCustomLabel13.Text = "a/c No:";
             this.bunifuCustomLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,12 +311,12 @@
             // bunifuCustomLabel8
             // 
             this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.ForeColor = System.Drawing.SystemColors.InfoText;
             this.bunifuCustomLabel8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel8.Location = new System.Drawing.Point(153, 160);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(68, 17);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(70, 16);
             this.bunifuCustomLabel8.TabIndex = 70;
             this.bunifuCustomLabel8.Text = "a/c Name:";
             this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -324,12 +324,12 @@
             // bunifuCustomLabel9
             // 
             this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel9.ForeColor = System.Drawing.SystemColors.InfoText;
             this.bunifuCustomLabel9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel9.Location = new System.Drawing.Point(153, 123);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(38, 17);
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(43, 16);
             this.bunifuCustomLabel9.TabIndex = 69;
             this.bunifuCustomLabel9.Text = "Type:";
             this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,12 +337,12 @@
             // bunifuCustomLabel11
             // 
             this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel11.ForeColor = System.Drawing.SystemColors.InfoText;
             this.bunifuCustomLabel11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel11.Location = new System.Drawing.Point(153, 90);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(81, 17);
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(85, 16);
             this.bunifuCustomLabel11.TabIndex = 68;
             this.bunifuCustomLabel11.Text = "Bank Name: ";
             this.bunifuCustomLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -201,7 +201,6 @@ namespace eSchool
             btn_dashboard.selected = true;
             btn_dashboard.Textcolor = _white;
             DashboardUI.collapse += CollapseNavBar;
-            TabSwitcher(DashboardUI.Instance);
 
             this.cbSearch.SelectedIndex = 0;
             selSearch = cbSearch.SelectedItem.ToString();
@@ -212,6 +211,18 @@ namespace eSchool
 
             //set up auto complete for search 
             AutoComplete(tbSearch);
+            //see which tab is to be done
+            if (IsEschoolKe(currentUser))
+            {
+                ColorSelection();
+                UserProfile.Instance = new UserProfile(currentUser);
+                TabSwitcher(UserProfile.Instance);
+            }
+            else
+            {
+               TabSwitcher(DashboardUI.Instance);
+            }
+
         }
 
         /// <summary>
@@ -252,6 +263,19 @@ namespace eSchool
                         bmp.Save(fff, System.Drawing.Imaging.ImageFormat.Jpeg);
                     }
                 }
+                string eee = tt + ".\\eschool.png";
+                if (File.Exists(eee))
+                {
+
+                }
+                else
+                {
+                    using (Bitmap bmp = new Bitmap(MyLogo.eschool))
+                    {
+                        //write image                     
+                        bmp.Save(eee, System.Drawing.Imaging.ImageFormat.Png);
+                    }
+                }
             }
             catch (UnauthorizedAccessException)
             {
@@ -281,8 +305,12 @@ namespace eSchool
                 {
                     try
                     {
-                        var y = Image.FromFile(currentUser.ProfImage);
-                        this.ovalPictureBox1.Image = y;
+                        Image img;
+                        using (var bmpTemp = new Bitmap(currentUser.ProfImage))
+                        {
+                            img = new Bitmap(bmpTemp);
+                        }
+                        this.ovalPictureBox1.Image = img;
                         this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     }
                     catch (Exception exp)
@@ -296,7 +324,12 @@ namespace eSchool
                     string fff = tt + ".\\profile1.jpg";
                     if (File.Exists(fff))
                     {
-                        ovalPictureBox1.Image = Image.FromFile(fff);
+                        Image img;
+                        using (var bmpTemp = new Bitmap(fff))
+                        {
+                            img = new Bitmap(bmpTemp);
+                        }
+                        ovalPictureBox1.Image = img;
                     }
                 }
             }
@@ -323,7 +356,7 @@ namespace eSchool
             //refresh the settings code pretty sensitive
             NewSettings sss = NewSettings.Instance;
             sss.Global_NewSettings_Load();
-            
+
 
         }
 
@@ -609,7 +642,7 @@ namespace eSchool
                         //var showing only form
                         sdata.IsForm = true;
                         tbSearch.Text.Trim();
-                        sdata.Global_Search(tbSearch.Text,true);
+                        sdata.Global_Search(tbSearch.Text, true);
 
                         return;
                     }
@@ -617,7 +650,26 @@ namespace eSchool
             }
         }
 
-       
+        ///see if eschoolke is user
+        private bool IsEschoolKe(eUser cUser)
+        {
+            using (var context = new EschoolEntities())
+            {
+                List<eUser> userlist =
+                       context.eUsers.OrderBy(c => c.Id)
+                           .Where(x => !x.Email.Equals("getabujob@gmail.com") & x.Email.Equals("eschoolke@kedevelopers.com"))
+                           .ToList();
+
+                foreach (var ss in userlist.Where(a => a.username.Equals("eschoolke".ToUpper())))
+                {
+                    if (ss.username.Equals("eschoolke".ToUpper()))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
     }
 
     //TODO InvalidOperationException

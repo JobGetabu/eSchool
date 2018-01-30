@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="CurrentTerm" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="CurrentYear" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2017</Value>
+      <Value Profile="(Default)">2018</Value>
     </Setting>
     <Setting Name="FirstInstallUse" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -27,7 +27,7 @@
       <Value Profile="(Default)">P .O BOX 123-00100 NYERI, KENYA</Value>
     </Setting>
     <Setting Name="schoolCell" Type="System.String" Scope="User">
-      <Value Profile="(Default)">CELL NO: +21 545 6543</Value>
+      <Value Profile="(Default)">CELL NO: +254 7084 40184</Value>
     </Setting>
     <Setting Name="schoolreg" Type="System.String" Scope="User">
       <Value Profile="(Default)">40201648</Value>

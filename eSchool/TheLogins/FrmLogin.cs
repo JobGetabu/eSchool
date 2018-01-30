@@ -110,9 +110,9 @@ namespace eSchool.TheLogins
             {
                 var userList =  context.eUsers.ToList();
 
-                foreach (var ss in userList.Where(a => a.username.Equals(username)))
+                foreach (var ss in userList.Where(a => a.username.Equals(username.ToUpper())))
                 {
-                    if (username == ss.username)
+                    if (username.ToUpper().Equals(ss.username))
                     {
                         return ss;
                     }
@@ -129,9 +129,9 @@ namespace eSchool.TheLogins
                 //encode password
                 string yy = Encode(password);
 
-                foreach (var ss in userList.Where(a => a.username.Equals(username) & a.Password.Equals(yy)))
+                foreach (var ss in userList.Where(a => a.username.Equals(username.ToUpper()) & a.Password.Equals(yy)))
                 {
-                    if (username == ss.username)
+                    if (username.ToUpper().Equals(ss.username))
                     {                        
                         //await Task.Delay(2000);
                         return ss;
@@ -220,7 +220,7 @@ namespace eSchool.TheLogins
             reg.Email = tbEmail.Text;
             reg.DateRegistered = DateTime.Now;
             reg.Password = Encode(tbPasswordSignUp.Text);
-            reg.username = tbUserNameSignUP.Text;
+            reg.username = tbUserNameSignUP.Text.ToUpper();
             reg.Type = role;
 
             
@@ -433,6 +433,8 @@ namespace eSchool.TheLogins
             if (e.KeyChar == (char)13)
             {
                 btnSignIn.Focus();
+                btnSignIn.PerformClick();
+               // btnSignIn_Click_1(sender,e);
             }
         }
     }

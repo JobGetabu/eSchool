@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,11 @@ namespace eSchool.Profiles
             this.cUser = cUser;
         }
 
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
         private void FrmEditUser_Load(object sender, EventArgs e)
         {
             tbUserName.Text = cUser.username;
+            tbUserName.Text = textInfo.ToTitleCase(cUser.username);
             tbOccupation.Text = cUser.Occupation;
             tbFullName.Text = cUser.FullName;
             tbEmail.Text = cUser.Email;
@@ -87,7 +90,7 @@ namespace eSchool.Profiles
             cUser.Email = tbEmail.Text;
             cUser.Occupation = tbOccupation.Text;
             cUser.Phone = tbCell.Text;
-            cUser.username = tbUserName.Text;
+            cUser.username = tbUserName.Text.ToUpper();
 
             using (var context = new EschoolEntities())
             {
