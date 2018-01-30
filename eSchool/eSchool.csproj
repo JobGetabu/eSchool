@@ -33,6 +33,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\packages\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -971,6 +975,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EschoolModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="app.manifest" />
     <None Include="EschoolModel.edmx.diagram">
       <DependentUpon>EschoolModel.edmx</DependentUpon>
     </None>

@@ -3,6 +3,7 @@ using eSchool.TheLogins;
 using SoftwareLocker;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,8 @@ namespace eSchool
                 Application.Run(elogin);
                 if (elogin.DialogResult == DialogResult.OK)
                 {
-                    
+                    bool is_trial;
+                    //If prog is not in trial continue normally
                     //check registration here
                     TrialMaker t = new TrialMaker("EschoolKe", Application.StartupPath + "\\EschoolReg.reg",
                         Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\EschoolReg.dbf",
@@ -44,10 +46,10 @@ namespace eSchool
                                         7, 9, 20, 36, 37, 21, 101, 57};
                     t.TripleDESKey = MyOwnKey;
 
-                 
+
 
                     TrialMaker.RunTypes RT = t.ShowDialog();
-                    bool is_trial;
+
                     if (RT != TrialMaker.RunTypes.Expired)
                     {
                         if (RT == TrialMaker.RunTypes.Full)
@@ -68,7 +70,7 @@ namespace eSchool
                         //pass user
                         Application.Run(new Frm_Home(elogin.currentUser));
                     }
-                    else 
+                    else
                     {
                         // must register launch about
                         FrmAbout abt = new FrmAbout();
@@ -80,9 +82,9 @@ namespace eSchool
                         Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(FrmActivate1.LeftDays);
                         Properties.Settings.Default.Save();
                     }
-                    catch(Exception) { }
-                    //pass user
-                    //Application.Run(new Frm_Home(elogin.currentUser));
+                    catch (Exception) { }
+
+
                 }
             }
             catch (Exception)
