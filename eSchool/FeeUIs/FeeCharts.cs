@@ -32,6 +32,11 @@ namespace eSchool.FeeUIs
 
         int GTerm = Properties.Settings.Default.CurrentTerm;
         int GYear = Properties.Settings.Default.CurrentYear;
+
+        private ChartValues<decimal> cIncome;
+        private ChartValues<decimal> cExpenses;
+        private ChartValues<decimal> cFeePaid;
+
         public FeeCharts()
         {
             InitializeComponent();
@@ -41,6 +46,7 @@ namespace eSchool.FeeUIs
 
         public void Global_FeeCharts_Load()
         {
+            SetUpChart(GYear);
             cartesianChart1.Update();
         }
         private void FeeCharts_Load(object sender, EventArgs e)
@@ -48,7 +54,7 @@ namespace eSchool.FeeUIs
             lblYear.Text = GYear.ToString();
             // SetUpChart(GYear);
         }
-        private void SetUpChart(int year)
+        private  void SetUpChart(int year)
         {
             //diffrent values for each month
             //term 1 = jan feb march
@@ -147,24 +153,31 @@ namespace eSchool.FeeUIs
                 #endregion
             }
 
+            cIncome = new ChartValues<decimal> { incJan, incFeb, incMar, incApril, incMay, incJune, incJuly, incAug, incSep, incOct, incNov, incDec };
+
+            cExpenses = new ChartValues<decimal> { expJan, expFeb, expMar, expApril, expMay, expJune, expJuly, expAug, expSep, expOct, expNov, expDec };
+
+            cFeePaid = new ChartValues<decimal> { janFee, febFee, marFee, aprilFee, mayFee, juneFee, julyFee, augFee, sepFee, octFee, novFee, decFee };
+
+
             cartesianChart1.Series = new SeriesCollection
              {
                     new LineSeries
                     {
                         Title = "Incomes",
-                        Values = new ChartValues<decimal> { incJan,incFeb,incMar,incApril,incMay,incJune,incJuly,incAug,incSep,incOct,incNov,incDec }
+                        Values = cIncome
                     },
                      new LineSeries
                     {
                         Title = "Expenses",
-                        Values = new ChartValues<decimal> { expJan, expFeb, expMar, expApril,expMay, expJune, expJuly,expAug, expSep, expOct, expNov,expDec },
+                        Values = cExpenses,
                         PointGeometry = null
                     },
 
                     new LineSeries
                     {
                         Title = "Fee Paid",
-                        Values = new ChartValues<decimal> {janFee,febFee,marFee,aprilFee,mayFee,juneFee,julyFee,augFee,sepFee,octFee,novFee,decFee},
+                        Values = cFeePaid,
                         PointGeometry = DefaultGeometries.Square,
                         PointGeometrySize = 15
                     }
