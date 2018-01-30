@@ -566,7 +566,7 @@ namespace eSchool
                 //do tabswitch
                 TabSwitcher(ssim);
 
-                ssim.Global_tab2_Click();
+                ssim.Global_tab2_Click(true);
                 StudentsData sdata = StudentsData.Instance;
 
                 sdata.IsSearchInit = true;

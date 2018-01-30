@@ -818,9 +818,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!schoolEmail.Value</Value>
+                <Value>=Parameters!payDetails.Value</Value>
                 <Style>
                   <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontWeight>SemiBold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -961,6 +962,11 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="ImagePath">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="payDetails">
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>

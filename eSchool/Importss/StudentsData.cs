@@ -60,7 +60,6 @@ namespace eSchool.Importss
         }
         private void StudentsData_Load(object sender, EventArgs e)
         {
-
             if (IsSearchInit)
             {
                 gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
@@ -69,11 +68,13 @@ namespace eSchool.Importss
 
                 return;
             }
+
             //UI code
             //change color of Nos to green
             gData.Columns[1].DefaultCellStyle.ForeColor = Color.Blue;
 
             GridInitilizer();
+            
         }
 
         private async Task<List<Student_Basic>> StudentListAsync()
@@ -290,6 +291,8 @@ namespace eSchool.Importss
                  .OrderBy(t => t.Admin_No)
                  .ToList();
 
+
+            gData.Rows.Clear();
             foreach (var cat in filList)
             {
                 gData.Rows.Add(new string[]
@@ -303,7 +306,6 @@ namespace eSchool.Importss
                         null
                 });
             }
-
         }
 
 

@@ -356,7 +356,7 @@ namespace eSchool.Profiles
                 ovalPictureBox1.Image = GridIcon.student;
             }
             else
-            {   
+            {
                 if (File.Exists(student.PictureLocation))
                 {
                     path = student.PictureLocation;
@@ -401,7 +401,7 @@ namespace eSchool.Profiles
 
         private void btnBack_Click_1(object sender, EventArgs e)
         {
-           
+
             //back to import UI
             //show students data UI
             TabSwitcher(StudentsData.Instance);
@@ -423,7 +423,7 @@ namespace eSchool.Profiles
                     }
 
                     btnSaveChanges.Visible = true;
-                    
+
                 }
             }
             catch (Exception exp)
@@ -563,7 +563,7 @@ namespace eSchool.Profiles
         {
             var senderGrid = (DataGridView)sender;
 
- 
+
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
             {
@@ -609,7 +609,7 @@ namespace eSchool.Profiles
                             }
                         }
                     }
-                }             
+                }
             }
             if (e.ColumnIndex == 5)
             {
@@ -618,15 +618,15 @@ namespace eSchool.Profiles
                 await Task.Delay(2000);
                 l.Close();
                 PrintService(e.RowIndex);
-                
+
             }
         }
 
 
         //local but global
-        private decimal psBalance =0;
+        private decimal psBalance = 0;
         private decimal psCredit = 0;
-        
+
         private async void PrintService(int rowIndex)
         {
             List<Fee> fees = await Task.Factory.StartNew(() =>
@@ -644,13 +644,15 @@ namespace eSchool.Profiles
             string test = details;
             string t1 = test.Remove(0, 4);
             t1.TrimEnd();
+            string paydetails;
+            paydetails = (string)this.gData.Rows[rowIndex].Cells[1].Value;
 
             Fee cFee = null;
             foreach (var fi in fees)
             {
                 if (fi.FeesId == int.Parse(t1))
                 {
-                    cFee= fi;
+                    cFee = fi;
                 }
             }
 
@@ -673,7 +675,7 @@ namespace eSchool.Profiles
                     {
                         return context.FeesRequiredPerTerms
                         .Where(x => x.Term == cFee.Term & x.Year == cFee.Year & x.Form == cFee.Form)
-                        .FirstOrDefault( );
+                        .FirstOrDefault();
                     }
                 });
 
@@ -694,7 +696,17 @@ namespace eSchool.Profiles
                 {
                     PaymentOverheads p = new PaymentOverheads();
                     p.Overhead = item.Category;
-                    decimal t = Decimal.Divide(item.Amount, frpt.FeeRequired) * cFee.Amount_Paid;
+                    //check to see if fee paid is overflowing
+                    decimal t = 0;
+                    if (cFee.Amount_Paid >= frpt.FeeRequired)
+                    {
+                        t = item.Amount;
+                    }
+                    else
+                    {
+                        t = Decimal.Divide(item.Amount, frpt.FeeRequired) * cFee.Amount_Paid;
+                    }
+
                     p.Amount = t;
 
                     listPayOv.Add(p);
@@ -706,14 +718,17 @@ namespace eSchool.Profiles
                 //payment details
                 PaymentDetails payee = new PaymentDetails();
                 payee.FeeId = details;
+                payee.PayDetails = paydetails;
+
                 if (psBalance > 0)
                 {
                     payee.Status = "Uncleared";
-                }else
+                }
+                else
                 {
                     payee.Status = "Cleared";
                 }
-                payee.Balance= $"Balance: KES {String.Format("{0:0,0}", psBalance)}";
+                payee.Balance = $"Balance: KES {String.Format("{0:0,0}", psBalance)}";
                 payee.Credit = $"Credit: KES {String.Format("{0:0,0}", psCredit)}";
 
                 FrmPaymentReceipt fpr = new FrmPaymentReceipt(listPayOv, payee, sdd);
@@ -892,7 +907,7 @@ namespace eSchool.Profiles
                 catch (Exception exp)
                 {
                     MessageBox.Show(exp.Message);
-                } 
+                }
             }
 
 

@@ -35,7 +35,7 @@ namespace eSchool.ReceiptPrints
         {
             PaymentOverheadsBindingSource.DataSource = listPayOv;
             string dd = "Receipt Date: " + DateTime.Now.ToShortDateString();
-        Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[12];
+        Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[13];
 
             p[0] = new Microsoft.Reporting.WinForms.ReportParameter("schoolName", schoolName);
             p[1] = new Microsoft.Reporting.WinForms.ReportParameter("schoolAddress", schoolAddress);
@@ -69,6 +69,7 @@ namespace eSchool.ReceiptPrints
             string ff = new Uri(myf).AbsoluteUri;
 
             p[11] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ff);
+            p[12] = new Microsoft.Reporting.WinForms.ReportParameter("payDetails", $"{pDetails.PayDetails}");
 
             this.reportViewer.LocalReport.EnableExternalImages = true;
             this.reportViewer.LocalReport.SetParameters(p);
