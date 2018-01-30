@@ -12,5 +12,6 @@ namespace eSchool.ReceiptPrints
         public string Status { get; set; }
         public string Credit { get; set; }
         public string Balance { get; set; }
+        public string PayDetails { get; set; }
     }
 }

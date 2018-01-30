@@ -804,7 +804,7 @@
             this.btnUpdateSchool.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
             this.btnUpdateSchool.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(196)))), ((int)(((byte)(225)))));
             this.btnUpdateSchool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateSchool.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateSchool.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSchool.ForeColor = System.Drawing.Color.White;
             this.btnUpdateSchool.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateSchool.Image")));
             this.btnUpdateSchool.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -827,7 +827,7 @@
             this.btnScEmail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnScEmail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnScEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnScEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnScEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
             this.btnScEmail.Image = global::eSchool.GridIcon.Message_50px;
             this.btnScEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -849,7 +849,7 @@
             this.btnScCell.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnScCell.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnScCell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnScCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnScCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
             this.btnScCell.Image = global::eSchool.GridIcon.Phone_50px;
             this.btnScCell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -876,12 +876,12 @@
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
             this.bunifuCustomLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(341, 150);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(108, 17);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(105, 16);
             this.bunifuCustomLabel3.TabIndex = 53;
             this.bunifuCustomLabel3.Text = "Curriculum: 8-4-4";
             this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -899,12 +899,12 @@
             // lblScCode
             // 
             this.lblScCode.AutoSize = true;
-            this.lblScCode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
             this.lblScCode.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblScCode.Location = new System.Drawing.Point(341, 124);
             this.lblScCode.Name = "lblScCode";
-            this.lblScCode.Size = new System.Drawing.Size(99, 17);
+            this.lblScCode.Size = new System.Drawing.Size(99, 16);
             this.lblScCode.TabIndex = 51;
             this.lblScCode.Text = "Code : 2040700";
             this.lblScCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -922,12 +922,12 @@
             // lblScType
             // 
             this.lblScType.AutoSize = true;
-            this.lblScType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(123)))), ((int)(((byte)(189)))));
             this.lblScType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblScType.Location = new System.Drawing.Point(341, 98);
             this.lblScType.Name = "lblScType";
-            this.lblScType.Size = new System.Drawing.Size(171, 17);
+            this.lblScType.Size = new System.Drawing.Size(176, 16);
             this.lblScType.TabIndex = 49;
             this.lblScType.Text = "Secondary - Bording School";
             this.lblScType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -935,12 +935,12 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAddress.Location = new System.Drawing.Point(291, 67);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(213, 17);
+            this.lblAddress.Size = new System.Drawing.Size(252, 16);
             this.lblAddress.TabIndex = 47;
             this.lblAddress.Text = "P .O BOX 123-00100 NYERI, KENYA";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -948,12 +948,12 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblName.Location = new System.Drawing.Point(289, 27);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(287, 30);
+            this.lblName.Size = new System.Drawing.Size(322, 25);
             this.lblName.TabIndex = 45;
             this.lblName.Text = "EschoolKe Secondary School";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -965,7 +965,7 @@
             this.btnChangePic.FlatAppearance.BorderSize = 0;
             this.btnChangePic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnChangePic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnChangePic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnChangePic.ForeColor = System.Drawing.Color.Gray;
             this.btnChangePic.Image = global::eSchool.GridIcon.Photo_Editor_50px;
             this.btnChangePic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

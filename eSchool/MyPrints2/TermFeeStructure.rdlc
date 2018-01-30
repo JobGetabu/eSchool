@@ -11,7 +11,7 @@
               <TextRun>
                 <Value>=Parameters!formfeeslbl.Value</Value>
                 <Style>
-                  <FontFamily>Century Gothic</FontFamily>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -23,8 +23,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.375in</Top>
-        <Left>0.15104in</Left>
+        <Top>1.92708in</Top>
+        <Left>0.45053in</Left>
         <Height>0.22768in</Height>
         <Width>3.51042in</Width>
         <Style>
@@ -64,7 +64,7 @@
                               <Value>Name</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontFamily>Century Gothic</FontFamily>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>SemiBold</FontWeight>
                               </Style>
@@ -102,7 +102,7 @@
                             <TextRun>
                               <Value>Cost</Value>
                               <Style>
-                                <FontFamily>Century Gothic</FontFamily>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>SemiBold</FontWeight>
                               </Style>
@@ -145,7 +145,7 @@
                             <TextRun>
                               <Value>=Fields!overHeadName.Value</Value>
                               <Style>
-                                <FontFamily>Segoe UI Emoji</FontFamily>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
                                 <FontWeight>SemiBold</FontWeight>
                               </Style>
                             </TextRun>
@@ -179,7 +179,7 @@
                               <Value>=Fields!costCurrent.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontFamily>Segoe UI Emoji</FontFamily>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
                                 <FontWeight>Light</FontWeight>
                                 <Format>'Ksh' #,0;('Ksh' #,0)</Format>
                               </Style>
@@ -230,8 +230,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>FeeStructureDataSet</DataSetName>
-        <Top>0.76958in</Top>
-        <Left>0.15104in</Left>
+        <Top>2.32166in</Top>
+        <Left>0.45053in</Left>
         <Height>0.5625in</Height>
         <Width>5.67185in</Width>
         <ZIndex>1</ZIndex>
@@ -250,8 +250,7 @@
               <TextRun>
                 <Value>Total</Value>
                 <Style>
-                  <FontFamily>Century Gothic</FontFamily>
-                  <FontSize>11pt</FontSize>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -262,8 +261,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>1.37376in</Top>
-        <Left>0.15104in</Left>
+        <Top>2.92584in</Top>
+        <Left>0.45053in</Left>
         <Height>0.26042in</Height>
         <Width>3.21093in</Width>
         <ZIndex>2</ZIndex>
@@ -287,7 +286,7 @@
               <TextRun>
                 <Value>=Sum(Fields!costCurrent.Value, "FeeStructureDataSet")</Value>
                 <Style>
-                  <FontFamily>Segoe UI Emoji</FontFamily>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
                   <FontWeight>Bold</FontWeight>
                   <Format>'Ksh' #,0;('Ksh' #,0)</Format>
                 </Style>
@@ -299,8 +298,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>1.37375in</Top>
-        <Left>3.36197in</Left>
+        <Top>2.92583in</Top>
+        <Left>3.66146in</Left>
         <Height>0.26042in</Height>
         <Width>2.46092in</Width>
         <ZIndex>3</ZIndex>
@@ -316,227 +315,218 @@
           <rd:FormatSymbolCulture>en-KE</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!schoolName.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.78027in</Top>
+        <Left>1.15949in</Left>
+        <Height>0.26141in</Height>
+        <Width>5.11458in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!schoolAddress.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.06945in</Top>
+        <Left>1.49282in</Left>
+        <Height>0.22569in</Height>
+        <Width>4.09375in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!schoolCellNo.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.32292in</Top>
+        <Left>1.38605in</Left>
+        <Height>0.22569in</Height>
+        <Width>2.15885in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!schoolMotto.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.5625in</Top>
+        <Left>1.49282in</Left>
+        <Height>0.22569in</Height>
+        <Width>4.09375in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!schoolEmail.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.32292in</Top>
+        <Left>3.54491in</Left>
+        <Height>0.22569in</Height>
+        <Width>2.15885in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="schoollogo">
+        <Source>External</Source>
+        <Value>=Parameters!ImagePath.Value</Value>
+        <Sizing>Fit</Sizing>
+        <Top>0.07252in</Top>
+        <Left>2.69074in</Left>
+        <Height>0.63831in</Height>
+        <Width>1.85416in</Width>
+        <ZIndex>9</ZIndex>
+        <ToolTip>School Logo</ToolTip>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>5pt</PaddingLeft>
+        </Style>
+      </Image>
     </ReportItems>
-    <Height>2.41419in</Height>
+    <Height>8.51329cm</Height>
     <Style />
   </Body>
-  <Width>7.22001in</Width>
+  <Width>18.33883cm</Width>
   <Page>
-    <PageHeader>
-      <Height>1.98214in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <ReportItems>
-        <Textbox Name="Textbox1">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Parameters!schoolName.Value</Value>
-                  <Style>
-                    <FontFamily>Century Gothic</FontFamily>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.81291in</Top>
-          <Left>0.99479in</Left>
-          <Height>0.26141in</Height>
-          <Width>5.11458in</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox2">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Parameters!schoolAddress.Value</Value>
-                  <Style>
-                    <FontFamily>Century Gothic</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.10209in</Top>
-          <Left>1.32812in</Left>
-          <Height>0.22569in</Height>
-          <Width>4.09375in</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox3">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Parameters!schoolCellNo.Value</Value>
-                  <Style>
-                    <FontFamily>Century Gothic</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.35556in</Top>
-          <Left>1.22135in</Left>
-          <Height>0.22569in</Height>
-          <Width>2.15885in</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox4">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Parameters!schoolMotto.Value</Value>
-                  <Style>
-                    <FontFamily>Century Gothic</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.59514in</Top>
-          <Left>1.32812in</Left>
-          <Height>0.22569in</Height>
-          <Width>4.09375in</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox5">
-          <CanGrow>true</CanGrow>
-          <CanShrink>true</CanShrink>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Parameters!schoolEmail.Value</Value>
-                  <Style>
-                    <FontFamily>Century Gothic</FontFamily>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.35556in</Top>
-          <Left>3.38021in</Left>
-          <Height>0.22569in</Height>
-          <Width>2.15885in</Width>
-          <ZIndex>4</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Image Name="schoollogo">
-          <Source>External</Source>
-          <Value>=Parameters!ImagePath.Value</Value>
-          <Sizing>Fit</Sizing>
-          <Top>0.10516in</Top>
-          <Left>2.52604in</Left>
-          <Height>0.63831in</Height>
-          <Width>1.85416in</Width>
-          <ZIndex>5</ZIndex>
-          <ToolTip>School Logo</ToolTip>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>5pt</PaddingLeft>
-          </Style>
-        </Image>
-      </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
-    <PageHeight>11.69in</PageHeight>
-    <PageWidth>8.27in</PageWidth>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -683,6 +673,6 @@ X+G2vkaTNPbuRfWgyYpPLP8AH6j3r2/9m/8A5KF8f/8Asfz/AOmjTq+QvEn/AATJ+Jev32u3Nt4w8HrD
 wsJcceXbIv8AKtiiigAooooAKKKKACvM7f4lak2oWtqYLAb7r7KcGUc+d5XHHrXplcza/D/RtPuDNbWrq5ufthP2mT/W9M9entQB01FFFABRRRQAUUVHHJuoA868SfETU9B1S/gtbS3v7a1XO0eZ5xxHnHvzXoccw+z+aeR1rnr74f6JqVxfXFzBO0t4u2fF1LgjHbnj8K6OM5yaAJKKKKACiiigAqtdXQtVyeRVmo/KoAkoplPoAKKKKACiiigCtcXH2Vck5HvUsVHlUtAD6KKKACiiigCh5jf3j+dHmN/eP50UUDF8xv7x/Ok8xv7x/OiitCRfMf8AvN+dHmP/AHm/Oiisxh5jf3j+dJ5jf3j+dFFAx/mN/eP50eY394/nRRWgirLI2fvH86sxyN/eP50UUAL5jf3j+dHmN/eP50UUAHmN/eP50eY394/nRRQAeY394/nR5jf3j+dFFAB5jf3j+dHmN/eP50UUAHmN/eP50eY394/nRRQAeY394/nR5jf3j+dFFAB5jf3j+dHmN/eP50UUAG9v7x/Ok3t/eP50UUhjfMb+8fzo8xv7x/OiioAdvb+8fzpd7f3j+dFFWB//2Q==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>b6d1fce8-f150-4e8e-82b1-b45407f815ce</rd:ReportID>
 </Report>
