@@ -68,7 +68,11 @@ namespace eSchool.ReceiptPrints
             }
             string ff = new Uri(myf).AbsoluteUri;
 
-            p[11] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ff);
+            try
+            {
+                p[11] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ff);
+            }
+            catch (Exception) { }
             p[12] = new Microsoft.Reporting.WinForms.ReportParameter("payDetails", $"{pDetails.PayDetails}");
 
             this.reportViewer.LocalReport.EnableExternalImages = true;

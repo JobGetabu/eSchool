@@ -200,8 +200,8 @@ namespace eSchool
                         // this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                         path = opf.FileName;
 
-                        byte[] imageByte = ConvertFileToByte(path);
-                        Image immm = ConvertByteToImage(imageByte);
+                        //byte[] imageByte = ConvertFileToByte(path);
+                        //Image immm = ConvertByteToImage(imageByte);
 
                         //method to save it to resources
                         //SaveLogo(path, imageByte);
@@ -220,24 +220,28 @@ namespace eSchool
         }
 
         private void SaveLogo(string path)
-        {         
+        {
             string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
             string myf = tt + ".\\Output.jpg";
             //read image
-
             pictureBox1.Image.Dispose();
-            using (Bitmap bmp = new Bitmap(path))
+            try
             {
-                if (System.IO.File.Exists(myf))
-                    System.IO.File.Delete(myf);
 
-                //load image in picturebox
-                pictureBox1.Image = bmp;
+                using (Bitmap bmp = new Bitmap(path))
+                {
+                    if (System.IO.File.Exists(myf))
+                        System.IO.File.Delete(myf);
 
-                //write image
-                bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);
-                //bmp.Dispose(); 
+                    //load image in picturebox
+                    pictureBox1.Image = bmp;
+
+                    //write image
+                    bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                }
             }
+            catch (Exception) { }
         }
         private void ReadLogo()
         {
@@ -245,13 +249,15 @@ namespace eSchool
             string myf = tt + ".\\Output.jpg";
             if ((File.Exists(myf)))
             {
-                pictureBox1.Image = Image.FromFile(myf,true);
+                Image img;
+                using (var bmpTemp = new Bitmap(myf))
+                {
+                    img = new Bitmap(bmpTemp);
+                }
+
+                pictureBox1.Image = img;
                 this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                //using (Image mm = Image.FromFile(myf,true))
-                //{
-                //    pictureBox1.Image = mm;
-                //    this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom; 
-                //}
+
 
             }
             else
@@ -294,7 +300,7 @@ namespace eSchool
         }
 
         //TODO Payment details.
-        
+
         private async void LblInitilizer()
         {
             var accListAsync = await Task.Factory.StartNew(() =>
@@ -335,7 +341,7 @@ namespace eSchool
             if (accountBindingSource.Current != null)
             {
                 FrmEditAcc ed = new FrmEditAcc(accountBindingSource.Current as Account);
-                if (ed.ShowDialog()== DialogResult.OK)
+                if (ed.ShowDialog() == DialogResult.OK)
                 {
                     //payment details
                     LblInitilizer();

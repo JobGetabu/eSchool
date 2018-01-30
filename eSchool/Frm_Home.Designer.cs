@@ -51,6 +51,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelProf = new System.Windows.Forms.Panel();
+            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.bDropdownDashMenu = new Bunifu.Framework.UI.BunifuDropdown();
             this.BtnSearch = new Bunifu.Framework.UI.BunifuImageButton();
             this.cbSearch = new MetroFramework.Controls.MetroComboBox();
@@ -60,7 +61,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuTransitionUIs = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.logoAnim = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.ovalPictureBox1 = new eSchool.OvalPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.sidebar.SuspendLayout();
@@ -69,11 +69,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSearch)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -570,6 +570,20 @@
             this.panelProf.Size = new System.Drawing.Size(284, 50);
             this.panelProf.TabIndex = 5;
             // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.logoAnim.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
+            this.ovalPictureBox1.Location = new System.Drawing.Point(39, 1);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 9;
+            this.ovalPictureBox1.TabStop = false;
+            // 
             // bDropdownDashMenu
             // 
             this.bDropdownDashMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -748,20 +762,6 @@
             animation1.TransparencyCoeff = 0F;
             this.logoAnim.DefaultAnimation = animation1;
             // 
-            // ovalPictureBox1
-            // 
-            this.ovalPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuTransitionUIs.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.logoAnim.SetDecoration(this.ovalPictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.ovalPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ovalPictureBox1.Image")));
-            this.ovalPictureBox1.Location = new System.Drawing.Point(46, 7);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ovalPictureBox1.TabIndex = 9;
-            this.ovalPictureBox1.TabStop = false;
-            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -789,11 +789,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelProf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSearch)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxMenuHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

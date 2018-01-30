@@ -61,7 +61,11 @@ namespace eSchool.MyPrints
             string ff = new Uri(myf).AbsoluteUri;
 
 
-            p[6] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ff);
+            try
+            {
+                p[6] = new Microsoft.Reporting.WinForms.ReportParameter("ImagePath", ff);
+            }
+            catch (Exception) { }
 
             this.reportViewer.LocalReport.EnableExternalImages = true;
             this.reportViewer.LocalReport.SetParameters(p);

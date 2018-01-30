@@ -417,7 +417,12 @@ namespace eSchool.Profiles
                 {
                     if (opf.ShowDialog() == DialogResult.OK)
                     {
-                        this.ovalPictureBox1.Image = Image.FromFile(opf.FileName);
+                        Image img;
+                        using (var bmpTemp = new Bitmap(opf.FileName))
+                        {
+                            img = new Bitmap(bmpTemp);
+                        }
+                        this.ovalPictureBox1.Image = img;
                         this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                         path = opf.FileName;
                     }
