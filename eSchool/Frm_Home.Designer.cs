@@ -578,6 +578,7 @@
             this.bunifuTransitionUIs.SetDecoration(this.bDropdownDashMenu, BunifuAnimatorNS.DecorationType.None);
             this.logoAnim.SetDecoration(this.bDropdownDashMenu, BunifuAnimatorNS.DecorationType.None);
             this.bDropdownDashMenu.DisabledColor = System.Drawing.Color.Gray;
+            this.bDropdownDashMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bDropdownDashMenu.ForeColor = System.Drawing.Color.White;
             this.bDropdownDashMenu.Items = new string[] {
         "Profile",
@@ -662,7 +663,7 @@
             this.tbSearch.UseSelectable = true;
             this.tbSearch.WaterMark = "Search";
             this.tbSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(153)))), ((int)(((byte)(177)))));
-            this.tbSearch.WaterMarkFont = new System.Drawing.Font("Lucida Bright", 11.75F);
+            this.tbSearch.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSearch_KeyPress);
             // 
             // panel5
