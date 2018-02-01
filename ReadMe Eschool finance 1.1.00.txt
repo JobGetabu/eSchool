@@ -29,6 +29,8 @@ Run the Installed Eschool Finance in Administrator
 > username  :eschoolke
 > password  :eschoolke
 > Approve your account to use it later
+> Set current term & Year
+
 
 Contact:
 getabujob@gmail.com
@@ -45,3 +47,4 @@ Eschool Finance System Ver : 2.0.0 Full Version coming features
 > Daily reconciliation statement
 > Student Full Fee statement
 > Rolling out Improvements.
+
