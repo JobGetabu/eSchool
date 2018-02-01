@@ -324,7 +324,7 @@ namespace eSchool.Dash
                 var usersList = await Task.Factory.StartNew(() =>
                 {
                     return context.eUsers
-                     .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .Where(x => !x.Email.Equals("getabujob@gmail.com") & !x.Email.Equals("eschoolke@kedevelopers.com"))
                     .ToList();
                 });
 

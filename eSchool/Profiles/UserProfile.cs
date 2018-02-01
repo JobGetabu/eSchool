@@ -134,7 +134,7 @@ namespace eSchool.Profiles
                 using (var context = new EschoolEntities())
                 {
                     return context.eUsers.OrderBy(c => c.Id)
-                    .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .Where(x => !x.Email.Equals("getabujob@gmail.com") & !x.Email.Equals("eschoolke@kedevelopers.com"))
                     .ToList();
                 }
             });
@@ -258,6 +258,8 @@ namespace eSchool.Profiles
                 if ((MetroMessageBox.Show(this, $"Confirm Action!", "Confirm ", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
                 {
                     GiveAccess(e.RowIndex);
+                    //nullify eschoolke account admin
+                    OtherAdminExists();
                 }
             }
         }
@@ -440,7 +442,17 @@ namespace eSchool.Profiles
                 string fff = tt + ".\\profile1.jpg";
                 if (File.Exists(fff))
                 {
-                    ovalPictureBox1.Image = Image.FromFile(fff);
+                    try
+                    {
+                        Image img;
+                        using (var bmpTemp = new Bitmap(fff))
+                        {
+                            img = new Bitmap(bmpTemp);
+                        }
+                        this.ovalPictureBox1.Image = img;
+                        this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                    catch (Exception) { }
                 }
             }
             else
@@ -449,14 +461,15 @@ namespace eSchool.Profiles
                 {
                     try
                     {
-                        var y = Image.FromFile(cUser.ProfImage);
-                        this.ovalPictureBox1.Image = y;
+                        Image img;
+                        using (var bmpTemp = new Bitmap(cUser.ProfImage))
+                        {
+                            img = new Bitmap(bmpTemp);
+                        }
+                        this.ovalPictureBox1.Image = img;
                         this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     }
-                    catch (Exception exp)
-                    {
-                        MessageBox.Show(exp.Message);
-                    }
+                    catch (Exception) { }
                 }
                 else
                 {
@@ -464,11 +477,89 @@ namespace eSchool.Profiles
                     string fff = tt + ".\\profile1.jpg";
                     if (File.Exists(fff))
                     {
-                        ovalPictureBox1.Image = Image.FromFile(fff);
+                        try
+                        {
+                            Image img;
+                            using (var bmpTemp = new Bitmap(fff))
+                            {
+                                img = new Bitmap(bmpTemp);
+                            }
+                            this.ovalPictureBox1.Image = img;
+                            this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        }
+                        catch (Exception) { }
                     }
                 }
             }
         }
 
+        private async void OtherAdminExists()
+        {
+            List<eUser> userlist = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.eUsers.OrderBy(c => c.Id)
+                    .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                    .ToList();
+                }
+            });
+
+            foreach (var ss in userlist.Where(a => a.Type.Equals(UserTypes.UserType.Administrator.ToString())))
+            {
+                if (ss.Type.Equals(UserTypes.UserType.Administrator.ToString()))
+                {
+                    //nullifies access
+                    NullifyEuserAccount();
+                    //return true; 
+                }
+            }
+           // return false;
+        }
+
+        private async void NullifyEuserAccount()
+        {
+            bool exists = false;
+            eUser dUser = null;
+            using (var context = new EschoolEntities())
+            {
+                List<eUser> userlist = await Task.Factory.StartNew(() =>
+                {
+                    return context.eUsers.OrderBy(c => c.Id)
+                            .Where(x => !x.Email.Equals("getabujob@gmail.com") & x.Email.Equals("eschoolke@kedevelopers.com"))
+                           .ToList();
+                });
+
+                foreach (var ss in userlist.Where(a => a.username.Equals("eschoolke".ToUpper())))
+                {
+                    if (ss.username.Equals("eschoolke".ToUpper()))
+                    {
+                        dUser = ss;
+                        exists = true;
+                    }
+                }
+                if (exists)
+                {
+                    //nullifie eschool
+                    dUser.HasAccess = 0;
+                    context.Entry<eUser>(dUser).State = EntityState.Modified;
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        private bool IsEschoolKe(eUser cUser)
+        {
+            if (cUser.username.Equals("eschoolke".ToUpper()))
+            {
+                //disable change of username
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace eSchool.TheLogins
 
         private void tabSignUp_Click(object sender, EventArgs e)
         {
-           
+
 
             //UI code          
             if (slideA.Left == 626)
@@ -51,7 +51,7 @@ namespace eSchool.TheLogins
 
         private void tabSignIn_Click(object sender, EventArgs e)
         {
-           
+
 
             //UI code          
             if (slideB.Left == 626)
@@ -108,7 +108,7 @@ namespace eSchool.TheLogins
         {
             using (var context = new EschoolEntities())
             {
-                var userList =  context.eUsers.ToList();
+                var userList = context.eUsers.ToList();
 
                 foreach (var ss in userList.Where(a => a.username.Equals(username.ToUpper())))
                 {
@@ -117,7 +117,7 @@ namespace eSchool.TheLogins
                         return ss;
                     }
                 }
-                return null; 
+                return null;
             }
         }
 
@@ -132,12 +132,12 @@ namespace eSchool.TheLogins
                 foreach (var ss in userList.Where(a => a.username.Equals(username.ToUpper()) & a.Password.Equals(yy)))
                 {
                     if (username.ToUpper().Equals(ss.username))
-                    {                        
+                    {
                         //await Task.Delay(2000);
                         return ss;
                     }
                 }
-                return null; 
+                return null;
             }
         }
         private void ValidateSignUp(FormClosingEventArgs e)
@@ -223,7 +223,7 @@ namespace eSchool.TheLogins
             reg.username = tbUserNameSignUP.Text.ToUpper();
             reg.Type = role;
 
-            
+
             using (var context = new EschoolEntities())
             {
                 context.eUsers.Add(reg);
@@ -250,7 +250,7 @@ namespace eSchool.TheLogins
         }
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (close ==1)
+            if (close == 1)
             {
                 e.Cancel = false;
                 return;
@@ -270,7 +270,7 @@ namespace eSchool.TheLogins
                 }
 
                 //check availability of user name
-                
+
                 if (string.IsNullOrEmpty(tbUserNameSignUP.Text))
                 {
                     //UI code  
@@ -280,7 +280,7 @@ namespace eSchool.TheLogins
                     e.Cancel = true;
                     return;
                 }
-                eUser xx =  UserFoundAsync(tbUserNameSignUP.Text);
+                eUser xx = UserFoundAsync(tbUserNameSignUP.Text);
                 if (xx != null)
                 {
                     //UI code  
@@ -434,8 +434,9 @@ namespace eSchool.TheLogins
             {
                 btnSignIn.Focus();
                 btnSignIn.PerformClick();
-               // btnSignIn_Click_1(sender,e);
+                // btnSignIn_Click_1(sender,e);
             }
         }
+
     }
 }

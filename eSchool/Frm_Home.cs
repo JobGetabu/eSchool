@@ -211,6 +211,7 @@ namespace eSchool
 
             //set up auto complete for search 
             AutoComplete(tbSearch);
+
             //see which tab is to be done
             if (IsEschoolKe(currentUser))
             {
@@ -250,7 +251,7 @@ namespace eSchool
                         bmp.Save(myf, System.Drawing.Imaging.ImageFormat.Jpeg);
                     }
                 }
-                string fff = tt + ".\\profile1.jpg";
+                string fff = tt + ".\\eschool.png";
                 if (File.Exists(fff))
                 {
 
@@ -293,10 +294,20 @@ namespace eSchool
             if (String.IsNullOrEmpty(currentUser.ProfImage))
             {
                 string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
-                string fff = tt + ".\\profile1.jpg";
+                string fff = tt + ".\\eschool.png";
                 if (File.Exists(fff))
                 {
-                    ovalPictureBox1.Image = Image.FromFile(fff);
+                    try
+                    {
+                        Image img;
+                        using (var bmpTemp = new Bitmap(fff))
+                        {
+                            img = new Bitmap(bmpTemp);
+                        }
+                        this.ovalPictureBox1.Image = img;
+                        this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                    catch (Exception) { }
                 }
             }
             else
@@ -313,15 +324,12 @@ namespace eSchool
                         this.ovalPictureBox1.Image = img;
                         this.ovalPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                     }
-                    catch (Exception exp)
-                    {
-                        MessageBox.Show(exp.Message);
-                    }
+                    catch (Exception) { }
                 }
                 else
                 {
                     string tt = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\eSchool\";
-                    string fff = tt + ".\\profile1.jpg";
+                    string fff = tt + ".\\eschool.png";
                     if (File.Exists(fff))
                     {
                         Image img;
@@ -653,22 +661,11 @@ namespace eSchool
         ///see if eschoolke is user
         private bool IsEschoolKe(eUser cUser)
         {
-            using (var context = new EschoolEntities())
+            if (cUser.username.Equals("eschoolke".ToUpper()))
             {
-                List<eUser> userlist =
-                       context.eUsers.OrderBy(c => c.Id)
-                           .Where(x => !x.Email.Equals("getabujob@gmail.com") & x.Email.Equals("eschoolke@kedevelopers.com"))
-                           .ToList();
-
-                foreach (var ss in userlist.Where(a => a.username.Equals("eschoolke".ToUpper())))
-                {
-                    if (ss.username.Equals("eschoolke".ToUpper()))
-                    {
-                        return true;
-                    }
-                }
-                return false;
+                return true;
             }
+            return false;
         }
     }
 
