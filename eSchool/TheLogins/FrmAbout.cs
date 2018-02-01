@@ -1,5 +1,5 @@
 ﻿
-using SoftwareLocker;
+//using SoftwareLocker;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +39,7 @@ namespace eSchool.TheLogins
 
 
             //check registration here
-            TrialMaker t = new TrialMaker("EschoolKe", Application.StartupPath + "\\EschoolReg.reg",
+            SoftwareLocker.TrialMaker t = new SoftwareLocker.TrialMaker("EschoolKe", Application.StartupPath + "\\EschoolReg.reg",
                 Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\EschoolReg.dbf",
                 "Phone: 0708440184 -\nMobile: Developer Job-",
                 30, 300, "777");
@@ -49,13 +49,13 @@ namespace eSchool.TheLogins
                                 7, 9, 20, 36, 37, 21, 101, 57};
             t.TripleDESKey = MyOwnKey;
 
-            TrialMaker.RunTypes RT = t.ShowDialog();
+            SoftwareLocker.TrialMaker.RunTypes RT = t.ShowDialog();
 
-            if (RT == TrialMaker.RunTypes.Trial)
+            if (RT == SoftwareLocker.TrialMaker.RunTypes.Trial)
             {
                 try
                 {
-                    Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(FrmActivate1.LeftDays);
+                    Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(SoftwareLocker.FrmActivate1.LeftDays);
                     Properties.Settings.Default.Save();
                     lblExpiry.Text = Properties.Settings.Default.TrialExpireDt.ToShortDateString();
                 }
@@ -65,7 +65,7 @@ namespace eSchool.TheLogins
             {
                 try
                 {
-                    Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(FrmActivate1.LeftDays);
+                    Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(SoftwareLocker.FrmActivate1.LeftDays);
                     Properties.Settings.Default.Save();
                     lblExpiry.Text = Properties.Settings.Default.TrialExpireDt.ToShortDateString();
                 }
@@ -77,7 +77,7 @@ namespace eSchool.TheLogins
         {
             try
             {
-                Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(FrmActivate1.LeftDays);
+                Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(SoftwareLocker.FrmActivate1.LeftDays);
                 Properties.Settings.Default.Save();
             }
             catch (Exception) { }
