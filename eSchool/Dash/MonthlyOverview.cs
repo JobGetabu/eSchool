@@ -219,7 +219,7 @@ namespace eSchool.Dash
                 //TODO find the no of users in the system 
                 var usersList =
                      context.eUsers
-                     .Where(x => !x.Email.Equals("getabujob@gmail.com"))
+                     .Where(x => !x.Email.Equals("getabujob@gmail.com") & !x.Email.Equals("eschoolke@kedevelopers.com"))
                      .ToList();
 
 

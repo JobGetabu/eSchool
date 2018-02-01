@@ -1,6 +1,7 @@
 ﻿using custom_alert_notifications;
 using eSchool.TheLogins;
-using SoftwareLocker;
+//using SoftwareLocker;
+using productActivation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,7 +37,8 @@ namespace eSchool
                     bool is_trial;
                     //If prog is not in trial continue normally
                     //check registration here
-                    TrialMaker t = new TrialMaker("EschoolKe", Application.StartupPath + "\\EschoolReg.reg",
+
+                    SoftwareLocker.TrialMaker t = new SoftwareLocker.TrialMaker("EschoolKe", Application.StartupPath + "\\EschoolReg.reg",
                         Environment.GetFolderPath(Environment.SpecialFolder.System) + "\\EschoolReg.dbf",
                         "Phone: 0708440184 -\nMobile: Developer Job-",
                         30, 300, "777");
@@ -48,11 +50,11 @@ namespace eSchool
 
 
 
-                    TrialMaker.RunTypes RT = t.ShowDialog();
+                    SoftwareLocker.TrialMaker.RunTypes RT = t.ShowDialog();
 
-                    if (RT != TrialMaker.RunTypes.Expired)
+                    if (RT != SoftwareLocker.TrialMaker.RunTypes.Expired)
                     {
-                        if (RT == TrialMaker.RunTypes.Full)
+                        if (RT == SoftwareLocker.TrialMaker.RunTypes.Full)
                         {
                             is_trial = false;
 
@@ -79,7 +81,7 @@ namespace eSchool
 
                     try
                     {
-                        Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(FrmActivate1.LeftDays);
+                        Properties.Settings.Default.TrialExpireDt = DateTime.Now.AddDays(SoftwareLocker.FrmActivate1.LeftDays);
                         Properties.Settings.Default.Save();
                     }
                     catch (Exception) { }
