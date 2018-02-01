@@ -65,6 +65,9 @@
             this.bunifuFlatCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatBtnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cbAccount = new MetroFramework.Controls.MetroComboBox();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tbTxncode = new MetroFramework.Controls.MetroTextBox();
             this.bunifuCards1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -209,7 +212,7 @@
             this.tbFName.CustomButton.UseSelectable = true;
             this.tbFName.CustomButton.Visible = false;
             this.tbFName.Lines = new string[0];
-            this.tbFName.Location = new System.Drawing.Point(46, 179);
+            this.tbFName.Location = new System.Drawing.Point(46, 237);
             this.tbFName.MaxLength = 32767;
             this.tbFName.Name = "tbFName";
             this.tbFName.PasswordChar = '\0';
@@ -234,7 +237,7 @@
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(46, 150);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(46, 208);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(70, 17);
             this.bunifuCustomLabel3.TabIndex = 17;
@@ -244,7 +247,7 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(257, 150);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(257, 208);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(93, 17);
             this.bunifuCustomLabel4.TabIndex = 19;
@@ -265,7 +268,7 @@
             this.tbSName.CustomButton.UseSelectable = true;
             this.tbSName.CustomButton.Visible = false;
             this.tbSName.Lines = new string[0];
-            this.tbSName.Location = new System.Drawing.Point(257, 179);
+            this.tbSName.Location = new System.Drawing.Point(257, 237);
             this.tbSName.MaxLength = 32767;
             this.tbSName.Name = "tbSName";
             this.tbSName.PasswordChar = '\0';
@@ -290,7 +293,7 @@
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(257, 227);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(257, 284);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(53, 17);
             this.bunifuCustomLabel5.TabIndex = 23;
@@ -311,7 +314,7 @@
             this.tbGender.CustomButton.UseSelectable = true;
             this.tbGender.CustomButton.Visible = false;
             this.tbGender.Lines = new string[0];
-            this.tbGender.Location = new System.Drawing.Point(257, 256);
+            this.tbGender.Location = new System.Drawing.Point(257, 313);
             this.tbGender.MaxLength = 32767;
             this.tbGender.Name = "tbGender";
             this.tbGender.PasswordChar = '\0';
@@ -336,7 +339,7 @@
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(46, 227);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(46, 284);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(71, 17);
             this.bunifuCustomLabel6.TabIndex = 21;
@@ -357,7 +360,7 @@
             this.tbLName.CustomButton.UseSelectable = true;
             this.tbLName.CustomButton.Visible = false;
             this.tbLName.Lines = new string[0];
-            this.tbLName.Location = new System.Drawing.Point(46, 256);
+            this.tbLName.Location = new System.Drawing.Point(46, 313);
             this.tbLName.MaxLength = 32767;
             this.tbLName.Name = "tbLName";
             this.tbLName.PasswordChar = '\0';
@@ -382,7 +385,7 @@
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(257, 375);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(257, 423);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(35, 17);
             this.bunifuCustomLabel7.TabIndex = 31;
@@ -403,7 +406,7 @@
             this.tbYear.CustomButton.UseSelectable = true;
             this.tbYear.CustomButton.Visible = false;
             this.tbYear.Lines = new string[0];
-            this.tbYear.Location = new System.Drawing.Point(257, 404);
+            this.tbYear.Location = new System.Drawing.Point(257, 452);
             this.tbYear.MaxLength = 32767;
             this.tbYear.Name = "tbYear";
             this.tbYear.PasswordChar = '\0';
@@ -427,7 +430,7 @@
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(49, 375);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(49, 423);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(36, 17);
             this.bunifuCustomLabel8.TabIndex = 29;
@@ -448,7 +451,7 @@
             this.tbTerm.CustomButton.UseSelectable = true;
             this.tbTerm.CustomButton.Visible = false;
             this.tbTerm.Lines = new string[0];
-            this.tbTerm.Location = new System.Drawing.Point(49, 404);
+            this.tbTerm.Location = new System.Drawing.Point(49, 452);
             this.tbTerm.MaxLength = 32767;
             this.tbTerm.Name = "tbTerm";
             this.tbTerm.PasswordChar = '\0';
@@ -472,7 +475,7 @@
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(143, 300);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(143, 356);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(38, 17);
             this.bunifuCustomLabel9.TabIndex = 27;
@@ -493,7 +496,7 @@
             this.tbClass.CustomButton.UseSelectable = true;
             this.tbClass.CustomButton.Visible = false;
             this.tbClass.Lines = new string[0];
-            this.tbClass.Location = new System.Drawing.Point(143, 329);
+            this.tbClass.Location = new System.Drawing.Point(143, 385);
             this.tbClass.MaxLength = 32767;
             this.tbClass.Name = "tbClass";
             this.tbClass.PasswordChar = '\0';
@@ -518,7 +521,7 @@
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(49, 300);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(49, 356);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(37, 17);
             this.bunifuCustomLabel10.TabIndex = 25;
@@ -539,7 +542,7 @@
             this.tbForm.CustomButton.UseSelectable = true;
             this.tbForm.CustomButton.Visible = false;
             this.tbForm.Lines = new string[0];
-            this.tbForm.Location = new System.Drawing.Point(49, 329);
+            this.tbForm.Location = new System.Drawing.Point(49, 385);
             this.tbForm.MaxLength = 32767;
             this.tbForm.Name = "tbForm";
             this.tbForm.PasswordChar = '\0';
@@ -564,11 +567,11 @@
             // 
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(257, 300);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(257, 356);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(189, 17);
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(113, 17);
             this.bunifuCustomLabel11.TabIndex = 33;
-            this.bunifuCustomLabel11.Text = "Mode of Payment  &&   Account";
+            this.bunifuCustomLabel11.Text = "Mode of Payment";
             // 
             // tbMOP
             // 
@@ -578,7 +581,7 @@
             // 
             // 
             this.tbMOP.CustomButton.Image = null;
-            this.tbMOP.CustomButton.Location = new System.Drawing.Point(89, 2);
+            this.tbMOP.CustomButton.Location = new System.Drawing.Point(213, 2);
             this.tbMOP.CustomButton.Name = "";
             this.tbMOP.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.tbMOP.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -587,7 +590,7 @@
             this.tbMOP.CustomButton.UseSelectable = true;
             this.tbMOP.CustomButton.Visible = false;
             this.tbMOP.Lines = new string[0];
-            this.tbMOP.Location = new System.Drawing.Point(257, 329);
+            this.tbMOP.Location = new System.Drawing.Point(257, 385);
             this.tbMOP.MaxLength = 32767;
             this.tbMOP.Name = "tbMOP";
             this.tbMOP.PasswordChar = '\0';
@@ -597,7 +600,7 @@
             this.tbMOP.SelectionLength = 0;
             this.tbMOP.SelectionStart = 0;
             this.tbMOP.ShortcutsEnabled = true;
-            this.tbMOP.Size = new System.Drawing.Size(109, 22);
+            this.tbMOP.Size = new System.Drawing.Size(233, 22);
             this.tbMOP.TabIndex = 2;
             this.tbMOP.UseCustomBackColor = true;
             this.tbMOP.UseCustomForeColor = true;
@@ -665,7 +668,7 @@
             this.bunifuGradientPanel4.Location = new System.Drawing.Point(514, 62);
             this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
             this.bunifuGradientPanel4.Quality = 10;
-            this.bunifuGradientPanel4.Size = new System.Drawing.Size(10, 388);
+            this.bunifuGradientPanel4.Size = new System.Drawing.Size(10, 430);
             this.bunifuGradientPanel4.TabIndex = 36;
             // 
             // bunifuGradientPanel3
@@ -681,7 +684,7 @@
             this.bunifuGradientPanel3.Location = new System.Drawing.Point(0, 62);
             this.bunifuGradientPanel3.Name = "bunifuGradientPanel3";
             this.bunifuGradientPanel3.Quality = 10;
-            this.bunifuGradientPanel3.Size = new System.Drawing.Size(10, 388);
+            this.bunifuGradientPanel3.Size = new System.Drawing.Size(10, 430);
             this.bunifuGradientPanel3.TabIndex = 35;
             // 
             // bunifuGradientPanel2
@@ -696,7 +699,7 @@
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(135)))), ((int)(((byte)(169)))));
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(174)))), ((int)(((byte)(136)))));
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 450);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 492);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(524, 43);
@@ -776,21 +779,79 @@
             // 
             this.cbAccount.FormattingEnabled = true;
             this.cbAccount.ItemHeight = 23;
-            this.cbAccount.Location = new System.Drawing.Point(367, 329);
+            this.cbAccount.Location = new System.Drawing.Point(257, 166);
             this.cbAccount.Name = "cbAccount";
             this.cbAccount.PromptText = "Select Account";
-            this.cbAccount.Size = new System.Drawing.Size(123, 29);
+            this.cbAccount.Size = new System.Drawing.Size(233, 29);
             this.cbAccount.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbAccount.TabIndex = 39;
             this.cbAccount.UseSelectable = true;
             this.cbAccount.SelectedIndexChanged += new System.EventHandler(this.cbAccount_SelectedIndexChanged);
+            // 
+            // bunifuCustomLabel13
+            // 
+            this.bunifuCustomLabel13.AutoSize = true;
+            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(46, 144);
+            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(112, 17);
+            this.bunifuCustomLabel13.TabIndex = 41;
+            this.bunifuCustomLabel13.Text = "Transaction Code";
+            // 
+            // bunifuCustomLabel14
+            // 
+            this.bunifuCustomLabel14.AutoSize = true;
+            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(257, 144);
+            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(60, 17);
+            this.bunifuCustomLabel14.TabIndex = 42;
+            this.bunifuCustomLabel14.Text = "Account";
+            // 
+            // tbTxncode
+            // 
+            // 
+            // 
+            // 
+            this.tbTxncode.CustomButton.Image = null;
+            this.tbTxncode.CustomButton.Location = new System.Drawing.Point(160, 1);
+            this.tbTxncode.CustomButton.Name = "";
+            this.tbTxncode.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tbTxncode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbTxncode.CustomButton.TabIndex = 1;
+            this.tbTxncode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbTxncode.CustomButton.UseSelectable = true;
+            this.tbTxncode.CustomButton.Visible = false;
+            this.tbTxncode.Icon = global::eSchool.GridIcon.Money_50px;
+            this.tbTxncode.Lines = new string[0];
+            this.tbTxncode.Location = new System.Drawing.Point(46, 166);
+            this.tbTxncode.MaxLength = 32767;
+            this.tbTxncode.Name = "tbTxncode";
+            this.tbTxncode.PasswordChar = '\0';
+            this.tbTxncode.PromptText = "Transaction Code";
+            this.tbTxncode.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbTxncode.SelectedText = "";
+            this.tbTxncode.SelectionLength = 0;
+            this.tbTxncode.SelectionStart = 0;
+            this.tbTxncode.ShortcutsEnabled = true;
+            this.tbTxncode.Size = new System.Drawing.Size(182, 23);
+            this.tbTxncode.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbTxncode.TabIndex = 43;
+            this.tbTxncode.UseSelectable = true;
+            this.tbTxncode.WaterMark = "Transaction Code";
+            this.tbTxncode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbTxncode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbTxncode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTxncode_KeyPress);
             // 
             // FrmFeePayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(524, 493);
+            this.ClientSize = new System.Drawing.Size(524, 535);
+            this.Controls.Add(this.tbTxncode);
+            this.Controls.Add(this.bunifuCustomLabel14);
+            this.Controls.Add(this.bunifuCustomLabel13);
             this.Controls.Add(this.cbAccount);
             this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.bunifuCustomLabel12);
@@ -871,5 +932,8 @@
         private MetroFramework.Controls.MetroTextBox tbAmount;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private MetroFramework.Controls.MetroComboBox cbAccount;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
+        private MetroFramework.Controls.MetroTextBox tbTxncode;
     }
 }

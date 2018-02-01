@@ -78,6 +78,7 @@
           <Property Name="Amount Paid" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="ModeOfPayment" Type="nvarchar" MaxLength="50" />
           <Property Name="Acc_Fk" Type="int" />
+          <Property Name="TransactionCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="FeesRequiredPerTerm">
           <Key>
@@ -542,6 +543,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <NavigationProperty Name="SchoolPeriodYear" Relationship="Self.FK_Year_Fees" FromRole="Fees" ToRole="SchoolPeriodYear" />
           <Property Name="Acc_Fk" Type="Int32" />
           <NavigationProperty Name="Account" Relationship="EschoolModel.Accounts_Fee_Fk" FromRole="Fee" ToRole="Account" />
+          <Property Name="TransactionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FeesRequiredPerTerm">
           <Key>
@@ -1054,6 +1056,7 @@ warning 6035: The relationship 'FK_Year' has columns that are not part of the ke
           <EntitySetMapping Name="Fees">
             <EntityTypeMapping TypeName="EschoolModel.Fee">
               <MappingFragment StoreEntitySet="Fees">
+                <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
                 <ScalarProperty Name="Acc_Fk" ColumnName="Acc_Fk" />
                 <ScalarProperty Name="FeesId" ColumnName="FeesId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

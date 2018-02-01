@@ -254,7 +254,7 @@ namespace eSchool.Dash
                     .ToList();
 
                 //Days for income
-                IncDay0 = incomeListAsync.Where(x => x.Date == firstDayOfMonth).Sum(a => a.Amount);
+                IncDay0 = incomeListAsync.Where(x => x.Date == firstDayOfMonth | x.Date.Day == 1).Sum(a => a.Amount);
                 IncDay5 = incomeListAsync.Where(x => x.Date.Day > 1 & x.Date.Day < 6).ToList().Sum(a => a.Amount);
                 IncDay10 = incomeListAsync.Where(x => x.Date.Day > 5 & x.Date.Day < 11).ToList().Sum(a => a.Amount);
                 IncDay15 = incomeListAsync.Where(x => x.Date.Day > 10 & x.Date.Day < 16).ToList().Sum(a => a.Amount);
@@ -263,7 +263,7 @@ namespace eSchool.Dash
                 IncDayLast = incomeListAsync.Where(x => x.Date.Day == lastDayOfMonth.Day).ToList().Sum(a => a.Amount);
 
                 //Days for expense
-                ExpDay0 = expListAsync.Where(x => x.Date == firstDayOfMonth).Sum(a => a.Amount);
+                ExpDay0 = expListAsync.Where(x => x.Date == firstDayOfMonth | x.Date.Day == 1).Sum(a => a.Amount);
                 ExpDay5 = expListAsync.Where(x => x.Date.Day > 1 & x.Date.Day < 6).ToList().Sum(a => a.Amount);
                 ExpDay10 = expListAsync.Where(x => x.Date.Day > 5 & x.Date.Day < 11).ToList().Sum(a => a.Amount);
                 ExpDay15 = expListAsync.Where(x => x.Date.Day > 10 & x.Date.Day < 16).ToList().Sum(a => a.Amount);
@@ -354,7 +354,7 @@ namespace eSchool.Dash
 
 
                 //Days for income
-                IncDay0 = incomeListAsync.Where(x => x.Date == firstDayOfMonth).Sum(a => a.Amount);
+                IncDay0 = incomeListAsync.Where(x => x.Date == firstDayOfMonth | x.Date.Day == 1).Sum(a => a.Amount);
                 IncDay5 = incomeListAsync.Where(x => x.Date.Day > 1 & x.Date.Day < 6).ToList().Sum(a => a.Amount);
                 IncDay10 = incomeListAsync.Where(x => x.Date.Day > 5 & x.Date.Day < 11).ToList().Sum(a => a.Amount);
                 IncDay15 = incomeListAsync.Where(x => x.Date.Day > 10 & x.Date.Day < 16).ToList().Sum(a => a.Amount);
@@ -363,7 +363,7 @@ namespace eSchool.Dash
                 IncDayLast = incomeListAsync.Where(x => x.Date.Day == lastDayOfMonth.Day).ToList().Sum(a => a.Amount);
 
                 //Days for expense
-                ExpDay0 = expListAsync.Where(x => x.Date == firstDayOfMonth).Sum(a => a.Amount);
+                ExpDay0 = expListAsync.Where(x => x.Date == firstDayOfMonth | x.Date.Day == 1).Sum(a => a.Amount);
                 ExpDay5 = expListAsync.Where(x => x.Date.Day > 1 & x.Date.Day < 6).ToList().Sum(a => a.Amount);
                 ExpDay10 = expListAsync.Where(x => x.Date.Day > 5 & x.Date.Day < 11).ToList().Sum(a => a.Amount);
                 ExpDay15 = expListAsync.Where(x => x.Date.Day > 10 & x.Date.Day < 16).ToList().Sum(a => a.Amount);

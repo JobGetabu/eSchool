@@ -99,7 +99,7 @@ namespace eSchool
             }
         }
 
-        List<Student_Basic> studentList = null;
+       // List<Student_Basic> studentList = null;
         private async Task<List<Student_Basic>> StudListAsync()
         {
             return await Task.Factory.StartNew(() =>
@@ -112,10 +112,7 @@ namespace eSchool
         }
         private async Task<Student_Basic> StudFoundAsync(int admin)
         {
-            if (studentList == null)
-            {
-                studentList = await StudListAsync();
-            }
+            var studentList = await StudListAsync();
 
             foreach (var stud in studentList.Where(a => a.Admin_No == admin))
             {
@@ -166,6 +163,13 @@ namespace eSchool
             return null;
         }
         private void AmountKeyPressFocusChange(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                tbTxncode.Focus();
+            }
+        }
+        private void tbTxncode_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
@@ -250,21 +254,6 @@ namespace eSchool
             int term = int.Parse(tbTerm.Text);
             int form = int.Parse(tbForm.Text);
             int year = int.Parse(tbYear.Text);
-            //decimal balance =0;
-            //switch (term)
-            //{
-            //    case 1:
-            //        balance = await CheckPrevBalance(adminNo, form, 3, year-1);
-            //        break;
-            //    case 2:
-            //        balance = await CheckPrevBalance(adminNo, form, 1, year);
-            //        break;
-            //    case 3:
-            //        balance = await CheckPrevBalance(adminNo, form, 2, year);
-            //        break;
-            //    default:
-            //        break;
-            //}
 
             decimal amount = decimal.Parse(tbAmount.Text);
             using (var context = new EschoolEntities())
@@ -283,6 +272,7 @@ namespace eSchool
                         Year = year,
                         ModeOfPayment = $"{tbMOP.Text}",
                         Amount_Paid = amount,
+                        TransactionCode = $"{tbTxncode.Text}",
                         Acc_Fk = me.Id
                     };
 
@@ -342,17 +332,12 @@ namespace eSchool
 
             if (string.IsNullOrEmpty(tbAmount.Text) | string.IsNullOrEmpty(tbTerm.Text) | string.IsNullOrEmpty(tbYear.Text))
             {
-                //MetroMessageBox.Show(this, "Please fill all required fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 alert.Show("Required info \n Please fill all required fields !", alert.AlertType.warnig);
                 return;
             }
 
             if (string.IsNullOrEmpty(selAccount))
             {
-                //custom notification
-                //MetroMessageBox.Show(this, "Select an Account !", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 alert.Show("Required info \n Select an Account !", alert.AlertType.warnig);
                 return;
             }
@@ -364,6 +349,18 @@ namespace eSchool
                 alert.Show("Only numeric values \n allowed on amount input !", alert.AlertType.error);
                 return;
             }
+            if (string.IsNullOrEmpty(tbTxncode.Text))
+            {
+                alert.Show("Required info \n Enter Transaction Code !", alert.AlertType.warnig);
+                return;
+            }
+
+            if (await IsTxncodeUsed(tbTxncode.Text))
+            {
+                alert.Show("Duplicate Transaction Code !", alert.AlertType.warnig);
+                return;
+            }
+
             int test;
             if (!int.TryParse(tbYear.Text, out test))
             {
@@ -425,6 +422,26 @@ namespace eSchool
             this.Close();
         }
 
+        private async Task<bool> IsTxncodeUsed(string txnCode)
+        {
+            var feeList = await Task.Factory.StartNew(() =>
+            {
+                using (var context = new EschoolEntities())
+                {
+                    return context.Fees.ToList();
+                }
+            });
+
+            foreach (var f in feeList)
+            {
+                if (f.TransactionCode.Equals(txnCode))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void FrmFeePayment_FormClosing(object sender, FormClosingEventArgs e)
         {
             //refresh the fee list grid
@@ -436,6 +453,8 @@ namespace eSchool
         {
             selAccount = cbAccount.SelectedItem.ToString();
         }
+
+        
 
         //ToDo pass some info over to invoices and receipts to enable easier
         //printing of receipts after fee payment.

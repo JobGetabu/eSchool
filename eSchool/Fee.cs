@@ -25,6 +25,7 @@ namespace eSchool
         public decimal Amount_Paid { get; set; }
         public string ModeOfPayment { get; set; }
         public Nullable<int> Acc_Fk { get; set; }
+        public string TransactionCode { get; set; }
     
         public virtual Student_Basic Student_Basic { get; set; }
         public virtual SchoolPeriodTerm SchoolPeriodTerm { get; set; }
